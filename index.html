@@ -1,1 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Learning Hub | Global Online Tutoring & Educational Resources</title>
+
+  <meta name="description" content="Learning Hub provides global online tutoring, academic support, exam preparation and educational resources for students worldwide.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #ffffff;
+    }
+
+    nav {
+      background: #ffffff;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      margin-left: 25px;
+      font-size: 15px;
+    }
+
+    .hero {
+      padding: 90px 7%;
+      background: linear-gradient(135deg, #eff6ff, #ffffff);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .hero-text {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      line-height: 1.1;
+      margin-bottom: 25px;
+      color: #111827;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #4b5563;
+      margin-bottom: 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #2563eb;
+      color: white;
+      padding: 14px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero-card {
+      background: white;
+      padding: 35px;
+      border-radius: 18px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+      max-width: 330px;
+    }
+
+    .hero-card h3 {
+      color: #2563eb;
+      margin-bottom: 15px;
+    }
+
+    section {
+      padding: 75px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      padding: 30px;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      background: white;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .card p {
+      color: #6b7280;
+    }
+
+    .subjects {
+      background: #f9fafb;
+    }
+
+    .subject-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .subject {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    .about {
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about p {
+      color: #4b5563;
+      font-size: 18px;
+    }
+
+    .cta {
+      background: #2563eb;
+      color: white;
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      margin-bottom: 25px;
+    }
+
+    .cta .button {
+      background: white;
+      color: #2563eb;
+    }
+
+    footer {
+      background: #111827;
+      color: #d1d5db;
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 800px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a {
+        margin: 5px;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .subject-list {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">Learning Hub</div>
+
+    <div>
+      <a href="#services">Services</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#resources">Resources</a>
+      <a href="#about">About</a>
+      <a href="#contact">Get Started</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Learn Better.<br>Achieve More.</h1>
+
+      <p>
+        Global online tutoring, academic support and educational resources
+        designed to help students learn with confidence.
+      </p>
+
+      <a href="#contact" class="button">Start Learning</a>
+    </div>
+
+    <div class="hero-card">
+      <h3>🌎 Global Online Learning</h3>
+
+      <p>
+        Personalized academic support for students around the world,
+        including international curricula, exam preparation and English
+        language learning.
+      </p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="section-title">
+      <h2>What We Offer</h2>
+      <p>Flexible learning support for different academic needs.</p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>📚 Online Tutoring</h3>
+        <p>
+          One-to-one online lessons tailored to the student's level,
+          curriculum and learning goals.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎓 Academic Support</h3>
+        <p>
+          Support with assignments, academic writing, exam preparation
+          and improving subject knowledge.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📝 Learning Resources</h3>
+        <p>
+          Practice worksheets, study guides, revision materials and
+          digital educational resources.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="subjects" class="subjects">
+
+    <div class="section-title">
+      <h2>Subjects & Programs</h2>
+      <p>Support across international and academic programs.</p>
+    </div>
+
+    <div class="subject-list">
+
+      <div class="subject">English Language & Literature</div>
+
+      <div class="subject">IB Psychology</div>
+
+      <div class="subject">Environmental Systems & Societies</div>
+
+      <div class="subject">Sociology</div>
+
+      <div class="subject">Business Studies</div>
+
+      <div class="subject">English Language Learning</div>
+
+      <div class="subject">Exam Preparation</div>
+
+      <div class="subject">Academic Writing</div>
+
+    </div>
+  </section>
+
+  <section id="resources">
+
+    <div class="section-title">
+      <h2>Educational Resources</h2>
+
+      <p>
+        Practical materials to make independent study easier.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>📄 Practice Worksheets</h3>
+        <p>
+          Structured worksheets for practice, revision and skill development.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📖 Study Guides</h3>
+        <p>
+          Clear study materials designed to simplify difficult concepts.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>💡 Exam Resources</h3>
+        <p>
+          Exam-focused practice and preparation resources for students.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="about">
+
+    <div class="about">
+
+      <div class="section-title">
+        <h2>About Learning Hub</h2>
+      </div>
+
+      <p>
+        Learning Hub is an online education platform providing tutoring,
+        academic support and educational resources to students worldwide.
+        Our aim is to make high-quality learning support accessible,
+        practical and personalized.
+      </p>
+
+    </div>
+
+  </section>
+
+  <section id="contact" class="cta">
+
+    <h2>Ready to Start Learning?</h2>
+
+    <p>
+      Contact Learning Hub to discuss tutoring, academic support or
+      educational resources.
+    </p>
+
+    <a
+      href="mailto:learntoteach25@gmail.com"
+      class="button"
+    >
+      Contact Us
+    </a>
+
+  </section>
+
+  <footer>
+
+    <p>
+      © 2026 Learning Hub. All rights reserved.
+    </p>
+
+    <p>
+      Global Online Tutoring & Educational Resources
+    </p>
+
+  </footer>
+
+</body>
+</html>
