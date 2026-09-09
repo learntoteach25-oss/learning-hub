@@ -2986,9 +2986,8 @@ footer li a:hover{
             </h2>
 
             <p>
-                Complete the application below. The current prototype collects
-                information locally in the browser; a secure backend can be
-                connected later for real submissions and file storage.
+                Complete the application below. Your application will be securely
+                submitted to the Learning Hub recruitment email for review.
             </p>
 
         </div>
@@ -3001,7 +3000,41 @@ footer li a:hover{
             </div>
 
 
-            <form id="teacherForm">
+            <!--
+                REAL EMAIL SUBMISSION
+                --------------------
+                FormSubmit sends the completed application to:
+                hublearning117@gmail.com
+
+                First submission requires email activation.
+            -->
+
+            <form
+                id="teacherForm"
+                action="https://formsubmit.co/hublearning117@gmail.com"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <input type="hidden"
+                       name="_subject"
+                       value="New Learning Hub Teacher Application">
+
+                <input type="hidden"
+                       name="_template"
+                       value="table">
+
+                <input type="hidden"
+                       name="_next"
+                       value="https://learninghubtutoring.com/#teachers">
+
+                <input type="hidden"
+                       name="_captcha"
+                       value="true">
+
+                <input type="text"
+                       name="_honey"
+                       style="display:none">
 
 
                 <!-- STEP 1 -->
@@ -3436,13 +3469,12 @@ footer li a:hover{
                 </div>
 
                 <h3>
-                    Application Ready
+                    Application Submitted
                 </h3>
 
                 <p>
-                    Your application has been completed in this prototype.
-                    Connect the form to your secure backend or application
-                    system to receive real submissions.
+                    Thank you. Your application has been submitted to
+                    Learning Hub and will be reviewed by our team.
                 </p>
 
             </div>
@@ -3930,7 +3962,9 @@ certificateInput.addEventListener("change", () => {
 });
 
 
-/* FILE SIZE CHECK */
+/* FILE SIZE CHECK
+   FormSubmit total file limit = 10 MB
+*/
 
 document.querySelectorAll('input[type="file"]').forEach(input => {
 
@@ -3939,12 +3973,12 @@ document.querySelectorAll('input[type="file"]').forEach(input => {
         if(!input.files.length) return;
 
         const maxSize =
-            100 * 1024 * 1024;
+            10 * 1024 * 1024;
 
         if(input.files[0].size > maxSize){
 
             alert(
-                "Please choose a file smaller than 100 MB."
+                "Please choose a file smaller than 10 MB."
             );
 
             input.value = "";
@@ -4017,40 +4051,26 @@ document.getElementById("reviewBtn")
 });
 
 
-/* SUBMIT */
+/*
+   IMPORTANT:
+   There is intentionally NO preventDefault()
+   on the teacher form submission.
+
+   The browser now submits the complete form,
+   including uploaded files, directly to FormSubmit.
+*/
 
 form.addEventListener("submit", event => {
 
-    event.preventDefault();
+    if(!form.checkValidity()){
 
+        event.preventDefault();
 
-    const activeStep =
-        document.querySelector(".form-step.active");
+        form.reportValidity();
 
-
-    const fields =
-        activeStep.querySelectorAll(
-            "input[required], select[required], textarea[required]"
-        );
-
-
-    for(const field of fields){
-
-        if(!field.checkValidity()){
-
-            field.reportValidity();
-
-            return;
-
-        }
+        return;
 
     }
-
-
-    form.style.display = "none";
-
-    document.getElementById("successMessage")
-        .style.display = "block";
 
 });
 
