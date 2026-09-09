@@ -11,28 +11,35 @@ content="Learning Hub provides global online tutoring, international curriculum 
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 :root{
 --black:#080808;
 --black2:#111;
 --black3:#181818;
+
 --gold:#c9a45c;
 --gold2:#e6c985;
+--gold3:#a77d36;
+
 --cream:#f7f1e5;
 --cream2:#eee5d3;
 --white:#fff;
+
 --muted:#aaa69d;
 --line:rgba(201,164,92,.22);
+
 --shadow:0 25px 80px rgba(0,0,0,.25);
 --radius:24px;
 }
 
 *{
+box-sizing:border-box;
 margin:0;
 padding:0;
-box-sizing:border-box;
 }
 
 html{
@@ -40,14 +47,16 @@ scroll-behavior:smooth;
 }
 
 body{
-font-family:Inter,sans-serif;
+font-family:Inter,Arial,sans-serif;
 background:var(--cream);
-color:var(--black);
+color:#181512;
 line-height:1.6;
+overflow-x:hidden;
 }
 
-body.modal-open{
-overflow:hidden;
+img{
+max-width:100%;
+display:block;
 }
 
 a{
@@ -55,13 +64,25 @@ color:inherit;
 text-decoration:none;
 }
 
-button,input,textarea,select{
+button,
+input,
+textarea,
+select{
 font:inherit;
 }
 
 button{
 cursor:pointer;
 }
+
+::selection{
+background:rgba(201,164,92,.35);
+color:#111;
+}
+
+/* =====================================================
+   GLOBAL
+===================================================== */
 
 .container{
 width:min(1180px,92%);
@@ -70,63 +91,93 @@ margin:auto;
 
 .section{
 padding:100px 0;
-}
-
-.dark{
-background:var(--black);
-color:white;
-}
-
-.gold-text{
-color:var(--gold2);
+position:relative;
 }
 
 .section-heading{
 max-width:760px;
-margin-bottom:55px;
+margin:0 auto 55px;
+text-align:center;
 }
 
 .section-heading small{
-display:inline-block;
-color:var(--gold);
+display:block;
+color:var(--gold3);
+font-size:.78rem;
 font-weight:800;
 letter-spacing:2px;
 text-transform:uppercase;
-font-size:.75rem;
-margin-bottom:14px;
+margin-bottom:12px;
 }
 
 .section-heading h2{
-font-family:"Playfair Display",serif;
-font-size:clamp(2.2rem,5vw,4rem);
-line-height:1.08;
+font-family:"Playfair Display",Georgia,serif;
+font-size:clamp(2rem,4vw,3.2rem);
+line-height:1.15;
 margin-bottom:18px;
 }
 
 .section-heading p{
-color:#68645d;
+color:#706b63;
 max-width:680px;
+margin:auto;
 }
 
-.dark .section-heading p{
-color:#aaa69d;
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+min-height:48px;
+padding:12px 25px;
+border-radius:999px;
+border:1px solid transparent;
+font-weight:800;
+transition:.25s ease;
 }
 
-/* NAV */
+.btn-gold{
+background:linear-gradient(
+135deg,
+#b88e43 0%,
+#d8b66d 48%,
+#f0d58e 100%
+);
+color:#111;
+box-shadow:0 8px 24px rgba(201,164,92,.14);
+}
+
+.btn-gold:hover{
+transform:translateY(-2px);
+box-shadow:0 14px 35px rgba(201,164,92,.28);
+}
+
+.btn-outline{
+border-color:rgba(240,213,142,.34);
+background:rgba(255,255,255,.025);
+color:#fff;
+}
+
+.btn-outline:hover{
+background:rgba(201,164,92,.08);
+}
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .navbar{
-position:fixed;
+position:sticky;
 top:0;
-left:0;
-right:0;
 z-index:1000;
-background:rgba(8,8,8,.94);
-backdrop-filter:blur(18px);
-border-bottom:1px solid var(--line);
+background:rgba(7,7,7,.94);
+border-bottom:1px solid rgba(240,213,142,.18);
+box-shadow:0 10px 35px rgba(0,0,0,.18);
+backdrop-filter:blur(15px);
 }
 
 .nav-inner{
-height:78px;
+min-height:80px;
 display:flex;
 align-items:center;
 justify-content:space-between;
@@ -137,116 +188,116 @@ gap:25px;
 display:flex;
 align-items:center;
 gap:12px;
-color:white;
-font-weight:800;
-letter-spacing:.5px;
 }
 
 .logo-mark{
-width:38px;
-height:38px;
+width:42px;
+height:42px;
 border:1px solid var(--gold);
+border-radius:13px;
 display:grid;
 place-items:center;
-border-radius:12px;
 color:var(--gold2);
 font-family:"Playfair Display",serif;
-font-size:1.15rem;
+font-weight:700;
+background:linear-gradient(
+145deg,
+rgba(240,213,142,.08),
+rgba(201,164,92,.02)
+);
+box-shadow:inset 0 0 20px rgba(201,164,92,.05);
+}
+
+.logo-text{
+color:#fff;
+font-weight:800;
+line-height:1.1;
 }
 
 .logo-text span{
 display:block;
-font-size:.7rem;
 color:var(--gold);
-letter-spacing:2px;
-text-transform:uppercase;
-font-weight:700;
+font-size:.68rem;
+letter-spacing:1.7px;
+margin-top:4px;
 }
 
 .nav-links{
 display:flex;
 align-items:center;
-gap:17px;
-font-size:.75rem;
-color:#d9d4ca;
+gap:25px;
 }
 
 .nav-links a{
-transition:.25s;
+position:relative;
+color:#cfc9bd;
+font-size:.86rem;
+transition:.2s;
 }
 
 .nav-links a:hover{
-color:var(--gold2);
+color:#fff;
 }
 
-.nav-actions{
-display:flex;
-gap:9px;
-align-items:center;
+.nav-links a:after{
+content:"";
+position:absolute;
+left:0;
+right:0;
+bottom:-8px;
+height:1px;
+background:var(--gold2);
+transform:scaleX(0);
+transform-origin:center;
+transition:.25s ease;
 }
 
-.btn{
-border:0;
-border-radius:999px;
-padding:12px 19px;
-font-weight:800;
-transition:.25s;
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:8px;
+.nav-links a:hover:after{
+transform:scaleX(1);
 }
 
-.btn-gold{
-background:linear-gradient(135deg,var(--gold),var(--gold2));
-color:#111;
+.nav-book{
+white-space:nowrap;
 }
 
-.btn-gold:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 30px rgba(201,164,92,.22);
-}
-
-.btn-outline{
-background:transparent;
-color:white;
-border:1px solid var(--line);
-}
-
-.btn-outline:hover{
-border-color:var(--gold);
-color:var(--gold2);
-}
-
-.btn-dark{
-background:var(--black);
-color:white;
-}
-
-.btn-light{
-background:white;
-color:#111;
-border:1px solid #ddd;
-}
-
-.mobile-toggle{
-display:none;
-background:none;
-border:1px solid var(--line);
-color:white;
-padding:9px 12px;
-border-radius:10px;
-}
-
-/* HERO */
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
-padding:150px 0 100px;
+min-height:720px;
+display:flex;
+align-items:center;
 background:
-radial-gradient(circle at 80% 20%,rgba(201,164,92,.12),transparent 28%),
-linear-gradient(135deg,#080808,#111 55%,#17130c);
-color:white;
+radial-gradient(
+circle at 84% 18%,
+rgba(201,164,92,.17),
+transparent 24%
+),
+radial-gradient(
+circle at 10% 90%,
+rgba(201,164,92,.06),
+transparent 25%
+),
+linear-gradient(
+135deg,
+#050505 0%,
+#0c0c0c 52%,
+#18130b 100%
+);
+color:#fff;
 overflow:hidden;
+}
+
+.hero:before{
+content:"";
+position:absolute;
+width:500px;
+height:500px;
+border:1px solid rgba(201,164,92,.08);
+border-radius:50%;
+right:-180px;
+top:-170px;
 }
 
 .hero-grid{
@@ -256,228 +307,141 @@ gap:70px;
 align-items:center;
 }
 
-.eyebrow{
-color:var(--gold2);
-font-size:.76rem;
-font-weight:800;
-letter-spacing:2px;
-text-transform:uppercase;
-margin-bottom:18px;
-}
-
 .hero h1{
-font-family:"Playfair Display",serif;
-font-size:clamp(3rem,7vw,6.2rem);
-line-height:.98;
+font-family:"Playfair Display",Georgia,serif;
+font-size:clamp(3rem,6vw,5.8rem);
+line-height:1;
+letter-spacing:-2px;
 margin-bottom:25px;
 }
 
 .hero h1 span{
-color:var(--gold2);
+background:linear-gradient(
+90deg,
+#c9a45c,
+#f0d58e,
+#c9a45c
+);
+-webkit-background-clip:text;
+background-clip:text;
+color:transparent;
 }
 
 .hero p{
-color:#c7c1b5;
 max-width:650px;
-font-size:1.08rem;
-margin-bottom:30px;
+color:#b8b2a7;
+font-size:1.05rem;
+margin-bottom:32px;
 }
 
-.hero-buttons{
+.hero-actions{
 display:flex;
 flex-wrap:wrap;
-gap:12px;
-margin-bottom:42px;
+gap:13px;
 }
 
+.intelligence{
+padding:35px;
+border:1px solid rgba(240,213,142,.25);
+border-radius:28px;
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.075),
+rgba(255,255,255,.018)
+),
+rgba(10,10,10,.72);
+box-shadow:0 30px 90px rgba(0,0,0,.38);
+}
+
+.intelligence h3{
+font-family:"Playfair Display",serif;
+font-size:1.7rem;
+color:#f4dfad;
+margin-bottom:14px;
+}
+
+.intelligence p{
+font-size:.94rem;
+margin-bottom:25px;
+}
+
+.intelligence-list{
+display:grid;
+gap:13px;
+}
+
+.intelligence-list div{
+display:flex;
+gap:12px;
+align-items:flex-start;
+color:#c7c1b6;
+font-size:.9rem;
+}
+
+.intelligence-list strong{
+color:#f0d58e;
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
 .stats{
+margin-top:-45px;
+position:relative;
+z-index:3;
+}
+
+.stats-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:12px;
+gap:15px;
 }
 
 .stat{
-padding:17px;
-border:1px solid var(--line);
-background:rgba(255,255,255,.035);
-border-radius:18px;
+padding:25px;
+border-radius:20px;
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.018)
+);
+border:1px solid rgba(240,213,142,.20);
+text-align:center;
+color:#fff;
 }
 
 .stat strong{
 display:block;
-color:var(--gold2);
-font-size:.95rem;
-margin-bottom:5px;
+font-family:"Playfair Display",serif;
+font-size:2rem;
+color:#f0d58e;
 }
 
 .stat span{
-font-size:.72rem;
-color:#aaa69d;
+font-size:.78rem;
+color:#a9a49a;
 }
 
-.intelligence{
-border:1px solid var(--line);
-background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
-box-shadow:var(--shadow);
-border-radius:30px;
-padding:28px;
-position:relative;
-overflow:hidden;
+/* =====================================================
+   PROGRAMMES
+===================================================== */
+
+.programmes{
+background:
+radial-gradient(
+circle at 8% 10%,
+rgba(201,164,92,.08),
+transparent 25%
+),
+linear-gradient(
+180deg,
+#fbf8f1,
+#eee5d3
+);
 }
-
-.intelligence:before{
-content:"";
-position:absolute;
-width:220px;
-height:220px;
-right:-80px;
-top:-80px;
-background:rgba(201,164,92,.12);
-filter:blur(25px);
-border-radius:50%;
-}
-
-.intel-top{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:30px;
-}
-
-.intel-label{
-font-size:.7rem;
-color:var(--gold2);
-letter-spacing:2px;
-font-weight:800;
-}
-
-.ai-orb{
-width:46px;
-height:46px;
-border-radius:50%;
-background:radial-gradient(circle,#fff4ca,#c9a45c 45%,#59471f);
-box-shadow:0 0 40px rgba(201,164,92,.35);
-}
-
-.progress-wrap{
-display:grid;
-grid-template-columns:130px 1fr;
-gap:25px;
-align-items:center;
-margin-bottom:25px;
-}
-
-.progress-ring{
-width:125px;
-height:125px;
-border-radius:50%;
-display:grid;
-place-items:center;
-background:conic-gradient(var(--gold) 72%,#302c25 0);
-position:relative;
-}
-
-.progress-ring:after{
-content:"";
-position:absolute;
-width:91px;
-height:91px;
-border-radius:50%;
-background:#101010;
-}
-
-.progress-ring strong{
-position:relative;
-z-index:2;
-font-size:1.6rem;
-}
-
-.recommendation{
-border-top:1px solid var(--line);
-padding-top:20px;
-}
-
-.recommendation small{
-color:var(--gold);
-font-size:.65rem;
-letter-spacing:1.5px;
-font-weight:800;
-}
-
-.recommendation h3{
-margin:8px 0;
-font-family:"Playfair Display",serif;
-font-size:1.5rem;
-}
-
-.recommendation p{
-font-size:.82rem;
-color:#aaa69d;
-margin-bottom:12px;
-}
-
-.next-step{
-padding:12px;
-border-radius:14px;
-background:rgba(201,164,92,.09);
-color:var(--gold2);
-font-size:.75rem;
-font-weight:700;
-}
-
-/* CARDS */
-
-.card-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:22px;
-}
-
-.card{
-background:white;
-border:1px solid rgba(0,0,0,.08);
-border-radius:var(--radius);
-padding:28px;
-box-shadow:0 12px 40px rgba(0,0,0,.06);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-6px);
-box-shadow:0 25px 60px rgba(0,0,0,.1);
-}
-
-.card-icon{
-width:50px;
-height:50px;
-border-radius:16px;
-display:grid;
-place-items:center;
-background:#f4ead4;
-color:#8d6d2c;
-font-size:1.1rem;
-margin-bottom:20px;
-font-weight:800;
-}
-
-.card h3{
-font-family:"Playfair Display",serif;
-font-size:1.45rem;
-margin-bottom:10px;
-}
-
-.card p{
-color:#6d6961;
-font-size:.9rem;
-margin-bottom:20px;
-}
-
-.card .btn{
-font-size:.75rem;
-padding:10px 15px;
-}
-
-/* PROGRAMMES */
 
 .program-grid{
 display:grid;
@@ -486,496 +450,592 @@ gap:20px;
 }
 
 .program{
-min-height:230px;
-border-radius:25px;
-padding:30px;
-background:linear-gradient(145deg,#fff,#f2e8d5);
-border:1px solid rgba(201,164,92,.25);
-display:flex;
-flex-direction:column;
-justify-content:space-between;
+min-height:270px;
+padding:32px;
+position:relative;
+overflow:hidden;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.065),
+rgba(255,255,255,.018)
+),
+#11100f;
+
+color:#fffdf8;
+
+border:1px solid rgba(201,164,92,.28);
+border-radius:var(--radius);
+
+box-shadow:0 15px 45px rgba(0,0,0,.18);
+
+transition:
+transform .3s ease,
+border-color .3s ease,
+box-shadow .3s ease;
 }
 
-.program:nth-child(even){
-background:linear-gradient(145deg,#111,#1b1b1b);
-color:white;
+.program:before{
+content:"";
+position:absolute;
+width:170px;
+height:170px;
+right:-90px;
+top:-90px;
+border-radius:50%;
+background:rgba(201,164,92,.10);
+filter:blur(4px);
+pointer-events:none;
 }
 
-.program p{
-font-size:.86rem;
-color:#68645d;
+.program:after{
+content:"";
+position:absolute;
+left:30px;
+top:0;
+width:55px;
+height:2px;
+background:linear-gradient(
+90deg,
+var(--gold),
+transparent
+);
 }
 
-.program:nth-child(even) p{
-color:#aaa69d;
+.program:hover{
+transform:translateY(-7px);
+border-color:rgba(240,213,142,.65);
+box-shadow:0 25px 65px rgba(0,0,0,.30);
 }
 
 .program h3{
 font-family:"Playfair Display",serif;
-font-size:1.6rem;
+font-size:1.55rem;
+line-height:1.2;
+color:#f6e4b5;
+margin-bottom:15px;
+position:relative;
+z-index:1;
 }
 
-/* SUPPORT */
+.program p{
+color:#b9b3a8;
+font-size:.92rem;
+margin-bottom:22px;
+position:relative;
+z-index:1;
+}
 
-.special-grid{
+.program .btn{
+width:100%;
+position:relative;
+z-index:2;
+}
+
+/* =====================================================
+   LEARNING PATH DETAILS
+===================================================== */
+
+.path-details{
+margin-top:30px;
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:18px;
 }
 
-.special{
-background:#111;
-border:1px solid var(--line);
+.path-detail{
 padding:25px;
-border-radius:22px;
-color:white;
+border-radius:20px;
+background:#fffdf8;
+border:1px solid rgba(201,164,92,.17);
+box-shadow:0 10px 30px rgba(30,25,18,.05);
 }
 
-.special small{
-color:var(--gold);
-font-weight:800;
-font-size:.65rem;
-letter-spacing:1.4px;
-text-transform:uppercase;
-}
-
-.special h3{
-margin:8px 0;
+.path-detail h4{
 font-family:"Playfair Display",serif;
-font-size:1.35rem;
+font-size:1.25rem;
+margin-bottom:13px;
 }
 
-.special p{
-color:#aaa69d;
-font-size:.82rem;
-margin-bottom:18px;
+.path-detail ul{
+padding-left:18px;
+color:#625d54;
+font-size:.88rem;
 }
 
-/* HUB */
+.path-detail li{
+margin:7px 0;
+}
 
-.hub-grid{
+/* =====================================================
+   DARK SECTIONS
+===================================================== */
+
+.dark{
+background:
+radial-gradient(
+circle at 88% 8%,
+rgba(201,164,92,.08),
+transparent 25%
+),
+linear-gradient(
+135deg,
+#080808,
+#101010 55%,
+#17120b
+);
+color:#fff;
+}
+
+.dark .section-heading h2{
+color:#fffdf8;
+}
+
+.dark .section-heading p{
+color:#aaa49a;
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+
+.card-grid{
 display:grid;
-grid-template-columns:repeat(2,1fr);
+grid-template-columns:repeat(3,1fr);
 gap:20px;
 }
 
-.hub{
-background:#111;
-color:white;
-border-radius:25px;
+.card{
 padding:30px;
-border:1px solid var(--line);
-min-height:250px;
-display:flex;
-flex-direction:column;
-justify-content:space-between;
+border-radius:22px;
+background:linear-gradient(
+145deg,
+#fffdf8,
+#f4eee2
+);
+border:1px solid rgba(201,164,92,.16);
+box-shadow:0 18px 50px rgba(23,21,18,.10);
 }
 
-.hub h3{
-font-family:"Playfair Display",serif;
-font-size:1.7rem;
-}
-
-.hub p{
-color:#aaa69d;
-font-size:.86rem;
-}
-
-/* LEARNING */
-
-.learning-feature{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
-
-.learning-visual{
-min-height:470px;
-border-radius:32px;
+.dark .card{
 background:
-linear-gradient(145deg,rgba(201,164,92,.16),transparent),
-#111;
-border:1px solid var(--line);
-position:relative;
-overflow:hidden;
-display:grid;
-place-items:center;
+linear-gradient(
+145deg,
+rgba(255,255,255,.06),
+rgba(255,255,255,.018)
+),
+#11100f;
+color:#fffdf8;
+border-color:rgba(201,164,92,.24);
+box-shadow:0 15px 45px rgba(0,0,0,.20);
 }
 
-.learning-orbit{
-width:270px;
-height:270px;
-border:1px solid var(--gold);
-border-radius:50%;
-display:grid;
-place-items:center;
-box-shadow:0 0 80px rgba(201,164,92,.12);
-}
-
-.learning-core{
-width:120px;
-height:120px;
-border-radius:35px;
-background:linear-gradient(145deg,var(--gold2),var(--gold));
-display:grid;
-place-items:center;
-color:#111;
+.card h3{
 font-family:"Playfair Display",serif;
+font-size:1.35rem;
+margin-bottom:13px;
+}
+
+.dark .card h3{
+color:#f6e4b5;
+}
+
+.card p{
+color:#6d675e;
+font-size:.9rem;
+}
+
+.dark .card p{
+color:#aaa49a;
+}
+
+.card-icon{
+width:50px;
+height:50px;
+display:grid;
+place-items:center;
+border-radius:15px;
+background:rgba(201,164,92,.10);
+color:var(--gold3);
+border:1px solid rgba(201,164,92,.20);
+margin-bottom:18px;
 font-size:1.3rem;
-font-weight:800;
 }
 
-.orbit-label{
-position:absolute;
-background:#191919;
-border:1px solid var(--line);
-padding:10px 14px;
-border-radius:999px;
-font-size:.7rem;
-color:var(--gold2);
+/* =====================================================
+   INTERNATIONAL BOARDS
+===================================================== */
+
+.board-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
-.orbit-one{top:18%;left:16%}
-.orbit-two{top:24%;right:13%}
-.orbit-three{bottom:19%;left:20%}
-.orbit-four{bottom:24%;right:17%}
+.board-card{
+padding:32px;
+border:1px solid rgba(201,164,92,.25);
+border-radius:24px;
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.015)
+),
+#11100f;
+color:#fff;
+transition:.3s;
+}
 
-.learning-copy h2{
+.board-card:hover{
+transform:translateY(-6px);
+border-color:rgba(240,213,142,.55);
+}
+
+.board-card h3{
 font-family:"Playfair Display",serif;
-font-size:clamp(2.3rem,5vw,4rem);
-line-height:1.08;
+color:#f0d58e;
+font-size:1.5rem;
+margin-bottom:12px;
+}
+
+.board-card p{
+color:#aaa49a;
+font-size:.9rem;
 margin-bottom:20px;
 }
 
-.learning-copy p{
-color:#6d6961;
-margin-bottom:20px;
+.board-card ul{
+padding-left:18px;
+color:#c8c1b6;
+font-size:.87rem;
 }
 
-.steps{
-display:grid;
-gap:13px;
-margin-top:25px;
+.board-card li{
+margin:7px 0;
 }
 
-.step{
+/* =====================================================
+   SUBJECTS
+===================================================== */
+
+.subject-section{
+background:
+linear-gradient(
+180deg,
+#fbf8f1,
+#f1e8d8
+);
+}
+
+.subject-board{
+margin-bottom:45px;
+}
+
+.subject-board-title{
 display:flex;
-gap:14px;
-align-items:flex-start;
+align-items:end;
+justify-content:space-between;
+gap:20px;
+margin-bottom:20px;
 }
 
-.step-number{
-width:34px;
-height:34px;
-border-radius:50%;
-background:#111;
-color:var(--gold2);
-display:grid;
-place-items:center;
-font-size:.72rem;
+.subject-board-title h3{
+font-family:"Playfair Display",serif;
+font-size:1.8rem;
+}
+
+.subject-board-title span{
+font-size:.8rem;
 font-weight:800;
-flex:none;
+letter-spacing:1px;
+color:var(--gold3);
+text-transform:uppercase;
 }
-
-/* SUBJECTS */
 
 .subject-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
-gap:15px;
-}
-
-.subject{
-padding:23px;
-background:white;
-border-radius:18px;
-border:1px solid rgba(0,0,0,.08);
-font-weight:800;
-transition:.25s;
-cursor:pointer;
-}
-
-.subject:hover{
-border-color:var(--gold);
-transform:translateY(-3px);
-}
-
-.subject small{
-display:block;
-font-size:.68rem;
-color:#8d6d2c;
-font-weight:700;
-margin-top:5px;
-}
-
-/* CURRICULUM */
-
-.curriculum-section{
-background:
-radial-gradient(circle at 85% 10%,rgba(201,164,92,.10),transparent 28%),
-#080808;
-color:white;
-}
-
-.curriculum-group{
-margin-bottom:48px;
-}
-
-.curriculum-group:last-child{
-margin-bottom:0;
-}
-
-.curriculum-group-title{
-display:flex;
-align-items:flex-end;
-justify-content:space-between;
-gap:20px;
-margin-bottom:20px;
-padding-bottom:13px;
-border-bottom:1px solid var(--line);
-}
-
-.curriculum-group-title h3{
-font-family:"Playfair Display",serif;
-font-size:1.8rem;
-color:var(--gold2);
-}
-
-.curriculum-group-title span{
-font-size:.65rem;
-letter-spacing:1.5px;
-text-transform:uppercase;
-color:#aaa69d;
-font-weight:800;
-}
-
-.curriculum-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
 gap:14px;
 }
 
-.curriculum-card{
-background:#111;
-border:1px solid rgba(201,164,92,.20);
+.subject{
+padding:20px;
 border-radius:18px;
-padding:19px;
-min-height:105px;
+background:linear-gradient(
+145deg,
+#fffdf8,
+#f3ead9
+);
+border:1px solid rgba(201,164,92,.17);
+box-shadow:0 10px 30px rgba(30,25,18,.05);
 transition:.25s;
 }
 
-.curriculum-card:hover{
-transform:translateY(-3px);
-border-color:var(--gold);
-background:#151515;
+.subject:hover{
+transform:translateY(-4px);
+background:linear-gradient(
+145deg,
+#fffdf8,
+#efe0c4
+);
+box-shadow:0 15px 35px rgba(201,164,92,.13);
 }
 
-.curriculum-card strong{
+.subject strong{
 display:block;
-font-size:.88rem;
+font-size:.93rem;
 line-height:1.35;
-color:#fff;
+margin-bottom:7px;
 }
 
-.curriculum-card .code{
-display:inline-block;
-margin-top:8px;
-padding:5px 8px;
-border-radius:8px;
-background:rgba(201,164,92,.10);
-color:var(--gold2);
-font-size:.66rem;
-font-weight:900;
+.subject small{
+color:#9a7938;
+font-weight:800;
+font-size:.73rem;
+}
+
+/* =====================================================
+   RESEARCH INFORMED TEACHING
+===================================================== */
+
+.research-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
+}
+
+.research-card{
+padding:27px;
+border-radius:21px;
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.015)
+),
+#11100f;
+border:1px solid rgba(201,164,92,.23);
+}
+
+.research-card h3{
+font-family:"Playfair Display",serif;
+color:#f0d58e;
+font-size:1.25rem;
+margin-bottom:10px;
+}
+
+.research-card p{
+color:#aaa49a;
+font-size:.87rem;
+margin-bottom:13px;
+}
+
+.research-card ul{
+padding-left:18px;
+color:#c6c0b5;
+font-size:.83rem;
+}
+
+.research-card li{
+margin:5px 0;
+}
+
+/* =====================================================
+   METHODOLOGY
+===================================================== */
+
+.method-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+
+.method{
+padding:25px;
+background:#fffdf8;
+border:1px solid rgba(201,164,92,.17);
+border-radius:20px;
+box-shadow:0 10px 30px rgba(30,25,18,.05);
+}
+
+.method h3{
+font-family:"Playfair Display",serif;
+font-size:1.15rem;
+margin-bottom:9px;
+}
+
+.method p{
+font-size:.82rem;
+color:#6b665d;
+}
+
+/* =====================================================
+   EXAM PREPARATION
+===================================================== */
+
+.exam-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.exam-card{
+padding:30px;
+border-radius:22px;
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.015)
+),
+#11100f;
+border:1px solid rgba(201,164,92,.25);
+}
+
+.exam-card h3{
+font-family:"Playfair Display",serif;
+color:#f0d58e;
+font-size:1.35rem;
+margin-bottom:13px;
+}
+
+.exam-card p{
+color:#aaa49a;
+font-size:.87rem;
+margin-bottom:15px;
+}
+
+.exam-card ul{
+padding-left:18px;
+color:#c7c1b6;
+font-size:.84rem;
+}
+
+.exam-card li{
+margin:6px 0;
+}
+
+/* =====================================================
+   SUBJECT COACHING
+===================================================== */
+
+.coaching-table-wrap{
+overflow-x:auto;
+border-radius:22px;
+box-shadow:var(--shadow-soft);
+}
+
+.coaching-table{
+width:100%;
+border-collapse:collapse;
+background:#fffdf8;
+min-width:760px;
+}
+
+.coaching-table th{
+background:#0e0d0c;
+color:#f0d58e;
+padding:18px;
+text-align:left;
+font-size:.8rem;
 letter-spacing:.5px;
 }
 
-.curriculum-card .note{
-display:block;
-margin-top:7px;
-font-size:.65rem;
-color:#aaa69d;
-line-height:1.4;
+.coaching-table td{
+padding:18px;
+border-bottom:1px solid #e8dfd0;
+font-size:.86rem;
+vertical-align:top;
 }
 
-/* ENGLISH */
-
-.english{
-background:linear-gradient(135deg,#0a0a0a,#17140f);
-color:white;
+.coaching-table tr:hover td{
+background:#fbf5e9;
 }
 
-.english-grid{
+/* =====================================================
+   LEARNING SUPPORT
+===================================================== */
+
+.support-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
 }
 
-.english-item{
+.support-card{
 padding:30px;
-border:1px solid var(--line);
 border-radius:22px;
-background:rgba(255,255,255,.035);
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.015)
+),
+#11100f;
+border:1px solid rgba(201,164,92,.25);
 }
 
-.english-item h3{
+.support-card h3{
 font-family:"Playfair Display",serif;
-font-size:1.5rem;
-color:var(--gold2);
-margin-bottom:8px;
+color:#f0d58e;
+margin-bottom:12px;
 }
 
-.english-item p{
-color:#aaa69d;
-font-size:.82rem;
-}
-
-/* TABLE */
-
-.table-wrap{
-overflow:auto;
-border-radius:22px;
-}
-
-.price-table{
-width:100%;
-border-collapse:collapse;
-min-width:650px;
-background:white;
-}
-
-.price-table th,
-.price-table td{
-padding:17px 20px;
-border-bottom:1px solid #ece8df;
-text-align:left;
-}
-
-.price-table th{
-background:#111;
-color:var(--gold2);
-font-size:.76rem;
-letter-spacing:1px;
-text-transform:uppercase;
-}
-
-.price-table td{
+.support-card p{
+color:#aaa49a;
 font-size:.88rem;
+margin-bottom:15px;
 }
 
-/* PLANS */
-
-.membership-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px;
+.support-card ul{
+padding-left:18px;
+color:#c7c1b6;
+font-size:.84rem;
 }
 
-.plan{
-background:white;
-border-radius:25px;
-padding:27px;
-border:1px solid rgba(0,0,0,.08);
-position:relative;
-display:flex;
-flex-direction:column;
-min-height:390px;
+.support-card li{
+margin:6px 0;
 }
 
-.plan.featured{
-background:#111;
-color:white;
-border-color:var(--gold);
-}
+/* =====================================================
+   RESOURCES
+===================================================== */
 
-.plan-badge{
-position:absolute;
-right:18px;
-top:18px;
-font-size:.6rem;
-padding:6px 9px;
-border-radius:999px;
-background:var(--gold);
-color:#111;
-font-weight:900;
-}
-
-.plan h3{
-font-family:"Playfair Display",serif;
-font-size:1.5rem;
-}
-
-.plan-price{
-font-size:2.2rem;
-font-weight:900;
-margin:14px 0;
-}
-
-.plan-price span{
-font-size:.75rem;
-color:#888;
-}
-
-.plan ul{
-list-style:none;
-display:grid;
-gap:10px;
-margin:10px 0 25px;
-flex:1;
-}
-
-.plan li{
-font-size:.78rem;
-color:#666;
-}
-
-.plan.featured li{
-color:#bbb;
-}
-
-.plan li:before{
-content:"✓";
-color:var(--gold);
-font-weight:900;
-margin-right:8px;
-}
-
-/* LIBRARY */
-
-.library-grid{
+.resources-grid{
 display:grid;
 grid-template-columns:repeat(3,1fr);
 gap:20px;
 }
 
 .resource{
-padding:26px;
-border-radius:23px;
-background:white;
-border:1px solid rgba(0,0,0,.08);
-}
-
-.resource-tag{
-font-size:.62rem;
-color:#9a7938;
-font-weight:900;
-letter-spacing:1px;
-text-transform:uppercase;
+padding:28px;
+border-radius:21px;
+background:linear-gradient(
+145deg,
+#fffdf8,
+#f4eee2
+);
+border:1px solid rgba(201,164,92,.16);
+box-shadow:0 18px 50px rgba(23,21,18,.10);
 }
 
 .resource h3{
 font-family:"Playfair Display",serif;
-margin:8px 0;
-font-size:1.35rem;
+font-size:1.25rem;
+margin-bottom:10px;
 }
 
 .resource p{
-font-size:.8rem;
-color:#777;
+font-size:.86rem;
+color:#6b665d;
 margin-bottom:18px;
 }
 
-/* TESTIMONIAL */
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
 
 .testimonial-grid{
 display:grid;
@@ -984,32 +1044,80 @@ gap:20px;
 }
 
 .testimonial{
-background:#111;
-border:1px solid var(--line);
-border-radius:23px;
-padding:27px;
-color:white;
-}
-
-.testimonial-tag{
-color:var(--gold);
-font-size:.65rem;
-font-weight:900;
-letter-spacing:1px;
+padding:30px;
+border-radius:22px;
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.015)
+),
+#11100f;
+border:1px solid rgba(201,164,92,.27);
 }
 
 .testimonial p{
-color:#c6c0b6;
-font-size:.86rem;
-margin:15px 0;
+color:#c8c1b6;
+font-size:.9rem;
+margin-bottom:18px;
 }
 
 .testimonial strong{
-color:var(--gold2);
-font-size:.78rem;
+color:#f0d58e;
 }
 
-/* CONTACT */
+/* =====================================================
+   VIDEO / REVIEW
+===================================================== */
+
+.video-area{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+align-items:stretch;
+}
+
+.video-box{
+min-height:320px;
+border-radius:25px;
+border:1px solid rgba(201,164,92,.25);
+background:
+radial-gradient(
+circle at center,
+rgba(201,164,92,.12),
+transparent 30%
+),
+#0b0b0b;
+display:grid;
+place-items:center;
+color:#f0d58e;
+}
+
+.video-box span{
+font-size:3rem;
+}
+
+.review-box{
+padding:35px;
+border-radius:25px;
+background:#fffdf8;
+border:1px solid rgba(201,164,92,.17);
+}
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-section{
+background:
+radial-gradient(
+circle at 80% 0%,
+rgba(201,164,92,.10),
+transparent 25%
+),
+#080808;
+color:#fff;
+}
 
 .contact-grid{
 display:grid;
@@ -1018,358 +1126,332 @@ gap:25px;
 }
 
 .contact-card{
-background:#111;
-color:white;
-padding:30px;
+padding:35px;
 border-radius:25px;
-border:1px solid var(--line);
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.015)
+),
+#11100f;
+border:1px solid rgba(201,164,92,.27);
 }
 
 .contact-card h3{
 font-family:"Playfair Display",serif;
+color:#f0d58e;
 font-size:1.7rem;
-margin-bottom:12px;
+margin-bottom:15px;
 }
 
 .contact-card p{
-color:#aaa69d;
-font-size:.85rem;
-margin-bottom:18px;
+color:#aaa49a;
+margin-bottom:20px;
 }
 
-.form{
+.contact-links{
 display:grid;
 gap:12px;
 }
 
-.form input,
-.form textarea,
-.form select{
-width:100%;
+.contact-links a{
 padding:14px 16px;
-border-radius:13px;
-border:1px solid #ddd7cb;
-background:white;
-outline:none;
+border:1px solid rgba(201,164,92,.20);
+border-radius:14px;
+color:#d6d0c6;
+transition:.2s;
 }
 
-.form textarea{
-min-height:130px;
-resize:vertical;
+.contact-links a:hover{
+background:rgba(201,164,92,.08);
+border-color:rgba(240,213,142,.45);
 }
 
-/* FOOTER */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-background:#050505;
-color:#aaa69d;
-padding:60px 0 30px;
-border-top:1px solid var(--line);
+background:
+radial-gradient(
+circle at 80% 0%,
+rgba(201,164,92,.08),
+transparent 25%
+),
+#050505;
+color:#aaa49a;
+padding:50px 0 25px;
+border-top:1px solid rgba(201,164,92,.15);
 }
 
 .footer-grid{
 display:grid;
-grid-template-columns:1.4fr repeat(3,1fr);
-gap:30px;
+grid-template-columns:1.4fr 1fr 1fr 1fr;
+gap:35px;
+padding-bottom:35px;
 }
 
-.footer-col h4{
-color:white;
+footer h4{
+color:#f0d58e;
 margin-bottom:14px;
 }
 
-.footer-col a{
+footer a{
 display:block;
-font-size:.78rem;
-margin:8px 0;
+margin:7px 0;
+font-size:.84rem;
 }
 
-.footer-col a:hover{
-color:var(--gold2);
+footer a:hover{
+color:#fff;
 }
 
 .footer-bottom{
+padding-top:22px;
 border-top:1px solid rgba(255,255,255,.08);
-margin-top:35px;
-padding-top:20px;
-font-size:.7rem;
+font-size:.75rem;
 display:flex;
 justify-content:space-between;
-gap:20px;
+gap:15px;
 }
 
-/* MODAL */
+/* =====================================================
+   AI BUTTON
+===================================================== */
+
+.ai-float{
+position:fixed;
+right:28px;
+bottom:28px;
+width:60px;
+height:60px;
+border-radius:50%;
+display:grid;
+place-items:center;
+font-weight:900;
+color:#111;
+background:linear-gradient(
+145deg,
+#f2d990,
+#b8893e
+);
+box-shadow:
+0 12px 40px rgba(0,0,0,.30),
+0 0 0 5px rgba(201,164,92,.06);
+z-index:900;
+}
+
+.ai-panel{
+display:none;
+position:fixed;
+right:28px;
+bottom:100px;
+width:min(370px,calc(100vw - 40px));
+padding:25px;
+border-radius:22px;
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,.055),
+rgba(255,255,255,.015)
+),
+#101010;
+border:1px solid rgba(240,213,142,.30);
+box-shadow:0 25px 70px rgba(0,0,0,.35);
+z-index:899;
+}
+
+.ai-panel.active{
+display:block;
+}
+
+.ai-panel h3{
+font-family:"Playfair Display",serif;
+color:#f0d58e;
+margin-bottom:8px;
+}
+
+.ai-panel p{
+font-size:.84rem;
+color:#aaa49a;
+}
+
+/* =====================================================
+   MODALS
+===================================================== */
 
 .modal{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.78);
-backdrop-filter:blur(10px);
-z-index:2000;
+background:rgba(0,0,0,.72);
 display:none;
-place-items:center;
+align-items:center;
+justify-content:center;
 padding:20px;
+z-index:2000;
+backdrop-filter:blur(7px);
 }
 
-.modal.show{
-display:grid;
+.modal.active{
+display:flex;
 }
 
 .modal-card{
 width:min(720px,100%);
 max-height:90vh;
 overflow:auto;
-background:#fff;
-border-radius:27px;
-padding:30px;
+padding:35px;
+border-radius:25px;
+background:linear-gradient(
+145deg,
+#fffdf8,
+#f1e8d8
+);
+border:1px solid rgba(201,164,92,.20);
+box-shadow:0 35px 100px rgba(0,0,0,.35);
 position:relative;
-box-shadow:0 30px 100px rgba(0,0,0,.4);
 }
 
 .modal-close{
 position:absolute;
 right:18px;
-top:18px;
-width:36px;
-height:36px;
+top:15px;
+width:38px;
+height:38px;
+border:0;
 border-radius:50%;
-border:1px solid #ddd;
-background:transparent;
-font-size:1.1rem;
-z-index:3;
+background:#111;
+color:#fff;
 }
 
 .modal-card h2{
 font-family:"Playfair Display",serif;
-font-size:2rem;
 margin-bottom:12px;
-padding-right:40px;
 }
 
 .modal-card p{
-color:#6d6961;
-font-size:.9rem;
+color:#625d54;
 margin-bottom:18px;
 }
 
-.modal-actions{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:20px;
-}
-
-.choice-grid{
+.modal-content{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:12px;
-margin-top:20px;
+gap:13px;
 }
 
-.choice{
-border:1px solid #e2ddd2;
-background:#faf8f3;
+.modal-content-item{
 padding:18px;
-border-radius:16px;
-text-align:left;
-transition:.2s;
+border-radius:15px;
+background:#fbf7ef;
+border:1px solid #dfd2bb;
 }
 
-.choice:hover{
-border-color:var(--gold);
-transform:translateY(-2px);
-}
-
-/* AI */
-
-.ai-float{
-position:fixed;
-right:24px;
-bottom:24px;
-z-index:1500;
-width:58px;
-height:58px;
-border-radius:50%;
-border:1px solid var(--gold);
-background:linear-gradient(145deg,#f0d58e,#9d7835);
-color:#111;
-font-weight:900;
-box-shadow:0 15px 40px rgba(0,0,0,.25);
-}
-
-.ai-panel{
-position:fixed;
-right:24px;
-bottom:94px;
-width:min(360px,calc(100% - 30px));
-background:#111;
-color:white;
-border:1px solid var(--line);
-border-radius:23px;
-padding:20px;
-z-index:1500;
-display:none;
-box-shadow:var(--shadow);
-}
-
-.ai-panel.show{
+.modal-content-item strong{
 display:block;
+margin-bottom:5px;
 }
 
-.ai-panel h3{
-font-family:"Playfair Display",serif;
-font-size:1.4rem;
-margin-bottom:6px;
-}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
-.ai-panel p{
-color:#aaa69d;
-font-size:.75rem;
-margin-bottom:15px;
-}
-
-.ai-options{
-display:grid;
-gap:8px;
-}
-
-.ai-options button{
-background:#1a1a1a;
-border:1px solid var(--line);
-color:#ddd;
-padding:11px;
-border-radius:12px;
-text-align:left;
-font-size:.75rem;
-}
-
-.ai-options button:hover{
-color:var(--gold2);
-border-color:var(--gold);
-}
-
-/* TOAST */
-
-.toast{
-position:fixed;
-left:50%;
-bottom:25px;
-transform:translateX(-50%) translateY(100px);
-background:#111;
-color:white;
-border:1px solid var(--line);
-padding:13px 18px;
-border-radius:999px;
-z-index:3000;
-font-size:.75rem;
-opacity:0;
-transition:.3s;
-max-width:90%;
-text-align:center;
-}
-
-.toast.show{
-transform:translateX(-50%) translateY(0);
-opacity:1;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1100px){
+@media(max-width:1000px){
 
 .nav-links{
-display:none;
+gap:14px;
 }
 
-.mobile-toggle{
-display:block;
-}
-
-.hero-grid,
-.learning-feature,
-.contact-grid{
+.hero-grid{
 grid-template-columns:1fr;
+gap:40px;
 }
 
-.card-grid,
 .program-grid,
-.special-grid,
-.library-grid,
-.testimonial-grid{
+.board-grid,
+.card-grid,
+.exam-grid,
+.support-grid,
+.resources-grid,
+.testimonial-grid,
+.research-grid{
 grid-template-columns:repeat(2,1fr);
 }
 
-.membership-grid{
+.subject-grid{
+grid-template-columns:repeat(3,1fr);
+}
+
+.method-grid{
 grid-template-columns:repeat(2,1fr);
 }
 
-.subject-grid,
-.english-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.curriculum-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
-.stats{
+.stats-grid{
 grid-template-columns:repeat(2,1fr);
 }
 
 .footer-grid{
 grid-template-columns:repeat(2,1fr);
 }
+
 }
 
-@media(max-width:650px){
+@media(max-width:700px){
 
 .section{
-padding:70px 0;
+padding:75px 0;
 }
 
-.hero{
-padding-top:125px;
+.nav-inner{
+min-height:70px;
 }
 
-.hero h1{
-font-size:3.1rem;
-}
-
-.card-grid,
-.program-grid,
-.special-grid,
-.hub-grid,
-.library-grid,
-.testimonial-grid,
-.membership-grid,
-.subject-grid,
-.english-grid,
-.curriculum-grid,
-.stats,
-.choice-grid{
-grid-template-columns:1fr;
-}
-
-.nav-actions{
+.nav-links{
 display:none;
 }
 
-.progress-wrap{
-grid-template-columns:100px 1fr;
+.nav-book{
+margin-left:auto;
 }
 
-.progress-ring{
-width:100px;
-height:100px;
+.hero{
+min-height:auto;
+padding:100px 0 80px;
 }
 
-.progress-ring:after{
-width:72px;
-height:72px;
+.hero h1{
+font-size:3rem;
+letter-spacing:-1px;
 }
 
-.learning-visual{
-min-height:370px;
+.program-grid,
+.board-grid,
+.card-grid,
+.exam-grid,
+.support-grid,
+.resources-grid,
+.testimonial-grid,
+.research-grid,
+.path-details,
+.video-area,
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.subject-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.method-grid{
+grid-template-columns:1fr;
+}
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.subject-board-title{
+display:block;
 }
 
 .footer-grid{
@@ -1377,2146 +1459,69 @@ grid-template-columns:1fr;
 }
 
 .footer-bottom{
+display:block;
+}
+
+.footer-bottom div{
+margin-bottom:7px;
+}
+
+}
+
+@media(max-width:480px){
+
+.container{
+width:90%;
+}
+
+.hero h1{
+font-size:2.5rem;
+}
+
+.hero-actions{
 flex-direction:column;
 }
 
-.modal-card{
-padding:23px;
+.hero-actions .btn{
+width:100%;
+}
+
+.subject-grid{
+grid-template-columns:1fr;
+}
+
+.stats-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.stat{
+padding:18px 10px;
+}
+
+.stat strong{
+font-size:1.6rem;
 }
 
 .ai-float{
-right:15px;
-bottom:15px;
+right:18px;
+bottom:18px;
 }
 
-.ai-panel{
-right:15px;
-bottom:85px;
 }
 
-.orbit-one{left:7%}
-.orbit-two{right:7%}
-.orbit-three{left:8%}
-.orbit-four{right:8%}
-
-.curriculum-group-title{
-display:block;
-}
-
-.curriculum-group-title span{
-display:block;
-margin-top:6px;
-}
-}
 </style>
 </head>
 
 <body>
 
-<!-- NAVIGATION -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-<nav class="navbar">
-
+<header class="navbar">
 <div class="container nav-inner">
 
 <a href="#home" class="logo">
-<div class="logo-mark">LH</div>
-<div class="logo-text">
-Learning Hub
-<span>Global Learning</span>
-</div>
-</a>
-
-<div class="nav-links">
-
-<a href="#programmes">Programmes</a>
-<a href="#subjects">Subjects</a>
-<a href="#boards">International Boards</a>
-<a href="#exams">Exams</a>
-<a href="#specialist">Learning Support</a>
-<a href="#resources">Resources</a>
-<a href="#teacher">Apply to Teach</a>
-
-</div>
-
-<div class="nav-actions">
-
-<a class="btn btn-gold"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book Now
-</a>
-
-<button class="mobile-toggle" onclick="toggleMobile()" aria-label="Open navigation">
-☰
-</button>
-
-</div>
-
-</div>
-
-<div id="mobileMenu"
-style="display:none;background:#111;border-top:1px solid var(--line);padding:20px;">
-
-<div class="container"
-style="display:grid;gap:13px;color:#ddd;font-size:.8rem;">
-
-<a href="#programmes" onclick="toggleMobile()">Programmes</a>
-<a href="#subjects" onclick="toggleMobile()">Subjects</a>
-<a href="#boards" onclick="toggleMobile()">International Boards</a>
-<a href="#exams" onclick="toggleMobile()">International Exams</a>
-<a href="#specialist" onclick="toggleMobile()">Learning Support</a>
-<a href="#resources" onclick="toggleMobile()">Resources</a>
-<a href="#teacher" onclick="toggleMobile()">Apply to Teach</a>
-<a href="#contact" onclick="toggleMobile()">Contact</a>
-
-</div>
-</div>
-
-</nav>
-
-<!-- HERO -->
-
-<section class="hero" id="home">
-
-<div class="container hero-grid">
-
-<div>
-
-<div class="eyebrow">
-Global Online Learning Platform
-</div>
-
-<h1>
-Learn smarter.<br>
-<span>Grow with Learning Hub.</span>
-</h1>
-
-<p>
-Global online tutoring and learning support for school students,
-international learners, exam candidates and adults.
-Personalised learning, international curriculum support and modern
-digital learning experiences.
-</p>
-
-<div class="hero-buttons">
-
-<a class="btn btn-gold"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book a Session
-</a>
-
-<a href="#programmes" class="btn btn-outline">
-Explore Programmes
-</a>
-
-<a href="#subjects" class="btn btn-outline">
-Choose a Subject
-</a>
-
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<strong>Global</strong>
-<span>Learning Platform</span>
-</div>
-
-<div class="stat">
-<strong>1:1</strong>
-<span>Personalised Support</span>
-</div>
-
-<div class="stat">
-<strong>International</strong>
-<span>Boards & Curricula</span>
-</div>
-
-<div class="stat">
-<strong>Exam</strong>
-<span>Preparation</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="intelligence">
-
-<div class="intel-top">
-
-<div>
-<div class="intel-label">
-LEARNING INTELLIGENCE
-</div>
-
-<p style="color:#aaa;font-size:.72rem;margin-top:4px;">
-Personalised learning approach
-</p>
-</div>
-
-<div class="ai-orb"></div>
-
-</div>
-
-<div class="progress-wrap">
-
-<div class="progress-ring">
-<strong>72%</strong>
-</div>
-
-<div>
-
-<div style="color:#aaa;font-size:.68rem;letter-spacing:1px;">
-LEARNING PROFILE
-</div>
-
-<h3 style="font-family:'Playfair Display',serif;margin:7px 0;">
-Academic Development
-</h3>
-
-<p style="color:#aaa;font-size:.75rem;">
-Learning pathways adapt around goals, practice and progress.
-</p>
-
-</div>
-
-</div>
-
-<div class="recommendation">
-
-<small>
-SMART RECOMMENDATION
-</small>
-
-<h3>
-Strengthen Academic English
-</h3>
-
-<p>
-Improve vocabulary, writing structure and analytical expression.
-</p>
-
-<div class="next-step">
-NEXT STEP &nbsp; Practice → Review → Progress
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- HUB -->
-
-<section class="section" id="hub">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Your learning ecosystem</small>
-
-<h2>
-One platform. Different learning journeys.
-</h2>
-
-<p>
-Learning Hub brings students, parents and educators together
-through a modern global learning environment.
-No website account is required to start learning.
-</p>
-
-</div>
-
-<div class="hub-grid">
-
-<div class="hub">
-
-<div>
-
-<div class="card-icon">🎓</div>
-
-<h3>Student Hub</h3>
-
-<p>
-Choose a subject, explore learning support and book directly.
-</p>
-
-</div>
-
-<button class="btn btn-gold"
-onclick="openStudentActions()">
-Choose Learning
-</button>
-
-</div>
-
-<div class="hub">
-
-<div>
-
-<div class="card-icon">👨‍👩‍👧</div>
-
-<h3>Parent Hub</h3>
-
-<p>
-Find suitable support, ask questions and arrange a consultation.
-</p>
-
-</div>
-
-<button class="btn btn-gold"
-onclick="openParentActions()">
-Parent Support
-</button>
-
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- PROGRAMMES / LEARNING PATHS -->
-
-<section class="section dark" id="programmes">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Learning pathways</small>
-
-<h2>
-Programmes designed around real learning goals.
-</h2>
-
-<p>
-Choose structured support for academic development,
-international curriculum, English, exams and learning skills.
-</p>
-
-</div>
-
-<div class="program-grid">
-
-<div class="program">
-<h3>School & Academic Learning</h3>
-<p>Personalised subject support, homework guidance and academic development.</p>
-<button class="btn btn-gold"
-onclick="openTopic('School & Academic Learning','Personalised 1:1 support across selected school and academic subjects.')">
-Explore
-</button>
-</div>
-
-<div class="program">
-<h3>International Education</h3>
-<p>Support for IB, Cambridge, Pearson Edexcel, OxfordAQA and American pathways.</p>
-<button class="btn btn-gold"
-onclick="openTopic('International Education','International curriculum support across major global education pathways.')">
-Explore
-</button>
-</div>
-
-<div class="program">
-<h3>Career & Professional Skills</h3>
-<p>Academic English, communication, study skills and professional learning development.</p>
-<button class="btn btn-gold"
-onclick="openTopic('Career & Professional Skills','Develop communication, academic, professional and independent learning skills.')">
-Explore
-</button>
-</div>
-
-<div class="program">
-<h3>English Development</h3>
-<p>Reading, writing, speaking, vocabulary and academic communication.</p>
-<button class="btn btn-gold"
-onclick="openTopic('English Development','Build stronger English through structured reading, writing, vocabulary and speaking practice.')">
-Explore
-</button>
-</div>
-
-<div class="program">
-<h3>Exam Preparation</h3>
-<p>English, language, academic and international examination preparation.</p>
-<button class="btn btn-gold"
-onclick="openTopic('Exam Preparation','Targeted preparation with practice, feedback and personalised guidance.')">
-Explore
-</button>
-</div>
-
-<div class="program">
-<h3>Study Skills</h3>
-<p>Organisation, confidence, independent learning and academic skills.</p>
-<button class="btn btn-gold"
-onclick="openTopic('Study Skills','Build independent learning habits, organisation, confidence and academic strategies.')">
-Explore
-</button>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- SPECIALIST SUPPORT -->
-
-<section class="section dark" id="specialist">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Specialist student support</small>
-
-<h2>
-Additional learning pathways for individual needs.
-</h2>
-
-<p>
-Specialist support is arranged after discussing the learner's
-needs and learning goals.
-</p>
-
-</div>
-
-<div class="special-grid">
-
-<div class="special">
-<small>Advance Planning</small>
-<h3>Dyslexia Support</h3>
-<p>Structured reading, literacy and confidence-focused learning support.</p>
-<button class="btn btn-gold" onclick="openSpecial('Dyslexia Support')">
-Explore Support
-</button>
-</div>
-
-<div class="special">
-<small>Advance Planning</small>
-<h3>Autism Learning Support</h3>
-<p>Individualised learning approaches with structured and supportive guidance.</p>
-<button class="btn btn-gold" onclick="openSpecial('Autism Learning Support')">
-Explore Support
-</button>
-</div>
-
-<div class="special">
-<small>Advance Planning</small>
-<h3>Learning Differences</h3>
-<p>Personalised academic support for different learning profiles.</p>
-<button class="btn btn-gold" onclick="openSpecial('Learning Differences')">
-Explore Support
-</button>
-</div>
-
-<div class="special">
-<small>Advance Planning</small>
-<h3>Language & Communication</h3>
-<p>Support for communication, language development and confidence.</p>
-<button class="btn btn-gold" onclick="openSpecial('Language & Communication')">
-Explore Support
-</button>
-</div>
-
-<div class="special">
-<small>Advance Planning</small>
-<h3>Reading Confidence</h3>
-<p>Supportive reading practice designed around individual progress.</p>
-<button class="btn btn-gold" onclick="openSpecial('Reading Confidence')">
-Explore Support
-</button>
-</div>
-
-<div class="special">
-<small>Advance Planning</small>
-<h3>Confidence & Study Skills</h3>
-<p>Build confidence, organisation and independent learning strategies.</p>
-<button class="btn btn-gold" onclick="openSpecial('Confidence & Study Skills')">
-Explore Support
-</button>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- PERSONALIZED -->
-
-<section class="section">
-
-<div class="container learning-feature">
-
-<div class="learning-visual">
-
-<div class="learning-orbit">
-<div class="learning-core">LEARN</div>
-</div>
-
-<div class="orbit-label orbit-one">Visual</div>
-<div class="orbit-label orbit-two">Practice</div>
-<div class="orbit-label orbit-three">Listen</div>
-<div class="orbit-label orbit-four">Progress</div>
-
-</div>
-
-<div class="learning-copy">
-
-<div class="eyebrow" style="color:#9a7938;">
-Modern learning
-</div>
-
-<h2>
-Understand → Practise → Progress
-</h2>
-
-<p>
-Learning support can combine visual explanation, listening,
-practice, guided activities and independent learning.
-</p>
-
-<div class="steps">
-
-<div class="step">
-<div class="step-number">01</div>
-<div>
-<strong>Understand</strong>
-<p style="margin:0;font-size:.82rem;">
-Build clear concepts and academic understanding.
-</p>
-</div>
-</div>
-
-<div class="step">
-<div class="step-number">02</div>
-<div>
-<strong>Practise</strong>
-<p style="margin:0;font-size:.82rem;">
-Apply ideas through guided and interactive practice.
-</p>
-</div>
-</div>
-
-<div class="step">
-<div class="step-number">03</div>
-<div>
-<strong>Progress</strong>
-<p style="margin:0;font-size:.82rem;">
-Review learning and identify the next step.
-</p>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-</section>
-
-<!-- AUDIENCE -->
-
-<section class="section dark">
-
-<div class="container">
-
-<div class="section-heading">
-<small>Who we support</small>
-<h2>Learning support for different stages.</h2>
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-<div class="card-icon">🎒</div>
-<h3>School Students</h3>
-<p>Academic tutoring, homework support and confidence-building.</p>
-</div>
-
-<div class="card">
-<div class="card-icon">🌍</div>
-<h3>International Students</h3>
-<p>International curriculum and academic English support.</p>
-</div>
-
-<div class="card">
-<div class="card-icon">📝</div>
-<h3>Exam Candidates</h3>
-<p>International examination preparation and targeted practice.</p>
-</div>
-
-<div class="card">
-<div class="card-icon">💼</div>
-<h3>Adult Learners</h3>
-<p>English development, communication and academic skills.</p>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- SUBJECTS -->
-
-<section class="section" id="subjects">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Subjects</small>
-
-<h2>Focused academic support.</h2>
-
-<p>
-Choose a subject and explore the available learning pathway.
-</p>
-
-</div>
-
-<div class="subject-grid">
-
-<div class="subject" onclick="openSubject('English')">
-English
-<small>Language development</small>
-</div>
-
-<div class="subject" onclick="openSubject('Mathematics')">
-Mathematics
-<small>School & international curricula</small>
-</div>
-
-<div class="subject" onclick="openSubject('Psychology')">
-Psychology
-<small>IB & Cambridge support</small>
-</div>
-
-<div class="subject" onclick="openSubject('Business Studies')">
-Business Studies
-<small>International curriculum</small>
-</div>
-
-<div class="subject" onclick="openSubject('Sociology')">
-Sociology
-<small>Cambridge support</small>
-</div>
-
-<div class="subject" onclick="openSubject('Environmental Systems & Societies')">
-Environmental Systems & Societies
-<small>IB interdisciplinary subject</small>
-</div>
-
-<div class="subject" onclick="openSubject('Academic Writing')">
-Academic Writing
-<small>Essays & academic expression</small>
-</div>
-
-<div class="subject" onclick="openSubject('Study Skills')">
-Study Skills
-<small>Independent learning</small>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- INTERNATIONAL CURRICULUM CATALOGUE -->
-
-<section class="section curriculum-section" id="international-subjects">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>International curriculum catalogue</small>
-
-<h2>
-IB & Cambridge subjects.
-</h2>
-
-<p>
-Explore Learning Hub support across the International Baccalaureate
-Diploma Programme, Cambridge International AS & A Level, and
-Cambridge IGCSE / O Level pathways.
-</p>
-
-</div>
-
-<!-- IB -->
-
-<div class="curriculum-group" id="ib-subjects">
-
-<div class="curriculum-group-title">
-<h3>IB Diploma Programme</h3>
-<span>Current DP subject structure</span>
-</div>
-
-<div class="curriculum-grid">
-
-<div class="curriculum-card">
-<strong>Language A: Literature</strong>
-<span class="code">IB DP • Group 1</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Language A: Language and Literature</strong>
-<span class="code">IB DP • Group 1</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Literature and Performance</strong>
-<span class="code">IB DP • Groups 1 & 6</span>
-<span class="note">Interdisciplinary subject.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Classical Languages</strong>
-<span class="code">IB DP • Group 2</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Language ab initio</strong>
-<span class="code">IB DP • Group 2</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Language B</strong>
-<span class="code">IB DP • Group 2</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Business Management</strong>
-<span class="code">IB DP • Group 3</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Digital Society</strong>
-<span class="code">IB DP • Group 3</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Economics</strong>
-<span class="code">IB DP • Group 3</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Geography</strong>
-<span class="code">IB DP • Group 3</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Global Politics</strong>
-<span class="code">IB DP • Group 3</span>
-</div>
-
-<div class="curriculum-card">
-<strong>History</strong>
-<span class="code">IB DP • Group 3</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Philosophy</strong>
-<span class="code">IB DP • Group 3</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Psychology</strong>
-<span class="code">IB DP • Group 3</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Social and Cultural Anthropology</strong>
-<span class="code">IB DP • Group 3</span>
-</div>
-
-<div class="curriculum-card">
-<strong>World Religions</strong>
-<span class="code">IB DP • Group 3</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Biology</strong>
-<span class="code">IB DP • Group 4</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Chemistry</strong>
-<span class="code">IB DP • Group 4</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Computer Science</strong>
-<span class="code">IB DP • Group 4</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Design Technology</strong>
-<span class="code">IB DP • Group 4</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Environmental Systems and Societies</strong>
-<span class="code">IB DP • Groups 3 & 4</span>
-<span class="note">Interdisciplinary subject.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Physics</strong>
-<span class="code">IB DP • Group 4</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Sports, Exercise and Health Science</strong>
-<span class="code">IB DP • Group 4</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Mathematics: Analysis and Approaches</strong>
-<span class="code">IB DP • Group 5</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Mathematics: Applications and Interpretation</strong>
-<span class="code">IB DP • Group 5</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Dance</strong>
-<span class="code">IB DP • Group 6</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Film</strong>
-<span class="code">IB DP • Group 6</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Music</strong>
-<span class="code">IB DP • Group 6</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Theatre</strong>
-<span class="code">IB DP • Group 6</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Visual Arts</strong>
-<span class="code">IB DP • Group 6</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Theory of Knowledge (TOK)</strong>
-<span class="code">IB DP • Core</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Extended Essay (EE)</strong>
-<span class="code">IB DP • Core</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Creativity, Activity, Service (CAS)</strong>
-<span class="code">IB DP • Core</span>
-</div>
-
-</div>
-</div>
-
-<!-- CAMBRIDGE AS A LEVEL -->
-
-<div class="curriculum-group" id="cambridge-a-level">
-
-<div class="curriculum-group-title">
-<h3>Cambridge International AS & A Level</h3>
-<span>Official syllabus codes</span>
-</div>
-
-<div class="curriculum-grid">
-
-<div class="curriculum-card">
-<strong>Economics</strong>
-<span class="code">9708</span>
-</div>
-
-<div class="curriculum-card">
-<strong>English Language</strong>
-<span class="code">9093</span>
-</div>
-
-<div class="curriculum-card">
-<strong>English Literature</strong>
-<span class="code">9695</span>
-</div>
-
-<div class="curriculum-card">
-<strong>English Language and Literature</strong>
-<span class="code">8695</span>
-<span class="note">AS Level only.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Geography</strong>
-<span class="code">9696</span>
-</div>
-
-<div class="curriculum-card">
-<strong>History</strong>
-<span class="code">9489</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Psychology</strong>
-<span class="code">9990</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Sociology</strong>
-<span class="code">9699</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Mathematics</strong>
-<span class="code">9709</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Further Mathematics</strong>
-<span class="code">9231</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Biology</strong>
-<span class="code">9700</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Chemistry</strong>
-<span class="code">9701</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Physics</strong>
-<span class="code">9702</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Computer Science</strong>
-<span class="code">9618</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Information Technology</strong>
-<span class="code">9626</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Law</strong>
-<span class="code">9084</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Media Studies</strong>
-<span class="code">9607</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Travel and Tourism</strong>
-<span class="code">9395</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Global Perspectives & Research</strong>
-<span class="code">9239</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Islamic Studies</strong>
-<span class="code">9488</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Urdu</strong>
-<span class="code">9686</span>
-</div>
-
-<div class="curriculum-card">
-<strong>English General Paper</strong>
-<span class="code">8021</span>
-<span class="note">AS Level only.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Environmental Management</strong>
-<span class="code">8291</span>
-<span class="note">AS Level only.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Marine Science</strong>
-<span class="code">9693</span>
-</div>
-
-</div>
-</div>
-
-<!-- CAMBRIDGE IGCSE / O LEVEL -->
-
-<div class="curriculum-group" id="cambridge-igcse">
-
-<div class="curriculum-group-title">
-<h3>Cambridge IGCSE / O Level</h3>
-<span>Official qualification names and codes</span>
-</div>
-
-<div class="curriculum-grid">
-
-<div class="curriculum-card">
-<strong>Accounting</strong>
-<span class="code">7707</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Arabic</strong>
-<span class="code">3180</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Art & Design</strong>
-<span class="code">6090</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Bangladesh Studies</strong>
-<span class="code">7094</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Bengali</strong>
-<span class="code">3204</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Biblical Studies</strong>
-<span class="code">2035</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Biology</strong>
-<span class="code">5090</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Business</strong>
-<span class="code">7081</span>
-<span class="note">Cambridge O Level; new syllabus name/code from first assessment June 2027.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Business Studies</strong>
-<span class="code">7115</span>
-<span class="note">Cambridge O Level; syllabus name/code used before the 2027 change.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Chemistry</strong>
-<span class="code">5070</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Commerce</strong>
-<span class="code">7100</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Computer Science</strong>
-<span class="code">2210</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Economics</strong>
-<span class="code">2281</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>English Language</strong>
-<span class="code">1123</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Environmental Management</strong>
-<span class="code">5014</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Fashion & Textiles</strong>
-<span class="code">6130</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Food & Nutrition</strong>
-<span class="code">6065</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Geography</strong>
-<span class="code">2217</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Global Perspectives</strong>
-<span class="code">2069</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>History</strong>
-<span class="code">2147</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Islamic Studies</strong>
-<span class="code">2068</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Islamiyat</strong>
-<span class="code">2058</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Literature in English</strong>
-<span class="code">2010</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Additional Mathematics</strong>
-<span class="code">4037</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Mathematics (Syllabus D)</strong>
-<span class="code">4024</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Pakistan Studies</strong>
-<span class="code">2059</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Physics</strong>
-<span class="code">5054</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Science — Combined</strong>
-<span class="code">5129</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Sociology</strong>
-<span class="code">2251</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Statistics</strong>
-<span class="code">4040</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Urdu — First Language</strong>
-<span class="code">3247</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Urdu — Second Language</strong>
-<span class="code">3248</span>
-<span class="note">Cambridge O Level.</span>
-</div>
-
-<div class="curriculum-card">
-<strong>Travel & Tourism</strong>
-<span class="code">7096</span>
-<span class="note">Cambridge O Level. Withdrawn internationally after the November 2025 series; from 2026 it is offered only to centres in Brunei and Mauritius in the November series. Cambridge IGCSE Travel & Tourism is 0471.</span>
-</div>
-
-</div>
-</div>
-
-</div>
-
-</section>
-
-<!-- ENGLISH -->
-
-<section class="section english" id="english">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>English development</small>
-
-<h2>Build stronger English for study and life.</h2>
-
-<p>
-Develop the language skills needed for academic success,
-international communication and confidence.
-</p>
-
-</div>
-
-<div class="english-grid">
-
-<div class="english-item">
-<h3>Reading</h3>
-<p>Reading comprehension, analysis and confidence.</p>
-</div>
-
-<div class="english-item">
-<h3>Writing</h3>
-<p>Academic structure, clarity, grammar and expression.</p>
-</div>
-
-<div class="english-item">
-<h3>Speaking</h3>
-<p>Fluency, confidence and communication practice.</p>
-</div>
-
-<div class="english-item">
-<h3>Vocabulary</h3>
-<p>Academic and practical vocabulary development.</p>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- MATHEMATICS -->
-
-<section class="section" id="mathematics">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Mathematics</small>
-
-<h2>Make difficult concepts easier to understand.</h2>
-
-<p>
-Concept explanations, guided examples and practice-based learning.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-<div class="card-icon">①</div>
-<h3>Concepts</h3>
-<p>Break complex mathematical ideas into clear steps.</p>
-<button class="btn btn-dark" onclick="openLearning('Mathematics Concepts')">
-Explore
-</button>
-</div>
-
-<div class="card">
-<div class="card-icon">②</div>
-<h3>Practice</h3>
-<p>Apply concepts through structured practice activities.</p>
-<button class="btn btn-dark" onclick="openLearning('Mathematics Practice')">
-Practise
-</button>
-</div>
-
-<div class="card">
-<div class="card-icon">③</div>
-<h3>Problem Solving</h3>
-<p>Develop reasoning and confidence with guided questions.</p>
-<button class="btn btn-dark" onclick="openLearning('Mathematics Problem Solving')">
-Explore
-</button>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- OTHER LEARNING -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-heading">
-<small>Other learning areas</small>
-<h2>More ways to grow.</h2>
-</div>
-
-<div class="program-grid">
-
-<div class="program">
-<h3>Academic Skills</h3>
-<p>Research, essays, analysis and study strategies.</p>
-<button class="btn btn-dark" onclick="openLearning('Academic Skills')">
-Open Learning
-</button>
-</div>
-
-<div class="program">
-<h3>Languages</h3>
-<p>Language development and communication support.</p>
-<button class="btn btn-dark" onclick="openLearning('Languages')">
-Open Learning
-</button>
-</div>
-
-<div class="program">
-<h3>Study Support</h3>
-<p>Planning, organisation and independent learning.</p>
-<button class="btn btn-dark" onclick="openLearning('Study Support')">
-Open Learning
-</button>
-</div>
-
-<div class="program">
-<h3>Young Learners</h3>
-<p>Engaging and supportive learning activities.</p>
-<button class="btn btn-dark" onclick="openLearning('Young Learners')">
-Open Learning
-</button>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- INTERNATIONAL BOARDS -->
-
-<section class="section dark" id="boards">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>International boards</small>
-
-<h2>International curriculum support.</h2>
-
-<p>
-Support across major international education systems and
-curriculum pathways.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-<div class="card-icon">IB</div>
-<h3>International Baccalaureate</h3>
-<p>IB English Language & Literature, Psychology, ESS and broader DP subject support.</p>
-<button class="btn btn-gold" onclick="openBoard('International Baccalaureate')">
-Explore IB
-</button>
-</div>
-
-<div class="card">
-<div class="card-icon">CA</div>
-<h3>Cambridge</h3>
-<p>Cambridge IGCSE, O Level, AS & A Level and English-language academic support.</p>
-<button class="btn btn-gold" onclick="openBoard('Cambridge International')">
-Explore Cambridge
-</button>
-</div>
-
-<div class="card">
-<div class="card-icon">PE</div>
-<h3>Pearson Edexcel</h3>
-<p>International GCSE, GCSE and A Level pathways.</p>
-<button class="btn btn-gold" onclick="openBoard('Pearson Edexcel')">
-Explore Edexcel
-</button>
-</div>
-
-<div class="card">
-<div class="card-icon">OA</div>
-<h3>OxfordAQA</h3>
-<p>International GCSE and International A Level support.</p>
-<button class="btn btn-gold" onclick="openBoard('OxfordAQA')">
-Explore OxfordAQA
-</button>
-</div>
-
-<div class="card">
-<div class="card-icon">US</div>
-<h3>American Qualifications</h3>
-<p>Academic English, school subjects and international American pathways.</p>
-<button class="btn btn-gold" onclick="openBoard('American Qualifications')">
-Explore
-</button>
-</div>
-
-<div class="card">
-<div class="card-icon">+</div>
-<h3>Other International Programmes</h3>
-<p>Support can be discussed for additional international curricula.</p>
-<button class="btn btn-gold" onclick="openBoard('Other International Programmes')">
-Enquire
-</button>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- EXAMS -->
-
-<section class="section" id="exams">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>International examinations</small>
-
-<h2>Prepare with purpose.</h2>
-
-<p>
-English-language, academic and international examination support.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-<div class="card-icon">IELTS</div>
-<h3>IELTS</h3>
-<p>Reading, writing, listening, speaking and exam strategy.</p>
-<button class="btn btn-dark" onclick="openExam('IELTS')">Explore IELTS</button>
-</div>
-
-<div class="card">
-<div class="card-icon">PTE</div>
-<h3>PTE Academic</h3>
-<p>Targeted speaking, writing, reading and listening practice.</p>
-<button class="btn btn-dark" onclick="openExam('PTE Academic')">Explore PTE</button>
-</div>
-
-<div class="card">
-<div class="card-icon">TOEFL</div>
-<h3>TOEFL</h3>
-<p>Academic English and integrated skills preparation.</p>
-<button class="btn btn-dark" onclick="openExam('TOEFL')">Explore TOEFL</button>
-</div>
-
-<div class="card">
-<div class="card-icon">DET</div>
-<h3>Duolingo English Test</h3>
-<p>English skills, practice and test preparation.</p>
-<button class="btn btn-dark" onclick="openExam('Duolingo English Test')">Explore DET</button>
-</div>
-
-<div class="card">
-<div class="card-icon">CAE</div>
-<h3>Cambridge English</h3>
-<p>B2 First, C1 Advanced, C2 Proficiency and related pathways.</p>
-<button class="btn btn-dark" onclick="openExam('Cambridge English')">Explore</button>
-</div>
-
-<div class="card">
-<div class="card-icon">OET</div>
-<h3>OET</h3>
-<p>English communication and language preparation for healthcare contexts.</p>
-<button class="btn btn-dark" onclick="openExam('OET')">Explore</button>
-</div>
-
-<div class="card">
-<div class="card-icon">CEL</div>
-<h3>CELPIP</h3>
-<p>English language preparation for Canadian contexts.</p>
-<button class="btn btn-dark" onclick="openExam('CELPIP')">Explore</button>
-</div>
-
-<div class="card">
-<div class="card-icon">AR</div>
-<h3>Arabic & Language Exams</h3>
-<p>Arabic and other language-learning examination support can be arranged.</p>
-<button class="btn btn-dark" onclick="openExam('Arabic & Language Exams')">Enquire</button>
-</div>
-
-<div class="card">
-<div class="card-icon">A+</div>
-<h3>Academic English</h3>
-<p>Academic vocabulary, writing, analysis and communication.</p>
-<button class="btn btn-dark" onclick="openLearning('Academic English Practice')">
-Start Practice
-</button>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- AUDIO VISUAL -->
-
-<section class="section dark" id="audio">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Audio-Visual / Fun & Informative Learning</small>
-
-<h2>Learning should feel engaging.</h2>
-
-<p>
-Explore visual explanations, guided practice, listening activities,
-reading and vocabulary development.
-</p>
-
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-<div class="card-icon">👁</div>
-<h3>Visual Concepts</h3>
-<p>Learn through diagrams, visual explanations and concept cards.</p>
-<button class="btn btn-gold" onclick="openLearning('Visual Concepts')">Open Learning</button>
-</div>
-
-<div class="card">
-<div class="card-icon">🎯</div>
-<h3>Interactive Practice</h3>
-<p>Practice concepts with guided learning activities.</p>
-<button class="btn btn-gold" onclick="openLearning('Interactive Practice')">Practise</button>
-</div>
-
-<div class="card">
-<div class="card-icon">🧭</div>
-<h3>Guided Learning</h3>
-<p>Follow structured learning steps with clear goals.</p>
-<button class="btn btn-gold" onclick="openLearning('Guided Learning')">Explore</button>
-</div>
-
-<div class="card">
-<div class="card-icon">🎧</div>
-<h3>Listening & Speaking</h3>
-<p>Develop communication through listening and speaking practice.</p>
-<button class="btn btn-gold" onclick="openLearning('Listening & Speaking')">Practise</button>
-</div>
-
-<div class="card">
-<div class="card-icon">📖</div>
-<h3>Reading</h3>
-<p>Build comprehension and reading confidence.</p>
-<button class="btn btn-gold" onclick="openLearning('Reading Practice')">Read</button>
-</div>
-
-<div class="card">
-<div class="card-icon">🔤</div>
-<h3>Vocabulary</h3>
-<p>Build useful academic and communication vocabulary.</p>
-<button class="btn btn-gold" onclick="openLearning('Vocabulary Builder')">Practise</button>
-</div>
-
-<div class="card">
-<div class="card-icon">🧠</div>
-<h3>Independent Study</h3>
-<p>Learn independently with structured resources.</p>
-<button class="btn btn-gold" onclick="openLearning('Independent Study')">Open</button>
-</div>
-
-<div class="card">
-<div class="card-icon">✨</div>
-<h3>Fun Learning</h3>
-<p>Interactive and engaging activities designed to make learning enjoyable.</p>
-<button class="btn btn-gold" onclick="openLearning('Fun Learning')">Explore</button>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- EXPERIENCE -->
-
-<section class="section">
-
-<div class="container">
-
-<div class="section-heading">
-<small>The Learning Hub experience</small>
-<h2>Understand. Practise. Progress.</h2>
-</div>
-
-<div class="card-grid">
-
-<div class="card">
-<div class="card-icon">01</div>
-<h3>Understand</h3>
-<p>Clear explanations matched to the learner.</p>
-</div>
-
-<div class="card">
-<div class="card-icon">02</div>
-<h3>Practise</h3>
-<p>Structured practice turns understanding into ability.</p>
-</div>
-
-<div class="card">
-<div class="card-icon">03</div>
-<h3>Progress</h3>
-<p>Review learning and identify the next step.</p>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- PRICING -->
-
-<section class="section dark" id="pricing">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Lesson pricing</small>
-
-<h2>Accessible global learning.</h2>
-
-<p>
-Introductory rates designed to make personalised online learning
-accessible to international learners.
-</p>
-
-</div>
-
-<div style="margin-bottom:25px;">
-
-<select id="currency"
-onchange="updatePrices()"
-style="padding:13px 17px;border-radius:12px;background:#111;color:white;border:1px solid var(--line);">
-
-<option value="USD">USD</option>
-<option value="PKR">PKR</option>
-<option value="GBP">GBP</option>
-<option value="EUR">EUR</option>
-<option value="AED">AED</option>
-<option value="SAR">SAR</option>
-<option value="CAD">CAD</option>
-<option value="AUD">AUD</option>
-<option value="CNY">CNY</option>
-<option value="JPY">JPY</option>
-<option value="KRW">KRW</option>
-<option value="INR">INR</option>
-
-</select>
-
-</div>
-
-<div class="table-wrap">
-
-<table class="price-table">
-
-<thead>
-<tr>
-<th>Lesson</th>
-<th>Duration</th>
-<th>Price</th>
-<th>Action</th>
-</tr>
-</thead>
-
-<tbody>
-
-<tr>
-<td>Quick Start</td>
-<td>25 minutes</td>
-<td class="lesson-price" data-usd="2">$2</td>
-<td>
-<button class="btn btn-gold" onclick="selectLesson('Quick Start',2)">Book</button>
-</td>
-</tr>
-
-<tr>
-<td>Standard</td>
-<td>50 minutes</td>
-<td class="lesson-price" data-usd="4">$4</td>
-<td>
-<button class="btn btn-gold" onclick="selectLesson('Standard',4)">Book</button>
-</td>
-</tr>
-
-<tr>
-<td>Extended</td>
-<td>80 minutes</td>
-<td class="lesson-price" data-usd="7">$7</td>
-<td>
-<button class="btn btn-gold" onclick="selectLesson('Extended',7)">Book</button>
-</td>
-</tr>
-
-<tr>
-<td>Premium</td>
-<td>100 minutes</td>
-<td class="lesson-price" data-usd="9">$9</td>
-<td>
-<button class="btn btn-gold" onclick="selectLesson('Premium',9)">Book</button>
-</td>
-</tr>
-
-</tbody>
-</table>
-
-</div>
-
-<div style="margin-top:18px;color:#aaa;font-size:.75rem;">
-10-class booking: <strong style="color:var(--gold2);">10% discount</strong>
-&nbsp; • &nbsp;
-2–4 month advance booking: <strong style="color:var(--gold2);">10% discount</strong>
-</div>
-
-</div>
-
-</section>
-
-<!-- PLANS -->
-
-<section class="section" id="plans">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Simple learning packages</small>
-
-<h2>Choose the learning rhythm that fits.</h2>
-
-<p>
-Packages are arranged through Learning Hub Support.
-No automatic payment is claimed on this website.
-</p>
-
-</div>
-
-<div class="membership-grid">
-
-<div class="plan">
-
-<h3>Monthly Core</h3>
-
-<div class="plan-price">
-$20 <span>/month</span>
-</div>
-
-<ul>
-<li>4 × 50-minute lessons</li>
-<li>Learning resources</li>
-<li>Practice support</li>
-<li>Direct booking support</li>
-</ul>
-
-<button class="btn btn-dark" onclick="selectPlan('Monthly Core',20)">
-Choose Plan
-</button>
-
-</div>
-
-<div class="plan">
-
-<h3>10-Class Pack</h3>
-
-<div class="plan-price">10% OFF</div>
-
-<ul>
-<li>10 selected lessons</li>
-<li>10% package discount</li>
-<li>Flexible subject choice</li>
-<li>Learning resources</li>
-</ul>
-
-<button class="btn btn-dark" onclick="selectPlan('10-Class Pack',0)">
-Choose Pack
-</button>
-
-</div>
-
-<div class="plan featured">
-
-<div class="plan-badge">POPULAR</div>
-
-<h3>Advance Booking</h3>
-
-<div class="plan-price">10% OFF</div>
-
-<ul>
-<li>2–4 month advance booking</li>
-<li>10% booking discount</li>
-<li>Planned learning schedule</li>
-<li>Direct support</li>
-</ul>
-
-<button class="btn btn-gold" onclick="selectPlan('2–4 Month Advance Booking',0)">
-Choose Plan
-</button>
-
-</div>
-
-<div class="plan">
-
-<h3>Parent Plus</h3>
-
-<div class="plan-price">
-$15 <span>/month</span>
-</div>
-
-<ul>
-<li>Parent guidance</li>
-<li>Monthly consultation</li>
-<li>Progress discussion</li>
-<li>Resource recommendations</li>
-</ul>
-
-<button class="btn btn-dark" onclick="selectPlan('Parent Plus',15)">
-Choose Plan
-</button>
-
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- LIBRARY -->
-
-<section class="section" id="resources">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Learning Library</small>
-
-<h2>Resources learners can actually use.</h2>
-
-<p>
-The library is designed to grow into a structured collection
-of practice materials, lessons and learning activities.
-</p>
-
-</div>
-
-<div class="library-grid">
-
-<div class="resource">
-<div class="resource-tag">Academic English</div>
-<h3>Academic English Practice</h3>
-<p>Vocabulary, writing structure and academic expression activities.</p>
-<button class="btn btn-dark" onclick="openLearning('Academic English Practice')">
-Open Resource
-</button>
-</div>
-
-<div class="resource">
-<div class="resource-tag">IELTS</div>
-<h3>IELTS Writing Practice</h3>
-<p>Structured writing practice and exam-focused development.</p>
-<button class="btn btn-dark" onclick="openLearning('IELTS Writing Practice')">
-Open Resource
-</button>
-</div>
-
-<div class="resource">
-<div class="resource-tag">Study Skills</div>
-<h3>Study Skills Guide</h3>
-<p>Planning, organisation and independent learning strategies.</p>
-<button class="btn btn-dark" onclick="openLearning('Study Skills Guide')">
-Open Resource
-</button>
-</div>
-
-<div class="resource">
-<div class="resource-tag">Vocabulary</div>
-<h3>High-Value Daily Life Vocabulary</h3>
-<p>Intermediate to advanced vocabulary practice.</p>
-<a class="btn btn-dark"
-href="resources/30_High_Value_Daily_Life_Vocabulary_Intermediate_Advanced.docx"
-target="_blank"
-rel="noopener">
-Open Resource
-</a>
-</div>
-
-<div class="resource">
-<div class="resource-tag">Practice Materials</div>
-<h3>Worksheets & PDFs</h3>
-<p>Learning Hub worksheets and permitted practice materials.</p>
-<button class="btn btn-dark" onclick="openLearning('Worksheets & PDFs')">
-Explore Library
-</button>
-</div>
-
-<div class="resource">
-<div class="resource-tag">Audio & Video</div>
-<h3>Media Learning</h3>
-<p>Guided videos, audio practice and visual learning materials.</p>
-<button class="btn btn-dark" onclick="openLearning('Media Learning')">
-Explore Media
-</button>
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- TESTIMONIALS -->
-
-<section class="section dark">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Example feedback format</small>
-
-<h2>What learner experiences can look like.</h2>
-
-<p>
-The examples below are placeholders and are not presented as
-verified testimonials.
-</p>
-
-</div>
-
-<div class="testimonial-grid">
-
-<div class="testimonial">
-
-<span class="testimonial-tag">EXAMPLE — LEARNER</span>
-
-<p>
-“Lessons can help learners understand difficult concepts more clearly
-and become more confident with their work.”
-</p>
-
-<strong>Illustrative example</strong>
-
-</div>
-
-<div class="testimonial">
-
-<span class="testimonial-tag">EXAMPLE — PARENT</span>
-
-<p>
-“Structured support can provide families with a clearer learning direction.”
-</p>
-
-<strong>Illustrative example</strong>
-
-</div>
-
-<div class="testimonial">
-
-<span class="testimonial-tag">EXAMPLE — EDUCATOR</span>
-
-<p>
-“A personalised approach can make online learning feel organised and accessible.”
-</p>
-
-<strong>Illustrative example</strong>
-
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- TEACHER -->
-
-<section class="section" id="teacher">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Global educator network</small>
-
-<h2>Teach with Learning Hub.</h2>
-
-<p>
-Join a growing international network of educators supporting
-students across subjects, curricula and learning goals.
-</p>
-
-</div>
-
-<div class="contact-card">
-
-<h3>Become a Learning Hub Teacher</h3>
-
-<p>
-Teacher applications are handled through our application system.
-Applicants can submit their CV, supporting documents, passport-size
-photograph, passport copy, introduction video and demo teaching video.
-</p>
-
-<div class="modal-actions">
-
-<a class="btn btn-gold"
-href="https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform"
-target="_blank"
-rel="noopener">
-Apply to Teach
-</a>
-
-<a class="btn btn-outline"
-href="mailto:hublearning117@gmail.com">
-Teacher Support
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section class="section" id="contact">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Contact Learning Hub</small>
-
-<h2>Let's plan your learning journey.</h2>
-
-</div>
-
-<div class="contact-grid">
-
-<div class="contact-card">
-
-<h3>Learning Hub Support</h3>
-
-<p>
-For enrolment, payment arrangements, specialist support,
-membership questions and general enquiries.
-</p>
-
-<p>
-<strong style="color:var(--gold2);">
-hublearning117@gmail.com
-</strong>
-</p>
-
-<div class="modal-actions">
-
-<a class="btn btn-gold"
-href="mailto:hublearning117@gmail.com">
-Email Support
-</a>
-
-<a class="btn btn-outline"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book Consultation
-</a>
-
-</div>
-
-</div>
-
-<div class="contact-card">
-
-<h3>Send an enquiry</h3>
-
-<form class="form" onsubmit="submitContact(event)">
-
-<input id="contactName" required placeholder="Your name">
-
-<input id="contactEmail" type="email" required placeholder="Your email">
-
-<textarea id="contactMessage" required placeholder="How can Learning Hub help?"></textarea>
-
-<button class="btn btn-gold" type="submit">
-Send Enquiry
-</button>
-
-</form>
-
-</div>
-
-</div>
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-<div class="container">
-
-<div class="footer-grid">
-
-<div class="footer-col">
-
-<div class="logo">
 
 <div class="logo-mark">
 LH
@@ -3524,908 +1529,432 @@ LH
 
 <div class="logo-text">
 Learning Hub
-<span>Global Learning</span>
+<span>GLOBAL LEARNING</span>
 </div>
 
-</div>
+</a>
 
-<p style="margin-top:18px;font-size:.78rem;max-width:300px;">
-Global online tutoring, international curriculum support,
-specialist learning support and modern learning experiences.
-</p>
-
-</div>
-
-<div class="footer-col">
-
-<h4>Learning</h4>
+<nav class="nav-links">
 
 <a href="#programmes">Programmes</a>
 <a href="#subjects">Subjects</a>
-<a href="#resources">Resources</a>
-<a href="#plans">Plans</a>
-
-</div>
-
-<div class="footer-col">
-
-<h4>International</h4>
-
 <a href="#boards">International Boards</a>
-<a href="#international-subjects">IB & Cambridge Subjects</a>
-<a href="#exams">International Exams</a>
-<a href="#english">English Development</a>
-<a href="#specialist">Learning Support</a>
+<a href="#exams">Exams</a>
+<a href="#support">Learning Support</a>
+<a href="#resources">Resources</a>
+<a href="#apply">Apply to Teach</a>
+
+</nav>
+
+<a
+class="btn btn-gold nav-book"
+href="https://calendly.com/hublearning117"
+target="_blank"
+rel="noopener">
+Book Now
+</a>
 
 </div>
+</header>
 
-<div class="footer-col">
+<!-- =====================================================
+     HERO
+===================================================== -->
 
-<h4>Connect</h4>
+<section class="hero" id="home">
 
-<a href="#teacher">Apply to Teach</a>
-<a href="mailto:hublearning117@gmail.com">Support</a>
-<a href="https://calendly.com/hublearning117" target="_blank" rel="noopener">Book</a>
+<div class="container hero-grid">
 
-</div>
+<div>
 
-</div>
-
-<div class="footer-bottom">
-
-<span>
-© 2026 Learning Hub. All rights reserved.
-</span>
-
-<span>
-Global Online Learning Platform
-</span>
-
-</div>
-
-</div>
-
-</footer>
-
-<!-- AI -->
-
-<button class="ai-float" onclick="toggleAI()" aria-label="Open Learning Concierge">
-AI
-</button>
-
-<div class="ai-panel" id="aiPanel">
-
-<h3>Learning Concierge</h3>
-
-<p>
-Get a quick recommendation based on what you want to learn.
+<p style="
+color:#d7b96e;
+font-size:.8rem;
+font-weight:800;
+letter-spacing:2px;
+text-transform:uppercase;
+margin-bottom:15px;
+">
+GLOBAL EDUCATION PLATFORM
 </p>
 
-<div class="ai-options">
+<h1>
+Learning for
+<span>Everyone, Everywhere.</span>
+</h1>
 
-<button onclick="aiAnswer('academic')">
-🎓 Academic tutoring
-</button>
+<p>
+Premium online tutoring, international curriculum support,
+exam preparation, English development and personalised
+academic learning for students around the world.
+</p>
 
-<button onclick="aiAnswer('english')">
-🔤 Improve English
-</button>
+<div class="hero-actions">
 
-<button onclick="aiAnswer('exam')">
-📝 Exam preparation
-</button>
+<a
+class="btn btn-gold"
+href="#programmes">
+Explore Programmes
+</a>
 
-<button onclick="aiAnswer('ib')">
-🌍 IB support
-</button>
-
-<button onclick="aiAnswer('special')">
-🧠 Specialist learning support
-</button>
+<a
+class="btn btn-outline"
+href="https://calendly.com/hublearning117"
+target="_blank"
+rel="noopener">
+Book a Consultation
+</a>
 
 </div>
 
 </div>
 
-<!-- GENERAL MODAL -->
+<div class="intelligence">
 
-<div class="modal" id="generalModal">
+<h3>
+Learning designed around the learner.
+</h3>
 
-<div class="modal-card">
+<p>
+Structured academic support combined with
+research-informed teaching and personalised
+learning pathways.
+</p>
 
-<button class="modal-close" onclick="closeModal()" aria-label="Close">
-×
-</button>
+<div class="intelligence-list">
 
-<div id="modalContent"></div>
-
-</div>
-</div>
-
-<!-- TOAST -->
-
-<div class="toast" id="toast"></div>
-
-<script>
-
-/* TOAST */
-
-function showToast(message){
-
-const toast=document.getElementById("toast");
-
-toast.textContent=message;
-
-toast.classList.add("show");
-
-clearTimeout(window.toastTimer);
-
-window.toastTimer=setTimeout(()=>{
-toast.classList.remove("show");
-},3500);
-
-}
-
-
-/* GENERAL MODAL */
-
-function openModal(){
-
-document.getElementById("generalModal")
-.classList.add("show");
-
-document.body.classList.add("modal-open");
-
-}
-
-
-function closeModal(){
-
-document.getElementById("generalModal")
-.classList.remove("show");
-
-document.body.classList.remove("modal-open");
-
-}
-
-
-function setModal(title,text,actions=""){
-
-document.getElementById("modalContent").innerHTML=`
-
-<h2>${title}</h2>
-
-<p>${text}</p>
-
-<div class="modal-actions">
-${actions}
+<div>
+<strong>01</strong>
+<span>International curriculum expertise</span>
 </div>
 
-`;
+<div>
+<strong>02</strong>
+<span>Exam-focused preparation and coaching</span>
+</div>
 
-openModal();
+<div>
+<strong>03</strong>
+<span>Personalised learning strategies</span>
+</div>
 
-}
-
-
-/* STUDENT */
-
-function openStudentActions(){
-
-setModal(
-"Student Learning",
-"Choose what you want to do. No website account is required.",
-`
-
-<div class="choice-grid">
-
-<button class="choice"
-onclick="closeModal();location.href='#subjects'">
-<strong>Choose a Subject</strong><br>
-<small>English, Mathematics, Psychology, Business and more.</small>
-</button>
-
-<button class="choice"
-onclick="closeModal();location.href='#international-subjects'">
-<strong>Explore International Curriculum</strong><br>
-<small>IB, Cambridge IGCSE/O Level and AS & A Level subjects.</small>
-</button>
-
-<button class="choice"
-onclick="closeModal();location.href='#exams'">
-<strong>Prepare for an Exam</strong><br>
-<small>Explore international examination support.</small>
-</button>
-
-<button class="choice"
-onclick="closeModal();location.href='#resources'">
-<strong>Open Resources</strong><br>
-<small>Practice materials and learning resources.</small>
-</button>
-
-<a class="choice"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-<strong>Book a Session</strong><br>
-<small>Arrange your learning session directly.</small>
-</a>
+<div>
+<strong>04</strong>
+<span>Research-informed teaching methodology</span>
+</div>
 
 </div>
 
-`
-);
-
-}
-
-
-/* PARENT */
-
-function openParentActions(){
-
-setModal(
-"Parent Support",
-"Choose the most convenient next step.",
-`
-
-<div class="choice-grid">
-
-<button class="choice"
-onclick="closeModal();location.href='#specialist'">
-<strong>Learning Support</strong><br>
-<small>Explore specialist learning pathways.</small>
-</button>
-
-<button class="choice"
-onclick="closeModal();location.href='#programmes'">
-<strong>Choose a Programme</strong><br>
-<small>Explore tutoring and learning programmes.</small>
-</button>
-
-<button class="choice"
-onclick="closeModal();location.href='#international-subjects'">
-<strong>International Curriculum</strong><br>
-<small>Explore IB and Cambridge subject pathways.</small>
-</button>
-
-<a class="choice"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-<strong>Book Consultation</strong><br>
-<small>Discuss your learner's needs directly.</small>
-</a>
-
-<a class="choice"
-href="mailto:hublearning117@gmail.com?subject=Learning%20Hub%20Parent%20Enquiry">
-<strong>Enquire</strong><br>
-<small>Contact Learning Hub Support.</small>
-</a>
+</div>
 
 </div>
 
-`
-);
+</section>
 
+<!-- =====================================================
+     STATS
+===================================================== -->
 
-/* SUBJECT */
+<section class="stats">
 
-function openSubject(subject){
+<div class="container stats-grid">
 
-const descriptions={
+<div class="stat">
+<strong>IB</strong>
+<span>International Baccalaureate</span>
+</div>
 
-"English":
-"Reading, writing, speaking, vocabulary and academic English development.",
+<div class="stat">
+<strong>IGCSE</strong>
+<span>Cambridge International</span>
+</div>
 
-"Mathematics":
-"Concepts, guided practice and mathematical problem solving.",
+<div class="stat">
+<strong>A Level</strong>
+<span>AS & A Level Support</span>
+</div>
 
-"Psychology":
-"IB Psychology support, research studies, concepts, evaluation and exam preparation.",
+<div class="stat">
+<strong>1:1</strong>
+<span>Personalised Learning</span>
+</div>
 
-"Business Studies":
-"Business concepts, analysis, academic writing and examination preparation.",
+</div>
 
-"Sociology":
-"Sociology concepts, analysis, writing and examination support.",
+</section>
 
-"Environmental Systems & Societies":
-"IB Environmental Systems and Societies support, concepts, case studies, analysis and examination preparation.",
+<!-- =====================================================
+     PROGRAMMES
+===================================================== -->
 
-"Academic Writing":
-"Essay structure, argument, analysis, coherence and academic expression.",
+<section class="section programmes" id="programmes">
 
-"Study Skills":
-"Organisation, revision, independent learning and academic confidence."
+<div class="container">
 
-};
+<div class="section-heading">
 
-setModal(
-subject,
-descriptions[subject]||"Personalised learning support.",
-`
+<small>What We Offer</small>
 
-<a class="btn btn-gold"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book a Session
+<h2>
+Learning pathways built for real academic goals.
+</h2>
+
+<p>
+Every programme connects students with structured
+lessons, appropriate materials, assessment, feedback
+and clear learning outcomes.
+</p>
+
+</div>
+
+<div class="program-grid">
+
+<article class="program">
+
+<h3>
+School & Academic Learning
+</h3>
+
+<p>
+Personalised support for school subjects,
+homework, assignments, academic skills and
+long-term achievement.
+</p>
+
+<a
+href="#academic-services"
+class="btn btn-gold">
+Explore
 </a>
 
-<a class="btn btn-dark"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub Subject Enquiry - ${encodeURIComponent(subject)}">
-Enquire
+</article>
+
+
+<article class="program">
+
+<h3>
+International Education
+</h3>
+
+<p>
+Support for IB, Cambridge International,
+Pearson Edexcel, OxfordAQA and international
+education pathways.
+</p>
+
+<a
+href="#boards"
+class="btn btn-gold">
+Explore
 </a>
 
-`
-);
-
-}
+</article>
 
 
-/* PROGRAMME */
+<article class="program">
 
-function openTopic(title,text){
+<h3>
+Career & Professional Skills
+</h3>
 
-setModal(
-title,
-text,
-`
+<p>
+Academic English, communication, study skills,
+professional communication and workplace
+language development.
+</p>
 
-<a class="btn btn-gold"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book a Session
+<a
+href="#professional-services"
+class="btn btn-gold">
+Explore
 </a>
 
-<a class="btn btn-dark"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub ${encodeURIComponent(title)}">
-Enquire
+</article>
+
+
+<article class="program">
+
+<h3>
+English Development
+</h3>
+
+<p>
+Reading, writing, speaking, pronunciation,
+grammar, vocabulary, academic communication
+and real-life English.
+</p>
+
+<a
+href="#english"
+class="btn btn-gold">
+Explore
 </a>
 
-`
-);
-
-}
+</article>
 
 
-/* SPECIAL SUPPORT */
+<article class="program">
 
-function openSpecial(title){
+<h3>
+Exam Preparation
+</h3>
 
-setModal(
-title,
-`
+<p>
+International examination preparation with
+paper-specific coaching, timed practice,
+feedback and targeted revision.
+</p>
 
-<strong>Specialist learning support</strong><br><br>
-
-This pathway is arranged after discussing the learner's
-needs, goals and appropriate learning approach.
-
-<br><br>
-
-Learning Hub does not claim to provide clinical diagnosis
-or medical treatment through this tutoring service.
-
-`,
-`
-
-<a class="btn btn-gold"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub Specialist Support - ${encodeURIComponent(title)}">
-Contact Support
+<a
+href="#exams"
+class="btn btn-gold">
+Explore
 </a>
 
-<a class="btn btn-dark"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book Consultation
+</article>
+
+
+<article class="program">
+
+<h3>
+Study Skills
+</h3>
+
+<p>
+Organisation, independent learning,
+revision planning, memory strategies,
+confidence and academic study systems.
+</p>
+
+<a
+href="#study-skills"
+class="btn btn-gold">
+Explore
 </a>
 
-`
-);
+</article>
 
-}
+</div>
 
+</div>
 
-/* BOARDS */
+</section>
 
-function openBoard(title){
+<!-- =====================================================
+     ACADEMIC SERVICES
+===================================================== -->
 
-const targetMap={
-"International Baccalaureate":"#ib-subjects",
-"Cambridge International":"#cambridge-a-level",
-"Pearson Edexcel":"#boards",
-"OxfordAQA":"#boards",
-"American Qualifications":"#boards",
-"Other International Programmes":"#boards"
-};
+<section class="section dark" id="academic-services">
 
-const target=targetMap[title]||"#boards";
+<div class="container">
 
-setModal(
-title,
-`
+<div class="section-heading">
 
-Explore curriculum support for ${title}.
-<br><br>
-Availability depends on subject, level and teacher expertise.
+<small>Academic Services</small>
 
-`,
-`
+<h2>
+What students receive
+</h2>
 
-<a class="btn btn-gold"
-href="${target}"
-onclick="closeModal()">
-Explore Subjects
-</a>
+<p>
+A complete academic support system rather than
+isolated lessons.
+</p>
 
-<a class="btn btn-dark"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub Board Enquiry - ${encodeURIComponent(title)}">
-Enquire
-</a>
+</div>
 
-`
-);
+<div class="card-grid">
 
-}
+<div class="card">
 
+<div class="card-icon">01</div>
 
-/* EXAMS */
+<h3>Subject Teaching</h3>
 
-function openExam(title){
+<p>
+Concept explanation, worked examples,
+guided practice, independent practice,
+retrieval and targeted feedback.
+</p>
 
-setModal(
-title,
-`
+</div>
 
-Learning Hub can provide targeted preparation, practice,
-feedback and learning support for this examination pathway.
-<br><br>
-Please contact us to confirm the exact level and available tutor.
 
-`,
-`
+<div class="card">
 
-<a class="btn btn-gold"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book Consultation
-</a>
+<div class="card-icon">02</div>
 
-<a class="btn btn-dark"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub Exam Enquiry - ${encodeURIComponent(title)}">
-Enquire
-</a>
+<h3>Homework & Assignments</h3>
 
-`
-);
+<p>
+Guidance with understanding questions,
+planning responses, structuring written work
+and improving academic accuracy.
+</p>
 
-}
+</div>
 
 
-/* LEARNING */
+<div class="card">
 
-function openLearning(title){
+<div class="card-icon">03</div>
 
-const content={
+<h3>Academic Skills</h3>
 
-"Academic English Practice":
-"Practice academic vocabulary, sentence structure, clarity and academic expression.",
+<p>
+Note-taking, research skills, essay planning,
+critical thinking, time management and
+independent learning.
+</p>
 
-"IELTS Writing Practice":
-"Structured IELTS writing practice focusing on organisation, task response, coherence and language.",
+</div>
 
-"Study Skills Guide":
-"Build planning, organisation, revision and independent learning strategies.",
 
-"PTE Academic Practice":
-"Develop targeted PTE speaking, writing and language skills.",
+<div class="card">
 
-"Visual Concepts":
-"Visual learning activities combine diagrams, concept explanations and guided practice.",
+<div class="card-icon">04</div>
 
-"Interactive Practice":
-"Interactive practice activities help learners apply concepts after explanation.",
+<h3>Assessment & Feedback</h3>
 
-"Guided Learning":
-"Follow structured learning steps with clear learning goals.",
+<p>
+Diagnostic assessment, formative checks,
+error analysis, progress tracking and
+personalised improvement targets.
+</p>
 
-"Listening & Speaking":
-"Build listening comprehension, pronunciation and communication confidence.",
+</div>
 
-"Reading Practice":
-"Develop reading comprehension, vocabulary and analytical reading.",
 
-"Vocabulary Builder":
-"Build useful academic and communication vocabulary.",
+<div class="card">
 
-"Independent Study":
-"Structured independent-learning activities and study strategies.",
+<div class="card-icon">05</div>
 
-"Fun Learning":
-"Engaging activities designed to make learning more active and enjoyable.",
+<h3>Revision Systems</h3>
 
-"Mathematics Concepts":
-"Understand mathematical concepts through clear explanations and worked examples.",
+<p>
+Spaced revision, retrieval practice,
+topic prioritisation, exam questions and
+individual revision plans.
+</p>
 
-"Mathematics Practice":
-"Practise mathematical skills through guided questions.",
+</div>
 
-"Mathematics Problem Solving":
-"Develop mathematical reasoning and problem-solving strategies.",
 
-"Academic Skills":
-"Research, essay structure, analysis and academic communication.",
+<div class="card">
 
-"Languages":
-"Language development and communication support.",
+<div class="card-icon">06</div>
 
-"Study Support":
-"Planning, organisation and independent learning.",
+<h3>Parent-Friendly Progress</h3>
 
-"Young Learners":
-"Engaging learning activities designed for younger learners.",
+<p>
+Clear learning goals, progress updates,
+identified strengths and practical next steps.
+</p>
 
-"Worksheets & PDFs":
-"Explore Learning Hub worksheets and permitted practice materials.",
+</div>
 
-"Media Learning":
-"Explore permitted audio, video and visual learning materials."
+</div>
 
-};
+</div>
 
-const description=
-content[title]||
-"Learning content is being expanded inside the Learning Hub Library.";
-
-setModal(
-title,
-description,
-`
-
-<a class="btn btn-gold"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book Learning
-</a>
-
-<a class="btn btn-dark"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub Resource Request - ${encodeURIComponent(title)}">
-Request Resource
-</a>
-
-`
-);
-
-}
-
-
-/* PRICING */
-
-function selectPlan(plan,price){
-
-const priceText=
-price>0
-?`<strong>${plan}</strong><br>$${price} / month`
-:`<strong>${plan}</strong><br>Discount/package pricing confirmed by Support`;
-
-setModal(
-"Proceed to Payment",
-`
-
-${priceText}
-
-<br><br>
-
-To complete payment, contact Learning Hub Support.
-Our team will provide available payment methods and
-instructions according to your country and selected plan.
-
-<br><br>
-
-<strong>hublearning117@gmail.com</strong>
-
-<br><br>
-
-Payment is confirmed manually. This website does not
-claim that payment has been completed.
-
-`,
-`
-
-<a class="btn btn-gold"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub Payment Support - ${encodeURIComponent(plan)}">
-Contact Support
-</a>
-
-<a class="btn btn-dark"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book Consultation
-</a>
-
-`
-);
-
-}
-
-
-function selectLesson(name,price){
-
-setModal(
-"Book "+name,
-`
-
-<strong>${name}</strong><br>
-${price} USD introductory price
-
-<br><br>
-
-Contact Learning Hub Support for payment arrangements,
-then use Calendly to arrange the appropriate session.
-
-`,
-`
-
-<a class="btn btn-gold"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub Lesson Booking - ${encodeURIComponent(name)}">
-Contact Support
-</a>
-
-<a class="btn btn-dark"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book Session
-</a>
-
-`
-);
-
-}
-
-
-/* CURRENCY */
-
-const rates={
-USD:1,
-PKR:280,
-GBP:.75,
-EUR:.85,
-AED:3.67,
-SAR:3.75,
-CAD:1.36,
-AUD:1.52,
-CNY:7.15,
-JPY:147,
-KRW:1380,
-INR:83.5
-};
-
-const currencySymbols={
-USD:"$",
-PKR:"PKR ",
-GBP:"£",
-EUR:"€",
-AED:"AED ",
-SAR:"SAR ",
-CAD:"C$",
-AUD:"A$",
-CNY:"CNY ",
-JPY:"¥",
-KRW:"₩",
-INR:"₹"
-};
-
-function updatePrices(){
-
-const currency=
-document.getElementById("currency").value;
-
-document.querySelectorAll(".lesson-price")
-.forEach(item=>{
-
-const usd=
-parseFloat(item.dataset.usd);
-
-const value=
-usd*rates[currency];
-
-item.textContent=
-currency==="JPY"||
-currency==="KRW"
-?
-`${currencySymbols[currency]}${Math.round(value).toLocaleString()}`
-:
-`${currencySymbols[currency]}${value.toFixed(2)}`;
-
-});
-
-}
-
-
-function detectCurrency(){
-
-const language=
-navigator.language||"en-US";
-
-if(language.includes("PK"))
-document.getElementById("currency").value="PKR";
-
-else if(language.includes("GB"))
-document.getElementById("currency").value="GBP";
-
-else if(language.includes("AE"))
-document.getElementById("currency").value="AED";
-
-else if(language.includes("SA"))
-document.getElementById("currency").value="SAR";
-
-updatePrices();
-
-}
-
-
-/* MOBILE */
-
-function toggleMobile(){
-
-const menu=
-document.getElementById("mobileMenu");
-
-menu.style.display=
-menu.style.display==="block"
-?"none"
-:"block";
-
-}
-
-
-/* AI */
-
-function toggleAI(){
-
-document.getElementById("aiPanel")
-.classList.toggle("show");
-
-}
-
-
-function aiAnswer(type){
-
-const answers={
-
-academic:
-"Learning Hub can support English, Mathematics, Psychology, Business Studies, Sociology, ESS, Academic Writing and Study Skills.",
-
-english:
-"For English development, explore reading, writing, speaking, vocabulary and academic English support.",
-
-exam:
-"Learning Hub supports IELTS, PTE, TOEFL, Duolingo English Test, Cambridge English, OET, CELPIP and language-exam enquiries.",
-
-ib:
-"For IB students, explore IB Language A, Psychology, Business Management, ESS, Mathematics, Sciences, Individuals and Societies, Arts and DP Core support.",
-
-special:
-"For specialist learning support, explore Dyslexia Support, Autism Learning Support, Learning Differences, Language & Communication, Reading Confidence and Confidence & Study Skills."
-
-};
-
-setModal(
-"Learning Concierge",
-answers[type],
-`
-
-<a class="btn btn-gold"
-href="https://calendly.com/hublearning117"
-target="_blank"
-rel="noopener">
-Book Learning
-</a>
-
-<a class="btn btn-dark"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub Learning Concierge">
-Enquire
-</a>
-
-`
-);
-
-toggleAI();
-
-}
-
-
-/* CONTACT */
-
-function submitContact(event){
-
-event.preventDefault();
-
-const name=
-document.getElementById("contactName")
-.value.trim();
-
-const email=
-document.getElementById("contactEmail")
-.value.trim();
-
-const message=
-document.getElementById("contactMessage")
-.value.trim();
-
-const subject=
-encodeURIComponent(
-"Learning Hub Enquiry from "+name
-);
-
-const body=
-encodeURIComponent(
-"Name: "+name+
-"\nEmail: "+email+
-"\n\nMessage:\n"+message
-);
-
-window.location.href=
-"mailto:hublearning117@gmail.com?subject="+
-subject+
-"&body="+
-body;
-
-showToast(
-"Your email draft is being prepared."
-);
-
-}
-
-
-/* ESCAPE */
-
-document.addEventListener(
-"keydown",
-event=>{
-
-if(event.key==="Escape"){
-
-closeModal();
-
-document.getElementById("aiPanel")
-.classList.remove("show");
-
-}
-
-}
-);
-
-
-/* CLICK OUTSIDE */
-
-document.querySelectorAll(".modal")
-.forEach(modal=>{
-
-modal.addEventListener(
-"click",
-event=>{
-
-if(event.target===modal){
-closeModal();
-}
-
-}
-);
-
-});
-
-
-detectCurrency();
-
-</script>
-
-</body>
-</html>
+</section>
