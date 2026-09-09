@@ -10,630 +10,150 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
 <style>
-:root{
---black:#101010;
---black2:#171717;
---black3:#22201d;
---gold:#c9a45c;
---gold2:#e0bd73;
---gold-soft:#f4e8cd;
---ivory:#fbf8f1;
---cream:#f5f0e7;
---white:#fff;
---text:#252525;
---muted:#6e6a62;
---border:#ded7ca;
---shadow:0 18px 45px rgba(0,0,0,.08)
-}
-
+:root{--black:#101010;--black2:#171717;--black3:#22201d;--gold:#c9a45c;--gold2:#e0bd73;--gold-soft:#f4e8cd;--ivory:#fbf8f1;--cream:#f5f0e7;--white:#fff;--text:#252525;--muted:#6e6a62;--border:#ded7ca;--shadow:0 18px 45px rgba(0,0,0,.08)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-
-body{
-font-family:"DM Sans",sans-serif;
-color:var(--text);
-background:var(--ivory);
-line-height:1.65
-}
-
+body{font-family:"DM Sans",sans-serif;color:var(--text);background:var(--ivory);line-height:1.65}
 a{text-decoration:none;color:inherit}
-
-h1,h2,h3{
-font-family:"Playfair Display",serif;
-line-height:1.15
-}
-
+h1,h2,h3{font-family:"Playfair Display",serif;line-height:1.15}
 h2{font-size:clamp(2rem,4vw,3.2rem)}
 h3{font-size:1.35rem}
 p{color:var(--muted)}
 section{padding:80px 0}
-
-.container{
-width:min(1180px,92%);
-margin:auto
-}
-
-.eyebrow,
-.section-heading small{
-display:block;
-color:var(--gold);
-font-weight:700;
-letter-spacing:2px;
-text-transform:uppercase;
-font-size:.78rem;
-margin-bottom:12px
-}
-
-.section-heading{
-text-align:center;
-max-width:760px;
-margin:0 auto 42px
-}
-
+.container{width:min(1180px,92%);margin:auto}
+.eyebrow,.section-heading small{display:block;color:var(--gold);font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:.78rem;margin-bottom:12px}
+.section-heading{text-align:center;max-width:760px;margin:0 auto 42px}
 .section-heading p{margin-top:14px}
-
-.btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-padding:12px 21px;
-border-radius:4px;
-font-weight:700;
-border:1px solid var(--gold);
-cursor:pointer;
-transition:.2s
-}
-
-.btn-gold{
-background:var(--gold);
-color:var(--black)
-}
-
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 21px;border-radius:4px;font-weight:700;border:1px solid var(--gold);cursor:pointer;transition:.2s}
+.btn-gold{background:var(--gold);color:var(--black)}
 .btn-gold:hover{background:var(--gold2)}
+.btn-dark{background:var(--black);color:#fff}
+.btn-outline{background:transparent;color:var(--gold)}
 
-.btn-dark{
-background:var(--black);
-color:#fff
-}
-
-.btn-outline{
-background:transparent;
-color:var(--gold)
-}
-
-nav{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(16,16,16,.98);
-border-bottom:1px solid #34302a
-}
-
-.nav-inner{
-min-height:74px;
-display:flex;
-align-items:center;
-gap:20px
-}
-
-.logo{
-font-family:"Playfair Display",serif;
-color:#fff;
-font-size:1.55rem;
-white-space:nowrap
-}
-
+nav{position:sticky;top:0;z-index:1000;background:rgba(16,16,16,.98);border-bottom:1px solid #34302a}
+.nav-inner{min-height:74px;display:flex;align-items:center;gap:20px}
+.logo{font-family:"Playfair Display",serif;color:#fff;font-size:1.55rem;white-space:nowrap}
 .logo span{color:var(--gold)}
-
-.nav-links{
-display:flex;
-align-items:center;
-gap:15px;
-margin-left:auto
-}
-
-.nav-links a{
-font-size:.8rem;
-color:#eee
-}
-
+.nav-links{display:flex;align-items:center;gap:15px;margin-left:auto}
+.nav-links a{font-size:.8rem;color:#eee}
 .nav-links a:hover{color:var(--gold2)}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.6rem;margin-left:auto}
 
-.menu-btn{
-display:none;
-background:none;
-border:0;
-color:#fff;
-font-size:1.6rem;
-margin-left:auto
-}
-
-.hero{
-min-height:630px;
-display:flex;
-align-items:center;
-color:#fff;
-background:
-linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.48)),
-url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=85")
-center/cover
-}
-
+.hero{min-height:630px;display:flex;align-items:center;color:#fff;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.48)),url("https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1800&q=85") center/cover}
 .hero-content{max-width:720px}
+.hero h1{font-size:clamp(3rem,7vw,5.5rem);margin-bottom:20px}
+.hero p{color:#eee;font-size:1.1rem}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
 
-.hero h1{
-font-size:clamp(3rem,7vw,5.5rem);
-margin-bottom:20px
-}
-
-.hero p{
-color:#eee;
-font-size:1.1rem
-}
-
-.hero-actions{
-display:flex;
-gap:12px;
-flex-wrap:wrap;
-margin-top:28px
-}
-
-.stats{
-background:var(--black2);
-color:#fff;
-padding:28px 0
-}
-
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr)
-}
-
-.stat{
-text-align:center;
-border-right:1px solid #3b3833
-}
-
+.stats{background:var(--black2);color:#fff;padding:28px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{text-align:center;border-right:1px solid #3b3833}
 .stat:last-child{border:0}
+.stat strong{display:block;color:var(--gold2);font-size:1.15rem}
+.stat span{font-size:.84rem;color:#ccc}
 
-.stat strong{
-display:block;
-color:var(--gold2);
-font-size:1.15rem
-}
-
-.stat span{
-font-size:.84rem;
-color:#ccc
-}
-
-.card-grid,
-.subject-grid,
-.board-grid,
-.media-grid,
-.resource-grid,
-.testimonial-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px
-}
-
-.card,
-.subject-card,
-.board-card,
-.media-card,
-.resource-card,
-.testimonial{
-background:#fff;
-border:1px solid var(--border);
-padding:26px;
-box-shadow:var(--shadow)
-}
-
-.card .number{
-color:var(--gold);
-font-weight:700;
-font-size:.85rem
-}
-
-.card h3,
-.subject-card h3{
-margin:9px 0
-}
+.card-grid,.subject-grid,.board-grid,.media-grid,.resource-grid,.testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card,.subject-card,.board-card,.media-card,.resource-card,.testimonial{background:#fff;border:1px solid var(--border);padding:26px;box-shadow:var(--shadow)}
+.card .number{color:var(--gold);font-weight:700;font-size:.85rem}
+.card h3,.subject-card h3{margin:9px 0}
 
 .audience{background:var(--cream)}
+.audience-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.audience-card{padding:32px;background:var(--black);color:#fff;border-top:3px solid var(--gold)}
+.audience-card p{color:#ccc;margin-top:8px}
 
-.audience-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:18px
-}
-
-.audience-card{
-padding:32px;
-background:var(--black);
-color:#fff;
-border-top:3px solid var(--gold)
-}
-
-.audience-card p{
-color:#ccc;
-margin-top:8px
-}
-
-.subject-card ul,
-.detail-box ul{
-padding-left:19px;
-color:var(--muted)
-}
-
+.subject-card ul,.detail-box ul{padding-left:19px;color:var(--muted)}
 li{margin:4px 0}
 
 .detail{background:#fff}
-
-.detail-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px
-}
-
-.detail-box{
-background:var(--cream);
-padding:26px;
-border:1px solid var(--border)
-}
-
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.detail-box{background:var(--cream);padding:26px;border:1px solid var(--border)}
 .detail-box h3{margin-bottom:12px}
 
-.dark-section{
-background:var(--black);
-color:#fff
-}
-
+.dark-section{background:var(--black);color:#fff}
 .dark-section p{color:#ccc}
+.board-card,.media-card{background:var(--black2);border-color:#3b3833}
+.board-card h3,.media-card h3{color:var(--gold2);margin-bottom:7px}
 
-.board-card,
-.media-card{
-background:var(--black2);
-border-color:#3b3833
-}
-
-.board-card h3,
-.media-card h3{
-color:var(--gold2);
-margin-bottom:7px
-}
-
-.exam-grid{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:12px
-}
-
-.exam-card{
-background:#fff;
-border:1px solid var(--border);
-padding:18px;
-text-align:center;
-font-weight:700
-}
+.exam-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.exam-card{background:#fff;border:1px solid var(--border);padding:18px;text-align:center;font-weight:700}
 
 .experience{background:var(--cream)}
+.experience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.experience-card{text-align:center;background:#fff;border:1px solid var(--border);padding:25px}
+.experience-card .icon{font-size:2rem;color:var(--gold)}
 
-.experience-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px
-}
-
-.experience-card{
-text-align:center;
-background:#fff;
-border:1px solid var(--border);
-padding:25px
-}
-
-.experience-card .icon{
-font-size:2rem;
-color:var(--gold)
-}
-
-.testimonial{
-border-top:3px solid var(--gold)
-}
-
-.testimonial small{
-color:var(--gold);
-font-weight:700
-}
-
+.testimonial{border-top:3px solid var(--gold)}
+.testimonial small{color:var(--gold);font-weight:700}
 .testimonial p{margin:10px 0}
 
-.teacher-cta{
-background:linear-gradient(135deg,var(--black),#28231c);
-color:#fff
-}
-
-.teacher-cta .container{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:25px
-}
-
-.teacher-cta p{
-color:#ddd;
-margin-top:8px
-}
+.teacher-cta{background:linear-gradient(135deg,var(--black),#28231c);color:#fff}
+.teacher-cta .container{display:flex;justify-content:space-between;align-items:center;gap:25px}
+.teacher-cta p{color:#ddd;margin-top:8px}
 
 .form-section{background:var(--cream)}
-
-.form-wrap{
-max-width:900px;
-margin:auto;
-background:#fff;
-border:1px solid var(--border);
-box-shadow:var(--shadow);
-padding:36px
-}
-
-.progress{
-display:grid;
-grid-template-columns:repeat(5,1fr);
-gap:6px;
-margin-bottom:30px
-}
-
-.progress div{
-height:5px;
-background:#ddd;
-border-radius:5px
-}
-
+.form-wrap{max-width:900px;margin:auto;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);padding:36px}
+.progress{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:30px}
+.progress div{height:5px;background:#ddd;border-radius:5px}
 .progress div.active{background:var(--gold)}
-
 .step{display:none}
 .step.active{display:block}
-
 .step-intro{margin:6px 0 22px}
 
-.form-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:16px
-}
-
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .field{margin-bottom:14px}
 .field.full{grid-column:1/-1}
 
-label{
-display:block;
-font-weight:700;
-font-size:.9rem;
-margin-bottom:6px
-}
+label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
 
-input,
-select,
-textarea{
-width:100%;
-padding:11px 12px;
-border:1px solid var(--border);
-border-radius:4px;
-background:#fff;
-font:inherit;
-color:var(--text)
-}
+input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:4px;background:#fff;font:inherit;color:var(--text)}
+textarea{min-height:110px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:2px solid rgba(201,164,92,.25);border-color:var(--gold)}
 
-textarea{
-min-height:110px;
-resize:vertical
-}
+.upload-box{background:var(--cream);padding:15px;border:1px dashed var(--gold);margin-bottom:14px}
+.file-help{font-size:.78rem;color:var(--muted);margin-top:5px}
 
-input:focus,
-select:focus,
-textarea:focus{
-outline:2px solid rgba(201,164,92,.25);
-border-color:var(--gold)
-}
+.notice{padding:12px 14px;background:#fff8e9;border-left:3px solid var(--gold);margin:14px 0;color:#6b562b;font-size:.86rem}
 
-.upload-box{
-background:var(--cream);
-padding:15px;
-border:1px dashed var(--gold);
-margin-bottom:14px
-}
+.confirm{display:flex;gap:9px;align-items:flex-start;margin:16px 0}
+.confirm input{width:auto;margin-top:5px}
 
-.file-help{
-font-size:.78rem;
-color:var(--muted);
-margin-top:5px
-}
-
-.notice{
-padding:12px 14px;
-background:#fff8e9;
-border-left:3px solid var(--gold);
-margin:14px 0;
-color:#6b562b;
-font-size:.86rem
-}
-
-.confirm{
-display:flex;
-gap:9px;
-align-items:flex-start;
-margin:16px 0
-}
-
-.confirm input{
-width:auto;
-margin-top:5px
-}
-
-.form-buttons{
-display:flex;
-justify-content:space-between;
-gap:12px;
-margin-top:20px
-}
+.form-buttons{display:flex;justify-content:space-between;gap:12px;margin-top:20px}
 
 .contact{background:#fff}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-card{padding:28px;background:var(--cream);border:1px solid var(--border)}
 
-.contact-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px
-}
+footer{background:var(--black);color:#fff;padding:50px 0 22px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:25px}
+footer p,footer a{color:#bbb;font-size:.88rem}
+footer h3{color:var(--gold2);font-family:"DM Sans",sans-serif;font-size:1rem;margin-bottom:10px}
+.footer-bottom{border-top:1px solid #333;margin-top:30px;padding-top:18px;text-align:center;color:#999;font-size:.8rem}
 
-.contact-card{
-padding:28px;
-background:var(--cream);
-border:1px solid var(--border)
-}
-
-footer{
-background:var(--black);
-color:#fff;
-padding:50px 0 22px
-}
-
-.footer-grid{
-display:grid;
-grid-template-columns:2fr 1fr 1fr 1fr;
-gap:25px
-}
-
-footer p,
-footer a{
-color:#bbb;
-font-size:.88rem
-}
-
-footer h3{
-color:var(--gold2);
-font-family:"DM Sans",sans-serif;
-font-size:1rem;
-margin-bottom:10px
-}
-
-.footer-bottom{
-border-top:1px solid #333;
-margin-top:30px;
-padding-top:18px;
-text-align:center;
-color:#999;
-font-size:.8rem
-}
-
-#topBtn{
-position:fixed;
-right:20px;
-bottom:20px;
-width:42px;
-height:42px;
-border:0;
-border-radius:50%;
-background:var(--gold);
-cursor:pointer;
-font-weight:700;
-display:none
-}
+#topBtn{position:fixed;right:20px;bottom:20px;width:42px;height:42px;border:0;border-radius:50%;background:var(--gold);cursor:pointer;font-weight:700;display:none}
 
 @media(max-width:1050px){
-
-.nav-links{
-display:none;
-position:absolute;
-top:74px;
-left:0;
-right:0;
-background:var(--black);
-padding:20px;
-flex-direction:column;
-align-items:flex-start
-}
-
+.nav-links{display:none;position:absolute;top:74px;left:0;right:0;background:var(--black);padding:20px;flex-direction:column;align-items:flex-start}
 .nav-links.open{display:flex}
-
 .menu-btn{display:block}
-
-.stats-grid,
-.experience-grid{
-grid-template-columns:repeat(2,1fr)
-}
-
-.card-grid,
-.audience-grid,
-.subject-grid,
-.board-grid,
-.media-grid,
-.resource-grid,
-.testimonial-grid{
-grid-template-columns:repeat(2,1fr)
-}
-
-.exam-grid{
-grid-template-columns:repeat(3,1fr)
-}
-
-.footer-grid{
-grid-template-columns:2fr 1fr 1fr
-}
-
+.stats-grid,.experience-grid{grid-template-columns:repeat(2,1fr)}
+.card-grid,.audience-grid,.subject-grid,.board-grid,.media-grid,.resource-grid,.testimonial-grid{grid-template-columns:repeat(2,1fr)}
+.exam-grid{grid-template-columns:repeat(3,1fr)}
+.footer-grid{grid-template-columns:2fr 1fr 1fr}
 }
 
 @media(max-width:680px){
-
 section{padding:60px 0}
-
 .hero{min-height:570px}
-
 .hero h1{font-size:3rem}
-
-.stats-grid,
-.card-grid,
-.audience-grid,
-.subject-grid,
-.detail-grid,
-.board-grid,
-.exam-grid,
-.media-grid,
-.resource-grid,
-.experience-grid,
-.testimonial-grid,
-.contact-grid,
-.footer-grid,
-.form-grid{
-grid-template-columns:1fr
-}
-
-.stat{
-border-right:0;
-border-bottom:1px solid #3b3833;
-padding:10px
-}
-
+.stats-grid,.card-grid,.audience-grid,.subject-grid,.detail-grid,.board-grid,.exam-grid,.media-grid,.resource-grid,.experience-grid,.testimonial-grid,.contact-grid,.footer-grid,.form-grid{grid-template-columns:1fr}
+.stat{border-right:0;border-bottom:1px solid #3b3833;padding:10px}
 .stat:last-child{border-bottom:0}
-
-.form-wrap{
-padding:22px 16px
-}
-
-.teacher-cta .container{
-display:block
-}
-
-.teacher-cta .btn{
-margin-top:18px
-}
-
+.form-wrap{padding:22px 16px}
+.teacher-cta .container{display:block}
+.teacher-cta .btn{margin-top:18px}
 .btn{width:100%}
-
-.form-buttons{
-flex-direction:column
-}
-
+.form-buttons{flex-direction:column}
 }
 </style>
 </head>
@@ -660,16 +180,16 @@ Learning <span>Hub</span>
 <a href="#resources">Resources</a>
 <a href="#teachers">Become a Teacher</a>
 <a href="#contact">Contact</a>
-<a class="btn btn-gold" href="https://calendly.com/hublearning117" target="_blank">
-Book a Session
-</a>
+<a class="btn btn-gold" href="https://calendly.com/hublearning117" target="_blank">Book a Session</a>
 </div>
 
 </div>
 </nav>
 
 <header class="hero" id="home">
+
 <div class="container">
+
 <div class="hero-content">
 
 <span class="eyebrow">Global Online Learning</span>
@@ -679,19 +199,31 @@ Learn with purpose. Grow with confidence.
 </h1>
 
 <p>
-Personalised online tutoring, international curriculum support, English learning, examination preparation and professional teaching opportunities for learners around the world.
+Personalised online tutoring, international curriculum support,
+English learning, examination preparation and professional teaching
+opportunities for learners around the world.
 </p>
 
 <div class="hero-actions">
-<a class="btn btn-gold" href="#programmes">Explore Learning</a>
-<a class="btn btn-outline" href="#teachers">Become a Teacher</a>
+
+<a class="btn btn-gold" href="#programmes">
+Explore Learning
+</a>
+
+<a class="btn btn-outline" href="#teachers">
+Become a Teacher
+</a>
+
 </div>
 
 </div>
+
 </div>
+
 </header>
 
 <div class="stats">
+
 <div class="container stats-grid">
 
 <div class="stat">
@@ -715,17 +247,26 @@ Personalised online tutoring, international curriculum support, English learning
 </div>
 
 </div>
+
 </div>
 
 <section id="programmes">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>What We Offer</small>
-<h2>Learning designed around real goals</h2>
+
+<h2>
+Learning designed around real goals
+</h2>
+
 <p>
-Flexible academic and language support for school students, exam candidates, university learners and professionals.
+Flexible academic and language support for school students,
+exam candidates, university learners and professionals.
 </p>
+
 </div>
 
 <div class="card-grid">
@@ -734,7 +275,8 @@ Flexible academic and language support for school students, exam candidates, uni
 <span class="number">01</span>
 <h3>Academic Tutoring</h3>
 <p>
-Individual support in core subjects, homework, assignments, revision and examination preparation.
+Individual support in core subjects, homework, assignments,
+revision and examination preparation.
 </p>
 </article>
 
@@ -742,7 +284,8 @@ Individual support in core subjects, homework, assignments, revision and examina
 <span class="number">02</span>
 <h3>International Curriculum</h3>
 <p>
-Support for IB, Cambridge, Pearson Edexcel, OxfordAQA, American qualifications and other programmes.
+Support for IB, Cambridge, Pearson Edexcel, OxfordAQA,
+American qualifications and other programmes.
 </p>
 </article>
 
@@ -750,20 +293,29 @@ Support for IB, Cambridge, Pearson Edexcel, OxfordAQA, American qualifications a
 <span class="number">03</span>
 <h3>English & Exam Preparation</h3>
 <p>
-General English, academic English, professional English and preparation for major English-language tests.
+General English, academic English, professional English
+and preparation for major English-language tests.
 </p>
 </article>
 
 </div>
+
 </div>
+
 </section>
 
 <section class="audience">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Who We Support</small>
-<h2>One hub. Different learning journeys.</h2>
+
+<h2>
+One hub. Different learning journeys.
+</h2>
+
 </div>
 
 <div class="audience-grid">
@@ -771,34 +323,45 @@ General English, academic English, professional English and preparation for majo
 <article class="audience-card">
 <h3>Students</h3>
 <p>
-Build subject knowledge, confidence, communication skills and exam readiness.
+Build subject knowledge, confidence, communication skills
+and exam readiness.
 </p>
 </article>
 
 <article class="audience-card">
 <h3>Parents</h3>
 <p>
-Find structured, personalised learning support that fits your child's goals.
+Find structured, personalised learning support that fits
+your child's goals.
 </p>
 </article>
 
 <article class="audience-card">
 <h3>Teachers</h3>
 <p>
-Join a professional global teaching network and share your expertise online.
+Join a professional global teaching network and share
+your expertise online.
 </p>
 </article>
 
 </div>
+
 </div>
+
 </section>
 
 <section id="subjects">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Subject Catalogue</small>
-<h2>Explore learning areas</h2>
+
+<h2>
+Explore learning areas
+</h2>
+
 </div>
 
 <div class="subject-grid">
@@ -864,21 +427,31 @@ Join a professional global teaching network and share your expertise online.
 </article>
 
 </div>
+
 </div>
+
 </section>
 
 <section class="detail" id="english">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>English</small>
-<h2>Language and Literature support</h2>
+
+<h2>
+Language and Literature support
+</h2>
+
 </div>
 
 <div class="detail-grid">
 
 <div class="detail-box">
+
 <h3>English Language</h3>
+
 <ul>
 <li>Grammar and sentence structure</li>
 <li>Vocabulary development</li>
@@ -887,10 +460,13 @@ Join a professional global teaching network and share your expertise online.
 <li>Academic and professional writing</li>
 <li>Presentation and communication</li>
 </ul>
+
 </div>
 
 <div class="detail-box">
+
 <h3>English Literature</h3>
+
 <ul>
 <li>Close reading</li>
 <li>Literary devices</li>
@@ -899,24 +475,35 @@ Join a professional global teaching network and share your expertise online.
 <li>Comparative analysis</li>
 <li>Essay planning and exam practice</li>
 </ul>
+
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 <section id="mathematics">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Mathematics</small>
-<h2>Build mathematical confidence</h2>
+
+<h2>
+Build mathematical confidence
+</h2>
+
 </div>
 
 <div class="detail-grid">
 
 <div class="detail-box">
+
 <h3>Number, Algebra & Geometry</h3>
+
 <ul>
 <li>Number operations</li>
 <li>Fractions, decimals and percentages</li>
@@ -925,10 +512,13 @@ Join a professional global teaching network and share your expertise online.
 <li>Angles, shapes and transformations</li>
 <li>Coordinate geometry</li>
 </ul>
+
 </div>
 
 <div class="detail-box">
+
 <h3>Advanced & Applied Topics</h3>
+
 <ul>
 <li>Statistics and probability</li>
 <li>Trigonometry</li>
@@ -937,18 +527,27 @@ Join a professional global teaching network and share your expertise online.
 <li>Financial mathematics</li>
 <li>Problem solving and exam technique</li>
 </ul>
+
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 <section class="dark-section">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Other Subjects</small>
-<h2>Specialised academic support</h2>
+
+<h2>
+Specialised academic support
+</h2>
+
 </div>
 
 <div class="detail-grid">
@@ -994,15 +593,23 @@ Join a professional global teaching network and share your expertise online.
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 <section id="boards">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>International Boards</small>
-<h2>Support across global qualifications</h2>
+
+<h2>
+Support across global qualifications
+</h2>
+
 </div>
 
 <div class="board-grid">
@@ -1034,25 +641,38 @@ Join a professional global teaching network and share your expertise online.
 
 <article class="board-card">
 <h3>Other Qualifications</h3>
-<p>Contact us to discuss your curriculum and learning needs.</p>
+<p>
+Contact us to discuss your curriculum and learning needs.
+</p>
 </article>
 
 </div>
+
 </div>
+
 </section>
 
 <section id="exams" class="detail">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>English Exams</small>
-<h2>Prepare with a focused strategy</h2>
+
+<h2>
+Prepare with a focused strategy
+</h2>
+
 <p>
-Preparation can be tailored to your target score, current level, test format and timeline.
+Preparation can be tailored to your target score,
+current level, test format and timeline.
 </p>
+
 </div>
 
 <div class="exam-grid">
+
 <div class="exam-card">IELTS</div>
 <div class="exam-card">PTE</div>
 <div class="exam-card">TOEFL</div>
@@ -1067,17 +687,25 @@ Preparation can be tailored to your target score, current level, test format and
 <div class="exam-card">Oxford</div>
 <div class="exam-card">Versant</div>
 <div class="exam-card">EF SET</div>
+
 </div>
 
 </div>
+
 </section>
 
 <section id="media" class="dark-section">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Audio-Visual Learning</small>
-<h2>Learn through practice and media</h2>
+
+<h2>
+Learn through practice and media
+</h2>
+
 </div>
 
 <div class="media-grid">
@@ -1119,19 +747,29 @@ Preparation can be tailored to your target score, current level, test format and
 
 <article class="media-card">
 <h3>Future Exam Content</h3>
-<p>New practice resources and learning videos can be added here.</p>
+<p>
+New practice resources and learning videos can be added here.
+</p>
 </article>
 
 </div>
+
 </div>
+
 </section>
 
 <section id="resources">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Learning Resources</small>
-<h2>Practice beyond the lesson</h2>
+
+<h2>
+Practice beyond the lesson
+</h2>
+
 </div>
 
 <div class="resource-grid">
@@ -1201,15 +839,23 @@ Open resource →
 </article>
 
 </div>
+
 </div>
+
 </section>
 
 <section class="experience">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>The Learning Experience</small>
-<h2>Designed for modern learners</h2>
+
+<h2>
+Designed for modern learners
+</h2>
+
 </div>
 
 <div class="experience-grid">
@@ -1239,18 +885,28 @@ Open resource →
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 <section>
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Student Experiences</small>
-<h2>What learners have shared</h2>
+
+<h2>
+What learners have shared
+</h2>
+
 <p>
-Replace these example testimonials with verified student or parent feedback before publishing.
+Replace these example testimonials with verified student
+or parent feedback before publishing.
 </p>
+
 </div>
 
 <div class="testimonial-grid">
@@ -1258,7 +914,8 @@ Replace these example testimonials with verified student or parent feedback befo
 <article class="testimonial">
 <small>Example testimonial</small>
 <p>
-“The lessons were structured, clear and focused on exactly what I needed for my exam.”
+“The lessons were structured, clear and focused on exactly
+what I needed for my exam.”
 </p>
 <strong>Student</strong>
 </article>
@@ -1266,7 +923,8 @@ Replace these example testimonials with verified student or parent feedback befo
 <article class="testimonial">
 <small>Example testimonial</small>
 <p>
-“The personalised approach made difficult topics much easier to understand.”
+“The personalised approach made difficult topics much easier
+to understand.”
 </p>
 <strong>Parent</strong>
 </article>
@@ -1274,38 +932,61 @@ Replace these example testimonials with verified student or parent feedback befo
 <article class="testimonial">
 <small>Example testimonial</small>
 <p>
-“The resources and practice activities helped me become more confident.”
+“The resources and practice activities helped me become
+more confident.”
 </p>
 <strong>Learner</strong>
 </article>
 
 </div>
+
 </div>
+
 </section>
 
 <section class="teacher-cta" id="teachers">
+
 <div class="container">
 
 <div>
+
 <span class="eyebrow">Teach With Learning Hub</span>
-<h2>Share your expertise with global learners.</h2>
-<p>Apply to join the Learning Hub teaching network.</p>
+
+<h2>
+Share your expertise with global learners.
+</h2>
+
+<p>
+Apply to join the Learning Hub teaching network.
+</p>
+
 </div>
 
-<a class="btn btn-gold" href="#teacher-form">Apply Now</a>
+<a class="btn btn-gold" href="#teacher-form">
+Apply Now
+</a>
 
 </div>
+
 </section>
 
 <section class="form-section" id="teacher-form">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Teacher Application</small>
-<h2>Join Learning Hub</h2>
+
+<h2>
+Join Learning Hub
+</h2>
+
 <p>
-Complete the application and upload your professional materials for review.
+Complete the application and upload your professional
+materials for review.
 </p>
+
 </div>
 
 <div class="form-wrap">
@@ -1318,16 +999,10 @@ Complete the application and upload your professional materials for review.
 <div></div>
 </div>
 
-<!--
-IMPORTANT:
-Replace YOUR_FORMSPREE_FORM_ID below with your actual Formspree form ID.
-Example:
-https://formspree.io/f/xabcdefg
--->
-
+<!-- REAL FORMSPREE ENDPOINT -->
 <form
 id="teacherApplication"
-action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID"
+action="https://formspree.io/f/meaqpdzl"
 method="POST"
 enctype="multipart/form-data"
 >
@@ -1350,8 +1025,6 @@ name="website"
 value="learninghubtutoring.com"
 >
 
-<!-- STEP 1 -->
-
 <div class="step active">
 
 <h3>1. Personal Information</h3>
@@ -1365,9 +1038,7 @@ Tell us how we can contact you.
 <div class="field">
 <label>First Name *</label>
 <input
-type="text"
 name="first_name"
-autocomplete="given-name"
 required
 >
 </div>
@@ -1375,9 +1046,7 @@ required
 <div class="field">
 <label>Last Name *</label>
 <input
-type="text"
 name="last_name"
-autocomplete="family-name"
 required
 >
 </div>
@@ -1387,7 +1056,6 @@ required
 <input
 type="email"
 name="email"
-autocomplete="email"
 required
 >
 </div>
@@ -1395,9 +1063,7 @@ required
 <div class="field">
 <label>Phone / WhatsApp *</label>
 <input
-type="tel"
 name="phone"
-autocomplete="tel"
 required
 >
 </div>
@@ -1405,9 +1071,7 @@ required
 <div class="field">
 <label>Country *</label>
 <input
-type="text"
 name="country"
-autocomplete="country-name"
 required
 >
 </div>
@@ -1415,16 +1079,13 @@ required
 <div class="field">
 <label>City</label>
 <input
-type="text"
 name="city"
-autocomplete="address-level2"
 >
 </div>
 
 </div>
-</div>
 
-<!-- STEP 2 -->
+</div>
 
 <div class="step">
 
@@ -1437,19 +1098,25 @@ Help us understand your teaching expertise.
 <div class="form-grid">
 
 <div class="field full">
+
 <label>Subjects You Teach *</label>
+
 <input
-type="text"
 name="subjects"
 placeholder="e.g. English, Mathematics, Psychology"
 required
 >
+
 </div>
 
 <div class="field">
+
 <label>Primary Teaching Level *</label>
 
-<select name="teaching_level" required>
+<select
+name="teaching_level"
+required
+>
 
 <option value="">Select</option>
 <option>Primary</option>
@@ -1462,18 +1129,22 @@ required
 <option>Mixed Levels</option>
 
 </select>
+
 </div>
 
 <div class="field">
+
 <label>Curriculum / Boards</label>
+
 <input
-type="text"
 name="curriculum"
 placeholder="IB, Cambridge, Edexcel, etc."
 >
+
 </div>
 
 <div class="field full">
+
 <label>Teaching Specialisms</label>
 
 <textarea
@@ -1484,9 +1155,8 @@ placeholder="Exam preparation, EAL, SEN support, academic writing, etc."
 </div>
 
 </div>
-</div>
 
-<!-- STEP 3 -->
+</div>
 
 <div class="step">
 
@@ -1499,28 +1169,28 @@ Provide your academic and professional qualifications.
 <div class="form-grid">
 
 <div class="field full">
+
 <label>Highest Qualification *</label>
 
 <input
-type="text"
 name="highest_qualification"
-placeholder="e.g. Master's Degree, Bachelor's Degree"
 required
 >
 
 </div>
 
 <div class="field full">
+
 <label>Academic Qualifications</label>
 
 <textarea
 name="academic_qualifications"
-placeholder="Degrees, diplomas and relevant study."
 ></textarea>
 
 </div>
 
 <div class="field">
+
 <label>Teaching Certifications</label>
 
 <textarea
@@ -1531,6 +1201,7 @@ placeholder="TEFL, TESOL, PGCE, teaching licences, etc."
 </div>
 
 <div class="field">
+
 <label>Professional Certifications</label>
 
 <textarea
@@ -1540,9 +1211,8 @@ name="professional_certifications"
 </div>
 
 </div>
-</div>
 
-<!-- STEP 4 -->
+</div>
 
 <div class="step">
 
@@ -1555,52 +1225,50 @@ Tell us about your teaching background.
 <div class="form-grid">
 
 <div class="field">
+
 <label>Years of Teaching Experience *</label>
 
 <input
-type="text"
 name="years_experience"
-placeholder="e.g. 5 years"
 required
 >
 
 </div>
 
 <div class="field">
+
 <label>Online Teaching Experience</label>
 
 <input
-type="text"
 name="online_experience"
-placeholder="e.g. 3 years"
+placeholder="e.g. 5 years"
 >
 
 </div>
 
 <div class="field full">
+
 <label>Previous Teaching Experience</label>
 
 <textarea
 name="previous_experience"
-placeholder="Schools, academies, tutoring platforms, private teaching, etc."
 ></textarea>
 
 </div>
 
 <div class="field full">
+
 <label>International Student Experience</label>
 
 <textarea
 name="international_experience"
-placeholder="Tell us about teaching students from different countries."
 ></textarea>
 
 </div>
 
 </div>
-</div>
 
-<!-- STEP 5 -->
+</div>
 
 <div class="step">
 
@@ -1611,18 +1279,18 @@ Upload your CV and optional professional materials.
 </p>
 
 <div class="notice">
-<strong>Upload limits:</strong>
-maximum 25 MB per file, 100 MB total and 10 files.
-Smaller video files are recommended for reliable uploads.
-</div>
 
-<!-- CV -->
+Upload limits: maximum
+<strong>25 MB per file</strong>,
+<strong>100 MB total</strong>, and
+<strong>10 files</strong>.
+Smaller video files are recommended for reliable uploads.
+
+</div>
 
 <div class="upload-box">
 
-<label>
-Resume / CV *
-</label>
+<label>Resume / CV *</label>
 
 <input
 type="file"
@@ -1632,19 +1300,18 @@ accept=".pdf,.doc,.docx"
 required
 >
 
-<div class="file-help" id="cvHelp">
+<div
+class="file-help"
+id="cvHelp"
+>
 PDF, DOC or DOCX recommended.
 </div>
 
 </div>
 
-<!-- SUPPORTING DOCUMENTS -->
-
 <div class="upload-box">
 
-<label>
-Supporting Documents
-</label>
+<label>Supporting Documents</label>
 
 <input
 type="file"
@@ -1654,19 +1321,18 @@ multiple
 accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
 >
 
-<div class="file-help" id="supportingHelp">
-Optional — certificates, qualifications or other relevant documents.
+<div
+class="file-help"
+id="supportingHelp"
+>
+Certificates or other relevant documents.
 </div>
 
 </div>
-
-<!-- INTRO VIDEO -->
 
 <div class="upload-box">
 
-<label>
-Intro Video
-</label>
+<label>Intro Video</label>
 
 <input
 type="file"
@@ -1675,19 +1341,18 @@ name="Intro Video"
 accept="video/*,.mp4,.mov,.webm,.m4v"
 >
 
-<div class="file-help" id="introHelp">
-Optional — a short introduction about yourself and your teaching approach.
+<div
+class="file-help"
+id="introHelp"
+>
+Optional: a short introduction about yourself and your teaching approach.
 </div>
 
 </div>
-
-<!-- DEMO TEACHING VIDEO -->
 
 <div class="upload-box">
 
-<label>
-Demo Teaching Video
-</label>
+<label>Demo Teaching Video</label>
 
 <input
 type="file"
@@ -1696,8 +1361,11 @@ name="Demo Teaching Video"
 accept="video/*,.mp4,.mov,.webm,.m4v"
 >
 
-<div class="file-help" id="demoHelp">
-Optional — a short sample of your teaching.
+<div
+class="file-help"
+id="demoHelp"
+>
+Optional: a short sample of your teaching.
 </div>
 
 </div>
@@ -1706,12 +1374,9 @@ Optional — a short sample of your teaching.
 
 <div class="field">
 
-<label>
-Availability *
-</label>
+<label>Availability *</label>
 
 <input
-type="text"
 name="availability"
 placeholder="Days and approximate hours"
 required
@@ -1721,12 +1386,9 @@ required
 
 <div class="field">
 
-<label>
-Preferred Time Zone
-</label>
+<label>Preferred Time Zone</label>
 
 <input
-type="text"
 name="timezone"
 placeholder="e.g. GMT+5"
 >
@@ -1735,12 +1397,9 @@ placeholder="e.g. GMT+5"
 
 <div class="field full">
 
-<label>
-Preferred Teaching Hours
-</label>
+<label>Preferred Teaching Hours</label>
 
 <input
-type="text"
 name="preferred_hours"
 placeholder="e.g. 4–8 pm weekdays"
 >
@@ -1749,26 +1408,20 @@ placeholder="e.g. 4–8 pm weekdays"
 
 <div class="field full">
 
-<label>
-Why would you like to join Learning Hub?
-</label>
+<label>Why would you like to join Learning Hub?</label>
 
 <textarea
 name="why_join"
-placeholder="Tell us briefly about your interest in joining Learning Hub."
 ></textarea>
 
 </div>
 
 <div class="field full">
 
-<label>
-Additional Information
-</label>
+<label>Additional Information</label>
 
 <textarea
 name="additional_information"
-placeholder="Anything else you would like us to know?"
 ></textarea>
 
 </div>
@@ -1785,7 +1438,8 @@ required
 >
 
 <span>
-I confirm that the information provided is accurate and that Learning Hub may review my application and uploaded materials.
+I confirm that the information provided is accurate and that
+Learning Hub may review my application and uploaded materials.
 </span>
 
 </label>
@@ -1825,7 +1479,9 @@ Submit Teacher Application
 </form>
 
 </div>
+
 </div>
+
 </section>
 
 <section id="contact" class="contact">
@@ -1833,8 +1489,13 @@ Submit Teacher Application
 <div class="container">
 
 <div class="section-heading">
+
 <small>Contact Learning Hub</small>
-<h2>Let's discuss your learning goals</h2>
+
+<h2>
+Let's discuss your learning goals
+</h2>
+
 </div>
 
 <div class="contact-grid">
@@ -1879,7 +1540,9 @@ hublearning117@gmail.com
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 <footer>
@@ -1939,15 +1602,15 @@ Global online learning, tutoring and professional teaching opportunities.
 </div>
 
 </div>
+
 </footer>
 
 <button id="topBtn">↑</button>
 
 <script>
 
-/* MOBILE NAVIGATION */
-
 const menuBtn=document.getElementById('menuBtn');
+
 const navLinks=document.getElementById('navLinks');
 
 menuBtn.onclick=()=>{
@@ -1959,9 +1622,6 @@ a.onclick=()=>{
 navLinks.classList.remove('open');
 };
 });
-
-
-/* BACK TO TOP */
 
 const topBtn=document.getElementById('topBtn');
 
@@ -1976,9 +1636,6 @@ behavior:'smooth'
 });
 };
 
-
-/* TEACHER APPLICATION STEPS */
-
 const form=document.getElementById('teacherApplication');
 
 const steps=[
@@ -1990,13 +1647,12 @@ const bars=[
 ];
 
 const next=document.getElementById('nextBtn');
+
 const prev=document.getElementById('prevBtn');
+
 const submit=document.getElementById('submitBtn');
 
 let current=0;
-
-
-/* SHOW CURRENT STEP */
 
 function showStep(n){
 
@@ -2027,15 +1683,10 @@ block:'start'
 
 }
 
-
-/* VALIDATE CURRENT STEP */
-
 function valid(){
 
 for(
-const x of steps[current].querySelectorAll(
-'input,select,textarea'
-)
+const x of steps[current].querySelectorAll('input,select,textarea')
 ){
 
 if(!x.checkValidity()){
@@ -2052,9 +1703,6 @@ return true;
 
 }
 
-
-/* NEXT */
-
 next.onclick=()=>{
 
 if(
@@ -2062,44 +1710,32 @@ valid() &&
 current<steps.length-1
 ){
 
-current++;
-
-showStep(current);
+showStep(++current);
 
 }
 
 };
-
-
-/* PREVIOUS */
 
 prev.onclick=()=>{
 
 if(current>0){
 
-current--;
-
-showStep(current);
+showStep(--current);
 
 }
 
 };
 
-
-/* DISPLAY SELECTED FILE NAMES */
-
 function names(id,help){
 
-const input=document.getElementById(id);
-const helpBox=document.getElementById(help);
-
-input.addEventListener('change',e=>{
+document
+.getElementById(id)
+.addEventListener('change',e=>{
 
 if(e.target.files.length){
 
-helpBox.textContent=[
-...e.target.files
-]
+document.getElementById(help).textContent=
+[...e.target.files]
 .map(f=>f.name)
 .join(', ');
 
@@ -2110,38 +1746,36 @@ helpBox.textContent=[
 }
 
 names('cv','cvHelp');
+
 names('supporting','supportingHelp');
+
 names('introVideo','introHelp');
+
 names('demoVideo','demoHelp');
 
 
-/* FILE VALIDATION */
+/* Formspree upload protection */
 
 form.addEventListener('submit',e=>{
 
 if(!valid()){
+
+e.preventDefault();
+
 return;
+
 }
 
 const files=[
 ...form.querySelectorAll('input[type=file]')
 ]
-.flatMap(x=>[
-...x.files
-]);
+.flatMap(x=>[...x.files]);
 
-const maxPerFile=
-25*1024*1024;
+const per=25*1024*1024;
 
-const maxTotal=
-100*1024*1024;
+const totalMax=100*1024*1024;
 
-const maxFiles=10;
-
-
-/* MAXIMUM 10 FILES */
-
-if(files.length>maxFiles){
+if(files.length>10){
 
 e.preventDefault();
 
@@ -2153,20 +1787,16 @@ return;
 
 }
 
-
-/* MAXIMUM 25 MB PER FILE */
-
-const oversized=
-files.find(
-f=>f.size>maxPerFile
+const big=files.find(
+f=>f.size>per
 );
 
-if(oversized){
+if(big){
 
 e.preventDefault();
 
 alert(
-oversized.name+
+big.name+
 ' is larger than 25 MB. Please compress it and upload a smaller version.'
 );
 
@@ -2174,16 +1804,12 @@ return;
 
 }
 
-
-/* MAXIMUM 100 MB TOTAL */
-
-const totalSize=
+if(
 files.reduce(
 (a,f)=>a+f.size,
 0
-);
-
-if(totalSize>maxTotal){
+)>totalMax
+){
 
 e.preventDefault();
 
@@ -2195,13 +1821,9 @@ return;
 
 }
 
-
-/* ALLOW VALID SUBMISSION TO FORMspree */
-
 submit.disabled=true;
 
-submit.textContent=
-'Sending Application…';
+submit.textContent='Sending Application…';
 
 });
 
