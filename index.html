@@ -1,4 +1,1901 @@
-```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Learning Hub | Global Online Tutoring & Learning</title>
+
+<meta name="description"
+content="Learning Hub provides global online tutoring, international curriculum support, specialized learning support, Arabic-speaking student support, exam preparation and educational resources.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root{
+--navy:#10233f;
+--blue:#2563eb;
+--blue-light:#eff6ff;
+--cream:#faf8f3;
+--green:#138a63;
+--gold:#f59e0b;
+--white:#fff;
+--text:#26364d;
+--muted:#667085;
+--border:#e5e7eb;
+--shadow:0 15px 45px rgba(16,35,63,.10);
+--radius:18px;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:"DM Sans",sans-serif;
+color:var(--text);
+background:#fff;
+line-height:1.6;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+max-width:100%;
+display:block;
+}
+
+.container{
+width:min(1180px,92%);
+margin:auto;
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(255,255,255,.97);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--border);
+}
+
+.nav{
+min-height:74px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:25px;
+}
+
+.logo{
+font-family:"Playfair Display",serif;
+font-size:28px;
+font-weight:700;
+color:var(--navy);
+white-space:nowrap;
+}
+
+.logo span{
+color:var(--blue);
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+nav a{
+font-size:14px;
+font-weight:600;
+color:var(--text);
+}
+
+nav a:hover{
+color:var(--blue);
+}
+
+.nav-button{
+background:var(--blue);
+color:white!important;
+padding:11px 18px;
+border-radius:10px;
+}
+
+/* HERO */
+
+.hero{
+min-height:650px;
+display:flex;
+align-items:center;
+background:
+linear-gradient(120deg,rgba(16,35,63,.94),rgba(37,99,235,.80)),
+url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=80");
+background-size:cover;
+background-position:center;
+color:white;
+}
+
+.hero-content{
+max-width:800px;
+padding:90px 0;
+}
+
+.badge{
+display:inline-block;
+padding:8px 15px;
+background:rgba(255,255,255,.13);
+border:1px solid rgba(255,255,255,.25);
+border-radius:999px;
+font-size:12px;
+font-weight:800;
+letter-spacing:1px;
+margin-bottom:22px;
+}
+
+.hero h1{
+font-family:"Playfair Display",serif;
+font-size:clamp(44px,7vw,76px);
+line-height:1.05;
+margin-bottom:25px;
+}
+
+.hero p{
+max-width:720px;
+font-size:20px;
+color:rgba(255,255,255,.90);
+margin-bottom:32px;
+}
+
+.hero-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
+}
+
+.btn{
+display:inline-block;
+padding:14px 23px;
+border-radius:11px;
+font-weight:700;
+font-size:15px;
+transition:.2s;
+}
+
+.btn:hover{
+transform:translateY(-2px);
+}
+
+.btn-primary{
+background:white;
+color:var(--navy);
+}
+
+.btn-blue{
+background:var(--blue);
+color:white;
+}
+
+.btn-outline{
+border:1px solid rgba(255,255,255,.55);
+color:white;
+}
+
+/* STATS */
+
+.stats{
+margin-top:-45px;
+position:relative;
+z-index:5;
+}
+
+.stats-grid{
+background:white;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+display:grid;
+grid-template-columns:repeat(4,1fr);
+overflow:hidden;
+}
+
+.stat{
+padding:28px;
+text-align:center;
+border-right:1px solid var(--border);
+}
+
+.stat:last-child{
+border-right:none;
+}
+
+.stat strong{
+display:block;
+font-size:27px;
+color:var(--navy);
+}
+
+.stat span{
+font-size:13px;
+color:var(--muted);
+}
+
+/* GENERAL */
+
+section{
+padding:90px 0;
+}
+
+.section-heading{
+max-width:760px;
+margin:0 auto 50px;
+text-align:center;
+}
+
+.section-heading small{
+color:var(--blue);
+font-weight:800;
+text-transform:uppercase;
+letter-spacing:1.5px;
+font-size:12px;
+}
+
+.section-heading h2{
+font-family:"Playfair Display",serif;
+color:var(--navy);
+font-size:clamp(34px,5vw,48px);
+margin:10px 0 14px;
+}
+
+.section-heading p{
+color:var(--muted);
+}
+
+/* LEARNING PATHS */
+
+.paths{
+background:var(--cream);
+}
+
+.path-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.path{
+background:white;
+padding:32px;
+border-radius:var(--radius);
+border:1px solid var(--border);
+transition:.25s;
+}
+
+.path:hover{
+transform:translateY(-5px);
+box-shadow:var(--shadow);
+}
+
+.icon{
+width:54px;
+height:54px;
+display:grid;
+place-items:center;
+background:var(--blue-light);
+border-radius:14px;
+font-size:25px;
+margin-bottom:20px;
+}
+
+.path h3{
+color:var(--navy);
+margin-bottom:10px;
+font-size:21px;
+}
+
+.path p{
+color:var(--muted);
+font-size:14px;
+margin-bottom:17px;
+}
+
+.path a{
+color:var(--blue);
+font-weight:700;
+font-size:14px;
+}
+
+/* SPECIALIZED SUPPORT */
+
+.special-support{
+background:white;
+}
+
+.special-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:25px;
+}
+
+.special-card{
+padding:35px;
+border-radius:var(--radius);
+border:1px solid var(--border);
+background:white;
+box-shadow:0 8px 30px rgba(16,35,63,.05);
+}
+
+.special-card.featured{
+background:linear-gradient(135deg,#eff6ff,#ffffff);
+border-color:#bfdbfe;
+}
+
+.special-card h3{
+font-family:"Playfair Display",serif;
+font-size:27px;
+color:var(--navy);
+margin-bottom:12px;
+}
+
+.special-card p{
+color:var(--muted);
+font-size:15px;
+margin-bottom:18px;
+}
+
+.check-list{
+list-style:none;
+}
+
+.check-list li{
+margin:9px 0;
+font-size:14px;
+}
+
+.check-list li:before{
+content:"✓";
+color:var(--green);
+font-weight:800;
+margin-right:10px;
+}
+
+/* SUBJECTS */
+
+.subject-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:16px;
+}
+
+.subject{
+padding:23px;
+border:1px solid var(--border);
+border-radius:15px;
+background:white;
+font-weight:700;
+color:var(--navy);
+transition:.2s;
+}
+
+.subject:hover{
+border-color:var(--blue);
+background:var(--blue-light);
+transform:translateY(-2px);
+}
+
+.subject span{
+display:block;
+color:var(--muted);
+font-size:12px;
+font-weight:400;
+margin-top:5px;
+}
+
+/* RESOURCES */
+
+.resources{
+background:var(--cream);
+}
+
+.resource-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.resource{
+background:white;
+border-radius:var(--radius);
+overflow:hidden;
+border:1px solid var(--border);
+transition:.2s;
+}
+
+.resource:hover{
+transform:translateY(-4px);
+box-shadow:var(--shadow);
+}
+
+.resource-img{
+height:190px;
+background-size:cover;
+background-position:center;
+}
+
+.resource-content{
+padding:25px;
+}
+
+.resource-tag{
+font-size:11px;
+text-transform:uppercase;
+font-weight:800;
+color:var(--blue);
+letter-spacing:1px;
+}
+
+.resource h3{
+color:var(--navy);
+margin:8px 0;
+}
+
+.resource p{
+color:var(--muted);
+font-size:14px;
+margin-bottom:18px;
+}
+
+.resource a{
+color:var(--blue);
+font-weight:700;
+font-size:14px;
+}
+
+/* FEATURES */
+
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.feature{
+padding:30px;
+border:1px solid var(--border);
+border-radius:var(--radius);
+}
+
+.feature h3{
+color:var(--navy);
+margin:12px 0 8px;
+}
+
+.feature p{
+color:var(--muted);
+font-size:14px;
+}
+
+/* COMMUNITY */
+
+.community{
+background:var(--cream);
+}
+
+.community-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.community-card{
+padding:34px;
+border-radius:var(--radius);
+color:white;
+background:var(--navy);
+}
+
+.community-card:nth-child(2){
+background:var(--blue);
+}
+
+.community-card:nth-child(3){
+background:var(--green);
+}
+
+.community-card h3{
+font-size:25px;
+margin-bottom:12px;
+}
+
+.community-card p{
+opacity:.9;
+font-size:14px;
+margin-bottom:22px;
+}
+
+.community-card a{
+display:inline-block;
+background:white;
+color:var(--navy);
+padding:10px 15px;
+border-radius:9px;
+font-size:13px;
+font-weight:700;
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+background:#fff;
+}
+
+.testimonial-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.testimonial{
+padding:28px;
+border:1px solid var(--border);
+border-radius:var(--radius);
+background:white;
+transition:.2s;
+}
+
+.testimonial:hover{
+transform:translateY(-4px);
+box-shadow:var(--shadow);
+}
+
+.stars{
+color:var(--gold);
+letter-spacing:2px;
+margin-bottom:15px;
+}
+
+.testimonial p{
+color:var(--text);
+font-size:15px;
+margin-bottom:20px;
+}
+
+.testimonial strong{
+color:var(--navy);
+font-size:14px;
+}
+
+.testimonial small{
+display:block;
+color:var(--muted);
+margin-top:3px;
+}
+
+.testimonial-tag{
+display:inline-block;
+background:var(--blue-light);
+color:var(--blue);
+font-size:10px;
+font-weight:800;
+padding:5px 9px;
+border-radius:999px;
+margin-bottom:12px;
+}
+
+/* SUCCESS STORIES */
+
+.success{
+background:var(--cream);
+}
+
+.success-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.success-card{
+background:white;
+padding:30px;
+border-radius:var(--radius);
+border:1px solid var(--border);
+}
+
+.success-number{
+font-size:36px;
+font-family:"Playfair Display",serif;
+color:var(--blue);
+font-weight:700;
+}
+
+.success-card h3{
+color:var(--navy);
+margin:8px 0 10px;
+}
+
+.success-card p{
+color:var(--muted);
+font-size:14px;
+}
+
+/* VIDEO TESTIMONIALS */
+
+.video-section{
+background:white;
+}
+
+.video-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+}
+
+.video-card{
+border:1px solid var(--border);
+border-radius:var(--radius);
+overflow:hidden;
+background:white;
+}
+
+.video-box{
+height:220px;
+background:
+linear-gradient(rgba(16,35,63,.65),rgba(16,35,63,.65)),
+url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80");
+background-size:cover;
+background-position:center;
+display:grid;
+place-items:center;
+}
+
+.play{
+width:70px;
+height:70px;
+border-radius:50%;
+background:white;
+color:var(--blue);
+display:grid;
+place-items:center;
+font-size:25px;
+padding-left:3px;
+}
+
+.video-content{
+padding:20px;
+}
+
+.video-content h3{
+color:var(--navy);
+font-size:18px;
+margin-bottom:5px;
+}
+
+.video-content p{
+color:var(--muted);
+font-size:13px;
+}
+
+/* FEEDBACK */
+
+.feedback{
+background:var(--blue-light);
+}
+
+.feedback-box{
+max-width:850px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+.feedback-box h3{
+font-family:"Playfair Display",serif;
+font-size:30px;
+color:var(--navy);
+margin-bottom:8px;
+}
+
+.feedback-box>p{
+color:var(--muted);
+font-size:14px;
+margin-bottom:25px;
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.form input,
+.form textarea,
+.form select,
+.feedback-form input,
+.feedback-form textarea,
+.feedback-form select{
+width:100%;
+padding:13px;
+border:1px solid var(--border);
+border-radius:9px;
+font-family:inherit;
+margin-bottom:13px;
+}
+
+.feedback-form textarea{
+min-height:130px;
+resize:vertical;
+}
+
+.feedback-form label{
+display:block;
+font-size:13px;
+font-weight:700;
+color:var(--navy);
+margin-bottom:6px;
+}
+
+.feedback-note{
+background:#f8fafc;
+border-left:4px solid var(--blue);
+padding:13px 15px;
+font-size:12px;
+color:var(--muted);
+margin:10px 0 18px;
+}
+
+.checkbox{
+display:flex!important;
+align-items:flex-start;
+gap:9px;
+font-weight:400!important;
+margin:10px 0 20px;
+}
+
+.checkbox input{
+width:auto!important;
+margin:3px 0 0!important;
+}
+
+/* TEACHERS */
+
+.teacher-section{
+background:var(--cream);
+}
+
+.teacher-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:45px;
+align-items:center;
+}
+
+.teacher-box h2{
+font-family:"Playfair Display",serif;
+color:var(--navy);
+font-size:44px;
+margin:10px 0 15px;
+}
+
+.teacher-box p{
+color:var(--muted);
+margin-bottom:20px;
+}
+
+.teacher-list{
+list-style:none;
+margin-bottom:25px;
+}
+
+.teacher-list li{
+margin-bottom:9px;
+}
+
+.teacher-list li:before{
+content:"✓";
+color:var(--green);
+font-weight:800;
+margin-right:10px;
+}
+
+.form{
+background:white;
+padding:30px;
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+}
+
+.form button{
+width:100%;
+border:none;
+cursor:pointer;
+}
+
+/* PREMIUM */
+
+.premium{
+background:var(--navy);
+color:white;
+}
+
+.premium-box{
+max-width:850px;
+margin:auto;
+text-align:center;
+}
+
+.premium h2{
+font-family:"Playfair Display",serif;
+font-size:45px;
+margin:10px 0 15px;
+}
+
+.premium p{
+color:rgba(255,255,255,.8);
+margin-bottom:25px;
+}
+
+.premium-features{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-bottom:28px;
+}
+
+.premium-features span{
+padding:9px 14px;
+background:rgba(255,255,255,.1);
+border-radius:999px;
+font-size:13px;
+}
+
+/* BOOKING */
+
+.booking{
+background:var(--blue-light);
+}
+
+.booking-box{
+max-width:800px;
+margin:auto;
+text-align:center;
+}
+
+.booking-box small{
+color:var(--blue);
+font-weight:800;
+letter-spacing:1.5px;
+text-transform:uppercase;
+}
+
+.booking h2{
+font-family:"Playfair Display",serif;
+color:var(--navy);
+font-size:45px;
+margin:10px 0 15px;
+}
+
+.booking p{
+color:var(--muted);
+margin-bottom:25px;
+}
+
+.calendly-wrapper{
+max-width:1050px;
+margin:35px auto 0;
+background:white;
+border-radius:20px;
+box-shadow:var(--shadow);
+overflow:hidden;
+border:1px solid var(--border);
+}
+
+.calendly-inline-widget{
+min-width:320px;
+height:750px;
+}
+
+/* CONTACT */
+
+.contact-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+}
+
+.contact-card{
+padding:32px;
+border:1px solid var(--border);
+border-radius:var(--radius);
+}
+
+.contact-card h3{
+color:var(--navy);
+margin-bottom:10px;
+}
+
+.contact-card p{
+color:var(--muted);
+}
+
+.contact-card a{
+color:var(--blue);
+font-weight:700;
+}
+
+/* FOOTER */
+
+footer{
+background:#09182c;
+color:white;
+padding:55px 0 25px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:2fr 1fr 1fr 1fr;
+gap:35px;
+margin-bottom:40px;
+}
+
+footer h3{
+margin-bottom:13px;
+}
+
+footer p,
+footer a{
+color:rgba(255,255,255,.65);
+font-size:13px;
+}
+
+footer a{
+display:block;
+margin-bottom:7px;
+}
+
+footer a:hover{
+color:white;
+}
+
+.copyright{
+border-top:1px solid rgba(255,255,255,.1);
+padding-top:20px;
+text-align:center;
+color:rgba(255,255,255,.45);
+font-size:12px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+nav{
+display:none;
+}
+
+.stats-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.stat:nth-child(2){
+border-right:none;
+}
+
+.path-grid,
+.resource-grid,
+.feature-grid,
+.community-grid,
+.testimonial-grid,
+.success-grid,
+.video-grid,
+.special-grid,
+.teacher-box,
+.contact-grid{
+grid-template-columns:1fr;
+}
+
+.subject-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.footer-grid{
+grid-template-columns:1fr 1fr;
+}
+
+.form-grid{
+grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:550px){
+
+.hero{
+min-height:600px;
+}
+
+section{
+padding:65px 0;
+}
+
+.stats-grid{
+grid-template-columns:1fr;
+}
+
+.stat{
+border-right:none;
+border-bottom:1px solid var(--border);
+}
+
+.subject-grid{
+grid-template-columns:1fr;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:43px;
+}
+
+.booking h2{
+font-size:38px;
+}
+
+.teacher-box h2{
+font-size:37px;
+}
+
+.feedback-box{
+padding:25px 20px;
+}
+
+.calendly-inline-widget{
+height:850px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<div class="container nav">
+
+<a href="#home" class="logo">
+Learning <span>Hub</span>
+</a>
+
+<nav>
+<a href="#learning">Learning</a>
+<a href="#special">Specialized Support</a>
+<a href="#subjects">Subjects</a>
+<a href="#resources">Resources</a>
+<a href="#stories">Success Stories</a>
+<a href="#community">Community</a>
+<a href="#contact">Contact</a>
+<a href="#booking" class="nav-button">Book a Lesson</a>
+</nav>
+
+</div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container">
+
+<div class="hero-content">
+
+<span class="badge">
+GLOBAL EDUCATION PLATFORM
+</span>
+
+<h1>
+Learning for everyone. Everywhere.
+</h1>
+
+<p>
+Personalized online tutoring, international curriculum support,
+exam preparation, specialized learning support and educational
+resources for students and lifelong learners around the world.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#learning" class="btn btn-primary">
+Explore Learning
+</a>
+
+<a href="#booking" class="btn btn-outline">
+Book a Lesson
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="container">
+
+<div class="stats-grid">
+
+<div class="stat">
+<strong>15+</strong>
+<span>Years of teaching experience</span>
+</div>
+
+<div class="stat">
+<strong>Global</strong>
+<span>Online learning</span>
+</div>
+
+<div class="stat">
+<strong>All Levels</strong>
+<span>School to professional</span>
+</div>
+
+<div class="stat">
+<strong>1-to-1</strong>
+<span>Personalized support</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- LEARNING PATHS -->
+
+<section class="paths" id="learning">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Learning Paths</small>
+
+<h2>
+Choose your learning journey
+</h2>
+
+<p>
+Learning Hub supports learners at different stages —
+from school and international curricula to examinations,
+professional communication and lifelong learning.
+</p>
+
+</div>
+
+
+<div class="path-grid">
+
+<div class="path">
+
+<div class="icon">🎓</div>
+
+<h3>
+School & Academic Learning
+</h3>
+
+<p>
+Build strong foundations through personalized tutoring,
+practice materials, structured lessons and academic support.
+</p>
+
+<a href="#subjects">
+Explore subjects →
+</a>
+
+</div>
+
+
+<div class="path">
+
+<div class="icon">🌍</div>
+
+<h3>
+International Education
+</h3>
+
+<p>
+Support for IB, A-Level and other international curricula,
+including subject tutoring and examination preparation.
+</p>
+
+<a href="#subjects">
+Explore international subjects →
+</a>
+
+</div>
+
+
+<div class="path">
+
+<div class="icon">🚀</div>
+
+<h3>
+Career & Professional Skills
+</h3>
+
+<p>
+Develop English communication, academic writing, workplace
+English and professional communication skills.
+</p>
+
+<a href="#contact">
+Learn more →
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SPECIALIZED SUPPORT -->
+
+<section class="special-support" id="special">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Personalized Support</small>
+
+<h2>
+Learning support designed around the learner
+</h2>
+
+<p>
+Every student learns differently. Lessons can be adapted to
+individual pace, confidence, communication needs and learning goals.
+</p>
+
+</div>
+
+
+<div class="special-grid">
+
+<div class="special-card featured">
+
+<div class="icon">🌱</div>
+
+<h3>
+Specialized Learning Support
+</h3>
+
+<p>
+Individualized teaching for learners who benefit from a
+slower pace, smaller learning steps, additional practice,
+greater engagement or highly structured guidance.
+</p>
+
+<ul class="check-list">
+
+<li>Personalized lesson pacing</li>
+<li>Small-step explanations</li>
+<li>Additional practice and reinforcement</li>
+<li>Interactive and engaging activities</li>
+<li>Confidence-building support</li>
+<li>Customized learning resources</li>
+<li>One-to-one academic guidance</li>
+
+</ul>
+
+</div>
+
+
+<div class="special-card">
+
+<div class="icon">🌍</div>
+
+<h3>
+Arabic-Speaking Students & Families
+</h3>
+
+<p>
+Dedicated support for students and families from
+Arabic-speaking backgrounds who want clear, supportive
+English and academic learning.
+</p>
+
+<ul class="check-list">
+
+<li>English communication</li>
+<li>Academic English</li>
+<li>IELTS & PTE preparation</li>
+<li>IB English support</li>
+<li>Psychology and academic subjects</li>
+<li>Customized one-to-one lessons</li>
+<li>Support for developing English proficiency</li>
+
+</ul>
+
+<br>
+
+<a href="#contact" class="btn btn-blue">
+Ask About Arabic-Speaking Student Support
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SUBJECTS -->
+
+<section id="subjects">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Explore</small>
+
+<h2>
+Learning across subjects
+</h2>
+
+<p>
+A growing range of subjects and learning opportunities
+for students and lifelong learners.
+</p>
+
+</div>
+
+
+<div class="subject-grid">
+
+<div class="subject">
+English & Languages
+<span>English • IELTS • PTE • Academic English</span>
+</div>
+
+<div class="subject">
+Mathematics
+<span>School mathematics • Problem solving</span>
+</div>
+
+<div class="subject">
+Science
+<span>Biology • Chemistry • Physics • ESS</span>
+</div>
+
+<div class="subject">
+Social Sciences
+<span>Psychology • Sociology • Social studies</span>
+</div>
+
+<div class="subject">
+Business & Economics
+<span>Business • Economics • Management</span>
+</div>
+
+<div class="subject">
+Academic Skills
+<span>Essay writing • Research • Study skills</span>
+</div>
+
+<div class="subject">
+Exam Preparation
+<span>IB • A-Level • IELTS • PTE • TOEFL</span>
+</div>
+
+<div class="subject">
+Professional English
+<span>Workplace English • Communication</span>
+</div>
+
+<div class="subject">
+Primary Learning
+<span>Foundations • Reading • Writing • Mathematics</span>
+</div>
+
+<div class="subject">
+Specialized Support
+<span>Individualized learning • Engagement • Confidence</span>
+</div>
+
+<div class="subject">
+Arabic-Speaking Learners
+<span>English and academic support</span>
+</div>
+
+<div class="subject">
+Lifelong Learning
+<span>Learn and develop at every stage</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PLATFORM FEATURES -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Learning Hub</small>
+
+<h2>
+More than tutoring
+</h2>
+
+<p>
+The platform brings learning, practice, resources,
+educators and personalized support together.
+</p>
+
+</div>
+
+
+<div class="feature-grid">
+
+<div class="feature">
+<div class="icon">📚</div>
+<h3>Resource Library</h3>
+<p>
+Worksheets, revision notes, practice activities,
+vocabulary resources and study materials.
+</p>
+</div>
+
+<div class="feature">
+<div class="icon">📝</div>
+<h3>Exam Preparation</h3>
+<p>
+Structured preparation for international examinations
+and language tests.
+</p>
+</div>
+
+<div class="feature">
+<div class="icon">🎯</div>
+<h3>Structured Learning</h3>
+<p>
+Learning paths, practice activities and individualized
+study support.
+</p>
+</div>
+
+<div class="feature">
+<div class="icon">👩‍🏫</div>
+<h3>Qualified Teaching</h3>
+<p>
+Personalized support from experienced educators and
+subject specialists.
+</p>
+</div>
+
+<div class="feature">
+<div class="icon">🌐</div>
+<h3>International Learning</h3>
+<p>
+Support for learners following different curricula
+around the world.
+</p>
+</div>
+
+<div class="feature">
+<div class="icon">💡</div>
+<h3>Lifelong Learning</h3>
+<p>
+Education continues beyond school. Keep learning,
+developing and improving at every stage.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RESOURCES -->
+
+<section class="resources" id="resources">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Free Learning</small>
+
+<h2>
+Resources you can use today
+</h2>
+
+<p>
+Start with free printable resources and practice materials.
+The library will continue to grow.
+</p>
+
+</div>
+
+
+<div class="resource-grid">
+
+
+<!-- RESOURCE 1 -->
+
+<div class="resource">
+
+<div class="resource-img"
+style="background-image:url('https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=80');">
+</div>
+
+<div class="resource-content">
+
+<span class="resource-tag">FREE WORKSHEET</span>
+
+<h3>Trilingual Vocabulary Practice</h3>
+
+<p>
+Urdu → English → Italian vocabulary practice with
+greetings, dialogue and translation activities.
+</p>
+
+<a href="resources/urdu-english-italian-formal-vocabulary.pdf">
+Download Free →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RESOURCE 2 -->
+
+<div class="resource">
+
+<div class="resource-img"
+style="background-image:url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1000&q=80');">
+</div>
+
+<div class="resource-content">
+
+<span class="resource-tag">VOCABULARY WORKBOOK</span>
+
+<h3>Chinese Formal Expressions</h3>
+
+<p>
+Business greetings, professional etiquette, dialogue
+completions and email translations.
+</p>
+
+<a href="resources/chinese_beginner_formal_vocab_worksheet.pdf">
+Download Free →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RESOURCE 3 -->
+
+<div class="resource">
+
+<div class="resource-img"
+style="background-image:url('https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1000&q=80');">
+</div>
+
+<div class="resource-content">
+
+<span class="resource-tag">MATH WORKSHEET</span>
+
+<h3>Mental Math (Grades 4–5)</h3>
+
+<p>
+Bilingual Italian-English worksheet covering addition,
+subtraction, multiplication and division.
+</p>
+
+<a href="resources/Grade_4_5_Mental_Math_Italian_English.pdf">
+Download Free →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RESOURCE 4 -->
+
+<div class="resource">
+
+<div class="resource-img"
+style="background-image:url('https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1000&q=80');">
+</div>
+
+<div class="resource-content">
+
+<span class="resource-tag">IB PSYCHOLOGY</span>
+
+<h3>Bias in Psychological Research</h3>
+
+<p>
+Researcher, participant, sampling and publication bias
+with Paper 2 guidance.
+</p>
+
+<a href="resources/_Bias%20in%20Psychological%20Research.pdf">
+Download Free →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RESOURCE 5 -->
+
+<div class="resource">
+
+<div class="resource-img"
+style="background-image:url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1000&q=80');">
+</div>
+
+<div class="resource-content">
+
+<span class="resource-tag">IB ENGLISH LIT</span>
+
+<h3>A Doll's House: Devices & Delicacy</h3>
+
+<p>
+Literary devices, authorial choices and analysis formulas
+for Henrik Ibsen's play.
+</p>
+
+<a href="resources/A%20Doll%E2%80%99s%20House%20Devices%20%26%20Delicacy_20260822_104019_0000.pdf">
+Download Free →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RESOURCE 6 -->
+
+<div class="resource">
+
+<div class="resource-img"
+style="background-image:url('https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=1000&q=80');">
+</div>
+
+<div class="resource-content">
+
+<span class="resource-tag">TEXTBOOK SAMPLE</span>
+
+<h3>Sociocultural Approach to Psychology</h3>
+
+<p>
+IB Diploma material covering cognitive dissonance,
+compliance, cultural dimensions and SIT.
+</p>
+
+<a href="resources/IB-PSYCHOLOGY-3rdEdition-sample.pdf">
+Download Free →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RESOURCE 7 -->
+
+<div class="resource">
+
+<div class="resource-img"
+style="background-image:url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=80');">
+</div>
+
+<div class="resource-content">
+
+<span class="resource-tag">IB ENGLISH SL</span>
+
+<h3>Literary Analysis Practice</h3>
+
+<p>
+Practice analyzing diction, imagery, symbolism,
+narrative perspective and tone.
+</p>
+
+<a href="resources/IB_English_SL_Literary_Analysis_Practice_Activities.pdf">
+Download Free →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RESOURCE 8 -->
+
+<div class="resource">
+
+<div class="resource-img"
+style="background-image:url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80');">
+</div>
+
+<div class="resource-content">
+
+<span class="resource-tag">READING GUIDE</span>
+
+<h3>5 Essential Steps for Learning to Read</h3>
+
+<p>
+Reading-development framework focusing on phonological
+awareness, phonemes and blending.
+</p>
+
+<a href="resources/5_Essential_Steps_Learning_to_Read.docx">
+Download Free →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- RESOURCE 9 -->
+
+<div class="resource">
+
+<div class="resource-img"
+style="background-image:url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1000&q=80');">
+</div>
+
+<div class="resource-content">
+
+<span class="resource-tag">IELTS / PTE VOCAB</span>
+
+<h3>30 High-Value Daily Vocabulary Words</h3>
+
+<p>
+Intermediate-to-advanced vocabulary for speaking
+and writing development.
+</p>
+
+<a href="resources/30_High_Value_Daily_Life_Vocabulary_Intermediate_Advanced.docx">
+Download Free →
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- COMMUNITY -->
+
+<section class="community" id="community">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Learning Community</small>
+
+<h2>
+A platform for learners, parents and educators
+</h2>
+
+<p>
+Learning Hub connects students, families and educators
+through learning, resources and personalized support.
+</p>
+
+</div>
+
+
+<div class="community-grid">
+
+<div class="community-card">
+
+<h3>👩‍🎓 Students</h3>
+
+<p>
+Find tutoring, resources, courses, practice activities
+and support for your learning goals.
+</p>
+
+<a href="#booking">Start Learning</a>
+
+</div>
+
+
+<div class="community-card">
+
+<h3>👨‍👩‍👧 Parents</h3>
+
+<p>
+Explore tutoring options, specialized support,
+educational resources and learning guidance.
+</p>
+
+<a href="#contact">Parent Support</a>
+
+</div>
+
+
+<div class="community-card">
+
+<h3>👩‍🏫 Teachers</h3>
+
+<p>
+Join the future Learning Hub educator community and
+explore opportunities to contribute.
+</p>
+
+<a href="#teachers">Join Teachers</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
 <!-- TESTIMONIALS -->
 
 <section class="testimonials" id="testimonials">
@@ -14,8 +1911,8 @@ What learners have shared
 </h2>
 
 <p>
-Feedback from students, professionals and parents who have
-experienced personalized learning support through Learning Hub.
+Real learning experiences from students and families
+supported through personalized teaching.
 </p>
 
 </div>
@@ -23,8 +1920,6 @@ experienced personalized learning support through Learning Hub.
 
 <div class="testimonial-grid">
 
-
-<!-- 01 -->
 
 <div class="testimonial">
 
@@ -39,16 +1934,16 @@ and I was able to prepare within that short period
 and successfully complete my exam.”
 </p>
 
-<strong>Aisha K.</strong>
+<strong>
+A. — Psychology Student
+</strong>
 
 <small>
-A-Level Psychology Student · India
+India
 </small>
 
 </div>
 
-
-<!-- 02 -->
 
 <div class="testimonial">
 
@@ -63,16 +1958,16 @@ understand and handle examination questions and the
 techniques needed to approach them.”
 </p>
 
-<strong>Laura</strong>
+<strong>
+IB Psychology Student
+</strong>
 
 <small>
-IB Psychology Student · Indonesia
+Indonesia
 </small>
 
 </div>
 
-
-<!-- 03 -->
 
 <div class="testimonial">
 
@@ -87,16 +1982,16 @@ phonetics and speech while also improving my language
 accuracy.”
 </p>
 
-<strong>Krane</strong>
+<strong>
+IB English Student
+</strong>
 
 <small>
-IB English Language & Literature Student · Indonesia
+Indonesia
 </small>
 
 </div>
 
-
-<!-- 04 -->
 
 <div class="testimonial">
 
@@ -111,16 +2006,16 @@ for me. The lessons gave me structured practice and
 helped me become more confident in communication.”
 </p>
 
-<strong>Dr. Laiba</strong>
+<strong>
+Dr. N.
+</strong>
 
 <small>
-English Communication Student · Afghanistan
+Afghanistan
 </small>
 
 </div>
 
-
-<!-- 05 -->
 
 <div class="testimonial">
 
@@ -135,16 +2030,16 @@ on pronunciation, sentence formation and speaking, and
 I successfully passed the examination.”
 </p>
 
-<strong>Julia</strong>
+<strong>
+PTE Student
+</strong>
 
 <small>
-PTE Student · Spain
+Spain
 </small>
 
 </div>
 
-
-<!-- 06 -->
 
 <div class="testimonial">
 
@@ -159,16 +2054,16 @@ work. The lessons focused on giving her structure and
 direction while writing.”
 </p>
 
-<strong>Hasesah</strong>
+<strong>
+Parent of Grade 5 Student
+</strong>
 
 <small>
-Parent of Grade 5 Student · Saudi Arabia
+Riyadh, Saudi Arabia
 </small>
 
 </div>
 
-
-<!-- 07 -->
 
 <div class="testimonial">
 
@@ -183,16 +2078,16 @@ The teaching approach provided extra support and helped
 make difficult concepts easier to understand.”
 </p>
 
-<strong>Atayb</strong>
+<strong>
+Parent of Grade 3 Student
+</strong>
 
 <small>
-Parent of Grade 3 Student · Saudi Arabia
+Riyadh, Saudi Arabia
 </small>
 
 </div>
 
-
-<!-- 08 -->
 
 <div class="testimonial">
 
@@ -206,16 +2101,16 @@ Activities and a lively learning environment made it
 easier for him to participate and stay focused.”
 </p>
 
-<strong>Hashim</strong>
+<strong>
+Parent of Primary Student
+</strong>
 
 <small>
-Parent of Primary Student · Saudi Arabia
+Riyadh, Saudi Arabia
 </small>
 
 </div>
 
-
-<!-- 09 -->
 
 <div class="testimonial">
 
@@ -230,16 +2125,16 @@ helped her complete her education and progress toward
 Master's-level study.”
 </p>
 
-<strong>Cindy</strong>
+<strong>
+Former Student
+</strong>
 
 <small>
-Former Student · International
+International Student
 </small>
 
 </div>
 
-
-<!-- 10 -->
 
 <div class="testimonial">
 
@@ -254,10 +2149,12 @@ The lessons provided targeted practice instead of a
 one-size-fits-all approach.”
 </p>
 
-<strong>Asma</strong>
+<strong>
+IELTS Student
+</strong>
 
 <small>
-IELTS Student · International
+International Student
 </small>
 
 </div>
@@ -268,4 +2165,803 @@ IELTS Student · International
 </div>
 
 </section>
-```
+
+
+<!-- SUCCESS STORIES -->
+
+<section class="success" id="stories">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Learning Outcomes</small>
+
+<h2>
+Different learners. Different journeys.
+</h2>
+
+<p>
+Our approach adapts to the learner rather than expecting
+every student to learn in exactly the same way.
+</p>
+
+</div>
+
+
+<div class="success-grid">
+
+<div class="success-card">
+
+<div class="success-number">01</div>
+
+<h3>
+Intensive Exam Preparation
+</h3>
+
+<p>
+An A-Level Psychology student from India prepared for
+her examination within a highly focused two-month period
+and successfully completed the exam.
+</p>
+
+</div>
+
+
+<div class="success-card">
+
+<div class="success-number">02</div>
+
+<h3>
+From Content to Exam Technique
+</h3>
+
+<p>
+IB Psychology support combined subject understanding
+with examination-question analysis and strategies for
+approaching exam questions.
+</p>
+
+</div>
+
+
+<div class="success-card">
+
+<div class="success-number">03</div>
+
+<h3>
+Communication Confidence
+</h3>
+
+<p>
+Professional English learners received targeted support
+for sentence formation, pronunciation, speaking and
+real-world communication.
+</p>
+
+</div>
+
+
+<div class="success-card">
+
+<div class="success-number">04</div>
+
+<h3>
+Individualized Primary Support
+</h3>
+
+<p>
+Primary students received customized lessons based on
+their individual academic gaps, writing needs,
+engagement and learning pace.
+</p>
+
+</div>
+
+
+<div class="success-card">
+
+<div class="success-number">05</div>
+
+<h3>
+Long-Term Development
+</h3>
+
+<p>
+Long-term individualized teaching can evolve with a
+student's changing academic needs and educational goals.
+</p>
+
+</div>
+
+
+<div class="success-card">
+
+<div class="success-number">06</div>
+
+<h3>
+Targeted Language-Test Preparation
+</h3>
+
+<p>
+IELTS and PTE learners receive focused preparation
+around the specific language skills that require improvement.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEO TESTIMONIALS -->
+
+<section class="video-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Video Stories</small>
+
+<h2>
+Hear directly from learners and parents
+</h2>
+
+<p>
+Video testimonials will be added as students and parents
+share their experiences with permission.
+</p>
+
+</div>
+
+
+<div class="video-grid">
+
+
+<div class="video-card">
+
+<div class="video-box">
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="video-content">
+
+<h3>Student Video Stories</h3>
+
+<p>
+Hear students talk about their learning journey,
+confidence and academic progress.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="video-card">
+
+<div class="video-box">
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="video-content">
+
+<h3>Parent Experiences</h3>
+
+<p>
+Parents can share how personalized teaching has
+supported their child's learning.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="video-card">
+
+<div class="video-box">
+
+<div class="play">▶</div>
+
+</div>
+
+<div class="video-content">
+
+<h3>Learning Journey</h3>
+
+<p>
+Short video stories showing different learning
+experiences from around the world.
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SUBMIT FEEDBACK -->
+
+<section class="feedback" id="feedback">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Share Your Experience</small>
+
+<h2>
+We would love to hear from you
+</h2>
+
+<p>
+Students and parents can share written feedback,
+voice messages or video testimonials.
+</p>
+
+</div>
+
+
+<div class="feedback-box">
+
+<h3>
+Share your Learning Hub experience
+</h3>
+
+<p>
+Your feedback may help future students and families
+understand what personalized learning can look like.
+</p>
+
+
+<form
+class="feedback-form"
+action="mailto:hublearning117@gmail.com"
+method="post"
+enctype="multipart/form-data"
+>
+
+<div class="form-grid">
+
+<div>
+
+<label>Your name</label>
+
+<input
+type="text"
+name="Name"
+placeholder="Your name"
+required>
+
+</div>
+
+
+<div>
+
+<label>Your email</label>
+
+<input
+type="email"
+name="Email"
+placeholder="Email address"
+required>
+
+</div>
+
+</div>
+
+
+<div class="form-grid">
+
+<div>
+
+<label>I am a</label>
+
+<select name="Role" required>
+
+<option value="">
+Select one
+</option>
+
+<option>
+Student
+</option>
+
+<option>
+Parent
+</option>
+
+<option>
+Former Student
+</option>
+
+</select>
+
+</div>
+
+
+<div>
+
+<label>Country</label>
+
+<input
+type="text"
+name="Country"
+placeholder="Country">
+
+</div>
+
+</div>
+
+
+<label>Subject / service</label>
+
+<select name="Service">
+
+<option>
+IB Psychology
+</option>
+
+<option>
+IB English Language & Literature
+</option>
+
+<option>
+A-Level Psychology
+</option>
+
+<option>
+IELTS / PTE
+</option>
+
+<option>
+English Communication
+</option>
+
+<option>
+Primary / School Support
+</option>
+
+<option>
+Specialized Learning Support
+</option>
+
+<option>
+Arabic-Speaking Student Support
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+
+<label>Written feedback</label>
+
+<textarea
+name="Feedback"
+placeholder="Tell us about your learning experience...">
+</textarea>
+
+
+<label>
+Voice message
+</label>
+
+<input
+type="file"
+name="Voice_Message"
+accept="audio/*">
+
+
+<label>
+Video testimonial
+</label>
+
+<input
+type="file"
+name="Video_Testimonial"
+accept="video/*">
+
+
+<div class="feedback-note">
+
+<strong>Privacy & approval:</strong>
+Your submission will be reviewed before publication.
+We will only publish your testimonial with your permission.
+
+</div>
+
+
+<label class="checkbox">
+
+<input
+type="checkbox"
+name="Permission"
+required>
+
+<span>
+I give Learning Hub permission to use my feedback,
+including my first name/initials and country, on its
+website and educational marketing materials.
+</span>
+
+</label>
+
+
+<button
+type="submit"
+class="btn btn-blue"
+style="width:100%;border:none;cursor:pointer;">
+
+Submit My Feedback
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TEACHERS -->
+
+<section class="teacher-section" id="teachers">
+
+<div class="container">
+
+<div class="teacher-box">
+
+
+<div>
+
+<small style="
+color:#2563eb;
+font-weight:800;
+letter-spacing:1px;
+">
+FOR EDUCATORS
+</small>
+
+<h2>
+Teach with Learning Hub
+</h2>
+
+<p>
+We are building a global educator community for
+qualified teachers, tutors and subject specialists.
+</p>
+
+<ul class="teacher-list">
+
+<li>Teach students internationally</li>
+<li>Share specialist knowledge</li>
+<li>Create educational resources</li>
+<li>Contribute to the Learning Hub community</li>
+<li>Future opportunities for educator profiles</li>
+
+</ul>
+
+</div>
+
+
+<form
+class="form"
+action="mailto:hublearning117@gmail.com"
+method="post"
+enctype="text/plain">
+
+<h3 style="color:#10233f;margin-bottom:18px;">
+Teacher Application
+</h3>
+
+<input
+type="text"
+name="Name"
+placeholder="Full name"
+required>
+
+<input
+type="email"
+name="Email"
+placeholder="Email address"
+required>
+
+<input
+type="text"
+name="Country"
+placeholder="Country">
+
+<input
+type="text"
+name="Subjects"
+placeholder="Subjects you teach">
+
+<input
+type="text"
+name="Experience"
+placeholder="Teaching experience">
+
+<textarea
+name="Message"
+placeholder="Tell us about your teaching background">
+</textarea>
+
+<button
+class="btn btn-blue"
+type="submit">
+Apply to Teach
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PREMIUM -->
+
+<section class="premium">
+
+<div class="container">
+
+<div class="premium-box">
+
+<small style="letter-spacing:2px;font-weight:800;">
+FUTURE MEMBERSHIP
+</small>
+
+<h2>
+Learning Hub Premium
+</h2>
+
+<p>
+A future membership experience for learners who want
+deeper resources, structured study tools and a complete
+learning experience.
+</p>
+
+
+<div class="premium-features">
+
+<span>Revision Notes</span>
+<span>Practice Questions</span>
+<span>Mock Exams</span>
+<span>Worksheets</span>
+<span>Flashcards</span>
+<span>Progress Tracking</span>
+<span>Courses</span>
+<span>Study Plans</span>
+
+</div>
+
+
+<a href="#contact" class="btn btn-primary">
+Join the Interest List
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- BOOKING -->
+
+<section class="booking" id="booking">
+
+<div class="container">
+
+<div class="booking-box">
+
+<small>Book a Lesson</small>
+
+<h2>
+Choose a convenient time
+</h2>
+
+<p>
+Book an online lesson with Learning Hub.
+Select an available date and time below.
+</p>
+
+</div>
+
+
+<div class="calendly-wrapper">
+
+<div
+class="calendly-inline-widget"
+data-url="https://calendly.com/hublearning117"
+data-resize="true">
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<script
+type="text/javascript"
+src="https://assets.calendly.com/assets/external/widget.js"
+async>
+</script>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Contact</small>
+
+<h2>
+Let's build your learning journey
+</h2>
+
+<p>
+Contact Learning Hub for tutoring, specialized learning
+support, resources, courses, teacher opportunities or partnerships.
+</p>
+
+</div>
+
+
+<div class="contact-grid">
+
+
+<div class="contact-card">
+
+<h3>
+📧 General Enquiries
+</h3>
+
+<p>
+Contact us for information about tutoring, specialized
+support, courses, resources and partnerships.
+</p>
+
+<br>
+
+<a href="mailto:hublearning117@gmail.com">
+hublearning117@gmail.com
+</a>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+🌍 Global Online Learning
+</h3>
+
+<p>
+Learning Hub connects learners, educators and educational
+resources across borders through personalized online learning.
+</p>
+
+<br>
+
+<a href="#feedback">
+Share Your Experience →
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+Learning Hub
+</h3>
+
+<p>
+Learning for everyone. Everywhere.
+</p>
+
+<br>
+
+<p>
+Global online tutoring, courses and educational resources.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>Learn</h3>
+
+<a href="#learning">Learning Paths</a>
+<a href="#special">Specialized Support</a>
+<a href="#subjects">Subjects</a>
+<a href="#resources">Resources</a>
+<a href="#booking">Book a Lesson</a>
+
+</div>
+
+
+<div>
+
+<h3>Community</h3>
+
+<a href="#community">Students</a>
+<a href="#community">Parents</a>
+<a href="#teachers">Teachers</a>
+<a href="#feedback">Leave Feedback</a>
+
+</div>
+
+
+<div>
+
+<h3>Connect</h3>
+
+<a href="mailto:hublearning117@gmail.com">Email</a>
+<a href="#contact">Contact</a>
+<a href="#teachers">Teach with Us</a>
+<a href="#feedback">Share Your Experience</a>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Learning Hub. All rights reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
