@@ -1967,7 +1967,7 @@ information and upload the requested documents.
 </div>
 
 <form id="teacherApplication"
-action="https://script.google.com/macros/s/AKfycbzfxDUwZVASV-N5Qdmy6KG75vFA-nyVs6PwTwP6Mm5lJQPtll5yIa2Ck1mNjdqzaYCK/exec"
+action="https://script.google.com/macros/s/AKfycbzylLLqOlWlM-P-SnJk4hnPSzUrpehWywwNFQpOn0ij6PbanaljNrBK33YkkA1tUbXo/exec"
 method="POST"
 enctype="multipart/form-data">
 
@@ -2484,7 +2484,7 @@ Book a Session
 
 /* =========================================================
    TEACHER APPLICATION
-   Existing Google Apps Script endpoint preserved.
+   Google Apps Script Web App
    ========================================================= */
 
 const form = document.getElementById("teacherApplication");
@@ -2714,7 +2714,7 @@ form.addEventListener(
 
 
       /*
-        Convert every uploaded file
+        Convert uploaded files
         to Base64 for Google Apps Script.
       */
 
@@ -2757,7 +2757,7 @@ form.addEventListener(
 
 
       /*
-        SEND TO YOUR EXISTING
+        SEND TO NEW
         GOOGLE APPS SCRIPT
       */
 
@@ -2783,8 +2783,7 @@ form.addEventListener(
 
 
       /*
-        ONLY SUCCESS FLOW IS SHOWN
-        TO THE APPLICANT.
+        SUCCESS CHECK
       */
 
       if(!result.success){
@@ -2812,7 +2811,6 @@ form.addEventListener(
       statusBox.textContent =
         "Application submitted successfully. Thank you for applying to Learning Hub.";
 
-
       statusBox.scrollIntoView({
         behavior:"smooth",
         block:"center"
@@ -2824,10 +2822,9 @@ form.addEventListener(
     catch(error){
 
       /*
-        No unwanted generic failure
-        message is displayed to the user.
-        Error is kept in browser console
-        for technical debugging only.
+        Keep technical error in console
+        without showing unwanted generic
+        failure message to applicants.
       */
 
       console.error(
