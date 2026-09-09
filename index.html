@@ -7,26 +7,24 @@
 <title>Learning Hub | Global Online Tutoring & Learning</title>
 
 <meta name="description"
-content="Learning Hub provides global online tutoring, international curriculum support, specialist learning support, English development, mathematics, exam preparation and personalised learning.">
+content="Learning Hub provides global online tutoring, international curriculum support, specialist learning support, English development, mathematics, international examinations and personalised learning.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root{
 --black:#080808;
---black2:#111111;
+--black2:#111;
 --black3:#181818;
 --gold:#c9a45c;
 --gold2:#e6c985;
 --cream:#f7f1e5;
 --cream2:#eee5d3;
---white:#ffffff;
+--white:#fff;
 --muted:#aaa69d;
 --line:rgba(201,164,92,.22);
---glass:rgba(255,255,255,.06);
 --shadow:0 25px 80px rgba(0,0,0,.25);
 --radius:24px;
 }
@@ -48,15 +46,16 @@ color:var(--black);
 line-height:1.6;
 }
 
+body.modal-open{
+overflow:hidden;
+}
+
 a{
 color:inherit;
 text-decoration:none;
 }
 
-button,
-input,
-textarea,
-select{
+button,input,textarea,select{
 font:inherit;
 }
 
@@ -75,15 +74,11 @@ padding:100px 0;
 
 .dark{
 background:var(--black);
-color:var(--white);
+color:white;
 }
 
 .gold-text{
 color:var(--gold2);
-}
-
-.serif{
-font-family:"Playfair Display",serif;
 }
 
 .section-heading{
@@ -125,7 +120,7 @@ top:0;
 left:0;
 right:0;
 z-index:1000;
-background:rgba(8,8,8,.92);
+background:rgba(8,8,8,.94);
 backdrop-filter:blur(18px);
 border-bottom:1px solid var(--line);
 }
@@ -171,8 +166,8 @@ font-weight:700;
 .nav-links{
 display:flex;
 align-items:center;
-gap:19px;
-font-size:.78rem;
+gap:17px;
+font-size:.75rem;
 color:#d9d4ca;
 }
 
@@ -228,6 +223,12 @@ background:var(--black);
 color:white;
 }
 
+.btn-light{
+background:white;
+color:#111;
+border:1px solid #ddd;
+}
+
 .mobile-toggle{
 display:none;
 background:none;
@@ -243,7 +244,7 @@ border-radius:10px;
 padding:150px 0 100px;
 background:
 radial-gradient(circle at 80% 20%,rgba(201,164,92,.12),transparent 28%),
-linear-gradient(135deg,#080808,#111111 55%,#17130c);
+linear-gradient(135deg,#080808,#111 55%,#17130c);
 color:white;
 overflow:hidden;
 }
@@ -454,8 +455,9 @@ display:grid;
 place-items:center;
 background:#f4ead4;
 color:#8d6d2c;
-font-size:1.35rem;
+font-size:1.1rem;
 margin-bottom:20px;
+font-weight:800;
 }
 
 .card h3{
@@ -475,7 +477,7 @@ font-size:.75rem;
 padding:10px 15px;
 }
 
-/* PROGRAMS */
+/* PROGRAMMES */
 
 .program-grid{
 display:grid;
@@ -579,7 +581,7 @@ color:#aaa69d;
 font-size:.86rem;
 }
 
-/* IMAGE LEARNING */
+/* LEARNING */
 
 .learning-feature{
 display:grid;
@@ -691,6 +693,7 @@ border-radius:18px;
 border:1px solid rgba(0,0,0,.08);
 font-weight:800;
 transition:.25s;
+cursor:pointer;
 }
 
 .subject:hover{
@@ -730,7 +733,7 @@ color:#aaa69d;
 font-size:.82rem;
 }
 
-/* TABLES */
+/* TABLE */
 
 .table-wrap{
 overflow:auto;
@@ -742,8 +745,6 @@ width:100%;
 border-collapse:collapse;
 min-width:650px;
 background:white;
-border-radius:20px;
-overflow:hidden;
 }
 
 .price-table th,
@@ -765,7 +766,7 @@ text-transform:uppercase;
 font-size:.88rem;
 }
 
-/* MEMBERSHIP */
+/* PLANS */
 
 .membership-grid{
 display:grid;
@@ -846,7 +847,7 @@ margin-right:8px;
 
 .community-grid{
 display:grid;
-grid-template-columns:1.1fr .9fr;
+grid-template-columns:repeat(2,1fr);
 gap:24px;
 }
 
@@ -884,6 +885,12 @@ height:8px;
 background:#61d18a;
 border-radius:50%;
 box-shadow:0 0 12px rgba(97,209,138,.6);
+}
+
+.community-note{
+margin-top:14px;
+font-size:.72rem;
+color:#777;
 }
 
 /* LIBRARY */
@@ -1049,7 +1056,7 @@ gap:20px;
 .modal{
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.75);
+background:rgba(0,0,0,.78);
 backdrop-filter:blur(10px);
 z-index:2000;
 display:none;
@@ -1062,7 +1069,7 @@ display:grid;
 }
 
 .modal-card{
-width:min(620px,100%);
+width:min(720px,100%);
 max-height:90vh;
 overflow:auto;
 background:#fff;
@@ -1088,6 +1095,7 @@ border-radius:50%;
 border:1px solid #ddd;
 background:transparent;
 font-size:1.1rem;
+z-index:3;
 }
 
 .dark-modal .modal-close{
@@ -1099,6 +1107,7 @@ border-color:var(--line);
 font-family:"Playfair Display",serif;
 font-size:2rem;
 margin-bottom:12px;
+padding-right:40px;
 }
 
 .modal-card p{
@@ -1118,39 +1127,43 @@ gap:10px;
 margin-top:20px;
 }
 
-/* AUTH */
-
-.auth-tabs{
+.choice-grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:8px;
-margin-bottom:20px;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
+margin-top:20px;
 }
 
-.auth-tab{
-border:1px solid #ddd;
-background:#f7f4ee;
-padding:10px;
-border-radius:10px;
-font-weight:800;
-font-size:.75rem;
+.choice{
+border:1px solid #e2ddd2;
+background:#faf8f3;
+padding:18px;
+border-radius:16px;
+text-align:left;
+transition:.2s;
 }
 
-.auth-tab.active{
-background:#111;
-color:var(--gold2);
-border-color:#111;
+.choice:hover{
+border-color:var(--gold);
+transform:translateY(-2px);
 }
 
-.auth-note{
-padding:12px;
-background:#f7f1e5;
-border-radius:12px;
-font-size:.75rem;
-margin-bottom:15px;
+/* COMMUNITY UI */
+
+.community-toolbar{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+margin:20px 0;
 }
 
-/* COMMUNITY POSTS */
+.community-toolbar input{
+flex:1;
+min-width:200px;
+padding:13px 15px;
+border:1px solid #ddd7cb;
+border-radius:13px;
+}
 
 .post-box{
 background:#f7f1e5;
@@ -1159,9 +1172,18 @@ border-radius:16px;
 margin:15px 0;
 }
 
+.post-box textarea{
+width:100%;
+min-height:100px;
+padding:14px;
+border:1px solid #ddd;
+border-radius:12px;
+resize:vertical;
+}
+
 .post{
 border-bottom:1px solid #e5dfd3;
-padding:18px 0;
+padding:20px 0;
 }
 
 .post:last-child{
@@ -1179,12 +1201,68 @@ margin-bottom:8px;
 .post-role{
 color:#987a3c;
 font-weight:800;
+margin-left:8px;
 }
 
 .post-content{
 font-size:.86rem;
 color:#4f4b45;
 white-space:pre-wrap;
+}
+
+.post-actions{
+display:flex;
+gap:7px;
+flex-wrap:wrap;
+margin-top:12px;
+}
+
+.mini-btn{
+border:1px solid #ddd;
+background:white;
+padding:7px 10px;
+border-radius:999px;
+font-size:.68rem;
+}
+
+.mini-btn:hover{
+border-color:var(--gold);
+}
+
+.reply-box{
+display:none;
+margin-top:12px;
+padding-left:18px;
+border-left:2px solid var(--gold);
+}
+
+.reply-box.show{
+display:block;
+}
+
+.reply-input{
+width:100%;
+min-height:70px;
+padding:10px;
+border:1px solid #ddd;
+border-radius:10px;
+}
+
+.replies{
+margin-top:14px;
+display:grid;
+gap:9px;
+}
+
+.reply{
+background:#faf8f3;
+border-radius:12px;
+padding:11px;
+font-size:.78rem;
+}
+
+.reply strong{
+color:#8d6d2c;
 }
 
 .empty-state{
@@ -1194,6 +1272,17 @@ border-radius:15px;
 text-align:center;
 color:#777;
 font-size:.82rem;
+}
+
+.loading{
+padding:25px;
+text-align:center;
+color:#777;
+}
+
+.report-form{
+display:grid;
+gap:12px;
 }
 
 /* AI */
@@ -1280,6 +1369,8 @@ z-index:3000;
 font-size:.75rem;
 opacity:0;
 transition:.3s;
+max-width:90%;
+text-align:center;
 }
 
 .toast.show{
@@ -1289,7 +1380,8 @@ opacity:1;
 
 /* RESPONSIVE */
 
-@media(max-width:1050px){
+@media(max-width:1100px){
+
 .nav-links{
 display:none;
 }
@@ -1298,13 +1390,8 @@ display:none;
 display:block;
 }
 
-.nav-actions .btn-outline{
-display:none;
-}
-
 .hero-grid,
 .learning-feature,
-.community-grid,
 .contact-grid{
 grid-template-columns:1fr;
 }
@@ -1334,9 +1421,14 @@ grid-template-columns:repeat(2,1fr);
 .footer-grid{
 grid-template-columns:repeat(2,1fr);
 }
+
+.community-grid{
+grid-template-columns:1fr;
+}
 }
 
 @media(max-width:650px){
+
 .section{
 padding:70px 0;
 }
@@ -1358,13 +1450,13 @@ font-size:3.1rem;
 .membership-grid,
 .subject-grid,
 .english-grid,
-.stats{
+.stats,
+.choice-grid{
 grid-template-columns:1fr;
 }
 
-.nav-actions .btn-gold{
-padding:9px 13px;
-font-size:.7rem;
+.nav-actions{
+display:none;
 }
 
 .progress-wrap{
@@ -1392,6 +1484,25 @@ grid-template-columns:1fr;
 .footer-bottom{
 flex-direction:column;
 }
+
+.modal-card{
+padding:23px;
+}
+
+.ai-float{
+right:15px;
+bottom:15px;
+}
+
+.ai-panel{
+right:15px;
+bottom:85px;
+}
+
+.orbit-one{left:7%}
+.orbit-two{right:7%}
+.orbit-three{left:8%}
+.orbit-four{right:8%}
 }
 </style>
 </head>
@@ -1401,6 +1512,7 @@ flex-direction:column;
 <!-- NAVIGATION -->
 
 <nav class="navbar">
+
 <div class="container nav-inner">
 
 <a href="#home" class="logo">
@@ -1412,49 +1524,65 @@ Learning Hub
 </a>
 
 <div class="nav-links">
+
 <a href="#programmes">Programmes</a>
 <a href="#subjects">Subjects</a>
-<a href="#english">English</a>
-<a href="#mathematics">Mathematics</a>
 <a href="#boards">International Boards</a>
-<a href="#exams">English Exams</a>
-<a href="#audio">Audio-Visual</a>
+<a href="#exams">Exams</a>
+<a href="#specialist">Learning Support</a>
 <a href="#resources">Resources</a>
-<a href="#teacher">Become a Teacher</a>
-<a href="#contact">Contact</a>
-<a href="#plans">Plans</a>
+<a href="#community">Community</a>
+<a href="#teacher">Apply to Teach</a>
+
 </div>
 
 <div class="nav-actions">
-<button class="btn btn-outline" onclick="openAuth()">Sign in</button>
-<button class="btn btn-gold" onclick="openAuth('signup')">Join</button>
+
+<a class="btn btn-gold"
+href="https://calendly.com/hublearning117"
+target="_blank">
+Book Now
+</a>
+
 <button class="mobile-toggle" onclick="toggleMobile()">☰</button>
-</div>
 
 </div>
 
-<div id="mobileMenu" style="display:none;background:#111;border-top:1px solid var(--line);padding:20px;">
-<div class="container" style="display:grid;gap:13px;color:#ddd;font-size:.8rem;">
+</div>
+
+<div id="mobileMenu"
+style="display:none;background:#111;border-top:1px solid var(--line);padding:20px;">
+
+<div class="container"
+style="display:grid;gap:13px;color:#ddd;font-size:.8rem;">
+
 <a href="#programmes" onclick="toggleMobile()">Programmes</a>
 <a href="#subjects" onclick="toggleMobile()">Subjects</a>
-<a href="#audio" onclick="toggleMobile()">Audio-Visual</a>
+<a href="#boards" onclick="toggleMobile()">International Boards</a>
+<a href="#exams" onclick="toggleMobile()">International Exams</a>
+<a href="#specialist" onclick="toggleMobile()">Learning Support</a>
 <a href="#resources" onclick="toggleMobile()">Resources</a>
-<a href="#plans" onclick="toggleMobile()">Plans</a>
-<a href="#teacher" onclick="toggleMobile()">Become a Teacher</a>
+<a href="#community" onclick="toggleMobile()">Community</a>
+<a href="#teacher" onclick="toggleMobile()">Apply to Teach</a>
 <a href="#contact" onclick="toggleMobile()">Contact</a>
+
 </div>
 </div>
+
 </nav>
 
 
 <!-- HERO -->
 
 <section class="hero" id="home">
+
 <div class="container hero-grid">
 
 <div>
 
-<div class="eyebrow">Global Online Learning Platform</div>
+<div class="eyebrow">
+Global Online Learning Platform
+</div>
 
 <h1>
 Learn smarter.<br>
@@ -1469,13 +1597,21 @@ digital learning experiences.
 </p>
 
 <div class="hero-buttons">
-<button class="btn btn-gold" onclick="openAuth('signup')">
-Start Learning
-</button>
+
+<a class="btn btn-gold"
+href="https://calendly.com/hublearning117"
+target="_blank">
+Book a Session
+</a>
 
 <a href="#programmes" class="btn btn-outline">
 Explore Programmes
 </a>
+
+<a href="#subjects" class="btn btn-outline">
+Choose a Subject
+</a>
+
 </div>
 
 <div class="stats">
@@ -1491,8 +1627,8 @@ Explore Programmes
 </div>
 
 <div class="stat">
-<strong>IB</strong>
-<span>International Boards</span>
+<strong>International</strong>
+<span>Boards & Curricula</span>
 </div>
 
 <div class="stat">
@@ -1508,12 +1644,19 @@ Explore Programmes
 <div class="intelligence">
 
 <div class="intel-top">
+
 <div>
-<div class="intel-label">LEARNING INTELLIGENCE</div>
-<p style="color:#aaa;font-size:.72rem;margin-top:4px;">Personalised learning dashboard</p>
+<div class="intel-label">
+LEARNING INTELLIGENCE
+</div>
+
+<p style="color:#aaa;font-size:.72rem;margin-top:4px;">
+Personalised learning approach
+</p>
 </div>
 
 <div class="ai-orb"></div>
+
 </div>
 
 <div class="progress-wrap">
@@ -1523,20 +1666,32 @@ Explore Programmes
 </div>
 
 <div>
-<div style="color:#aaa;font-size:.68rem;letter-spacing:1px;">CURRENT PROGRESS</div>
-<h3 style="font-family:'Playfair Display',serif;margin:7px 0;">Academic Development</h3>
+
+<div style="color:#aaa;font-size:.68rem;letter-spacing:1px;">
+LEARNING PROFILE
+</div>
+
+<h3 style="font-family:'Playfair Display',serif;margin:7px 0;">
+Academic Development
+</h3>
+
 <p style="color:#aaa;font-size:.75rem;">
-Your learning journey adapts as you practise.
+Learning pathways adapt around goals, practice and progress.
 </p>
+
 </div>
 
 </div>
 
 <div class="recommendation">
 
-<small>SMART RECOMMENDATION</small>
+<small>
+SMART RECOMMENDATION
+</small>
 
-<h3>Strengthen Academic English</h3>
+<h3>
+Strengthen Academic English
+</h3>
 
 <p>
 Improve vocabulary, writing structure and analytical expression.
@@ -1551,81 +1706,124 @@ NEXT STEP &nbsp; Practice → Review → Progress
 </div>
 
 </div>
+
 </section>
 
 
 <!-- HUB -->
 
 <section class="section" id="hub">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Your learning ecosystem</small>
-<h2>One platform. Different learning journeys.</h2>
+
+<h2>
+One platform. Different learning journeys.
+</h2>
+
 <p>
 Learning Hub brings students, parents and educators together
 through a modern global learning environment.
+No website account is required to start learning.
 </p>
+
 </div>
 
 <div class="hub-grid">
 
 <div class="hub">
+
 <div>
+
 <div class="card-icon">🎓</div>
+
 <h3>Student Hub</h3>
+
 <p>
-Lessons, practice, resources, progress and personalised learning support.
+Choose a subject, explore learning support and book directly.
 </p>
-</div>
-<button class="btn btn-gold" onclick="openDashboard('student')">
-Open Student Hub
-</button>
+
 </div>
 
+<button class="btn btn-gold"
+onclick="openStudentActions()">
+Choose Learning
+</button>
+
+</div>
+
+
 <div class="hub">
+
 <div>
+
 <div class="card-icon">👨‍👩‍👧</div>
+
 <h3>Parent Hub</h3>
+
 <p>
-Learning guidance, progress information, resources and community support.
+Find suitable support, ask questions and arrange a consultation.
 </p>
+
 </div>
-<button class="btn btn-gold" onclick="openDashboard('parent')">
-Open Parent Hub
+
+<button class="btn btn-gold"
+onclick="openParentActions()">
+Parent Support
 </button>
+
 </div>
+
 
 <div class="hub">
+
 <div>
+
 <div class="card-icon">🌍</div>
+
 <h3>Teacher Lounge</h3>
+
 <p>
-Professional resources, educator discussions and teaching opportunities.
+Professional community access and opportunities for educators.
 </p>
+
 </div>
-<button class="btn btn-gold" onclick="openDashboard('teacher')">
-Open Teacher Lounge
+
+<button class="btn btn-gold"
+onclick="openTeacherActions()">
+Teacher Lounge
 </button>
+
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- PROGRAMMES -->
 
 <section class="section dark" id="programmes">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Learning pathways</small>
-<h2>Programmes designed around real learning goals.</h2>
+
+<h2>
+Programmes designed around real learning goals.
+</h2>
+
 <p>
-Choose structured support for academic development, international
-curriculum, English, exams and learning skills.
+Choose structured support for academic development,
+international curriculum, English, exams and learning skills.
 </p>
+
 </div>
 
 <div class="program-grid">
@@ -1633,110 +1831,156 @@ curriculum, English, exams and learning skills.
 <div class="program">
 <h3>Academic Tutoring</h3>
 <p>Personalised subject support, homework guidance and academic development.</p>
-<button class="btn btn-gold" onclick="openTopic('Academic Tutoring','Personalised 1:1 support across selected school and academic subjects.')">Explore</button>
+<button class="btn btn-gold"
+onclick="openTopic('Academic Tutoring','Personalised 1:1 support across selected school and academic subjects.')">
+Explore
+</button>
 </div>
 
 <div class="program">
 <h3>International Curriculum</h3>
-<p>Support for IB and other international learning pathways.</p>
-<button class="btn btn-gold" onclick="openTopic('International Curriculum','International curriculum support including IB English, Psychology and ESS.')">Explore</button>
+<p>Support for IB, Cambridge, Pearson Edexcel, OxfordAQA and American pathways.</p>
+<button class="btn btn-gold"
+onclick="openTopic('International Curriculum','International curriculum support across major global education pathways.')">
+Explore
+</button>
 </div>
 
 <div class="program">
 <h3>English Development</h3>
 <p>Reading, writing, speaking, vocabulary and academic communication.</p>
-<button class="btn btn-gold" onclick="openTopic('English Development','Build stronger English through structured reading, writing, vocabulary and speaking practice.')">Explore</button>
+<button class="btn btn-gold"
+onclick="openTopic('English Development','Build stronger English through structured reading, writing, vocabulary and speaking practice.')">
+Explore
+</button>
 </div>
 
 <div class="program">
 <h3>Exam Preparation</h3>
-<p>IELTS, PTE, academic English and exam-focused preparation.</p>
-<button class="btn btn-gold" onclick="openTopic('Exam Preparation','Targeted exam preparation with practice, feedback and personalised guidance.')">Explore</button>
+<p>English, language, academic and international examination preparation.</p>
+<button class="btn btn-gold"
+onclick="openTopic('Exam Preparation','Targeted preparation with practice, feedback and personalised guidance.')">
+Explore
+</button>
 </div>
 
 <div class="program">
 <h3>Learning Support</h3>
 <p>Specialist support for different learning needs.</p>
-<button class="btn btn-gold" onclick="openTopic('Learning Support','Specialist learning support pathways can be arranged according to individual needs.')">Explore</button>
+<button class="btn btn-gold"
+onclick="openTopic('Learning Support','Specialist learning support pathways can be arranged according to individual needs.')">
+Explore
+</button>
 </div>
 
 <div class="program">
 <h3>Study Skills</h3>
 <p>Organisation, confidence, independent learning and academic skills.</p>
-<button class="btn btn-gold" onclick="openTopic('Study Skills','Build independent learning habits, organisation, confidence and academic strategies.')">Explore</button>
+<button class="btn btn-gold"
+onclick="openTopic('Study Skills','Build independent learning habits, organisation, confidence and academic strategies.')">
+Explore
+</button>
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- SPECIALIST SUPPORT -->
 
 <section class="section dark" id="specialist">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Specialist student support</small>
-<h2>Additional learning pathways for individual needs.</h2>
+
+<h2>
+Additional learning pathways for individual needs.
+</h2>
+
 <p>
-These specialist pathways are available for advance planning and
-can be matched with appropriate learning support.
+Specialist support is arranged after discussing the learner's
+needs and learning goals.
 </p>
+
 </div>
 
 <div class="special-grid">
 
 <div class="special">
-<small>Book in Advance</small>
+<small>Advance Planning</small>
 <h3>Dyslexia Support</h3>
 <p>Structured reading, literacy and confidence-focused learning support.</p>
-<button class="btn btn-gold" onclick="openSpecial('Dyslexia Support')">Book in Advance</button>
+<button class="btn btn-gold"
+onclick="openSpecial('Dyslexia Support')">
+Explore Support
+</button>
 </div>
 
 <div class="special">
-<small>Book in Advance</small>
+<small>Advance Planning</small>
 <h3>Autism Learning Support</h3>
 <p>Individualised learning approaches with structured and supportive guidance.</p>
-<button class="btn btn-gold" onclick="openSpecial('Autism Learning Support')">Book in Advance</button>
+<button class="btn btn-gold"
+onclick="openSpecial('Autism Learning Support')">
+Explore Support
+</button>
 </div>
 
 <div class="special">
-<small>Book in Advance</small>
+<small>Advance Planning</small>
 <h3>Learning Differences</h3>
 <p>Personalised academic support for different learning profiles.</p>
-<button class="btn btn-gold" onclick="openSpecial('Learning Differences')">Book in Advance</button>
+<button class="btn btn-gold"
+onclick="openSpecial('Learning Differences')">
+Explore Support
+</button>
 </div>
 
 <div class="special">
-<small>Book in Advance</small>
+<small>Advance Planning</small>
 <h3>Language & Communication</h3>
 <p>Support for communication, language development and confidence.</p>
-<button class="btn btn-gold" onclick="openSpecial('Language & Communication')">Book in Advance</button>
+<button class="btn btn-gold"
+onclick="openSpecial('Language & Communication')">
+Explore Support
+</button>
 </div>
 
 <div class="special">
-<small>Book in Advance</small>
+<small>Advance Planning</small>
 <h3>Reading Confidence</h3>
 <p>Supportive reading practice designed around individual progress.</p>
-<button class="btn btn-gold" onclick="openSpecial('Reading Confidence')">Book in Advance</button>
+<button class="btn btn-gold"
+onclick="openSpecial('Reading Confidence')">
+Explore Support
+</button>
 </div>
 
 <div class="special">
-<small>Book in Advance</small>
+<small>Advance Planning</small>
 <h3>Confidence & Study Skills</h3>
 <p>Build confidence, organisation and independent learning strategies.</p>
-<button class="btn btn-gold" onclick="openSpecial('Confidence & Study Skills')">Book in Advance</button>
+<button class="btn btn-gold"
+onclick="openSpecial('Confidence & Study Skills')">
+Explore Support
+</button>
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- PERSONALIZED -->
 
 <section class="section">
+
 <div class="container learning-feature">
 
 <div class="learning-visual">
@@ -1752,11 +1996,16 @@ can be matched with appropriate learning support.
 
 </div>
 
+
 <div class="learning-copy">
 
-<div class="eyebrow" style="color:#9a7938;">Modern learning</div>
+<div class="eyebrow" style="color:#9a7938;">
+Modern learning
+</div>
 
-<h2>Understand → Practise → Progress</h2>
+<h2>
+Understand → Practise → Progress
+</h2>
 
 <p>
 Learning support can combine visual explanation, listening,
@@ -1769,7 +2018,9 @@ practice, guided activities and independent learning.
 <div class="step-number">01</div>
 <div>
 <strong>Understand</strong>
-<p style="margin:0;font-size:.82rem;">Build clear concepts and academic understanding.</p>
+<p style="margin:0;font-size:.82rem;">
+Build clear concepts and academic understanding.
+</p>
 </div>
 </div>
 
@@ -1777,7 +2028,9 @@ practice, guided activities and independent learning.
 <div class="step-number">02</div>
 <div>
 <strong>Practise</strong>
-<p style="margin:0;font-size:.82rem;">Apply ideas through guided and interactive practice.</p>
+<p style="margin:0;font-size:.82rem;">
+Apply ideas through guided and interactive practice.
+</p>
 </div>
 </div>
 
@@ -1785,7 +2038,9 @@ practice, guided activities and independent learning.
 <div class="step-number">03</div>
 <div>
 <strong>Progress</strong>
-<p style="margin:0;font-size:.82rem;">Review learning and identify the next step.</p>
+<p style="margin:0;font-size:.82rem;">
+Review learning and identify the next step.
+</p>
 </div>
 </div>
 
@@ -1793,17 +2048,24 @@ practice, guided activities and independent learning.
 
 </div>
 </div>
+
 </section>
 
 
 <!-- AUDIENCE -->
 
 <section class="section dark">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Who we support</small>
-<h2>Learning support for different stages.</h2>
+
+<h2>
+Learning support for different stages.
+</h2>
+
 </div>
 
 <div class="card-grid">
@@ -1823,7 +2085,7 @@ practice, guided activities and independent learning.
 <div class="card">
 <div class="card-icon">📝</div>
 <h3>Exam Candidates</h3>
-<p>IELTS, PTE and academic exam preparation.</p>
+<p>International examination preparation and targeted practice.</p>
 </div>
 
 <div class="card">
@@ -1834,57 +2096,98 @@ practice, guided activities and independent learning.
 
 </div>
 </div>
+
 </section>
 
 
 <!-- SUBJECTS -->
 
 <section class="section" id="subjects">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Subjects</small>
-<h2>Focused academic support.</h2>
+
+<h2>
+Focused academic support.
+</h2>
+
 <p>
 Choose a subject and explore the available learning pathway.
 </p>
+
 </div>
 
 <div class="subject-grid">
 
-<div class="subject" onclick="openTopic('English','English language development, academic writing, reading, speaking and vocabulary.')">English</div>
+<div class="subject"
+onclick="openSubject('English')">
+English
+</div>
 
-<div class="subject" onclick="openTopic('Mathematics','Concept explanation, guided practice and problem-solving support.')">Mathematics</div>
+<div class="subject"
+onclick="openSubject('Mathematics')">
+Mathematics
+</div>
 
-<div class="subject" onclick="openTopic('Psychology','IB Psychology support and academic development.')">Psychology</div>
+<div class="subject"
+onclick="openSubject('Psychology')">
+Psychology
+</div>
 
-<div class="subject" onclick="openTopic('Business Studies','Business concepts, academic writing and exam preparation.')">Business Studies</div>
+<div class="subject"
+onclick="openSubject('Business Studies')">
+Business Studies
+</div>
 
-<div class="subject" onclick="openTopic('Sociology','Sociology concepts, writing and exam support.')">Sociology</div>
+<div class="subject"
+onclick="openSubject('Sociology')">
+Sociology
+</div>
 
-<div class="subject" onclick="openTopic('Environmental Systems','Environmental Systems and Societies support.')">Environmental Systems</div>
+<div class="subject"
+onclick="openSubject('Environmental Systems & Societies')">
+Environmental Systems & Societies
+</div>
 
-<div class="subject" onclick="openTopic('Academic Writing','Essay structure, analysis, argument and academic expression.')">Academic Writing</div>
+<div class="subject"
+onclick="openSubject('Academic Writing')">
+Academic Writing
+</div>
 
-<div class="subject" onclick="openTopic('Study Skills','Organisation, independent learning and academic confidence.')">Study Skills</div>
+<div class="subject"
+onclick="openSubject('Study Skills')">
+Study Skills
+</div>
 
 </div>
+
 </div>
+
 </section>
 
 
 <!-- ENGLISH -->
 
 <section class="section english" id="english">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>English development</small>
-<h2>Build stronger English for study and life.</h2>
+
+<h2>
+Build stronger English for study and life.
+</h2>
+
 <p>
 Develop the language skills needed for academic success,
 international communication and confidence.
 </p>
+
 </div>
 
 <div class="english-grid">
@@ -1911,20 +2214,28 @@ international communication and confidence.
 
 </div>
 </div>
+
 </section>
 
 
 <!-- MATHEMATICS -->
 
 <section class="section" id="mathematics">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Mathematics</small>
-<h2>Make difficult concepts easier to understand.</h2>
+
+<h2>
+Make difficult concepts easier to understand.
+</h2>
+
 <p>
 Concept explanations, guided examples and practice-based learning.
 </p>
+
 </div>
 
 <div class="card-grid">
@@ -1933,31 +2244,42 @@ Concept explanations, guided examples and practice-based learning.
 <div class="card-icon">①</div>
 <h3>Concepts</h3>
 <p>Break complex mathematical ideas into clear steps.</p>
-<button class="btn btn-dark" onclick="openLearning('Mathematics Concepts')">Explore</button>
+<button class="btn btn-dark"
+onclick="openLearning('Mathematics Concepts')">
+Explore
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">②</div>
 <h3>Practice</h3>
 <p>Apply concepts through structured practice activities.</p>
-<button class="btn btn-dark" onclick="openLearning('Mathematics Practice')">Practise</button>
+<button class="btn btn-dark"
+onclick="openLearning('Mathematics Practice')">
+Practise
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">③</div>
 <h3>Problem Solving</h3>
 <p>Develop reasoning and confidence with guided questions.</p>
-<button class="btn btn-dark" onclick="openLearning('Mathematics Problem Solving')">Explore</button>
+<button class="btn btn-dark"
+onclick="openLearning('Mathematics Problem Solving')">
+Explore
+</button>
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- OTHER LEARNING -->
 
 <section class="section">
+
 <div class="container">
 
 <div class="section-heading">
@@ -1970,81 +2292,164 @@ Concept explanations, guided examples and practice-based learning.
 <div class="program">
 <h3>Academic Skills</h3>
 <p>Research, essays, analysis and study strategies.</p>
-<button class="btn btn-dark" onclick="openLearning('Academic Skills')">Open Learning</button>
+<button class="btn btn-dark"
+onclick="openLearning('Academic Skills')">
+Open Learning
+</button>
 </div>
 
 <div class="program">
 <h3>Languages</h3>
 <p>Language development and communication support.</p>
-<button class="btn btn-dark" onclick="openLearning('Languages')">Open Learning</button>
+<button class="btn btn-dark"
+onclick="openLearning('Languages')">
+Open Learning
+</button>
 </div>
 
 <div class="program">
 <h3>Study Support</h3>
 <p>Planning, organisation and independent learning.</p>
-<button class="btn btn-dark" onclick="openLearning('Study Support')">Open Learning</button>
+<button class="btn btn-dark"
+onclick="openLearning('Study Support')">
+Open Learning
+</button>
 </div>
 
 <div class="program">
 <h3>Young Learners</h3>
 <p>Engaging and supportive learning activities.</p>
-<button class="btn btn-dark" onclick="openLearning('Young Learners')">Open Learning</button>
+<button class="btn btn-dark"
+onclick="openLearning('Young Learners')">
+Open Learning
+</button>
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- INTERNATIONAL BOARDS -->
 
 <section class="section dark" id="boards">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>International boards</small>
-<h2>International curriculum support.</h2>
+
+<h2>
+International curriculum support.
+</h2>
+
 <p>
-Targeted support for international learners and IB students.
+Support across major international education systems and
+curriculum pathways.
 </p>
+
 </div>
 
 <div class="card-grid">
 
 <div class="card">
 <div class="card-icon">IB</div>
-<h3>IB English Language & Literature SL</h3>
-<p>Text analysis, literary devices, writing and exam preparation.</p>
-<button class="btn btn-gold" onclick="openTopic('IB English Language & Literature SL','Academic analysis, literary devices, writing development and exam-focused preparation.')">Explore</button>
+<h3>International Baccalaureate</h3>
+<p>
+IB English Language & Literature, Psychology, ESS and academic support.
+</p>
+<button class="btn btn-gold"
+onclick="openBoard('International Baccalaureate')">
+Explore IB
+</button>
 </div>
 
 <div class="card">
-<div class="card-icon">IB</div>
-<h3>IB Psychology SL</h3>
-<p>Concepts, research studies, evaluation and exam preparation.</p>
-<button class="btn btn-gold" onclick="openTopic('IB Psychology SL','Research studies, concepts, evaluation, response structure and exam preparation.')">Explore</button>
+<div class="card-icon">CA</div>
+<h3>Cambridge</h3>
+<p>
+Cambridge IGCSE, AS & A Level and English-language academic support.
+</p>
+<button class="btn btn-gold"
+onclick="openBoard('Cambridge International')">
+Explore Cambridge
+</button>
 </div>
 
 <div class="card">
-<div class="card-icon">IB</div>
-<h3>IB Environmental Systems & Societies</h3>
-<p>Concepts, case studies, analysis and exam support.</p>
-<button class="btn btn-gold" onclick="openTopic('IB Environmental Systems & Societies','Conceptual understanding, case studies, analysis and exam preparation.')">Explore</button>
+<div class="card-icon">PE</div>
+<h3>Pearson Edexcel</h3>
+<p>
+International GCSE, GCSE and A Level pathways.
+</p>
+<button class="btn btn-gold"
+onclick="openBoard('Pearson Edexcel')">
+Explore Edexcel
+</button>
+</div>
+
+<div class="card">
+<div class="card-icon">OA</div>
+<h3>OxfordAQA</h3>
+<p>
+International GCSE and International A Level support.
+</p>
+<button class="btn btn-gold"
+onclick="openBoard('OxfordAQA')">
+Explore OxfordAQA
+</button>
+</div>
+
+<div class="card">
+<div class="card-icon">US</div>
+<h3>American Qualifications</h3>
+<p>
+Academic English, school subjects and international American pathways.
+</p>
+<button class="btn btn-gold"
+onclick="openBoard('American Qualifications')">
+Explore
+</button>
+</div>
+
+<div class="card">
+<div class="card-icon">+</div>
+<h3>Other International Programmes</h3>
+<p>
+Support can be discussed for additional international curricula.
+</p>
+<button class="btn btn-gold"
+onclick="openBoard('Other International Programmes')">
+Enquire
+</button>
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- EXAMS -->
 
 <section class="section" id="exams">
+
 <div class="container">
 
 <div class="section-heading">
-<small>English exams</small>
-<h2>Prepare with purpose.</h2>
+
+<small>International examinations</small>
+
+<h2>
+Prepare with purpose.
+</h2>
+
+<p>
+English-language, academic and international examination support.
+</p>
+
 </div>
 
 <div class="card-grid">
@@ -2052,41 +2457,138 @@ Targeted support for international learners and IB students.
 <div class="card">
 <div class="card-icon">IELTS</div>
 <h3>IELTS</h3>
-<p>Reading, writing, listening, speaking and exam strategy.</p>
-<button class="btn btn-dark" onclick="openLearning('IELTS Writing Practice')">Start Practice</button>
+<p>
+Reading, writing, listening, speaking and exam strategy.
+</p>
+<button class="btn btn-dark"
+onclick="openExam('IELTS')">
+Explore IELTS
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">PTE</div>
-<h3>PTE</h3>
-<p>Targeted practice, speaking and writing development.</p>
-<button class="btn btn-dark" onclick="openLearning('PTE Academic Practice')">Explore</button>
+<h3>PTE Academic</h3>
+<p>
+Targeted speaking, writing, reading and listening practice.
+</p>
+<button class="btn btn-dark"
+onclick="openExam('PTE Academic')">
+Explore PTE
+</button>
+</div>
+
+<div class="card">
+<div class="card-icon">TOEFL</div>
+<h3>TOEFL</h3>
+<p>
+Academic English and integrated skills preparation.
+</p>
+<button class="btn btn-dark"
+onclick="openExam('TOEFL')">
+Explore TOEFL
+</button>
+</div>
+
+<div class="card">
+<div class="card-icon">DET</div>
+<h3>Duolingo English Test</h3>
+<p>
+English skills, practice and test preparation.
+</p>
+<button class="btn btn-dark"
+onclick="openExam('Duolingo English Test')">
+Explore DET
+</button>
+</div>
+
+<div class="card">
+<div class="card-icon">CAE</div>
+<h3>Cambridge English</h3>
+<p>
+B2 First, C1 Advanced, C2 Proficiency and related pathways.
+</p>
+<button class="btn btn-dark"
+onclick="openExam('Cambridge English')">
+Explore
+</button>
+</div>
+
+<div class="card">
+<div class="card-icon">OET</div>
+<h3>OET</h3>
+<p>
+English communication and language preparation for healthcare contexts.
+</p>
+<button class="btn btn-dark"
+onclick="openExam('OET')">
+Explore
+</button>
+</div>
+
+<div class="card">
+<div class="card-icon">CEL</div>
+<h3>CELPIP</h3>
+<p>
+English language preparation for Canadian contexts.
+</p>
+<button class="btn btn-dark"
+onclick="openExam('CELPIP')">
+Explore
+</button>
+</div>
+
+<div class="card">
+<div class="card-icon">AR</div>
+<h3>Arabic & Language Exams</h3>
+<p>
+Arabic and other language-learning examination support can be arranged.
+</p>
+<button class="btn btn-dark"
+onclick="openExam('Arabic & Language Exams')">
+Enquire
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">A+</div>
 <h3>Academic English</h3>
-<p>Build academic vocabulary, writing and communication.</p>
-<button class="btn btn-dark" onclick="openLearning('Academic English Practice')">Start Practice</button>
+<p>
+Academic vocabulary, writing, analysis and communication.
+</p>
+<button class="btn btn-dark"
+onclick="openLearning('Academic English Practice')">
+Start Practice
+</button>
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- AUDIO VISUAL -->
 
 <section class="section dark" id="audio">
+
 <div class="container">
 
 <div class="section-heading">
-<small>Audio-Visual / Fun & Informative Learning</small>
-<h2>Learning should feel engaging.</h2>
+
+<small>
+Audio-Visual / Fun & Informative Learning
+</small>
+
+<h2>
+Learning should feel engaging.
+</h2>
+
 <p>
 Explore visual explanations, guided practice, listening activities,
 reading and vocabulary development.
 </p>
+
 </div>
 
 <div class="card-grid">
@@ -2095,66 +2597,92 @@ reading and vocabulary development.
 <div class="card-icon">👁</div>
 <h3>Visual Concepts</h3>
 <p>Learn through diagrams, visual explanations and concept cards.</p>
-<button class="btn btn-gold" onclick="openLearning('Visual Concepts')">Open Learning</button>
+<button class="btn btn-gold"
+onclick="openLearning('Visual Concepts')">
+Open Learning
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">🎯</div>
 <h3>Interactive Practice</h3>
 <p>Practice concepts with guided learning activities.</p>
-<button class="btn btn-gold" onclick="openLearning('Interactive Practice')">Practise</button>
+<button class="btn btn-gold"
+onclick="openLearning('Interactive Practice')">
+Practise
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">🧭</div>
 <h3>Guided Learning</h3>
 <p>Follow structured learning steps with clear goals.</p>
-<button class="btn btn-gold" onclick="openLearning('Guided Learning')">Explore</button>
+<button class="btn btn-gold"
+onclick="openLearning('Guided Learning')">
+Explore
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">🎧</div>
 <h3>Listening & Speaking</h3>
 <p>Develop communication through listening and speaking practice.</p>
-<button class="btn btn-gold" onclick="openLearning('Listening & Speaking')">Practise</button>
+<button class="btn btn-gold"
+onclick="openLearning('Listening & Speaking')">
+Practise
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">📖</div>
 <h3>Reading</h3>
 <p>Build comprehension and reading confidence.</p>
-<button class="btn btn-gold" onclick="openLearning('Reading Practice')">Read</button>
+<button class="btn btn-gold"
+onclick="openLearning('Reading Practice')">
+Read
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">🔤</div>
 <h3>Vocabulary</h3>
 <p>Build useful academic and communication vocabulary.</p>
-<button class="btn btn-gold" onclick="openLearning('Vocabulary Builder')">Practise</button>
+<button class="btn btn-gold"
+onclick="openLearning('Vocabulary Builder')">
+Practise
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">🧠</div>
 <h3>Independent Study</h3>
 <p>Learn independently with structured resources.</p>
-<button class="btn btn-gold" onclick="openLearning('Independent Study')">Open</button>
+<button class="btn btn-gold"
+onclick="openLearning('Independent Study')">
+Open
+</button>
 </div>
 
 <div class="card">
 <div class="card-icon">✨</div>
 <h3>Fun Learning</h3>
 <p>Interactive and engaging activities designed to make learning enjoyable.</p>
-<button class="btn btn-gold" onclick="openLearning('Fun Learning')">Explore</button>
+<button class="btn btn-gold"
+onclick="openLearning('Fun Learning')">
+Explore
+</button>
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- EXPERIENCE -->
 
 <section class="section">
+
 <div class="container">
 
 <div class="section-heading">
@@ -2184,25 +2712,37 @@ reading and vocabulary development.
 
 </div>
 </div>
+
 </section>
 
 
-<!-- LESSON PRICING -->
+<!-- PRICING -->
 
 <section class="section dark" id="pricing">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Lesson pricing</small>
-<h2>Accessible global learning.</h2>
+
+<h2>
+Accessible global learning.
+</h2>
+
 <p>
 Introductory rates designed to make personalised online learning
 accessible to international learners.
 </p>
+
 </div>
 
 <div style="margin-bottom:25px;">
-<select id="currency" onchange="updatePrices()" style="padding:13px 17px;border-radius:12px;background:#111;color:white;border:1px solid var(--line);">
+
+<select id="currency"
+onchange="updatePrices()"
+style="padding:13px 17px;border-radius:12px;background:#111;color:white;border:1px solid var(--line);">
+
 <option value="USD">USD</option>
 <option value="PKR">PKR</option>
 <option value="GBP">GBP</option>
@@ -2215,7 +2755,9 @@ accessible to international learners.
 <option value="JPY">JPY</option>
 <option value="KRW">KRW</option>
 <option value="INR">INR</option>
+
 </select>
+
 </div>
 
 <div class="table-wrap">
@@ -2237,189 +2779,278 @@ accessible to international learners.
 <td>Quick Start</td>
 <td>25 minutes</td>
 <td class="lesson-price" data-usd="2">$2</td>
-<td><button class="btn btn-gold" onclick="selectLesson('Quick Start',2)">Book</button></td>
+<td>
+<button class="btn btn-gold"
+onclick="selectLesson('Quick Start',2)">
+Book
+</button>
+</td>
 </tr>
 
 <tr>
 <td>Standard</td>
 <td>50 minutes</td>
 <td class="lesson-price" data-usd="4">$4</td>
-<td><button class="btn btn-gold" onclick="selectLesson('Standard',4)">Book</button></td>
+<td>
+<button class="btn btn-gold"
+onclick="selectLesson('Standard',4)">
+Book
+</button>
+</td>
 </tr>
 
 <tr>
 <td>Extended</td>
 <td>80 minutes</td>
 <td class="lesson-price" data-usd="7">$7</td>
-<td><button class="btn btn-gold" onclick="selectLesson('Extended',7)">Book</button></td>
+<td>
+<button class="btn btn-gold"
+onclick="selectLesson('Extended',7)">
+Book
+</button>
+</td>
 </tr>
 
 <tr>
 <td>Premium</td>
 <td>100 minutes</td>
 <td class="lesson-price" data-usd="9">$9</td>
-<td><button class="btn btn-gold" onclick="selectLesson('Premium',9)">Book</button></td>
+<td>
+<button class="btn btn-gold"
+onclick="selectLesson('Premium',9)">
+Book
+</button>
+</td>
 </tr>
 
 </tbody>
-
 </table>
 
 </div>
+
+<div style="margin-top:18px;color:#aaa;font-size:.75rem;">
+10-class booking: <strong style="color:var(--gold2);">10% discount</strong>
+&nbsp; • &nbsp;
+2–4 month advance booking: <strong style="color:var(--gold2);">10% discount</strong>
 </div>
+
+</div>
+
 </section>
 
 
-<!-- MEMBERSHIPS -->
+<!-- PLANS -->
 
 <section class="section" id="plans">
+
 <div class="container">
 
 <div class="section-heading">
-<small>Membership plans</small>
-<h2>Choose the learning rhythm that fits.</h2>
+
+<small>Simple learning packages</small>
+
+<h2>
+Choose the learning rhythm that fits.
+</h2>
+
 <p>
-Introductory global rates. Plans can be adjusted as Learning Hub expands.
+Packages are arranged through Learning Hub Support.
+No automatic payment is claimed on this website.
 </p>
+
 </div>
 
 <div class="membership-grid">
 
 <div class="plan">
-<h3>Starter</h3>
-<div class="plan-price">$30 <span>/month</span></div>
+
+<h3>Monthly Core</h3>
+
+<div class="plan-price">
+$20 <span>/month</span>
+</div>
+
 <ul>
 <li>4 × 50-minute lessons</li>
 <li>Learning resources</li>
 <li>Practice support</li>
-<li>Student profile</li>
+<li>Direct booking support</li>
 </ul>
-<button class="btn btn-dark" onclick="selectPlan('Starter',30)">Choose Starter</button>
+
+<button class="btn btn-dark"
+onclick="selectPlan('Monthly Core',20)">
+Choose Plan
+</button>
+
 </div>
 
+
 <div class="plan">
-<h3>Growth</h3>
-<div class="plan-price">$50 <span>/month</span></div>
-<ul>
-<li>8 × 50-minute lessons</li>
-<li>Resources & practice</li>
-<li>Progress tracking</li>
-<li>Parent updates</li>
-</ul>
-<button class="btn btn-dark" onclick="selectPlan('Growth',50)">Choose Growth</button>
+
+<h3>10-Class Pack</h3>
+
+<div class="plan-price">
+10% OFF
 </div>
+
+<ul>
+<li>10 selected lessons</li>
+<li>10% package discount</li>
+<li>Flexible subject choice</li>
+<li>Learning resources</li>
+</ul>
+
+<button class="btn btn-dark"
+onclick="selectPlan('10-Class Pack',0)">
+Choose Pack
+</button>
+
+</div>
+
 
 <div class="plan featured">
-<div class="plan-badge">POPULAR</div>
-<h3>Focus</h3>
-<div class="plan-price">$70 <span>/month</span></div>
-<ul>
-<li>12 × 50-minute lessons</li>
-<li>Personalised learning plan</li>
-<li>Progress tracking</li>
-<li>Exam/homework support</li>
-</ul>
-<button class="btn btn-gold" onclick="selectPlan('Focus',70)">Choose Focus</button>
+
+<div class="plan-badge">
+POPULAR
 </div>
+
+<h3>Advance Booking</h3>
+
+<div class="plan-price">
+10% OFF
+</div>
+
+<ul>
+<li>2–4 month advance booking</li>
+<li>10% booking discount</li>
+<li>Planned learning schedule</li>
+<li>Direct support</li>
+</ul>
+
+<button class="btn btn-gold"
+onclick="selectPlan('2–4 Month Advance Booking',0)">
+Choose Plan
+</button>
+
+</div>
+
 
 <div class="plan">
-<h3>Unlimited</h3>
-<div class="plan-price">$95 <span>/month</span></div>
+
+<h3>Parent Plus</h3>
+
+<div class="plan-price">
+$15 <span>/month</span>
+</div>
+
 <ul>
-<li>16 × 50-minute lessons</li>
-<li>Personalised plan</li>
-<li>Parent community</li>
-<li>Teacher-guided questions</li>
-<li>Priority support</li>
+<li>Parent guidance</li>
+<li>Monthly consultation</li>
+<li>Progress discussion</li>
+<li>Resource recommendations</li>
 </ul>
-<button class="btn btn-dark" onclick="selectPlan('Unlimited',95)">Choose Unlimited</button>
+
+<button class="btn btn-dark"
+onclick="selectPlan('Parent Plus',15)">
+Choose Plan
+</button>
+
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- COMMUNITY -->
 
 <section class="section dark" id="community">
+
 <div class="container">
 
 <div class="section-heading">
-<small>Real community</small>
-<h2>Connect, ask, learn and share.</h2>
+
+<small>Learning Hub Community</small>
+
+<h2>
+Connect, ask, learn and share.
+</h2>
+
 <p>
-The Learning Hub community is connected to Firebase, allowing
-registered members to participate in real discussions.
+Read the community without creating a website account.
+A lightweight secure sign-in is used automatically only when
+you post, reply, react or report.
 </p>
+
 </div>
 
 <div class="community-grid">
 
 <div class="community-box">
-<h3>Parent Community</h3>
+
+<h3>
+Parent Community
+</h3>
 
 <div class="community-status">
 <span class="status-dot"></span>
-Free parent access
+Open community
 </div>
 
 <p>
-Ask learning questions, discuss concerns, discover resources,
-receive announcements and connect with educator guidance.
+Ask learning questions, discuss concerns, discover resources
+and connect around education.
 </p>
 
 <div class="modal-actions">
-<button class="btn btn-gold" onclick="openCommunity('parent')">
-Open Parent Community
+
+<button class="btn btn-gold"
+onclick="openCommunity('parent')">
+Open Community
 </button>
-</div>
+
 </div>
 
+</div>
+
+
 <div class="community-box">
-<h3>Parent Plus</h3>
+
+<h3>
+Student Community
+</h3>
 
 <div class="community-status">
 <span class="status-dot"></span>
-$15 / month
+Open community
 </div>
 
 <p>
-Monthly consultation, progress guidance and personalised resource recommendations.
+Share learning questions, study strategies and academic ideas.
 </p>
 
 <div class="modal-actions">
-<button class="btn btn-gold" onclick="selectPlan('Parent Plus',15)">
-Join Parent Plus
+
+<button class="btn btn-gold"
+onclick="openCommunity('student')">
+Open Community
 </button>
-</div>
+
 </div>
 
+</div>
+
+
 <div class="community-box">
-<h3>Student Community</h3>
+
+<h3>
+Teacher Lounge
+</h3>
 
 <div class="community-status">
 <span class="status-dot"></span>
-Registered students
-</div>
-
-<p>
-Share learning questions, discuss study strategies and connect around academic learning.
-</p>
-
-<div class="modal-actions">
-<button class="btn btn-gold" onclick="openCommunity('student')">
-Open Student Community
-</button>
-</div>
-</div>
-
-<div class="community-box">
-<h3>Teacher Lounge</h3>
-
-<div class="community-status">
-<span class="status-dot"></span>
-Free teacher membership
+Educator community
 </div>
 
 <p>
@@ -2427,29 +3058,76 @@ Professional discussions, resource sharing and educator collaboration.
 </p>
 
 <div class="modal-actions">
-<button class="btn btn-gold" onclick="openCommunity('teacher')">
-Open Teacher Lounge
+
+<button class="btn btn-gold"
+onclick="openCommunity('teacher')">
+Open Lounge
 </button>
-</div>
+
 </div>
 
 </div>
+
+
+<div class="community-box">
+
+<h3>
+Need Parent Support?
+</h3>
+
+<div class="community-status">
+<span class="status-dot"></span>
+Direct support
 </div>
+
+<p>
+For private questions, specialist learning support or consultation,
+contact Learning Hub directly.
+</p>
+
+<div class="modal-actions">
+
+<a class="btn btn-gold"
+href="mailto:hublearning117@gmail.com?subject=Learning%20Hub%20Parent%20Support">
+Contact Support
+</a>
+
+<a class="btn btn-outline"
+href="https://calendly.com/hublearning117"
+target="_blank">
+Book Consultation
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 
 <!-- LIBRARY -->
 
 <section class="section" id="resources">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Learning Library</small>
-<h2>Resources learners can actually use.</h2>
+
+<h2>
+Resources learners can actually use.
+</h2>
+
 <p>
-The library is designed to grow into a structured collection of
-practice materials, lessons and learning activities.
+The library is designed to grow into a structured collection
+of practice materials, lessons and learning activities.
 </p>
+
 </div>
 
 <div class="library-grid">
@@ -2458,87 +3136,177 @@ practice materials, lessons and learning activities.
 <div class="resource-tag">Academic English</div>
 <h3>Academic English Practice</h3>
 <p>Vocabulary, writing structure and academic expression activities.</p>
-<button class="btn btn-dark" onclick="openLearning('Academic English Practice')">Open Resource</button>
+<button class="btn btn-dark"
+onclick="openLearning('Academic English Practice')">
+Open Resource
+</button>
 </div>
 
 <div class="resource">
 <div class="resource-tag">IELTS</div>
 <h3>IELTS Writing Practice</h3>
 <p>Structured writing practice and exam-focused development.</p>
-<button class="btn btn-dark" onclick="openLearning('IELTS Writing Practice')">Open Resource</button>
+<button class="btn btn-dark"
+onclick="openLearning('IELTS Writing Practice')">
+Open Resource
+</button>
 </div>
 
 <div class="resource">
 <div class="resource-tag">Study Skills</div>
 <h3>Study Skills Guide</h3>
 <p>Planning, organisation and independent learning strategies.</p>
-<button class="btn btn-dark" onclick="openLearning('Study Skills Guide')">Open Resource</button>
+<button class="btn btn-dark"
+onclick="openLearning('Study Skills Guide')">
+Open Resource
+</button>
+</div>
+
+<div class="resource">
+<div class="resource-tag">Vocabulary</div>
+<h3>High-Value Daily Life Vocabulary</h3>
+<p>Intermediate to advanced vocabulary practice.</p>
+<a class="btn btn-dark"
+href="resources/30_High_Value_Daily_Life_Vocabulary_Intermediate_Advanced.docx"
+target="_blank">
+Open Resource
+</a>
+</div>
+
+<div class="resource">
+<div class="resource-tag">Practice Materials</div>
+<h3>Worksheets & PDFs</h3>
+<p>
+Learning Hub worksheets and permitted practice materials.
+</p>
+<button class="btn btn-dark"
+onclick="openLearning('Worksheets & PDFs')">
+Explore Library
+</button>
+</div>
+
+<div class="resource">
+<div class="resource-tag">Audio & Video</div>
+<h3>Media Learning</h3>
+<p>
+Guided videos, audio practice and visual learning materials.
+</p>
+<button class="btn btn-dark"
+onclick="openLearning('Media Learning')">
+Explore Media
+</button>
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- TESTIMONIALS -->
 
 <section class="section dark">
+
 <div class="container">
 
 <div class="section-heading">
-<small>Student experiences</small>
-<h2>What learners have shared.</h2>
+
+<small>Example feedback format</small>
+
+<h2>
+What learner experiences can look like.
+</h2>
+
+<p>
+The examples below are placeholders and are not presented as
+verified testimonials.
+</p>
+
 </div>
 
 <div class="testimonial-grid">
 
 <div class="testimonial">
-<span class="testimonial-tag">A learner</span>
+
+<span class="testimonial-tag">
+EXAMPLE — LEARNER
+</span>
+
 <p>
-“The lessons helped me understand difficult concepts more clearly
-and become more confident with my work.”
+“Lessons can help learners understand difficult concepts more clearly
+and become more confident with their work.”
 </p>
-<strong>International learner</strong>
+
+<strong>
+Illustrative example
+</strong>
+
 </div>
 
 <div class="testimonial">
-<span class="testimonial-tag">A parent</span>
+
+<span class="testimonial-tag">
+EXAMPLE — PARENT
+</span>
+
 <p>
-“I appreciated having structured support and a clearer learning direction.”
+“Structured support can provide families with a clearer learning direction.”
 </p>
-<strong>Parent</strong>
+
+<strong>
+Illustrative example
+</strong>
+
 </div>
 
 <div class="testimonial">
-<span class="testimonial-tag">An educator</span>
+
+<span class="testimonial-tag">
+EXAMPLE — EDUCATOR
+</span>
+
 <p>
-“The Learning Hub approach makes personalised learning feel organised and accessible.”
+“A personalised approach can make online learning feel organised and accessible.”
 </p>
-<strong>Educator</strong>
+
+<strong>
+Illustrative example
+</strong>
+
 </div>
 
 </div>
 </div>
+
 </section>
 
 
 <!-- TEACHER -->
 
 <section class="section" id="teacher">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Global educator network</small>
-<h2>Teach with Learning Hub.</h2>
+
+<h2>
+Teach with Learning Hub.
+</h2>
+
 <p>
 Join a growing international network of educators supporting
 students across subjects, curricula and learning goals.
 </p>
+
 </div>
 
 <div class="contact-card">
 
-<h3>Become a Learning Hub Teacher</h3>
+<h3>
+Become a Learning Hub Teacher
+</h3>
 
 <p>
 Teacher applications are handled through our application system.
@@ -2562,25 +3330,35 @@ Teacher Support
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
 <!-- CONTACT -->
 
 <section class="section" id="contact">
+
 <div class="container">
 
 <div class="section-heading">
+
 <small>Contact Learning Hub</small>
-<h2>Let's plan your learning journey.</h2>
+
+<h2>
+Let's plan your learning journey.
+</h2>
+
 </div>
 
 <div class="contact-grid">
 
 <div class="contact-card">
 
-<h3>Learning Hub Support</h3>
+<h3>
+Learning Hub Support
+</h3>
 
 <p>
 For enrolment, payment arrangements, specialist support,
@@ -2613,17 +3391,31 @@ Book Consultation
 
 <div class="contact-card">
 
-<h3>Send an enquiry</h3>
+<h3>
+Send an enquiry
+</h3>
 
-<form class="form" onsubmit="submitContact(event)">
+<form class="form"
+onsubmit="submitContact(event)">
 
-<input id="contactName" required placeholder="Your name">
+<input
+id="contactName"
+required
+placeholder="Your name">
 
-<input id="contactEmail" type="email" required placeholder="Your email">
+<input
+id="contactEmail"
+type="email"
+required
+placeholder="Your email">
 
-<textarea id="contactMessage" required placeholder="How can Learning Hub help?"></textarea>
+<textarea
+id="contactMessage"
+required
+placeholder="How can Learning Hub help?"></textarea>
 
-<button class="btn btn-gold" type="submit">
+<button class="btn btn-gold"
+type="submit">
 Send Enquiry
 </button>
 
@@ -2633,6 +3425,7 @@ Send Enquiry
 
 </div>
 </div>
+
 </section>
 
 
@@ -2645,62 +3438,98 @@ Send Enquiry
 <div class="footer-grid">
 
 <div class="footer-col">
+
 <div class="logo">
-<div class="logo-mark">LH</div>
+
+<div class="logo-mark">
+LH
+</div>
+
 <div class="logo-text">
 Learning Hub
 <span>Global Learning</span>
 </div>
+
 </div>
 
 <p style="margin-top:18px;font-size:.78rem;max-width:300px;">
 Global online tutoring, international curriculum support,
 specialist learning support and modern learning experiences.
 </p>
+
 </div>
 
+
 <div class="footer-col">
+
 <h4>Learning</h4>
+
 <a href="#programmes">Programmes</a>
 <a href="#subjects">Subjects</a>
 <a href="#resources">Resources</a>
 <a href="#plans">Plans</a>
+
 </div>
 
+
 <div class="footer-col">
+
 <h4>International</h4>
-<a href="#boards">IB Support</a>
-<a href="#exams">English Exams</a>
+
+<a href="#boards">International Boards</a>
+<a href="#exams">International Exams</a>
 <a href="#english">English Development</a>
 <a href="#specialist">Learning Support</a>
+
 </div>
+
 
 <div class="footer-col">
+
 <h4>Connect</h4>
+
 <a href="#community">Community</a>
-<a href="#teacher">Become a Teacher</a>
+<a href="#teacher">Apply to Teach</a>
 <a href="mailto:hublearning117@gmail.com">Support</a>
 <a href="https://calendly.com/hublearning117" target="_blank">Book</a>
+
 </div>
 
 </div>
+
 
 <div class="footer-bottom">
-<span>© 2026 Learning Hub. All rights reserved.</span>
-<span>Global Online Learning Platform</span>
+
+<span>
+© 2026 Learning Hub. All rights reserved.
+</span>
+
+<span>
+Global Online Learning Platform
+</span>
+
 </div>
 
 </div>
+
 </footer>
 
 
 <!-- AI -->
 
-<button class="ai-float" onclick="toggleAI()">AI</button>
+<button
+class="ai-float"
+onclick="toggleAI()">
+AI
+</button>
 
-<div class="ai-panel" id="aiPanel">
 
-<h3>Learning Concierge</h3>
+<div class="ai-panel"
+id="aiPanel">
+
+<h3>
+Learning Concierge
+</h3>
 
 <p>
 Get a quick recommendation based on what you want to learn.
@@ -2735,364 +3564,669 @@ Get a quick recommendation based on what you want to learn.
 
 <!-- GENERAL MODAL -->
 
-<div class="modal" id="generalModal">
+<div class="modal"
+id="generalModal">
 
 <div class="modal-card">
 
-<button class="modal-close" onclick="closeModal()">×</button>
+<button class="modal-close"
+onclick="closeModal()">
+×
+</button>
 
 <div id="modalContent"></div>
 
 </div>
-
-</div>
-
-
-<!-- AUTH MODAL -->
-
-<div class="modal" id="authModal">
-
-<div class="modal-card">
-
-<button class="modal-close" onclick="closeAuth()">×</button>
-
-<h2 id="authTitle">Welcome to Learning Hub</h2>
-
-<p id="authSubtitle">
-Sign in to access your Learning Hub account.
-</p>
-
-<div class="auth-tabs">
-
-<button class="auth-tab active" id="studentTab" onclick="setAuthRole('student')">
-Student
-</button>
-
-<button class="auth-tab" id="parentTab" onclick="setAuthRole('parent')">
-Parent
-</button>
-
-<button class="auth-tab" id="teacherTab" onclick="setAuthRole('teacher')">
-Teacher
-</button>
-
-</div>
-
-<div id="authForm">
-
-<input id="authName"
-placeholder="Full name"
-style="display:none;width:100%;padding:14px;margin-bottom:10px;border:1px solid #ddd;border-radius:12px;">
-
-<input id="authEmail"
-type="email"
-placeholder="Email address"
-style="width:100%;padding:14px;margin-bottom:10px;border:1px solid #ddd;border-radius:12px;">
-
-<input id="authPassword"
-type="password"
-placeholder="Password"
-style="width:100%;padding:14px;margin-bottom:10px;border:1px solid #ddd;border-radius:12px;">
-
-<button class="btn btn-dark" style="width:100%;" onclick="submitAuth()">
-Sign In
-</button>
-
-</div>
-
-<div style="margin-top:15px;text-align:center;">
-<button id="authSwitch" onclick="toggleAuthMode()" style="border:0;background:none;color:#8d6d2c;font-size:.78rem;">
-Create an account
-</button>
-</div>
-
-</div>
-
-</div>
-
-
-<!-- DASHBOARD MODAL -->
-
-<div class="modal" id="dashboardModal">
-
-<div class="modal-card">
-
-<button class="modal-close" onclick="closeDashboard()">×</button>
-
-<div id="dashboardContent"></div>
-
-</div>
-
 </div>
 
 
 <!-- COMMUNITY MODAL -->
 
-<div class="modal" id="communityModal">
+<div class="modal"
+id="communityModal">
 
 <div class="modal-card">
 
-<button class="modal-close" onclick="closeCommunity()">×</button>
+<button class="modal-close"
+onclick="closeCommunity()">
+×
+</button>
 
 <div id="communityContent"></div>
 
 </div>
-
 </div>
 
 
 <!-- TOAST -->
 
-<div class="toast" id="toast"></div>
+<div class="toast"
+id="toast">
+</div>
 
 
 <!-- FIREBASE -->
 
 <script type="module">
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import {
+initializeApp
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
 getAuth,
-createUserWithEmailAndPassword,
-signInWithEmailAndPassword,
-signOut,
-onAuthStateChanged,
-updateProfile
+signInAnonymously,
+onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 import {
 getFirestore,
-doc,
-setDoc,
-getDoc,
 collection,
 addDoc,
+doc,
+deleteDoc,
+getDoc,
+setDoc,
 query,
 orderBy,
+limit,
 onSnapshot,
-serverTimestamp,
-limit
+serverTimestamp
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
 const firebaseConfig = {
 
-apiKey: "AIzaSyDAXsHBb0-ThWi40iOgpE95VFv_96a8pMo",
+apiKey:"AIzaSyDAXsHBb0-ThWi40iOgpE95VFv_96a8pMo",
 
-authDomain: "learning-hub-75fd0.firebaseapp.com",
+authDomain:"learning-hub-75fd0.firebaseapp.com",
 
-projectId: "learning-hub-75fd0",
+projectId:"learning-hub-75fd0",
 
-storageBucket: "learning-hub-75fd0.firebasestorage.app",
+storageBucket:"learning-hub-75fd0.firebasestorage.app",
 
-messagingSenderId: "635107291804",
+messagingSenderId:"635107291804",
 
-appId: "1:635107291804:web:4a009b58994c37a1047359",
+appId:"1:635107291804:web:4a009b58994c37a1047359",
 
-measurementId: "G-XRFVZXNRRS"
+measurementId:"G-XRFVZXNRRS"
 
 };
 
 
-const app = initializeApp(firebaseConfig);
+const app=initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+const auth=getAuth(app);
 
-const db = getFirestore(app);
+const db=getFirestore(app);
 
+window.firebaseDB=db;
+window.firebaseAuth=auth;
 
-window.firebaseAuth = auth;
-window.firebaseDB = db;
+let currentUser=null;
 
-
-let currentUser = null;
-
-let authRole = "student";
-
-let authMode = "signin";
-
-let currentCommunity = "parent";
-
-let unsubscribeCommunity = null;
+let unsubscribeCommunity=null;
 
 
-onAuthStateChanged(auth, async user => {
+/* AUTHENTICATION
+   No visible signup.
+   Anonymous account is created only when a community action needs it.
+*/
 
-currentUser = user;
+onAuthStateChanged(auth,user=>{
 
-if(user){
+currentUser=user||null;
 
-window.currentUser = user;
-
-showToast("Signed in as " + (user.displayName || user.email));
-
-}else{
-
-window.currentUser = null;
-
-}
+window.currentUser=currentUser;
 
 });
 
 
-window.getCurrentUser = function(){
+window.ensureCommunityAuth=async function(){
 
+if(currentUser){
 return currentUser;
-
-};
-
-
-window.firebaseSignOut = async function(){
+}
 
 try{
 
-await signOut(auth);
+const result=await signInAnonymously(auth);
 
-showToast("You have been signed out.");
+return result.user;
 
 }catch(error){
 
-showToast(error.message);
+console.error(error);
 
-}
-
-};
-
-
-window.firebaseSignUp = async function(name,email,password,role){
-
-try{
-
-const result =
-await createUserWithEmailAndPassword(auth,email,password);
-
-await updateProfile(result.user,{
-displayName:name
-});
-
-await setDoc(
-doc(db,"users",result.user.uid),
-{
-uid:result.user.uid,
-name:name,
-email:email,
-role:role,
-createdAt:serverTimestamp()
-}
+showToast(
+"Community sign-in is not enabled yet. Please enable Anonymous Authentication in Firebase."
 );
 
-closeAuth();
-
-showToast("Your Learning Hub account has been created.");
-
-}catch(error){
-
-showToast(firebaseFriendlyError(error));
+return null;
 
 }
 
 };
 
 
-window.firebaseSignIn = async function(email,password){
+/* CREATE POST */
 
-try{
+window.createCommunityPost=async function(type,text){
 
-await signInWithEmailAndPassword(auth,email,password);
+text=(text||"").trim();
 
-closeAuth();
-
-}catch(error){
-
-showToast(firebaseFriendlyError(error));
-
-}
-
-};
-
-
-window.createCommunityPost = async function(type,text){
-
-if(!currentUser){
-
-openAuth();
-
-showToast("Please sign in to join the community.");
-
+if(!text){
+showToast("Please write a discussion first.");
 return;
-
 }
 
-if(!text.trim()){
+const user=await window.ensureCommunityAuth();
 
-showToast("Please write a message first.");
-
-return;
-
-}
+if(!user)return;
 
 try{
 
 await addDoc(
 collection(db,"communities",type,"posts"),
 {
-text:text.trim(),
-uid:currentUser.uid,
-name:currentUser.displayName || currentUser.email,
-email:currentUser.email,
-role:authRole,
+text:text,
+uid:user.uid,
+name:"Learning Hub Member",
+type:type,
 createdAt:serverTimestamp()
 }
 );
 
-document.getElementById("communityPostText").value="";
+showToast("Discussion published.");
 
-showToast("Your post has been published.");
+const box=document.getElementById("communityPostText");
+
+if(box){
+box.value="";
+}
 
 }catch(error){
 
-showToast(
-"Community access is not enabled in Firestore rules yet."
-);
-
 console.error(error);
+
+showToast(
+"Unable to publish. Please check your Firestore rules."
+);
 
 }
 
 };
 
 
-window.listenToCommunity = function(type){
+/* REPLY */
 
-if(unsubscribeCommunity){
+window.createReply=async function(type,postId,text){
 
-unsubscribeCommunity();
+text=(text||"").trim();
+
+if(!text){
+showToast("Please write a reply.");
+return;
+}
+
+const user=await window.ensureCommunityAuth();
+
+if(!user)return;
+
+try{
+
+await addDoc(
+collection(
+db,
+"communities",
+type,
+"posts",
+postId,
+"replies"
+),
+{
+text:text,
+uid:user.uid,
+name:"Learning Hub Member",
+createdAt:serverTimestamp()
+}
+);
+
+showToast("Reply added.");
+
+}catch(error){
+
+console.error(error);
+
+showToast(
+"Unable to add reply. Please check Firestore rules."
+);
 
 }
 
-const postsRef =
-collection(db,"communities",type,"posts");
+};
 
-const q =
-query(
+
+/* REACTION */
+
+window.toggleReaction=async function(type,postId,reaction){
+
+const user=await window.ensureCommunityAuth();
+
+if(!user)return;
+
+const reactionRef=doc(
+db,
+"communities",
+type,
+"posts",
+postId,
+"reactions",
+user.uid
+);
+
+try{
+
+const existing=await getDoc(reactionRef);
+
+if(existing.exists()){
+
+await deleteDoc(reactionRef);
+
+}else{
+
+await setDoc(
+reactionRef,
+{
+uid:user.uid,
+reaction:reaction,
+createdAt:serverTimestamp()
+}
+);
+
+}
+
+}catch(error){
+
+console.error(error);
+
+showToast("Reaction could not be saved.");
+
+}
+
+};
+
+
+/* REPORT */
+
+window.reportPost=async function(type,postId){
+
+const user=await window.ensureCommunityAuth();
+
+if(!user)return;
+
+const reason=prompt(
+"Why are you reporting this discussion?\n\nEnter a short reason:"
+);
+
+if(!reason || !reason.trim())return;
+
+try{
+
+await addDoc(
+collection(db,"reports"),
+{
+type:"post",
+community:type,
+postId:postId,
+reason:reason.trim(),
+reporterUid:user.uid,
+createdAt:serverTimestamp()
+}
+);
+
+showToast("Report submitted for review.");
+
+}catch(error){
+
+console.error(error);
+
+showToast("Unable to submit report.");
+
+}
+
+};
+
+
+/* DELETE OWN POST */
+
+window.deleteCommunityPost=async function(type,postId){
+
+const user=await window.ensureCommunityAuth();
+
+if(!user)return;
+
+if(!confirm("Delete your discussion?"))return;
+
+try{
+
+await deleteDoc(
+doc(
+db,
+"communities",
+type,
+"posts",
+postId
+)
+);
+
+showToast("Discussion deleted.");
+
+}catch(error){
+
+console.error(error);
+
+showToast(
+"You can only delete your own discussion."
+);
+
+}
+
+};
+
+
+/* DELETE OWN REPLY */
+
+window.deleteCommunityReply=async function(type,postId,replyId){
+
+const user=await window.ensureCommunityAuth();
+
+if(!user)return;
+
+if(!confirm("Delete your reply?"))return;
+
+try{
+
+await deleteDoc(
+doc(
+db,
+"communities",
+type,
+"posts",
+postId,
+"replies",
+replyId
+)
+);
+
+showToast("Reply deleted.");
+
+}catch(error){
+
+console.error(error);
+
+showToast(
+"You can only delete your own reply."
+);
+
+}
+
+};
+
+
+/* COMMUNITY LISTENER */
+
+window.listenToCommunity=async function(type){
+
+if(unsubscribeCommunity){
+unsubscribeCommunity();
+unsubscribeCommunity=null;
+}
+
+const container=document.getElementById("communityPosts");
+
+if(!container)return;
+
+container.innerHTML=
+'<div class="loading">Loading discussions...</div>';
+
+try{
+
+const postsRef=collection(
+db,
+"communities",
+type,
+"posts"
+);
+
+const q=query(
 postsRef,
 orderBy("createdAt","desc"),
 limit(50)
 );
 
-unsubscribeCommunity =
-onSnapshot(q,snapshot=>{
+unsubscribeCommunity=onSnapshot(
+q,
+async snapshot=>{
 
-const container =
-document.getElementById("communityPosts");
+const searchValue=
+(document.getElementById("communitySearch")?.value||"")
+.toLowerCase()
+.trim();
+
+const posts=[];
+
+snapshot.forEach(item=>{
+
+const data=item.data();
+
+const searchable=
+(
+(data.text||"")+" "+
+(data.name||"")
+).toLowerCase();
+
+if(!searchValue || searchable.includes(searchValue)){
+
+posts.push({
+id:item.id,
+...data
+});
+
+}
+
+});
+
+if(!posts.length){
+
+container.innerHTML=
+'<div class="empty-state">No discussions found.</div>';
+
+return;
+
+}
+
+container.innerHTML="";
+
+for(const post of posts){
+
+await renderPost(type,post,container);
+
+}
+
+},
+error=>{
+
+console.error(error);
+
+container.innerHTML=
+`
+<div class="empty-state">
+Community is connected, but Firestore access needs to be enabled.
+</div>
+`;
+
+}
+);
+
+}catch(error){
+
+console.error(error);
+
+container.innerHTML=
+`
+<div class="empty-state">
+Unable to load community.
+</div>
+`;
+
+}
+
+};
+
+
+/* RENDER POST */
+
+async function renderPost(type,post,container){
+
+const article=document.createElement("article");
+
+article.className="post";
+
+const date=post.createdAt?.toDate
+?post.createdAt.toDate().toLocaleString()
+:"Recently";
+
+const user=window.currentUser;
+
+const ownPost=
+user && post.uid===user.uid;
+
+article.innerHTML=`
+
+<div class="post-head">
+
+<div>
+<strong>${escapeHTML(post.name||"Learning Hub Member")}</strong>
+
+<span class="post-role">
+${escapeHTML(type)}
+</span>
+
+</div>
+
+<span>${escapeHTML(date)}</span>
+
+</div>
+
+<div class="post-content">
+${escapeHTML(post.text||"")}
+</div>
+
+<div class="post-actions">
+
+<button class="mini-btn"
+onclick="toggleReaction('${type}','${post.id}','like')">
+❤️ Like
+</button>
+
+<button class="mini-btn"
+onclick="toggleReplyBox('${post.id}')">
+↩ Reply
+</button>
+
+<button class="mini-btn"
+onclick="showReplies('${type}','${post.id}')">
+View Replies
+</button>
+
+<button class="mini-btn"
+onclick="reportPost('${type}','${post.id}')">
+Report
+</button>
+
+${
+ownPost
+?
+`
+<button class="mini-btn"
+onclick="deleteCommunityPost('${type}','${post.id}')">
+Delete
+</button>
+`
+:""
+}
+
+</div>
+
+<div class="reply-box"
+id="reply-${post.id}">
+
+<textarea
+class="reply-input"
+id="replyText-${post.id}"
+placeholder="Write a reply..."></textarea>
+
+<div class="modal-actions">
+
+<button
+class="btn btn-dark"
+onclick="submitReply('${type}','${post.id}')">
+Post Reply
+</button>
+
+</div>
+
+</div>
+
+<div class="replies"
+id="replies-${post.id}"></div>
+
+`;
+
+container.appendChild(article);
+
+}
+
+
+/* REPLIES */
+
+window.showReplies=async function(type,postId){
+
+const container=document.getElementById(
+"replies-"+postId
+);
 
 if(!container)return;
 
+container.innerHTML=
+'<div class="loading">Loading replies...</div>';
+
+try{
+
+const repliesRef=collection(
+db,
+"communities",
+type,
+"posts",
+postId,
+"replies"
+);
+
+const q=query(
+repliesRef,
+orderBy("createdAt","asc"),
+limit(30)
+);
+
+onSnapshot(
+q,
+snapshot=>{
+
 if(snapshot.empty){
 
-container.innerHTML =
-'<div class="empty-state">No discussions yet. Be the first to start one.</div>';
+container.innerHTML=
+'<div class="empty-state">No replies yet.</div>';
 
 return;
 
@@ -3104,51 +4238,106 @@ snapshot.forEach(item=>{
 
 const data=item.data();
 
-const date =
-data.createdAt?.toDate ?
-data.createdAt.toDate().toLocaleString() :
-"Recently";
+const div=document.createElement("div");
 
-const article=document.createElement("div");
+div.className="reply";
 
-article.className="post";
+const user=window.currentUser;
 
-article.innerHTML=`
+const ownReply=
+user && data.uid===user.uid;
 
-<div class="post-head">
+const date=data.createdAt?.toDate
+?data.createdAt.toDate().toLocaleString()
+:"Recently";
+
+div.innerHTML=`
 
 <div>
-<strong>${escapeHTML(data.name || "Learning Hub member")}</strong>
-<span class="post-role">${escapeHTML(data.role || "Member")}</span>
+<strong>
+${escapeHTML(data.name||"Member")}
+</strong>
+
+<span style="color:#999;font-size:.65rem;">
+${escapeHTML(date)}
+</span>
 </div>
 
-<span>${escapeHTML(date)}</span>
-
+<div style="margin-top:5px;">
+${escapeHTML(data.text||"")}
 </div>
 
-<div class="post-content">${escapeHTML(data.text || "")}</div>
+${
+ownReply
+?
+`
+<button
+class="mini-btn"
+style="margin-top:7px;"
+onclick="deleteCommunityReply('${type}','${postId}','${item.id}')">
+Delete
+</button>
+`
+:""
+}
 
 `;
 
-container.appendChild(article);
+container.appendChild(div);
 
 });
 
-},error=>{
+},
+error=>{
 
 console.error(error);
 
-const container =
-document.getElementById("communityPosts");
+container.innerHTML=
+'<div class="empty-state">Replies are not available yet.</div>';
 
-if(container){
+}
+);
 
-container.innerHTML =
-'<div class="empty-state">Community connection is being configured.</div>';
+}catch(error){
+
+console.error(error);
+
+container.innerHTML=
+'<div class="empty-state">Unable to load replies.</div>';
 
 }
 
-});
+};
+
+
+window.submitReply=function(type,postId){
+
+const textarea=document.getElementById(
+"replyText-"+postId
+);
+
+if(!textarea)return;
+
+createReply(
+type,
+postId,
+textarea.value
+);
+
+textarea.value="";
+
+};
+
+
+window.toggleReplyBox=function(postId){
+
+const box=document.getElementById(
+"reply-"+postId
+);
+
+if(box){
+box.classList.toggle("show");
+}
 
 };
 
@@ -3164,33 +4353,12 @@ return String(value)
 
 }
 
-
-function firebaseFriendlyError(error){
-
-const code=error.code || "";
-
-if(code.includes("auth/invalid-credential"))
-return "The email or password is incorrect.";
-
-if(code.includes("auth/email-already-in-use"))
-return "An account already exists with this email.";
-
-if(code.includes("auth/weak-password"))
-return "Please use a stronger password.";
-
-if(code.includes("auth/invalid-email"))
-return "Please enter a valid email address.";
-
-return "Something went wrong. Please try again.";
-
-}
-
 </script>
 
 
 <script>
 
-/* GLOBAL HELPERS */
+/* GLOBAL */
 
 function showToast(message){
 
@@ -3200,7 +4368,9 @@ toast.textContent=message;
 
 toast.classList.add("show");
 
-setTimeout(()=>{
+clearTimeout(window.toastTimer);
+
+window.toastTimer=setTimeout(()=>{
 toast.classList.remove("show");
 },3500);
 
@@ -3209,14 +4379,20 @@ toast.classList.remove("show");
 
 function openModal(){
 
-document.getElementById("generalModal").classList.add("show");
+document.getElementById("generalModal")
+.classList.add("show");
+
+document.body.classList.add("modal-open");
 
 }
 
 
 function closeModal(){
 
-document.getElementById("generalModal").classList.remove("show");
+document.getElementById("generalModal")
+.classList.remove("show");
+
+document.body.classList.remove("modal-open");
 
 }
 
@@ -3240,20 +4416,165 @@ openModal();
 }
 
 
-function openTopic(title,text){
+/* DIRECT ACTIONS */
+
+function openStudentActions(){
 
 setModal(
-title,
-text,
+"Student Learning",
+"Choose what you want to do. No website account is required.",
 `
-<button class="btn btn-dark" onclick="openAuth('signup');closeModal();">
-Create Learning Account
+<div class="choice-grid">
+
+<button class="choice"
+onclick="closeModal();location.href='#subjects'">
+<strong>Choose a Subject</strong><br>
+<small>English, Mathematics, Psychology, Business and more.</small>
 </button>
 
+<button class="choice"
+onclick="closeModal();location.href='#exams'">
+<strong>Prepare for an Exam</strong><br>
+<small>Explore international examination support.</small>
+</button>
+
+<button class="choice"
+onclick="closeModal();location.href='#resources'">
+<strong>Open Resources</strong><br>
+<small>Practice materials and learning resources.</small>
+</button>
+
+<a class="choice"
+href="https://calendly.com/hublearning117"
+target="_blank">
+<strong>Book a Session</strong><br>
+<small>Arrange your learning session directly.</small>
+</a>
+
+</div>
+`
+);
+
+}
+
+
+function openParentActions(){
+
+setModal(
+"Parent Support",
+"Choose the most convenient next step.",
+`
+<div class="choice-grid">
+
+<button class="choice"
+onclick="closeModal();location.href='#specialist'">
+<strong>Learning Support</strong><br>
+<small>Explore specialist learning pathways.</small>
+</button>
+
+<button class="choice"
+onclick="closeModal();location.href='#programmes'">
+<strong>Choose a Programme</strong><br>
+<small>Explore tutoring and learning programmes.</small>
+</button>
+
+<a class="choice"
+href="https://calendly.com/hublearning117"
+target="_blank">
+<strong>Book Consultation</strong><br>
+<small>Discuss your learner's needs directly.</small>
+</a>
+
+<a class="choice"
+href="mailto:hublearning117@gmail.com?subject=Learning%20Hub%20Parent%20Enquiry">
+<strong>Enquire</strong><br>
+<small>Contact Learning Hub Support.</small>
+</a>
+
+</div>
+`
+);
+
+}
+
+
+function openTeacherActions(){
+
+setModal(
+"Teacher Lounge",
+"Educators can apply directly or contact Learning Hub.",
+`
+<div class="choice-grid">
+
+<a class="choice"
+href="https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform"
+target="_blank">
+<strong>Apply to Teach</strong><br>
+<small>Open the Learning Hub teacher application.</small>
+</a>
+
+<button class="choice"
+onclick="closeModal();openCommunity('teacher')">
+<strong>Teacher Community</strong><br>
+<small>Join educator discussions.</small>
+</button>
+
+<a class="choice"
+href="mailto:hublearning117@gmail.com?subject=Learning%20Hub%20Teacher%20Support">
+<strong>Teacher Support</strong><br>
+<small>Contact the Learning Hub team.</small>
+</a>
+
+</div>
+`
+);
+
+
+/* SUBJECT */
+
+function openSubject(subject){
+
+const descriptions={
+
+"English":
+"Reading, writing, speaking, vocabulary and academic English development.",
+
+"Mathematics":
+"Concepts, guided practice and mathematical problem solving.",
+
+"Psychology":
+"IB Psychology support, research studies, concepts, evaluation and exam preparation.",
+
+"Business Studies":
+"Business concepts, analysis, academic writing and examination preparation.",
+
+"Sociology":
+"Sociology concepts, analysis, writing and examination support.",
+
+"Environmental Systems & Societies":
+"ESS concepts, case studies, analysis and examination support.",
+
+"Academic Writing":
+"Essay structure, argument, analysis, coherence and academic expression.",
+
+"Study Skills":
+"Organisation, revision, independent learning and academic confidence."
+
+};
+
+setModal(
+subject,
+descriptions[subject]||"Personalised learning support.",
+`
 <a class="btn btn-gold"
 href="https://calendly.com/hublearning117"
 target="_blank">
-Book Consultation
+Book a Session
+</a>
+
+<a class="btn btn-dark"
+href="mailto:hublearning117@gmail.com?subject=Learning Hub Subject Enquiry - ${encodeURIComponent(subject)}">
+Enquire
 </a>
 `
 );
@@ -3261,20 +4582,51 @@ Book Consultation
 }
 
 
+/* PROGRAMME */
+
+function openTopic(title,text){
+
+setModal(
+title,
+text,
+`
+<a class="btn btn-gold"
+href="https://calendly.com/hublearning117"
+target="_blank">
+Book a Session
+</a>
+
+<a class="btn btn-dark"
+href="mailto:hublearning117@gmail.com?subject=Learning Hub ${encodeURIComponent(title)}">
+Enquire
+</a>
+`
+);
+
+}
+
+
+/* SPECIAL SUPPORT */
+
 function openSpecial(title){
 
 setModal(
 title,
 `
-<strong>Book in Advance</strong><br><br>
-This specialist pathway is being developed for personalised
-student support. Learning Hub can review the learner's needs,
-learning goals and appropriate support pathway before enrolment.
+<strong>Specialist learning support</strong><br><br>
+
+This pathway is arranged after discussing the learner's
+needs, goals and appropriate learning approach.
+
+<br><br>
+
+Learning Hub does not claim to provide clinical diagnosis
+or medical treatment through this tutoring service.
 `,
 `
 <a class="btn btn-gold"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub ${encodeURIComponent(title)}">
-Request Support
+href="mailto:hublearning117@gmail.com?subject=Learning Hub Specialist Support - ${encodeURIComponent(title)}">
+Contact Support
 </a>
 
 <a class="btn btn-dark"
@@ -3287,6 +4639,65 @@ Book Consultation
 
 }
 
+
+/* BOARDS */
+
+function openBoard(title){
+
+setModal(
+title,
+`
+Explore curriculum support for ${title}.
+<br><br>
+Availability depends on subject, level and teacher expertise.
+`,
+`
+<a class="btn btn-gold"
+href="https://calendly.com/hublearning117"
+target="_blank">
+Book Consultation
+</a>
+
+<a class="btn btn-dark"
+href="mailto:hublearning117@gmail.com?subject=Learning Hub Board Enquiry - ${encodeURIComponent(title)}">
+Enquire
+</a>
+`
+);
+
+}
+
+
+/* EXAMS */
+
+function openExam(title){
+
+setModal(
+title,
+`
+Learning Hub can provide targeted preparation, practice,
+feedback and learning support for this examination pathway.
+<br><br>
+Please contact us to confirm the exact level and available tutor.
+`,
+`
+<a class="btn btn-gold"
+href="https://calendly.com/hublearning117"
+target="_blank">
+Book Consultation
+</a>
+
+<a class="btn btn-dark"
+href="mailto:hublearning117@gmail.com?subject=Learning Hub Exam Enquiry - ${encodeURIComponent(title)}">
+Enquire
+</a>
+`
+);
+
+}
+
+
+/* LEARNING */
 
 function openLearning(title){
 
@@ -3305,10 +4716,10 @@ const content={
 "Develop targeted PTE speaking, writing and language skills.",
 
 "Visual Concepts":
-"Visual learning activities will combine diagrams, concept explanations and guided practice.",
+"Visual learning activities combine diagrams, concept explanations and guided practice.",
 
 "Interactive Practice":
-"Interactive practice activities will help learners apply concepts after explanation.",
+"Interactive practice activities help learners apply concepts after explanation.",
 
 "Guided Learning":
 "Follow structured learning steps with clear learning goals.",
@@ -3347,24 +4758,32 @@ const content={
 "Planning, organisation and independent learning.",
 
 "Young Learners":
-"Engaging learning activities designed for younger learners."
+"Engaging learning activities designed for younger learners.",
+
+"Worksheets & PDFs":
+"Explore Learning Hub worksheets and permitted practice materials.",
+
+"Media Learning":
+"Explore permitted audio, video and visual learning materials."
 
 };
 
-const description =
-content[title] ||
+const description=
+content[title]||
 "Learning content is being expanded inside the Learning Hub Library.";
 
 setModal(
 title,
 description,
 `
-<button class="btn btn-gold" onclick="openAuth('signup');closeModal();">
-Create Free Account
-</button>
+<a class="btn btn-gold"
+href="https://calendly.com/hublearning117"
+target="_blank">
+Book Learning
+</a>
 
 <a class="btn btn-dark"
-href="mailto:hublearning117@gmail.com?subject=Learning Hub Resource Request">
+href="mailto:hublearning117@gmail.com?subject=Learning Hub Resource Request - ${encodeURIComponent(title)}">
 Request Resource
 </a>
 `
@@ -3373,23 +4792,25 @@ Request Resource
 }
 
 
+/* PRICING */
+
 function selectPlan(plan,price){
+
+const priceText=
+price>0
+?`<strong>${plan}</strong><br>$${price} / month`
+:`<strong>${plan}</strong><br>Discount/package pricing confirmed by Support`;
 
 setModal(
 "Proceed to Payment",
 `
-Your selected plan is ready.
+${priceText}
 
 <br><br>
 
-<strong>${plan}</strong><br>
-$${price} / month
-
-<br><br>
-
-To complete your payment, please contact Learning Hub Support.
-Our team will provide the available payment method and payment
-instructions based on your country and selected plan.
+To complete payment, contact Learning Hub Support.
+Our team will provide available payment methods and
+instructions according to your country and selected plan.
 
 <br><br>
 
@@ -3397,8 +4818,8 @@ instructions based on your country and selected plan.
 
 <br><br>
 
-After payment is confirmed, your lesson or membership booking
-can be arranged.
+Payment is confirmed manually. This website does not
+claim that payment has been completed.
 `,
 `
 <a class="btn btn-gold"
@@ -3420,14 +4841,15 @@ Book Consultation
 function selectLesson(name,price){
 
 setModal(
-"Book " + name,
+"Book "+name,
 `
 <strong>${name}</strong><br>
 ${price} USD introductory price
 
 <br><br>
 
-To arrange payment and booking, contact Learning Hub Support.
+Contact Learning Hub Support for payment arrangements,
+then use Calendly to arrange the appropriate session.
 `,
 `
 <a class="btn btn-gold"
@@ -3438,7 +4860,7 @@ Contact Support
 <a class="btn btn-dark"
 href="https://calendly.com/hublearning117"
 target="_blank">
-Book Consultation
+Book Session
 </a>
 `
 );
@@ -3446,8 +4868,9 @@ Book Consultation
 }
 
 
-const rates={
+/* CURRENCY */
 
+const rates={
 USD:1,
 PKR:280,
 GBP:.75,
@@ -3460,25 +4883,44 @@ CNY:7.15,
 JPY:147,
 KRW:1380,
 INR:83.5
-
 };
 
+const currencySymbols={
+USD:"$",
+PKR:"PKR ",
+GBP:"£",
+EUR:"€",
+AED:"AED ",
+SAR:"SAR ",
+CAD:"C$",
+AUD:"A$",
+CNY:"CNY ",
+JPY:"¥",
+KRW:"₩",
+INR:"₹"
+};
 
 function updatePrices(){
 
-const currency =
+const currency=
 document.getElementById("currency").value;
 
-document.querySelectorAll(".lesson-price").forEach(item=>{
+document.querySelectorAll(".lesson-price")
+.forEach(item=>{
 
-const usd=parseFloat(item.dataset.usd);
+const usd=
+parseFloat(item.dataset.usd);
 
-const value=usd*rates[currency];
+const value=
+usd*rates[currency];
 
-item.textContent =
-currency==="JPY" || currency==="KRW"
-? `${currency} ${Math.round(value).toLocaleString()}`
-: `${currency} ${value.toFixed(2)}`;
+item.textContent=
+currency==="JPY"||
+currency==="KRW"
+?
+`${currencySymbols[currency]}${Math.round(value).toLocaleString()}`
+:
+`${currencySymbols[currency]}${value.toFixed(2)}`;
 
 });
 
@@ -3488,7 +4930,7 @@ currency==="JPY" || currency==="KRW"
 function detectCurrency(){
 
 const language=
-navigator.language || "en-US";
+navigator.language||"en-US";
 
 if(language.includes("PK"))
 document.getElementById("currency").value="PKR";
@@ -3507,296 +4949,9 @@ updatePrices();
 }
 
 
-function toggleMobile(){
-
-const menu=document.getElementById("mobileMenu");
-
-menu.style.display =
-menu.style.display==="block" ? "none" : "block";
-
-}
-
-
-/* AUTH */
-
-function openAuth(mode="signin"){
-
-authMode=mode;
-
-document.getElementById("authModal").classList.add("show");
-
-updateAuthUI();
-
-}
-
-
-function closeAuth(){
-
-document.getElementById("authModal").classList.remove("show");
-
-}
-
-
-function toggleAuthMode(){
-
-authMode =
-authMode==="signin" ? "signup" : "signin";
-
-updateAuthUI();
-
-}
-
-
-function updateAuthUI(){
-
-document.getElementById("authTitle").textContent =
-authMode==="signup"
-? "Create your Learning Hub account"
-: "Welcome to Learning Hub";
-
-document.getElementById("authSubtitle").textContent =
-authMode==="signup"
-? "Create a secure account to access your learning space."
-: "Sign in to access your Learning Hub account.";
-
-document.getElementById("authName").style.display =
-authMode==="signup" ? "block" : "none";
-
-document.querySelector("#authForm button").textContent =
-authMode==="signup" ? "Create Account" : "Sign In";
-
-document.getElementById("authSwitch").textContent =
-authMode==="signup"
-? "Already have an account? Sign in"
-: "Create an account";
-
-}
-
-
-function setAuthRole(role){
-
-authRole=role;
-
-document.querySelectorAll(".auth-tab")
-.forEach(tab=>tab.classList.remove("active"));
-
-document.getElementById(role+"Tab")
-.classList.add("active");
-
-}
-
-
-async function submitAuth(){
-
-const name=
-document.getElementById("authName").value.trim();
-
-const email=
-document.getElementById("authEmail").value.trim();
-
-const password=
-document.getElementById("authPassword").value;
-
-if(!email || !password){
-
-showToast("Please enter your email and password.");
-
-return;
-
-}
-
-if(authMode==="signup"){
-
-if(!name){
-
-showToast("Please enter your name.");
-
-return;
-
-}
-
-await window.firebaseSignUp(
-name,
-email,
-password,
-authRole
-);
-
-}else{
-
-await window.firebaseSignIn(
-email,
-password
-);
-
-}
-
-}
-
-
-/* DASHBOARDS */
-
-function openDashboard(role){
-
-const user=window.getCurrentUser();
-
-if(!user){
-
-openAuth();
-
-showToast("Please sign in to open your dashboard.");
-
-return;
-
-}
-
-const actualRole =
-role ||
-"student";
-
-let content="";
-
-if(actualRole==="student"){
-
-content=`
-
-<h2>Student Hub</h2>
-
-<p>Welcome ${user.displayName || user.email}.</p>
-
-<div class="card-grid">
-
-<div class="card">
-<h3>My Learning</h3>
-<p>Access your lessons, practice and learning pathways.</p>
-<button class="btn btn-dark" onclick="openLearning('Academic English Practice')">
-Open Learning
-</button>
-</div>
-
-<div class="card">
-<h3>Progress</h3>
-<p>Your personalised progress dashboard will grow as learning activity is connected.</p>
-<span class="btn btn-gold">72% Current Profile</span>
-</div>
-
-<div class="card">
-<h3>Community</h3>
-<p>Join discussions with other learners.</p>
-<button class="btn btn-dark" onclick="closeDashboard();openCommunity('student')">
-Open Community
-</button>
-</div>
-
-</div>
-
-<div class="modal-actions">
-<button class="btn btn-dark" onclick="firebaseSignOut()">
-Sign Out
-</button>
-</div>
-`;
-
-}
-
-else if(actualRole==="parent"){
-
-content=`
-
-<h2>Parent Hub</h2>
-
-<p>Welcome ${user.displayName || user.email}.</p>
-
-<div class="card-grid">
-
-<div class="card">
-<h3>Learning Guidance</h3>
-<p>Access parent learning guidance and recommendations.</p>
-</div>
-
-<div class="card">
-<h3>Parent Community</h3>
-<p>Ask questions and connect with the Learning Hub community.</p>
-<button class="btn btn-dark" onclick="closeDashboard();openCommunity('parent')">
-Open Community
-</button>
-</div>
-
-<div class="card">
-<h3>Progress Updates</h3>
-<p>Progress tracking and parent updates will be connected to learner activity.</p>
-</div>
-
-</div>
-
-<div class="modal-actions">
-<button class="btn btn-dark" onclick="firebaseSignOut()">
-Sign Out
-</button>
-</div>
-`;
-
-}
-
-else{
-
-content=`
-
-<h2>Teacher Lounge</h2>
-
-<p>Welcome ${user.displayName || user.email}.</p>
-
-<div class="card-grid">
-
-<div class="card">
-<h3>Teacher Community</h3>
-<p>Participate in educator discussions and professional sharing.</p>
-<button class="btn btn-dark" onclick="closeDashboard();openCommunity('teacher')">
-Open Lounge
-</button>
-</div>
-
-<div class="card">
-<h3>Resources</h3>
-<p>Teaching resource sharing will expand inside the educator space.</p>
-</div>
-
-<div class="card">
-<h3>Teacher Application</h3>
-<p>Apply to join the Learning Hub educator network.</p>
-<a class="btn btn-dark"
-href="https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform"
-target="_blank">
-Apply
-</a>
-</div>
-
-</div>
-
-<div class="modal-actions">
-<button class="btn btn-dark" onclick="firebaseSignOut()">
-Sign Out
-</button>
-</div>
-`;
-
-}
-
-document.getElementById("dashboardContent").innerHTML=content;
-
-document.getElementById("dashboardModal").classList.add("show");
-
-}
-
-
-function closeDashboard(){
-
-document.getElementById("dashboardModal").classList.remove("show");
-
-}
-
-
 /* COMMUNITY */
+
+let currentCommunity="parent";
 
 function openCommunity(type){
 
@@ -3814,36 +4969,53 @@ student:"Student learning discussions, study strategies and academic questions."
 teacher:"Professional educator discussions, resources and teaching ideas."
 };
 
-const user=window.getCurrentUser();
-
-if(!user){
-
-openAuth();
-
-showToast("Create or sign in to your Learning Hub account first.");
-
-return;
-
-}
-
 document.getElementById("communityContent").innerHTML=`
 
 <h2>${labels[type]}</h2>
 
-<p>${descriptions[type]}</p>
+<p>
+${descriptions[type]}
+</p>
+
+<div style="
+padding:12px;
+background:#f7f1e5;
+border-radius:12px;
+font-size:.74rem;
+color:#666;
+margin-bottom:15px;
+">
+You can read discussions without creating an account.
+If you post, reply, react or report, Learning Hub uses
+a secure anonymous Firebase identity automatically.
+</div>
+
+<div class="community-toolbar">
+
+<input
+id="communitySearch"
+placeholder="Search discussions..."
+oninput="filterCommunity()">
+
+<button
+class="btn btn-dark"
+onclick="document.getElementById('communitySearch').value='';filterCommunity()">
+Clear
+</button>
+
+</div>
 
 <div class="post-box">
 
 <textarea
 id="communityPostText"
-placeholder="Write your discussion..."
-style="width:100%;min-height:100px;padding:14px;border:1px solid #ddd;border-radius:12px;resize:vertical;"
-></textarea>
+placeholder="Start a discussion..."></textarea>
 
 <div class="modal-actions">
 
-<button class="btn btn-dark"
-onclick="createCommunityPost(currentCommunity,document.getElementById('communityPostText').value)">
+<button
+class="btn btn-dark"
+onclick="publishCurrentCommunity()">
 Publish Discussion
 </button>
 
@@ -3851,31 +5023,86 @@ Publish Discussion
 
 </div>
 
-<h3 style="font-family:'Playfair Display',serif;margin-top:25px;">
+<h3 style="
+font-family:'Playfair Display',serif;
+margin-top:25px;
+">
 Recent Discussions
 </h3>
 
 <div id="communityPosts">
-<div class="empty-state">Loading community...</div>
+<div class="loading">
+Loading community...
+</div>
 </div>
 `;
 
-document.getElementById("communityModal").classList.add("show");
+document.getElementById("communityModal")
+.classList.add("show");
+
+document.body.classList.add("modal-open");
+
+window.listenToCommunity(type);
+
+}
+
+
+function publishCurrentCommunity(){
+
+const text=
+document.getElementById("communityPostText")?.value||"";
+
+if(window.createCommunityPost){
+
+window.createCommunityPost(
+currentCommunity,
+text
+);
+
+}
+
+}
+
+
+function filterCommunity(){
+
+if(window.listenToCommunity){
 
 window.listenToCommunity(currentCommunity);
+
+}
 
 }
 
 
 function closeCommunity(){
 
-if(unsubscribeCommunity){
+if(window.unsubscribeCommunity){
 
-unsubscribeCommunity();
+window.unsubscribeCommunity();
+window.unsubscribeCommunity=null;
 
 }
 
-document.getElementById("communityModal").classList.remove("show");
+document.getElementById("communityModal")
+.classList.remove("show");
+
+document.body.classList.remove("modal-open");
+
+}
+
+
+/* MOBILE */
+
+function toggleMobile(){
+
+const menu=
+document.getElementById("mobileMenu");
+
+menu.style.display=
+menu.style.display==="block"
+?"none"
+:"block";
 
 }
 
@@ -3895,28 +5122,36 @@ function aiAnswer(type){
 const answers={
 
 academic:
-"Learning Hub can match you with personalised academic tutoring across English, Mathematics, Psychology, Business Studies, Sociology, ESS and Academic Writing.",
+"Learning Hub can support English, Mathematics, Psychology, Business Studies, Sociology, ESS, Academic Writing and Study Skills.",
 
 english:
-"For English development, Learning Hub offers reading, writing, speaking, vocabulary and academic English support.",
+"For English development, explore reading, writing, speaking, vocabulary and academic English support.",
 
 exam:
-"For exam preparation, explore IELTS, PTE and Academic English pathways with practice and targeted support.",
+"Learning Hub supports IELTS, PTE, TOEFL, Duolingo English Test, Cambridge English, OET, CELPIP and language-exam enquiries.",
 
 ib:
-"For IB students, Learning Hub supports IB English Language & Literature SL, IB Psychology SL and IB Environmental Systems & Societies.",
+"For IB students, explore IB English Language & Literature SL, IB Psychology SL and IB Environmental Systems & Societies.",
 
 special:
 "For specialist learning support, explore Dyslexia Support, Autism Learning Support, Learning Differences, Language & Communication, Reading Confidence and Confidence & Study Skills."
+
 };
 
 setModal(
 "Learning Concierge",
 answers[type],
 `
-<button class="btn btn-gold" onclick="openAuth('signup');closeModal();">
-Start Learning
-</button>
+<a class="btn btn-gold"
+href="https://calendly.com/hublearning117"
+target="_blank">
+Book Learning
+</a>
+
+<a class="btn btn-dark"
+href="mailto:hublearning117@gmail.com?subject=Learning Hub Learning Concierge">
+Enquire
+</a>
 `
 );
 
@@ -3927,21 +5162,26 @@ toggleAI();
 
 /* CONTACT */
 
-async function submitContact(event){
+function submitContact(event){
 
 event.preventDefault();
 
 const name=
-document.getElementById("contactName").value.trim();
+document.getElementById("contactName")
+.value.trim();
 
 const email=
-document.getElementById("contactEmail").value.trim();
+document.getElementById("contactEmail")
+.value.trim();
 
 const message=
-document.getElementById("contactMessage").value.trim();
+document.getElementById("contactMessage")
+.value.trim();
 
 const subject=
-encodeURIComponent("Learning Hub Enquiry from "+name);
+encodeURIComponent(
+"Learning Hub Enquiry from "+name
+);
 
 const body=
 encodeURIComponent(
@@ -3951,25 +5191,59 @@ encodeURIComponent(
 );
 
 window.location.href=
-"mailto:hublearning117@gmail.com?subject="+subject+"&body="+body;
+"mailto:hublearning117@gmail.com?subject="+
+subject+
+"&body="+
+body;
 
-showToast("Your email draft is being prepared.");
+showToast(
+"Your email draft is being prepared."
+);
 
 }
 
 
 /* ESCAPE */
 
-document.addEventListener("keydown",event=>{
+document.addEventListener(
+"keydown",
+event=>{
 
 if(event.key==="Escape"){
 
 closeModal();
-closeAuth();
-closeDashboard();
 closeCommunity();
 
+document.getElementById("aiPanel")
+.classList.remove("show");
+
 }
+
+}
+);
+
+
+/* CLICK OUTSIDE */
+
+document.querySelectorAll(".modal")
+.forEach(modal=>{
+
+modal.addEventListener(
+"click",
+event=>{
+
+if(event.target===modal){
+
+if(modal.id==="communityModal"){
+closeCommunity();
+}else{
+closeModal();
+}
+
+}
+
+}
+);
 
 });
 
