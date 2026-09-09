@@ -706,6 +706,11 @@ current level, test format and timeline.
 Learn through practice and media
 </h2>
 
+<p>
+Fun, informative and practical learning content to support
+students beyond the live lesson.
+</p>
+
 </div>
 
 <div class="media-grid">
@@ -736,8 +741,13 @@ Learn through practice and media
 </article>
 
 <article class="media-card">
-<h3>Vocabulary & Grammar</h3>
-<p>Short lessons for practical language development.</p>
+<h3>English Vocabulary</h3>
+<p>Fun vocabulary lessons, useful expressions and everyday English.</p>
+</article>
+
+<article class="media-card">
+<h3>Grammar Videos</h3>
+<p>Short, clear explanations of important grammar concepts.</p>
 </article>
 
 <article class="media-card">
@@ -748,7 +758,8 @@ Learn through practice and media
 <article class="media-card">
 <h3>Future Exam Content</h3>
 <p>
-New practice resources and learning videos can be added here.
+New practice resources, informative videos and exam content
+can be added here as Learning Hub grows.
 </p>
 </article>
 
@@ -999,30 +1010,10 @@ materials for review.
 <div></div>
 </div>
 
-<!-- REAL FORMSPREE ENDPOINT -->
 <form
 id="teacherApplication"
-action="https://formspree.io/f/meaqpdzl"
+action="YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL"
 method="POST"
-enctype="multipart/form-data"
->
-
-<input
-type="hidden"
-name="subject"
-value="New Learning Hub Teacher Application"
->
-
-<input
-type="hidden"
-name="form_source"
-value="Learning Hub Teacher Application"
->
-
-<input
-type="hidden"
-name="website"
-value="learninghubtutoring.com"
 >
 
 <div class="step active">
@@ -1609,9 +1600,8 @@ Global online learning, tutoring and professional teaching opportunities.
 
 <script>
 
-const menuBtn=document.getElementById('menuBtn');
-
-const navLinks=document.getElementById('navLinks');
+const menuBtn=document.getElementById('menuBtn'),
+navLinks=document.getElementById('navLinks');
 
 menuBtn.onclick=()=>{
 navLinks.classList.toggle('open');
@@ -1636,21 +1626,12 @@ behavior:'smooth'
 });
 };
 
-const form=document.getElementById('teacherApplication');
-
-const steps=[
-...document.querySelectorAll('.step')
-];
-
-const bars=[
-...document.querySelectorAll('.progress div')
-];
-
-const next=document.getElementById('nextBtn');
-
-const prev=document.getElementById('prevBtn');
-
-const submit=document.getElementById('submitBtn');
+const form=document.getElementById('teacherApplication'),
+steps=[...document.querySelectorAll('.step')],
+bars=[...document.querySelectorAll('.progress div')],
+next=document.getElementById('nextBtn'),
+prev=document.getElementById('prevBtn'),
+submit=document.getElementById('submitBtn');
 
 let current=0;
 
@@ -1746,25 +1727,20 @@ document.getElementById(help).textContent=
 }
 
 names('cv','cvHelp');
-
 names('supporting','supportingHelp');
-
 names('introVideo','introHelp');
-
 names('demoVideo','demoHelp');
 
 
-/* Formspree upload protection */
+/*
+GOOGLE APPS SCRIPT SUBMISSION
+*/
 
-form.addEventListener('submit',e=>{
-
-if(!valid()){
+form.addEventListener('submit',async e=>{
 
 e.preventDefault();
 
-return;
-
-}
+if(!valid()) return;
 
 const files=[
 ...form.querySelectorAll('input[type=file]')
@@ -1772,12 +1748,9 @@ const files=[
 .flatMap(x=>[...x.files]);
 
 const per=25*1024*1024;
-
 const totalMax=100*1024*1024;
 
 if(files.length>10){
-
-e.preventDefault();
 
 alert(
 'Please upload no more than 10 files in total.'
@@ -1792,8 +1765,6 @@ f=>f.size>per
 );
 
 if(big){
-
-e.preventDefault();
 
 alert(
 big.name+
@@ -1811,8 +1782,6 @@ files.reduce(
 )>totalMax
 ){
 
-e.preventDefault();
-
 alert(
 'Your total upload size is over 100 MB. Please reduce the file sizes and try again.'
 );
@@ -1822,8 +1791,139 @@ return;
 }
 
 submit.disabled=true;
-
 submit.textContent='Sending Application…';
+
+try{
+
+const fd=new FormData(form);
+
+const data={};
+
+for(
+const [key,value]
+of fd.entries()
+){
+
+if(value instanceof File) continue;
+
+data[key]=value;
+
+}
+
+data.files=[];
+
+for(
+const file
+of files
+){
+
+const base64=
+await new Promise(
+(resolve,reject)=>{
+
+const reader=
+new FileReader();
+
+reader.onload=()=>{
+resolve(
+reader.result.split(',')[1]
+);
+};
+
+reader.onerror=reject;
+
+reader.readAsDataURL(file);
+
+}
+);
+
+data.files.push({
+
+name:file.name,
+
+type:file.type,
+
+data:base64
+
+});
+
+}
+
+const response=
+await fetch(
+form.action,
+{
+method:'POST',
+headers:{
+'Content-Type':
+'text/plain;charset=utf-8'
+},
+body:JSON.stringify(data)
+}
+);
+
+const result=
+await response.json();
+
+if(result.success){
+
+form.reset();
+
+document
+.querySelectorAll('.file-help')
+.forEach(x=>{
+
+if(x.id==='cvHelp')
+x.textContent=
+'PDF, DOC or DOCX recommended.';
+
+if(x.id==='supportingHelp')
+x.textContent=
+'Certificates or other relevant documents.';
+
+if(x.id==='introHelp')
+x.textContent=
+'Optional: a short introduction about yourself and your teaching approach.';
+
+if(x.id==='demoHelp')
+x.textContent=
+'Optional: a short sample of your teaching.';
+
+});
+
+current=0;
+
+showStep(0);
+
+alert(
+'Thank you. Your teacher application has been submitted successfully.'
+);
+
+}else{
+
+throw new Error(
+result.message ||
+'Submission failed.'
+);
+
+}
+
+}catch(error){
+
+alert(
+'We could not submit your application. Please check your internet connection and try again.'
+);
+
+console.error(error);
+
+}finally{
+
+submit.disabled=false;
+
+submit.textContent=
+'Submit Teacher Application';
+
+}
 
 });
 
