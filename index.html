@@ -7,7 +7,7 @@
 <title>Learning Hub | Global Online Tutoring & Learning</title>
 
 <meta name="description"
-content="Learning Hub provides global online tutoring, international curriculum support, specialized learning support, Arabic-speaking student support, exam preparation and educational resources.">
+content="Learning Hub provides global one-to-one online tutoring, international curriculum support, English and language learning, exam preparation, academic subjects, drawing and painting, specialized learning support and educational resources.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,6 +24,7 @@ rel="stylesheet">
 --cream:#faf8f3;
 --green:#138a63;
 --gold:#f59e0b;
+--purple:#7c3aed;
 --white:#fff;
 --text:#26364d;
 --muted:#667085;
@@ -124,11 +125,14 @@ border-radius:10px;
 min-height:650px;
 display:flex;
 align-items:center;
+
 background:
 linear-gradient(120deg,rgba(16,35,63,.94),rgba(37,99,235,.80)),
 url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1800&q=80");
+
 background-size:cover;
 background-position:center;
+
 color:white;
 }
 
@@ -376,14 +380,18 @@ margin-right:10px;
 
 /* SUBJECTS */
 
+.subject-section{
+background:white;
+}
+
 .subject-grid{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px;
+grid-template-columns:repeat(3,1fr);
+gap:18px;
 }
 
 .subject{
-padding:23px;
+padding:25px;
 border:1px solid var(--border);
 border-radius:15px;
 background:white;
@@ -398,12 +406,77 @@ background:var(--blue-light);
 transform:translateY(-2px);
 }
 
+.subject-icon{
+font-size:27px;
+margin-bottom:10px;
+}
+
+.subject h3{
+font-size:18px;
+margin-bottom:6px;
+}
+
 .subject span{
 display:block;
 color:var(--muted);
 font-size:12px;
 font-weight:400;
-margin-top:5px;
+line-height:1.6;
+}
+
+/* ART FEATURE */
+
+.art-section{
+background:linear-gradient(135deg,#faf8f3,#f5f3ff);
+}
+
+.art-box{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:45px;
+align-items:center;
+}
+
+.art-content h2{
+font-family:"Playfair Display",serif;
+font-size:44px;
+color:var(--navy);
+margin:10px 0 15px;
+}
+
+.art-content p{
+color:var(--muted);
+margin-bottom:20px;
+}
+
+.art-list{
+list-style:none;
+margin-bottom:25px;
+}
+
+.art-list li{
+margin-bottom:9px;
+}
+
+.art-list li:before{
+content:"✓";
+color:var(--purple);
+font-weight:800;
+margin-right:10px;
+}
+
+.art-visual{
+min-height:390px;
+border-radius:24px;
+
+background:
+linear-gradient(rgba(16,35,63,.20),rgba(16,35,63,.20)),
+url("https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80");
+
+background-size:cover;
+background-position:center;
+
+box-shadow:var(--shadow);
 }
 
 /* RESOURCES */
@@ -654,11 +727,14 @@ background:white;
 
 .video-box{
 height:220px;
+
 background:
 linear-gradient(rgba(16,35,63,.65),rgba(16,35,63,.65)),
 url("https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=80");
+
 background-size:cover;
 background-position:center;
+
 display:grid;
 place-items:center;
 }
@@ -1007,7 +1083,8 @@ border-right:none;
 .video-grid,
 .special-grid,
 .teacher-box,
-.contact-grid{
+.contact-grid,
+.art-box{
 grid-template-columns:1fr;
 }
 
@@ -1060,7 +1137,8 @@ font-size:43px;
 font-size:38px;
 }
 
-.teacher-box h2{
+.teacher-box h2,
+.art-content h2{
 font-size:37px;
 }
 
@@ -1082,6 +1160,7 @@ height:850px;
 <!-- HEADER -->
 
 <header>
+
 <div class="container nav">
 
 <a href="#home" class="logo">
@@ -1089,6 +1168,7 @@ Learning <span>Hub</span>
 </a>
 
 <nav>
+
 <a href="#learning">Learning</a>
 <a href="#special">Specialized Support</a>
 <a href="#subjects">Subjects</a>
@@ -1097,9 +1177,11 @@ Learning <span>Hub</span>
 <a href="#community">Community</a>
 <a href="#contact">Contact</a>
 <a href="#booking" class="nav-button">Book a Lesson</a>
+
 </nav>
 
 </div>
+
 </header>
 
 
@@ -1120,8 +1202,9 @@ Learning for everyone. Everywhere.
 </h1>
 
 <p>
-Personalized online tutoring, international curriculum support,
-exam preparation, specialized learning support and educational
+Personalized one-to-one online tutoring, international
+curriculum support, exam preparation, language learning,
+creative skills, specialized learning support and educational
 resources for students and lifelong learners around the world.
 </p>
 
@@ -1196,7 +1279,7 @@ Choose your learning journey
 <p>
 Learning Hub supports learners at different stages —
 from school and international curricula to examinations,
-professional communication and lifelong learning.
+professional development, creative skills and lifelong learning.
 </p>
 
 </div>
@@ -1233,8 +1316,8 @@ International Education
 </h3>
 
 <p>
-Support for IB, A-Level and other international curricula,
-including subject tutoring and examination preparation.
+Support for IB, A-Level, GCSE, IGCSE and other international
+curricula, including subject tutoring and examination preparation.
 </p>
 
 <a href="#subjects">
@@ -1246,19 +1329,19 @@ Explore international subjects →
 
 <div class="path">
 
-<div class="icon">🚀</div>
+<div class="icon">🎨</div>
 
 <h3>
-Career & Professional Skills
+Creative & Personal Skills
 </h3>
 
 <p>
-Develop English communication, academic writing, workplace
-English and professional communication skills.
+Develop drawing, painting, creative expression, communication
+and other skills through personalized learning.
 </p>
 
-<a href="#contact">
-Learn more →
+<a href="#subjects">
+Explore creative learning →
 </a>
 
 </div>
@@ -1352,7 +1435,7 @@ English and academic learning.
 <br>
 
 <a href="#contact" class="btn btn-blue">
-Ask About Arabic-Speaking Student Support
+Ask About Student Support
 </a>
 
 </div>
@@ -1364,23 +1447,24 @@ Ask About Arabic-Speaking Student Support
 </section>
 
 
-<!-- SUBJECTS -->
+<!-- SUBJECT CATALOGUE -->
 
-<section id="subjects">
+<section class="subject-section" id="subjects">
 
 <div class="container">
 
 <div class="section-heading">
 
-<small>Explore</small>
+<small>Learning Catalogue</small>
 
 <h2>
-Learning across subjects
+Explore subjects, courses & skills
 </h2>
 
 <p>
-A growing range of subjects and learning opportunities
-for students and lifelong learners.
+Learning Hub can support different curricula, levels,
+examinations and individual learning goals. More educators
+and courses will be added as the platform grows.
 </p>
 
 </div>
@@ -1388,65 +1472,336 @@ for students and lifelong learners.
 
 <div class="subject-grid">
 
-<div class="subject">
-English & Languages
-<span>English • IELTS • PTE • Academic English</span>
-</div>
+
+<!-- ENGLISH -->
 
 <div class="subject">
-Mathematics
-<span>School mathematics • Problem solving</span>
+
+<div class="subject-icon">📖</div>
+
+<h3>English & Languages</h3>
+
+<span>
+Primary English • 11+ English • GCSE • IGCSE • A-Level •
+IB English Language & Literature • General English •
+Academic English • Business English • Professional English
+</span>
+
 </div>
 
-<div class="subject">
-Science
-<span>Biology • Chemistry • Physics • ESS</span>
-</div>
+
+<!-- MATH -->
 
 <div class="subject">
-Social Sciences
-<span>Psychology • Sociology • Social studies</span>
+
+<div class="subject-icon">➗</div>
+
+<h3>Mathematics</h3>
+
+<span>
+Primary Mathematics • 11+ Mathematics • GCSE • IGCSE •
+A-Level • IB Mathematics • Problem Solving • Mental Math
+</span>
+
 </div>
 
-<div class="subject">
-Business & Economics
-<span>Business • Economics • Management</span>
-</div>
+
+<!-- SCIENCE -->
 
 <div class="subject">
-Academic Skills
-<span>Essay writing • Research • Study skills</span>
+
+<div class="subject-icon">🔬</div>
+
+<h3>Science</h3>
+
+<span>
+General Science • Biology • Chemistry • Physics •
+Environmental Science • IB ESS • IGCSE • GCSE • A-Level • IB
+</span>
+
 </div>
 
-<div class="subject">
-Exam Preparation
-<span>IB • A-Level • IELTS • PTE • TOEFL</span>
-</div>
+
+<!-- COMPUTER SCIENCE -->
 
 <div class="subject">
-Professional English
-<span>Workplace English • Communication</span>
+
+<div class="subject-icon">💻</div>
+
+<h3>Computer Science</h3>
+
+<span>
+Computer Science • GCSE • IGCSE • A-Level • IB Computer
+Science • Programming • Coding Fundamentals
+</span>
+
 </div>
 
-<div class="subject">
-Primary Learning
-<span>Foundations • Reading • Writing • Mathematics</span>
-</div>
+
+<!-- PSYCHOLOGY -->
 
 <div class="subject">
-Specialized Support
-<span>Individualized learning • Engagement • Confidence</span>
+
+<div class="subject-icon">🧠</div>
+
+<h3>Psychology & Social Sciences</h3>
+
+<span>
+Psychology • IB Psychology • A-Level Psychology • Sociology •
+Social Studies • Research Skills
+</span>
+
 </div>
 
-<div class="subject">
-Arabic-Speaking Learners
-<span>English and academic support</span>
-</div>
+
+<!-- BUSINESS -->
 
 <div class="subject">
-Lifelong Learning
-<span>Learn and develop at every stage</span>
+
+<div class="subject-icon">📊</div>
+
+<h3>Business & Economics</h3>
+
+<span>
+Business Studies • IB Business Management • GCSE • IGCSE •
+A-Level • Economics • Accounting • Entrepreneurship
+</span>
+
 </div>
+
+
+<!-- HUMANITIES -->
+
+<div class="subject">
+
+<div class="subject-icon">🌎</div>
+
+<h3>Humanities</h3>
+
+<span>
+History • Geography • Global Politics • International Studies •
+IB and other international curriculum support
+</span>
+
+</div>
+
+
+<!-- ACADEMIC -->
+
+<div class="subject">
+
+<div class="subject-icon">✍️</div>
+
+<h3>Academic Skills</h3>
+
+<span>
+Essay Writing • Academic Writing • Research • Critical Thinking •
+Study Skills • Revision • Exam Technique
+</span>
+
+</div>
+
+
+<!-- EXAMS -->
+
+<div class="subject">
+
+<div class="subject-icon">📝</div>
+
+<h3>Exam Preparation</h3>
+
+<span>
+IB • A-Level • GCSE • IGCSE • 11+ • IELTS • PTE • TOEFL •
+SAT and other examinations
+</span>
+
+</div>
+
+
+<!-- PROFESSIONAL ENGLISH -->
+
+<div class="subject">
+
+<div class="subject-icon">💼</div>
+
+<h3>Professional English</h3>
+
+<span>
+Workplace English • Business Communication • Presentations •
+Speaking • Pronunciation • Professional Writing
+</span>
+
+</div>
+
+
+<!-- PRIMARY -->
+
+<div class="subject">
+
+<div class="subject-icon">🌱</div>
+
+<h3>Primary Learning</h3>
+
+<span>
+Reading • Writing • English • Mathematics • Science •
+Homework Support • Foundational Skills
+</span>
+
+</div>
+
+
+<!-- DRAWING -->
+
+<div class="subject">
+
+<div class="subject-icon">✏️</div>
+
+<h3>Drawing & Painting</h3>
+
+<span>
+Drawing Fundamentals • Sketching • Observation Drawing •
+Colour Theory • Painting • Creative Expression • Art Skills
+</span>
+
+</div>
+
+
+<!-- CREATIVE -->
+
+<div class="subject">
+
+<div class="subject-icon">🎨</div>
+
+<h3>Creative Arts</h3>
+
+<span>
+Visual Art • Creative Projects • Illustration • Art Practice •
+Portfolio Development • Creative Expression
+</span>
+
+</div>
+
+
+<!-- SPECIALIZED -->
+
+<div class="subject">
+
+<div class="subject-icon">🤝</div>
+
+<h3>Specialized Support</h3>
+
+<span>
+Individualized learning • Engagement • Confidence •
+Academic reinforcement • Customized teaching
+</span>
+
+</div>
+
+
+<!-- ARABIC -->
+
+<div class="subject">
+
+<div class="subject-icon">🌍</div>
+
+<h3>Arabic-Speaking Learners</h3>
+
+<span>
+English • Academic Support • Exam Preparation •
+Communication • International Curriculum Support
+</span>
+
+</div>
+
+
+<!-- LIFELONG -->
+
+<div class="subject">
+
+<div class="subject-icon">💡</div>
+
+<h3>Lifelong Learning</h3>
+
+<span>
+Communication • Creative Skills • Personal Development •
+Professional Learning • New Skills at Every Stage
+</span>
+
+</div>
+
+
+<!-- FUTURE TECHNOLOGY -->
+
+<div class="subject">
+
+<div class="subject-icon">🤖</div>
+
+<h3>AI & Technology</h3>
+
+<span>
+Future Learning Hub courses may include AI literacy,
+digital skills, coding, productivity and technology education.
+</span>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DRAWING & PAINTING -->
+
+<section class="art-section">
+
+<div class="container">
+
+<div class="art-box">
+
+<div class="art-content">
+
+<small style="
+color:#7c3aed;
+font-weight:800;
+letter-spacing:1.5px;
+text-transform:uppercase;
+">
+Creative Learning
+</small>
+
+<h2>
+Drawing & Painting Skills
+</h2>
+
+<p>
+Creative learning is part of education too. Learning Hub can
+connect learners with personalized drawing and painting instruction
+for beginners, school learners and developing artists.
+</p>
+
+<ul class="art-list">
+
+<li>Drawing fundamentals</li>
+<li>Sketching and observation</li>
+<li>Shapes, proportions and perspective</li>
+<li>Colour theory</li>
+<li>Painting techniques</li>
+<li>Creative expression</li>
+<li>Art projects and portfolios</li>
+
+</ul>
+
+<a href="#booking" class="btn btn-blue">
+Ask About Creative Learning
+</a>
+
+</div>
+
+
+<div class="art-visual"></div>
 
 </div>
 
@@ -1480,57 +1835,86 @@ educators and personalized support together.
 <div class="feature-grid">
 
 <div class="feature">
+
 <div class="icon">📚</div>
+
 <h3>Resource Library</h3>
+
 <p>
 Worksheets, revision notes, practice activities,
 vocabulary resources and study materials.
 </p>
+
 </div>
 
+
 <div class="feature">
+
 <div class="icon">📝</div>
+
 <h3>Exam Preparation</h3>
+
 <p>
 Structured preparation for international examinations
 and language tests.
 </p>
+
 </div>
 
+
 <div class="feature">
+
 <div class="icon">🎯</div>
+
 <h3>Structured Learning</h3>
+
 <p>
 Learning paths, practice activities and individualized
 study support.
 </p>
+
 </div>
 
+
 <div class="feature">
+
 <div class="icon">👩‍🏫</div>
+
 <h3>Qualified Teaching</h3>
+
 <p>
 Personalized support from experienced educators and
 subject specialists.
 </p>
+
 </div>
 
+
 <div class="feature">
+
 <div class="icon">🌐</div>
+
 <h3>International Learning</h3>
+
 <p>
 Support for learners following different curricula
 around the world.
 </p>
+
 </div>
 
+
 <div class="feature">
-<div class="icon">💡</div>
-<h3>Lifelong Learning</h3>
+
+<div class="icon">🎨</div>
+
+<h3>Creative Skills</h3>
+
 <p>
-Education continues beyond school. Keep learning,
-developing and improving at every stage.
+Opportunities to develop drawing, painting and other
+creative abilities through personalized learning.
 </p>
+
 </div>
 
 </div>
@@ -1556,7 +1940,7 @@ Resources you can use today
 
 <p>
 Start with free printable resources and practice materials.
-The library will continue to grow.
+The Learning Hub resource library will continue to grow.
 </p>
 
 </div>
@@ -1564,8 +1948,6 @@ The library will continue to grow.
 
 <div class="resource-grid">
 
-
-<!-- RESOURCE 1 -->
 
 <div class="resource">
 
@@ -1593,8 +1975,6 @@ Download Free →
 </div>
 
 
-<!-- RESOURCE 2 -->
-
 <div class="resource">
 
 <div class="resource-img"
@@ -1620,8 +2000,6 @@ Download Free →
 
 </div>
 
-
-<!-- RESOURCE 3 -->
 
 <div class="resource">
 
@@ -1649,8 +2027,6 @@ Download Free →
 </div>
 
 
-<!-- RESOURCE 4 -->
-
 <div class="resource">
 
 <div class="resource-img"
@@ -1676,8 +2052,6 @@ Download Free →
 
 </div>
 
-
-<!-- RESOURCE 5 -->
 
 <div class="resource">
 
@@ -1705,8 +2079,6 @@ Download Free →
 </div>
 
 
-<!-- RESOURCE 6 -->
-
 <div class="resource">
 
 <div class="resource-img"
@@ -1732,8 +2104,6 @@ Download Free →
 
 </div>
 
-
-<!-- RESOURCE 7 -->
 
 <div class="resource">
 
@@ -1761,8 +2131,6 @@ Download Free →
 </div>
 
 
-<!-- RESOURCE 8 -->
-
 <div class="resource">
 
 <div class="resource-img"
@@ -1788,8 +2156,6 @@ Download Free →
 
 </div>
 
-
-<!-- RESOURCE 9 -->
 
 <div class="resource">
 
@@ -1853,11 +2219,13 @@ through learning, resources and personalized support.
 <h3>👩‍🎓 Students</h3>
 
 <p>
-Find tutoring, resources, courses, practice activities
-and support for your learning goals.
+Find tutoring, resources, courses, practice activities,
+creative learning and support for your learning goals.
 </p>
 
-<a href="#booking">Start Learning</a>
+<a href="#booking">
+Start Learning
+</a>
 
 </div>
 
@@ -1871,7 +2239,9 @@ Explore tutoring options, specialized support,
 educational resources and learning guidance.
 </p>
 
-<a href="#contact">Parent Support</a>
+<a href="#contact">
+Parent Support
+</a>
 
 </div>
 
@@ -1885,7 +2255,9 @@ Join the future Learning Hub educator community and
 explore opportunities to contribute.
 </p>
 
-<a href="#teachers">Join Teachers</a>
+<a href="#teachers">
+Join Teachers
+</a>
 
 </div>
 
@@ -1911,7 +2283,7 @@ What learners have shared
 </h2>
 
 <p>
-Real learning experiences from students and families
+Learning experiences shared by students and families
 supported through personalized teaching.
 </p>
 
@@ -1923,9 +2295,13 @@ supported through personalized teaching.
 
 <div class="testimonial">
 
-<span class="testimonial-tag">A-LEVEL PSYCHOLOGY</span>
+<span class="testimonial-tag">
+A-LEVEL PSYCHOLOGY
+</span>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <p>
 “I had only two months to prepare for my Psychology
@@ -1947,9 +2323,13 @@ India
 
 <div class="testimonial">
 
-<span class="testimonial-tag">IB PSYCHOLOGY</span>
+<span class="testimonial-tag">
+IB PSYCHOLOGY
+</span>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <p>
 “What made the lessons different was that I was not only
@@ -1971,15 +2351,18 @@ Indonesia
 
 <div class="testimonial">
 
-<span class="testimonial-tag">IB ENGLISH LANGUAGE & LITERATURE</span>
+<span class="testimonial-tag">
+IB ENGLISH LANGUAGE & LITERATURE
+</span>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <p>
 “I was able to start linguistics from a fresh and
 stress-free point. The lessons helped me understand
-phonetics and speech while also improving my language
-accuracy.”
+phonetics and speech while also improving my language accuracy.”
 </p>
 
 <strong>
@@ -1995,9 +2378,13 @@ Indonesia
 
 <div class="testimonial">
 
-<span class="testimonial-tag">ENGLISH COMMUNICATION</span>
+<span class="testimonial-tag">
+ENGLISH COMMUNICATION
+</span>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <p>
 “I was already a professional, but speaking English
@@ -2019,9 +2406,13 @@ Afghanistan
 
 <div class="testimonial">
 
-<span class="testimonial-tag">PTE PREPARATION</span>
+<span class="testimonial-tag">
+PTE PREPARATION
+</span>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <p>
 “I had previously taken the PTE examination without
@@ -2043,9 +2434,13 @@ Spain
 
 <div class="testimonial">
 
-<span class="testimonial-tag">PRIMARY LEARNING</span>
+<span class="testimonial-tag">
+PRIMARY LEARNING
+</span>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <p>
 “My child's basic concepts were strong, but she needed
@@ -2067,9 +2462,13 @@ Riyadh, Saudi Arabia
 
 <div class="testimonial">
 
-<span class="testimonial-tag">ACADEMIC SUPPORT</span>
+<span class="testimonial-tag">
+ACADEMIC SUPPORT
+</span>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <p>
 “My child needed additional explanation and reinforcement
@@ -2091,9 +2490,13 @@ Riyadh, Saudi Arabia
 
 <div class="testimonial">
 
-<span class="testimonial-tag">ENGAGEMENT-BASED LEARNING</span>
+<span class="testimonial-tag">
+ENGAGEMENT-BASED LEARNING
+</span>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <p>
 “The lessons were adapted to keep my child engaged.
@@ -2114,9 +2517,13 @@ Riyadh, Saudi Arabia
 
 <div class="testimonial">
 
-<span class="testimonial-tag">LONG-TERM LEARNING</span>
+<span class="testimonial-tag">
+LONG-TERM LEARNING
+</span>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <p>
 “Over several years, the teaching approach was adapted
@@ -2138,9 +2545,13 @@ International Student
 
 <div class="testimonial">
 
-<span class="testimonial-tag">IELTS PREPARATION</span>
+<span class="testimonial-tag">
+IELTS PREPARATION
+</span>
 
-<div class="stars">★★★★★</div>
+<div class="stars">
+★★★★★
+</div>
 
 <p>
 “The preparation focused particularly on the areas that
@@ -2193,7 +2604,9 @@ every student to learn in exactly the same way.
 
 <div class="success-card">
 
-<div class="success-number">01</div>
+<div class="success-number">
+01
+</div>
 
 <h3>
 Intensive Exam Preparation
@@ -2210,7 +2623,9 @@ and successfully completed the exam.
 
 <div class="success-card">
 
-<div class="success-number">02</div>
+<div class="success-number">
+02
+</div>
 
 <h3>
 From Content to Exam Technique
@@ -2227,7 +2642,9 @@ approaching exam questions.
 
 <div class="success-card">
 
-<div class="success-number">03</div>
+<div class="success-number">
+03
+</div>
 
 <h3>
 Communication Confidence
@@ -2244,7 +2661,9 @@ real-world communication.
 
 <div class="success-card">
 
-<div class="success-number">04</div>
+<div class="success-number">
+04
+</div>
 
 <h3>
 Individualized Primary Support
@@ -2261,7 +2680,9 @@ engagement and learning pace.
 
 <div class="success-card">
 
-<div class="success-number">05</div>
+<div class="success-number">
+05
+</div>
 
 <h3>
 Long-Term Development
@@ -2277,7 +2698,9 @@ student's changing academic needs and educational goals.
 
 <div class="success-card">
 
-<div class="success-number">06</div>
+<div class="success-number">
+06
+</div>
 
 <h3>
 Targeted Language-Test Preparation
@@ -2326,13 +2749,17 @@ share their experiences with permission.
 
 <div class="video-box">
 
-<div class="play">▶</div>
+<div class="play">
+▶
+</div>
 
 </div>
 
 <div class="video-content">
 
-<h3>Student Video Stories</h3>
+<h3>
+Student Video Stories
+</h3>
 
 <p>
 Hear students talk about their learning journey,
@@ -2348,13 +2775,17 @@ confidence and academic progress.
 
 <div class="video-box">
 
-<div class="play">▶</div>
+<div class="play">
+▶
+</div>
 
 </div>
 
 <div class="video-content">
 
-<h3>Parent Experiences</h3>
+<h3>
+Parent Experiences
+</h3>
 
 <p>
 Parents can share how personalized teaching has
@@ -2370,13 +2801,17 @@ supported their child's learning.
 
 <div class="video-box">
 
-<div class="play">▶</div>
+<div class="play">
+▶
+</div>
 
 </div>
 
 <div class="video-content">
 
-<h3>Learning Journey</h3>
+<h3>
+Learning Journey
+</h3>
 
 <p>
 Short video stories showing different learning
@@ -2395,7 +2830,7 @@ experiences from around the world.
 </section>
 
 
-<!-- SUBMIT FEEDBACK -->
+<!-- FEEDBACK -->
 
 <section class="feedback" id="feedback">
 
@@ -2433,8 +2868,8 @@ understand what personalized learning can look like.
 class="feedback-form"
 action="mailto:hublearning117@gmail.com"
 method="post"
-enctype="multipart/form-data"
->
+enctype="multipart/form-data">
+
 
 <div class="form-grid">
 
@@ -2509,7 +2944,9 @@ placeholder="Country">
 </div>
 
 
-<label>Subject / service</label>
+<label>
+Subject / service
+</label>
 
 <select name="Service">
 
@@ -2542,6 +2979,10 @@ Specialized Learning Support
 </option>
 
 <option>
+Drawing & Painting
+</option>
+
+<option>
 Arabic-Speaking Student Support
 </option>
 
@@ -2552,7 +2993,9 @@ Other
 </select>
 
 
-<label>Written feedback</label>
+<label>
+Written feedback
+</label>
 
 <textarea
 name="Feedback"
@@ -2583,6 +3026,7 @@ accept="video/*">
 <div class="feedback-note">
 
 <strong>Privacy & approval:</strong>
+
 Your submission will be reviewed before publication.
 We will only publish your testimonial with your permission.
 
@@ -2647,17 +3091,18 @@ Teach with Learning Hub
 </h2>
 
 <p>
-We are building a global educator community for
-qualified teachers, tutors and subject specialists.
+We are building a global educator community for qualified
+teachers, tutors, creative instructors and subject specialists.
 </p>
 
 <ul class="teacher-list">
 
 <li>Teach students internationally</li>
 <li>Share specialist knowledge</li>
+<li>Teach academic or creative subjects</li>
 <li>Create educational resources</li>
 <li>Contribute to the Learning Hub community</li>
-<li>Future opportunities for educator profiles</li>
+<li>Future educator profiles and opportunities</li>
 
 </ul>
 
@@ -2694,7 +3139,7 @@ placeholder="Country">
 <input
 type="text"
 name="Subjects"
-placeholder="Subjects you teach">
+placeholder="Subjects or skills you teach">
 
 <input
 type="text"
@@ -2709,7 +3154,9 @@ placeholder="Tell us about your teaching background">
 <button
 class="btn btn-blue"
 type="submit">
+
 Apply to Teach
+
 </button>
 
 </form>
@@ -2754,6 +3201,7 @@ learning experience.
 <span>Progress Tracking</span>
 <span>Courses</span>
 <span>Study Plans</span>
+<span>Creative Learning</span>
 
 </div>
 
@@ -2777,7 +3225,9 @@ Join the Interest List
 
 <div class="booking-box">
 
-<small>Book a Lesson</small>
+<small>
+Book a Lesson
+</small>
 
 <h2>
 Choose a convenient time
@@ -2821,7 +3271,9 @@ async>
 
 <div class="section-heading">
 
-<small>Contact</small>
+<small>
+Contact
+</small>
 
 <h2>
 Let's build your learning journey
@@ -2829,7 +3281,8 @@ Let's build your learning journey
 
 <p>
 Contact Learning Hub for tutoring, specialized learning
-support, resources, courses, teacher opportunities or partnerships.
+support, creative skills, resources, courses, teacher
+opportunities or partnerships.
 </p>
 
 </div>
@@ -2907,7 +3360,8 @@ Learning for everyone. Everywhere.
 <br>
 
 <p>
-Global online tutoring, courses and educational resources.
+Global online tutoring, courses, creative learning
+and educational resources.
 </p>
 
 </div>
@@ -2915,37 +3369,79 @@ Global online tutoring, courses and educational resources.
 
 <div>
 
-<h3>Learn</h3>
+<h3>
+Learn
+</h3>
 
-<a href="#learning">Learning Paths</a>
-<a href="#special">Specialized Support</a>
-<a href="#subjects">Subjects</a>
-<a href="#resources">Resources</a>
-<a href="#booking">Book a Lesson</a>
+<a href="#learning">
+Learning Paths
+</a>
+
+<a href="#special">
+Specialized Support
+</a>
+
+<a href="#subjects">
+Subjects & Courses
+</a>
+
+<a href="#resources">
+Resources
+</a>
+
+<a href="#booking">
+Book a Lesson
+</a>
 
 </div>
 
 
 <div>
 
-<h3>Community</h3>
+<h3>
+Community
+</h3>
 
-<a href="#community">Students</a>
-<a href="#community">Parents</a>
-<a href="#teachers">Teachers</a>
-<a href="#feedback">Leave Feedback</a>
+<a href="#community">
+Students
+</a>
+
+<a href="#community">
+Parents
+</a>
+
+<a href="#teachers">
+Teachers
+</a>
+
+<a href="#feedback">
+Leave Feedback
+</a>
 
 </div>
 
 
 <div>
 
-<h3>Connect</h3>
+<h3>
+Connect
+</h3>
 
-<a href="mailto:hublearning117@gmail.com">Email</a>
-<a href="#contact">Contact</a>
-<a href="#teachers">Teach with Us</a>
-<a href="#feedback">Share Your Experience</a>
+<a href="mailto:hublearning117@gmail.com">
+Email
+</a>
+
+<a href="#contact">
+Contact
+</a>
+
+<a href="#teachers">
+Teach with Us
+</a>
+
+<a href="#feedback">
+Share Your Experience
+</a>
 
 </div>
 
@@ -2962,6 +3458,7 @@ Global online tutoring, courses and educational resources.
 </div>
 
 </footer>
+
 
 </body>
 </html>
