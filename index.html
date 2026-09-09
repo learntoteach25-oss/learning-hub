@@ -7,1106 +7,1255 @@
 <title>Learning Hub | Global Online Learning & Tutoring</title>
 
 <meta name="description"
-content="Learning Hub provides personalized online tutoring, international curriculum support, IELTS and PTE preparation, academic support and language learning worldwide.">
+content="Learning Hub provides global online tutoring, international curriculum support, English language development, IELTS and PTE preparation, academic support and personalized learning.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   RESET
-========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    font-family:
-        Inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-    background:#fafbfc;
-    color:#26364d;
-    line-height:1.6;
-}
-
-img{
-    max-width:100%;
-    display:block;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button{
-    font:inherit;
-}
-
-.container{
-    width:min(1180px,92%);
-    margin:auto;
-}
-
-
-/* =========================================================
-   COLORS
+   LEARNING HUB
+   PREMIUM EDUCATION WEBSITE
 ========================================================= */
 
 :root{
-    --navy:#10233f;
-    --navy-light:#173457;
-    --blue:#2563eb;
-    --blue-light:#eff5ff;
-    --green:#138a63;
-    --green-light:#eaf8f2;
-    --gold:#f59e0b;
-    --purple:#7c3aed;
+  --navy:#10233f;
+  --navy2:#172f52;
+  --blue:#2563eb;
+  --green:#138a63;
+  --gold:#f59e0b;
+  --purple:#7c3aed;
 
-    --white:#ffffff;
-    --cream:#faf8f3;
+  --cream:#faf8f3;
+  --white:#ffffff;
+  --text:#26364d;
+  --muted:#667085;
+  --border:#e7eaf0;
 
-    --text:#26364d;
-    --muted:#667085;
+  --shadow:0 20px 55px rgba(16,35,63,.10);
+  --shadow-sm:0 10px 30px rgba(16,35,63,.08);
 
-    --border:#e6eaf0;
-
-    --shadow:
-        0 18px 45px rgba(16,35,63,.08);
-
-    --radius:22px;
+  --radius:22px;
+  --radius-sm:14px;
+  --max:1180px;
 }
 
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  color:var(--text);
+  background:var(--white);
+  line-height:1.7;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button,
+input,
+textarea,
+select{
+  font:inherit;
+}
+
+.container{
+  width:min(var(--max),92%);
+  margin:auto;
+}
+
+section{
+  padding:100px 0;
+}
+
+.section-heading{
+  max-width:720px;
+  margin:0 auto 55px;
+  text-align:center;
+}
+
+.section-heading small{
+  display:inline-block;
+  color:var(--blue);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.section-heading h2{
+  font-family:"Playfair Display",serif;
+  color:var(--navy);
+  font-size:clamp(34px,5vw,52px);
+  line-height:1.15;
+  margin-bottom:18px;
+}
+
+.section-heading p{
+  color:var(--muted);
+  font-size:16px;
+}
 
 /* =========================================================
-   HEADER
+   NAVIGATION
 ========================================================= */
 
-header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    background:rgba(255,255,255,.95);
-    backdrop-filter:blur(15px);
-
-    border-bottom:1px solid var(--border);
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,255,255,.94);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(16,35,63,.08);
 }
 
-.navbar{
-    min-height:76px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:25px;
+.nav-inner{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
 }
 
 .logo{
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    font-size:21px;
-    font-weight:800;
-
-    color:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-weight:800;
+  color:var(--navy);
 }
 
 .logo-mark{
-    width:42px;
-    height:42px;
+  width:40px;
+  height:40px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--blue),var(--green));
+  color:#fff;
+  display:grid;
+  place-items:center;
+  font-weight:800;
+  font-size:18px;
+  box-shadow:0 8px 20px rgba(37,99,235,.2);
+}
 
-    border-radius:13px;
-
-    background:linear-gradient(
-        135deg,
-        var(--blue),
-        var(--green)
-    );
-
-    color:white;
-
-    display:grid;
-    place-items:center;
-
-    font-weight:900;
+.logo-text{
+  font-size:19px;
 }
 
 .nav-links{
-    display:flex;
-    align-items:center;
-    gap:25px;
+  display:flex;
+  align-items:center;
+  gap:25px;
+}
 
-    font-size:14px;
-    font-weight:600;
-
-    color:#475467;
+.nav-links a{
+  font-size:14px;
+  font-weight:600;
+  color:#475467;
+  transition:.2s;
 }
 
 .nav-links a:hover{
-    color:var(--blue);
+  color:var(--blue);
 }
 
-.nav-button{
-    background:var(--navy);
-    color:white;
-
-    padding:11px 18px;
-
-    border-radius:12px;
-
-    font-weight:700;
+.nav-cta{
+  padding:11px 17px;
+  border-radius:10px;
+  background:var(--navy);
+  color:#fff !important;
 }
 
-.nav-button:hover{
-    background:var(--blue);
+.menu-btn{
+  display:none;
+  border:0;
+  background:none;
+  font-size:28px;
+  cursor:pointer;
 }
-
 
 /* =========================================================
    HERO
 ========================================================= */
 
 .hero{
-    background:
-        linear-gradient(
-            115deg,
-            rgba(16,35,63,.97),
-            rgba(16,35,63,.86)
-        ),
-        url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1900&q=85");
-
-    background-size:cover;
-    background-position:center;
-
-    color:white;
-
-    padding:110px 0 95px;
+  padding:75px 0 90px;
+  background:
+    radial-gradient(circle at 85% 20%,rgba(37,99,235,.12),transparent 28%),
+    radial-gradient(circle at 10% 80%,rgba(19,138,99,.10),transparent 30%),
+    var(--cream);
 }
 
 .hero-grid{
-    display:grid;
-    grid-template-columns:1.15fr .85fr;
-    gap:70px;
-
-    align-items:center;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:65px;
+  align-items:center;
 }
 
-.hero-badge{
-    display:inline-block;
-
-    padding:7px 13px;
-
-    border:1px solid rgba(255,255,255,.25);
-
-    border-radius:50px;
-
-    background:rgba(255,255,255,.08);
-
-    font-size:13px;
-    font-weight:700;
-
-    margin-bottom:20px;
+.hero-kicker{
+  color:var(--blue);
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:800;
+  font-size:12px;
+  margin-bottom:16px;
 }
 
 .hero h1{
-    font-size:clamp(42px,5vw,68px);
-    line-height:1.08;
-
-    margin-bottom:22px;
+  font-family:"Playfair Display",serif;
+  color:var(--navy);
+  font-size:clamp(48px,6vw,78px);
+  line-height:1.02;
+  margin-bottom:24px;
 }
 
 .hero h1 span{
-    color:#8ec5ff;
+  color:var(--blue);
 }
 
-.hero p{
-    max-width:650px;
-
-    font-size:18px;
-
-    color:#dce6f3;
-
-    margin-bottom:32px;
+.hero-text{
+  color:var(--muted);
+  font-size:18px;
+  max-width:620px;
+  margin-bottom:32px;
 }
 
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:13px;
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:13px;
 }
 
 .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:14px 22px;
-
-    border-radius:13px;
-
-    font-weight:800;
-
-    transition:.25s ease;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 22px;
+  border-radius:12px;
+  font-weight:700;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:.25s;
 }
 
 .btn-primary{
-    background:white;
-    color:var(--navy);
+  background:var(--navy);
+  color:#fff;
 }
 
 .btn-primary:hover{
-    transform:translateY(-2px);
+  transform:translateY(-2px);
+  box-shadow:0 12px 25px rgba(16,35,63,.2);
 }
 
 .btn-secondary{
-    border:1px solid rgba(255,255,255,.35);
-    color:white;
+  background:#fff;
+  border-color:var(--border);
+  color:var(--navy);
 }
 
 .btn-secondary:hover{
-    background:white;
-    color:var(--navy);
+  border-color:var(--blue);
+  color:var(--blue);
 }
 
+.hero-visual{
+  position:relative;
+}
 
-/* HERO CARD */
+.hero-image{
+  height:540px;
+  border-radius:32px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.hero-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
 .hero-card{
-    background:white;
-    color:var(--text);
-
-    border-radius:28px;
-
-    padding:30px;
-
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.2);
+  position:absolute;
+  left:-35px;
+  bottom:35px;
+  width:290px;
+  padding:25px;
+  background:#fff;
+  border-radius:20px;
+  box-shadow:var(--shadow);
 }
 
 .hero-card small{
-    color:var(--blue);
-    font-weight:800;
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1.5px;
 }
 
 .hero-card h3{
-    color:var(--navy);
-    font-size:26px;
-    margin:8px 0 20px;
+  color:var(--navy);
+  margin:7px 0 14px;
 }
 
 .hero-list{
-    display:grid;
-    gap:13px;
+  list-style:none;
 }
 
-.hero-list div{
-    display:flex;
-    align-items:center;
-    gap:10px;
-
-    font-weight:600;
+.hero-list li{
+  font-size:13px;
+  margin:8px 0;
+  color:var(--muted);
 }
 
-.check{
-    width:25px;
-    height:25px;
-
-    border-radius:50%;
-
-    background:var(--green-light);
-    color:var(--green);
-
-    display:grid;
-    place-items:center;
-
-    font-size:13px;
+.hero-list li::before{
+  content:"✓";
+  color:var(--green);
+  font-weight:800;
+  margin-right:8px;
 }
-
 
 /* =========================================================
    STATS
 ========================================================= */
 
 .stats{
-    background:white;
-
-    border-bottom:1px solid var(--border);
+  padding:0;
+  background:#fff;
 }
 
 .stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border:1px solid var(--border);
+  border-radius:18px;
+  overflow:hidden;
+  transform:translateY(-35px);
+  background:#fff;
+  box-shadow:var(--shadow-sm);
 }
 
 .stat{
-    padding:28px 15px;
-
-    text-align:center;
-
-    border-right:1px solid var(--border);
+  padding:28px 20px;
+  text-align:center;
+  border-right:1px solid var(--border);
 }
 
 .stat:last-child{
-    border-right:0;
+  border-right:0;
 }
 
 .stat strong{
-    display:block;
-
-    font-size:28px;
-
-    color:var(--navy);
+  display:block;
+  color:var(--navy);
+  font-size:22px;
+  margin-bottom:4px;
 }
 
 .stat span{
-    color:var(--muted);
-    font-size:14px;
+  color:var(--muted);
+  font-size:13px;
 }
-
-
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
-
-.section{
-    padding:90px 0;
-}
-
-.section-heading{
-    max-width:720px;
-    margin:0 auto 45px;
-
-    text-align:center;
-}
-
-.section-heading small{
-    display:block;
-
-    color:var(--blue);
-
-    font-weight:800;
-
-    text-transform:uppercase;
-
-    letter-spacing:1.5px;
-
-    margin-bottom:10px;
-}
-
-.section-heading h2{
-    color:var(--navy);
-
-    font-size:clamp(30px,4vw,45px);
-
-    line-height:1.15;
-
-    margin-bottom:15px;
-}
-
-.section-heading p{
-    color:var(--muted);
-}
-
-
-/* =========================================================
-   CARDS
-========================================================= */
-
-.card-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:22px;
-}
-
-.card{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:var(--radius);
-
-    overflow:hidden;
-
-    transition:.25s ease;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:var(--shadow);
-}
-
-.card-image{
-    height:210px;
-
-    object-fit:cover;
-
-    width:100%;
-}
-
-.card-content{
-    padding:25px;
-}
-
-.card-content h3{
-    color:var(--navy);
-
-    font-size:21px;
-
-    margin-bottom:9px;
-}
-
-.card-content p{
-    color:var(--muted);
-}
-
 
 /* =========================================================
    LEARNING PATHS
 ========================================================= */
 
-.paths{
-    background:var(--cream);
+.pathways{
+  background:#fff;
 }
 
+.path-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.path-card{
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:#fff;
+  border:1px solid var(--border);
+  box-shadow:var(--shadow-sm);
+  transition:.3s;
+}
+
+.path-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+}
+
+.path-image{
+  height:230px;
+  overflow:hidden;
+}
+
+.path-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.5s;
+}
+
+.path-card:hover .path-image img{
+  transform:scale(1.05);
+}
+
+.path-content{
+  padding:27px;
+}
+
+.path-content h3{
+  font-family:"Playfair Display",serif;
+  color:var(--navy);
+  font-size:25px;
+  margin-bottom:9px;
+}
+
+.path-content p{
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* =========================================================
+   SPECIALIZED SUPPORT
+========================================================= */
+
+.support{
+  background:var(--cream);
+}
+
+.support-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
+}
+
+.support-card{
+  position:relative;
+  min-height:420px;
+  border-radius:25px;
+  overflow:hidden;
+  color:#fff;
+}
+
+.support-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.support-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(8,22,40,.88),rgba(8,22,40,.05));
+}
+
+.support-content{
+  position:absolute;
+  z-index:2;
+  bottom:0;
+  padding:35px;
+}
+
+.support-content h3{
+  font-family:"Playfair Display",serif;
+  font-size:31px;
+  margin-bottom:8px;
+}
+
+.support-content p{
+  font-size:14px;
+  color:rgba(255,255,255,.86);
+}
 
 /* =========================================================
    SUBJECTS
 ========================================================= */
 
 .subject-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:18px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
-.subject{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:18px;
-
-    padding:23px;
-
-    transition:.25s ease;
+.subject-card{
+  min-height:250px;
+  border-radius:20px;
+  overflow:hidden;
+  position:relative;
+  color:#fff;
 }
 
-.subject:hover{
-    border-color:#bfd1f6;
-    box-shadow:var(--shadow);
+.subject-card img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.subject-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top,rgba(16,35,63,.92),rgba(16,35,63,.05));
+}
+
+.subject-content{
+  position:absolute;
+  z-index:2;
+  bottom:0;
+  padding:25px;
 }
 
 .subject-icon{
-    width:48px;
-    height:48px;
-
-    border-radius:14px;
-
-    background:var(--blue-light);
-
-    display:grid;
-    place-items:center;
-
-    font-size:22px;
-
-    margin-bottom:15px;
+  font-size:28px;
+  margin-bottom:5px;
 }
 
-.subject h3{
-    color:var(--navy);
-
-    margin-bottom:6px;
+.subject-content h3{
+  font-size:23px;
+  margin-bottom:4px;
 }
 
-.subject p{
-    color:var(--muted);
-    font-size:14px;
+.subject-content p{
+  font-size:13px;
+  color:rgba(255,255,255,.85);
 }
-
 
 /* =========================================================
-   EXAM PREPARATION
+   IELTS / PTE
 ========================================================= */
 
 .exam-section{
-    background:#f3f7ff;
+  background:var(--navy);
+  color:#fff;
+}
+
+.exam-section .section-heading h2{
+  color:#fff;
+}
+
+.exam-section .section-heading p{
+  color:rgba(255,255,255,.72);
 }
 
 .exam-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:25px;
 }
 
 .exam-card{
-    padding:34px;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:25px;
-
-    position:relative;
-
-    overflow:hidden;
+  background:#fff;
+  color:var(--text);
+  border-radius:25px;
+  padding:35px;
+  position:relative;
+  overflow:hidden;
 }
 
-.exam-card.ielts{
-    border-top:5px solid var(--blue);
-}
-
-.exam-card.pte{
-    border-top:5px solid var(--purple);
+.exam-card::before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  right:-70px;
+  top:-70px;
+  background:rgba(37,99,235,.08);
 }
 
 .exam-label{
-    font-size:12px;
-
-    font-weight:900;
-
-    letter-spacing:1px;
-
-    color:var(--blue);
-}
-
-.exam-card.pte .exam-label{
-    color:var(--purple);
+  color:var(--blue);
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:2px;
 }
 
 .exam-card h3{
-    font-size:30px;
-
-    color:var(--navy);
-
-    margin:7px 0 12px;
+  font-family:"Playfair Display",serif;
+  font-size:34px;
+  color:var(--navy);
+  margin:5px 0 10px;
 }
 
 .exam-card p{
-    color:var(--muted);
-
-    margin-bottom:20px;
+  color:var(--muted);
+  font-size:14px;
 }
 
 .exam-skills{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:10px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:9px;
+  margin-top:25px;
 }
 
-.exam-skill{
-    padding:10px 12px;
-
-    border-radius:10px;
-
-    background:#f7f8fa;
-
-    font-size:13px;
-
-    font-weight:700;
+.skill{
+  background:#f5f7fa;
+  border-radius:10px;
+  padding:12px 6px;
+  text-align:center;
+  font-size:12px;
+  font-weight:700;
 }
-
 
 /* =========================================================
-   AUDIO VISUAL
+   AUDIO VISUAL LEARNING
 ========================================================= */
 
-.media-section{
-    background:white;
+.audio-visual{
+  background:
+    linear-gradient(180deg,#f7faff 0%,#fff 100%);
+  position:relative;
 }
 
-.media-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+.audio-visual::before{
+  content:"";
+  position:absolute;
+  width:300px;
+  height:300px;
+  border-radius:50%;
+  background:rgba(37,99,235,.05);
+  top:60px;
+  left:-150px;
 }
 
-.media-card{
-    background:#fff;
-
-    border:1px solid var(--border);
-
-    border-radius:20px;
-
-    padding:26px;
-
-    position:relative;
-
-    transition:.25s ease;
+.av-intro{
+  max-width:760px;
+  margin:-20px auto 45px;
+  text-align:center;
+  color:var(--muted);
 }
 
-.media-card:hover{
-    transform:translateY(-4px);
-
-    box-shadow:var(--shadow);
+.av-filter{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:9px;
+  margin-bottom:35px;
 }
 
-.media-icon{
-    width:55px;
-    height:55px;
-
-    border-radius:16px;
-
-    background:var(--blue-light);
-
-    display:grid;
-    place-items:center;
-
-    font-size:25px;
-
-    margin-bottom:18px;
+.av-filter button{
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--muted);
+  padding:9px 15px;
+  border-radius:50px;
+  cursor:pointer;
+  font-size:13px;
+  font-weight:600;
 }
 
-.media-card h3{
-    color:var(--navy);
-
-    margin-bottom:9px;
+.av-filter button.active,
+.av-filter button:hover{
+  background:var(--navy);
+  color:#fff;
+  border-color:var(--navy);
 }
 
-.media-card p{
-    color:var(--muted);
-
-    font-size:14px;
-
-    margin-bottom:18px;
+.av-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
-.coming-soon{
-    display:inline-block;
-
-    padding:6px 10px;
-
-    border-radius:50px;
-
-    background:#eef4ff;
-
-    color:var(--blue);
-
-    font-size:10px;
-
-    font-weight:900;
-
-    letter-spacing:1px;
+.av-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+  transition:.3s;
 }
 
+.av-card:hover{
+  transform:translateY(-5px);
+  box-shadow:var(--shadow);
+}
+
+.av-thumb{
+  height:170px;
+  position:relative;
+  display:grid;
+  place-items:center;
+  background:
+    linear-gradient(135deg,#10233f,#2563eb);
+  color:#fff;
+  overflow:hidden;
+}
+
+.av-thumb.green{
+  background:linear-gradient(135deg,#075e46,#138a63);
+}
+
+.av-thumb.purple{
+  background:linear-gradient(135deg,#452080,#7c3aed);
+}
+
+.av-thumb.gold{
+  background:linear-gradient(135deg,#a85d00,#f59e0b);
+}
+
+.av-thumb::before{
+  content:"";
+  position:absolute;
+  width:180px;
+  height:180px;
+  border:35px solid rgba(255,255,255,.08);
+  border-radius:50%;
+}
+
+.av-icon{
+  position:relative;
+  z-index:2;
+  font-size:48px;
+}
+
+.coming{
+  position:absolute;
+  top:14px;
+  right:14px;
+  z-index:3;
+  padding:6px 10px;
+  border-radius:30px;
+  background:rgba(255,255,255,.94);
+  color:var(--navy);
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:.8px;
+}
+
+.av-content{
+  padding:23px;
+}
+
+.av-content h3{
+  color:var(--navy);
+  font-family:"Playfair Display",serif;
+  font-size:23px;
+  margin-bottom:8px;
+}
+
+.av-content p{
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:17px;
+}
+
+.av-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  color:var(--blue);
+  font-size:12px;
+  font-weight:700;
+}
 
 /* =========================================================
    RESOURCES
 ========================================================= */
 
 .resources{
-    background:var(--cream);
+  background:var(--cream);
 }
 
-.resource-list{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:15px;
+.resource-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
 }
 
 .resource{
-    display:flex;
-    align-items:center;
-    gap:17px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:17px;
+  padding:23px;
+  transition:.25s;
+}
 
-    padding:20px;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
+.resource:hover{
+  transform:translateY(-4px);
+  box-shadow:var(--shadow-sm);
 }
 
 .resource-icon{
-    min-width:46px;
-    height:46px;
-
-    border-radius:13px;
-
-    background:var(--green-light);
-
-    display:grid;
-    place-items:center;
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+  background:#eef4ff;
+  margin-bottom:17px;
+  font-size:20px;
 }
 
 .resource h3{
-    color:var(--navy);
-
-    font-size:17px;
+  font-size:16px;
+  color:var(--navy);
+  margin-bottom:6px;
 }
 
 .resource p{
-    color:var(--muted);
-
-    font-size:13px;
+  font-size:12px;
+  color:var(--muted);
+  margin-bottom:16px;
 }
 
-
-/* =========================================================
-   SUPPORT
-========================================================= */
-
-.support-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
+.resource a{
+  color:var(--blue);
+  font-size:12px;
+  font-weight:800;
 }
-
-.support-card{
-    display:grid;
-    grid-template-columns:180px 1fr;
-
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:22px;
-
-    overflow:hidden;
-}
-
-.support-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-}
-
-.support-content{
-    padding:25px;
-}
-
-.support-content h3{
-    color:var(--navy);
-
-    margin-bottom:9px;
-}
-
-.support-content p{
-    color:var(--muted);
-}
-
 
 /* =========================================================
    WHY LEARNING HUB
 ========================================================= */
 
-.why{
-    background:var(--navy);
-    color:white;
-}
-
-.why .section-heading h2{
-    color:white;
-}
-
-.why .section-heading p{
-    color:#cbd6e5;
-}
-
 .why-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
 }
 
 .why-card{
-    padding:28px;
+  padding:35px 28px;
+  border:1px solid var(--border);
+  border-radius:20px;
+  background:#fff;
+}
 
-    border:1px solid rgba(255,255,255,.12);
-
-    border-radius:20px;
-
-    background:rgba(255,255,255,.05);
+.why-icon{
+  font-size:32px;
+  margin-bottom:17px;
 }
 
 .why-card h3{
-    margin:13px 0 7px;
+  color:var(--navy);
+  font-family:"Playfair Display",serif;
+  font-size:23px;
+  margin-bottom:7px;
 }
 
 .why-card p{
-    color:#cbd6e5;
-    font-size:14px;
+  color:var(--muted);
+  font-size:14px;
 }
-
 
 /* =========================================================
    TESTIMONIALS
 ========================================================= */
 
+.testimonials{
+  background:var(--cream);
+}
+
 .testimonial-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
 }
 
 .testimonial{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:20px;
-
-    padding:27px;
+  background:#fff;
+  padding:30px;
+  border-radius:20px;
+  border:1px solid var(--border);
 }
 
 .stars{
-    color:var(--gold);
-
-    letter-spacing:3px;
-
-    margin-bottom:13px;
+  color:var(--gold);
+  letter-spacing:2px;
+  margin-bottom:16px;
 }
 
 .testimonial p{
-    color:var(--muted);
-
-    font-style:italic;
-
-    margin-bottom:18px;
+  font-family:"Playfair Display",serif;
+  font-size:18px;
+  color:var(--navy);
+  margin-bottom:20px;
 }
 
-.testimonial strong{
-    color:var(--navy);
+.testimonial small{
+  color:var(--muted);
 }
-
 
 /* =========================================================
-   BOOKING
+   BOOKING CTA
 ========================================================= */
 
 .booking{
-    background:
-        linear-gradient(
-            120deg,
-            var(--blue),
-            var(--navy)
-        );
-
-    color:white;
-
-    text-align:center;
-
-    padding:80px 20px;
+  padding:75px 0;
 }
 
-.booking h2{
-    font-size:40px;
-
-    margin-bottom:12px;
+.booking-box{
+  background:
+    linear-gradient(135deg,var(--navy),var(--navy2));
+  border-radius:30px;
+  padding:65px;
+  color:#fff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:40px;
 }
 
-.booking p{
-    max-width:650px;
-
-    margin:0 auto 25px;
-
-    color:#dce6f3;
+.booking-box h2{
+  font-family:"Playfair Display",serif;
+  font-size:42px;
+  line-height:1.1;
+  margin-bottom:12px;
 }
 
+.booking-box p{
+  color:rgba(255,255,255,.75);
+  max-width:600px;
+}
+
+.booking-box .btn{
+  background:#fff;
+  color:var(--navy);
+  flex-shrink:0;
+}
 
 /* =========================================================
    CONTACT
 ========================================================= */
 
+.contact{
+  background:var(--cream);
+}
+
 .contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    gap:35px;
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:45px;
+  align-items:start;
 }
 
-.contact-box{
-    background:white;
-
-    border:1px solid var(--border);
-
-    border-radius:22px;
-
-    padding:30px;
+.contact-info h2{
+  font-family:"Playfair Display",serif;
+  color:var(--navy);
+  font-size:40px;
+  line-height:1.1;
+  margin-bottom:15px;
 }
 
-.contact-box h3{
-    color:var(--navy);
-
-    margin-bottom:12px;
-}
-
-.contact-box p{
-    color:var(--muted);
-
-    margin-bottom:15px;
+.contact-info > p{
+  color:var(--muted);
+  margin-bottom:28px;
 }
 
 .contact-item{
-    display:flex;
-
-    gap:12px;
-
-    padding:12px 0;
-
-    border-bottom:1px solid var(--border);
+  margin-bottom:20px;
 }
 
-.contact-item:last-child{
-    border-bottom:0;
+.contact-item strong{
+  display:block;
+  color:var(--navy);
+  margin-bottom:4px;
 }
 
+.contact-item span{
+  color:var(--muted);
+  font-size:14px;
+}
+
+.contact-form{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:30px;
+  box-shadow:var(--shadow-sm);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.field{
+  margin-bottom:15px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  display:block;
+  color:var(--navy);
+  font-size:12px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.field input,
+.field textarea,
+.field select{
+  width:100%;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:12px 13px;
+  outline:none;
+  background:#fff;
+  color:var(--text);
+}
+
+.field textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus{
+  border-color:var(--blue);
+}
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 footer{
-    background:#0b192d;
-
-    color:white;
-
-    padding:55px 0 25px;
+  background:#0b1b31;
+  color:#fff;
+  padding:55px 0 25px;
 }
 
 .footer-grid{
-    display:grid;
-    grid-template-columns:1.3fr 1fr 1fr;
-
-    gap:50px;
-
-    margin-bottom:40px;
+  display:grid;
+  grid-template-columns:1.5fr 1fr 1fr;
+  gap:50px;
+  padding-bottom:40px;
+  border-bottom:1px solid rgba(255,255,255,.1);
 }
 
-footer h3{
-    margin-bottom:13px;
+.footer-logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:15px;
 }
 
-footer p,
-footer a{
-    color:#aebbd0;
-
-    font-size:14px;
+.footer-logo .logo-mark{
+  background:linear-gradient(135deg,var(--blue),var(--green));
 }
 
-footer a:hover{
-    color:white;
+.footer p{
+  color:rgba(255,255,255,.62);
+  font-size:13px;
+  max-width:430px;
+}
+
+.footer h4{
+  margin-bottom:15px;
 }
 
 .footer-links{
-    display:grid;
-    gap:8px;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.footer-links a{
+  color:rgba(255,255,255,.65);
+  font-size:13px;
+}
+
+.footer-links a:hover{
+  color:#fff;
 }
 
 .footer-bottom{
-    padding-top:22px;
-
-    border-top:1px solid rgba(255,255,255,.1);
-
-    color:#94a3b8;
-
-    font-size:13px;
-
-    text-align:center;
+  padding-top:22px;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  color:rgba(255,255,255,.45);
+  font-size:12px;
 }
 
-
 /* =========================================================
-   RESPONSIVE
+   MOBILE
 ========================================================= */
 
 @media(max-width:950px){
 
-    .nav-links{
-        display:none;
-    }
+  .nav-links{
+    display:none;
+    position:absolute;
+    left:4%;
+    right:4%;
+    top:70px;
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:var(--shadow);
+    flex-direction:column;
+    align-items:stretch;
+  }
 
-    .hero-grid{
-        grid-template-columns:1fr;
-    }
+  .nav-links.open{
+    display:flex;
+  }
 
-    .hero-card{
-        max-width:600px;
-    }
+  .menu-btn{
+    display:block;
+  }
 
-    .card-grid,
-    .subject-grid,
-    .media-grid,
-    .why-grid,
-    .testimonial-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
 
-    .exam-grid,
-    .support-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
+  .hero-image{
+    height:430px;
+  }
 
-    .footer-grid{
-        grid-template-columns:1fr 1fr;
-    }
+  .hero-card{
+    left:15px;
+    bottom:20px;
+  }
+
+  .stats-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .stat:nth-child(2){
+    border-right:0;
+  }
+
+  .path-grid,
+  .support-grid,
+  .exam-grid,
+  .av-grid,
+  .testimonial-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .subject-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .resource-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+
+  .booking-box{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
 }
-
 
 @media(max-width:650px){
 
-    .hero{
-        padding:75px 0;
-    }
+  section{
+    padding:75px 0;
+  }
 
-    .hero h1{
-        font-size:40px;
-    }
+  .hero{
+    padding-top:55px;
+  }
 
-    .stats-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
+  .hero h1{
+    font-size:47px;
+  }
 
-    .stat{
-        border-bottom:1px solid var(--border);
-    }
+  .hero-image{
+    height:350px;
+  }
 
-    .card-grid,
-    .subject-grid,
-    .media-grid,
-    .why-grid,
-    .testimonial-grid,
-    .resource-list{
-        grid-template-columns:1fr;
-    }
+  .hero-card{
+    position:relative;
+    left:0;
+    bottom:auto;
+    margin:-45px 15px 0;
+  }
 
-    .exam-skills{
-        grid-template-columns:1fr;
-    }
+  .stats-grid{
+    grid-template-columns:1fr 1fr;
+  }
 
-    .support-card{
-        grid-template-columns:1fr;
-    }
+  .stat{
+    padding:20px 10px;
+  }
 
-    .support-card img{
-        height:220px;
-    }
+  .path-grid,
+  .support-grid,
+  .subject-grid,
+  .exam-grid,
+  .av-grid,
+  .resource-grid,
+  .testimonial-grid{
+    grid-template-columns:1fr;
+  }
 
-    .footer-grid{
-        grid-template-columns:1fr;
-    }
+  .exam-skills{
+    grid-template-columns:repeat(2,1fr);
+  }
 
-    .section{
-        padding:65px 0;
-    }
+  .booking-box{
+    padding:40px 25px;
+  }
 
-    .booking h2{
-        font-size:31px;
-    }
+  .booking-box h2{
+    font-size:34px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+  }
 }
 
 </style>
@@ -1116,39 +1265,41 @@ footer a:hover{
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<!-- ======================================================
+     NAVIGATION
+====================================================== -->
 
-<header>
+<header class="navbar">
 
-<div class="container navbar">
+<div class="container nav-inner">
 
 <a href="#" class="logo">
 
-<span class="logo-mark">LH</span>
+<div class="logo-mark">LH</div>
 
-<span>Learning Hub</span>
+<span class="logo-text">Learning Hub</span>
 
 </a>
 
 
-<nav class="nav-links">
+<button class="menu-btn" id="menuBtn">
+☰
+</button>
+
+
+<nav class="nav-links" id="navLinks">
 
 <a href="#programmes">Programmes</a>
-
 <a href="#subjects">Subjects</a>
-
 <a href="#exams">IELTS & PTE</a>
-
+<a href="#audio">Audio-Visual</a>
 <a href="#resources">Resources</a>
-
 <a href="#contact">Contact</a>
 
 <a
+class="nav-cta"
 href="https://calendly.com/hublearning117"
-target="_blank"
-class="nav-button">
+target="_blank">
 Book a Session
 </a>
 
@@ -1160,45 +1311,42 @@ Book a Session
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      HERO
-===================================================== -->
+====================================================== -->
 
 <section class="hero">
 
 <div class="container hero-grid">
 
-
 <div>
 
-<span class="hero-badge">
+<div class="hero-kicker">
 Global Online Learning & Tutoring
-</span>
+</div>
 
 <h1>
-Learn with confidence.
+Learn with confidence.<br>
 <span>Grow without limits.</span>
 </h1>
 
-<p>
+<p class="hero-text">
 Personalized online tutoring, international curriculum support,
 English language development, exam preparation and academic
 learning for students worldwide.
 </p>
 
 
-<div class="hero-buttons">
+<div class="hero-actions">
 
-<a
-href="#programmes"
-class="btn btn-primary">
+<a class="btn btn-primary" href="#programmes">
 Explore Learning
 </a>
 
 <a
+class="btn btn-secondary"
 href="https://calendly.com/hublearning117"
-target="_blank"
-class="btn btn-secondary">
+target="_blank">
 Book a Consultation
 </a>
 
@@ -1206,6 +1354,16 @@ Book a Consultation
 
 </div>
 
+
+<div class="hero-visual">
+
+<div class="hero-image">
+
+<img
+src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1900&q=85"
+alt="Students learning online">
+
+</div>
 
 
 <div class="hero-card">
@@ -1216,38 +1374,19 @@ Book a Consultation
 A learning environment built around the student.
 </h3>
 
+<ul class="hero-list">
 
-<div class="hero-list">
+<li>International curriculum support</li>
+<li>IELTS & PTE preparation</li>
+<li>English language development</li>
+<li>Academic & exam preparation</li>
+<li>Personalized online tutoring</li>
 
-<div>
-<span class="check">✓</span>
-International curriculum support
-</div>
-
-<div>
-<span class="check">✓</span>
-IELTS & PTE preparation
-</div>
-
-<div>
-<span class="check">✓</span>
-English language development
-</div>
-
-<div>
-<span class="check">✓</span>
-Academic & exam preparation
-</div>
-
-<div>
-<span class="check">✓</span>
-Personalized online tutoring
-</div>
+</ul>
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -1255,13 +1394,15 @@ Personalized online tutoring
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      STATS
-===================================================== -->
+====================================================== -->
 
 <section class="stats">
 
-<div class="container stats-grid">
+<div class="container">
+
+<div class="stats-grid">
 
 <div class="stat">
 <strong>10+</strong>
@@ -1285,15 +1426,17 @@ Personalized online tutoring
 
 </div>
 
+</div>
+
 </section>
 
 
 
-<!-- =====================================================
-     PROGRAMMES
-===================================================== -->
+<!-- ======================================================
+     LEARNING PATHWAYS
+====================================================== -->
 
-<section class="section paths" id="programmes">
+<section id="programmes" class="pathways">
 
 <div class="container">
 
@@ -1307,29 +1450,29 @@ Learning designed around your goals
 
 <p>
 Whether you are preparing for an international examination,
-following an international curriculum or improving your
-English, Learning Hub provides structured support.
+following an international curriculum or improving your English,
+Learning Hub provides structured support.
 </p>
 
 </div>
 
 
+<div class="path-grid">
 
-<div class="card-grid">
 
+<article class="path-card">
 
-<div class="card">
+<div class="path-image">
 
 <img
-class="card-image"
 src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=900&q=80"
-alt="Students learning">
+alt="International curriculum learning">
 
-<div class="card-content">
+</div>
 
-<h3>
-International Curriculum
-</h3>
+<div class="path-content">
+
+<h3>International Curriculum</h3>
 
 <p>
 Support for IB and other international academic programmes,
@@ -1338,22 +1481,23 @@ assignments, examinations and subject development.
 
 </div>
 
-</div>
+</article>
 
 
 
-<div class="card">
+<article class="path-card">
+
+<div class="path-image">
 
 <img
-class="card-image"
 src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80"
-alt="Online learning">
+alt="English exam preparation">
 
-<div class="card-content">
+</div>
 
-<h3>
-English & Exam Preparation
-</h3>
+<div class="path-content">
+
+<h3>English & Exam Preparation</h3>
 
 <p>
 Build listening, speaking, reading, writing, vocabulary and
@@ -1362,31 +1506,32 @@ academic communication skills.
 
 </div>
 
-</div>
+</article>
 
 
 
-<div class="card">
+<article class="path-card">
+
+<div class="path-image">
 
 <img
-class="card-image"
 src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=900&q=80"
-alt="Creative learning">
+alt="Personalized learning">
 
-<div class="card-content">
+</div>
 
-<h3>
-Personalized Learning
-</h3>
+<div class="path-content">
+
+<h3>Personalized Learning</h3>
 
 <p>
-One-to-one lessons and targeted academic support adapted
-to each learner's needs.
+One-to-one lessons and targeted academic support adapted to
+each learner's needs.
 </p>
 
 </div>
 
-</div>
+</article>
 
 
 </div>
@@ -1397,470 +1542,11 @@ to each learner's needs.
 
 
 
-<!-- =====================================================
-     SUBJECTS
-===================================================== -->
-
-<section class="section" id="subjects">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Subject Catalogue</small>
-
-<h2>
-Explore our learning areas
-</h2>
-
-<p>
-Academic and language support across multiple subjects and
-international learning pathways.
-</p>
-
-</div>
-
-
-<div class="subject-grid">
-
-
-<div class="subject">
-<div class="subject-icon">📖</div>
-<h3>English</h3>
-<p>Language, literature, grammar, vocabulary and academic writing.</p>
-</div>
-
-
-<div class="subject">
-<div class="subject-icon">🔢</div>
-<h3>Mathematics</h3>
-<p>Concept development, problem solving and examination support.</p>
-</div>
-
-
-<div class="subject">
-<div class="subject-icon">🔬</div>
-<h3>Science</h3>
-<p>Structured support for science concepts and academic preparation.</p>
-</div>
-
-
-<div class="subject">
-<div class="subject-icon">🧠</div>
-<h3>Psychology</h3>
-<p>IB Psychology support, concepts, research methods and examination preparation.</p>
-</div>
-
-
-<div class="subject">
-<div class="subject-icon">💼</div>
-<h3>Business Studies</h3>
-<p>Business concepts, analysis, case studies and examination skills.</p>
-</div>
-
-
-<div class="subject">
-<div class="subject-icon">💻</div>
-<h3>Computer Science</h3>
-<p>Programming, digital skills and academic computer science support.</p>
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     IELTS & PTE
-===================================================== -->
-
-<section class="section exam-section" id="exams">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>English Proficiency</small>
-
-<h2>
-IELTS & PTE Preparation
-</h2>
-
-<p>
-Dedicated preparation pathways for learners developing the
-English skills required for international study, work and migration.
-</p>
-
-</div>
-
-
-<div class="exam-grid">
-
-
-<div class="exam-card ielts">
-
-<span class="exam-label">
-IELTS PREPARATION
-</span>
-
-<h3>
-IELTS
-</h3>
-
-<p>
-Structured preparation for listening, reading, writing and
-speaking with emphasis on language development and exam technique.
-</p>
-
-
-<div class="exam-skills">
-
-<div class="exam-skill">🎧 Listening</div>
-
-<div class="exam-skill">📖 Reading</div>
-
-<div class="exam-skill">✍️ Writing</div>
-
-<div class="exam-skill">🎤 Speaking</div>
-
-</div>
-
-</div>
-
-
-
-<div class="exam-card pte">
-
-<span class="exam-label">
-PTE PREPARATION
-</span>
-
-<h3>
-PTE
-</h3>
-
-<p>
-Develop English proficiency, fluency, pronunciation and
-test-specific skills through structured practice.
-</p>
-
-
-<div class="exam-skills">
-
-<div class="exam-skill">🎧 Listening</div>
-
-<div class="exam-skill">📖 Reading</div>
-
-<div class="exam-skill">✍️ Writing</div>
-
-<div class="exam-skill">🎤 Speaking</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     AUDIO VISUAL
-===================================================== -->
-
-<section class="section media-section" id="audio">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Audio-Visual Learning</small>
-
-<h2>
-IELTS & PTE Practice Library
-</h2>
-
-<p>
-Interactive audio lessons, video lessons, listening practice,
-speaking activities and language-learning resources are being prepared.
-</p>
-
-</div>
-
-
-<div class="media-grid">
-
-
-<div class="media-card">
-
-<div class="media-icon">
-🎧
-</div>
-
-<span class="coming-soon">
-COMING SOON
-</span>
-
-<h3>
-IELTS Listening
-</h3>
-
-<p>
-Original Learning Hub listening practice with audio,
-questions, transcripts and answer explanations.
-</p>
-
-</div>
-
-
-
-<div class="media-card">
-
-<div class="media-icon">
-🎤
-</div>
-
-<span class="coming-soon">
-COMING SOON
-</span>
-
-<h3>
-IELTS Speaking
-</h3>
-
-<p>
-Speaking prompts, model responses, vocabulary and
-fluency practice.
-</p>
-
-</div>
-
-
-
-<div class="media-card">
-
-<div class="media-icon">
-📖
-</div>
-
-<span class="coming-soon">
-COMING SOON
-</span>
-
-<h3>
-IELTS Reading
-</h3>
-
-<p>
-Reading practice, vocabulary development, comprehension
-and question strategies.
-</p>
-
-</div>
-
-
-
-<div class="media-card">
-
-<div class="media-icon">
-🎧
-</div>
-
-<span class="coming-soon">
-COMING SOON
-</span>
-
-<h3>
-PTE Listening
-</h3>
-
-<p>
-Listening activities and original practice designed
-around key PTE skills.
-</p>
-
-</div>
-
-
-
-<div class="media-card">
-
-<div class="media-icon">
-🎙️
-</div>
-
-<span class="coming-soon">
-COMING SOON
-</span>
-
-<h3>
-PTE Speaking
-</h3>
-
-<p>
-Fluency, pronunciation, response building and speaking
-practice.
-</p>
-
-</div>
-
-
-
-<div class="media-card">
-
-<div class="media-icon">
-▶️
-</div>
-
-<span class="coming-soon">
-COMING SOON
-</span>
-
-<h3>
-English Video Lessons
-</h3>
-
-<p>
-Short language-learning videos covering grammar,
-pronunciation, vocabulary and communication.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
-     RESOURCES
-===================================================== -->
-
-<section class="section resources" id="resources">
-
-<div class="container">
-
-<div class="section-heading">
-
-<small>Learning Resources</small>
-
-<h2>
-Study materials for independent practice
-</h2>
-
-<p>
-Downloadable learning resources and practice materials
-for students.
-</p>
-
-</div>
-
-
-<div class="resource-list">
-
-
-<div class="resource">
-
-<div class="resource-icon">📄</div>
-
-<div>
-<h3>Chinese Beginner Vocabulary</h3>
-<p>Formal vocabulary practice worksheet.</p>
-</div>
-
-</div>
-
-
-
-<div class="resource">
-
-<div class="resource-icon">🔢</div>
-
-<div>
-<h3>Grade 4–5 Mental Math</h3>
-<p>Practice material for elementary learners.</p>
-</div>
-
-</div>
-
-
-
-<div class="resource">
-
-<div class="resource-icon">🧠</div>
-
-<div>
-<h3>Psychology Research Skills</h3>
-<p>Practice material for IB Psychology learners.</p>
-</div>
-
-</div>
-
-
-
-<div class="resource">
-
-<div class="resource-icon">📚</div>
-
-<div>
-<h3>IB English Practice</h3>
-<p>Literary analysis and academic writing activities.</p>
-</div>
-
-</div>
-
-
-
-<div class="resource">
-
-<div class="resource-icon">✍️</div>
-
-<div>
-<h3>Academic Vocabulary</h3>
-<p>High-value vocabulary for intermediate and advanced learners.</p>
-</div>
-
-</div>
-
-
-
-<div class="resource">
-
-<div class="resource-icon">📖</div>
-
-<div>
-<h3>Reading Development</h3>
-<p>Learning-to-read and comprehension resources.</p>
-</div>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- =====================================================
+<!-- ======================================================
      SPECIALIZED SUPPORT
-===================================================== -->
+====================================================== -->
 
-<section class="section">
+<section class="support">
 
 <div class="container">
 
@@ -1883,40 +1569,36 @@ learning environments.
 <div class="support-grid">
 
 
-<div class="support-card">
+<article class="support-card">
 
 <img
 src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1100&q=80"
-alt="Student learning">
+alt="Personalized student support">
 
 <div class="support-content">
 
-<h3>
-Personalized Student Support
-</h3>
+<h3>Personalized Student Support</h3>
 
 <p>
-Individual attention, structured goals, feedback and
-learning strategies adapted to the student.
+Individual attention, structured goals, feedback and learning
+strategies adapted to the student.
 </p>
 
 </div>
 
-</div>
+</article>
 
 
 
-<div class="support-card">
+<article class="support-card">
 
 <img
 src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1100&q=80"
-alt="Students collaborating">
+alt="International learners">
 
 <div class="support-content">
 
-<h3>
-International Learners
-</h3>
+<h3>International Learners</h3>
 
 <p>
 Support for students studying across different educational
@@ -1925,7 +1607,7 @@ systems and cultural environments.
 
 </div>
 
-</div>
+</article>
 
 
 </div>
@@ -1936,11 +1618,736 @@ systems and cultural environments.
 
 
 
-<!-- =====================================================
-     WHY LEARNING HUB
-===================================================== -->
+<!-- ======================================================
+     SUBJECTS
+====================================================== -->
 
-<section class="section why">
+<section id="subjects">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Subject Catalogue</small>
+
+<h2>
+Explore our learning areas
+</h2>
+
+<p>
+Academic and language support across multiple subjects and
+international learning pathways.
+</p>
+
+</div>
+
+
+<div class="subject-grid">
+
+
+<article class="subject-card">
+
+<img
+src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=85"
+alt="English">
+
+<div class="subject-content">
+
+<div class="subject-icon">📖</div>
+
+<h3>English</h3>
+
+<p>
+Language, literature, grammar, vocabulary and academic writing.
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="subject-card">
+
+<img
+src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1000&q=85"
+alt="Mathematics">
+
+<div class="subject-content">
+
+<div class="subject-icon">🔢</div>
+
+<h3>Mathematics</h3>
+
+<p>
+Concept development, problem solving and examination support.
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="subject-card">
+
+<img
+src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=1000&q=85"
+alt="Science">
+
+<div class="subject-content">
+
+<div class="subject-icon">🔬</div>
+
+<h3>Science</h3>
+
+<p>
+Structured support for science concepts and academic preparation.
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="subject-card">
+
+<img
+src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1000&q=85"
+alt="Psychology">
+
+<div class="subject-content">
+
+<div class="subject-icon">🧠</div>
+
+<h3>Psychology</h3>
+
+<p>
+IB Psychology support, concepts, research methods and examination preparation.
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="subject-card">
+
+<img
+src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=85"
+alt="Business Studies">
+
+<div class="subject-content">
+
+<div class="subject-icon">💼</div>
+
+<h3>Business Studies</h3>
+
+<p>
+Business concepts, analysis, case studies and examination skills.
+</p>
+
+</div>
+
+</article>
+
+
+
+<article class="subject-card">
+
+<img
+src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?auto=format&fit=crop&w=1000&q=85"
+alt="Computer Science">
+
+<div class="subject-content">
+
+<div class="subject-icon">💻</div>
+
+<h3>Computer Science</h3>
+
+<p>
+Programming, digital skills and academic computer science support.
+</p>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     IELTS / PTE
+====================================================== -->
+
+<section id="exams" class="exam-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>English Proficiency</small>
+
+<h2>
+IELTS & PTE Preparation
+</h2>
+
+<p>
+Dedicated preparation pathways for learners developing the
+English skills required for international study, work and migration.
+</p>
+
+</div>
+
+
+<div class="exam-grid">
+
+
+<article class="exam-card">
+
+<div class="exam-label">
+IELTS PREPARATION
+</div>
+
+<h3>IELTS</h3>
+
+<p>
+Structured preparation for listening, reading, writing and
+speaking with emphasis on language development and exam technique.
+</p>
+
+
+<div class="exam-skills">
+
+<div class="skill">🎧<br>Listening</div>
+<div class="skill">📖<br>Reading</div>
+<div class="skill">✍️<br>Writing</div>
+<div class="skill">🎤<br>Speaking</div>
+
+</div>
+
+</article>
+
+
+
+<article class="exam-card">
+
+<div class="exam-label">
+PTE PREPARATION
+</div>
+
+<h3>PTE</h3>
+
+<p>
+Develop English proficiency, fluency, pronunciation and
+test-specific skills through structured practice.
+</p>
+
+
+<div class="exam-skills">
+
+<div class="skill">🎧<br>Listening</div>
+<div class="skill">📖<br>Reading</div>
+<div class="skill">✍️<br>Writing</div>
+<div class="skill">🎤<br>Speaking</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     NEW AUDIO-VISUAL SECTION
+====================================================== -->
+
+<section id="audio" class="audio-visual">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Audio-Visual Learning</small>
+
+<h2>
+IELTS & PTE Practice Library
+</h2>
+
+<p>
+Interactive audio lessons, video lessons, listening practice,
+speaking activities and language-learning resources are being prepared.
+</p>
+
+</div>
+
+
+<div class="av-intro">
+
+This section will become the Learning Hub's dedicated multimedia
+practice library. Original and properly licensed Learning Hub
+materials can be uploaded here as they become available.
+
+</div>
+
+
+<div class="av-filter">
+
+<button class="active" data-filter="all">
+All
+</button>
+
+<button data-filter="ielts">
+IELTS
+</button>
+
+<button data-filter="pte">
+PTE
+</button>
+
+<button data-filter="english">
+English
+</button>
+
+</div>
+
+
+<div class="av-grid">
+
+
+<!-- IELTS LISTENING -->
+
+<article class="av-card" data-category="ielts">
+
+<div class="av-thumb">
+
+<span class="coming">
+COMING SOON
+</span>
+
+<div class="av-icon">
+🎧
+</div>
+
+</div>
+
+<div class="av-content">
+
+<h3>IELTS Listening</h3>
+
+<p>
+Original Learning Hub listening practice with audio,
+questions, transcripts and answer explanations.
+</p>
+
+<div class="av-meta">
+<span>Audio Practice</span>
+<span>→</span>
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- IELTS SPEAKING -->
+
+<article class="av-card" data-category="ielts">
+
+<div class="av-thumb green">
+
+<span class="coming">
+COMING SOON
+</span>
+
+<div class="av-icon">
+🎤
+</div>
+
+</div>
+
+<div class="av-content">
+
+<h3>IELTS Speaking</h3>
+
+<p>
+Speaking prompts, model responses, vocabulary and
+fluency practice.
+</p>
+
+<div class="av-meta">
+<span>Speaking Practice</span>
+<span>→</span>
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- IELTS READING -->
+
+<article class="av-card" data-category="ielts">
+
+<div class="av-thumb purple">
+
+<span class="coming">
+COMING SOON
+</span>
+
+<div class="av-icon">
+📖
+</div>
+
+</div>
+
+<div class="av-content">
+
+<h3>IELTS Reading</h3>
+
+<p>
+Reading practice, vocabulary development, comprehension
+and question strategies.
+</p>
+
+<div class="av-meta">
+<span>Reading Practice</span>
+<span>→</span>
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- PTE LISTENING -->
+
+<article class="av-card" data-category="pte">
+
+<div class="av-thumb gold">
+
+<span class="coming">
+COMING SOON
+</span>
+
+<div class="av-icon">
+🎧
+</div>
+
+</div>
+
+<div class="av-content">
+
+<h3>PTE Listening</h3>
+
+<p>
+Listening activities and original practice designed
+around key PTE skills.
+</p>
+
+<div class="av-meta">
+<span>Audio Practice</span>
+<span>→</span>
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- PTE SPEAKING -->
+
+<article class="av-card" data-category="pte">
+
+<div class="av-thumb">
+
+<span class="coming">
+COMING SOON
+</span>
+
+<div class="av-icon">
+🎙️
+</div>
+
+</div>
+
+<div class="av-content">
+
+<h3>PTE Speaking</h3>
+
+<p>
+Fluency, pronunciation, response building and speaking practice.
+</p>
+
+<div class="av-meta">
+<span>Speaking Practice</span>
+<span>→</span>
+</div>
+
+</div>
+
+</article>
+
+
+
+<!-- ENGLISH VIDEO -->
+
+<article class="av-card" data-category="english">
+
+<div class="av-thumb green">
+
+<span class="coming">
+COMING SOON
+</span>
+
+<div class="av-icon">
+▶️
+</div>
+
+</div>
+
+<div class="av-content">
+
+<h3>English Video Lessons</h3>
+
+<p>
+Short language-learning videos covering grammar,
+pronunciation, vocabulary and communication.
+</p>
+
+<div class="av-meta">
+<span>Video Lessons</span>
+<span>→</span>
+</div>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     RESOURCES
+====================================================== -->
+
+<section id="resources" class="resources">
+
+<div class="container">
+
+<div class="section-heading">
+
+<small>Learning Resources</small>
+
+<h2>
+Study materials for independent practice
+</h2>
+
+<p>
+Downloadable learning resources and practice materials for students.
+</p>
+
+</div>
+
+
+<div class="resource-grid">
+
+
+<article class="resource">
+
+<div class="resource-icon">📄</div>
+
+<h3>Chinese Beginner Vocabulary</h3>
+
+<p>
+Formal vocabulary practice worksheet.
+</p>
+
+<a href="resources/chinese_beginner_formal_vocab_worksheet.pdf"
+target="_blank">
+Open Resource →
+</a>
+
+</article>
+
+
+
+<article class="resource">
+
+<div class="resource-icon">🔢</div>
+
+<h3>Grade 4–5 Mental Math</h3>
+
+<p>
+Practice material for elementary learners.
+</p>
+
+<a
+href="resources/Grade_4_5_Mental_Math_Italian_English.pdf"
+target="_blank">
+Open Resource →
+</a>
+
+</article>
+
+
+
+<article class="resource">
+
+<div class="resource-icon">🧠</div>
+
+<h3>Psychology Research Skills</h3>
+
+<p>
+Practice material for IB Psychology learners.
+</p>
+
+<a
+href="resources/_Bias%20in%20Psychological%20Research.pdf"
+target="_blank">
+Open Resource →
+</a>
+
+</article>
+
+
+
+<article class="resource">
+
+<div class="resource-icon">📚</div>
+
+<h3>IB English Practice</h3>
+
+<p>
+Literary analysis and academic writing activities.
+</p>
+
+<a
+href="resources/IB_English_SL_Literary_Analysis_Practice_Activities.pdf"
+target="_blank">
+Open Resource →
+</a>
+
+</article>
+
+
+
+<article class="resource">
+
+<div class="resource-icon">✍️</div>
+
+<h3>Academic Vocabulary</h3>
+
+<p>
+High-value vocabulary for intermediate and advanced learners.
+</p>
+
+<a
+href="resources/30_High_Value_Daily_Life_Vocabulary_Intermediate_Advanced.docx"
+target="_blank">
+Open Resource →
+</a>
+
+</article>
+
+
+
+<article class="resource">
+
+<div class="resource-icon">📖</div>
+
+<h3>Reading Development</h3>
+
+<p>
+Learning-to-read and comprehension resources.
+</p>
+
+<a
+href="resources/5_Essential_Steps_Learning_to_Read.docx"
+target="_blank">
+Open Resource →
+</a>
+
+</article>
+
+
+
+<article class="resource">
+
+<div class="resource-icon">📘</div>
+
+<h3>IB Psychology Sample</h3>
+
+<p>
+Sample material for IB Psychology learners.
+</p>
+
+<a
+href="resources/IB-PSYCHOLOGY-3rdEdition-sample.pdf"
+target="_blank">
+Open Resource →
+</a>
+
+</article>
+
+
+
+<article class="resource">
+
+<div class="resource-icon">📕</div>
+
+<h3>Literary Devices & Analysis</h3>
+
+<p>
+Practice literary analysis through guided activities.
+</p>
+
+<a
+href="resources/A%20Doll%E2%80%99s%20House%20Devices%20%26%20Delicacy_20260822_104019_0000.pdf"
+target="_blank">
+Open Resource →
+</a>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- ======================================================
+     WHY LEARNING HUB
+====================================================== -->
+
+<section>
 
 <div class="container">
 
@@ -1963,54 +2370,48 @@ structured and convenient.
 <div class="why-grid">
 
 
-<div class="why-card">
+<article class="why-card">
 
-<div class="media-icon">🌍</div>
+<div class="why-icon">🌍</div>
 
-<h3>
-Global Learning
-</h3>
+<h3>Global Learning</h3>
 
 <p>
 Online learning support for students from different countries
 and educational backgrounds.
 </p>
 
-</div>
+</article>
 
 
 
-<div class="why-card">
+<article class="why-card">
 
-<div class="media-icon">🎯</div>
+<div class="why-icon">🎯</div>
 
-<h3>
-Goal Focused
-</h3>
+<h3>Goal Focused</h3>
 
 <p>
 Lessons are organized around academic goals, examinations,
 language development and student progress.
 </p>
 
-</div>
+</article>
 
 
 
-<div class="why-card">
+<article class="why-card">
 
-<div class="media-icon">💡</div>
+<div class="why-icon">💡</div>
 
-<h3>
-Practical Learning
-</h3>
+<h3>Practical Learning</h3>
 
 <p>
 Students learn through examples, practice, feedback and
 real-world communication.
 </p>
 
-</div>
+</article>
 
 
 </div>
@@ -2021,11 +2422,11 @@ real-world communication.
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      TESTIMONIALS
-===================================================== -->
+====================================================== -->
 
-<section class="section">
+<section class="testimonials">
 
 <div class="container">
 
@@ -2048,7 +2449,7 @@ in personalized online learning.
 <div class="testimonial-grid">
 
 
-<div class="testimonial">
+<article class="testimonial">
 
 <div class="stars">
 ★★★★★
@@ -2059,15 +2460,15 @@ in personalized online learning.
 needs. I became much more confident."
 </p>
 
-<strong>
+<small>
 Student — English Learning
-</strong>
+</small>
 
-</div>
+</article>
 
 
 
-<div class="testimonial">
+<article class="testimonial">
 
 <div class="stars">
 ★★★★★
@@ -2078,15 +2479,15 @@ Student — English Learning
 and prepare more effectively."
 </p>
 
-<strong>
+<small>
 Student — International Curriculum
-</strong>
+</small>
 
-</div>
+</article>
 
 
 
-<div class="testimonial">
+<article class="testimonial">
 
 <div class="stars">
 ★★★★★
@@ -2097,11 +2498,11 @@ Student — International Curriculum
 of online learning."
 </p>
 
-<strong>
+<small>
 Learner — Exam Preparation
-</strong>
+</small>
 
-</div>
+</article>
 
 
 </div>
@@ -2112,11 +2513,17 @@ Learner — Exam Preparation
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      BOOKING
-===================================================== -->
+====================================================== -->
 
 <section class="booking">
+
+<div class="container">
+
+<div class="booking-box">
+
+<div>
 
 <h2>
 Ready to start learning?
@@ -2127,28 +2534,36 @@ Book a consultation to discuss your learning goals,
 subject requirements or examination preparation.
 </p>
 
+</div>
+
+
 <a
+class="btn"
 href="https://calendly.com/hublearning117"
-target="_blank"
-class="btn btn-primary">
-
+target="_blank">
 Book a Session
-
 </a>
+
+</div>
+
+</div>
 
 </section>
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      CONTACT
-===================================================== -->
+====================================================== -->
 
-<section class="section" id="contact">
+<section id="contact" class="contact">
 
-<div class="container">
+<div class="container contact-grid">
 
-<div class="section-heading">
+
+<div class="contact-info">
+
+<div class="section-heading" style="text-align:left;margin:0 0 30px">
 
 <small>Contact Learning Hub</small>
 
@@ -2164,68 +2579,151 @@ partnerships or teacher applications, contact Learning Hub.
 </div>
 
 
-<div class="contact-grid">
+<div class="contact-item">
 
+<strong>Learning Enquiries</strong>
 
-<div class="contact-box">
-
-<h3>
-Learning Enquiries
-</h3>
-
-<p>
+<span>
 Tell us what you would like to learn and we can discuss
 the most suitable learning pathway.
-</p>
+</span>
+
+</div>
+
 
 <div class="contact-item">
-📧
-<a href="mailto:hublearning117@gmail.com">
+
+<strong>Email</strong>
+
+<span>
 hubblearning117@gmail.com
-</a>
+</span>
+
 </div>
+
 
 <div class="contact-item">
-📅
-<a
-href="https://calendly.com/hublearning117"
-target="_blank">
-Book a consultation
-</a>
-</div>
+
+<strong>Consultation</strong>
+
+<span>
+Book a consultation through our online booking system.
+</span>
 
 </div>
 
 
+<div class="contact-item">
 
-<div class="contact-box">
+<strong>Teacher Applications</strong>
 
-<h3>
-Teacher Applications
-</h3>
-
-<p>
+<span>
 Learning Hub welcomes applications from qualified teachers
 and subject specialists.
-</p>
+</span>
 
-<div class="contact-item">
-👩‍🏫
-Teacher opportunities
-</div>
-
-<div class="contact-item">
-📄
-Submit qualifications and teaching experience
-</div>
-
-<div class="contact-item">
-🌍
-Online international teaching
 </div>
 
 </div>
 
+
+
+<div class="contact-form">
+
+<form
+action="mailto:hubblearning117@gmail.com"
+method="post"
+enctype="text/plain">
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label>Name</label>
+
+<input
+type="text"
+name="Name"
+placeholder="Your name"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>Email</label>
+
+<input
+type="email"
+name="Email"
+placeholder="Your email"
+required>
+
+</div>
+
+
+<div class="field">
+
+<label>Learning Area</label>
+
+<select name="Learning Area">
+
+<option>English</option>
+<option>IELTS</option>
+<option>PTE</option>
+<option>IB</option>
+<option>Psychology</option>
+<option>Business Studies</option>
+<option>Mathematics</option>
+<option>Science</option>
+<option>Computer Science</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+<div class="field">
+
+<label>Student Level</label>
+
+<select name="Student Level">
+
+<option>Primary</option>
+<option>Middle School</option>
+<option>Secondary</option>
+<option>IB</option>
+<option>University</option>
+<option>Adult Learner</option>
+
+</select>
+
+</div>
+
+
+<div class="field full">
+
+<label>Message</label>
+
+<textarea
+name="Message"
+placeholder="Tell us about your learning goals..."
+required></textarea>
+
+</div>
+
+
+</div>
+
+
+<button class="btn btn-primary" type="submit">
+Send Enquiry
+</button>
+
+</form>
 
 </div>
 
@@ -2235,9 +2733,9 @@ Online international teaching
 
 
 
-<!-- =====================================================
+<!-- ======================================================
      FOOTER
-===================================================== -->
+====================================================== -->
 
 <footer>
 
@@ -2248,21 +2746,21 @@ Online international teaching
 
 <div>
 
-<div class="logo">
+<div class="footer-logo">
 
-<span class="logo-mark">
+<div class="logo-mark">
 LH
-</span>
+</div>
 
-<span style="color:white;">
+<strong>
 Learning Hub
-</span>
+</strong>
 
 </div>
 
-<p style="margin-top:15px;max-width:400px;">
-Global online tutoring, academic support and language
-learning designed around the learner.
+<p>
+Global online tutoring, academic support and language learning
+designed around the learner.
 </p>
 
 </div>
@@ -2271,31 +2769,15 @@ learning designed around the learner.
 
 <div>
 
-<h3>
-Explore
-</h3>
+<h4>Explore</h4>
 
 <div class="footer-links">
 
-<a href="#programmes">
-Programmes
-</a>
-
-<a href="#subjects">
-Subjects
-</a>
-
-<a href="#exams">
-IELTS & PTE
-</a>
-
-<a href="#audio">
-Audio-Visual Learning
-</a>
-
-<a href="#resources">
-Resources
-</a>
+<a href="#programmes">Programmes</a>
+<a href="#subjects">Subjects</a>
+<a href="#exams">IELTS & PTE</a>
+<a href="#audio">Audio-Visual Learning</a>
+<a href="#resources">Resources</a>
 
 </div>
 
@@ -2305,15 +2787,11 @@ Resources
 
 <div>
 
-<h3>
-Connect
-</h3>
+<h4>Connect</h4>
 
 <div class="footer-links">
 
-<a href="#contact">
-Contact
-</a>
+<a href="#contact">Contact</a>
 
 <a
 href="https://calendly.com/hublearning117"
@@ -2335,7 +2813,13 @@ Email Learning Hub
 
 <div class="footer-bottom">
 
+<span>
 © 2026 Learning Hub. All rights reserved.
+</span>
+
+<span>
+Global Online Learning & Tutoring
+</span>
 
 </div>
 
@@ -2343,6 +2827,137 @@ Email Learning Hub
 
 </footer>
 
+
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+/* MOBILE MENU */
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+
+  navLinks.classList.toggle("open");
+
+});
+
+
+/* CLOSE MOBILE MENU AFTER CLICK */
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+  link.addEventListener("click", () => {
+
+    navLinks.classList.remove("open");
+
+  });
+
+});
+
+
+/* AUDIO-VISUAL FILTER */
+
+const filterButtons =
+document.querySelectorAll(".av-filter button");
+
+const avCards =
+document.querySelectorAll(".av-card");
+
+
+filterButtons.forEach(button => {
+
+  button.addEventListener("click", () => {
+
+    filterButtons.forEach(btn =>
+      btn.classList.remove("active")
+    );
+
+    button.classList.add("active");
+
+    const filter = button.dataset.filter;
+
+    avCards.forEach(card => {
+
+      if(
+        filter === "all" ||
+        card.dataset.category === filter
+      ){
+
+        card.style.display = "";
+
+      }else{
+
+        card.style.display = "none";
+
+      }
+
+    });
+
+  });
+
+});
+
+
+/* SIMPLE SCROLL REVEAL */
+
+const revealElements =
+document.querySelectorAll(
+  ".path-card,.support-card,.subject-card,.exam-card,.av-card,.resource,.why-card,.testimonial"
+);
+
+
+const observer =
+new IntersectionObserver(
+(entries) => {
+
+  entries.forEach(entry => {
+
+    if(entry.isIntersecting){
+
+      entry.target.style.opacity = "1";
+      entry.target.style.transform =
+        entry.target.classList.contains("path-card") ||
+        entry.target.classList.contains("av-card")
+        ? "translateY(0)"
+        : "";
+
+      observer.unobserve(entry.target);
+
+    }
+
+  });
+
+},
+{
+  threshold:.08
+});
+
+
+revealElements.forEach(el => {
+
+  el.style.opacity = "0";
+  el.style.transition = "opacity .6s ease, transform .6s ease";
+
+  if(
+    el.classList.contains("path-card") ||
+    el.classList.contains("av-card")
+  ){
+
+    el.style.transform = "translateY(18px)";
+
+  }
+
+  observer.observe(el);
+
+});
+
+
+</script>
 
 
 </body>
