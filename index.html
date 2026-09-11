@@ -62,12 +62,12 @@ function resourceType(name){const ext=name.split('.').pop().toUpperCase();return
 function resourceCategory(name){const n=name.toLowerCase();if(n.includes('psychology')||n.includes('bias'))return 'Psychology';if(n.includes('math')||n.includes('subtraction')||n.includes('numbers'))return 'Mathematics';if(n.includes('ib_')||n.includes('doll')||n.includes('literary'))return 'IB / English';if(n.includes('ielts')||n.includes('english')||n.includes('pronunciation')||n.includes('vocabulary')||n.includes('reading')||n.includes('conversation')||n.includes('essay'))return 'English';if(n.includes('chinese')||n.includes('japanese')||n.includes('korean')||n.includes('urdu')||n.includes('italian'))return 'Languages';return 'Learning Resource';}
 function resourceImage(category){
   const images={
-    "Mathematics":"https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1200&q=90",
-    "Psychology":"https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&q=90",
-    "IB / English":"https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1200&q=90",
-    "Languages":"https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1200&q=90",
-    "English":"https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1200&q=90",
-    "Learning Resource":"https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=90"
+    "Mathematics":"/assets/site/library-mathematics.svg",
+    "Psychology":"/assets/site/library-psychology.svg",
+    "IB / English":"/assets/site/library-ib.svg",
+    "Languages":"/assets/site/library-languages.svg",
+    "English":"/assets/site/library-english.svg",
+    "Learning Resource":"/assets/site/library-learning.svg"
   };
   return images[category]||images["Learning Resource"];
 }
