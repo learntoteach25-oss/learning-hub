@@ -26,7 +26,11 @@ jobs:
           p = Path('index.html')
           s = p.read_text(encoding='utf-8')
           marker = '\n/* SafePay appearance preservation: keep the original artwork, improve only image presentation. */\n'
-          css = '''\n/* SafePay appearance preservation: keep the original artwork, improve only image presentation. */\nimg{image-rendering:auto;max-width:100%;height:auto}\n.hero{background-repeat:no-repeat;background-position:center center;background-size:cover}\n.quran{background-repeat:no-repeat;background-position:center center;background-size:cover;background-attachment:scroll}\n.intro-image img,.quran-image img,.card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center center}\n.intro-image,.quran-image,.card-image{overflow:hidden}\n.visual-card:hover .card-image img{transform:scale(1.03)}\n'''\n          if marker not in s:\n              s += marker + css\n          p.write_text(s, encoding='utf-8')\n          PY
+          css = '''\n/* SafePay appearance preservation: keep the original artwork, improve only image presentation. */\nimg{image-rendering:auto;max-width:100%;height:auto}\n.hero{background-repeat:no-repeat;background-position:center center;background-size:cover}\n.quran{background-repeat:no-repeat;background-position:center center;background-size:cover;background-attachment:scroll}\n.intro-image img,.quran-image img,.card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center center}\n.intro-image,.quran-image,.card-image{overflow:hidden}\n.visual-card:hover .card-image img{transform:scale(1.03)}\n'''
+          if marker not in s:
+              s += marker + css
+          p.write_text(s, encoding='utf-8')
+          PY
 
       - name: Commit restored version
         shell: bash
@@ -37,3 +41,5 @@ jobs:
           git diff --cached --quiet && exit 0
           git commit -m "Restore SafePay appearance with image presentation fixes"
           git push
+
+# Trigger restoration from the protected historical version.
