@@ -1,0 +1,30 @@
+name: Library Image Autofix
+on:
+  push:
+    branches: [main]
+jobs:
+  fix:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fix image sources
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          start=s.index('function resourceImage(category){')
+          end=s.index('async function loadLearningLibrary(){', start)
+          new='''function resourceImage(category){\n  const images={\n    "Mathematics":"/assets/site/library-mathematics.svg",\n    "Psychology":"/assets/site/library-psychology.svg",\n    "IB / English":"/assets/site/library-ib.svg",\n    "Languages":"/assets/site/library-languages.svg",\n    "English":"/assets/site/library-english.svg",\n    "Learning Resource":"/assets/site/library-learning.svg"\n  };\n  return images[category]||images["Learning Resource"];\n}\n'''
+          s=s[:start]+new+s[end:]
+          p.write_text(s,encoding='utf-8')
+          PY
+          git config user.name 'Learning Hub'
+          git config user.email 'actions@github.com'
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m 'Fix Learning Library image sources'
+          git push
