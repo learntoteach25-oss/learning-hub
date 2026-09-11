@@ -1,0 +1,33 @@
+name: Clean SafePay CSS from HTML
+
+on:
+  push:
+    paths:
+      - '.github/workflows/clean-safepay-css.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Remove CSS accidentally placed after HTML
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          marker = '\n/* SafePay appearance preservation: keep the original artwork, improve only image presentation. */'
+          if marker in s:
+              s = s.split(marker, 1)[0].rstrip() + '\n'
+              p.write_text(s, encoding='utf-8')
+          PY
+          git config user.name 'Learning Hub'
+          git config user.email 'actions@github.com'
+          git add index.html
+          git diff --cached --quiet || git commit -m 'Remove visible CSS accidentally appended after HTML'
+          git push
