@@ -1,9 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
-    <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080808"/><stop offset="1" stop-color="#8e6b2d"/></linearGradient></defs>
-    <rect width="1200" height="800" fill="url(#g)"/><circle cx="980" cy="150" r="220" fill="#c9a45c" opacity=".10"/><circle cx="180" cy="680" r="260" fill="#000" opacity=".18"/>
-    <rect x="45" y="45" width="1110" height="710" rx="35" fill="none" stroke="#f0d58e" stroke-opacity=".45" stroke-width="2"/>
-    <text x="600" y="350" text-anchor="middle" fill="#f0d58e" font-family="Georgia,serif" font-size="150" font-weight="700">A</text>
-    <text x="70" y="585" fill="#fffdf8" font-family="Georgia,serif" font-size="58" font-weight="700">English Development</text>
-    <text x="70" y="640" fill="#f0d58e" font-family="Arial,sans-serif" font-size="22" letter-spacing="4">LANGUAGES &amp; COMMUNICATION</text>
-    <text x="70" y="700" fill="#fffdf8" opacity=".65" font-family="Arial,sans-serif" font-size="18">Learning for Everyone, Everywhere</text>
-    </svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#080808"/><stop offset="1" stop-color="#8e6b2d"/></linearGradient></defs><rect width="1200" height="800" fill="url(#g)"/><circle cx="980" cy="140" r="220" fill="#c9a45c" opacity=".1"/><circle cx="170" cy="690" r="260" fill="#000" opacity=".18"/><rect x="105" y="125" width="990" height="550" rx="42" fill="#f4eee2"/><rect x="165" y="185" width="870" height="430" rx="26" fill="#fffdf8"/><path d="M250 300h340M250 370h450M250 440h300" stroke="#c9a45c" stroke-width="22" stroke-linecap="round"/><circle cx="790" cy="365" r="105" fill="#f4eee2" stroke="#171512" stroke-width="18"/><path d="M735 350c25-55 105-55 130 0M755 415h90" fill="none" stroke="#8e6b2d" stroke-width="18" stroke-linecap="round"/><circle cx="760" cy="330" r="9" fill="#171512"/><circle cx="820" cy="330" r="9" fill="#171512"/><path d="M700 510h190" stroke="#171512" stroke-width="16" stroke-linecap="round"/></svg>
