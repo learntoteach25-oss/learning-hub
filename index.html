@@ -795,14 +795,32 @@ p{color:var(--muted)}
 .resource-cover{
   height:300px;
   overflow:hidden;
-  background:#171717;
+  background:linear-gradient(135deg,#0a0a0a,#211b10);
   position:relative
 }
 
 .resource-cover img{
   height:100%;
   width:100%;
-  object-fit:cover
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  opacity:1;
+  filter:saturate(.9) contrast(1.04);
+  transition:transform .5s ease,filter .5s ease
+}
+
+.resource-cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(7,7,7,.05),rgba(7,7,7,.38));
+  pointer-events:none
+}
+
+.resource-card:hover .resource-cover img{
+  transform:scale(1.04);
+  filter:saturate(1) contrast(1.05)
 }
 
 .resource-body{padding:22px}
@@ -827,6 +845,122 @@ p{color:var(--muted)}
 
 .resource-download{
   width:100%;
+}
+
+
+/* ARTICLES & BLOG */
+.articles{background:var(--cream)}
+
+.article-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.article-card{
+  background:#fff;
+  border:1px solid rgba(23,21,18,.08);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 35px rgba(23,21,18,.06);
+  transition:.35s;
+}
+
+.article-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 48px rgba(23,21,18,.12)
+}
+
+.article-top{
+  min-height:150px;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:linear-gradient(135deg,#0a0a0a,#241d10);
+  color:white;
+  position:relative;
+}
+
+.article-top::after{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  right:-35px;
+  top:-45px;
+  background:rgba(231,205,143,.13);
+  filter:blur(2px)
+}
+
+.article-category{
+  position:relative;
+  z-index:1;
+  color:var(--gold2);
+  font-size:.68rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-weight:700
+}
+
+.article-mark{
+  position:relative;
+  z-index:1;
+  font-family:"Playfair Display",serif;
+  font-size:2.4rem;
+  color:rgba(231,205,143,.92);
+  line-height:1
+}
+
+.article-body{padding:24px}
+
+.article-body h3{
+  font-size:1.25rem;
+  line-height:1.25;
+  margin-bottom:10px
+}
+
+.article-body p{
+  font-size:.84rem;
+  margin-bottom:16px
+}
+
+.article-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  color:#8b8173;
+  font-size:.68rem;
+  margin-bottom:16px
+}
+
+.article-details summary{
+  list-style:none;
+  cursor:pointer;
+  color:var(--gold3);
+  font-size:.78rem;
+  font-weight:700
+}
+
+.article-details summary::-webkit-details-marker{display:none}
+.article-details summary::after{content:"  +"}
+.article-details[open] summary::after{content:"  −"}
+
+.article-full{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid rgba(23,21,18,.08);
+  font-size:.8rem;
+  line-height:1.75
+}
+
+@media(max-width:980px){
+  .article-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:720px){
+  .article-grid{grid-template-columns:1fr}
 }
 
 /* GALLERY */
@@ -1297,6 +1431,39 @@ footer p{
     transform:none
   }
 }
+
+/* PREMIUM ADDITIONS */
+.global-learners{background:var(--black);color:var(--white);overflow:hidden}
+.global-learners::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 35%,rgba(201,164,92,.13),transparent 35%),linear-gradient(135deg,rgba(240,213,142,.04),transparent 45%);pointer-events:none}
+.global-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;position:relative;z-index:1}
+.world-copy p{color:var(--darkmuted);max-width:650px}
+.world-panel{border:1px solid var(--line);border-radius:30px;padding:30px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));box-shadow:var(--shadow);position:relative;overflow:hidden}
+.world-panel::after{content:"GLOBAL";position:absolute;right:-30px;bottom:-35px;font:700 90px/1 "Playfair Display",serif;color:rgba(240,213,142,.035);letter-spacing:.04em}
+.country-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;position:relative;z-index:1}
+.country-pill{display:flex;align-items:center;gap:10px;padding:14px 15px;border:1px solid rgba(201,164,92,.18);border-radius:14px;background:rgba(7,7,7,.5);color:#eee8dd;font-size:.86rem;transition:.3s}
+.country-pill:hover{border-color:var(--gold);transform:translateY(-2px);background:rgba(201,164,92,.08)}
+.country-dot{width:7px;height:7px;border-radius:50%;background:var(--gold2);box-shadow:0 0 12px rgba(240,213,142,.45);flex-shrink:0}
+.outcomes{background:var(--cream)}
+.outcomes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.outcome-card{padding:30px 24px;background:rgba(255,253,248,.75);border:1px solid rgba(201,164,92,.18);border-radius:22px;box-shadow:0 14px 40px rgba(23,21,18,.05);transition:.3s}
+.outcome-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(23,21,18,.1);border-color:rgba(201,164,92,.42)}
+.outcome-number{font-size:.72rem;font-weight:700;letter-spacing:.14em;color:var(--gold3);margin-bottom:22px}
+.outcome-card h3{margin-bottom:12px;font-size:1.3rem}
+.outcome-card p{font-size:.88rem}
+.faq-section{background:var(--ivory)}
+.faq-wrap{max-width:900px;margin:auto}
+.faq-list{display:grid;gap:12px}
+.faq-item{border:1px solid rgba(23,21,18,.09);border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 8px 28px rgba(23,21,18,.04)}
+.faq-question{width:100%;border:0;background:none;padding:21px 24px;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--text);font-weight:700;font-size:.95rem}
+.faq-icon{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--gold3);font-size:1.15rem;flex-shrink:0;transition:.3s}
+.faq-answer{display:grid;grid-template-rows:0fr;transition:.35s}
+.faq-answer-inner{overflow:hidden;padding:0 24px;color:var(--muted);font-size:.9rem}
+.faq-item.open .faq-answer{grid-template-rows:1fr}
+.faq-item.open .faq-answer-inner{padding-bottom:22px}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--gold);color:#111}
+@media(max-width:900px){.global-grid{grid-template-columns:1fr;gap:40px}.outcomes-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.country-grid{grid-template-columns:1fr}.outcomes-grid{grid-template-columns:1fr}.world-panel{padding:20px}}
+
 </style>
 </head>
 
@@ -1322,6 +1489,7 @@ footer p{
       <a href="#exams">Exams</a>
       <a href="#support">Learning Support</a>
       <a href="#library">Resources</a>
+      <a href="#articles">Articles & Blog</a>
       <a href="#teacher">Teach</a>
     </div>
 
@@ -1753,11 +1921,9 @@ footer p{
       <div class="ib-group">
         <h3>Group 6 — The Arts</h3>
         <ul>
-          <li>Dance</li>
-          <li>Film</li>
-          <li>Music</li>
-          <li>Theatre</li>
-          <li>Visual Arts</li>
+          <li>Drawing</li>
+          <li>Painting</li>
+          <li>Sketching</li>
         </ul>
       </div>
 
@@ -2109,6 +2275,79 @@ footer p{
 </section>
 
 
+
+<!-- GLOBAL LEARNERS -->
+<section class="global-learners" id="global-learners">
+  <div class="container global-grid">
+    <div class="world-copy">
+      <div class="eyebrow dark">Global Learning</div>
+      <h2>Learning without borders.</h2>
+      <p style="margin-top:22px">Supporting learners across South Asia, the Gulf & Middle East, Europe, North America, East & Southeast Asia, Australia & the Pacific, and Africa through flexible online learning.</p>
+    </div>
+    <div class="world-panel">
+      <div class="country-grid">
+        <!-- South Asia -->
+        <div class="country-pill"><span class="country-dot"></span>Pakistan</div>
+        <div class="country-pill"><span class="country-dot"></span>India</div>
+        <div class="country-pill"><span class="country-dot"></span>Bangladesh</div>
+        <div class="country-pill"><span class="country-dot"></span>Sri Lanka</div>
+
+        <!-- Gulf & Middle East -->
+        <div class="country-pill"><span class="country-dot"></span>UAE</div>
+        <div class="country-pill"><span class="country-dot"></span>KSA</div>
+        <div class="country-pill"><span class="country-dot"></span>Qatar</div>
+        <div class="country-pill"><span class="country-dot"></span>Kuwait</div>
+        <div class="country-pill"><span class="country-dot"></span>Bahrain</div>
+        <div class="country-pill"><span class="country-dot"></span>Oman</div>
+
+        <!-- Europe -->
+        <div class="country-pill"><span class="country-dot"></span>United Kingdom</div>
+        <div class="country-pill"><span class="country-dot"></span>Ireland</div>
+        <div class="country-pill"><span class="country-dot"></span>Germany</div>
+        <div class="country-pill"><span class="country-dot"></span>France</div>
+        <div class="country-pill"><span class="country-dot"></span>Italy</div>
+
+        <!-- North America -->
+        <div class="country-pill"><span class="country-dot"></span>United States</div>
+        <div class="country-pill"><span class="country-dot"></span>Canada</div>
+
+        <!-- East & Southeast Asia -->
+        <div class="country-pill"><span class="country-dot"></span>China</div>
+        <div class="country-pill"><span class="country-dot"></span>Japan</div>
+        <div class="country-pill"><span class="country-dot"></span>South Korea</div>
+        <div class="country-pill"><span class="country-dot"></span>Singapore</div>
+        <div class="country-pill"><span class="country-dot"></span>Malaysia</div>
+        <div class="country-pill"><span class="country-dot"></span>Hong Kong</div>
+
+        <!-- Australia & Pacific -->
+        <div class="country-pill"><span class="country-dot"></span>Australia</div>
+        <div class="country-pill"><span class="country-dot"></span>New Zealand</div>
+
+        <!-- Africa -->
+        <div class="country-pill"><span class="country-dot"></span>South Africa</div>
+        <div class="country-pill"><span class="country-dot"></span>Nigeria</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNING OUTCOMES -->
+<section class="outcomes" id="outcomes">
+  <div class="container">
+    <div class="section-heading center">
+      <div class="eyebrow">Learning Outcomes</div>
+      <h2>What learners develop.</h2>
+      <p>Learning goes beyond completing a lesson. We focus on skills that learners can carry forward into their academic and personal journeys.</p>
+    </div>
+    <div class="outcomes-grid">
+      <article class="outcome-card"><div class="outcome-number">01 / CONFIDENCE</div><h3>Academic Confidence</h3><p>Understand difficult concepts and approach exams with greater confidence.</p></article>
+      <article class="outcome-card"><div class="outcome-number">02 / COMMUNICATION</div><h3>Communication</h3><p>Build stronger speaking, writing and academic English.</p></article>
+      <article class="outcome-card"><div class="outcome-number">03 / INDEPENDENCE</div><h3>Independent Learning</h3><p>Develop study habits, organisation and research skills.</p></article>
+      <article class="outcome-card"><div class="outcome-number">04 / EXAMS</div><h3>Exam Readiness</h3><p>Practise techniques, timing and structured responses.</p></article>
+    </div>
+  </div>
+</section>
+
 <!-- METHODOLOGY -->
 <section class="methodology" id="methodology">
   <div class="container">
@@ -2164,6 +2403,122 @@ footer p{
       <div class="library-status">Loading Learning Hub resources…</div>
     </div>
 
+  </div>
+</section>
+
+
+<!-- ARTICLES & BLOG -->
+<section class="articles" id="articles">
+  <div class="container">
+
+    <div class="section-heading center">
+      <div class="eyebrow">Articles & Blog</div>
+      <h2>Ideas for better learning.</h2>
+      <p>
+        Practical guidance, study strategies and educational insights for students,
+        parents, professionals and lifelong learners.
+      </p>
+    </div>
+
+    <div class="article-grid">
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">International Education</span>
+          <span class="article-mark">01</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>Learning Guide</span><span>5 min read</span></div>
+          <h3>How to Choose the Right International Curriculum</h3>
+          <p>Understand the key differences between international pathways and choose learning support that matches your goals.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">Start with the learner's age, target qualification, university or career pathway, current level and preferred learning style. A good tutoring plan should then align subject knowledge, assessment requirements, study skills and exam technique rather than simply following a textbook.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">English Development</span>
+          <span class="article-mark">02</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>Language</span><span>4 min read</span></div>
+          <h3>Building Stronger Academic English</h3>
+          <p>Move beyond memorising vocabulary and develop clearer speaking, writing, reading and academic expression.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">Strong academic English develops through repeated exposure, purposeful vocabulary, model texts, guided speaking and structured writing practice. Learners benefit most when new language is immediately used in meaningful academic and real-world contexts.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">Online Learning</span>
+          <span class="article-mark">03</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>Study Skills</span><span>4 min read</span></div>
+          <h3>How to Make Online Learning More Effective</h3>
+          <p>Create a focused routine, participate actively and turn online lessons into measurable learning progress.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">Effective online learning needs a clear goal for every session. Prepare before the lesson, keep distractions low, ask questions, practise during the lesson and finish with a short review. Small, consistent routines usually create stronger progress than occasional long study sessions.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">Exam Preparation</span>
+          <span class="article-mark">04</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>IELTS & PTE</span><span>5 min read</span></div>
+          <h3>IELTS or PTE: What Should You Prepare For?</h3>
+          <p>Consider your destination, test format, strengths and preparation style before selecting an English test.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">The right test depends on the institution or pathway accepting your score, the test format you are comfortable with and the skills you need to strengthen. Always confirm the current requirements of your intended university, employer or immigration pathway before booking an exam.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">Learning Support</span>
+          <span class="article-mark">05</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>Inclusive Learning</span><span>5 min read</span></div>
+          <h3>Why Personalised Learning Matters</h3>
+          <p>Every learner brings different strengths, challenges, pace and goals. Support should respond to the individual.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">Personalised learning can involve adjusting explanations, pace, practice formats, feedback and communication. The aim is not to lower expectations, but to create an accessible route toward meaningful progress and greater independence.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">Quran & Islamic Studies</span>
+          <span class="article-mark">06</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>Quran Learning</span><span>4 min read</span></div>
+          <h3>A Gentle Starting Point for Quran Learning</h3>
+          <p>A structured approach can help beginners build reading confidence, pronunciation and consistent practice.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">Beginners can start with letter recognition, joining letters, basic pronunciation and gradual reading practice before moving into more advanced recitation skills. Consistency, patient correction and a comfortable learning pace can make the journey more manageable.</div>
+          </details>
+        </div>
+      </article>
+
+    </div>
   </div>
 </section>
 
@@ -2269,6 +2624,28 @@ footer p{
   </div>
 </section>
 
+
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-heading center">
+      <div class="eyebrow">Frequently Asked Questions</div>
+      <h2>Everything you need to know.</h2>
+      <p>Simple answers to common questions about Learning Hub, lessons, programmes and resources.</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question" type="button">How do online lessons work?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">Which learners can join Learning Hub?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">Which international boards do you support?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">Do you offer Quran and Islamic Studies?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Learning pathways include Quran reading, foundational Quran learning, Tajweed and Islamic Studies, with structured learning for different levels.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">Can adults improve their English?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">How can I access the learning resources?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Available digital resources are presented in the Learning Library, where learners can access resources according to their availability and format.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- PRICING -->
 <section class="pricing">
@@ -2482,6 +2859,7 @@ footer p{
 
         <a href="#support">Learning Support</a>
         <a href="#library">Resources</a>
+        <a href="#articles">Articles & Blog</a>
         <a href="#gallery">Gallery</a>
         <a href="#teacher">Apply to Teach</a>
         <a href="#contact">Contact</a>
@@ -2745,31 +3123,39 @@ function getResourceCategory(name){
 }
 
 
-function getResourceImage(category){
+function getResourceImage(category,index){
 
-  const images={
+  /* Each resource receives a different premium cover image.
+     The index is global across the library, so the same image
+     is never intentionally reused for another resource. */
+  const images=[
+    "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1528712306091-ed0763094c98?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1511108690759-009324a90311?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=85"
+  ];
 
-    "Mathematics":
-      "/https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1000&q=85",
-
-    "Psychology":
-      "/https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1000&q=85",
-
-    "IB / English":
-      "/https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85",
-
-    "Languages":
-      "/https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=85",
-
-    "English":
-      "/https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85",
-
-    "Learning Resource":
-      "/https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=85"
-
-  };
-
-  return images[category] || images["Learning Resource"];
+  return images[index % images.length];
 }
 
 
@@ -2838,7 +3224,7 @@ async function loadLearningLibrary(){
 
   try{
 
-    const cards=files.map(function(name){
+    const cards=files.map(function(name,index){
 
       const type=getResourceType(name);
       const title=makeResourceTitle(name);
@@ -2851,7 +3237,7 @@ async function loadLearningLibrary(){
 
       const url="/resources/"+encodeURIComponent(name);
 
-      const image=getResourceImage(category);
+      const image=getResourceImage(category,index);
 
       return `
         <article class="resource-card">
@@ -2862,7 +3248,7 @@ async function loadLearningLibrary(){
               src="${escapeHTML(image)}"
               alt="${escapeHTML(title)} learning resource"
               loading="lazy"
-              onerror="this.onerror=null;this.src='/https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=85';">
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=85';">
 
           </div>
 
@@ -3143,7 +3529,6 @@ document.addEventListener("DOMContentLoaded",function(){
   background:linear-gradient(135deg,#151515,#090909);
 }
 
-.resource-cover img{filter:saturate(.94) contrast(1.03)}
 
 .gallery-item{
   border:1px solid rgba(201,164,92,.16);
@@ -3168,5 +3553,19 @@ document.addEventListener("DOMContentLoaded",function(){
 }
 </style>
 
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  document.querySelectorAll(".faq-question").forEach(function(button){
+    button.addEventListener("click",function(){
+      const item=button.closest(".faq-item");
+      document.querySelectorAll(".faq-item.open").forEach(function(openItem){
+        if(openItem!==item) openItem.classList.remove("open");
+      });
+      item.classList.toggle("open");
+    });
+  });
+});
+</script>
 </body>
 </html>
