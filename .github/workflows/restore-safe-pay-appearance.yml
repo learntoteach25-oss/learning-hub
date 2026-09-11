@@ -1,0 +1,39 @@
+name: Restore SafePay appearance and stabilize images
+
+on:
+  push:
+    paths:
+      - '.github/workflows/restore-safe-pay-appearance.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Restore the previous SafePay version
+        shell: bash
+        run: |
+          git checkout d3791510863d3b7a0eceff18de78258783288676 -- index.html
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          marker = '\n/* SafePay appearance preservation: keep the original artwork, improve only image presentation. */\n'
+          css = '''\n/* SafePay appearance preservation: keep the original artwork, improve only image presentation. */\nimg{image-rendering:auto;max-width:100%;height:auto}\n.hero{background-repeat:no-repeat;background-position:center center;background-size:cover}\n.quran{background-repeat:no-repeat;background-position:center center;background-size:cover;background-attachment:scroll}\n.intro-image img,.quran-image img,.card-image img{display:block;width:100%;height:100%;object-fit:cover;object-position:center center}\n.intro-image,.quran-image,.card-image{overflow:hidden}\n.visual-card:hover .card-image img{transform:scale(1.03)}\n'''\n          if marker not in s:\n              s += marker + css\n          p.write_text(s, encoding='utf-8')\n          PY
+
+      - name: Commit restored version
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Restore SafePay appearance with image presentation fixes"
+          git push
