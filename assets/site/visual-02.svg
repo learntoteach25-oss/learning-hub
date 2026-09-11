@@ -1,29 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Quran and Islamic learning illustration">
-<defs>
- <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#070707"/><stop offset="1" stop-color="#3a2b16"/></linearGradient>
- <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f0d58e"/><stop offset="1" stop-color="#c9a45c"/></linearGradient>
- <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".4"/></filter>
-</defs>
-<rect width="1200" height="800" fill="url(#bg)"/>
-<circle cx="980" cy="150" r="230" fill="#c9a45c" opacity=".09"/>
-<circle cx="180" cy="680" r="270" fill="#000" opacity=".25"/>
-<rect x="42" y="42" width="1116" height="716" rx="36" fill="none" stroke="#f0d58e" stroke-opacity=".28"/>
-<!-- crescent and stars -->
-<g fill="url(#gold)"><path d="M930 105a92 92 0 1 0 75 145 78 78 0 1 1-75-145z"/><circle cx="1060" cy="110" r="8"/><circle cx="1090" cy="165" r="5"/><circle cx="1015" cy="70" r="5"/></g>
-<!-- Quran on stand -->
-<g filter="url(#shadow)">
- <path d="M430 270Q600 220 770 270v260Q600 480 430 530z" fill="#f4eee2" stroke="#c9a45c" stroke-width="4"/>
- <path d="M770 270Q600 220 430 270" fill="none" stroke="#c9a45c" stroke-width="5"/>
- <path d="M600 250v265" stroke="#8e6b2d" stroke-width="4"/>
- <path d="M475 315q70-28 105 0v145q-45-22-105 0z" fill="#fffdf8" stroke="#d6c39c"/>
- <path d="M725 315q-70-28-105 0v145q45-22 105 0z" fill="#fffdf8" stroke="#d6c39c"/>
- <g stroke="#8e6b2d" stroke-width="4" stroke-linecap="round" opacity=".75"><path d="M495 350h65M495 370h65M495 390h65M495 410h50"/><path d="M705 350h-65M705 370h-65M705 390h-65M705 410h-50"/></g>
- <!-- rehal -->
- <path d="M390 520l210 55 210-55-55 150H445z" fill="#8e6b2d" stroke="#c9a45c" stroke-width="5"/>
- <path d="M445 670h310" stroke="#f0d58e" stroke-width="10" stroke-linecap="round"/>
-</g>
-<!-- lantern -->
-<g transform="translate(170 250)"><path d="M45 0h60l18 30H27z" fill="#c9a45c"/><rect x="30" y="30" width="90" height="135" rx="16" fill="#151515" stroke="#f0d58e" stroke-width="4"/><path d="M45 60h60v70H45z" fill="#f0d58e" opacity=".45"/><path d="M30 165h90l-20 35H50z" fill="#8e6b2d"/><path d="M75 0v-35" stroke="#f0d58e" stroke-width="5"/></g>
-<!-- decorative stars -->
-<g fill="#f0d58e" opacity=".7"><path d="M210 120l7 18 18 7-18 7-7 18-7-18-18-7 18-7z"/><path d="M320 150l5 12 12 5-12 5-5 12-5-12-12-5 12-5z"/></g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Quran and Islamic learning">
+<defs><linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#000" stop-opacity=".02"/><stop offset="1" stop-color="#000" stop-opacity=".45"/></linearGradient></defs>
+<image href="https://images.pexels.com/photos/34427202/pexels-photo-34427202.jpeg?cs=srgb&amp;dl=pexels-muhammad-fadly-ramadhan-897083051-34427202.jpg&amp;fm=jpg" x="0" y="0" width="1200" height="800" preserveAspectRatio="xMidYMid slice"/>
+<rect width="1200" height="800" fill="url(#shade)"/>
+<rect x="35" y="35" width="1130" height="730" rx="34" fill="none" stroke="#f0d58e" stroke-opacity=".7" stroke-width="4"/>
+<rect x="60" y="620" width="600" height="100" rx="24" fill="#080808" fill-opacity=".68"/>
+<text x="92" y="680" fill="#fffdf8" font-family="Georgia,serif" font-size="48" font-weight="700">Quran &amp; Islamic Learning</text>
 </svg>
