@@ -1,0 +1,95 @@
+name: Temporary site cleanup
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply lightweight fixes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re, subprocess
+
+          path = Path('index.html')
+          text = path.read_text(encoding='utf-8')
+
+          start = text.find('async function loadLearningLibrary(){')
+          if start == -1:
+              raise SystemExit('loadLearningLibrary not found')
+
+          brace = text.find('{', start)
+          depth = 0
+          end = None
+          for i in range(brace, len(text)):
+              if text[i] == '{':
+                  depth += 1
+              elif text[i] == '}':
+                  depth -= 1
+                  if depth == 0:
+                      end = i + 1
+                      break
+          if end is None:
+              raise SystemExit('Could not locate end of loadLearningLibrary')
+
+          replacement = r'''async function loadLearningLibrary(){
+            const grid=document.getElementById('resourceGrid');
+            if(!grid)return;
+            const files=[
+              '30_High_Value_Daily_Life_Vocabulary_Intermediate_Advanced.docx',
+              '5_Essential_Steps_Learning_to_Read.docx',
+              'A Doll’s House Devices & Delicacy_20260822_104019_0000.pdf',
+              'Advanced_Linking_Words_and_Phrases.docx',
+              'Advanced_Vocabulary_Meanings.docx',
+              'Bilingual_Mathematics_Assessment_50_Marks.docx',
+              'Common_Mispronounced_and_Misspelled_Words.docx',
+              'Grade_4_5_Mental_Math_Italian_English.pdf',
+              'Grade_5_Numbers_Bilingual_Italian_English_Worksheet.docx',
+              'Grade_5_Subtraction_Bilingual_Italian_English_Worksheet.pdf',
+              'IB_English_SL_Intermediate_to_Advanced_Worksheet_and_Answer_Key.pdf',
+              'IB_English_SL_Literary_Analysis_Practice_Activities.pdf',
+              'Must_Have_to_Should_Ought_to_Worksheet.docx',
+              '_Bias in Psychological Research.pdf',
+              'chinese_beginner_formal_vocab_worksheet.pdf',
+              'urdu_english_italian_formal_vocab_worksheet (1).pdf',
+              'Learning_Hub_academic_english_essay_writing_toolkit.pdf',
+              'Learning_Hub_adult_esl_speaking_vocabulary_workbook.pdf',
+              'Learning_Hub_dyslexia_friendly_english_reading_teens_adults.pdf',
+              'Learning_Hub_english_pronunciation_shadowing_practice.pdf',
+              'Learning_Hub_everyday_english_chinese_speakers.pdf',
+              'Learning_Hub_everyday_english_japanese_speakers.pdf',
+              'Learning_Hub_everyday_english_korean_speakers.pdf',
+              'Learning_Hub_real_life_english_conversation_practice.pdf'
+            ];
+            grid.innerHTML=files.map(name=>{
+              const type=resourceType(name);
+              const title=resourceTitle(name);
+              const category=resourceCategory(name);
+              const url='/resources/'+encodeURIComponent(name);
+              const cover=resourceCoverSvg(title,category,type);
+              return '<article class="resource-card"><div class="resource-cover"><img src="'+cover+'" alt="'+escapeSvgText(title)+' Learning Hub cover" loading="lazy"></div><div class="resource-body"><span class="resource-meta">'+type+' • '+category+'</span><h3>'+title.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</h3><p>Learning Hub resource for independent study and tutoring support.</p><a href="'+url+'" class="btn btn-gold" download>Download '+type+'</a></div></article>';
+            }).join('');
+          }'''
+
+          text = text[:start] + replacement + text[end:]
+          path.write_text(text, encoding='utf-8')
+          PY
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes needed"
+            exit 0
+          fi
+          git commit -m "Fix Learning Library loading"
+          git push
