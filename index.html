@@ -3699,52 +3699,6 @@ document.addEventListener("DOMContentLoaded",function(){
   });
 })();
 </script>
-<script>
-(function(){
-  const button=document.getElementById('lh-start-payment');
-  const modal=document.getElementById('lh-rapidpay-modal');
-  const close=document.getElementById('lh-close-payment');
-  const status=document.getElementById('lh-payment-status');
-  const email=document.getElementById('lh-test-email');
-  if(!button) return;
-  function setStatus(msg){ status.textContent=msg; }
-  function hide(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.getElementById('rapidpay-checkout').innerHTML=''; }
-  close.addEventListener('click',hide);
-  modal.addEventListener('click',e=>{ if(e.target===modal) hide(); });
-  button.addEventListener('click',async function(){
-    button.disabled=true;
-    setStatus('Preparing secure checkout…');
-    try{
-      const res=await fetch('/api/rapidpay/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email.value.trim(),mobile:document.getElementById('lh-test-mobile').value.trim(),amount:Number(document.getElementById('lh-test-service').value)})});
-      const raw=await res.text();
-      let data={};
-      if(raw.trim()){
-        try{ data=JSON.parse(raw); }
-        catch(e){ throw new Error('Server returned an invalid response (HTTP '+res.status+'): '+raw.substring(0,500)); }
-      }
-      if(!res.ok) throw new Error(data.error||'Unable to create checkout session.');
-      if(data.checkoutUrl && !data.publishableKey){
-        setStatus('Redirecting to secure checkout…');
-        window.location.href=data.checkoutUrl;
-        return;
-      }
-      if(!data.publishableKey) throw new Error('Rapid Gateway did not return a publishable key or hosted checkout URL.');
-      modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
-      setStatus('Secure checkout opened.');
-      if(!window.RapidPay) throw new Error('RapidPay SDK did not load.');
-      window.RapidPay(data.publishableKey).mountCheckout('#rapidpay-checkout',{
-        clientSecret:data.clientSecret,
-        amount:data.amount,
-        currency:data.currency,
-        merchantName:'Learning Hub',
-        onSuccess:function(){ setStatus('Payment completed. We are confirming it securely.'); },
-        onPending:function(){ setStatus('Payment is pending confirmation.'); },
-        onError:function(e){ setStatus('Payment could not be completed. Please try again.'); console.error(e); }
-      });
-    }catch(err){ console.error(err); setStatus(err.message||'Unable to start payment.'); }
-    finally{ button.disabled=false; }
-  });
-})();
-</script>
+
 </body>
 </html>
