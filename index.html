@@ -1485,6 +1485,23 @@ footer p{
 </style>
 
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do online lessons work?","acceptedAnswer":{"@type":"Answer","text":"Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level."}},{"@type":"Question","name":"Which learners can join Learning Hub?","acceptedAnswer":{"@type":"Answer","text":"Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support."}},{"@type":"Question","name":"Which international boards do you support?","acceptedAnswer":{"@type":"Answer","text":"Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning."}},{"@type":"Question","name":"Can adults improve their English?","acceptedAnswer":{"@type":"Answer","text":"Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals."}}]}</script>
+
+<style>
+/* Learning Hub Rapid Gateway TEST checkout */
+#rapidpay-test-checkout { min-height: 120px; margin-top: 18px; }
+.payment-test-card { margin-top: 18px; padding: 22px; border: 1px solid rgba(0,0,0,.10); border-radius: 16px; background: #fff; }
+.payment-test-card .payment-row { display:flex; gap:14px; flex-wrap:wrap; align-items:end; }
+.payment-test-card label { display:block; font-weight:600; margin-bottom:6px; }
+.payment-test-card select, .payment-test-card input { padding:12px 14px; border:1px solid #d7dde2; border-radius:10px; min-width:220px; background:#fff; }
+.payment-test-card .payment-status { margin-top:14px; font-size:.95rem; }
+.payment-test-card .payment-status.success { font-weight:600; }
+.rapidpay-modal { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.55); padding:4vh 3vw; overflow:auto; }
+.rapidpay-modal.open { display:block; }
+.rapidpay-modal-inner { max-width:980px; margin:0 auto; background:#fff; border-radius:18px; min-height:620px; position:relative; padding:16px; }
+.rapidpay-close { position:absolute; right:14px; top:10px; z-index:2; border:0; background:#fff; font-size:28px; cursor:pointer; line-height:1; }
+#rapidpay-checkout { min-height:580px; padding-top:18px; }
+@media(max-width:700px){ .rapidpay-modal{padding:2vh 2vw;} .rapidpay-modal-inner{min-height:680px;} #rapidpay-checkout{min-height:640px;} }
+</style>
 </head>
 
 <body>
@@ -2825,24 +2842,58 @@ footer p{
 
       </div>
 
-      <div class="contact-box">
+      <div class="contact-box" id="payments">
 
-        <h3>Payment & digital products</h3>
+        <h3>Secure Online Payments</h3>
 
         <p style="margin-top:12px;">
-          Online payment processing is being developed. For paid lessons,
-          memberships, e-books or digital products, contact Learning Hub
-          Support for the current payment instructions.
+          Learning Hub is connected to RapidPay in TEST mode for secure payment-flow testing.
+          No real money is charged in this environment.
         </p>
 
-        <br>
+        <div class="payment-test-card">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+            <strong>Rapid Gateway — TEST MODE</strong>
+            <span style="padding:5px 9px;border-radius:999px;background:#eef7f8;font-size:.8rem;">No real money</span>
+          </div>
+          <p style="margin:10px 0 16px;">
+            Use the sandbox amounts below to test success, failure, pending and other checkout outcomes.
+          </p>
+          <div class="payment-row">
+            <div>
+              <label for="lh-test-service">Test payment</label>
+              <select id="lh-test-service">
+                <option value="100">TEST — PKR 100 (Success)</option>
+                <option value="200">TEST — PKR 200 (Failed)</option>
+                <option value="300">TEST — PKR 300 (Pending)</option>
+                <option value="400">TEST — PKR 400 (Expired)</option>
+                <option value="500">TEST — PKR 500 (Timeout)</option>
+              </select>
+            </div>
+            <div>
+              <label for="lh-test-email">Email</label>
+              <input id="lh-test-email" type="email" autocomplete="email" placeholder="your@email.com">
+            </div>
+            <div>
+              <label for="lh-test-mobile">Mobile</label>
+              <input id="lh-test-mobile" type="tel" autocomplete="tel" placeholder="03XXXXXXXXX">
+            </div>
+            <button type="button" class="btn btn-gold" id="lh-start-payment">Pay securely — TEST</button>
+          </div>
+          <div class="payment-status" id="lh-payment-status" aria-live="polite"></div>
+        </div>
 
-        <a
-          href="mailto:hublearning117@gmail.com?subject=Learning Hub Payment Enquiry"
-          class="btn btn-gold">
-          Contact Support
-        </a>
+        <p style="margin-top:14px;font-size:.9rem;">
+          For payment support: 
+          <a href="mailto:hublearning117@gmail.com?subject=Learning Hub Payment Support">Contact Learning Hub Support</a>
+        </p>
+      </div>
 
+      <div class="rapidpay-modal" id="lh-rapidpay-modal" aria-hidden="true">
+        <div class="rapidpay-modal-inner">
+          <button type="button" class="rapidpay-close" id="lh-close-payment" aria-label="Close payment">&times;</button>
+          <div id="rapidpay-checkout"></div>
+        </div>
       </div>
 
     </div>
@@ -3603,6 +3654,44 @@ document.addEventListener("DOMContentLoaded",function(){
     });
   });
 });
+</script>
+
+<script src="https://secure.rapid-gateway.com/sdk/v1/rapidpay.js"></script>
+<script>
+(function(){
+  const button=document.getElementById('lh-start-payment');
+  const modal=document.getElementById('lh-rapidpay-modal');
+  const close=document.getElementById('lh-close-payment');
+  const status=document.getElementById('lh-payment-status');
+  const email=document.getElementById('lh-test-email');
+  if(!button) return;
+  function setStatus(msg){ status.textContent=msg; }
+  function hide(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.getElementById('rapidpay-checkout').innerHTML=''; }
+  close.addEventListener('click',hide);
+  modal.addEventListener('click',e=>{ if(e.target===modal) hide(); });
+  button.addEventListener('click',async function(){
+    button.disabled=true;
+    setStatus('Preparing secure checkout…');
+    try{
+      const res=await fetch('/api/rapidpay/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email.value.trim(),mobile:document.getElementById('lh-test-mobile').value.trim(),amount:Number(document.getElementById('lh-test-service').value)})});
+      const data=await res.json();
+      if(!res.ok) throw new Error(data.error||'Unable to create checkout session.');
+      modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+      setStatus('Secure checkout opened.');
+      if(!window.RapidPay) throw new Error('RapidPay SDK did not load.');
+      window.RapidPay(data.publishableKey).mountCheckout('#rapidpay-checkout',{
+        clientSecret:data.clientSecret,
+        amount:data.amount,
+        currency:data.currency,
+        merchantName:'Learning Hub',
+        onSuccess:function(){ setStatus('Payment completed. We are confirming it securely.'); },
+        onPending:function(){ setStatus('Payment is pending confirmation.'); },
+        onError:function(e){ setStatus('Payment could not be completed. Please try again.'); console.error(e); }
+      });
+    }catch(err){ console.error(err); setStatus(err.message||'Unable to start payment.'); }
+    finally{ button.disabled=false; }
+  });
+})();
 </script>
 </body>
 </html>
