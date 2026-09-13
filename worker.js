@@ -1,9 +1,13 @@
-name = "learning-hub"
-main = "worker.js"
-compatibility_date = "2026-09-13"
-
-[assets]
-directory = "."
-binding = "ASSETS"
-run_worker_first = ["/api/*"]
-not_found_handling = "404-page"
+{
+  "$schema": "https://developers.cloudflare.com/workers/wrangler/config-schema.json",
+  "name": "learning-hub",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-13",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "run_worker_first": [
+      "/api/*"
+    ]
+  }
+}
