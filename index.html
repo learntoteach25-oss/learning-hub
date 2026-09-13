@@ -1302,7 +1302,7 @@ footer p{
 
 /* MOBILE MENU */
 
-@media(max-width:1050px){
+@media(max-width:1320px){
 
   .nav-links{
     display:none;
@@ -1555,34 +1555,25 @@ footer p{
 @media(max-width:720px){.country-grid{grid-template-columns:1fr}.outcomes-grid{grid-template-columns:1fr}.world-panel{padding:20px}}
 
 
+
+/* CART / BILLING ACTIONS */
+.add-to-cart-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;margin-top:16px;padding:11px 16px;border:1px solid var(--gold);border-radius:999px;background:var(--gold);color:#17130c;font-weight:800;font-size:.78rem;transition:.25s}
+.add-to-cart-btn:hover{transform:translateY(-2px);box-shadow:0 10px 25px rgba(201,164,92,.2)}
+.course-item{display:flex;flex-direction:column;align-items:flex-start}
+.course-item .add-to-cart-btn{width:auto;margin-top:10px;padding:8px 13px;font-size:.7rem}
+.exam .add-to-cart-btn{margin-top:14px}
+@media(max-width:1320px){
+  .nav-links{display:none;position:absolute;top:82px;left:18px;right:18px;flex-direction:column;align-items:stretch;gap:0;padding:15px;background:#0d0d0d;border:1px solid rgba(201,164,92,.25);border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+  .nav-links.mobile-open{display:flex}
+  .nav-links a{padding:13px 10px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav-links a:last-child{border-bottom:0}
+  .mobile-toggle{display:block}
+}
+
+.payment-info-card{margin-top:18px;padding:22px;border:1px solid rgba(0,0,0,.10);border-radius:16px;background:#fff}.payment-info-card ol{padding-left:22px}.payment-info-card li{margin:7px 0}
 .skip-link{position:fixed;left:14px;top:-60px;z-index:3000;background:#f0d58e;color:#111;padding:10px 16px;border-radius:999px;font-weight:700}.skip-link:focus{top:14px}
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do online lessons work?","acceptedAnswer":{"@type":"Answer","text":"Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level."}},{"@type":"Question","name":"Which learners can join Learning Hub?","acceptedAnswer":{"@type":"Answer","text":"Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support."}},{"@type":"Question","name":"Which international boards do you support?","acceptedAnswer":{"@type":"Answer","text":"Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning."}},{"@type":"Question","name":"Can adults improve their English?","acceptedAnswer":{"@type":"Answer","text":"Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals."}}]}</script>
-<style>
-/* Learning Hub Rapid Gateway TEST checkout */
-#rapidpay-test-checkout { min-height: 120px; margin-top: 18px; }
-.payment-test-card { margin-top: 18px; padding: 22px; border: 1px solid rgba(0,0,0,.10); border-radius: 16px; background: #fff; }
-.payment-test-card .payment-row { display:flex; gap:14px; flex-wrap:wrap; align-items:end; }
-.payment-test-card label { display:block; font-weight:600; margin-bottom:6px; }
-.payment-test-card select, .payment-test-card input { padding:12px 14px; border:1px solid #d7dde2; border-radius:10px; min-width:220px; background:#fff; }
-.payment-test-card .payment-status { margin-top:14px; font-size:.95rem; }
-.payment-test-card .payment-status.success { font-weight:600; }
-.rapidpay-modal { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.55); padding:4vh 3vw; overflow:auto; }
-.rapidpay-modal.open { display:block; }
-.rapidpay-modal-inner { max-width:980px; margin:0 auto; background:#fff; border-radius:18px; min-height:620px; position:relative; padding:16px; }
-.rapidpay-close { position:absolute; right:14px; top:10px; z-index:2; border:0; background:#fff; font-size:28px; cursor:pointer; line-height:1; }
-#rapidpay-checkout { min-height:580px; padding-top:18px; }
-@media(max-width:700px){ .rapidpay-modal{padding:2vh 2vw;} .rapidpay-modal-inner{min-height:680px;} #rapidpay-checkout{min-height:640px;} }
-</style>
-<style id="lh-package-pricing-css">
-.package-classes{font-weight:700;margin:6px 0 2px;font-size:.88rem}
-.package-duration{font-size:.75rem;opacity:.78;margin-bottom:14px}
-.package-features{padding:0;margin:0 0 20px;list-style:none}
-.package-features li{margin:8px 0;font-size:.78rem}
-
-<style id="lh-compliance-css">
-.compliance-strip{background:var(--black2);color:#fff;padding:34px 0}.compliance-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.compliance-card{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:16px;padding:18px}.compliance-card strong{display:block;color:var(--gold2);margin-bottom:5px}.compliance-card span{font-size:.78rem;color:#c8c0b4}.business-model{background:var(--cream)}.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:28px}.journey-step{background:#fff;border:1px solid rgba(23,21,18,.08);border-radius:18px;padding:18px;text-align:center}.journey-step strong{display:block;margin-bottom:6px}.journey-step span{font-size:.76rem;color:var(--muted)}.policy-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.policy-links a{color:var(--gold3);font-weight:700;font-size:.82rem}.contact-detail{font-size:.88rem}.price-pkr{font-size:.76rem;color:var(--muted);margin-top:2px}.merchant-note{font-size:.74rem;color:var(--muted);margin-top:8px}.business-address{line-height:1.5}@media(max-width:850px){.compliance-grid,.journey{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.compliance-grid,.journey{grid-template-columns:1fr}}
-</style></style></head>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do online lessons work?","acceptedAnswer":{"@type":"Answer","text":"Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level."}},{"@type":"Question","name":"Which learners can join Learning Hub?","acceptedAnswer":{"@type":"Answer","text":"Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support."}},{"@type":"Question","name":"Which international boards do you support?","acceptedAnswer":{"@type":"Answer","text":"Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning."}},{"@type":"Question","name":"Can adults improve their English?","acceptedAnswer":{"@type":"Answer","text":"Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals."}}]}</script></style></head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- NAVIGATION -->
@@ -1596,7 +1587,6 @@ footer p{
 </span>
 </a>
 <div class="nav-links" id="mainNav">
-<a href="#service-pricing">Services & Pricing</a>
 <a href="billing.html">Billing</a>
 <a href="#programmes">Programmes</a>
 <a href="#subjects">Subjects</a>
@@ -1712,7 +1702,7 @@ footer p{
 <div class="card-body">
 <h3>Academic Tutoring</h3>
 <p>School subjects, homework support, concept building, revision and exam-focused learning.</p>
-<a class="card-link" href="/subjects/">Explore Subjects →</a>
+<a class="card-link" href="/subjects/">Explore Subjects →</a><a class="add-to-cart-btn" href="billing.html?type=course&course=Academic%20Tutoring">Add to Cart</a>
 </div>
 </article>
 <article class="visual-card">
@@ -1723,7 +1713,7 @@ footer p{
 <div class="card-body">
 <h3>International Curriculum</h3>
 <p>IB, Cambridge and other international qualification support for global learners.</p>
-<a class="card-link" href="/international-curriculum/">View Boards →</a>
+<a class="card-link" href="/international-curriculum/">View Boards →</a><a class="add-to-cart-btn" href="billing.html?type=course&course=International%20Curriculum">Add to Cart</a>
 </div>
 </article>
 <article class="visual-card">
@@ -1734,7 +1724,7 @@ footer p{
 <div class="card-body">
 <h3>English Development</h3>
 <p>Academic English, communication, speaking, writing, vocabulary and language confidence.</p>
-<a class="card-link" href="/english/">Learn English →</a>
+<a class="card-link" href="/english/">Learn English →</a><a class="add-to-cart-btn" href="billing.html?type=course&course=English%20Development">Add to Cart</a>
 </div>
 </article>
 <article class="visual-card">
@@ -1745,7 +1735,7 @@ footer p{
 <div class="card-body">
 <h3>Exam Preparation</h3>
 <p>Structured preparation, practice questions, feedback and examination techniques.</p>
-<a class="card-link" href="/exam-preparation/">Explore Exams →</a>
+<a class="card-link" href="/exam-preparation/">Explore Exams →</a><a class="add-to-cart-btn" href="billing.html?type=exam&course=Exam%20Preparation">Add to Cart</a>
 </div>
 </article>
 <article class="visual-card">
@@ -1756,7 +1746,7 @@ footer p{
 <div class="card-body">
 <h3>Study Skills</h3>
 <p>Organisation, academic writing, independent study, research and confidence.</p>
-<a class="card-link" href="#methodology">Our Method →</a>
+<a class="card-link" href="#methodology">Our Method →</a><a class="add-to-cart-btn" href="billing.html?type=course&course=Study%20Skills">Add to Cart</a>
 </div>
 </article>
 <article class="visual-card">
@@ -1767,7 +1757,7 @@ footer p{
 <div class="card-body">
 <h3>Specialist Learning Support</h3>
 <p>Personalised approaches for learning differences, communication and confidence.</p>
-<a class="card-link" href="#support">Explore Support →</a>
+<a class="card-link" href="#support">Explore Support →</a><a class="add-to-cart-btn" href="billing.html?type=course&course=Specialist%20Learning%20Support">Add to Cart</a>
 </div>
 </article>
 </div>
@@ -2372,7 +2362,7 @@ footer p{
 <div class="premium-banner">
 <div>
 <strong>Premium Resource Collections</strong>
-<p>Paid downloads remain visible while free resources are being browsed. Premium files are locked until access is purchased.</p>
+<p>Premium downloads are available through the Billing page. Add a resource to your cart to review its fixed price before payment.</p>
 </div>
 <a class="btn btn-gold" href="#premium-resources">Browse Premium →</a>
 </div>
@@ -2401,7 +2391,7 @@ footer p{
 <div class="resource-subsection" id="premium-resources">
 <div class="eyebrow">Premium</div>
 <h3>Premium Resources 🔒</h3>
-<p style="margin-bottom:20px">Paid books, packs and advanced resources are visible here but their downloads remain locked.</p>
+<p style="margin-bottom:20px">Premium books, packs and advanced resources are listed here. Add any item to your cart to review the price and billing details.</p>
 <div class="library-grid" id="premiumResourceGrid">
 <div class="library-status">Loading premium resources…</div>
 </div>
@@ -2753,53 +2743,6 @@ footer p{
 </div>
 </div>
 </section>
-<!-- PRICING -->
-<section class="pricing" id="pricing" style="display:none">
-<div class="container">
-<div class="section-heading center">
-<div class="eyebrow">Flexible Learning</div>
-<h2>Simple options for different needs.</h2>
-<p>Flexible monthly packages with defined live classes, learning support, worksheets, e-books and digital resources. Choose the level that fits your goals.</p></div>
-<div class="price-grid">
-<div class="price-card featured">
-<h3>Demo Booking</h3>
-<div class="price">$3</div>
-<ul>
-<li>✓ One introductory demo lesson</li>
-<li>✓ Meet your tutor and discuss goals</li>
-<li>✓ Suitable for new learners</li>
-</ul>
-<button class="btn btn-gold" data-open-enquiry="Demo Booking ($3)" type="button">
-          Book Demo — $3
-        </button>
-</div>
-<div class="price-card">
-<h3>Starter</h3>
-<div class="price">$20</div><div class="package-classes">4 live classes / month</div><div class="package-duration">30–40 minutes per class</div>
-<ul><li>✓ 4 personalised live classes each month</li><li>✓ Monthly learning support</li><li>✓ Selected worksheets &amp; practice resources</li><li>✓ Relevant free resources</li><li>✓ Progress guidance</li><li>✓ Resource / course request support</li></ul>
-<a class="btn btn-gold" data-open-enquiry="Starter Package — $20 / 4 live classes / month" href="#contact" rel target>Enquire</a>
-</div>
-<div class="price-card">
-<h3>Growth</h3>
-<div class="price">$30</div><div class="package-classes">5 live classes / month</div><div class="package-duration">30–40 minutes per class</div>
-<ul><li>✓ 5 personalised live classes each month</li><li>✓ Extended learning support</li><li>✓ Practice worksheets &amp; learning resources</li><li>✓ Relevant e-books / digital resources where included</li><li>✓ Learning guidance &amp; progress support</li><li>✓ Priority resource recommendations</li></ul>
-<a class="btn btn-gold" data-open-enquiry="Growth Package — $30 / 5 live classes / month" href="#contact" rel target>Enquire</a>
-</div>
-<div class="price-card featured">
-<h3>Focus</h3>
-<div class="price">$50</div><div class="package-classes">6 live classes / month</div><div class="package-duration">30–40 minutes per class</div>
-<ul><li>✓ 6 personalised live classes each month</li><li>✓ Structured academic support</li><li>✓ International curriculum support</li><li>✓ Subject-specific worksheets &amp; practice</li><li>✓ Relevant e-books / premium resources where included</li><li>✓ Progress guidance &amp; targeted feedback</li></ul>
-<a class="btn btn-gold" data-open-enquiry="Focus Package — $50 / 6 live classes / month" href="#contact" rel target>Enquire</a>
-</div>
-<div class="price-card">
-<h3>Unlimited</h3>
-<div class="price">$70</div><div class="package-classes">8 live classes / month</div><div class="package-duration">30–40 minutes per class</div>
-<ul><li>✓ 8 personalised live classes each month</li><li>✓ Intensive learning support</li><li>✓ Multiple subject / learning areas</li><li>✓ International curriculum &amp; exam support</li><li>✓ Expanded worksheets, e-books &amp; digital resources</li><li>✓ Priority guidance and progress support</li></ul>
-<a class="btn btn-gold" data-open-enquiry="Unlimited Package — $70 / 8 live classes / month" href="#contact" rel target>Enquire</a>
-</div>
-</div>
-</div>
-</section>
 <!-- GENERAL RESOURCE / COURSE REQUEST FORM -->
 <div aria-hidden="true" class="enquiry-modal" id="lh-enquiry-modal">
 <div class="enquiry-modal-inner">
@@ -2821,12 +2764,13 @@ footer p{
 <label for="lh-package">Learning Option / Package</label>
 <select id="lh-package" name="learning_option">
 <option value="">Select an option</option>
-<option>$3 Demo — 1 introductory demo lesson</option>
-<option>Starter — $20/month — 4 live classes</option>
-<option>Growth — $30/month — 5 live classes</option>
-<option>Focus — $50/month — 6 live classes</option>
-<option>Unlimited — $70/month — 8 live classes</option>
-<option>Custom learning / resource request</option>
+<option>Regular Live Lesson</option>
+<option>3-Month Prepaid Regular Learning</option>
+<option>Exam Preparation</option>
+<option>Quran / Islamic Studies Course</option>
+<option>Student / Career Counselling</option>
+<option>Free Consultation / General Enquiry</option>
+<option>Custom Programme / Resource Request</option>
 </select>
 <small>Choose a package to continue with booking, or select custom learning/resource support.</small>
 </div>
@@ -2967,7 +2911,7 @@ footer p{
 <div class="enquiry-field">
 <label for="lh-enquiry-type">Enquiry Type</label>
 <select id="lh-enquiry-type" name="enquiry_type">
-<option>Resource Request</option><option>Course Enquiry</option><option>General Enquiry</option><option>Demo Booking ($3)</option>
+<option>Resource Request</option><option>Course Enquiry</option><option>General Enquiry</option><option>Free Consultation / General Enquiry</option>
 </select>
 </div>
 <div class="enquiry-field">
@@ -2995,12 +2939,12 @@ footer p{
 </div>
 <div class="enquiry-field full">
 <label for="lh-reference">Reference File / Material</label>
-<input accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png" id="lh-reference" name="reference_file" type="file"/>
+<input accept=".pdf,.jpg,.jpeg,.png" id="lh-reference" name="reference_file" type="file"/>
 <small>Optional: syllabus, assignment, past paper, worksheet or screenshot.</small>
 </div>
 <div class="enquiry-field full" id="lh-demo-details" style="display:none;">
 <div class="demo-request-box">
-<strong>$3 Demo Booking</strong>
+<strong>Free Consultation / General Enquiry</strong>
 <p>Please provide your preferred demo date, time and time zone in the details box below.</p>
 </div>
 </div>
@@ -3016,43 +2960,6 @@ footer p{
 </form>
 </div>
 </div>
-<!-- MERCHANT-FACING SERVICE PRICING -->
-<section class="compliance-strip" id="service-pricing">
-<div class="container">
-<div class="section-heading center" style="margin-bottom:28px"><div class="eyebrow">Services &amp; Pricing</div><h2 style="color:#fff">Clear learning options and starting prices.</h2><p style="color:#bcb4a7">International customers may view USD reference pricing; PKR amounts are shown for payment-gateway transparency. Final custom quotations are confirmed before payment.</p></div>
-<div class="compliance-grid">
-<div class="compliance-card"><strong>Regular Live Lesson</strong><span>$5 / class · 30–40 minutes</span><div class="price-pkr">PKR 1,400 reference amount</div></div>
-<div class="compliance-card"><strong>3-Month Prepaid</strong><span>15% discount on eligible prepaid regular classes</span><div class="price-pkr">PKR amount confirmed before payment</div></div>
-<div class="compliance-card"><strong>Exam Preparation</strong><span>From $10 / hour</span><div class="price-pkr">PKR 2,800 / hour reference amount</div></div>
-<div class="compliance-card"><strong>Comprehensive Notes</strong><span>$50 / subject · optional add-on</span><div class="price-pkr">PKR 13,900 / subject reference amount</div></div>
-</div>
-<p class="merchant-note">PKR reference amounts use approximately PKR 277.75 per USD as a current reference rate; the final PKR payable amount is confirmed at checkout.</p>
-</div>
-</section>
-<!-- BUSINESS MODEL & CUSTOMER JOURNEY -->
-<section class="business-model" id="business-model">
-<div class="container">
-<div class="section-heading center">
-<div class="eyebrow">How Learning Hub Works</div>
-<h2>Clear learning, booking and payment journey.</h2>
-<p>Learning Hub provides online tutoring, international curriculum support, English and language development, examination preparation, specialist learning support, Quran and Islamic Studies, and selected digital educational resources. Customers browse the available learning services, submit a request or select a learning option, receive the applicable quotation or billing amount, complete payment through the available secure payment method, and then receive booking or resource-delivery confirmation.</p>
-</div>
-<div class="compliance-grid">
-<div class="compliance-card"><strong>Online Learning</strong><span>Live one-to-one and structured learning support for students, professionals and lifelong learners.</span></div>
-<div class="compliance-card"><strong>Exam Preparation</strong><span>Concept revision, guided practice, past-paper work, examination technique and revision support.</span></div>
-<div class="compliance-card"><strong>Digital Resources</strong><span>Educational worksheets, workbooks, notes and selected digital learning materials.</span></div>
-<div class="compliance-card"><strong>Custom Programmes</strong><span>Subject, curriculum and examination requirements can be reviewed before a customised programme is confirmed.</span></div>
-</div>
-<div class="journey">
-<div class="journey-step"><strong>1. Browse</strong><span>Review programmes, services and available resources.</span></div>
-<div class="journey-step"><strong>2. Select</strong><span>Choose a learning option or submit a specific enquiry.</span></div>
-<div class="journey-step"><strong>3. Review</strong><span>Learning Hub confirms requirements, availability and applicable amount.</span></div>
-<div class="journey-step"><strong>4. Pay</strong><span>Customer completes payment through the secure payment checkout.</span></div>
-<div class="journey-step"><strong>5. Confirm</strong><span>Learning Hub confirms the lesson/programme or digital resource delivery.</span></div>
-</div>
-<div class="policy-links"><a href="billing.html">View Billing &amp; Learning Options →</a><a href="policies.html">Read Customer Policies →</a></div>
-</div>
-</section>
 <!-- TEACHER APPLICATION -->
 <section class="cta" id="teacher">
 <div class="container cta-inner">
@@ -3113,7 +3020,7 @@ footer p{
 <div class="contact-box" id="payments">
 <h3>Secure Online Payments</h3>
 <p style="margin-top:12px;">Learning Hub uses an authorised online payment gateway to collect payment for confirmed tutoring, examination-preparation services and eligible digital learning resources. Customers receive the applicable PKR amount and payment instructions after their selected service and requirements have been reviewed.</p>
-<div class="payment-test-card">
+<div class="payment-info-card">
 <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
 <strong>How payment works</strong>
 <span style="padding:5px 9px;border-radius:999px;background:#eef7f8;font-size:.8rem;">Secure gateway checkout</span>
@@ -3426,56 +3333,43 @@ function getResourceCategory(name){
 ========================= */
 
 const resourceData = [
-  {name:"30_High_Value_Daily_Life_Vocabulary_Intermediate_Advanced.docx", type:"free", subject:"English", kind:"worksheet"},
-  {name:"5_Essential_Steps_Learning_to_Read.docx", type:"free", subject:"English", kind:"worksheet"},
-  {name:"A Doll’s House Devices & Delicacy_20260822_104019_0000.pdf", type:"free", subject:"English", kind:"worksheet"},
-  {name:"Advanced_Linking_Words_and_Phrases.docx", type:"free", subject:"English", kind:"worksheet"},
-  {name:"Advanced_Vocabulary_Meanings.docx", type:"free", subject:"English", kind:"worksheet"},
-  {name:"Bilingual_Mathematics_Assessment_50_Marks.docx", type:"free", subject:"Mathematics", kind:"worksheet"},
-  {name:"Common_Mispronounced_and_Misspelled_Words.docx", type:"free", subject:"English", kind:"worksheet"},
-  {name:"Grade_4_5_Mental_Math_Italian_English.pdf", type:"free", subject:"Mathematics", kind:"worksheet"},
-  {name:"Grade_5_Numbers_Bilingual_Italian_English_Worksheet.docx", type:"free", subject:"Mathematics", kind:"worksheet"},
-  {name:"Grade_5_Subtraction_Bilingual_Italian_English_Worksheet.pdf", type:"free", subject:"Mathematics", kind:"worksheet"},
-  {name:"IB_English_SL_Intermediate_to_Advanced_Worksheet_and_Answer_Key.pdf", type:"free", subject:"English", kind:"worksheet"},
-  {name:"IB_English_SL_Literary_Analysis_Practice_Activities.pdf", type:"free", subject:"English", kind:"worksheet"},
-  {name:"Must_Have_to_Should_Ought_to_Worksheet.docx", type:"free", subject:"English", kind:"worksheet"},
-  {name:"_Bias in Psychological Research.pdf", type:"free", subject:"Psychology", kind:"worksheet"},
-  {name:"chinese_beginner_formal_vocab_worksheet.pdf", type:"free", subject:"Languages", kind:"worksheet"},
-  {name:"urdu_english_italian_formal_vocab_worksheet (1).pdf", type:"free", subject:"Languages", kind:"worksheet"},
-  {name:"Learning_Hub_academic_english_essay_writing_toolkit.pdf", type:"premium", subject:"English", kind:"resource"},
-  {name:"Learning_Hub_adult_esl_speaking_vocabulary_workbook.pdf", type:"premium", subject:"English", kind:"resource"},
-  {name:"Learning_Hub_dyslexia_friendly_english_reading_teens_adults.pdf", type:"premium", subject:"English", kind:"resource"},
-  {name:"Learning_Hub_english_pronunciation_shadowing_practice.pdf", type:"premium", subject:"English", kind:"resource"},
-  {name:"Learning_Hub_everyday_english_chinese_speakers.pdf", type:"premium", subject:"Languages", kind:"resource"},
-  {name:"Learning_Hub_everyday_english_japanese_speakers.pdf", type:"premium", subject:"Languages", kind:"resource"},
-  {name:"Learning_Hub_everyday_english_korean_speakers.pdf", type:"premium", subject:"Languages", kind:"resource"},
-  {name:"Learning_Hub_real_life_english_conversation_practice.pdf", type:"premium", subject:"English", kind:"resource"},
-  {name:"Learning_Hub_Academic_Writing_Ebook.pdf", type:"premium", subject:"English", kind:"ebook"},
-  {name:"Learning_Hub_Study_Skills_Ebook.pdf", type:"premium", subject:"Study Skills", kind:"ebook"},
-  {name:"Learning_Hub_English_Vocabulary_Workbook.pdf", type:"premium", subject:"English", kind:"ebook"}
+  {name:"A Doll’s House Devices & Delicacy_20260822_104019_0000.pdf", title:"A Doll’s House: Literary Devices & Delicacy", type:"free", subject:"English", kind:"worksheet"},
+  {name:"Grade_4_5_Mental_Math_Italian_English.pdf", title:"Grade 4–5 Mental Math: Italian–English", type:"free", subject:"Mathematics", kind:"worksheet"},
+  {name:"Grade_5_Subtraction_Bilingual_Italian_English_Worksheet.pdf", title:"Grade 5 Subtraction: Italian–English Worksheet", type:"free", subject:"Mathematics", kind:"worksheet"},
+  {name:"IB_English_SL_Intermediate_to_Advanced_Worksheet_and_Answer_Key.pdf", title:"IB English SL: Intermediate to Advanced Practice", type:"free", subject:"English", kind:"worksheet"},
+  {name:"IB_English_SL_Literary_Analysis_Practice_Activities.pdf", title:"IB English SL: Literary Analysis Practice", type:"free", subject:"English", kind:"worksheet"},
+  {name:"_Bias in Psychological Research.pdf", title:"Bias in Psychological Research", type:"free", subject:"Psychology", kind:"worksheet"},
+  {name:"chinese_beginner_formal_vocab_worksheet.pdf", title:"Chinese Beginner: Formal Vocabulary Worksheet", type:"free", subject:"Languages", kind:"worksheet"},
+  {name:"urdu_english_italian_formal_vocab_worksheet (1).pdf", title:"Formal Vocabulary: Urdu–English–Italian", type:"free", subject:"Languages", kind:"worksheet"},
+  {name:"Learning_Hub_academic_english_essay_writing_toolkit.pdf", title:"Academic English Essay Writing Toolkit", type:"premium", subject:"English", kind:"resource", price:5},
+  {name:"Learning_Hub_adult_esl_speaking_vocabulary_workbook.pdf", title:"Adult ESL Speaking & Vocabulary Workbook", type:"premium", subject:"English", kind:"resource", price:5},
+  {name:"Learning_Hub_dyslexia_friendly_english_reading_teens_adults.pdf", title:"Dyslexia-Friendly English Reading: Teens & Adults", type:"premium", subject:"English", kind:"resource", price:5},
+  {name:"Learning_Hub_english_pronunciation_shadowing_practice.pdf", title:"English Pronunciation: Shadowing Practice", type:"premium", subject:"English", kind:"resource", price:5},
+  {name:"Learning_Hub_everyday_english_chinese_speakers.pdf", title:"Everyday English for Chinese Speakers", type:"premium", subject:"Languages", kind:"resource", price:5},
+  {name:"Learning_Hub_everyday_english_japanese_speakers.pdf", title:"Everyday English for Japanese Speakers", type:"premium", subject:"Languages", kind:"resource", price:5},
+  {name:"Learning_Hub_everyday_english_korean_speakers.pdf", title:"Everyday English for Korean Speakers", type:"premium", subject:"Languages", kind:"resource", price:5},
+  {name:"Learning_Hub_real_life_english_conversation_practice.pdf", title:"Real-Life English Conversation Practice", type:"premium", subject:"English", kind:"resource", price:5},
+  {name:"Learning_Hub_Academic_Writing_Ebook.pdf", title:"Academic Writing E-book", type:"premium", subject:"English", kind:"ebook", price:5},
+  {name:"Learning_Hub_Study_Skills_Ebook.pdf", title:"Study Skills E-book", type:"premium", subject:"Study Skills", kind:"ebook", price:5},
+  {name:"Learning_Hub_English_Vocabulary_Workbook.pdf", title:"English Vocabulary Workbook", type:"premium", subject:"English", kind:"ebook", price:5}
 ];
 
 function resourceTypeLabel(name){
   const ext=(name.split(".").pop()||"").toUpperCase();
-  if(ext==="DOCX"||ext==="DOC") return "DOCX";
-  if(ext==="PDF") return "PDF";
-  if(ext==="PPT"||ext==="PPTX") return "PRESENTATION";
-  if(ext==="XLS"||ext==="XLSX") return "SPREADSHEET";
   return ext || "RESOURCE";
 }
 
-function makeResourceTitle(name){
-  return name.replace(/\.[^/.]+$/i,"")
+function makeResourceTitle(item){
+  if(item && item.title) return item.title;
+  return String(item.name||"").replace(/\.[^/.]+$/i,"")
     .replace(/^Learning_Hub_/i,"")
     .replace(/^_+/,"")
     .replace(/[_-]+/g," ")
     .replace(/\s+/g," ")
-    .trim()
-    .replace(/\b\w/g,function(char){return char.toUpperCase();});
+    .trim();
 }
 
 function resourceImage(index){
-  /* One distinct cover image per resource. No cycling/reuse. */
   const images=[
     "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85",
     "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1000&q=85",
@@ -3495,15 +3389,7 @@ function resourceImage(index){
     "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
     "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1000&q=85",
     "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1511108690759-009324a90311?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=85"
+    "https://images.unsplash.com/photo-1511108690759-009324a90311?auto=format&fit=crop&w=1000&q=85"
   ];
   return images[index] || images[0];
 }
@@ -3516,32 +3402,23 @@ function renderResourceCards(items, gridId){
     return;
   }
 
-  const lockedResources=[
-    "Learning_Hub_everyday_english_chinese_speakers.pdf",
-    "Learning_Hub_everyday_english_korean_speakers.pdf",
-    "Learning_Hub_English_Vocabulary_Workbook.pdf"
-  ];
-
   grid.innerHTML=items.map(function(item,index){
-    const title=makeResourceTitle(item.name);
+    const title=makeResourceTitle(item);
     const type=resourceTypeLabel(item.name);
-    const url="/resources/"+encodeURIComponent(item.name);
-    const isLocked=lockedResources.includes(item.name);
-
+    const isPremium=item.type==="premium";
+    const price=isPremium ? Number(item.price||5) : 0;
+    const url="billing.html?type=resource&resource="+encodeURIComponent(title)+"&price="+price+"&file="+encodeURIComponent(item.name);
     return `
       <article class="resource-card" data-resource-type="${escapeHTML(item.type)}" data-subject="${escapeHTML(item.subject)}">
-        <div class="resource-cover ${isLocked ? "locked" : ""}">
-          <img src="${escapeHTML(resourceImage(index))}" alt="${escapeHTML(title)}" loading="lazy"
+        <div class="resource-cover ${isPremium ? "locked" : ""}">
+          <img src="${escapeHTML(resourceImage(resourceData.indexOf(item))) }" alt="${escapeHTML(title)}" loading="lazy"
                onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1000&q=85';">
         </div>
         <div class="resource-body">
           <span class="resource-meta">${escapeHTML(type)} • ${escapeHTML(item.subject)}</span>
           <h3>${escapeHTML(title)}</h3>
-          <p>${isLocked ? "Premium resource. Download access is currently locked." : (item.type==="premium" ? "Premium resource available as a downloadable Learning Hub resource." : "Free Learning Hub resource for independent study and tutoring support.")}</p>
-          ${isLocked
-            ? '<span class="btn btn-outline resource-download" style="width:100%">🔒 Premium Download Locked</span>'
-            : `<a href="${escapeHTML(url)}" class="btn btn-gold resource-download" download target="_blank" rel="noopener">Download ${escapeHTML(type)}</a>`
-          }
+          <p>${isPremium ? "Premium downloadable resource. Add to cart to review the fixed price and billing details." : "Free Learning Hub resource for independent study and tutoring support."}</p>
+          <a href="${escapeHTML(url)}" class="btn btn-gold resource-download">${isPremium ? "Add to Cart" : "View Free Download"}</a>
         </div>
       </article>`;
   }).join("");
@@ -3898,6 +3775,33 @@ document.addEventListener("DOMContentLoaded",function(){
 </style>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
+  document.querySelectorAll("#quran .course-item").forEach(function(item){
+    if(item.querySelector(".add-to-cart-btn")) return;
+    const title=item.querySelector("strong");
+    if(!title) return;
+    const name=title.textContent.trim();
+    const button=document.createElement("a");
+    button.className="add-to-cart-btn";
+    button.href="billing.html?type=course&course="+encodeURIComponent(name)+"&subject="+encodeURIComponent("Quran / Islamic Studies");
+    button.textContent="Add to Cart";
+    item.appendChild(button);
+  });
+
+  document.querySelectorAll(".exam, .international-exam-card").forEach(function(card){
+    if(card.querySelector(".add-to-cart-btn")) return;
+    const title=card.querySelector("strong, h3");
+    if(!title) return;
+    const name=title.textContent.trim();
+    const button=document.createElement("a");
+    button.className="add-to-cart-btn";
+    button.href="billing.html?type=exam&course="+encodeURIComponent(name);
+    button.textContent="Add to Cart";
+    card.appendChild(button);
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
   document.querySelectorAll(".faq-question").forEach(function(button){
     button.addEventListener("click",function(){
       const item=button.closest(".faq-item");
@@ -3978,7 +3882,7 @@ document.addEventListener("DOMContentLoaded",function(){
   }
 
   function updateDemoFields(){
-    demoDetails.style.display=enquiryType.value==='Demo Booking ($3)'?'block':'none';
+    demoDetails.style.display=enquiryType.value==='Free Consultation / General Enquiry'?'block':'none';
   }
 
   function openEnquiry(context){
@@ -3992,7 +3896,7 @@ document.addEventListener("DOMContentLoaded",function(){
     }
     if(context && context.toLowerCase().includes('demo')){
       type.value='Course';
-      enquiryType.value='Demo Booking ($3)';
+      enquiryType.value='Free Consultation / General Enquiry';
       updateDemoFields();
     }
     document.getElementById('lh-name').focus();
@@ -4142,7 +4046,7 @@ document.addEventListener("DOMContentLoaded",function(){
     }
     if(context && context.toLowerCase().includes('demo')){
       type.value='Course';
-      enquiryType.value='Demo Booking ($3)';
+      enquiryType.value='Free Consultation / General Enquiry';
     }
 
     document.getElementById('lh-name').focus();
@@ -4174,7 +4078,7 @@ document.addEventListener("DOMContentLoaded",function(){
     const data=new FormData(form);
 
     const summary=[
-      'Learning Hub Resource / Course Request',
+      'LEARNING HUB WEBSITE ENQUIRY',
       'Name: '+data.get('name'),
       'Email: '+data.get('email'),
       'Resource Type: '+data.get('resource_type'),
