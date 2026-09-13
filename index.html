@@ -3681,6 +3681,12 @@ document.addEventListener("DOMContentLoaded",function(){
         catch(e){ throw new Error('Server returned an invalid response (HTTP '+res.status+'): '+raw.substring(0,500)); }
       }
       if(!res.ok) throw new Error(data.error||'Unable to create checkout session.');
+      if(data.checkoutUrl && !data.publishableKey){
+        setStatus('Redirecting to secure checkout…');
+        window.location.href=data.checkoutUrl;
+        return;
+      }
+      if(!data.publishableKey) throw new Error('Rapid Gateway did not return a publishable key or hosted checkout URL.');
       modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
       setStatus('Secure checkout opened.');
       if(!window.RapidPay) throw new Error('RapidPay SDK did not load.');
