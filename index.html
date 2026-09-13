@@ -1,260 +1,3702 @@
-<script src="https://secure.rapid-gateway.com/sdk/v1/rapidpay.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Learning Hub | Global Education Platform</title>
+<meta name="description" content="Learning Hub provides global online tutoring, international curriculum support, Quran and Islamic Studies, exam preparation, specialist learning support, courses and digital learning resources.">
+<link rel="canonical" href="https://learninghubtutoring.com/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Learning Hub">
+<meta name="theme-color" content="#070707">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Learning Hub">
+<meta property="og:title" content="Learning Hub | Global Online Tutoring & International Education">
+<meta property="og:description" content="Personalised online tutoring, international curriculum support, English development, exam preparation, Quran and Islamic Studies, learning support and digital resources.">
+<meta property="og:url" content="https://learninghubtutoring.com/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=85">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Learning Hub | Global Online Tutoring & International Education">
+<meta name="twitter:description" content="Personalised online learning for students, professionals and lifelong learners worldwide.">
+<meta name="twitter:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=85">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","@id":"https://learninghubtutoring.com/#organization","name":"Learning Hub","url":"https://learninghubtutoring.com/","description":"Global online education platform providing tutoring, international curriculum support, English development, exam preparation, Quran and Islamic Studies, learning support and digital resources."},{"@type":"WebSite","@id":"https://learninghubtutoring.com/#website","url":"https://learninghubtutoring.com/","name":"Learning Hub","publisher":{"@id":"https://learninghubtutoring.com/#organization"}},{"@type":"WebPage","@id":"https://learninghubtutoring.com/#webpage","url":"https://learninghubtutoring.com/","name":"Learning Hub | Global Education Platform","isPartOf":{"@id":"https://learninghubtutoring.com/#website"},"about":{"@id":"https://learninghubtutoring.com/#organization"}}]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --black:#070707;
+  --black2:#0d0d0d;
+  --black3:#151515;
+  --gold:#c9a45c;
+  --gold2:#f0d58e;
+  --gold3:#8e6b2d;
+  --cream:#f4eee2;
+  --cream2:#e8deca;
+  --ivory:#fbf8f1;
+  --white:#fffdf8;
+  --text:#171512;
+  --muted:#777168;
+  --darkmuted:#bcb4a7;
+  --line:rgba(201,164,92,.25);
+  --shadow:0 25px 70px rgba(0,0,0,.22);
+  --radius:24px
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  background:var(--ivory);
+  color:var(--text);
+  line-height:1.65;
+  overflow-x:hidden
+}
+
+img{display:block;width:100%}
+
+a{color:inherit;text-decoration:none}
+
+button,input,textarea,select{font:inherit}
+
+button{cursor:pointer}
+
+.container{
+  width:min(1200px,calc(100% - 36px));
+  margin:auto
+}
+
+section{
+  padding:100px 0;
+  position:relative
+}
+
+.section-heading{
+  max-width:760px;
+  margin-bottom:55px
+}
+
+.section-heading.center{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gold3);
+  margin-bottom:16px
+}
+
+.eyebrow::before{
+  content:"";
+  width:28px;
+  height:1px;
+  background:currentColor
+}
+
+.dark .eyebrow{color:var(--gold2)}
+
+h1,h2,h3{
+  font-family:"Playfair Display",serif;
+  line-height:1.1
+}
+
+h1{font-size:clamp(3rem,7vw,6.6rem)}
+
+h2{font-size:clamp(2.2rem,4vw,4rem)}
+
+h3{font-size:1.45rem}
+
+p{color:var(--muted)}
+
+.dark p{color:var(--darkmuted)}
+
+/* NAVIGATION */
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(7,7,7,.92);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(201,164,92,.18)
+}
+
+.nav-inner{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-shrink:0
+}
+
+.brand-mark{
+  width:48px;
+  height:48px;
+  border:1px solid var(--gold);
+  display:grid;
+  place-items:center;
+  color:var(--gold2);
+  font-family:"Playfair Display",serif;
+  font-size:1.25rem
+}
+
+.brand-copy strong{
+  display:block;
+  color:var(--white);
+  font-size:1rem
+}
+
+.brand-copy small{
+  display:block;
+  color:var(--darkmuted);
+  font-size:.68rem;
+  letter-spacing:.08em;
+  text-transform:uppercase
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:22px
+}
+
+.nav-links a{
+  font-size:.78rem;
+  color:#ddd7cc;
+  transition:.25s
+}
+
+.nav-links a:hover{color:var(--gold2)}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:46px;
+  padding:0 20px;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-weight:700;
+  font-size:.85rem;
+  transition:.3s
+}
+
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#17130c
+}
+
+.btn-gold:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px rgba(201,164,92,.25)
+}
+
+.btn-outline{
+  border-color:var(--gold);
+  color:var(--gold2)
+}
+
+.btn-outline:hover{
+  background:var(--gold);
+  color:#111
+}
+
+.mobile-toggle{
+  display:none;
+  background:none;
+  border:1px solid var(--line);
+  color:var(--gold2);
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  font-size:1.2rem
+}
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  padding-top:150px;
+  background:
+    linear-gradient(90deg,rgba(7,7,7,.96) 0%,rgba(7,7,7,.78) 46%,rgba(7,7,7,.30) 100%),
+    url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2200&q=85") center/cover;
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  overflow:hidden
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:auto -100px -150px auto;
+  width:450px;
+  height:450px;
+  border-radius:50%;
+  background:rgba(201,164,92,.12);
+  filter:blur(70px)
+}
+
+.hero-content{
+  max-width:850px;
+  position:relative;
+  z-index:2
+}
+
+.hero .eyebrow{color:var(--gold2)}
+
+.hero p{
+  max-width:690px;
+  font-size:1.08rem;
+  margin:25px 0 35px;
+  color:#ddd7cd
+}
+
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap
+}
+
+.hero-statbar{
+  margin-top:65px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)
+}
+
+.hero-stat{
+  padding:20px 12px;
+  border-right:1px solid var(--line)
+}
+
+.hero-stat:last-child{border-right:0}
+
+.hero-stat strong{
+  display:block;
+  color:var(--gold2);
+  font-size:1rem;
+  margin-bottom:3px
+}
+
+.hero-stat span{
+  font-size:.72rem;
+  color:#aaa398
+}
+
+/* INTRO */
+
+.intro{background:var(--cream)}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center
+}
+
+.intro-image{
+  border-radius:28px;
+  overflow:hidden;
+  height:520px;
+  box-shadow:var(--shadow);
+  position:relative
+}
+
+.intro-image img{
+  height:100%;
+  object-fit:cover
+}
+
+.image-caption{
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  padding:20px;
+  background:rgba(7,7,7,.78);
+  backdrop-filter:blur(15px);
+  border:1px solid var(--line);
+  border-radius:18px;
+  color:white
+}
+
+.image-caption strong{
+  display:block;
+  color:var(--gold2);
+  margin-bottom:3px
+}
+
+.intro-list{
+  margin-top:28px;
+  display:grid;
+  gap:12px
+}
+
+.intro-list div{
+  display:flex;
+  gap:12px;
+  align-items:flex-start
+}
+
+.check{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--gold);
+  color:#111;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:.75rem;
+  flex-shrink:0
+}
+
+/* CARDS */
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.visual-card{
+  background:#fff;
+  border:1px solid rgba(23,21,18,.08);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 12px 40px rgba(23,21,18,.07);
+  transition:.4s;
+  transform-style:preserve-3d
+}
+
+.visual-card:hover{
+  transform:translateY(-8px) rotateX(1deg) rotateY(-1deg);
+  box-shadow:0 25px 55px rgba(23,21,18,.14)
+}
+
+.card-image{
+  height:230px;
+  overflow:hidden;
+  position:relative
+}
+
+.card-image img{
+  height:100%;
+  object-fit:cover;
+  transition:.5s
+}
+
+.visual-card:hover .card-image img{transform:scale(1.06)}
+
+.card-tag{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:rgba(7,7,7,.82);
+  color:var(--gold2);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:7px 11px;
+  font-size:.68rem;
+  font-weight:700
+}
+
+.card-body{padding:24px}
+
+.card-body p{
+  font-size:.9rem;
+  margin:12px 0 20px
+}
+
+.card-link{
+  color:var(--gold3);
+  font-size:.8rem;
+  font-weight:700
+}
+
+.programmes{background:var(--ivory)}
+
+/* QURAN */
+
+.quran{
+  background:
+    linear-gradient(90deg,rgba(7,7,7,.96),rgba(7,7,7,.80)),
+    url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=2200&q=85") center/cover fixed;
+  color:white
+}
+
+.quran-grid{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:60px;
+  align-items:center
+}
+
+.quran-image{
+  height:550px;
+  border-radius:30px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow)
+}
+
+.quran-image img{
+  height:100%;
+  object-fit:cover
+}
+
+.quran-content p{max-width:680px}
+
+.course-list{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:28px
+}
+
+.course-item{
+  padding:17px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.045);
+  border-radius:15px;
+  transition:.3s
+}
+
+.course-item:hover{
+  border-color:var(--gold);
+  transform:translateY(-3px)
+}
+
+.course-item strong{
+  display:block;
+  color:var(--gold2);
+  font-size:.92rem
+}
+
+.course-item span{
+  font-size:.75rem;
+  color:#aaa398
+}
+
+/* SUBJECTS */
+
+.subjects{
+  background:var(--black2);
+  color:white
+}
+
+.subject-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px
+}
+
+.subject-pill{
+  padding:12px 17px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:#ded7ca;
+  background:rgba(255,255,255,.025);
+  font-size:.8rem;
+  transition:.25s
+}
+
+.subject-pill:hover{
+  background:var(--gold);
+  color:#111;
+  transform:translateY(-2px)
+}
+
+/* BOARDS */
+
+.boards{background:var(--cream)}
+
+.board-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px
+}
+
+.board-card{
+  min-height:210px;
+  padding:28px;
+  background:#fff;
+  border-radius:22px;
+  border:1px solid rgba(23,21,18,.08);
+  position:relative;
+  overflow:hidden
+}
+
+.board-card::before{
+  content:"";
+  position:absolute;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:rgba(201,164,92,.12);
+  right:-30px;
+  top:-30px
+}
+
+.board-card strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:1.3rem;
+  margin-bottom:12px
+}
+
+.board-card span{
+  font-size:.78rem;
+  color:var(--muted)
+}
+
+/* IB */
+
+.ib-section{background:var(--ivory)}
+
+.ib-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+
+.ib-group{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  border:1px solid rgba(23,21,18,.08)
+}
+
+.ib-group h3{
+  font-size:1.15rem;
+  margin-bottom:14px
+}
+
+.ib-group ul{
+  list-style:none;
+  display:grid;
+  gap:7px
+}
+
+.ib-group li{
+  font-size:.78rem;
+  color:var(--muted);
+  padding-bottom:7px;
+  border-bottom:1px solid #eee8dc
+}
+
+/* EXAMS */
+
+.exams{
+  background:var(--black);
+  color:white
+}
+
+.exam-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px
+}
+
+.exam{
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:rgba(255,255,255,.025);
+  transition:.3s
+}
+
+.exam:hover{
+  border-color:var(--gold);
+  transform:translateY(-3px)
+}
+
+.exam strong{
+  display:block;
+  color:var(--gold2);
+  font-size:.9rem
+}
+
+.exam span{
+  display:block;
+  font-size:.72rem;
+  color:#a8a095;
+  margin-top:5px
+}
+
+.exam-note{
+  display:inline-block;
+  margin-top:12px;
+  font-size:.68rem;
+  color:#bdb5a9
+}
+
+/* INTERNATIONAL EXAMS */
+
+.international-exams{
+  background:var(--ivory)
+}
+
+.exam-category{
+  margin-bottom:55px
+}
+
+.exam-category:last-child{
+  margin-bottom:0
+}
+
+.exam-category-title{
+  color:var(--text);
+  margin-bottom:20px;
+  font-size:1.8rem
+}
+
+.exam-category-intro{
+  margin-bottom:22px;
+  max-width:760px
+}
+
+.international-exam-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.international-exam-card{
+  background:white;
+  border:1px solid rgba(23,21,18,.08);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 12px 35px rgba(23,21,18,.05);
+  transition:.3s
+}
+
+.international-exam-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px rgba(23,21,18,.1)
+}
+
+.international-exam-card h3{
+  margin-bottom:10px;
+  font-size:1.35rem
+}
+
+.exam-label{
+  display:inline-block;
+  color:var(--gold3);
+  font-size:.68rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-weight:700;
+  margin-bottom:10px
+}
+
+.international-exam-card p{
+  font-size:.82rem;
+  margin-bottom:15px
+}
+
+.exam-components{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px
+}
+
+.exam-component{
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--cream);
+  color:#665b4d;
+  font-size:.66rem;
+  font-weight:600
+}
+
+/* SUPPORT */
+
+.support{background:var(--cream)}
+
+.support-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.support-card{
+  position:relative;
+  min-height:320px;
+  border-radius:25px;
+  overflow:hidden;
+  color:white
+}
+
+.support-card img{
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  inset:0
+}
+
+.support-overlay{
+  position:absolute;
+  inset:0;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background:linear-gradient(transparent 25%,rgba(0,0,0,.88))
+}
+
+.support-overlay h3{color:white}
+
+.support-overlay p{
+  color:#ddd7cd;
+  font-size:.82rem;
+  margin-top:7px
+}
+
+/* LIBRARY */
+
+.library{background:var(--ivory)}
+
+.library-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.resource-card{
+  background:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(23,21,18,.08);
+  box-shadow:0 12px 35px rgba(23,21,18,.06);
+  transition:.3s
+}
+
+.resource-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px rgba(23,21,18,.1)
+}
+
+.resource-cover{
+  height:300px;
+  overflow:hidden;
+  background:linear-gradient(135deg,#0a0a0a,#211b10);
+  position:relative
+}
+
+.resource-cover img{
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  opacity:1;
+  filter:saturate(.9) contrast(1.04);
+  transition:transform .5s ease,filter .5s ease
+}
+
+.resource-cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(7,7,7,.05),rgba(7,7,7,.38));
+  pointer-events:none
+}
+
+.resource-card:hover .resource-cover img{
+  transform:scale(1.04);
+  filter:saturate(1) contrast(1.05)
+}
+
+.resource-body{padding:22px}
+
+.resource-meta{
+  font-size:.7rem;
+  color:var(--gold3);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em
+}
+
+.resource-body h3{
+  margin:8px 0;
+  font-size:1.3rem
+}
+
+.resource-body p{
+  font-size:.8rem;
+  margin-bottom:18px
+}
+
+.resource-download{
+  width:100%;
+}
+
+
+/* ARTICLES & BLOG */
+.articles{background:var(--cream)}
+
+.article-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.article-card{
+  background:#fff;
+  border:1px solid rgba(23,21,18,.08);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 35px rgba(23,21,18,.06);
+  transition:.35s;
+}
+
+.article-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 48px rgba(23,21,18,.12)
+}
+
+.article-top{
+  min-height:150px;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:linear-gradient(135deg,#0a0a0a,#241d10);
+  color:white;
+  position:relative;
+}
+
+.article-top::after{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  right:-35px;
+  top:-45px;
+  background:rgba(231,205,143,.13);
+  filter:blur(2px)
+}
+
+.article-category{
+  position:relative;
+  z-index:1;
+  color:var(--gold2);
+  font-size:.68rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-weight:700
+}
+
+.article-mark{
+  position:relative;
+  z-index:1;
+  font-family:"Playfair Display",serif;
+  font-size:2.4rem;
+  color:rgba(231,205,143,.92);
+  line-height:1
+}
+
+.article-body{padding:24px}
+
+.article-body h3{
+  font-size:1.25rem;
+  line-height:1.25;
+  margin-bottom:10px
+}
+
+.article-body p{
+  font-size:.84rem;
+  margin-bottom:16px
+}
+
+.article-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  color:#8b8173;
+  font-size:.68rem;
+  margin-bottom:16px
+}
+
+.article-details summary{
+  list-style:none;
+  cursor:pointer;
+  color:var(--gold3);
+  font-size:.78rem;
+  font-weight:700
+}
+
+.article-details summary::-webkit-details-marker{display:none}
+.article-details summary::after{content:"  +"}
+.article-details[open] summary::after{content:"  −"}
+
+.article-full{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid rgba(23,21,18,.08);
+  font-size:.8rem;
+  line-height:1.75
+}
+
+@media(max-width:980px){
+  .article-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:720px){
+  .article-grid{grid-template-columns:1fr}
+}
+
+/* GALLERY */
+
+.gallery{background:var(--cream)}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:220px;
+  gap:15px
+}
+
+.gallery-item{
+  overflow:hidden;
+  border-radius:20px;
+  position:relative
+}
+
+.gallery-item.large{
+  grid-column:span 2;
+  grid-row:span 2
+}
+
+.gallery-item img{
+  height:100%;
+  object-fit:cover;
+  transition:.5s
+}
+
+.gallery-item:hover img{transform:scale(1.08)}
+
+.gallery-label{
+  position:absolute;
+  left:15px;
+  bottom:15px;
+  padding:8px 12px;
+  background:rgba(7,7,7,.75);
+  color:white;
+  border-radius:999px;
+  font-size:.68rem
+}
+
+/* METHODOLOGY */
+
+.methodology{background:var(--ivory)}
+
+.method-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.method-card{
+  padding:35px;
+  background:#fff;
+  border-radius:25px;
+  border:1px solid rgba(23,21,18,.08)
+}
+
+.method-number{
+  font-family:"Playfair Display",serif;
+  font-size:3rem;
+  color:var(--gold);
+  margin-bottom:20px
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+  background:var(--black);
+  color:white
+}
+
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.testimonial{
+  padding:30px;
+  border:1px solid var(--line);
+  border-radius:24px;
+  background:rgba(255,255,255,.025)
+}
+
+.quote{
+  font-family:"Playfair Display",serif;
+  font-size:3rem;
+  color:var(--gold);
+  line-height:.6
+}
+
+.testimonial p{
+  color:#d1c9bd;
+  margin:15px 0 25px;
+  font-size:.9rem
+}
+
+.testimonial small{
+  color:var(--gold2);
+  font-weight:700
+}
+
+/* PRICING */
+
+.pricing{background:var(--cream)}
+
+.price-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px
+}
+
+.price-card{
+  background:white;
+  padding:30px;
+  border-radius:24px;
+  border:1px solid rgba(23,21,18,.08)
+}
+
+.price-card.featured{
+  background:var(--black);
+  color:white;
+  border-color:var(--gold);
+  transform:translateY(-8px)
+}
+
+.price-card h3{font-size:1.25rem}
+
+.price{
+  font-size:2.2rem;
+  font-weight:700;
+  margin:18px 0;
+  color:var(--gold3)
+}
+
+.featured .price{color:var(--gold2)}
+
+.price-card ul{
+  list-style:none;
+  display:grid;
+  gap:8px;
+  margin-bottom:25px
+}
+
+.price-card li{
+  font-size:.78rem;
+  color:var(--muted)
+}
+
+.featured li{color:#c7c0b6}
+
+/* CTA */
+
+.cta{
+  background:
+    linear-gradient(90deg,rgba(7,7,7,.95),rgba(7,7,7,.78)),
+    url("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=2200&q=85") center/cover;
+  color:white;
+  text-align:center
+}
+
+.cta-inner{
+  max-width:800px;
+  margin:auto
+}
+
+.cta p{
+  margin:20px auto 30px;
+  max-width:650px
+}
+
+/* CONTACT */
+
+.contact{background:var(--ivory)}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px
+}
+
+.contact-box{
+  padding:35px;
+  background:white;
+  border-radius:25px;
+  border:1px solid rgba(23,21,18,.08)
+}
+
+.contact-item{
+  padding:17px 0;
+  border-bottom:1px solid #ece6da
+}
+
+.contact-item strong{
+  display:block;
+  margin-bottom:4px
+}
+
+.contact-item a{
+  color:var(--gold3);
+  font-weight:600
+}
+
+/* FOOTER */
+
+footer{
+  background:#050505;
+  color:white;
+  padding:60px 0 25px;
+  border-top:1px solid var(--line)
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  gap:50px;
+  padding-bottom:45px
+}
+
+footer p{
+  color:#9f988d;
+  font-size:.82rem;
+  max-width:430px;
+  margin-top:15px
+}
+
+.footer-col h4{
+  color:var(--gold2);
+  margin-bottom:14px
+}
+
+.footer-col a{
+  display:block;
+  color:#aaa398;
+  font-size:.8rem;
+  margin:7px 0
+}
+
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:20px;
+  color:#777;
+  font-size:.72rem
+}
+
+/* CONCIERGE */
+
+.concierge{
+  position:fixed;
+  right:22px;
+  bottom:22px;
+  z-index:900
+}
+
+.concierge-button{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  border:1px solid var(--gold2);
+  background:var(--black);
+  color:var(--gold2);
+  font-size:1.25rem;
+  box-shadow:0 15px 40px rgba(0,0,0,.35)
+}
+
+.concierge-panel{
+  position:absolute;
+  right:0;
+  bottom:72px;
+  width:310px;
+  background:#111;
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:20px;
+  display:none;
+  box-shadow:var(--shadow)
+}
+
+.concierge-panel.open{display:block}
+
+.concierge-panel h3{
+  color:white;
+  font-size:1.2rem
+}
+
+.concierge-panel p{
+  font-size:.75rem;
+  margin:8px 0 15px
+}
+
+.concierge-option{
+  width:100%;
+  text-align:left;
+  padding:11px 13px;
+  margin:4px 0;
+  border:1px solid rgba(201,164,92,.2);
+  background:#171717;
+  color:#ddd;
+  border-radius:10px
+}
+
+.concierge-option:hover{
+  border-color:var(--gold);
+  color:var(--gold2)
+}
+
+/* MOBILE MENU */
+
+@media(max-width:1050px){
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:82px;
+    left:18px;
+    right:18px;
+    flex-direction:column;
+    align-items:stretch;
+    gap:0;
+    padding:15px;
+    background:#0d0d0d;
+    border:1px solid rgba(201,164,92,.25);
+    border-radius:18px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35)
+  }
+
+  .nav-links.mobile-open{display:flex}
+
+  .nav-links a{
+    padding:13px 10px;
+    border-bottom:1px solid rgba(255,255,255,.06)
+  }
+
+  .nav-links a:last-child{border-bottom:0}
+
+  .mobile-toggle{display:block}
+
+  .hero-statbar{grid-template-columns:repeat(2,1fr)}
+
+  .hero-stat:nth-child(2){border-right:0}
+
+  .card-grid,
+  .library-grid,
+  .support-grid,
+  .testimonial-grid,
+  .method-grid{
+    grid-template-columns:repeat(2,1fr)
+  }
+
+  .board-grid{grid-template-columns:repeat(2,1fr)}
+
+  .exam-grid{grid-template-columns:repeat(2,1fr)}
+
+  .price-grid{grid-template-columns:repeat(2,1fr)}
+
+  .ib-grid{grid-template-columns:repeat(2,1fr)}
+
+  .international-exam-grid{
+    grid-template-columns:repeat(2,1fr)
+  }
+}
+
+@media(max-width:720px){
+
+  section{padding:75px 0}
+
+  .container{
+    width:min(100% - 26px,1200px)
+  }
+
+  .nav-inner{height:72px}
+
+  .brand-mark{
+    width:42px;
+    height:42px
+  }
+
+  .brand-copy small{display:none}
+
+  .nav-links{
+    top:72px;
+    left:13px;
+    right:13px
+  }
+
+  .hero{
+    padding-top:125px;
+    min-height:auto;
+    padding-bottom:75px
+  }
+
+  .hero-statbar{margin-top:45px}
+
+  .hero-stat{padding:16px 8px}
+
+  .intro-grid,
+  .quran-grid,
+  .contact-grid{
+    grid-template-columns:1fr
+  }
+
+  .intro-image,
+  .quran-image{
+    height:390px
+  }
+
+  .quran{
+    background:
+      linear-gradient(90deg,rgba(7,7,7,.96),rgba(7,7,7,.80)),
+      url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=2200&q=85") center/cover
+  }
+
+  .course-list,
+  .upload-grid{
+    grid-template-columns:1fr
+  }
+
+  .card-grid,
+  .library-grid,
+  .support-grid,
+  .testimonial-grid,
+  .method-grid,
+  .ib-grid,
+  .board-grid,
+  .exam-grid,
+  .price-grid,
+  .international-exam-grid{
+    grid-template-columns:1fr
+  }
+
+  .gallery-grid{
+    grid-template-columns:1fr 1fr;
+    grid-auto-rows:160px
+  }
+
+  .gallery-item.large{
+    grid-column:span 2;
+    grid-row:span 2
+  }
+
+  .price-card.featured{transform:none}
+
+  .footer-grid{
+    grid-template-columns:1fr;
+    gap:30px
+  }
+
+  .concierge-panel{
+    width:min(310px,calc(100vw - 40px))
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+  *{
+    scroll-behavior:auto!important;
+    transition:none!important;
+    animation:none!important
+  }
+
+  .visual-card:hover{transform:none}
+
+  .gallery-item:hover img,
+  .visual-card:hover .card-image img{
+    transform:none
+  }
+}
+
+/* PREMIUM ADDITIONS */
+.global-learners{background:var(--black);color:var(--white);overflow:hidden}
+.global-learners::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 35%,rgba(201,164,92,.13),transparent 35%),linear-gradient(135deg,rgba(240,213,142,.04),transparent 45%);pointer-events:none}
+.global-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:70px;align-items:center;position:relative;z-index:1}
+.world-copy p{color:var(--darkmuted);max-width:650px}
+.world-panel{border:1px solid var(--line);border-radius:30px;padding:30px;background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.015));box-shadow:var(--shadow);position:relative;overflow:hidden}
+.world-panel::after{content:"GLOBAL";position:absolute;right:-30px;bottom:-35px;font:700 90px/1 "Playfair Display",serif;color:rgba(240,213,142,.035);letter-spacing:.04em}
+.country-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;position:relative;z-index:1}
+.country-pill{display:flex;align-items:center;gap:10px;padding:14px 15px;border:1px solid rgba(201,164,92,.18);border-radius:14px;background:rgba(7,7,7,.5);color:#eee8dd;font-size:.86rem;transition:.3s}
+.country-pill:hover{border-color:var(--gold);transform:translateY(-2px);background:rgba(201,164,92,.08)}
+.country-dot{width:7px;height:7px;border-radius:50%;background:var(--gold2);box-shadow:0 0 12px rgba(240,213,142,.45);flex-shrink:0}
+.outcomes{background:var(--cream)}
+.outcomes-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.outcome-card{padding:30px 24px;background:rgba(255,253,248,.75);border:1px solid rgba(201,164,92,.18);border-radius:22px;box-shadow:0 14px 40px rgba(23,21,18,.05);transition:.3s}
+.outcome-card:hover{transform:translateY(-6px);box-shadow:0 22px 50px rgba(23,21,18,.1);border-color:rgba(201,164,92,.42)}
+.outcome-number{font-size:.72rem;font-weight:700;letter-spacing:.14em;color:var(--gold3);margin-bottom:22px}
+.outcome-card h3{margin-bottom:12px;font-size:1.3rem}
+.outcome-card p{font-size:.88rem}
+.faq-section{background:var(--ivory)}
+.faq-wrap{max-width:900px;margin:auto}
+.faq-list{display:grid;gap:12px}
+.faq-item{border:1px solid rgba(23,21,18,.09);border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 8px 28px rgba(23,21,18,.04)}
+.faq-question{width:100%;border:0;background:none;padding:21px 24px;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:20px;color:var(--text);font-weight:700;font-size:.95rem}
+.faq-icon{width:30px;height:30px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;color:var(--gold3);font-size:1.15rem;flex-shrink:0;transition:.3s}
+.faq-answer{display:grid;grid-template-rows:0fr;transition:.35s}
+.faq-answer-inner{overflow:hidden;padding:0 24px;color:var(--muted);font-size:.9rem}
+.faq-item.open .faq-answer{grid-template-rows:1fr}
+.faq-item.open .faq-answer-inner{padding-bottom:22px}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--gold);color:#111}
+@media(max-width:900px){.global-grid{grid-template-columns:1fr;gap:40px}.outcomes-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:720px){.country-grid{grid-template-columns:1fr}.outcomes-grid{grid-template-columns:1fr}.world-panel{padding:20px}}
+
+
+.skip-link{position:fixed;left:14px;top:-60px;z-index:3000;background:#f0d58e;color:#111;padding:10px 16px;border-radius:999px;font-weight:700}.skip-link:focus{top:14px}
+</style>
+
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do online lessons work?","acceptedAnswer":{"@type":"Answer","text":"Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level."}},{"@type":"Question","name":"Which learners can join Learning Hub?","acceptedAnswer":{"@type":"Answer","text":"Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support."}},{"@type":"Question","name":"Which international boards do you support?","acceptedAnswer":{"@type":"Answer","text":"Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning."}},{"@type":"Question","name":"Can adults improve their English?","acceptedAnswer":{"@type":"Answer","text":"Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals."}}]}</script>
+
+<style>
+/* Learning Hub Rapid Gateway TEST checkout */
+#rapidpay-test-checkout { min-height: 120px; margin-top: 18px; }
+.payment-test-card { margin-top: 18px; padding: 22px; border: 1px solid rgba(0,0,0,.10); border-radius: 16px; background: #fff; }
+.payment-test-card .payment-row { display:flex; gap:14px; flex-wrap:wrap; align-items:end; }
+.payment-test-card label { display:block; font-weight:600; margin-bottom:6px; }
+.payment-test-card select, .payment-test-card input { padding:12px 14px; border:1px solid #d7dde2; border-radius:10px; min-width:220px; background:#fff; }
+.payment-test-card .payment-status { margin-top:14px; font-size:.95rem; }
+.payment-test-card .payment-status.success { font-weight:600; }
+.rapidpay-modal { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,.55); padding:4vh 3vw; overflow:auto; }
+.rapidpay-modal.open { display:block; }
+.rapidpay-modal-inner { max-width:980px; margin:0 auto; background:#fff; border-radius:18px; min-height:620px; position:relative; padding:16px; }
+.rapidpay-close { position:absolute; right:14px; top:10px; z-index:2; border:0; background:#fff; font-size:28px; cursor:pointer; line-height:1; }
+#rapidpay-checkout { min-height:580px; padding-top:18px; }
+@media(max-width:700px){ .rapidpay-modal{padding:2vh 2vw;} .rapidpay-modal-inner{min-height:680px;} #rapidpay-checkout{min-height:640px;} }
+</style>
+</head>
+
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<!-- NAVIGATION -->
+<nav class="navbar">
+  <div class="container nav-inner">
+
+    <a href="#home" class="brand">
+      <span class="brand-mark">LH</span>
+      <span class="brand-copy">
+        <strong>Learning Hub</strong>
+        <small>Global Education Platform</small>
+      </span>
+    </a>
+
+    <div class="nav-links" id="mainNav">
+      <a href="#programmes">Programmes</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#quran">Quran & Islamic Studies</a>
+      <a href="#boards">International Boards</a>
+      <a href="#exams">Exams</a>
+      <a href="#support">Learning Support</a>
+      <a href="#library">Resources</a>
+      <a href="#articles">Articles & Blog</a>
+      <a href="#teacher">Teach</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="https://calendly.com/hublearning117" target="_blank" rel="noopener" class="btn btn-gold">Book Now</a>
+      <button class="mobile-toggle" id="mobileToggle" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+
+  </div>
+</nav>
+
+
+<main id="main-content">
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="eyebrow">Global Online Learning Platform</div>
+
+      <h1>Learn smarter.<br>Grow with Learning Hub.</h1>
+
+      <p>
+        A global education platform connecting learners with personalised tutoring,
+        international curriculum support, Quran and Islamic Studies, exam preparation,
+        specialist learning support and digital resources.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#programmes" class="btn btn-gold">Explore Learning</a>
+        <a href="https://calendly.com/hublearning117" target="_blank" rel="noopener" class="btn btn-outline">Book a Lesson</a>
+      </div>
+
+      <div class="hero-statbar">
+        <div class="hero-stat">
+          <strong>Global</strong>
+          <span>Online Learning</span>
+        </div>
+
+        <div class="hero-stat">
+          <strong>1-to-1</strong>
+          <span>Personalised Support</span>
+        </div>
+
+        <div class="hero-stat">
+          <strong>IB + Cambridge</strong>
+          <span>International Curriculum</span>
+        </div>
+
+        <div class="hero-stat">
+          <strong>Quran</strong>
+          <span>Islamic Learning</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="container intro-grid">
+
+    <div class="intro-image">
+      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85" alt="Students learning together">
+      <div class="image-caption">
+        <strong>Learning for Everyone, Everywhere</strong>
+        <span>Academic learning • International education • Personal development</span>
+      </div>
+    </div>
+
+    <div>
+
+      <div class="section-heading">
+        <div class="eyebrow">Why Learning Hub</div>
+        <h2>One platform. Many pathways.</h2>
+        <p>
+          Learning Hub brings academic tutoring, international qualifications,
+          Quranic education, exam preparation, specialist support and independent
+          learning resources together in one accessible environment.
+        </p>
+      </div>
+
+      <div class="intro-list">
+
+        <div>
+          <span class="check">✓</span>
+          <span>Global online tutoring for school, university and adult learners.</span>
+        </div>
+
+        <div>
+          <span class="check">✓</span>
+          <span>International curriculum support including IB and Cambridge.</span>
+        </div>
+
+        <div>
+          <span class="check">✓</span>
+          <span>Quran reading, Tajweed, Islamic Studies and structured courses.</span>
+        </div>
+
+        <div>
+          <span class="check">✓</span>
+          <span>Digital resources, worksheets, e-books and independent practice.</span>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PROGRAMMES -->
+<section class="programmes" id="programmes">
+  <div class="container">
+
+    <div class="section-heading center">
+      <div class="eyebrow">Learning Programmes</div>
+      <h2>Choose your learning pathway.</h2>
+      <p>Flexible learning designed around academic goals, personal needs and different stages of life.</p>
+    </div>
+
+    <div class="card-grid">
+
+      <article class="visual-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=85" alt="Academic tutoring">
+          <span class="card-tag">Academic</span>
+        </div>
+        <div class="card-body">
+          <h3>Academic Tutoring</h3>
+          <p>School subjects, homework support, concept building, revision and exam-focused learning.</p>
+          <a href="/subjects/" class="card-link">Explore Subjects →</a>
+        </div>
+      </article>
+
+      <article class="visual-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=85" alt="International education">
+          <span class="card-tag">International</span>
+        </div>
+        <div class="card-body">
+          <h3>International Curriculum</h3>
+          <p>IB, Cambridge and other international qualification support for global learners.</p>
+          <a href="/international-curriculum/" class="card-link">View Boards →</a>
+        </div>
+      </article>
+
+      <article class="visual-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=85" alt="English learning">
+          <span class="card-tag">Languages</span>
+        </div>
+        <div class="card-body">
+          <h3>English Development</h3>
+          <p>Academic English, communication, speaking, writing, vocabulary and language confidence.</p>
+          <a href="/english/" class="card-link">Learn English →</a>
+        </div>
+      </article>
+
+      <article class="visual-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=85" alt="Exam preparation">
+          <span class="card-tag">Exams</span>
+        </div>
+        <div class="card-body">
+          <h3>Exam Preparation</h3>
+          <p>Structured preparation, practice questions, feedback and examination techniques.</p>
+          <a href="/exam-preparation/" class="card-link">Explore Exams →</a>
+        </div>
+      </article>
+
+      <article class="visual-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=1200&q=85" alt="Study skills">
+          <span class="card-tag">Skills</span>
+        </div>
+        <div class="card-body">
+          <h3>Study Skills</h3>
+          <p>Organisation, academic writing, independent study, research and confidence.</p>
+          <a href="#methodology" class="card-link">Our Method →</a>
+        </div>
+      </article>
+
+      <article class="visual-card">
+        <div class="card-image">
+          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=85" alt="Specialist learning support">
+          <span class="card-tag">Specialist</span>
+        </div>
+        <div class="card-body">
+          <h3>Specialist Learning Support</h3>
+          <p>Personalised approaches for learning differences, communication and confidence.</p>
+          <a href="#support" class="card-link">Explore Support →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- QURAN -->
+<section class="quran" id="quran">
+  <div class="container quran-grid">
+
+    <div class="quran-image">
+      <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1400&q=85" alt="Quran and Islamic learning">
+    </div>
+
+    <div class="quran-content">
+
+      <div class="eyebrow">Quran & Islamic Studies</div>
+
+      <h2>Learn the Quran. Understand. Practise. Grow.</h2>
+
+      <p>
+        Structured Quranic and Islamic education for children, young learners,
+        adults and beginners, with flexible online learning.
+      </p>
+
+      <div class="course-list">
+
+        <div class="course-item"><strong>Noorani Qaida</strong><span>Foundational Quran reading</span></div>
+        <div class="course-item"><strong>Quran Reading</strong><span>Fluency and accuracy</span></div>
+        <div class="course-item"><strong>Tajweed</strong><span>Rules and correct recitation</span></div>
+        <div class="course-item"><strong>Hifz Support</strong><span>Memorisation and revision</span></div>
+        <div class="course-item"><strong>Quran Translation</strong><span>Understand the meaning</span></div>
+        <div class="course-item"><strong>Tafseer</strong><span>Context and explanation</span></div>
+        <div class="course-item"><strong>Arabic for Quran</strong><span>Language foundations</span></div>
+        <div class="course-item"><strong>Quran for Adults</strong><span>Flexible adult learning</span></div>
+        <div class="course-item"><strong>Islamic Studies</strong><span>Structured Islamic education</span></div>
+        <div class="course-item"><strong>Seerah</strong><span>Life of Prophet Muhammad ﷺ</span></div>
+        <div class="course-item"><strong>Hadith Studies</strong><span>Introduction and learning</span></div>
+        <div class="course-item"><strong>Islamic History</strong><span>People, events and civilisation</span></div>
+        <div class="course-item"><strong>Fiqh</strong><span>Islamic practices and principles</span></div>
+        <div class="course-item"><strong>Duas</strong><span>Daily supplications</span></div>
+        <div class="course-item"><strong>Salah Learning</strong><span>Prayer guidance</span></div>
+        <div class="course-item"><strong>Islamic Manners</strong><span>Character and everyday conduct</span></div>
+
+      </div>
+
+      <br>
+
+      <a href="mailto:hublearning117@gmail.com" class="btn btn-gold">
+        Enquire About Quran Courses
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- SUBJECTS -->
+<section class="subjects" id="subjects">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Subjects</div>
+      <h2>Academic subjects and learning areas.</h2>
+      <p>Support can be tailored to the learner's curriculum, level and goals.</p>
+    </div>
+
+    <div class="subject-pills">
+
+      <span class="subject-pill">English Language</span>
+      <span class="subject-pill">English Literature</span>
+      <span class="subject-pill">Language & Literature</span>
+      <span class="subject-pill">Mathematics</span>
+      <span class="subject-pill">Additional Mathematics</span>
+      <span class="subject-pill">Biology</span>
+      <span class="subject-pill">Chemistry</span>
+      <span class="subject-pill">Physics</span>
+      <span class="subject-pill">Psychology</span>
+      <span class="subject-pill">Business Studies</span>
+      <span class="subject-pill">Business Management</span>
+      <span class="subject-pill">Economics</span>
+      <span class="subject-pill">Sociology</span>
+      <span class="subject-pill">Geography</span>
+      <span class="subject-pill">History</span>
+      <span class="subject-pill">Global Politics</span>
+      <span class="subject-pill">Philosophy</span>
+      <span class="subject-pill">Environmental Systems & Societies</span>
+      <span class="subject-pill">Environmental Management</span>
+      <span class="subject-pill">Computer Science</span>
+      <span class="subject-pill">Information Technology</span>
+      <span class="subject-pill">Design Technology</span>
+      <span class="subject-pill">Statistics</span>
+      <span class="subject-pill">Arabic</span>
+      <span class="subject-pill">Urdu</span>
+      <span class="subject-pill">Islamic Studies</span>
+      <span class="subject-pill">Academic Writing</span>
+      <span class="subject-pill">Research Skills</span>
+      <span class="subject-pill">Study Skills</span>
+      <span class="subject-pill">Communication</span>
+      <span class="subject-pill">Vocabulary</span>
+      <span class="subject-pill">Reading</span>
+      <span class="subject-pill">Speaking</span>
+      <span class="subject-pill">Writing</span>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- INTERNATIONAL BOARDS -->
+<section class="boards" id="boards">
+  <div class="container">
+
+    <div class="section-heading center">
+      <div class="eyebrow">International Boards</div>
+      <h2>International qualifications.</h2>
+      <p>Support across major international education systems and qualifications.</p>
+    </div>
+
+    <div class="board-grid">
+
+      <div class="board-card">
+        <strong>IB Diploma Programme</strong><a href="/international-curriculum/ib/" class="card-link" style="display:block;margin-top:12px">Explore IB support →</a>
+        <span>IB subject tutoring, coursework guidance, examination preparation, TOK, Extended Essay and CAS support.</span>
+      </div>
+
+      <div class="board-card">
+        <strong>Cambridge International</strong><a href="/international-curriculum/" class="card-link" style="display:block;margin-top:12px">Explore Cambridge support →</a>
+        <span>IGCSE, O Level, AS Level and A Level subject support.</span>
+      </div>
+
+      <div class="board-card">
+        <strong>Pearson Edexcel</strong>
+        <span>International GCSE and International A Level support.</span>
+      </div>
+
+      <div class="board-card">
+        <strong>OxfordAQA</strong>
+        <span>International qualification and examination preparation.</span>
+      </div>
+
+      <div class="board-card">
+        <strong>American Qualifications</strong>
+        <span>Academic support for American curriculum learners and examination pathways.</span>
+      </div>
+
+      <div class="board-card">
+        <strong>Other International Programmes</strong>
+        <span>Personalised support where the curriculum and learning requirements can be matched.</span>
+      </div>
+
+      <div class="board-card">
+        <strong>School Curriculum</strong>
+        <span>Personalised tutoring for learners following local or school-specific programmes.</span>
+      </div>
+
+      <div class="board-card">
+        <strong>Adult Education</strong>
+        <span>Flexible learning for professional, academic and personal development.</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- IB -->
+<section class="ib-section">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">IB Diploma Programme</div>
+      <h2>IB subjects and core components.</h2>
+      <p>Learning Hub can support the IB Diploma Programme across the six subject groups and core components.</p>
+    </div>
+
+    <div class="ib-grid">
+
+      <div class="ib-group">
+        <h3>Group 1 — Language & Literature</h3>
+        <ul>
+          <li>Language A: Literature</li>
+          <li>Language A: Language and Literature</li>
+          <li>Literature and Performance</li>
+        </ul>
+      </div>
+
+      <div class="ib-group">
+        <h3>Group 2 — Language Acquisition</h3>
+        <ul>
+          <li>Classical Languages</li>
+          <li>Language ab initio</li>
+          <li>Language B</li>
+        </ul>
+      </div>
+
+      <div class="ib-group">
+        <h3>Group 3 — Individuals & Societies</h3>
+        <ul>
+          <li>Business Management</li>
+          <li>Digital Society</li>
+          <li>Economics</li>
+          <li>Geography</li>
+          <li>Global Politics</li>
+          <li>History</li>
+          <li>Philosophy</li>
+          <li>Psychology</li>
+          <li>Social & Cultural Anthropology</li>
+          <li>World Religions</li>
+        </ul>
+      </div>
+
+      <div class="ib-group">
+        <h3>Group 4 — Sciences</h3>
+        <ul>
+          <li>Biology</li>
+          <li>Chemistry</li>
+          <li>Computer Science</li>
+          <li>Design Technology</li>
+          <li>Environmental Systems & Societies</li>
+          <li>Physics</li>
+          <li>Sports, Exercise & Health Science</li>
+        </ul>
+      </div>
+
+      <div class="ib-group">
+        <h3>Group 5 — Mathematics</h3>
+        <ul>
+          <li>Mathematics: Analysis & Approaches</li>
+          <li>Mathematics: Applications & Interpretation</li>
+        </ul>
+      </div>
+
+      <div class="ib-group">
+        <h3>Group 6 — The Arts</h3>
+        <ul>
+          <li>Drawing</li>
+          <li>Painting</li>
+          <li>Sketching</li>
+        </ul>
+      </div>
+
+      <div class="ib-group">
+        <h3>IB Core</h3>
+        <ul>
+          <li>Theory of Knowledge — TOK</li>
+          <li>Extended Essay — EE</li>
+          <li>Creativity, Activity, Service — CAS</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CAMBRIDGE -->
+<section class="exams" id="cambridge">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Cambridge International</div>
+      <h2>Selected Cambridge subjects & syllabus codes.</h2>
+      <p>Current Cambridge syllabus naming and codes are shown where applicable.</p>
+    </div>
+
+    <div class="exam-grid">
+
+      <div class="exam"><strong>Accounting — 7707</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Arabic — 3180</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Art & Design — 6090</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Biology — 5090</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Business — 7081</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Business Studies — 7115</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Chemistry — 5070</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Computer Science — 2210</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Economics — 2281</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>English Language — 1123</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Environmental Management — 5014</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Geography — 2217</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Global Perspectives — 2069</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>History — 2147</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Islamic Studies — 2068</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Islamiyat — 2058</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Literature in English — 2010</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Mathematics D — 4024</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Additional Mathematics — 4037</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Pakistan Studies — 2059</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Physics — 5054</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Science — Combined — 5129</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Sociology — 2251</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Statistics — 4040</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Travel & Tourism — 7096</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Urdu First Language — 3247</strong><span>Cambridge O Level</span></div>
+      <div class="exam"><strong>Urdu Second Language — 3248</strong><span>Cambridge O Level</span></div>
+
+      <div class="exam"><strong>Biology — 9700</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Chemistry — 9701</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Physics — 9702</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Mathematics — 9709</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Economics — 9708</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>English Language — 9093</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>English Literature — 9695</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>English Language & Literature — 8695</strong><span>AS Level only</span></div>
+      <div class="exam"><strong>English General Paper — 8021</strong><span>AS Level only</span></div>
+      <div class="exam"><strong>Environmental Management — 8291</strong><span>AS Level only</span></div>
+      <div class="exam"><strong>Further Mathematics — 9231</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Geography — 9696</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Global Perspectives & Research — 9239</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>History — 9489</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Information Technology — 9626</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Islamic Studies — 9488</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Law — 9084</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Marine Science — 9693</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Psychology — 9990</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Sociology — 9699</strong><span>Cambridge AS & A Level</span></div>
+      <div class="exam"><strong>Business — 9609</strong><span>Cambridge AS & A Level</span></div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- INTERNATIONAL EXAMS -->
+<section class="international-exams" id="exams">
+  <div class="container">
+
+    <div class="section-heading center">
+      <div class="eyebrow">International Exams</div>
+      <h2>Prepare with purpose.</h2>
+      <p>
+        Exam preparation can focus on content knowledge, exam technique,
+        writing, speaking, confidence and timed practice.
+      </p>
+    </div>
+
+
+    <!-- IELTS -->
+    <div class="exam-category">
+
+      <h3 class="exam-category-title">IELTS</h3>
+
+      <p class="exam-category-intro">
+        Preparation for both IELTS Academic and IELTS General Training,
+        with the appropriate skills, practice and exam strategies for each pathway.
+      </p>
+
+      <div class="international-exam-grid">
+
+        <div class="international-exam-card">
+          <span class="exam-label">IELTS Academic</span>
+          <h3>IELTS Academic</h3>
+          <p>Preparation for higher education and professional registration pathways.</p>
+
+          <div class="exam-components">
+            <span class="exam-component">Listening</span>
+            <span class="exam-component">Reading</span>
+            <span class="exam-component">Writing</span>
+            <span class="exam-component">Speaking</span>
+          </div>
+        </div>
+
+        <div class="international-exam-card">
+          <span class="exam-label">IELTS General Training</span>
+          <h3>IELTS General Training</h3>
+          <p>Preparation focused on everyday, workplace and migration-related English.</p>
+
+          <div class="exam-components">
+            <span class="exam-component">Listening</span>
+            <span class="exam-component">Reading</span>
+            <span class="exam-component">Writing</span>
+            <span class="exam-component">Speaking</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- PTE -->
+    <div class="exam-category">
+
+      <h3 class="exam-category-title">PTE</h3>
+
+      <p class="exam-category-intro">
+        Preparation for PTE Core and PTE Academic with structured practice,
+        task strategies, pronunciation, fluency and written response development.
+      </p>
+
+      <div class="international-exam-grid">
+
+        <div class="international-exam-card">
+          <span class="exam-label">PTE Academic</span>
+          <h3>PTE Academic</h3>
+          <p>Academic English preparation for study and international education pathways.</p>
+
+          <div class="exam-components">
+            <span class="exam-component">Speaking</span>
+            <span class="exam-component">Writing</span>
+            <span class="exam-component">Reading</span>
+            <span class="exam-component">Listening</span>
+          </div>
+        </div>
+
+        <div class="international-exam-card">
+          <span class="exam-label">PTE Core</span>
+          <h3>PTE Core</h3>
+          <p>Practical English preparation for everyday and immigration-related language goals.</p>
+
+          <div class="exam-components">
+            <span class="exam-component">Speaking</span>
+            <span class="exam-component">Writing</span>
+            <span class="exam-component">Reading</span>
+            <span class="exam-component">Listening</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- OET -->
+    <div class="exam-category">
+
+      <h3 class="exam-category-title">OET</h3>
+
+      <p class="exam-category-intro">
+        Occupational English Test preparation for healthcare professionals,
+        including professional communication and exam-focused language practice.
+      </p>
+
+      <div class="international-exam-grid">
+
+        <div class="international-exam-card">
+          <span class="exam-label">Healthcare English</span>
+          <h3>OET</h3>
+          <p>
+            English preparation for healthcare professionals with emphasis on
+            clinical communication and profession-specific language.
+          </p>
+
+          <div class="exam-components">
+            <span class="exam-component">Listening</span>
+            <span class="exam-component">Reading</span>
+            <span class="exam-component">Writing</span>
+            <span class="exam-component">Speaking</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- TOEFL -->
+    <div class="exam-category">
+
+      <h3 class="exam-category-title">TOEFL</h3>
+
+      <div class="international-exam-grid">
+
+        <div class="international-exam-card">
+          <span class="exam-label">Academic English</span>
+          <h3>TOEFL iBT</h3>
+          <p>
+            Academic English preparation for international university and
+            study-related pathways.
+          </p>
+
+          <div class="exam-components">
+            <span class="exam-component">Reading</span>
+            <span class="exam-component">Listening</span>
+            <span class="exam-component">Speaking</span>
+            <span class="exam-component">Writing</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- DUOLINGO -->
+    <div class="exam-category">
+
+      <h3 class="exam-category-title">Other English Proficiency Tests</h3>
+
+      <div class="international-exam-grid">
+
+        <div class="international-exam-card">
+          <span class="exam-label">English Proficiency</span>
+          <h3>Duolingo English Test</h3>
+          <p>
+            Preparation for online English proficiency testing with focused
+            practice, timing and response strategies.
+          </p>
+
+          <div class="exam-components">
+            <span class="exam-component">Literacy</span>
+            <span class="exam-component">Comprehension</span>
+            <span class="exam-component">Conversation</span>
+            <span class="exam-component">Production</span>
+          </div>
+        </div>
+
+        <div class="international-exam-card">
+          <span class="exam-label">Cambridge English</span>
+          <h3>Cambridge English Qualifications</h3>
+          <p>
+            English language development and preparation for appropriate
+            Cambridge English qualification pathways.
+          </p>
+
+          <div class="exam-components">
+            <span class="exam-component">Reading</span>
+            <span class="exam-component">Writing</span>
+            <span class="exam-component">Listening</span>
+            <span class="exam-component">Speaking</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SUPPORT -->
+<section class="support" id="support">
+  <div class="container">
+
+    <div class="section-heading center">
+      <div class="eyebrow">Specialist Learning Support</div>
+      <h2>Learning designed around the learner.</h2>
+    </div>
+
+    <div class="support-grid">
+
+      <div class="support-card">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=85" alt="Child learning">
+        <div class="support-overlay">
+          <h3>Learning Differences</h3>
+          <p>Flexible strategies and personalised learning approaches.</p>
+        </div>
+      </div>
+
+      <div class="support-card">
+        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=85" alt="Child studying">
+        <div class="support-overlay">
+          <h3>Reading Confidence</h3>
+          <p>Support for reading development and confidence.</p>
+        </div>
+      </div>
+
+      <div class="support-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85" alt="Student learning">
+        <div class="support-overlay">
+          <h3>Language & Communication</h3>
+          <p>Speaking, sentence formation and communication support.</p>
+        </div>
+      </div>
+
+      <div class="support-card">
+        <img src="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?auto=format&fit=crop&w=1200&q=85" alt="Student studying">
+        <div class="support-overlay">
+          <h3>Study Skills</h3>
+          <p>Planning, organisation, revision and independent learning.</p>
+        </div>
+      </div>
+
+      <div class="support-card">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85" alt="Students learning">
+        <div class="support-overlay">
+          <h3>Academic Confidence</h3>
+          <p>Build confidence through guided practice and feedback.</p>
+        </div>
+      </div>
+
+      <div class="support-card">
+        <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1200&q=85" alt="Teacher helping student">
+        <div class="support-overlay">
+          <h3>Personalised Support</h3>
+          <p>Learning adjusted to individual goals and pace.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="outcomes" id="seo-pathways">
+  <div class="container">
+    <div class="section-heading center"><div class="eyebrow">Explore Learning Hub</div><h2>Find the pathway that fits your goal.</h2><p>Explore focused pages for tutoring, international curricula, English, exams and individual subjects.</p></div>
+    <div class="outcomes-grid">
+      <article class="outcome-card"><div class="outcome-number">01 / TUTORING</div><h3>Online Tutoring</h3><p>Personalised academic support for school, university and adult learners.</p><a class="card-link" href="/online-tutoring/">Explore online tutoring →</a></article>
+      <article class="outcome-card"><div class="outcome-number">02 / CURRICULUM</div><h3>International Curriculum</h3><p>Explore IB, IGCSE, GCSE, O Level and A Level pathways.</p><a class="card-link" href="/international-curriculum/">Explore curricula →</a></article>
+      <article class="outcome-card"><div class="outcome-number">03 / ENGLISH</div><h3>English & Communication</h3><p>Build academic English, speaking, writing, vocabulary and confidence.</p><a class="card-link" href="/english/">Improve your English →</a></article>
+      <article class="outcome-card"><div class="outcome-number">04 / EXAMS</div><h3>IELTS, PTE & More</h3><p>Structured preparation, practice and feedback for English proficiency tests.</p><a class="card-link" href="/exam-preparation/ielts/">Explore IELTS preparation →</a></article>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL LEARNERS -->
+<section class="global-learners" id="global-learners">
+  <div class="container global-grid">
+    <div class="world-copy">
+      <div class="eyebrow dark">Global Learning</div>
+      <h2>Learning without borders.</h2>
+      <p style="margin-top:22px">Supporting learners across South Asia, the Gulf & Middle East, Europe, North America, East & Southeast Asia, Australia & the Pacific, and Africa through flexible online learning.</p>
+    </div>
+    <div class="world-panel">
+      <div class="country-grid">
+        <!-- South Asia -->
+        <div class="country-pill"><span class="country-dot"></span>Pakistan</div>
+        <div class="country-pill"><span class="country-dot"></span>India</div>
+        <div class="country-pill"><span class="country-dot"></span>Bangladesh</div>
+        <div class="country-pill"><span class="country-dot"></span>Sri Lanka</div>
+
+        <!-- Gulf & Middle East -->
+        <div class="country-pill"><span class="country-dot"></span>UAE</div>
+        <div class="country-pill"><span class="country-dot"></span>KSA</div>
+        <div class="country-pill"><span class="country-dot"></span>Qatar</div>
+        <div class="country-pill"><span class="country-dot"></span>Kuwait</div>
+        <div class="country-pill"><span class="country-dot"></span>Bahrain</div>
+        <div class="country-pill"><span class="country-dot"></span>Oman</div>
+
+        <!-- Europe -->
+        <div class="country-pill"><span class="country-dot"></span>United Kingdom</div>
+        <div class="country-pill"><span class="country-dot"></span>Ireland</div>
+        <div class="country-pill"><span class="country-dot"></span>Germany</div>
+        <div class="country-pill"><span class="country-dot"></span>France</div>
+        <div class="country-pill"><span class="country-dot"></span>Italy</div>
+
+        <!-- North America -->
+        <div class="country-pill"><span class="country-dot"></span>United States</div>
+        <div class="country-pill"><span class="country-dot"></span>Canada</div>
+
+        <!-- East & Southeast Asia -->
+        <div class="country-pill"><span class="country-dot"></span>China</div>
+        <div class="country-pill"><span class="country-dot"></span>Japan</div>
+        <div class="country-pill"><span class="country-dot"></span>South Korea</div>
+        <div class="country-pill"><span class="country-dot"></span>Singapore</div>
+        <div class="country-pill"><span class="country-dot"></span>Malaysia</div>
+        <div class="country-pill"><span class="country-dot"></span>Hong Kong</div>
+
+        <!-- Australia & Pacific -->
+        <div class="country-pill"><span class="country-dot"></span>Australia</div>
+        <div class="country-pill"><span class="country-dot"></span>New Zealand</div>
+
+        <!-- Africa -->
+        <div class="country-pill"><span class="country-dot"></span>South Africa</div>
+        <div class="country-pill"><span class="country-dot"></span>Nigeria</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEARNING OUTCOMES -->
+<section class="outcomes" id="outcomes">
+  <div class="container">
+    <div class="section-heading center">
+      <div class="eyebrow">Learning Outcomes</div>
+      <h2>What learners develop.</h2>
+      <p>Learning goes beyond completing a lesson. We focus on skills that learners can carry forward into their academic and personal journeys.</p>
+    </div>
+    <div class="outcomes-grid">
+      <article class="outcome-card"><div class="outcome-number">01 / CONFIDENCE</div><h3>Academic Confidence</h3><p>Understand difficult concepts and approach exams with greater confidence.</p></article>
+      <article class="outcome-card"><div class="outcome-number">02 / COMMUNICATION</div><h3>Communication</h3><p>Build stronger speaking, writing and academic English.</p></article>
+      <article class="outcome-card"><div class="outcome-number">03 / INDEPENDENCE</div><h3>Independent Learning</h3><p>Develop study habits, organisation and research skills.</p></article>
+      <article class="outcome-card"><div class="outcome-number">04 / EXAMS</div><h3>Exam Readiness</h3><p>Practise techniques, timing and structured responses.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="methodology" id="methodology">
+  <div class="container">
+
+    <div class="section-heading center">
+      <div class="eyebrow">Our Methodology</div>
+      <h2>Understand. Practise. Progress.</h2>
+      <p>
+        Learning should move beyond memorisation toward confidence,
+        application and independent thinking.
+      </p>
+    </div>
+
+    <div class="method-grid">
+
+      <div class="method-card">
+        <div class="method-number">01</div>
+        <h3>Understand</h3>
+        <p>Break difficult ideas into clear explanations, examples and visual connections.</p>
+      </div>
+
+      <div class="method-card">
+        <div class="method-number">02</div>
+        <h3>Practise</h3>
+        <p>Apply concepts through questions, exercises, discussion and guided practice.</p>
+      </div>
+
+      <div class="method-card">
+        <div class="method-number">03</div>
+        <h3>Progress</h3>
+        <p>Review performance, identify gaps and build the next learning step.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- LEARNING LIBRARY -->
+<section class="library" id="library">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Learning Library</div>
+      <h2>E-books, worksheets & digital learning resources.</h2>
+      <p>
+        A growing collection of practical learning materials for independent
+        study and tutoring support. Free resources can be downloaded directly below.
+      </p>
+    </div>
+
+    <div class="library-grid" id="resourceGrid">
+      <div class="library-status">Loading Learning Hub resources…</div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ARTICLES & BLOG -->
+<section class="articles" id="articles">
+  <div class="container">
+
+    <div class="section-heading center">
+      <div class="eyebrow">Articles & Blog</div>
+      <h2>Ideas for better learning.</h2>
+      <p>
+        Practical guidance, study strategies and educational insights for students,
+        parents, professionals and lifelong learners.
+      </p>
+    </div>
+
+    <div class="article-grid">
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">International Education</span>
+          <span class="article-mark">01</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>Learning Guide</span><span>5 min read</span></div>
+          <h3>How to Choose the Right International Curriculum</h3>
+          <p>Understand the key differences between international pathways and choose learning support that matches your goals.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">Start with the learner's age, target qualification, university or career pathway, current level and preferred learning style. A good tutoring plan should then align subject knowledge, assessment requirements, study skills and exam technique rather than simply following a textbook.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">English Development</span>
+          <span class="article-mark">02</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>Language</span><span>4 min read</span></div>
+          <h3>Building Stronger Academic English</h3>
+          <p>Move beyond memorising vocabulary and develop clearer speaking, writing, reading and academic expression.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">Strong academic English develops through repeated exposure, purposeful vocabulary, model texts, guided speaking and structured writing practice. Learners benefit most when new language is immediately used in meaningful academic and real-world contexts.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">Online Learning</span>
+          <span class="article-mark">03</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>Study Skills</span><span>4 min read</span></div>
+          <h3>How to Make Online Learning More Effective</h3>
+          <p>Create a focused routine, participate actively and turn online lessons into measurable learning progress.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">Effective online learning needs a clear goal for every session. Prepare before the lesson, keep distractions low, ask questions, practise during the lesson and finish with a short review. Small, consistent routines usually create stronger progress than occasional long study sessions.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">Exam Preparation</span>
+          <span class="article-mark">04</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>IELTS & PTE</span><span>5 min read</span></div>
+          <h3>IELTS or PTE: What Should You Prepare For?</h3>
+          <p>Consider your destination, test format, strengths and preparation style before selecting an English test.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">The right test depends on the institution or pathway accepting your score, the test format you are comfortable with and the skills you need to strengthen. Always confirm the current requirements of your intended university, employer or immigration pathway before booking an exam.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">Learning Support</span>
+          <span class="article-mark">05</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>Inclusive Learning</span><span>5 min read</span></div>
+          <h3>Why Personalised Learning Matters</h3>
+          <p>Every learner brings different strengths, challenges, pace and goals. Support should respond to the individual.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">Personalised learning can involve adjusting explanations, pace, practice formats, feedback and communication. The aim is not to lower expectations, but to create an accessible route toward meaningful progress and greater independence.</div>
+          </details>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <div class="article-top">
+          <span class="article-category">Quran & Islamic Studies</span>
+          <span class="article-mark">06</span>
+        </div>
+        <div class="article-body">
+          <div class="article-meta"><span>Quran Learning</span><span>4 min read</span></div>
+          <h3>A Gentle Starting Point for Quran Learning</h3>
+          <p>A structured approach can help beginners build reading confidence, pronunciation and consistent practice.</p>
+          <details class="article-details">
+            <summary>Read article</summary>
+            <div class="article-full">Beginners can start with letter recognition, joining letters, basic pronunciation and gradual reading practice before moving into more advanced recitation skills. Consistency, patient correction and a comfortable learning pace can make the journey more manageable.</div>
+          </details>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+
+    <div class="section-heading center">
+      <div class="eyebrow">Learning Gallery</div>
+      <h2>Learning in action.</h2>
+      <p>
+        Visual moments from academic learning, language development,
+        digital education and independent study.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item large">
+        <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1600&q=85" alt="Students in classroom">
+        <span class="gallery-label">Academic Learning</span>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85" alt="Student">
+        <span class="gallery-label">Personalised Learning</span>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=85" alt="Online learning">
+        <span class="gallery-label">Online Education</span>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1200&q=85" alt="Quran">
+        <span class="gallery-label">Quran Learning</span>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=85" alt="Books">
+        <span class="gallery-label">Learning Resources</span>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=85" alt="Study">
+        <span class="gallery-label">Independent Study</span>
+      </div>
+
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1200&q=85" alt="Digital learning">
+        <span class="gallery-label">Digital Learning</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="container">
+
+    <div class="section-heading center">
+      <div class="eyebrow">Student Experiences</div>
+      <h2>What learners have shared.</h2>
+      <p>
+        Selected feedback areas from learners and professionals
+        supported through Learning Hub.
+      </p>
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="testimonial">
+        <div class="quote">“</div>
+        <p>
+          A-Level Psychology preparation completed within two months,
+          with focused exam guidance and support that helped the student pass.
+        </p>
+        <small>A-Level Psychology Student • India</small>
+      </div>
+
+      <div class="testimonial">
+        <div class="quote">“</div>
+        <p>
+          Psychology and English Language & Literature support focused on
+          academic learning, exam confidence and language development.
+        </p>
+        <small>International Student • Indonesia</small>
+      </div>
+
+      <div class="testimonial">
+        <div class="quote">“</div>
+        <p>
+          English communication support focused on confidence,
+          sentence formation and practical communication.
+        </p>
+        <small>Dr. Nispa • Afghanistan</small>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container">
+    <div class="section-heading center">
+      <div class="eyebrow">Frequently Asked Questions</div>
+      <h2>Everything you need to know.</h2>
+      <p>Simple answers to common questions about Learning Hub, lessons, programmes and resources.</p>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-list">
+        <div class="faq-item"><button class="faq-question" type="button">How do online lessons work?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">Which learners can join Learning Hub?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">Which international boards do you support?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">Do you offer Quran and Islamic Studies?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Learning pathways include Quran reading, foundational Quran learning, Tajweed and Islamic Studies, with structured learning for different levels.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">Can adults improve their English?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals.</div></div></div>
+        <div class="faq-item"><button class="faq-question" type="button">How can I access the learning resources?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Available digital resources are presented in the Learning Library, where learners can access resources according to their availability and format.</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+  <div class="container">
+
+    <div class="section-heading center">
+      <div class="eyebrow">Flexible Learning</div>
+      <h2>Simple options for different needs.</h2>
+    </div>
+
+    <div class="price-grid">
+
+      <div class="price-card">
+        <h3>Starter</h3>
+        <div class="price">$30</div>
+
+        <ul>
+          <li>✓ Monthly learning support</li>
+          <li>✓ Selected resources</li>
+          <li>✓ Progress guidance</li>
+        </ul>
+
+        <a href="mailto:hublearning117@gmail.com?subject=Starter Membership" class="btn btn-gold">
+          Enquire
+        </a>
+      </div>
+
+      <div class="price-card">
+        <h3>Growth</h3>
+        <div class="price">$50</div>
+
+        <ul>
+          <li>✓ Extended learning support</li>
+          <li>✓ Practice resources</li>
+          <li>✓ Learning guidance</li>
+        </ul>
+
+        <a href="mailto:hublearning117@gmail.com?subject=Growth Membership" class="btn btn-gold">
+          Enquire
+        </a>
+      </div>
+
+      <div class="price-card featured">
+        <h3>Focus</h3>
+        <div class="price">$70</div>
+
+        <ul>
+          <li>✓ Structured support</li>
+          <li>✓ International curriculum</li>
+          <li>✓ Resources and practice</li>
+        </ul>
+
+        <a href="https://calendly.com/hublearning117" target="_blank" rel="noopener" class="btn btn-gold">
+          Book Consultation
+        </a>
+      </div>
+
+      <div class="price-card">
+        <h3>Unlimited</h3>
+        <div class="price">$95</div>
+
+        <ul>
+          <li>✓ Intensive learning support</li>
+          <li>✓ Multiple learning areas</li>
+          <li>✓ Priority guidance</li>
+        </ul>
+
+        <a href="mailto:hublearning117@gmail.com?subject=Unlimited Membership" class="btn btn-gold">
+          Enquire
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- TEACHER APPLICATION -->
+<section class="cta" id="teacher">
+  <div class="container cta-inner">
+
+    <div class="eyebrow">Join Learning Hub</div>
+
+    <h2>Are you an educator?</h2>
+
+    <p>
+      Apply to teach through Learning Hub and contribute to a global learning platform.
+    </p>
+
+    <a
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform"
+      target="_blank"
+      rel="noopener"
+      class="btn btn-gold">
+      Apply to Teach
+    </a>
+
+  </div>
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Contact Learning Hub</div>
+      <h2>Start your learning journey.</h2>
+      <p>
+        For tutoring, Quran courses, international curriculum support,
+        resources, partnerships or teaching applications, contact Learning Hub.
+      </p>
+    </div>
+
+    <div class="contact-grid">
+
+      <div class="contact-box">
+
+        <div class="contact-item">
+          <strong>Book a lesson</strong>
+          <a href="https://calendly.com/hublearning117" target="_blank" rel="noopener">
+            Open Learning Hub Booking →
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Email</strong>
+          <a href="mailto:hublearning117@gmail.com">
+            hublearning117@gmail.com
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>Teacher application</strong>
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform"
+            target="_blank"
+            rel="noopener">
+            Open Teacher Application →
+          </a>
+        </div>
+
+      </div>
+
+      <div class="contact-box" id="payments">
+
+        <h3>Secure Online Payments</h3>
+
+        <p style="margin-top:12px;">
+          Learning Hub is connected to RapidPay in TEST mode for secure payment-flow testing.
+          No real money is charged in this environment.
+        </p>
+
+        <div class="payment-test-card">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+            <strong>Rapid Gateway — TEST MODE</strong>
+            <span style="padding:5px 9px;border-radius:999px;background:#eef7f8;font-size:.8rem;">No real money</span>
+          </div>
+          <p style="margin:10px 0 16px;">
+            Use the sandbox amounts below to test success, failure, pending and other checkout outcomes.
+          </p>
+          <div class="payment-row">
+            <div>
+              <label for="lh-test-service">Test payment</label>
+              <select id="lh-test-service">
+                <option value="100">TEST — PKR 100 (Success)</option>
+                <option value="200">TEST — PKR 200 (Failed)</option>
+                <option value="300">TEST — PKR 300 (Pending)</option>
+                <option value="400">TEST — PKR 400 (Expired)</option>
+                <option value="500">TEST — PKR 500 (Timeout)</option>
+              </select>
+            </div>
+            <div>
+              <label for="lh-test-email">Email</label>
+              <input id="lh-test-email" type="email" autocomplete="email" placeholder="your@email.com">
+            </div>
+            <div>
+              <label for="lh-test-mobile">Mobile</label>
+              <input id="lh-test-mobile" type="tel" autocomplete="tel" placeholder="03XXXXXXXXX">
+            </div>
+            <button type="button" class="btn btn-gold" id="lh-start-payment">Pay securely — TEST</button>
+          </div>
+          <div class="payment-status" id="lh-payment-status" aria-live="polite"></div>
+        </div>
+
+        <p style="margin-top:14px;font-size:.9rem;">
+          For payment support: 
+          <a href="mailto:hublearning117@gmail.com?subject=Learning Hub Payment Support">Contact Learning Hub Support</a>
+        </p>
+      </div>
+
+      <div class="rapidpay-modal" id="lh-rapidpay-modal" aria-hidden="true">
+        <div class="rapidpay-modal-inner">
+          <button type="button" class="rapidpay-close" id="lh-close-payment" aria-label="Close payment">&times;</button>
+          <div id="rapidpay-checkout"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <div class="brand">
+          <span class="brand-mark">LH</span>
+
+          <span class="brand-copy">
+            <strong>Learning Hub</strong>
+            <small>Global Education Platform</small>
+          </span>
+        </div>
+
+        <p>
+          Learning for everyone, everywhere — academic tutoring,
+          international education, Quran and Islamic Studies,
+          specialist support and digital learning resources.
+        </p>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h4>Learning</h4>
+
+        <a href="#programmes">Programmes</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#quran">Quran & Islamic Studies</a>
+        <a href="#boards">International Boards</a>
+        <a href="#exams">Exams</a>
+
+      </div>
+
+      <div class="footer-col">
+
+        <h4>Platform</h4>
+
+        <a href="#support">Learning Support</a>
+        <a href="#library">Resources</a>
+        <a href="#articles">Articles & Blog</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#teacher">Apply to Teach</a>
+        <a href="#contact">Contact</a>
+        <a href="policies.html">Policies & Terms</a>
+        <a href="billing.html">Billing & Invoices</a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Learning Hub. Global Education Platform.
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- CONCIERGE -->
+<div class="concierge">
+
+  <button
+    class="concierge-button"
+    onclick="toggleConcierge()"
+    aria-label="Open Learning Concierge"
+    aria-expanded="false">
+    ✦
+  </button>
+
+  <div class="concierge-panel" id="conciergePanel">
+
+    <h3>Learning Concierge</h3>
+
+    <p>What would you like help with?</p>
+
+    <button class="concierge-option" onclick="conciergeMessage('Academic tutoring')">
+      Academic tutoring
+    </button>
+
+    <button class="concierge-option" onclick="conciergeMessage('IB support')">
+      IB support
+    </button>
+
+    <button class="concierge-option" onclick="conciergeMessage('Cambridge support')">
+      Cambridge support
+    </button>
+
+    <button class="concierge-option" onclick="conciergeMessage('Quran & Islamic Studies')">
+      Quran & Islamic Studies
+    </button>
+
+    <button class="concierge-option" onclick="conciergeMessage('Exam preparation')">
+      Exam preparation
+    </button>
+
+    <button class="concierge-option" onclick="conciergeMessage('Learning support')">
+      Specialist learning support
+    </button>
+
+  </div>
+</div>
+
 
 <script>
-(function () {
 
-  const button = document.getElementById("lh-start-payment");
-  const modal = document.getElementById("lh-rapidpay-modal");
-  const close = document.getElementById("lh-close-payment");
-  const status = document.getElementById("lh-payment-status");
-  const email = document.getElementById("lh-test-email");
-  const mobile = document.getElementById("lh-test-mobile");
-  const service = document.getElementById("lh-test-service");
-  const checkout = document.getElementById("rapidpay-checkout");
+/* =========================
+   MOBILE NAVIGATION
+========================= */
 
-  if (!button) return;
+function toggleMenu(){
 
-  function setStatus(message) {
-    if (status) {
-      status.textContent = message;
-    }
+  const nav=document.getElementById("mainNav");
+  const button=document.getElementById("mobileToggle");
+
+  if(!nav || !button)return;
+
+  const isOpen=nav.classList.toggle("mobile-open");
+
+  button.setAttribute("aria-expanded",isOpen ? "true" : "false");
+  button.setAttribute("aria-label",isOpen ? "Close menu" : "Open menu");
+
+  button.textContent=isOpen ? "×" : "☰";
+}
+
+
+function closeMobileMenu(){
+
+  const nav=document.getElementById("mainNav");
+  const button=document.getElementById("mobileToggle");
+
+  if(!nav || !button)return;
+
+  nav.classList.remove("mobile-open");
+
+  button.setAttribute("aria-expanded","false");
+  button.setAttribute("aria-label","Open menu");
+  button.textContent="☰";
+}
+
+
+/* Close mobile menu after navigation */
+
+document.querySelectorAll(".nav-links a").forEach(function(link){
+
+  link.addEventListener("click",function(){
+    closeMobileMenu();
+  });
+
+});
+
+
+/* Reset mobile menu when screen becomes desktop */
+
+window.addEventListener("resize",function(){
+
+  if(window.innerWidth>1050){
+    closeMobileMenu();
   }
 
-  function hidePayment() {
-    if (modal) {
-      modal.classList.remove("open");
-      modal.setAttribute("aria-hidden", "true");
-    }
+});
 
-    if (checkout) {
-      checkout.innerHTML = "";
-    }
-  }
 
-  if (close) {
-    close.addEventListener("click", hidePayment);
-  }
+/* =========================
+   CONCIERGE
+========================= */
 
-  if (modal) {
-    modal.addEventListener("click", function (event) {
-      if (event.target === modal) {
-        hidePayment();
-      }
+function toggleConcierge(){
+
+  const panel=document.getElementById("conciergePanel");
+  const button=document.querySelector(".concierge-button");
+
+  if(!panel || !button)return;
+
+  const isOpen=panel.classList.toggle("open");
+
+  button.setAttribute("aria-expanded",isOpen ? "true" : "false");
+}
+
+
+function conciergeMessage(topic){
+
+  const email=
+    "mailto:hublearning117@gmail.com?subject="+
+    encodeURIComponent("Learning Hub enquiry: "+topic);
+
+  window.location.href=email;
+}
+
+
+/* =========================
+   RESOURCE HELPERS
+========================= */
+
+function escapeHTML(value){
+
+  return String(value)
+    .replace(/&/g,"&amp;")
+    .replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;")
+    .replace(/"/g,"&quot;")
+    .replace(/'/g,"&#039;");
+}
+
+
+function makeResourceTitle(name){
+
+  return name
+    .replace(/\.[^/.]+$/,"")
+    .replace(/^Learning_Hub_/i,"")
+    .replace(/^_+/,"")
+    .replace(/[_-]+/g," ")
+    .replace(/\s+/g," ")
+    .trim()
+    .replace(/\b\w/g,function(char){
+      return char.toUpperCase();
     });
+}
+
+
+function getResourceType(name){
+
+  const parts=name.split(".");
+  const ext=parts.length>1
+    ? parts.pop().toUpperCase()
+    : "";
+
+  if(ext==="DOCX" || ext==="DOC"){
+    return "DOCX";
   }
 
-  button.addEventListener("click", async function () {
+  if(ext==="PDF"){
+    return "PDF";
+  }
 
-    button.disabled = true;
+  if(ext==="PPT" || ext==="PPTX"){
+    return "PRESENTATION";
+  }
 
-    setStatus("Preparing secure checkout...");
+  if(ext==="XLS" || ext==="XLSX"){
+    return "SPREADSHEET";
+  }
 
-    try {
+  return ext || "RESOURCE";
+}
 
-      const customerEmail = email
-        ? email.value.trim()
-        : "";
 
-      const customerMobile = mobile
-        ? mobile.value.trim()
-        : "";
+function getResourceCategory(name){
 
-      const amount = service
-        ? Number(service.value)
-        : 100;
+  const n=name.toLowerCase();
 
-      if (!customerEmail) {
-        throw new Error("Please enter your email address.");
-      }
+  if(
+    n.includes("psychology") ||
+    n.includes("bias")
+  ){
+    return "Psychology";
+  }
 
-      if (!customerMobile) {
-        throw new Error("Please enter your mobile number.");
-      }
+  if(
+    n.includes("math") ||
+    n.includes("subtraction") ||
+    n.includes("numbers")
+  ){
+    return "Mathematics";
+  }
 
-      if (!amount) {
-        throw new Error("Please select a payment amount.");
-      }
+  if(
+    n.includes("ib_") ||
+    n.includes("doll") ||
+    n.includes("literary")
+  ){
+    return "IB / English";
+  }
+
+  if(
+    n.includes("ielts") ||
+    n.includes("english") ||
+    n.includes("pronunciation") ||
+    n.includes("vocabulary") ||
+    n.includes("reading") ||
+    n.includes("conversation") ||
+    n.includes("essay") ||
+    n.includes("linking") ||
+    n.includes("mispronounced") ||
+    n.includes("misspelled")
+  ){
+    return "English";
+  }
+
+  if(
+    n.includes("chinese") ||
+    n.includes("japanese") ||
+    n.includes("korean") ||
+    n.includes("urdu") ||
+    n.includes("italian")
+  ){
+    return "Languages";
+  }
+
+  return "Learning Resource";
+}
+
+
+function getResourceImage(category,index){
+
+  /* Each resource receives a different premium cover image.
+     The index is global across the library, so the same image
+     is never intentionally reused for another resource. */
+  const images=[
+    "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1596495578065-6e0763fa1178?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1528712306091-ed0763094c98?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1493836512294-502baa1986e2?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1511108690759-009324a90311?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=85"
+  ];
+
+  return images[index % images.length];
+}
+
+
+/* =========================
+   LEARNING LIBRARY
+========================= */
+
+async function loadLearningLibrary(){
+
+  const grid=document.getElementById("resourceGrid");
+
+  if(!grid)return;
+
+  const files=[
+
+    "30_High_Value_Daily_Life_Vocabulary_Intermediate_Advanced.docx",
+
+    "5_Essential_Steps_Learning_to_Read.docx",
+
+    "A Doll’s House Devices & Delicacy_20260822_104019_0000.pdf",
+
+    "Advanced_Linking_Words_and_Phrases.docx",
+
+    "Advanced_Vocabulary_Meanings.docx",
+
+    "Bilingual_Mathematics_Assessment_50_Marks.docx",
+
+    "Common_Mispronounced_and_Misspelled_Words.docx",
+
+    "Grade_4_5_Mental_Math_Italian_English.pdf",
+
+    "Grade_5_Numbers_Bilingual_Italian_English_Worksheet.docx",
+
+    "Grade_5_Subtraction_Bilingual_Italian_English_Worksheet.pdf",
+
+    "IB_English_SL_Intermediate_to_Advanced_Worksheet_and_Answer_Key.pdf",
+
+    "IB_English_SL_Literary_Analysis_Practice_Activities.pdf",
+
+    "Must_Have_to_Should_Ought_to_Worksheet.docx",
+
+    "_Bias in Psychological Research.pdf",
+
+    "chinese_beginner_formal_vocab_worksheet.pdf",
+
+    "urdu_english_italian_formal_vocab_worksheet (1).pdf",
+
+    "Learning_Hub_academic_english_essay_writing_toolkit.pdf",
+
+    "Learning_Hub_adult_esl_speaking_vocabulary_workbook.pdf",
+
+    "Learning_Hub_dyslexia_friendly_english_reading_teens_adults.pdf",
+
+    "Learning_Hub_english_pronunciation_shadowing_practice.pdf",
+
+    "Learning_Hub_everyday_english_chinese_speakers.pdf",
+
+    "Learning_Hub_everyday_english_japanese_speakers.pdf",
+
+    "Learning_Hub_everyday_english_korean_speakers.pdf",
+
+    "Learning_Hub_real_life_english_conversation_practice.pdf"
+
+  ];
+
+
+  try{
+
+    const cards=files.map(function(name,index){
+
+      const type=getResourceType(name);
+      const title=makeResourceTitle(name);
+      const category=getResourceCategory(name);
 
       /*
-       * Send payment request to Cloudflare Pages Function.
-       * The Rapid Gateway credentials remain on the server.
-       */
+        encodeURIComponent is important here because some
+        filenames contain spaces, apostrophes and brackets.
+      */
 
-      const response = await fetch(
-        "/api/rapidpay/create-checkout",
-        {
-          method: "POST",
+      const url="/resources/"+encodeURIComponent(name);
 
-          headers: {
-            "Content-Type": "application/json"
-          },
+      const image=getResourceImage(category,index);
 
-          body: JSON.stringify({
-            amount: amount,
-            currency: "PKR",
-            basketId:
-              "LH-TEST-" + Date.now(),
-            customerEmail: customerEmail,
-            customerMobile: customerMobile
-          })
-        }
-      );
+      return `
+        <article class="resource-card">
 
-      /*
-       * IMPORTANT:
-       * Read as text first so an empty/non-JSON response
-       * does not produce:
-       *
-       * Unexpected end of JSON input
-       */
+          <div class="resource-cover">
 
-      const rawResponse = await response.text();
+            <img
+              src="${escapeHTML(image)}"
+              alt="${escapeHTML(title)} learning resource"
+              loading="lazy"
+              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=85';">
 
-      let data = null;
+          </div>
 
-      if (rawResponse.trim()) {
-        try {
-          data = JSON.parse(rawResponse);
-        } catch (jsonError) {
-          throw new Error(
-            "Server returned an invalid response. HTTP " +
-            response.status +
-            ": " +
-            rawResponse.substring(0, 500)
-          );
-        }
-      }
+          <div class="resource-body">
 
-      if (!response.ok) {
+            <span class="resource-meta">
+              ${escapeHTML(type)} • ${escapeHTML(category)}
+            </span>
 
-        throw new Error(
-          data && data.error
-            ? data.error
-            : "Unable to create Rapid Gateway checkout. HTTP " +
-              response.status
-        );
-      }
+            <h3>${escapeHTML(title)}</h3>
 
-      if (!data) {
-        throw new Error(
-          "The payment server returned an empty response."
-        );
-      }
+            <p>
+              Learning Hub resource for independent study and tutoring support.
+            </p>
 
-      if (!data.publishableKey) {
-        throw new Error(
-          data.error ||
-          "Rapid Gateway did not return a publishable key."
-        );
-      }
+            <a
+              href="${escapeHTML(url)}"
+              class="btn btn-gold resource-download"
+              download
+              target="_blank"
+              rel="noopener">
+              Download ${escapeHTML(type)}
+            </a>
 
-      if (!data.clientSecret) {
-        throw new Error(
-          data.error ||
-          "Rapid Gateway did not return a client secret."
-        );
-      }
+          </div>
 
-      /*
-       * Open payment modal
-       */
+        </article>
+      `;
 
-      if (modal) {
-        modal.classList.add("open");
-        modal.setAttribute("aria-hidden", "false");
-      }
+    });
 
-      setStatus(
-        "Secure checkout opened."
-      );
+    grid.innerHTML=cards.join("");
 
-      /*
-       * Make sure RapidPay SDK has loaded
-       */
+  }catch(error){
 
-      if (!window.RapidPay) {
-        throw new Error(
-          "RapidPay SDK did not load. Please refresh the page and try again."
-        );
-      }
+    console.error("Learning Hub resource library error:",error);
 
-      /*
-       * Mount Rapid Gateway checkout
-       */
+    grid.innerHTML=`
+      <div class="library-status">
+        Learning resources are temporarily unavailable.
+        Please try again shortly.
+      </div>
+    `;
+  }
+}
 
-      window.RapidPay(
-        data.publishableKey
-      ).mountCheckout(
-        "#rapidpay-checkout",
-        {
-          clientSecret:
-            data.clientSecret,
 
-          amount:
-            data.amount || amount,
+/* =========================
+   CONCIERGE OUTSIDE CLICK
+========================= */
 
-          currency:
-            data.currency || "PKR",
+document.addEventListener("click",function(event){
 
-          merchantName:
-            "Learning Hub",
+  const panel=document.getElementById("conciergePanel");
+  const button=document.querySelector(".concierge-button");
 
-          onSuccess:
-            function () {
+  if(
+    panel &&
+    panel.classList.contains("open") &&
+    !panel.contains(event.target) &&
+    button &&
+    !button.contains(event.target)
+  ){
 
-              setStatus(
-                "Payment completed. We are securely confirming your payment."
-              );
+    panel.classList.remove("open");
 
-            },
-
-          onPending:
-            function () {
-
-              setStatus(
-                "Payment is pending confirmation."
-              );
-
-            },
-
-          onError:
-            function (error) {
-
-              console.error(
-                "RapidPay error:",
-                error
-              );
-
-              setStatus(
-                "Payment could not be completed. Please try again."
-              );
-
-            }
-        }
-      );
-
-    } catch (error) {
-
-      console.error(
-        "Learning Hub payment error:",
-        error
-      );
-
-      setStatus(
-        error.message ||
-        "Unable to start payment."
-      );
-
-    } finally {
-
-      button.disabled = false;
-
+    if(button){
+      button.setAttribute("aria-expanded","false");
     }
+  }
+
+});
+
+
+/* =========================
+   CARD MOTION
+========================= */
+
+function initialiseCardMotion(){
+
+  if(
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ){
+    return;
+  }
+
+  document.querySelectorAll(".visual-card").forEach(function(card){
+
+    card.addEventListener("pointermove",function(event){
+
+      if(event.pointerType==="touch")return;
+
+      const rect=card.getBoundingClientRect();
+
+      if(!rect.width || !rect.height)return;
+
+      const x=(event.clientX-rect.left)/rect.width;
+      const y=(event.clientY-rect.top)/rect.height;
+
+      const rotateY=(x-.5)*4;
+      const rotateX=(.5-y)*4;
+
+      card.style.transform=
+        "translateY(-8px) rotateX("+
+        rotateX+
+        "deg) rotateY("+
+        rotateY+
+        "deg)";
+    });
+
+
+    card.addEventListener("pointerleave",function(){
+
+      card.style.transform="";
+    });
 
   });
 
-})();
+}
+
+
+/* =========================
+   GLOBAL ERROR HANDLING
+========================= */
+
+window.addEventListener("error",function(event){
+
+  console.error(
+    "Learning Hub page error:",
+    event.error || event.message
+  );
+
+});
+
+
+/* =========================
+   INITIALISE
+========================= */
+
+document.addEventListener("DOMContentLoaded",function(){
+
+  loadLearningLibrary();
+  initialiseCardMotion();
+
+});
+
 </script>
 
+
+<!-- TIDIO -->
+<script src="//code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js" async></script>
+
+
+<style id="learning-hub-premium-images">
+/* Premium image treatment — presentation only. Existing elements, content and functions remain unchanged. */
+.hero,
+.quran,
+.cta{
+  background-repeat:no-repeat;
+  background-size:cover;
+  background-position:center;
+}
+
+.hero{
+  background-position:center center;
+  background-attachment:scroll;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 78% 42%, rgba(240,213,142,.16), transparent 30%),
+    linear-gradient(90deg, rgba(7,7,7,.94) 0%, rgba(7,7,7,.68) 48%, rgba(7,7,7,.30) 100%);
+}
+
+.hero .container{position:relative;z-index:2}
+
+.intro-image,
+.quran-image,
+.card-image,
+.support-card,
+.resource-cover,
+.gallery-item{
+  isolation:isolate;
+}
+
+.intro-image img,
+.quran-image img,
+.card-image img,
+.support-card img,
+.resource-cover img,
+.gallery-item img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+
+.intro-image,
+.quran-image{
+  background:#111;
+}
+
+.intro-image::after,
+.quran-image::after,
+.card-image::after,
+.support-card::after,
+.resource-cover::after,
+.gallery-item::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(180deg, rgba(7,7,7,.02) 20%, rgba(7,7,7,.28) 100%);
+  z-index:1;
+}
+
+.image-caption,
+.card-tag,
+.support-overlay,
+.gallery-label{z-index:2}
+
+.visual-card{
+  border-color:rgba(201,164,92,.18);
+  box-shadow:0 18px 55px rgba(7,7,7,.10);
+}
+
+.card-image{
+  height:245px;
+  background:#111;
+}
+
+.card-image img,
+.support-card img,
+.gallery-item img{
+  transition:transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+}
+
+.visual-card:hover .card-image img,
+.gallery-item:hover img{
+  transform:scale(1.045);
+  filter:saturate(1.05) contrast(1.03);
+}
+
+.quran{
+  background:
+    linear-gradient(90deg, rgba(7,7,7,.97) 0%, rgba(7,7,7,.88) 52%, rgba(7,7,7,.72) 100%),
+    url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=2200&q=88") center/cover no-repeat;
+}
+
+.quran-image{
+  box-shadow:0 30px 80px rgba(0,0,0,.45);
+  border-color:rgba(240,213,142,.32);
+}
+
+.quran-image img{filter:saturate(.86) contrast(1.04)}
+
+.support-card{
+  min-height:340px;
+  border:1px solid rgba(201,164,92,.20);
+  box-shadow:0 20px 60px rgba(7,7,7,.14);
+}
+
+.support-card::after{
+  background:linear-gradient(180deg, rgba(7,7,7,.03) 20%, rgba(7,7,7,.58) 100%);
+}
+
+.support-overlay{
+  background:linear-gradient(180deg, transparent 18%, rgba(7,7,7,.93) 100%);
+}
+
+.resource-cover{
+  background:linear-gradient(135deg,#151515,#090909);
+}
+
+
+.gallery-item{
+  border:1px solid rgba(201,164,92,.16);
+  box-shadow:0 14px 45px rgba(7,7,7,.12);
+}
+
+.gallery-item::after{
+  background:linear-gradient(180deg, rgba(7,7,7,0) 40%, rgba(7,7,7,.48) 100%);
+}
+
+.cta{
+  background:
+    linear-gradient(90deg,rgba(7,7,7,.95),rgba(7,7,7,.72)),
+    url("https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=2200&q=88") center/cover no-repeat;
+}
+
+@media(max-width:720px){
+  .hero::before{background:linear-gradient(90deg,rgba(7,7,7,.94),rgba(7,7,7,.72))}
+  .card-image{height:220px}
+  .support-card{min-height:300px}
+  .quran{background-attachment:scroll}
+}
+</style>
+
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+  document.querySelectorAll(".faq-question").forEach(function(button){
+    button.addEventListener("click",function(){
+      const item=button.closest(".faq-item");
+      document.querySelectorAll(".faq-item.open").forEach(function(openItem){
+        if(openItem!==item) openItem.classList.remove("open");
+      });
+      item.classList.toggle("open");
+    });
+  });
+});
+</script>
+
+<script src="https://secure.rapid-gateway.com/sdk/v1/rapidpay.js"></script>
+<script>
+(function(){
+  const button=document.getElementById('lh-start-payment');
+  const modal=document.getElementById('lh-rapidpay-modal');
+  const close=document.getElementById('lh-close-payment');
+  const status=document.getElementById('lh-payment-status');
+  const email=document.getElementById('lh-test-email');
+  if(!button) return;
+  function setStatus(msg){ status.textContent=msg; }
+  function hide(){ modal.classList.remove('open'); modal.setAttribute('aria-hidden','true'); document.getElementById('rapidpay-checkout').innerHTML=''; }
+  close.addEventListener('click',hide);
+  modal.addEventListener('click',e=>{ if(e.target===modal) hide(); });
+  button.addEventListener('click',async function(){
+    button.disabled=true;
+    setStatus('Preparing secure checkout…');
+    try{
+      const res=await fetch('/api/rapidpay/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email.value.trim(),mobile:document.getElementById('lh-test-mobile').value.trim(),amount:Number(document.getElementById('lh-test-service').value)})});
+      const raw=await res.text();
+      let data={};
+      if(raw.trim()){
+        try{ data=JSON.parse(raw); }
+        catch(e){ throw new Error('Server returned an invalid response (HTTP '+res.status+'): '+raw.substring(0,500)); }
+      }
+      if(!res.ok) throw new Error(data.error||'Unable to create checkout session.');
+      modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+      setStatus('Secure checkout opened.');
+      if(!window.RapidPay) throw new Error('RapidPay SDK did not load.');
+      window.RapidPay(data.publishableKey).mountCheckout('#rapidpay-checkout',{
+        clientSecret:data.clientSecret,
+        amount:data.amount,
+        currency:data.currency,
+        merchantName:'Learning Hub',
+        onSuccess:function(){ setStatus('Payment completed. We are confirming it securely.'); },
+        onPending:function(){ setStatus('Payment is pending confirmation.'); },
+        onError:function(e){ setStatus('Payment could not be completed. Please try again.'); console.error(e); }
+      });
+    }catch(err){ console.error(err); setStatus(err.message||'Unable to start payment.'); }
+    finally{ button.disabled=false; }
+  });
+})();
+</script>
 </body>
 </html>
