@@ -3656,7 +3656,49 @@ document.addEventListener("DOMContentLoaded",function(){
 });
 </script>
 
-<script src="https://secure.rapid-gateway.com/sdk/v1/rapidpay.js"></script>
+<script>
+(function(){
+  const button=document.getElementById('lh-start-payment');
+  const status=document.getElementById('lh-payment-status');
+  const email=document.getElementById('lh-test-email');
+  const mobile=document.getElementById('lh-test-mobile');
+  const amount=document.getElementById('lh-test-service');
+  if(!button) return;
+  function setStatus(msg){ status.textContent=msg; }
+  button.addEventListener('click',async function(){
+    const customerEmail=email.value.trim();
+    const customerMobile=mobile.value.trim();
+    if(!customerEmail || !customerMobile){
+      setStatus('Please enter your email and mobile number.');
+      return;
+    }
+    button.disabled=true;
+    setStatus('Preparing secure checkout…');
+    try{
+      const res=await fetch('/api/rapidpay/create-checkout',{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({email:customerEmail,mobile:customerMobile,amount:Number(amount.value)})
+      });
+      const raw=await res.text();
+      let data={};
+      if(raw.trim()){
+        try{ data=JSON.parse(raw); }
+        catch(e){ throw new Error('Server returned an invalid response (HTTP '+res.status+').'); }
+      }
+      if(!res.ok) throw new Error(data.error||'Unable to start secure payment.');
+      if(!data.checkoutUrl) throw new Error('Rapid Gateway did not return a checkout URL.');
+      setStatus('Redirecting to secure Rapid Gateway checkout…');
+      window.location.href=data.checkoutUrl;
+    }catch(err){
+      console.error(err);
+      setStatus(err.message||'Unable to start payment. Please try again.');
+    }finally{
+      button.disabled=false;
+    }
+  });
+})();
+</script>
 <script>
 (function(){
   const button=document.getElementById('lh-start-payment');
