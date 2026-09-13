@@ -1,119 +1,1020 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Billing &amp; Cart | Learning Hub</title>
-<meta name="description" content="Learning Hub billing page for courses, live classes, exam preparation and premium digital resources.">
-<style>
-:root{--black:#171512;--cream:#f7f2e8;--paper:#fffdf8;--gold:#c89b3c;--gold2:#e2c477;--ink:#28231d;--muted:#6f675d;--line:rgba(23,21,18,.12);--green:#315c4b}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;color:var(--ink);background:var(--cream);line-height:1.6}.container{width:min(1120px,92%);margin:auto}a{color:inherit}.top{background:var(--black);color:white;padding:16px 0}.top-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}.brand{font-weight:800;letter-spacing:.02em}.brand small{display:block;color:#d7d0c4;font-weight:500;font-size:.72rem}.back{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.25);padding:9px 14px;border-radius:999px;font-size:.88rem}.hero{padding:62px 0 30px;text-align:center}.eyebrow{font-size:.75rem;text-transform:uppercase;letter-spacing:.16em;color:#8b6a27;font-weight:800}.hero h1{font-family:Georgia,serif;font-size:clamp(2rem,4vw,3.5rem);margin:10px 0}.hero p{max-width:760px;margin:0 auto;color:var(--muted)}.section{padding:24px 0 60px}.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 8px 28px rgba(0,0,0,.04)}.cart-card{max-width:900px;margin:0 auto}.cart-badge{display:inline-block;background:var(--black);color:white;padding:6px 11px;border-radius:999px;font-size:.7rem;font-weight:800}.cart-card h2{font-family:Georgia,serif;margin:12px 0 6px}.cart-price{font-size:2rem;font-weight:800;color:#8b6a27;margin:8px 0}.muted{color:var(--muted);font-size:.9rem}.controls{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}.field label{display:block;font-size:.8rem;font-weight:700;margin-bottom:6px}.field select,.field input{width:100%;padding:12px 13px;border-radius:10px;border:1px solid var(--line);background:#fff;font:inherit;color:var(--ink)}.full{grid-column:1/-1}.checkline{display:flex;align-items:flex-start;gap:10px;padding:14px;background:#fbf5e8;border:1px solid rgba(200,155,60,.35);border-radius:14px;font-weight:700}.checkline input{margin-top:4px;width:18px;height:18px}.summary{margin-top:24px;background:var(--black);color:white;border-radius:20px;padding:24px}.summary h3{margin-top:0;color:var(--gold2);font-family:Georgia,serif}.summary-row{display:flex;justify-content:space-between;gap:20px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.10)}.summary-row:last-child{border-bottom:0}.summary-total{font-size:1.35rem;font-weight:800;color:var(--gold2);padding-top:15px}.cta{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#16130e;text-decoration:none;font-weight:800;padding:12px 18px;border-radius:999px;border:0;cursor:pointer;font:inherit}.secondary{background:transparent;color:white;border:1px solid rgba(255,255,255,.25);margin-left:8px}.notice{border-left:4px solid var(--gold);background:var(--paper);padding:17px 20px;border-radius:12px;margin:18px 0}.hidden{display:none!important}.resource-note{background:#efe3c4;border-radius:14px;padding:14px 16px;margin-top:18px}.footer{padding:30px 0 45px;color:var(--muted);font-size:.85rem;text-align:center}.error{color:#9d2c20;font-weight:700;margin-top:12px}.success{color:#315c4b;font-weight:700;margin-top:12px}@media(max-width:700px){.controls{grid-template-columns:1fr}.full{grid-column:auto}.top-inner{align-items:flex-start;flex-direction:column}.secondary{margin:10px 0 0}}
-</style>
-</head>
-<body>
-<header class="top"><div class="container top-inner"><div class="brand">LH &nbsp; Learning Hub<small>Global Education Platform</small></div><a class="back" href="index.html">← Back to Learning Hub</a></div></header>
-<main>
-<section class="hero"><div class="container"><div class="eyebrow">Cart &amp; Billing</div><h1>Review your learning option before payment.</h1><p>Select the subject, number of classes, billing period and optional resources. Premium digital downloads show their fixed price here before checkout.</p></div></section>
-<section class="section"><div class="container">
-<div class="card cart-card">
-<span class="cart-badge" id="cartType">LEARNING OPTION</span>
-<h2 id="cartTitle">Choose a learning option</h2>
-<p class="muted" id="cartDescription">Your selected course or resource will appear here.</p>
-<div id="courseControls">
-<div class="controls">
-<div class="field"><label for="subject">Subject</label><select id="subject">
-<option value="English Language">English Language</option><option value="English Literature">English Literature</option><option value="Language &amp; Literature">Language &amp; Literature</option><option value="Mathematics">Mathematics</option><option value="Additional Mathematics">Additional Mathematics</option><option value="Statistics">Statistics</option><option value="Biology">Biology</option><option value="Chemistry">Chemistry</option><option value="Physics">Physics</option><option value="Psychology">Psychology</option><option value="Business Studies">Business Studies</option><option value="Business Management">Business Management</option><option value="Economics">Economics</option><option value="Sociology">Sociology</option><option value="Geography">Geography</option><option value="History">History</option><option value="Global Politics">Global Politics</option><option value="Philosophy">Philosophy</option><option value="Computer Science">Computer Science</option><option value="Information Technology">Information Technology</option><option value="Arabic">Arabic</option><option value="Urdu">Urdu</option><option value="Chinese">Chinese</option><option value="Japanese">Japanese</option><option value="Korean">Korean</option><option value="Italian">Italian</option><option value="Quran / Islamic Studies">Quran / Islamic Studies</option><option value="Academic Writing">Academic Writing</option><option value="Study Skills">Study Skills</option><option value="Communication">Communication</option><option value="Other">Other</option>
-</select></div>
-<div class="field"><label for="classCount">Classes per month</label><select id="classCount"><option value="1">1 class — $5</option><option value="4">4 classes — $20</option><option value="6">6 classes — $30</option><option value="10">10 classes — $50</option><option value="20">20 classes — $100</option></select></div>
-<div class="field"><label for="period">Billing period</label><select id="period"><option value="1">1 month — standard rate</option><option value="3">3 months — 15% prepaid discount</option></select></div>
-<div class="field"><label for="level">Programme / Level</label><select id="level"><option>Primary</option><option>Lower Secondary</option><option>IGCSE</option><option>GCSE</option><option>O Level</option><option>A Level</option><option>IB PYP</option><option>IB MYP</option><option>IB DP</option><option>University</option><option>Adult / Professional</option><option>Other</option></select></div>
-<div class="full"><label class="checkline"><input type="checkbox" id="includeNotes"><span>Add comprehensive subject notes — $50 per subject<br><small style="font-weight:500;color:#6f675d">Optional add-on. Basic learning resources may be included where applicable.</small></span></label></div>
-</div>
-</div>
-<div id="examControls" class="hidden">
-<div class="controls">
-<div class="field"><label for="examSubject">Subject / Number of subjects</label><select id="examSubject"><option value="1">1 subject</option><option value="2">2 subjects</option><option value="3">3 subjects</option><option value="4">4 subjects</option><option value="5">5 subjects</option></select></div>
-<div class="field"><label for="examHours">Preparation hours</label><select id="examHours"><option value="10">10 hours</option><option value="20" selected>20 hours</option><option value="30">30 hours</option><option value="40">40 hours</option><option value="50">50 hours</option></select></div>
-<div class="field"><label for="examLevel">Board / Level</label><input id="examLevel" placeholder="e.g. Cambridge A Level, IB DP, GCSE"></div>
-<div class="field"><label for="examDate">Exam date</label><input id="examDate" type="date"></div>
-<div class="full"><label class="checkline"><input type="checkbox" id="examNotes"><span>Add comprehensive subject notes — $50 per subject<br><small style="font-weight:500;color:#6f675d">Optional add-on.</small></span></label></div>
-</div>
-</div>
-<div id="resourceControls" class="hidden">
-<div class="resource-note"><strong id="resourceTypeLabel">Digital resource</strong><br><span id="resourceName">Selected resource</span><br><span class="muted">Price: <strong id="resourcePrice">$5.00</strong> · PKR reference shown below.</span></div>
-</div>
-<div class="summary" id="billingSummary">
-<h3>Billing Summary</h3>
-<div class="summary-row"><span>Selected option</span><strong id="summaryItem">—</strong></div>
-<div class="summary-row" id="summarySubjectRow"><span>Subject</span><strong id="summarySubject">—</strong></div>
-<div class="summary-row" id="summaryClassesRow"><span>Classes</span><strong id="summaryClasses">—</strong></div>
-<div class="summary-row"><span>Base price</span><strong id="summaryBase">$0.00</strong></div>
-<div class="summary-row"><span>Optional notes</span><strong id="summaryNotes">$0.00</strong></div>
-<div class="summary-row"><span>Prepaid discount</span><strong id="summaryDiscount">$0.00</strong></div>
-<div class="summary-total"><div>Total</div><div id="summaryTotal">$0.00</div><div style="font-size:.78rem;font-weight:500;margin-top:4px" id="summaryPKR">≈ PKR 0</div></div>
-</div>
-<div style="margin-top:18px"><button class="cta" id="checkoutButton" type="button">Request Secure Payment Checkout</button><a class="cta secondary" href="index.html#contact">Ask a Question</a></div>
-<div id="checkoutStatus" aria-live="polite"></div>
-</div>
-<div class="notice"><strong>Payment note:</strong> This page calculates and displays your selected billing amount. It does not store card details. Secure gateway checkout is completed only through the authorised payment process provided after the order is confirmed.</div>
-<div class="notice"><strong>PKR reference:</strong> Approximately 1 USD = PKR 277.75. The final PKR amount is confirmed before payment where a custom quotation or exchange-rate adjustment applies.</div>
-</div></section>
-</main>
-<footer class="footer">© 2026 Learning Hub. Global Education Platform.</footer>
-<script>
-(function(){
-  const params=new URLSearchParams(window.location.search);
-  const type=(params.get('type')||'course').toLowerCase();
-  const course=params.get('course')||'';
-  const resource=params.get('resource')||'';
-  const priceParam=Number(params.get('price'));
-  const resourceFile=params.get('file')||'';
-  const subjectParam=params.get('subject')||'';
-  const PKR_RATE=277.75;
-  const els={
-    type:document.getElementById('cartType'),title:document.getElementById('cartTitle'),desc:document.getElementById('cartDescription'),course:document.getElementById('courseControls'),exam:document.getElementById('examControls'),resource:document.getElementById('resourceControls'),
-    subject:document.getElementById('subject'),classes:document.getElementById('classCount'),period:document.getElementById('period'),level:document.getElementById('level'),notes:document.getElementById('includeNotes'),examSubject:document.getElementById('examSubject'),examHours:document.getElementById('examHours'),examLevel:document.getElementById('examLevel'),examDate:document.getElementById('examDate'),examNotes:document.getElementById('examNotes'),resourceName:document.getElementById('resourceName'),resourcePrice:document.getElementById('resourcePrice'),
-    item:document.getElementById('summaryItem'),subjectRow:document.getElementById('summarySubjectRow'),summarySubject:document.getElementById('summarySubject'),classesRow:document.getElementById('summaryClassesRow'),summaryClasses:document.getElementById('summaryClasses'),base:document.getElementById('summaryBase'),notesOut:document.getElementById('summaryNotes'),discount:document.getElementById('summaryDiscount'),total:document.getElementById('summaryTotal'),pkr:document.getElementById('summaryPKR'),checkout:document.getElementById('checkoutButton'),status:document.getElementById('checkoutStatus')
-  };
-  let current={kind:'course',name:course||'Learning Course',subject:subjectParam||'English Language',base:0,notes:0,discount:0,total:0};
-  if(type==='resource'){
-    current.kind='resource';current.name=resource||'Digital Resource';current.base=(priceParam===0?0:(priceParam===2?2:5));
-    els.type.textContent=current.base===0?'FREE DOWNLOAD':'PREMIUM DOWNLOAD';els.title.textContent=current.name;els.desc.textContent=current.base===0?'This free digital resource is shown through the billing page before download. No payment is required.':'Add this premium digital resource to your billing order. The fixed price is shown before checkout.';
-    els.course.classList.add('hidden');els.exam.classList.add('hidden');els.resource.classList.remove('hidden');els.resourceName.textContent=current.name;els.resourcePrice.textContent=current.base===0?'FREE':'$'+current.base.toFixed(2);
-    document.getElementById('resourceTypeLabel').textContent=current.base===0?'Free digital resource':'Premium digital resource';
-    els.subjectRow.classList.add('hidden');els.classesRow.classList.add('hidden');
-  }else if(type==='exam'){
-    current.kind='exam';current.name=course||'Exam Preparation';els.type.textContent='EXAM PREPARATION';els.title.textContent=current.name;els.desc.textContent='Exam preparation is billed separately from regular classes, starting at $10 per hour.';
-    els.course.classList.add('hidden');els.exam.classList.remove('hidden');els.resource.classList.add('hidden');els.subjectRow.classList.add('hidden');
-  }else{
-    els.type.textContent='COURSE / LIVE LEARNING';els.title.textContent=course||'Learning Course';els.desc.textContent='Choose your subject, class quantity, billing period and optional comprehensive notes.';els.course.classList.remove('hidden');els.exam.classList.add('hidden');els.resource.classList.add('hidden');
-    if(subjectParam){const opt=[...els.subject.options].find(o=>o.value.toLowerCase()===subjectParam.toLowerCase());if(opt)els.subject.value=opt.value;}
-  }
-  function money(n){return '$'+n.toFixed(2)}
-  function pkr(n){return '≈ PKR '+Math.round(n*PKR_RATE).toLocaleString()}
-  function update(){
-    let base=0,notes=0,discount=0,classesText='—',subjectText=els.subject.value;
-    if(current.kind==='resource'){base=current.base;subjectText='—';classesText='Digital download';}
-    else if(current.kind==='exam'){const subjects=Number(els.examSubject.value);const hours=Number(els.examHours.value);base=hours*10;notes=els.examNotes.checked?subjects*50:0;classesText=hours+' preparation hours · '+subjects+' subject'+(subjects>1?'s':'');subjectText='Exam preparation';}
-    else{const count=Number(els.classes.value);const months=Number(els.period.value);base=count*5*months;discount=months===3?base*.15:0;notes=els.notes.checked?50:0;classesText=(count*months)+' live classes over '+months+' month'+(months>1?'s':'');subjectText=els.subject.value;}
-    const total=base+notes-discount;current.base=base;current.notes=notes;current.discount=discount;current.total=total;current.subject=subjectText;
-    els.item.textContent=current.name;els.summarySubject.textContent=subjectText;els.summaryClasses.textContent=classesText;els.base.textContent=money(base);els.notesOut.textContent=money(notes);els.discount.textContent=discount?'-'+money(discount):money(0);els.total.textContent=money(total);els.pkr.textContent=pkr(total);
-  }
-  [els.subject,els.classes,els.period,els.notes,els.examSubject,els.examHours,els.examLevel,els.examDate,els.examNotes].forEach(function(el){if(el)el.addEventListener('change',update)});
-  els.checkout.addEventListener('click',function(){
-    if(current.kind==='resource' && current.total===0 && resourceFile){
-      els.status.className='success';
-      els.status.textContent='Free resource confirmed. Opening the PDF download…';
-      window.location.href='/resources/'+encodeURIComponent(resourceFile);
-      return;
-    }
-    const details=['Learning Hub checkout request','Selected option: '+current.name,'Order type: '+current.kind,'Subject: '+current.subject,'Base price: '+money(current.base),'Optional notes: '+money(current.notes),'Prepaid discount: '+money(current.discount),'Total: '+money(current.total),pkr(current.total),'Please confirm availability and send the authorised secure payment checkout instructions.'].join('\n');
-    els.status.className='success';els.status.textContent='Your billing summary is ready. Your email app will open so Learning Hub can confirm the order and provide the authorised secure payment checkout.';
-    window.location.href='mailto:hublearning117@gmail.com?subject='+encodeURIComponent('Learning Hub Checkout Request — '+current.name)+'&body='+encodeURIComponent(details);
-  });
-  update();
-  if(type==='resource' && current.base===0) els.checkout.textContent='Open Free PDF';
-})();
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Learning Hub | Global Education Platform</title>
+<meta content="Learning Hub provides global online tutoring, international curriculum support, Quran and Islamic Studies, exam preparation, specialist learning support, courses and digital learning resources." name="description"/>
+<link href="https://learninghubtutoring.com/" rel="canonical"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="Learning Hub" name="author"/>
+<meta content="#070707" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="Learning Hub" property="og:site_name"/>
+<meta content="Learning Hub | Global Online Tutoring &amp; International Education" property="og:title"/>
+<meta content="Personalised online tutoring, international curriculum support, English development, exam preparation, Quran and Islamic Studies, learning support and digital resources." property="og:description"/>
+<meta content="https://learninghubtutoring.com/" property="og:url"/>
+<meta content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Learning Hub | Global Online Tutoring &amp; International Education" name="twitter:title"/>
+<meta content="Personalised online learning for students, professionals and lifelong learners worldwide." name="twitter:description"/>
+<meta content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" name="twitter:image"/>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","@id":"https://learninghubtutoring.com/#organization","name":"Learning Hub","url":"https://learninghubtutoring.com/","description":"Global online education platform providing tutoring, international curriculum support, English development, exam preparation, Quran and Islamic Studies, learning support and digital resources."},{"@type":"WebSite","@id":"https://learninghubtutoring.com/#website","url":"https://learninghubtutoring.com/","name":"Learning Hub","publisher":{"@id":"https://learninghubtutoring.com/#organization"}},{"@type":"WebPage","@id":"https://learninghubtutoring.com/#webpage","url":"https://learninghubtutoring.com/","name":"Learning Hub | Global Education Platform","isPartOf":{"@id":"https://learninghubtutoring.com/#website"},"about":{"@id":"https://learninghubtutoring.com/#organization"}}]}
 </script>
-</body>
-</html>
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+
+<style>
+:root{
+  --black:#070707;
+  --black2:#0d0d0d;
+  --black3:#151515;
+  --gold:#c9a45c;
+  --gold2:#f0d58e;
+  --gold3:#8e6b2d;
+  --cream:#f4eee2;
+  --cream2:#e8deca;
+  --ivory:#fbf8f1;
+  --white:#fffdf8;
+  --text:#171512;
+  --muted:#777168;
+  --darkmuted:#bcb4a7;
+  --line:rgba(201,164,92,.25);
+  --shadow:0 25px 70px rgba(0,0,0,.22);
+  --radius:24px
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  background:var(--ivory);
+  color:var(--text);
+  line-height:1.65;
+  overflow-x:hidden
+}
+
+img{display:block;width:100%}
+
+a{color:inherit;text-decoration:none}
+
+button,input,textarea,select{font:inherit}
+
+button{cursor:pointer}
+
+.container{
+  width:min(1200px,calc(100% - 36px));
+  margin:auto
+}
+
+section{
+  padding:100px 0;
+  position:relative
+}
+
+.section-heading{
+  max-width:760px;
+  margin-bottom:55px
+}
+
+.section-heading.center{
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  font-size:.76rem;
+  font-weight:700;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--gold3);
+  margin-bottom:16px
+}
+
+.eyebrow::before{
+  content:"";
+  width:28px;
+  height:1px;
+  background:currentColor
+}
+
+.dark .eyebrow{color:var(--gold2)}
+
+h1,h2,h3{
+  font-family:"Playfair Display",serif;
+  line-height:1.1
+}
+
+h1{font-size:clamp(3rem,7vw,6.6rem)}
+
+h2{font-size:clamp(2.2rem,4vw,4rem)}
+
+h3{font-size:1.45rem}
+
+p{color:var(--muted)}
+
+.dark p{color:var(--darkmuted)}
+
+
+/* NAVIGATION */
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(7,7,7,.92);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(201,164,92,.18)
+}
+
+.nav-inner{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-shrink:0
+}
+
+.brand-mark{
+  width:48px;
+  height:48px;
+  border:1px solid var(--gold);
+  display:grid;
+  place-items:center;
+  color:var(--gold2);
+  font-family:"Playfair Display",serif;
+  font-size:1.25rem
+}
+
+.brand-copy strong{
+  display:block;
+  color:var(--white);
+  font-size:1rem
+}
+
+.brand-copy small{
+  display:block;
+  color:var(--darkmuted);
+  font-size:.68rem;
+  letter-spacing:.08em;
+  text-transform:uppercase
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  gap:22px
+}
+
+.nav-links a{
+  font-size:.78rem;
+  color:#ddd7cc;
+  transition:.25s
+}
+
+.nav-links a:hover{color:var(--gold2)}
+
+.nav-actions{
+  display:flex;
+  align-items:center;
+  gap:10px
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-height:46px;
+  padding:0 20px;
+  border-radius:999px;
+  border:1px solid transparent;
+  font-weight:700;
+  font-size:.85rem;
+  transition:.3s
+}
+
+.btn-gold{
+  background:linear-gradient(135deg,var(--gold2),var(--gold));
+  color:#17130c
+}
+
+.btn-gold:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px rgba(201,164,92,.25)
+}
+
+.btn-outline{
+  border-color:var(--gold);
+  color:var(--gold2)
+}
+
+.btn-outline:hover{
+  background:var(--gold);
+  color:#111
+}
+
+.mobile-toggle{
+  display:none;
+  background:none;
+  border:1px solid var(--line);
+  color:var(--gold2);
+  width:44px;
+  height:44px;
+  border-radius:50%;
+  font-size:1.2rem
+}
+
+
+/* HERO */
+
+.hero{
+  min-height:100vh;
+  padding-top:150px;
+  background:
+    linear-gradient(90deg,rgba(7,7,7,.96) 0%,rgba(7,7,7,.78) 46%,rgba(7,7,7,.30) 100%),
+    url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=2200&q=85") center/cover;
+  color:var(--white);
+  display:flex;
+  align-items:center;
+  overflow:hidden
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:auto -100px -150px auto;
+  width:450px;
+  height:450px;
+  border-radius:50%;
+  background:rgba(201,164,92,.12);
+  filter:blur(70px)
+}
+
+.hero-content{
+  max-width:850px;
+  position:relative;
+  z-index:2
+}
+
+.hero .eyebrow{color:var(--gold2)}
+
+.hero p{
+  max-width:690px;
+  font-size:1.08rem;
+  margin:25px 0 35px;
+  color:#ddd7cd
+}
+
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap
+}
+
+.hero-statbar{
+  margin-top:65px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line)
+}
+
+.hero-stat{
+  padding:20px 12px;
+  border-right:1px solid var(--line)
+}
+
+.hero-stat:last-child{border-right:0}
+
+.hero-stat strong{
+  display:block;
+  color:var(--gold2);
+  font-size:1rem;
+  margin-bottom:3px
+}
+
+.hero-stat span{
+  font-size:.72rem;
+  color:#aaa398
+}
+
+
+/* INTRO */
+
+.intro{background:var(--cream)}
+
+.intro-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center
+}
+
+.intro-image{
+  border-radius:28px;
+  overflow:hidden;
+  height:520px;
+  box-shadow:var(--shadow);
+  position:relative
+}
+
+.intro-image img{
+  height:100%;
+  object-fit:cover
+}
+
+.image-caption{
+  position:absolute;
+  left:20px;
+  right:20px;
+  bottom:20px;
+  padding:20px;
+  background:rgba(7,7,7,.78);
+  backdrop-filter:blur(15px);
+  border:1px solid var(--line);
+  border-radius:18px;
+  color:white
+}
+
+.image-caption strong{
+  display:block;
+  color:var(--gold2);
+  margin-bottom:3px
+}
+
+.intro-list{
+  margin-top:28px;
+  display:grid;
+  gap:12px
+}
+
+.intro-list div{
+  display:flex;
+  gap:12px;
+  align-items:flex-start
+}
+
+.check{
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  background:var(--gold);
+  color:#111;
+  display:grid;
+  place-items:center;
+  font-weight:900;
+  font-size:.75rem;
+  flex-shrink:0
+}
+
+
+/* CARDS */
+
+.card-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.visual-card{
+  background:#fff;
+  border:1px solid rgba(23,21,18,.08);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 12px 40px rgba(23,21,18,.07);
+  transition:.4s;
+  transform-style:preserve-3d
+}
+
+.visual-card:hover{
+  transform:translateY(-8px) rotateX(1deg) rotateY(-1deg);
+  box-shadow:0 25px 55px rgba(23,21,18,.14)
+}
+
+.card-image{
+  height:230px;
+  overflow:hidden;
+  position:relative
+}
+
+.card-image img{
+  height:100%;
+  object-fit:cover;
+  transition:.5s
+}
+
+.visual-card:hover .card-image img{transform:scale(1.06)}
+
+.card-tag{
+  position:absolute;
+  top:15px;
+  left:15px;
+  background:rgba(7,7,7,.82);
+  color:var(--gold2);
+  border:1px solid var(--line);
+  border-radius:999px;
+  padding:7px 11px;
+  font-size:.68rem;
+  font-weight:700
+}
+
+.card-body{padding:24px}
+
+.card-body p{
+  font-size:.9rem;
+  margin:12px 0 20px
+}
+
+.card-link{
+  color:var(--gold3);
+  font-size:.8rem;
+  font-weight:700
+}
+
+.programmes{background:var(--ivory)}
+
+
+/* QURAN */
+
+.quran{
+  background:
+    linear-gradient(90deg,rgba(7,7,7,.96),rgba(7,7,7,.80)),
+    url("https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=2200&q=85") center/cover fixed;
+  color:white
+}
+
+.quran-grid{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:60px;
+  align-items:center
+}
+
+.quran-image{
+  height:550px;
+  border-radius:30px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow)
+}
+
+.quran-image img{
+  height:100%;
+  object-fit:cover
+}
+
+.quran-content p{max-width:680px}
+
+.course-list{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+  margin-top:28px
+}
+
+.course-item{
+  padding:17px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.045);
+  border-radius:15px;
+  transition:.3s
+}
+
+.course-item:hover{
+  border-color:var(--gold);
+  transform:translateY(-3px)
+}
+
+.course-item strong{
+  display:block;
+  color:var(--gold2);
+  font-size:.92rem
+}
+
+.course-item span{
+  font-size:.75rem;
+  color:#aaa398
+}
+
+
+/* SUBJECTS */
+
+.subjects{
+  background:var(--black2);
+  color:white
+}
+
+.subject-pills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px
+}
+
+.subject-pill{
+  padding:12px 17px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:#ded7ca;
+  background:rgba(255,255,255,.025);
+  font-size:.8rem;
+  transition:.25s
+}
+
+.subject-pill:hover{
+  background:var(--gold);
+  color:#111;
+  transform:translateY(-2px)
+}
+
+
+/* BOARDS */
+
+.boards{background:var(--cream)}
+
+.board-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px
+}
+
+.board-card{
+  min-height:210px;
+  padding:28px;
+  background:#fff;
+  border-radius:22px;
+  border:1px solid rgba(23,21,18,.08);
+  position:relative;
+  overflow:hidden
+}
+
+.board-card::before{
+  content:"";
+  position:absolute;
+  width:100px;
+  height:100px;
+  border-radius:50%;
+  background:rgba(201,164,92,.12);
+  right:-30px;
+  top:-30px
+}
+
+.board-card strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:1.3rem;
+  margin-bottom:12px
+}
+
+.board-card span{
+  font-size:.78rem;
+  color:var(--muted)
+}
+
+
+/* IB */
+
+.ib-section{background:var(--ivory)}
+
+.ib-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px
+}
+
+.ib-group{
+  background:white;
+  padding:25px;
+  border-radius:20px;
+  border:1px solid rgba(23,21,18,.08)
+}
+
+.ib-group h3{
+  font-size:1.15rem;
+  margin-bottom:14px
+}
+
+.ib-group ul{
+  list-style:none;
+  display:grid;
+  gap:7px
+}
+
+.ib-group li{
+  font-size:.78rem;
+  color:var(--muted);
+  padding-bottom:7px;
+  border-bottom:1px solid #eee8dc
+}
+
+
+/* EXAMS */
+
+.exams{
+  background:var(--black);
+  color:white
+}
+
+.exam-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px
+}
+
+.exam{
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:18px;
+  background:rgba(255,255,255,.025);
+  transition:.3s
+}
+
+.exam:hover{
+  border-color:var(--gold);
+  transform:translateY(-3px)
+}
+
+.exam strong{
+  display:block;
+  color:var(--gold2);
+  font-size:.9rem
+}
+
+.exam span{
+  display:block;
+  font-size:.72rem;
+  color:#a8a095;
+  margin-top:5px
+}
+
+.exam-note{
+  display:inline-block;
+  margin-top:12px;
+  font-size:.68rem;
+  color:#bdb5a9
+}
+
+
+/* INTERNATIONAL EXAMS */
+
+.international-exams{
+  background:var(--ivory)
+}
+
+.exam-category{
+  margin-bottom:55px
+}
+
+.exam-category:last-child{
+  margin-bottom:0
+}
+
+.exam-category-title{
+  color:var(--text);
+  margin-bottom:20px;
+  font-size:1.8rem
+}
+
+.exam-category-intro{
+  margin-bottom:22px;
+  max-width:760px
+}
+
+.international-exam-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.international-exam-card{
+  background:white;
+  border:1px solid rgba(23,21,18,.08);
+  border-radius:22px;
+  padding:28px;
+  box-shadow:0 12px 35px rgba(23,21,18,.05);
+  transition:.3s
+}
+
+.international-exam-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px rgba(23,21,18,.1)
+}
+
+.international-exam-card h3{
+  margin-bottom:10px;
+  font-size:1.35rem
+}
+
+.exam-label{
+  display:inline-block;
+  color:var(--gold3);
+  font-size:.68rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-weight:700;
+  margin-bottom:10px
+}
+
+.international-exam-card p{
+  font-size:.82rem;
+  margin-bottom:15px
+}
+
+.exam-components{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px
+}
+
+.exam-component{
+  padding:6px 10px;
+  border-radius:999px;
+  background:var(--cream);
+  color:#665b4d;
+  font-size:.66rem;
+  font-weight:600
+}
+
+
+/* SUPPORT */
+
+.support{background:var(--cream)}
+
+.support-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.support-card{
+  position:relative;
+  min-height:320px;
+  border-radius:25px;
+  overflow:hidden;
+  color:white
+}
+
+.support-card img{
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  inset:0
+}
+
+.support-overlay{
+  position:absolute;
+  inset:0;
+  padding:25px;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  background:linear-gradient(transparent 25%,rgba(0,0,0,.88))
+}
+
+.support-overlay h3{color:white}
+
+.support-overlay p{
+  color:#ddd7cd;
+  font-size:.82rem;
+  margin-top:7px
+}
+
+
+/* LIBRARY */
+
+.library{background:var(--ivory)}
+
+.library-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.resource-card{
+  background:#fff;
+  border-radius:22px;
+  overflow:hidden;
+  border:1px solid rgba(23,21,18,.08);
+  box-shadow:0 12px 35px rgba(23,21,18,.06);
+  transition:.3s
+}
+
+.resource-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 45px rgba(23,21,18,.1)
+}
+
+.resource-cover{
+  height:300px;
+  overflow:hidden;
+  background:linear-gradient(135deg,#0a0a0a,#211b10);
+  position:relative
+}
+
+.resource-cover img{
+  height:100%;
+  width:100%;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+  opacity:1;
+  filter:saturate(.9) contrast(1.04);
+  transition:transform .5s ease,filter .5s ease
+}
+
+.resource-cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(7,7,7,.05),rgba(7,7,7,.38));
+  pointer-events:none
+}
+
+.resource-card:hover .resource-cover img{
+  transform:scale(1.04);
+  filter:saturate(1) contrast(1.05)
+}
+
+.resource-body{padding:22px}
+
+.resource-meta{
+  font-size:.7rem;
+  color:var(--gold3);
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.08em
+}
+
+.resource-body h3{
+  margin:8px 0;
+  font-size:1.3rem
+}
+
+.resource-body p{
+  font-size:.8rem;
+  margin-bottom:18px
+}
+
+.resource-download{
+  width:100%;
+}
+
+
+/* ARTICLES & BLOG */
+
+.articles{background:var(--cream)}
+
+.article-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px
+}
+
+.article-card{
+  background:#fff;
+  border:1px solid rgba(23,21,18,.08);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 35px rgba(23,21,18,.06);
+  transition:.35s
+}
+
+.article-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 48px rgba(23,21,18,.12)
+}
+
+.article-top{
+  min-height:150px;
+  padding:26px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  background:linear-gradient(135deg,#0a0a0a,#241d10);
+  color:white;
+  position:relative
+}
+
+.article-top::after{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  right:-35px;
+  top:-45px;
+  background:rgba(231,205,143,.13);
+  filter:blur(2px)
+}
+
+.article-category{
+  position:relative;
+  z-index:1;
+  color:var(--gold2);
+  font-size:.68rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  font-weight:700
+}
+
+.article-mark{
+  position:relative;
+  z-index:1;
+  font-family:"Playfair Display",serif;
+  font-size:2.4rem;
+  color:rgba(231,205,143,.92);
+  line-height:1
+}
+
+.article-body{padding:24px}
+
+.article-body h3{
+  font-size:1.25rem;
+  line-height:1.25;
+  margin-bottom:10px
+}
+
+.article-body p{
+  font-size:.84rem;
+  margin-bottom:16px
+}
+
+.article-meta{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  color:#8b8173;
+  font-size:.68rem;
+  margin-bottom:16px
+}
+
+.article-details summary{
+  list-style:none;
+  cursor:pointer;
+  color:var(--gold3);
+  font-size:.78rem;
+  font-weight:700
+}
+
+.article-details summary::-webkit-details-marker{display:none}
+.article-details summary::after{content:"  +"}
+.article-details[open] summary::after{content:"  −"}
+
+.article-full{
+  margin-top:14px;
+  padding-top:14px;
+  border-top:1px solid rgba(23,21,18,.08);
+  font-size:.8rem;
+  line-height:1.75
+}
+
+@media(max-width:980px){
+  .article-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:720px){
+  .article-grid{grid-template-columns:1fr}
+}
+
+
+/* GALLERY */
+
+.gallery{background:var(--cream)}
+
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:220px;
+  gap:15px
+}
+
+.gallery-item{
+  overflow:hidden;
+  border-radius:20px;
+  position:relative
+}
+
+.gallery-item.large{
+  grid-column:span 2;
+  grid-row:span 2
+}
