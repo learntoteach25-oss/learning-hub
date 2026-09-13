@@ -1,30 +1,29 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Learning Hub | Global Education Platform</title>
-<meta name="description" content="Learning Hub provides global online tutoring, international curriculum support, Quran and Islamic Studies, exam preparation, specialist learning support, courses and digital learning resources.">
-<link rel="canonical" href="https://learninghubtutoring.com/">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="author" content="Learning Hub">
-<meta name="theme-color" content="#070707">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Learning Hub">
-<meta property="og:title" content="Learning Hub | Global Online Tutoring & International Education">
-<meta property="og:description" content="Personalised online tutoring, international curriculum support, English development, exam preparation, Quran and Islamic Studies, learning support and digital resources.">
-<meta property="og:url" content="https://learninghubtutoring.com/">
-<meta property="og:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=85">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Learning Hub | Global Online Tutoring & International Education">
-<meta name="twitter:description" content="Personalised online learning for students, professionals and lifelong learners worldwide.">
-<meta name="twitter:image" content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=85">
+<meta content="Learning Hub provides global online tutoring, international curriculum support, Quran and Islamic Studies, exam preparation, specialist learning support, courses and digital learning resources." name="description"/>
+<link href="https://learninghubtutoring.com/" rel="canonical"/>
+<meta content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" name="robots"/>
+<meta content="Learning Hub" name="author"/>
+<meta content="#070707" name="theme-color"/>
+<meta content="website" property="og:type"/>
+<meta content="Learning Hub" property="og:site_name"/>
+<meta content="Learning Hub | Global Online Tutoring &amp; International Education" property="og:title"/>
+<meta content="Personalised online tutoring, international curriculum support, English development, exam preparation, Quran and Islamic Studies, learning support and digital resources." property="og:description"/>
+<meta content="https://learninghubtutoring.com/" property="og:url"/>
+<meta content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Learning Hub | Global Online Tutoring &amp; International Education" name="twitter:title"/>
+<meta content="Personalised online learning for students, professionals and lifelong learners worldwide." name="twitter:description"/>
+<meta content="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&amp;fit=crop&amp;w=1600&amp;q=85" name="twitter:image"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"EducationalOrganization","@id":"https://learninghubtutoring.com/#organization","name":"Learning Hub","url":"https://learninghubtutoring.com/","description":"Global online education platform providing tutoring, international curriculum support, English development, exam preparation, Quran and Islamic Studies, learning support and digital resources."},{"@type":"WebSite","@id":"https://learninghubtutoring.com/#website","url":"https://learninghubtutoring.com/","name":"Learning Hub","publisher":{"@id":"https://learninghubtutoring.com/#organization"}},{"@type":"WebPage","@id":"https://learninghubtutoring.com/#webpage","url":"https://learninghubtutoring.com/","name":"Learning Hub | Global Education Platform","isPartOf":{"@id":"https://learninghubtutoring.com/#website"},"about":{"@id":"https://learninghubtutoring.com/#organization"}}]}</script>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root{
   --black:#070707;
@@ -1082,6 +1081,21 @@ p{color:var(--muted)}
   font-weight:700
 }
 
+
+/* ENQUIRY MODAL */
+.enquiry-modal{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.65);padding:5vh 3vw;overflow:auto}
+.enquiry-modal.open{display:block}
+.enquiry-modal-inner{max-width:760px;margin:0 auto;background:#fff;border-radius:22px;padding:30px;position:relative;box-shadow:0 25px 80px rgba(0,0,0,.3)}
+.enquiry-close{position:absolute;right:16px;top:12px;border:0;background:none;font-size:30px;cursor:pointer;color:#222}
+.enquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.enquiry-field{display:flex;flex-direction:column;gap:7px}
+.enquiry-field.full{grid-column:1/-1}
+.enquiry-field label{font-size:.82rem;font-weight:700;color:#302c27}
+.enquiry-field input,.enquiry-field select,.enquiry-field textarea{width:100%;padding:12px 13px;border:1px solid rgba(23,21,18,.16);border-radius:10px;font:inherit;background:#fff}
+.enquiry-field textarea{min-height:120px;resize:vertical}
+.enquiry-status{margin-top:14px;font-size:.9rem}
+@media(max-width:650px){.enquiry-grid{grid-template-columns:1fr}.enquiry-field.full{grid-column:auto}.enquiry-modal-inner{padding:24px 18px}}
+
 /* PRICING */
 
 .pricing{background:var(--cream)}
@@ -1448,6 +1462,66 @@ footer p{
   }
 }
 
+
+/* LEARNING HUB RESOURCE / SERVICE ADDITIONS */
+.library-tools{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 30px}
+.library-filter{border:1px solid var(--line);background:#fff;padding:11px 16px;border-radius:999px;color:var(--text);font-weight:700;font-size:.78rem;cursor:pointer}
+.library-filter.active,.library-filter:hover{background:var(--gold);color:#111}
+.resource-state{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;font-size:.65rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em}
+.resource-free{background:#edf6ed;color:#35633a}
+.resource-premium{background:#f7edd8;color:#795a20}
+.resource-cover.locked{position:relative}
+.resource-cover.locked::before{content:"🔒 PREMIUM";position:absolute;z-index:2;top:15px;right:15px;background:rgba(7,7,7,.86);color:var(--gold2);padding:8px 11px;border-radius:999px;font-size:.66rem;font-weight:800;letter-spacing:.06em}
+.resource-card.is-hidden{display:none}
+.resource-subsection{margin:55px 0 20px}
+.resource-subsection h3{margin-bottom:7px}
+.subject-resource-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:35px}
+.resource-subject{padding:22px;background:#fff;border:1px solid rgba(23,21,18,.08);border-radius:20px;transition:.3s}
+.resource-subject:hover{transform:translateY(-4px);border-color:var(--gold)}
+.resource-subject strong{display:block;margin-bottom:5px}
+.resource-subject span{font-size:.75rem;color:var(--muted)}
+.premium-banner{margin:25px 0 40px;padding:25px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(135deg,#0b0b0b,#201a10);color:#fff;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.premium-banner p{color:var(--darkmuted);font-size:.82rem}
+.service-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.service-card{padding:30px;background:#fff;border:1px solid rgba(23,21,18,.08);border-radius:24px;box-shadow:0 12px 35px rgba(23,21,18,.05)}
+.service-card .service-icon{font-size:2rem;margin-bottom:15px}
+.service-card p{font-size:.85rem;margin:10px 0 20px}
+.teacher-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:25px}
+.teacher-tab{padding:11px 17px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--gold2);font-weight:700;cursor:pointer}
+.teacher-tab.active,.teacher-tab:hover{background:var(--gold);color:#111}
+.teacher-panel{padding:35px;border:1px solid var(--line);border-radius:26px;background:rgba(255,255,255,.035)}
+.teacher-empty{min-height:190px;display:grid;place-items:center;text-align:center}
+.teacher-empty strong{display:block;color:var(--gold2);font-family:"Playfair Display",serif;font-size:1.5rem;margin-bottom:8px}
+.feedback-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:28px;align-items:start}
+.rating-summary{padding:32px;background:linear-gradient(145deg,#0b0b0b,#201a10);border:1px solid var(--line);border-radius:25px;color:#fff}
+.rating-score{font-family:"Playfair Display",serif;font-size:4.5rem;color:var(--gold2);line-height:1}
+.stars{color:var(--gold2);letter-spacing:4px;font-size:1.15rem;margin:10px 0}
+.feedback-form{padding:30px;background:#fff;border-radius:25px;border:1px solid rgba(23,21,18,.08)}
+.feedback-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.feedback-form label{display:block;font-size:.74rem;font-weight:700;margin-bottom:6px}
+.feedback-form input,.feedback-form textarea,.feedback-form select{width:100%;padding:12px 14px;border:1px solid #ddd5c8;border-radius:12px;background:#fff}
+.feedback-form textarea{min-height:125px;resize:vertical}
+.feedback-form .full{grid-column:1/-1}
+.rating-input{display:flex;flex-direction:row-reverse;justify-content:flex-end;gap:3px}
+.rating-input input{display:none}
+.rating-input label{font-size:1.7rem;color:#c9c1b5;cursor:pointer;margin:0}
+.rating-input input:checked ~ label,.rating-input label:hover,.rating-input label:hover ~ label{color:var(--gold)}
+.media-note{font-size:.7rem;color:var(--muted);margin-top:6px}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:25px}
+.review-card{padding:25px;background:rgba(255,255,255,.035);border:1px solid var(--line);border-radius:22px}
+.review-card p{color:#d1c9bd;font-size:.84rem;margin:12px 0 18px}
+.review-card small{color:var(--gold2);font-weight:700}
+.feedback-note{font-size:.72rem;color:#8d8579;margin-top:12px}
+@media(max-width:900px){
+  .subject-resource-grid{grid-template-columns:repeat(2,1fr)}
+  .feedback-layout{grid-template-columns:1fr}
+  .review-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:720px){
+  .service-grid,.subject-resource-grid,.feedback-form-grid,.review-grid{grid-template-columns:1fr}
+  .premium-banner{flex-direction:column;align-items:flex-start}
+}
+
 /* PREMIUM ADDITIONS */
 .global-learners{background:var(--black);color:var(--white);overflow:hidden}
 .global-learners::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 35%,rgba(201,164,92,.13),transparent 35%),linear-gradient(135deg,rgba(240,213,142,.04),transparent 45%);pointer-events:none}
@@ -1483,9 +1557,7 @@ footer p{
 
 .skip-link{position:fixed;left:14px;top:-60px;z-index:3000;background:#f0d58e;color:#111;padding:10px 16px;border-radius:999px;font-weight:700}.skip-link:focus{top:14px}
 </style>
-
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do online lessons work?","acceptedAnswer":{"@type":"Answer","text":"Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level."}},{"@type":"Question","name":"Which learners can join Learning Hub?","acceptedAnswer":{"@type":"Answer","text":"Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support."}},{"@type":"Question","name":"Which international boards do you support?","acceptedAnswer":{"@type":"Answer","text":"Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning."}},{"@type":"Question","name":"Can adults improve their English?","acceptedAnswer":{"@type":"Answer","text":"Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals."}}]}</script>
-
 <style>
 /* Learning Hub Rapid Gateway TEST checkout */
 #rapidpay-test-checkout { min-height: 120px; margin-top: 18px; }
@@ -1502,1516 +1574,1653 @@ footer p{
 #rapidpay-checkout { min-height:580px; padding-top:18px; }
 @media(max-width:700px){ .rapidpay-modal{padding:2vh 2vw;} .rapidpay-modal-inner{min-height:680px;} #rapidpay-checkout{min-height:640px;} }
 </style>
-</head>
+<style id="lh-package-pricing-css">
+.package-classes{font-weight:700;margin:6px 0 2px;font-size:.88rem}
+.package-duration{font-size:.75rem;opacity:.78;margin-bottom:14px}
+.package-features{padding:0;margin:0 0 20px;list-style:none}
+.package-features li{margin:8px 0;font-size:.78rem}
 
+<style id="lh-compliance-css">
+.compliance-strip{background:var(--black2);color:#fff;padding:34px 0}.compliance-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.compliance-card{border:1px solid var(--line);background:rgba(255,255,255,.035);border-radius:16px;padding:18px}.compliance-card strong{display:block;color:var(--gold2);margin-bottom:5px}.compliance-card span{font-size:.78rem;color:#c8c0b4}.business-model{background:var(--cream)}.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:28px}.journey-step{background:#fff;border:1px solid rgba(23,21,18,.08);border-radius:18px;padding:18px;text-align:center}.journey-step strong{display:block;margin-bottom:6px}.journey-step span{font-size:.76rem;color:var(--muted)}.policy-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.policy-links a{color:var(--gold3);font-weight:700;font-size:.82rem}.contact-detail{font-size:.88rem}.price-pkr{font-size:.76rem;color:var(--muted);margin-top:2px}.merchant-note{font-size:.74rem;color:var(--muted);margin-top:8px}.business-address{line-height:1.5}@media(max-width:850px){.compliance-grid,.journey{grid-template-columns:repeat(2,1fr)}}@media(max-width:560px){.compliance-grid,.journey{grid-template-columns:1fr}}
+</style></style></head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
-
 <!-- NAVIGATION -->
 <nav class="navbar">
-  <div class="container nav-inner">
-
-    <a href="#home" class="brand">
-      <span class="brand-mark">LH</span>
-      <span class="brand-copy">
-        <strong>Learning Hub</strong>
-        <small>Global Education Platform</small>
-      </span>
-    </a>
-
-    <div class="nav-links" id="mainNav">
-      <a href="#programmes">Programmes</a>
-      <a href="#subjects">Subjects</a>
-      <a href="#quran">Quran & Islamic Studies</a>
-      <a href="#boards">International Boards</a>
-      <a href="#exams">Exams</a>
-      <a href="#support">Learning Support</a>
-      <a href="#library">Resources</a>
-      <a href="#articles">Articles & Blog</a>
-      <a href="#teacher">Teach</a>
-    </div>
-
-    <div class="nav-actions">
-      <a href="https://calendly.com/hublearning117" target="_blank" rel="noopener" class="btn btn-gold">Book Now</a>
-      <button class="mobile-toggle" id="mobileToggle" onclick="toggleMenu()" aria-label="Open menu" aria-expanded="false">☰</button>
-    </div>
-
-  </div>
+<div class="container nav-inner">
+<a class="brand" href="#home">
+<span class="brand-mark">LH</span>
+<span class="brand-copy">
+<strong>Learning Hub</strong>
+<small>Global Education Platform</small>
+</span>
+</a>
+<div class="nav-links" id="mainNav">
+<a href="#service-pricing">Services & Pricing</a>
+<a href="billing.html">Billing</a>
+<a href="#programmes">Programmes</a>
+<a href="#subjects">Subjects</a>
+<a href="#quran">Quran &amp; Islamic Studies</a>
+<a href="#boards">International Boards</a>
+<a href="#exams">Exams</a>
+<a href="#support">Learning Support</a>
+<a href="#library">Resources</a>
+<a href="#counselling">Counselling</a>
+<a href="#teachers">Teachers</a>
+<a href="#feedback">Feedback</a>
+<a href="#articles">Articles &amp; Blog</a>
+<a href="#teacher">Teach</a>
+</div>
+<div class="nav-actions">
+<button class="btn btn-gold" data-open-enquiry="Book Learning Hub" type="button">Book Now</button>
+<button aria-expanded="false" aria-label="Open menu" class="mobile-toggle" id="mobileToggle" onclick="toggleMenu()">☰</button>
+</div>
+</div>
 </nav>
-
-
 <main id="main-content">
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="container">
-    <div class="hero-content">
-
-      <div class="eyebrow">Global Online Learning Platform</div>
-
-      <h1>Learn smarter.<br>Grow with Learning Hub.</h1>
-
-      <p>
+<div class="container">
+<div class="hero-content">
+<div class="eyebrow">Global Online Learning Platform</div>
+<h1>Learn smarter.<br/>Grow with Learning Hub.</h1>
+<p>
         A global education platform connecting learners with personalised tutoring,
         international curriculum support, Quran and Islamic Studies, exam preparation,
         specialist learning support and digital resources.
       </p>
-
-      <div class="hero-buttons">
-        <a href="#programmes" class="btn btn-gold">Explore Learning</a>
-        <a href="https://calendly.com/hublearning117" target="_blank" rel="noopener" class="btn btn-outline">Book a Lesson</a>
-      </div>
-
-      <div class="hero-statbar">
-        <div class="hero-stat">
-          <strong>Global</strong>
-          <span>Online Learning</span>
-        </div>
-
-        <div class="hero-stat">
-          <strong>1-to-1</strong>
-          <span>Personalised Support</span>
-        </div>
-
-        <div class="hero-stat">
-          <strong>IB + Cambridge</strong>
-          <span>International Curriculum</span>
-        </div>
-
-        <div class="hero-stat">
-          <strong>Quran</strong>
-          <span>Islamic Learning</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<div class="hero-buttons">
+<a class="btn btn-gold" href="#programmes">Explore Learning</a>
+<button class="btn btn-outline" data-open-enquiry="Book a Lesson" type="button">Book a Lesson</button>
+</div>
+<div class="hero-statbar">
+<div class="hero-stat">
+<strong>Global</strong>
+<span>Online Learning</span>
+</div>
+<div class="hero-stat">
+<strong>1-to-1</strong>
+<span>Personalised Support</span>
+</div>
+<div class="hero-stat">
+<strong>IB + Cambridge</strong>
+<span>International Curriculum</span>
+</div>
+<div class="hero-stat">
+<strong>Quran</strong>
+<span>Islamic Learning</span>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- INTRO -->
 <section class="intro">
-  <div class="container intro-grid">
-
-    <div class="intro-image">
-      <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=85" alt="Students learning together">
-      <div class="image-caption">
-        <strong>Learning for Everyone, Everywhere</strong>
-        <span>Academic learning • International education • Personal development</span>
-      </div>
-    </div>
-
-    <div>
-
-      <div class="section-heading">
-        <div class="eyebrow">Why Learning Hub</div>
-        <h2>One platform. Many pathways.</h2>
-        <p>
+<div class="container intro-grid">
+<div class="intro-image">
+<img alt="Students learning together" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"/>
+<div class="image-caption">
+<strong>Learning for Everyone, Everywhere</strong>
+<span>Academic learning • International education • Personal development</span>
+</div>
+</div>
+<div>
+<div class="section-heading">
+<div class="eyebrow">Why Learning Hub</div>
+<h2>One platform. Many pathways.</h2>
+<p>
           Learning Hub brings academic tutoring, international qualifications,
           Quranic education, exam preparation, specialist support and independent
           learning resources together in one accessible environment.
         </p>
-      </div>
-
-      <div class="intro-list">
-
-        <div>
-          <span class="check">✓</span>
-          <span>Global online tutoring for school, university and adult learners.</span>
-        </div>
-
-        <div>
-          <span class="check">✓</span>
-          <span>International curriculum support including IB and Cambridge.</span>
-        </div>
-
-        <div>
-          <span class="check">✓</span>
-          <span>Quran reading, Tajweed, Islamic Studies and structured courses.</span>
-        </div>
-
-        <div>
-          <span class="check">✓</span>
-          <span>Digital resources, worksheets, e-books and independent practice.</span>
-        </div>
-
-      </div>
-
-    </div>
-  </div>
+</div>
+<div class="intro-list">
+<div>
+<span class="check">✓</span>
+<span>Global online tutoring for school, university and adult learners.</span>
+</div>
+<div>
+<span class="check">✓</span>
+<span>International curriculum support including IB and Cambridge.</span>
+</div>
+<div>
+<span class="check">✓</span>
+<span>Quran reading, Tajweed, Islamic Studies and structured courses.</span>
+</div>
+<div>
+<span class="check">✓</span>
+<span>Digital resources, worksheets, e-books and independent practice.</span>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- PROGRAMMES -->
 <section class="programmes" id="programmes">
-  <div class="container">
-
-    <div class="section-heading center">
-      <div class="eyebrow">Learning Programmes</div>
-      <h2>Choose your learning pathway.</h2>
-      <p>Flexible learning designed around academic goals, personal needs and different stages of life.</p>
-    </div>
-
-    <div class="card-grid">
-
-      <article class="visual-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=85" alt="Academic tutoring">
-          <span class="card-tag">Academic</span>
-        </div>
-        <div class="card-body">
-          <h3>Academic Tutoring</h3>
-          <p>School subjects, homework support, concept building, revision and exam-focused learning.</p>
-          <a href="/subjects/" class="card-link">Explore Subjects →</a>
-        </div>
-      </article>
-
-      <article class="visual-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=85" alt="International education">
-          <span class="card-tag">International</span>
-        </div>
-        <div class="card-body">
-          <h3>International Curriculum</h3>
-          <p>IB, Cambridge and other international qualification support for global learners.</p>
-          <a href="/international-curriculum/" class="card-link">View Boards →</a>
-        </div>
-      </article>
-
-      <article class="visual-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=1200&q=85" alt="English learning">
-          <span class="card-tag">Languages</span>
-        </div>
-        <div class="card-body">
-          <h3>English Development</h3>
-          <p>Academic English, communication, speaking, writing, vocabulary and language confidence.</p>
-          <a href="/english/" class="card-link">Learn English →</a>
-        </div>
-      </article>
-
-      <article class="visual-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=85" alt="Exam preparation">
-          <span class="card-tag">Exams</span>
-        </div>
-        <div class="card-body">
-          <h3>Exam Preparation</h3>
-          <p>Structured preparation, practice questions, feedback and examination techniques.</p>
-          <a href="/exam-preparation/" class="card-link">Explore Exams →</a>
-        </div>
-      </article>
-
-      <article class="visual-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=1200&q=85" alt="Study skills">
-          <span class="card-tag">Skills</span>
-        </div>
-        <div class="card-body">
-          <h3>Study Skills</h3>
-          <p>Organisation, academic writing, independent study, research and confidence.</p>
-          <a href="#methodology" class="card-link">Our Method →</a>
-        </div>
-      </article>
-
-      <article class="visual-card">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1200&q=85" alt="Specialist learning support">
-          <span class="card-tag">Specialist</span>
-        </div>
-        <div class="card-body">
-          <h3>Specialist Learning Support</h3>
-          <p>Personalised approaches for learning differences, communication and confidence.</p>
-          <a href="#support" class="card-link">Explore Support →</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Learning Programmes</div>
+<h2>Choose your learning pathway.</h2>
+<p>Flexible learning designed around academic goals, personal needs and different stages of life.</p>
+</div>
+<div class="card-grid">
+<article class="visual-card">
+<div class="card-image">
+<img alt="Academic tutoring" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="card-tag">Academic</span>
+</div>
+<div class="card-body">
+<h3>Academic Tutoring</h3>
+<p>School subjects, homework support, concept building, revision and exam-focused learning.</p>
+<a class="card-link" href="/subjects/">Explore Subjects →</a>
+</div>
+</article>
+<article class="visual-card">
+<div class="card-image">
+<img alt="International education" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="card-tag">International</span>
+</div>
+<div class="card-body">
+<h3>International Curriculum</h3>
+<p>IB, Cambridge and other international qualification support for global learners.</p>
+<a class="card-link" href="/international-curriculum/">View Boards →</a>
+</div>
+</article>
+<article class="visual-card">
+<div class="card-image">
+<img alt="English learning" src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="card-tag">Languages</span>
+</div>
+<div class="card-body">
+<h3>English Development</h3>
+<p>Academic English, communication, speaking, writing, vocabulary and language confidence.</p>
+<a class="card-link" href="/english/">Learn English →</a>
+</div>
+</article>
+<article class="visual-card">
+<div class="card-image">
+<img alt="Exam preparation" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="card-tag">Exams</span>
+</div>
+<div class="card-body">
+<h3>Exam Preparation</h3>
+<p>Structured preparation, practice questions, feedback and examination techniques.</p>
+<a class="card-link" href="/exam-preparation/">Explore Exams →</a>
+</div>
+</article>
+<article class="visual-card">
+<div class="card-image">
+<img alt="Study skills" src="https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="card-tag">Skills</span>
+</div>
+<div class="card-body">
+<h3>Study Skills</h3>
+<p>Organisation, academic writing, independent study, research and confidence.</p>
+<a class="card-link" href="#methodology">Our Method →</a>
+</div>
+</article>
+<article class="visual-card">
+<div class="card-image">
+<img alt="Specialist learning support" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="card-tag">Specialist</span>
+</div>
+<div class="card-body">
+<h3>Specialist Learning Support</h3>
+<p>Personalised approaches for learning differences, communication and confidence.</p>
+<a class="card-link" href="#support">Explore Support →</a>
+</div>
+</article>
+</div>
+</div>
 </section>
-
-
 <!-- QURAN -->
 <section class="quran" id="quran">
-  <div class="container quran-grid">
-
-    <div class="quran-image">
-      <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1400&q=85" alt="Quran and Islamic learning">
-    </div>
-
-    <div class="quran-content">
-
-      <div class="eyebrow">Quran & Islamic Studies</div>
-
-      <h2>Learn the Quran. Understand. Practise. Grow.</h2>
-
-      <p>
+<div class="container quran-grid">
+<div class="quran-image">
+<img alt="Quran and Islamic learning" src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&amp;fit=crop&amp;w=1400&amp;q=85"/>
+</div>
+<div class="quran-content">
+<div class="eyebrow">Quran &amp; Islamic Studies</div>
+<h2>Learn the Quran. Understand. Practise. Grow.</h2>
+<p>
         Structured Quranic and Islamic education for children, young learners,
         adults and beginners, with flexible online learning.
       </p>
-
-      <div class="course-list">
-
-        <div class="course-item"><strong>Noorani Qaida</strong><span>Foundational Quran reading</span></div>
-        <div class="course-item"><strong>Quran Reading</strong><span>Fluency and accuracy</span></div>
-        <div class="course-item"><strong>Tajweed</strong><span>Rules and correct recitation</span></div>
-        <div class="course-item"><strong>Hifz Support</strong><span>Memorisation and revision</span></div>
-        <div class="course-item"><strong>Quran Translation</strong><span>Understand the meaning</span></div>
-        <div class="course-item"><strong>Tafseer</strong><span>Context and explanation</span></div>
-        <div class="course-item"><strong>Arabic for Quran</strong><span>Language foundations</span></div>
-        <div class="course-item"><strong>Quran for Adults</strong><span>Flexible adult learning</span></div>
-        <div class="course-item"><strong>Islamic Studies</strong><span>Structured Islamic education</span></div>
-        <div class="course-item"><strong>Seerah</strong><span>Life of Prophet Muhammad ﷺ</span></div>
-        <div class="course-item"><strong>Hadith Studies</strong><span>Introduction and learning</span></div>
-        <div class="course-item"><strong>Islamic History</strong><span>People, events and civilisation</span></div>
-        <div class="course-item"><strong>Fiqh</strong><span>Islamic practices and principles</span></div>
-        <div class="course-item"><strong>Duas</strong><span>Daily supplications</span></div>
-        <div class="course-item"><strong>Salah Learning</strong><span>Prayer guidance</span></div>
-        <div class="course-item"><strong>Islamic Manners</strong><span>Character and everyday conduct</span></div>
-
-      </div>
-
-      <br>
-
-      <a href="mailto:hublearning117@gmail.com" class="btn btn-gold">
+<div class="course-list">
+<div class="course-item"><strong>Noorani Qaida</strong><span>Foundational Quran reading</span></div>
+<div class="course-item"><strong>Quran Reading</strong><span>Fluency and accuracy</span></div>
+<div class="course-item"><strong>Tajweed</strong><span>Rules and correct recitation</span></div>
+<div class="course-item"><strong>Hifz Support</strong><span>Memorisation and revision</span></div>
+<div class="course-item"><strong>Quran Translation</strong><span>Understand the meaning</span></div>
+<div class="course-item"><strong>Tafseer</strong><span>Context and explanation</span></div>
+<div class="course-item"><strong>Arabic for Quran</strong><span>Language foundations</span></div>
+<div class="course-item"><strong>Quran for Adults</strong><span>Flexible adult learning</span></div>
+<div class="course-item"><strong>Islamic Studies</strong><span>Structured Islamic education</span></div>
+<div class="course-item"><strong>Seerah</strong><span>Life of Prophet Muhammad ﷺ</span></div>
+<div class="course-item"><strong>Hadith Studies</strong><span>Introduction and learning</span></div>
+<div class="course-item"><strong>Islamic History</strong><span>People, events and civilisation</span></div>
+<div class="course-item"><strong>Fiqh</strong><span>Islamic practices and principles</span></div>
+<div class="course-item"><strong>Duas</strong><span>Daily supplications</span></div>
+<div class="course-item"><strong>Salah Learning</strong><span>Prayer guidance</span></div>
+<div class="course-item"><strong>Islamic Manners</strong><span>Character and everyday conduct</span></div>
+</div>
+<br/>
+<button class="btn btn-gold" data-open-enquiry="Quran Courses" type="button">
         Enquire About Quran Courses
-      </a>
-
-    </div>
-  </div>
+      </button>
+</div>
+</div>
 </section>
-
-
 <!-- SUBJECTS -->
 <section class="subjects" id="subjects">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">Subjects</div>
-      <h2>Academic subjects and learning areas.</h2>
-      <p>Support can be tailored to the learner's curriculum, level and goals.</p>
-    </div>
-
-    <div class="subject-pills">
-
-      <span class="subject-pill">English Language</span>
-      <span class="subject-pill">English Literature</span>
-      <span class="subject-pill">Language & Literature</span>
-      <span class="subject-pill">Mathematics</span>
-      <span class="subject-pill">Additional Mathematics</span>
-      <span class="subject-pill">Biology</span>
-      <span class="subject-pill">Chemistry</span>
-      <span class="subject-pill">Physics</span>
-      <span class="subject-pill">Psychology</span>
-      <span class="subject-pill">Business Studies</span>
-      <span class="subject-pill">Business Management</span>
-      <span class="subject-pill">Economics</span>
-      <span class="subject-pill">Sociology</span>
-      <span class="subject-pill">Geography</span>
-      <span class="subject-pill">History</span>
-      <span class="subject-pill">Global Politics</span>
-      <span class="subject-pill">Philosophy</span>
-      <span class="subject-pill">Environmental Systems & Societies</span>
-      <span class="subject-pill">Environmental Management</span>
-      <span class="subject-pill">Computer Science</span>
-      <span class="subject-pill">Information Technology</span>
-      <span class="subject-pill">Design Technology</span>
-      <span class="subject-pill">Statistics</span>
-      <span class="subject-pill">Arabic</span>
-      <span class="subject-pill">Urdu</span>
-      <span class="subject-pill">Islamic Studies</span>
-      <span class="subject-pill">Academic Writing</span>
-      <span class="subject-pill">Research Skills</span>
-      <span class="subject-pill">Study Skills</span>
-      <span class="subject-pill">Communication</span>
-      <span class="subject-pill">Vocabulary</span>
-      <span class="subject-pill">Reading</span>
-      <span class="subject-pill">Speaking</span>
-      <span class="subject-pill">Writing</span>
-
-    </div>
-  </div>
+<div class="container">
+<div class="section-heading">
+<div class="eyebrow">Subjects</div>
+<h2>Academic subjects and learning areas.</h2>
+<p>Support can be tailored to the learner's curriculum, level and goals.</p>
+</div>
+<div class="subject-pills">
+<span class="subject-pill">English Language</span>
+<span class="subject-pill">English Literature</span>
+<span class="subject-pill">Language &amp; Literature</span>
+<span class="subject-pill">Mathematics</span>
+<span class="subject-pill">Additional Mathematics</span>
+<span class="subject-pill">Biology</span>
+<span class="subject-pill">Chemistry</span>
+<span class="subject-pill">Physics</span>
+<span class="subject-pill">Psychology</span>
+<span class="subject-pill">Business Studies</span>
+<span class="subject-pill">Business Management</span>
+<span class="subject-pill">Economics</span>
+<span class="subject-pill">Sociology</span>
+<span class="subject-pill">Geography</span>
+<span class="subject-pill">History</span>
+<span class="subject-pill">Global Politics</span>
+<span class="subject-pill">Philosophy</span>
+<span class="subject-pill">Environmental Systems &amp; Societies</span>
+<span class="subject-pill">Environmental Management</span>
+<span class="subject-pill">Computer Science</span>
+<span class="subject-pill">Information Technology</span>
+<span class="subject-pill">Design Technology</span>
+<span class="subject-pill">Statistics</span>
+<span class="subject-pill">Arabic</span>
+<span class="subject-pill">Urdu</span>
+<span class="subject-pill">Islamic Studies</span>
+<span class="subject-pill">Academic Writing</span>
+<span class="subject-pill">Research Skills</span>
+<span class="subject-pill">Study Skills</span>
+<span class="subject-pill">Communication</span>
+<span class="subject-pill">Vocabulary</span>
+<span class="subject-pill">Reading</span>
+<span class="subject-pill">Speaking</span>
+<span class="subject-pill">Writing</span>
+</div>
+</div>
 </section>
-
-
 <!-- INTERNATIONAL BOARDS -->
 <section class="boards" id="boards">
-  <div class="container">
-
-    <div class="section-heading center">
-      <div class="eyebrow">International Boards</div>
-      <h2>International qualifications.</h2>
-      <p>Support across major international education systems and qualifications.</p>
-    </div>
-
-    <div class="board-grid">
-
-      <div class="board-card">
-        <strong>IB Diploma Programme</strong><a href="/international-curriculum/ib/" class="card-link" style="display:block;margin-top:12px">Explore IB support →</a>
-        <span>IB subject tutoring, coursework guidance, examination preparation, TOK, Extended Essay and CAS support.</span>
-      </div>
-
-      <div class="board-card">
-        <strong>Cambridge International</strong><a href="/international-curriculum/" class="card-link" style="display:block;margin-top:12px">Explore Cambridge support →</a>
-        <span>IGCSE, O Level, AS Level and A Level subject support.</span>
-      </div>
-
-      <div class="board-card">
-        <strong>Pearson Edexcel</strong>
-        <span>International GCSE and International A Level support.</span>
-      </div>
-
-      <div class="board-card">
-        <strong>OxfordAQA</strong>
-        <span>International qualification and examination preparation.</span>
-      </div>
-
-      <div class="board-card">
-        <strong>American Qualifications</strong>
-        <span>Academic support for American curriculum learners and examination pathways.</span>
-      </div>
-
-      <div class="board-card">
-        <strong>Other International Programmes</strong>
-        <span>Personalised support where the curriculum and learning requirements can be matched.</span>
-      </div>
-
-      <div class="board-card">
-        <strong>School Curriculum</strong>
-        <span>Personalised tutoring for learners following local or school-specific programmes.</span>
-      </div>
-
-      <div class="board-card">
-        <strong>Adult Education</strong>
-        <span>Flexible learning for professional, academic and personal development.</span>
-      </div>
-
-    </div>
-  </div>
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">International Boards</div>
+<h2>International qualifications.</h2>
+<p>Support across major international education systems and qualifications.</p>
+</div>
+<div class="board-grid">
+<div class="board-card">
+<strong>IB Diploma Programme</strong><a class="card-link" href="/international-curriculum/ib/" style="display:block;margin-top:12px">Explore IB support →</a>
+<span>IB subject tutoring, coursework guidance, examination preparation, TOK, Extended Essay and CAS support.</span>
+</div>
+<div class="board-card">
+<strong>Cambridge International</strong><a class="card-link" href="/international-curriculum/" style="display:block;margin-top:12px">Explore Cambridge support →</a>
+<span>IGCSE, O Level, AS Level and A Level subject support.</span>
+</div>
+<div class="board-card">
+<strong>Pearson Edexcel</strong>
+<span>International GCSE and International A Level support.</span>
+</div>
+<div class="board-card">
+<strong>OxfordAQA</strong>
+<span>International qualification and examination preparation.</span>
+</div>
+<div class="board-card">
+<strong>American Qualifications</strong>
+<span>Academic support for American curriculum learners and examination pathways.</span>
+</div>
+<div class="board-card">
+<strong>Other International Programmes</strong>
+<span>Personalised support where the curriculum and learning requirements can be matched.</span>
+</div>
+<div class="board-card">
+<strong>School Curriculum</strong>
+<span>Personalised tutoring for learners following local or school-specific programmes.</span>
+</div>
+<div class="board-card">
+<strong>Adult Education</strong>
+<span>Flexible learning for professional, academic and personal development.</span>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- IB -->
 <section class="ib-section">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">IB Diploma Programme</div>
-      <h2>IB subjects and core components.</h2>
-      <p>Learning Hub can support the IB Diploma Programme across the six subject groups and core components.</p>
-    </div>
-
-    <div class="ib-grid">
-
-      <div class="ib-group">
-        <h3>Group 1 — Language & Literature</h3>
-        <ul>
-          <li>Language A: Literature</li>
-          <li>Language A: Language and Literature</li>
-          <li>Literature and Performance</li>
-        </ul>
-      </div>
-
-      <div class="ib-group">
-        <h3>Group 2 — Language Acquisition</h3>
-        <ul>
-          <li>Classical Languages</li>
-          <li>Language ab initio</li>
-          <li>Language B</li>
-        </ul>
-      </div>
-
-      <div class="ib-group">
-        <h3>Group 3 — Individuals & Societies</h3>
-        <ul>
-          <li>Business Management</li>
-          <li>Digital Society</li>
-          <li>Economics</li>
-          <li>Geography</li>
-          <li>Global Politics</li>
-          <li>History</li>
-          <li>Philosophy</li>
-          <li>Psychology</li>
-          <li>Social & Cultural Anthropology</li>
-          <li>World Religions</li>
-        </ul>
-      </div>
-
-      <div class="ib-group">
-        <h3>Group 4 — Sciences</h3>
-        <ul>
-          <li>Biology</li>
-          <li>Chemistry</li>
-          <li>Computer Science</li>
-          <li>Design Technology</li>
-          <li>Environmental Systems & Societies</li>
-          <li>Physics</li>
-          <li>Sports, Exercise & Health Science</li>
-        </ul>
-      </div>
-
-      <div class="ib-group">
-        <h3>Group 5 — Mathematics</h3>
-        <ul>
-          <li>Mathematics: Analysis & Approaches</li>
-          <li>Mathematics: Applications & Interpretation</li>
-        </ul>
-      </div>
-
-      <div class="ib-group">
-        <h3>Group 6 — The Arts</h3>
-        <ul>
-          <li>Drawing</li>
-          <li>Painting</li>
-          <li>Sketching</li>
-        </ul>
-      </div>
-
-      <div class="ib-group">
-        <h3>IB Core</h3>
-        <ul>
-          <li>Theory of Knowledge — TOK</li>
-          <li>Extended Essay — EE</li>
-          <li>Creativity, Activity, Service — CAS</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
+<div class="container">
+<div class="section-heading">
+<div class="eyebrow">IB Diploma Programme</div>
+<h2>IB subjects and core components.</h2>
+<p>Learning Hub can support the IB Diploma Programme across the six subject groups and core components.</p>
+</div>
+<div class="ib-grid">
+<div class="ib-group">
+<h3>Group 1 — Language &amp; Literature</h3>
+<ul>
+<li>Language A: Literature</li>
+<li>Language A: Language and Literature</li>
+<li>Literature and Performance</li>
+</ul>
+</div>
+<div class="ib-group">
+<h3>Group 2 — Language Acquisition</h3>
+<ul>
+<li>Classical Languages</li>
+<li>Language ab initio</li>
+<li>Language B</li>
+</ul>
+</div>
+<div class="ib-group">
+<h3>Group 3 — Individuals &amp; Societies</h3>
+<ul>
+<li>Business Management</li>
+<li>Digital Society</li>
+<li>Economics</li>
+<li>Geography</li>
+<li>Global Politics</li>
+<li>History</li>
+<li>Philosophy</li>
+<li>Psychology</li>
+<li>Social &amp; Cultural Anthropology</li>
+<li>World Religions</li>
+</ul>
+</div>
+<div class="ib-group">
+<h3>Group 4 — Sciences</h3>
+<ul>
+<li>Biology</li>
+<li>Chemistry</li>
+<li>Computer Science</li>
+<li>Design Technology</li>
+<li>Environmental Systems &amp; Societies</li>
+<li>Physics</li>
+<li>Sports, Exercise &amp; Health Science</li>
+</ul>
+</div>
+<div class="ib-group">
+<h3>Group 5 — Mathematics</h3>
+<ul>
+<li>Mathematics: Analysis &amp; Approaches</li>
+<li>Mathematics: Applications &amp; Interpretation</li>
+</ul>
+</div>
+<div class="ib-group">
+<h3>Group 6 — The Arts</h3>
+<ul>
+<li>Drawing</li>
+<li>Painting</li>
+<li>Sketching</li>
+</ul>
+</div>
+<div class="ib-group">
+<h3>IB Core</h3>
+<ul>
+<li>Theory of Knowledge — TOK</li>
+<li>Extended Essay — EE</li>
+<li>Creativity, Activity, Service — CAS</li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- CAMBRIDGE -->
 <section class="exams" id="cambridge">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">Cambridge International</div>
-      <h2>Selected Cambridge subjects & syllabus codes.</h2>
-      <p>Current Cambridge syllabus naming and codes are shown where applicable.</p>
-    </div>
-
-    <div class="exam-grid">
-
-      <div class="exam"><strong>Accounting — 7707</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Arabic — 3180</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Art & Design — 6090</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Biology — 5090</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Business — 7081</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Business Studies — 7115</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Chemistry — 5070</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Computer Science — 2210</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Economics — 2281</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>English Language — 1123</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Environmental Management — 5014</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Geography — 2217</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Global Perspectives — 2069</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>History — 2147</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Islamic Studies — 2068</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Islamiyat — 2058</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Literature in English — 2010</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Mathematics D — 4024</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Additional Mathematics — 4037</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Pakistan Studies — 2059</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Physics — 5054</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Science — Combined — 5129</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Sociology — 2251</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Statistics — 4040</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Travel & Tourism — 7096</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Urdu First Language — 3247</strong><span>Cambridge O Level</span></div>
-      <div class="exam"><strong>Urdu Second Language — 3248</strong><span>Cambridge O Level</span></div>
-
-      <div class="exam"><strong>Biology — 9700</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Chemistry — 9701</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Physics — 9702</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Mathematics — 9709</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Economics — 9708</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>English Language — 9093</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>English Literature — 9695</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>English Language & Literature — 8695</strong><span>AS Level only</span></div>
-      <div class="exam"><strong>English General Paper — 8021</strong><span>AS Level only</span></div>
-      <div class="exam"><strong>Environmental Management — 8291</strong><span>AS Level only</span></div>
-      <div class="exam"><strong>Further Mathematics — 9231</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Geography — 9696</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Global Perspectives & Research — 9239</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>History — 9489</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Information Technology — 9626</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Islamic Studies — 9488</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Law — 9084</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Marine Science — 9693</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Psychology — 9990</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Sociology — 9699</strong><span>Cambridge AS & A Level</span></div>
-      <div class="exam"><strong>Business — 9609</strong><span>Cambridge AS & A Level</span></div>
-
-    </div>
-  </div>
+<div class="container">
+<div class="section-heading">
+<div class="eyebrow">Cambridge International</div>
+<h2>Selected Cambridge subjects &amp; syllabus codes.</h2>
+<p>Current Cambridge syllabus naming and codes are shown where applicable.</p>
+</div>
+<div class="exam-grid">
+<div class="exam"><strong>Accounting — 7707</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Arabic — 3180</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Art &amp; Design — 6090</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Biology — 5090</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Business — 7081</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Business Studies — 7115</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Chemistry — 5070</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Computer Science — 2210</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Economics — 2281</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>English Language — 1123</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Environmental Management — 5014</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Geography — 2217</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Global Perspectives — 2069</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>History — 2147</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Islamic Studies — 2068</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Islamiyat — 2058</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Literature in English — 2010</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Mathematics D — 4024</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Additional Mathematics — 4037</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Pakistan Studies — 2059</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Physics — 5054</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Science — Combined — 5129</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Sociology — 2251</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Statistics — 4040</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Travel &amp; Tourism — 7096</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Urdu First Language — 3247</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Urdu Second Language — 3248</strong><span>Cambridge O Level</span></div>
+<div class="exam"><strong>Biology — 9700</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Chemistry — 9701</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Physics — 9702</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Mathematics — 9709</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Economics — 9708</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>English Language — 9093</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>English Literature — 9695</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>English Language &amp; Literature — 8695</strong><span>AS Level only</span></div>
+<div class="exam"><strong>English General Paper — 8021</strong><span>AS Level only</span></div>
+<div class="exam"><strong>Environmental Management — 8291</strong><span>AS Level only</span></div>
+<div class="exam"><strong>Further Mathematics — 9231</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Geography — 9696</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Global Perspectives &amp; Research — 9239</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>History — 9489</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Information Technology — 9626</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Islamic Studies — 9488</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Law — 9084</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Marine Science — 9693</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Psychology — 9990</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Sociology — 9699</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Business — 9609</strong><span>Cambridge AS &amp; A Level</span></div>
+</div>
+</div>
 </section>
-
-
 <!-- INTERNATIONAL EXAMS -->
 <section class="international-exams" id="exams">
-  <div class="container">
-
-    <div class="section-heading center">
-      <div class="eyebrow">International Exams</div>
-      <h2>Prepare with purpose.</h2>
-      <p>
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">International Exams</div>
+<h2>Prepare with purpose.</h2>
+<p>
         Exam preparation can focus on content knowledge, exam technique,
         writing, speaking, confidence and timed practice.
       </p>
-    </div>
-
-
-    <!-- IELTS -->
-    <div class="exam-category">
-
-      <h3 class="exam-category-title">IELTS</h3>
-
-      <p class="exam-category-intro">
+</div>
+<!-- IELTS -->
+<div class="exam-category">
+<h3 class="exam-category-title">IELTS</h3>
+<p class="exam-category-intro">
         Preparation for both IELTS Academic and IELTS General Training,
         with the appropriate skills, practice and exam strategies for each pathway.
       </p>
-
-      <div class="international-exam-grid">
-
-        <div class="international-exam-card">
-          <span class="exam-label">IELTS Academic</span>
-          <h3>IELTS Academic</h3>
-          <p>Preparation for higher education and professional registration pathways.</p>
-
-          <div class="exam-components">
-            <span class="exam-component">Listening</span>
-            <span class="exam-component">Reading</span>
-            <span class="exam-component">Writing</span>
-            <span class="exam-component">Speaking</span>
-          </div>
-        </div>
-
-        <div class="international-exam-card">
-          <span class="exam-label">IELTS General Training</span>
-          <h3>IELTS General Training</h3>
-          <p>Preparation focused on everyday, workplace and migration-related English.</p>
-
-          <div class="exam-components">
-            <span class="exam-component">Listening</span>
-            <span class="exam-component">Reading</span>
-            <span class="exam-component">Writing</span>
-            <span class="exam-component">Speaking</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- PTE -->
-    <div class="exam-category">
-
-      <h3 class="exam-category-title">PTE</h3>
-
-      <p class="exam-category-intro">
+<div class="international-exam-grid">
+<div class="international-exam-card">
+<span class="exam-label">IELTS Academic</span>
+<h3>IELTS Academic</h3>
+<p>Preparation for higher education and professional registration pathways.</p>
+<div class="exam-components">
+<span class="exam-component">Listening</span>
+<span class="exam-component">Reading</span>
+<span class="exam-component">Writing</span>
+<span class="exam-component">Speaking</span>
+</div>
+</div>
+<div class="international-exam-card">
+<span class="exam-label">IELTS General Training</span>
+<h3>IELTS General Training</h3>
+<p>Preparation focused on everyday, workplace and migration-related English.</p>
+<div class="exam-components">
+<span class="exam-component">Listening</span>
+<span class="exam-component">Reading</span>
+<span class="exam-component">Writing</span>
+<span class="exam-component">Speaking</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PTE -->
+<div class="exam-category">
+<h3 class="exam-category-title">PTE</h3>
+<p class="exam-category-intro">
         Preparation for PTE Core and PTE Academic with structured practice,
         task strategies, pronunciation, fluency and written response development.
       </p>
-
-      <div class="international-exam-grid">
-
-        <div class="international-exam-card">
-          <span class="exam-label">PTE Academic</span>
-          <h3>PTE Academic</h3>
-          <p>Academic English preparation for study and international education pathways.</p>
-
-          <div class="exam-components">
-            <span class="exam-component">Speaking</span>
-            <span class="exam-component">Writing</span>
-            <span class="exam-component">Reading</span>
-            <span class="exam-component">Listening</span>
-          </div>
-        </div>
-
-        <div class="international-exam-card">
-          <span class="exam-label">PTE Core</span>
-          <h3>PTE Core</h3>
-          <p>Practical English preparation for everyday and immigration-related language goals.</p>
-
-          <div class="exam-components">
-            <span class="exam-component">Speaking</span>
-            <span class="exam-component">Writing</span>
-            <span class="exam-component">Reading</span>
-            <span class="exam-component">Listening</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- OET -->
-    <div class="exam-category">
-
-      <h3 class="exam-category-title">OET</h3>
-
-      <p class="exam-category-intro">
+<div class="international-exam-grid">
+<div class="international-exam-card">
+<span class="exam-label">PTE Academic</span>
+<h3>PTE Academic</h3>
+<p>Academic English preparation for study and international education pathways.</p>
+<div class="exam-components">
+<span class="exam-component">Speaking</span>
+<span class="exam-component">Writing</span>
+<span class="exam-component">Reading</span>
+<span class="exam-component">Listening</span>
+</div>
+</div>
+<div class="international-exam-card">
+<span class="exam-label">PTE Core</span>
+<h3>PTE Core</h3>
+<p>Practical English preparation for everyday and immigration-related language goals.</p>
+<div class="exam-components">
+<span class="exam-component">Speaking</span>
+<span class="exam-component">Writing</span>
+<span class="exam-component">Reading</span>
+<span class="exam-component">Listening</span>
+</div>
+</div>
+</div>
+</div>
+<!-- OET -->
+<div class="exam-category">
+<h3 class="exam-category-title">OET</h3>
+<p class="exam-category-intro">
         Occupational English Test preparation for healthcare professionals,
         including professional communication and exam-focused language practice.
       </p>
-
-      <div class="international-exam-grid">
-
-        <div class="international-exam-card">
-          <span class="exam-label">Healthcare English</span>
-          <h3>OET</h3>
-          <p>
+<div class="international-exam-grid">
+<div class="international-exam-card">
+<span class="exam-label">Healthcare English</span>
+<h3>OET</h3>
+<p>
             English preparation for healthcare professionals with emphasis on
             clinical communication and profession-specific language.
           </p>
-
-          <div class="exam-components">
-            <span class="exam-component">Listening</span>
-            <span class="exam-component">Reading</span>
-            <span class="exam-component">Writing</span>
-            <span class="exam-component">Speaking</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- TOEFL -->
-    <div class="exam-category">
-
-      <h3 class="exam-category-title">TOEFL</h3>
-
-      <div class="international-exam-grid">
-
-        <div class="international-exam-card">
-          <span class="exam-label">Academic English</span>
-          <h3>TOEFL iBT</h3>
-          <p>
+<div class="exam-components">
+<span class="exam-component">Listening</span>
+<span class="exam-component">Reading</span>
+<span class="exam-component">Writing</span>
+<span class="exam-component">Speaking</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TOEFL -->
+<div class="exam-category">
+<h3 class="exam-category-title">TOEFL</h3>
+<div class="international-exam-grid">
+<div class="international-exam-card">
+<span class="exam-label">Academic English</span>
+<h3>TOEFL iBT</h3>
+<p>
             Academic English preparation for international university and
             study-related pathways.
           </p>
-
-          <div class="exam-components">
-            <span class="exam-component">Reading</span>
-            <span class="exam-component">Listening</span>
-            <span class="exam-component">Speaking</span>
-            <span class="exam-component">Writing</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-
-    <!-- DUOLINGO -->
-    <div class="exam-category">
-
-      <h3 class="exam-category-title">Other English Proficiency Tests</h3>
-
-      <div class="international-exam-grid">
-
-        <div class="international-exam-card">
-          <span class="exam-label">English Proficiency</span>
-          <h3>Duolingo English Test</h3>
-          <p>
+<div class="exam-components">
+<span class="exam-component">Reading</span>
+<span class="exam-component">Listening</span>
+<span class="exam-component">Speaking</span>
+<span class="exam-component">Writing</span>
+</div>
+</div>
+</div>
+</div>
+<!-- DUOLINGO -->
+<div class="exam-category">
+<h3 class="exam-category-title">Other English Proficiency Tests</h3>
+<div class="international-exam-grid">
+<div class="international-exam-card">
+<span class="exam-label">English Proficiency</span>
+<h3>Duolingo English Test</h3>
+<p>
             Preparation for online English proficiency testing with focused
             practice, timing and response strategies.
           </p>
-
-          <div class="exam-components">
-            <span class="exam-component">Literacy</span>
-            <span class="exam-component">Comprehension</span>
-            <span class="exam-component">Conversation</span>
-            <span class="exam-component">Production</span>
-          </div>
-        </div>
-
-        <div class="international-exam-card">
-          <span class="exam-label">Cambridge English</span>
-          <h3>Cambridge English Qualifications</h3>
-          <p>
+<div class="exam-components">
+<span class="exam-component">Literacy</span>
+<span class="exam-component">Comprehension</span>
+<span class="exam-component">Conversation</span>
+<span class="exam-component">Production</span>
+</div>
+</div>
+<div class="international-exam-card">
+<span class="exam-label">Cambridge English</span>
+<h3>Cambridge English Qualifications</h3>
+<p>
             English language development and preparation for appropriate
             Cambridge English qualification pathways.
           </p>
-
-          <div class="exam-components">
-            <span class="exam-component">Reading</span>
-            <span class="exam-component">Writing</span>
-            <span class="exam-component">Listening</span>
-            <span class="exam-component">Speaking</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-  </div>
+<div class="exam-components">
+<span class="exam-component">Reading</span>
+<span class="exam-component">Writing</span>
+<span class="exam-component">Listening</span>
+<span class="exam-component">Speaking</span>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- SUPPORT -->
 <section class="support" id="support">
-  <div class="container">
-
-    <div class="section-heading center">
-      <div class="eyebrow">Specialist Learning Support</div>
-      <h2>Learning designed around the learner.</h2>
-    </div>
-
-    <div class="support-grid">
-
-      <div class="support-card">
-        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=85" alt="Child learning">
-        <div class="support-overlay">
-          <h3>Learning Differences</h3>
-          <p>Flexible strategies and personalised learning approaches.</p>
-        </div>
-      </div>
-
-      <div class="support-card">
-        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=85" alt="Child studying">
-        <div class="support-overlay">
-          <h3>Reading Confidence</h3>
-          <p>Support for reading development and confidence.</p>
-        </div>
-      </div>
-
-      <div class="support-card">
-        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85" alt="Student learning">
-        <div class="support-overlay">
-          <h3>Language & Communication</h3>
-          <p>Speaking, sentence formation and communication support.</p>
-        </div>
-      </div>
-
-      <div class="support-card">
-        <img src="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?auto=format&fit=crop&w=1200&q=85" alt="Student studying">
-        <div class="support-overlay">
-          <h3>Study Skills</h3>
-          <p>Planning, organisation, revision and independent learning.</p>
-        </div>
-      </div>
-
-      <div class="support-card">
-        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85" alt="Students learning">
-        <div class="support-overlay">
-          <h3>Academic Confidence</h3>
-          <p>Build confidence through guided practice and feedback.</p>
-        </div>
-      </div>
-
-      <div class="support-card">
-        <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&fit=crop&w=1200&q=85" alt="Teacher helping student">
-        <div class="support-overlay">
-          <h3>Personalised Support</h3>
-          <p>Learning adjusted to individual goals and pace.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Specialist Learning Support</div>
+<h2>Learning designed around the learner.</h2>
+</div>
+<div class="support-grid">
+<div class="support-card">
+<img alt="Child learning" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<div class="support-overlay">
+<h3>Learning Differences</h3>
+<p>Flexible strategies and personalised learning approaches.</p>
+</div>
+</div>
+<div class="support-card">
+<img alt="Child studying" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<div class="support-overlay">
+<h3>Reading Confidence</h3>
+<p>Support for reading development and confidence.</p>
+</div>
+</div>
+<div class="support-card">
+<img alt="Student learning" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<div class="support-overlay">
+<h3>Language &amp; Communication</h3>
+<p>Speaking, sentence formation and communication support.</p>
+</div>
+</div>
+<div class="support-card">
+<img alt="Student studying" src="https://images.unsplash.com/photo-1453738773917-9c3eff1db985?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<div class="support-overlay">
+<h3>Study Skills</h3>
+<p>Planning, organisation, revision and independent learning.</p>
+</div>
+</div>
+<div class="support-card">
+<img alt="Students learning" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<div class="support-overlay">
+<h3>Academic Confidence</h3>
+<p>Build confidence through guided practice and feedback.</p>
+</div>
+</div>
+<div class="support-card">
+<img alt="Teacher helping student" src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<div class="support-overlay">
+<h3>Personalised Support</h3>
+<p>Learning adjusted to individual goals and pace.</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-
-
-
 <section class="outcomes" id="seo-pathways">
-  <div class="container">
-    <div class="section-heading center"><div class="eyebrow">Explore Learning Hub</div><h2>Find the pathway that fits your goal.</h2><p>Explore focused pages for tutoring, international curricula, English, exams and individual subjects.</p></div>
-    <div class="outcomes-grid">
-      <article class="outcome-card"><div class="outcome-number">01 / TUTORING</div><h3>Online Tutoring</h3><p>Personalised academic support for school, university and adult learners.</p><a class="card-link" href="/online-tutoring/">Explore online tutoring →</a></article>
-      <article class="outcome-card"><div class="outcome-number">02 / CURRICULUM</div><h3>International Curriculum</h3><p>Explore IB, IGCSE, GCSE, O Level and A Level pathways.</p><a class="card-link" href="/international-curriculum/">Explore curricula →</a></article>
-      <article class="outcome-card"><div class="outcome-number">03 / ENGLISH</div><h3>English & Communication</h3><p>Build academic English, speaking, writing, vocabulary and confidence.</p><a class="card-link" href="/english/">Improve your English →</a></article>
-      <article class="outcome-card"><div class="outcome-number">04 / EXAMS</div><h3>IELTS, PTE & More</h3><p>Structured preparation, practice and feedback for English proficiency tests.</p><a class="card-link" href="/exam-preparation/ielts/">Explore IELTS preparation →</a></article>
-    </div>
-  </div>
+<div class="container">
+<div class="section-heading center"><div class="eyebrow">Explore Learning Hub</div><h2>Find the pathway that fits your goal.</h2><p>Explore focused pages for tutoring, international curricula, English, exams and individual subjects.</p></div>
+<div class="outcomes-grid">
+<article class="outcome-card"><div class="outcome-number">01 / TUTORING</div><h3>Online Tutoring</h3><p>Personalised academic support for school, university and adult learners.</p><a class="card-link" href="/online-tutoring/">Explore online tutoring →</a></article>
+<article class="outcome-card"><div class="outcome-number">02 / CURRICULUM</div><h3>International Curriculum</h3><p>Explore IB, IGCSE, GCSE, O Level and A Level pathways.</p><a class="card-link" href="/international-curriculum/">Explore curricula →</a></article>
+<article class="outcome-card"><div class="outcome-number">03 / ENGLISH</div><h3>English &amp; Communication</h3><p>Build academic English, speaking, writing, vocabulary and confidence.</p><a class="card-link" href="/english/">Improve your English →</a></article>
+<article class="outcome-card"><div class="outcome-number">04 / EXAMS</div><h3>IELTS, PTE &amp; More</h3><p>Structured preparation, practice and feedback for English proficiency tests.</p><a class="card-link" href="/exam-preparation/ielts/">Explore IELTS preparation →</a></article>
+</div>
+</div>
 </section>
-
 <!-- GLOBAL LEARNERS -->
 <section class="global-learners" id="global-learners">
-  <div class="container global-grid">
-    <div class="world-copy">
-      <div class="eyebrow dark">Global Learning</div>
-      <h2>Learning without borders.</h2>
-      <p style="margin-top:22px">Supporting learners across South Asia, the Gulf & Middle East, Europe, North America, East & Southeast Asia, Australia & the Pacific, and Africa through flexible online learning.</p>
-    </div>
-    <div class="world-panel">
-      <div class="country-grid">
-        <!-- South Asia -->
-        <div class="country-pill"><span class="country-dot"></span>Pakistan</div>
-        <div class="country-pill"><span class="country-dot"></span>India</div>
-        <div class="country-pill"><span class="country-dot"></span>Bangladesh</div>
-        <div class="country-pill"><span class="country-dot"></span>Sri Lanka</div>
-
-        <!-- Gulf & Middle East -->
-        <div class="country-pill"><span class="country-dot"></span>UAE</div>
-        <div class="country-pill"><span class="country-dot"></span>KSA</div>
-        <div class="country-pill"><span class="country-dot"></span>Qatar</div>
-        <div class="country-pill"><span class="country-dot"></span>Kuwait</div>
-        <div class="country-pill"><span class="country-dot"></span>Bahrain</div>
-        <div class="country-pill"><span class="country-dot"></span>Oman</div>
-
-        <!-- Europe -->
-        <div class="country-pill"><span class="country-dot"></span>United Kingdom</div>
-        <div class="country-pill"><span class="country-dot"></span>Ireland</div>
-        <div class="country-pill"><span class="country-dot"></span>Germany</div>
-        <div class="country-pill"><span class="country-dot"></span>France</div>
-        <div class="country-pill"><span class="country-dot"></span>Italy</div>
-
-        <!-- North America -->
-        <div class="country-pill"><span class="country-dot"></span>United States</div>
-        <div class="country-pill"><span class="country-dot"></span>Canada</div>
-
-        <!-- East & Southeast Asia -->
-        <div class="country-pill"><span class="country-dot"></span>China</div>
-        <div class="country-pill"><span class="country-dot"></span>Japan</div>
-        <div class="country-pill"><span class="country-dot"></span>South Korea</div>
-        <div class="country-pill"><span class="country-dot"></span>Singapore</div>
-        <div class="country-pill"><span class="country-dot"></span>Malaysia</div>
-        <div class="country-pill"><span class="country-dot"></span>Hong Kong</div>
-
-        <!-- Australia & Pacific -->
-        <div class="country-pill"><span class="country-dot"></span>Australia</div>
-        <div class="country-pill"><span class="country-dot"></span>New Zealand</div>
-
-        <!-- Africa -->
-        <div class="country-pill"><span class="country-dot"></span>South Africa</div>
-        <div class="country-pill"><span class="country-dot"></span>Nigeria</div>
-      </div>
-    </div>
-  </div>
+<div class="container global-grid">
+<div class="world-copy">
+<div class="eyebrow dark">Global Learning</div>
+<h2>Learning without borders.</h2>
+<p style="margin-top:22px">Supporting learners across South Asia, the Gulf &amp; Middle East, Europe, North America, East &amp; Southeast Asia, Australia &amp; the Pacific, and Africa through flexible online learning.</p>
+</div>
+<div class="world-panel">
+<div class="country-grid">
+<!-- South Asia -->
+<div class="country-pill"><span class="country-dot"></span>Pakistan</div>
+<div class="country-pill"><span class="country-dot"></span>India</div>
+<div class="country-pill"><span class="country-dot"></span>Bangladesh</div>
+<div class="country-pill"><span class="country-dot"></span>Sri Lanka</div>
+<!-- Gulf & Middle East -->
+<div class="country-pill"><span class="country-dot"></span>UAE</div>
+<div class="country-pill"><span class="country-dot"></span>KSA</div>
+<div class="country-pill"><span class="country-dot"></span>Qatar</div>
+<div class="country-pill"><span class="country-dot"></span>Kuwait</div>
+<div class="country-pill"><span class="country-dot"></span>Bahrain</div>
+<div class="country-pill"><span class="country-dot"></span>Oman</div>
+<!-- Europe -->
+<div class="country-pill"><span class="country-dot"></span>United Kingdom</div>
+<div class="country-pill"><span class="country-dot"></span>Ireland</div>
+<div class="country-pill"><span class="country-dot"></span>Germany</div>
+<div class="country-pill"><span class="country-dot"></span>France</div>
+<div class="country-pill"><span class="country-dot"></span>Italy</div>
+<!-- North America -->
+<div class="country-pill"><span class="country-dot"></span>United States</div>
+<div class="country-pill"><span class="country-dot"></span>Canada</div>
+<!-- East & Southeast Asia -->
+<div class="country-pill"><span class="country-dot"></span>China</div>
+<div class="country-pill"><span class="country-dot"></span>Japan</div>
+<div class="country-pill"><span class="country-dot"></span>South Korea</div>
+<div class="country-pill"><span class="country-dot"></span>Singapore</div>
+<div class="country-pill"><span class="country-dot"></span>Malaysia</div>
+<div class="country-pill"><span class="country-dot"></span>Hong Kong</div>
+<!-- Australia & Pacific -->
+<div class="country-pill"><span class="country-dot"></span>Australia</div>
+<div class="country-pill"><span class="country-dot"></span>New Zealand</div>
+<!-- Africa -->
+<div class="country-pill"><span class="country-dot"></span>South Africa</div>
+<div class="country-pill"><span class="country-dot"></span>Nigeria</div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- LEARNING OUTCOMES -->
 <section class="outcomes" id="outcomes">
-  <div class="container">
-    <div class="section-heading center">
-      <div class="eyebrow">Learning Outcomes</div>
-      <h2>What learners develop.</h2>
-      <p>Learning goes beyond completing a lesson. We focus on skills that learners can carry forward into their academic and personal journeys.</p>
-    </div>
-    <div class="outcomes-grid">
-      <article class="outcome-card"><div class="outcome-number">01 / CONFIDENCE</div><h3>Academic Confidence</h3><p>Understand difficult concepts and approach exams with greater confidence.</p></article>
-      <article class="outcome-card"><div class="outcome-number">02 / COMMUNICATION</div><h3>Communication</h3><p>Build stronger speaking, writing and academic English.</p></article>
-      <article class="outcome-card"><div class="outcome-number">03 / INDEPENDENCE</div><h3>Independent Learning</h3><p>Develop study habits, organisation and research skills.</p></article>
-      <article class="outcome-card"><div class="outcome-number">04 / EXAMS</div><h3>Exam Readiness</h3><p>Practise techniques, timing and structured responses.</p></article>
-    </div>
-  </div>
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Learning Outcomes</div>
+<h2>What learners develop.</h2>
+<p>Learning goes beyond completing a lesson. We focus on skills that learners can carry forward into their academic and personal journeys.</p>
+</div>
+<div class="outcomes-grid">
+<article class="outcome-card"><div class="outcome-number">01 / CONFIDENCE</div><h3>Academic Confidence</h3><p>Understand difficult concepts and approach exams with greater confidence.</p></article>
+<article class="outcome-card"><div class="outcome-number">02 / COMMUNICATION</div><h3>Communication</h3><p>Build stronger speaking, writing and academic English.</p></article>
+<article class="outcome-card"><div class="outcome-number">03 / INDEPENDENCE</div><h3>Independent Learning</h3><p>Develop study habits, organisation and research skills.</p></article>
+<article class="outcome-card"><div class="outcome-number">04 / EXAMS</div><h3>Exam Readiness</h3><p>Practise techniques, timing and structured responses.</p></article>
+</div>
+</div>
 </section>
-
 <!-- METHODOLOGY -->
 <section class="methodology" id="methodology">
-  <div class="container">
-
-    <div class="section-heading center">
-      <div class="eyebrow">Our Methodology</div>
-      <h2>Understand. Practise. Progress.</h2>
-      <p>
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Our Methodology</div>
+<h2>Understand. Practise. Progress.</h2>
+<p>
         Learning should move beyond memorisation toward confidence,
         application and independent thinking.
       </p>
-    </div>
-
-    <div class="method-grid">
-
-      <div class="method-card">
-        <div class="method-number">01</div>
-        <h3>Understand</h3>
-        <p>Break difficult ideas into clear explanations, examples and visual connections.</p>
-      </div>
-
-      <div class="method-card">
-        <div class="method-number">02</div>
-        <h3>Practise</h3>
-        <p>Apply concepts through questions, exercises, discussion and guided practice.</p>
-      </div>
-
-      <div class="method-card">
-        <div class="method-number">03</div>
-        <h3>Progress</h3>
-        <p>Review performance, identify gaps and build the next learning step.</p>
-      </div>
-
-    </div>
-  </div>
+</div>
+<div class="method-grid">
+<div class="method-card">
+<div class="method-number">01</div>
+<h3>Understand</h3>
+<p>Break difficult ideas into clear explanations, examples and visual connections.</p>
+</div>
+<div class="method-card">
+<div class="method-number">02</div>
+<h3>Practise</h3>
+<p>Apply concepts through questions, exercises, discussion and guided practice.</p>
+</div>
+<div class="method-card">
+<div class="method-number">03</div>
+<h3>Progress</h3>
+<p>Review performance, identify gaps and build the next learning step.</p>
+</div>
+</div>
+</div>
 </section>
-
-
-<!-- LEARNING LIBRARY -->
+<!-- LEARNING LIBRARY / RESOURCES -->
 <section class="library" id="library">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">Learning Library</div>
-      <h2>E-books, worksheets & digital learning resources.</h2>
-      <p>
-        A growing collection of practical learning materials for independent
-        study and tutoring support. Free resources can be downloaded directly below.
+<div class="container">
+<div class="section-heading">
+<div class="eyebrow">Resources</div>
+<h2>Free resources, premium downloads &amp; e-books.</h2>
+<p>
+        Explore free downloadable worksheets and learning materials, then browse
+        premium resources and the E-book Library for additional independent study.
       </p>
-    </div>
-
-    <div class="library-grid" id="resourceGrid">
-      <div class="library-status">Loading Learning Hub resources…</div>
-    </div>
-
-  </div>
+</div>
+<div aria-label="Resource types" class="library-tools" role="tablist">
+<button class="library-filter active" data-resource-filter="all" type="button">All Resources</button>
+<button class="library-filter" data-resource-filter="free" type="button">Free Downloads</button>
+<button class="library-filter" data-resource-filter="premium" type="button">Premium Resources 🔒</button>
+<button class="library-filter" data-resource-filter="ebooks" type="button">E-book Library</button>
+</div>
+<div class="premium-banner">
+<div>
+<strong>Premium Resource Collections</strong>
+<p>Paid downloads remain visible while free resources are being browsed. Premium files are locked until access is purchased.</p>
+</div>
+<a class="btn btn-gold" href="#premium-resources">Browse Premium →</a>
+</div>
+<div class="resource-subsection" id="resource-subjects">
+<div class="eyebrow">Browse by Subject</div>
+<h3>Resource Subjects</h3>
+<div class="subject-resource-grid">
+<a class="resource-subject" data-subject-jump="English" href="#resourceGrid"><strong>English</strong><span>Grammar, vocabulary, reading &amp; writing</span></a>
+<a class="resource-subject" data-subject-jump="Mathematics" href="#resourceGrid"><strong>Mathematics</strong><span>Worksheets, practice &amp; assessments</span></a>
+<a class="resource-subject" data-subject-jump="Science" href="#resourceGrid"><strong>Science</strong><span>School science learning materials</span></a>
+<a class="resource-subject" data-subject-jump="Biology" href="#resourceGrid"><strong>Biology</strong><span>Concepts, revision &amp; practice</span></a>
+<a class="resource-subject" data-subject-jump="Chemistry" href="#resourceGrid"><strong>Chemistry</strong><span>Practice and revision materials</span></a>
+<a class="resource-subject" data-subject-jump="Physics" href="#resourceGrid"><strong>Physics</strong><span>Concept practice &amp; problem solving</span></a>
+<a class="resource-subject" data-subject-jump="Business" href="#resourceGrid"><strong>Business</strong><span>Business Studies &amp; Management</span></a>
+<a class="resource-subject" data-subject-jump="Languages" href="#resourceGrid"><strong>Languages</strong><span>English, Chinese, Japanese, Korean &amp; more</span></a>
+</div>
+</div>
+<div class="resource-subsection">
+<div class="eyebrow">Free Downloads • Available Now</div>
+<h3>Free Downloadable Worksheets</h3>
+<p style="margin-bottom:20px">Free materials can be downloaded directly — no enquiry required.</p>
+<div class="library-grid" id="freeResourceGrid">
+<div class="library-status">Loading free resources…</div>
+</div>
+</div>
+<div class="resource-subsection" id="premium-resources">
+<div class="eyebrow">Premium</div>
+<h3>Premium Resources 🔒</h3>
+<p style="margin-bottom:20px">Paid books, packs and advanced resources are visible here but their downloads remain locked.</p>
+<div class="library-grid" id="premiumResourceGrid">
+<div class="library-status">Loading premium resources…</div>
+</div>
+</div>
+<div class="resource-subsection" id="ebook-library">
+<div class="eyebrow">E-book Library</div>
+<h3>Books Beyond Courses</h3>
+<p style="margin-bottom:20px">A dedicated library for e-books and workbooks that are separate from Learning Hub courses.</p>
+<div class="library-grid" id="ebookResourceGrid">
+<div class="library-status">Loading e-books…</div>
+</div>
+</div>
+</div>
 </section>
-
-
+<!-- STUDENT & CAREER COUNSELLING -->
+<section class="support" id="counselling">
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Guidance &amp; Counselling</div>
+<h2>Student &amp; Career Counselling.</h2>
+<p>Dedicated guidance for academic decisions, study pathways and future career planning.</p>
+</div>
+<div class="service-grid">
+<article class="service-card">
+<div class="service-icon">🎓</div>
+<h3>Student Counselling</h3>
+<p>Guidance on subject choices, international curricula, study pathways, academic goals and learning decisions.</p>
+<a class="btn btn-gold" href="mailto:hublearning117@gmail.com?subject=Student Counselling Enquiry">Book Student Counselling</a>
+</article>
+<article class="service-card">
+<div class="service-icon">🧭</div>
+<h3>Career Counselling</h3>
+<p>Support with career direction, education pathways, subject planning and informed next-step decisions.</p>
+<a class="btn btn-gold" href="mailto:hublearning117@gmail.com?subject=Career Counselling Enquiry">Book Career Counselling</a>
+</article>
+</div>
+</div>
+</section>
+<!-- TEACHER PROFILES -->
+<section class="quran" id="teachers">
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Teacher Directory</div>
+<h2>Meet our teachers.</h2>
+<p>Teacher profile infrastructure is ready for future recruitment and activation.</p>
+</div>
+<div class="teacher-tabs" role="tablist">
+<button class="teacher-tab active" data-teacher-tab="international" type="button">International Teachers</button>
+<button class="teacher-tab" data-teacher-tab="pakistani" type="button">Pakistani Teachers</button>
+<button class="teacher-tab" data-teacher-tab="qari" type="button">Qaris</button>
+<button class="teacher-tab" data-teacher-tab="qariya" type="button">Qariyas</button>
+</div>
+<div class="teacher-panel">
+<div class="teacher-empty" data-teacher-panel="international">
+<div><strong>International Teachers — Coming Soon</strong><span>Profiles will appear here as qualified international teachers join Learning Hub.</span></div>
+</div>
+<div class="teacher-empty" data-teacher-panel="pakistani" style="display:none">
+<div><strong>Pakistani Teachers — Coming Soon</strong><span>Profiles will appear here as Pakistani teachers are hired and activated.</span></div>
+</div>
+<div class="teacher-empty" data-teacher-panel="qari" style="display:none">
+<div><strong>Qaris — Coming Soon</strong><span>Male Quran teacher profiles will appear here as teachers are onboarded.</span></div>
+</div>
+<div class="teacher-empty" data-teacher-panel="qariya" style="display:none">
+<div><strong>Qariyas — Coming Soon</strong><span>Female Quran teacher profiles will appear here as teachers are onboarded.</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- FEEDBACK & REVIEWS -->
+<section class="testimonials" id="feedback">
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Feedback &amp; Reviews</div>
+<h2>Share your Learning Hub experience.</h2>
+<p>Clients and candidates can submit a written review, voice note or video note and leave a 1–5 star rating.</p>
+</div>
+<div class="feedback-layout">
+<div class="rating-summary">
+<div class="eyebrow">Client Rating</div>
+<div class="rating-score" id="averageRating">5.0</div>
+<div aria-label="5 out of 5 stars" class="stars">★★★★★</div>
+<p id="ratingCount">Based on published reviews.</p>
+<div class="feedback-note">Only the reviewer's name is displayed publicly. Email is used for submission/verification and is not shown.</div>
+</div>
+<form class="feedback-form" enctype="multipart/form-data" id="feedbackForm">
+<div class="feedback-form-grid">
+<div>
+<label for="feedbackName">Name</label>
+<input autocomplete="name" id="feedbackName" name="name" required=""/>
+</div>
+<div>
+<label for="feedbackEmail">Email</label>
+<input autocomplete="email" id="feedbackEmail" name="email" required="" type="email"/>
+</div>
+<div class="full">
+<label>Rating</label>
+<div aria-label="Choose a rating" class="rating-input">
+<input id="star5" name="rating" required="" type="radio" value="5"/><label for="star5">★</label>
+<input id="star4" name="rating" type="radio" value="4"/><label for="star4">★</label>
+<input id="star3" name="rating" type="radio" value="3"/><label for="star3">★</label>
+<input id="star2" name="rating" type="radio" value="2"/><label for="star2">★</label>
+<input id="star1" name="rating" type="radio" value="1"/><label for="star1">★</label>
+</div>
+</div>
+<div class="full">
+<label for="feedbackMessage">Written Feedback</label>
+<textarea id="feedbackMessage" name="message" placeholder="Write your feedback here…"></textarea>
+</div>
+<div>
+<label for="feedbackVoice">Voice Note</label>
+<input accept="audio/*" id="feedbackVoice" name="voice" type="file"/>
+<div class="media-note">Optional audio feedback.</div>
+</div>
+<div>
+<label for="feedbackVideo">Video Note</label>
+<input accept="video/*" id="feedbackVideo" name="video" type="file"/>
+<div class="media-note">Optional video feedback.</div>
+</div>
+<div class="full">
+<button class="btn btn-gold" type="submit">Submit Feedback</button>
+<div class="feedback-note" id="feedbackStatus"></div>
+</div>
+</div>
+</form>
+</div>
+<div class="review-grid" id="reviewGrid">
+<article class="review-card">
+<div class="stars">★★★★★</div>
+<p>A-Level Psychology preparation completed within two months, with focused exam guidance and support that helped the student pass.</p>
+<small>A-Level Psychology Student</small>
+</article>
+<article class="review-card">
+<div class="stars">★★★★★</div>
+<p>Psychology and English Language &amp; Literature support focused on academic learning, exam confidence and language development.</p>
+<small>International Student</small>
+</article>
+<article class="review-card">
+<div class="stars">★★★★★</div>
+<p>English communication support focused on confidence, sentence formation and practical communication.</p>
+<small>Dr. Nispa</small>
+</article>
+</div>
+</div>
+</section>
 <!-- ARTICLES & BLOG -->
 <section class="articles" id="articles">
-  <div class="container">
-
-    <div class="section-heading center">
-      <div class="eyebrow">Articles & Blog</div>
-      <h2>Ideas for better learning.</h2>
-      <p>
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Articles &amp; Blog</div>
+<h2>Ideas for better learning.</h2>
+<p>
         Practical guidance, study strategies and educational insights for students,
         parents, professionals and lifelong learners.
       </p>
-    </div>
-
-    <div class="article-grid">
-
-      <article class="article-card">
-        <div class="article-top">
-          <span class="article-category">International Education</span>
-          <span class="article-mark">01</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta"><span>Learning Guide</span><span>5 min read</span></div>
-          <h3>How to Choose the Right International Curriculum</h3>
-          <p>Understand the key differences between international pathways and choose learning support that matches your goals.</p>
-          <details class="article-details">
-            <summary>Read article</summary>
-            <div class="article-full">Start with the learner's age, target qualification, university or career pathway, current level and preferred learning style. A good tutoring plan should then align subject knowledge, assessment requirements, study skills and exam technique rather than simply following a textbook.</div>
-          </details>
-        </div>
-      </article>
-
-      <article class="article-card">
-        <div class="article-top">
-          <span class="article-category">English Development</span>
-          <span class="article-mark">02</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta"><span>Language</span><span>4 min read</span></div>
-          <h3>Building Stronger Academic English</h3>
-          <p>Move beyond memorising vocabulary and develop clearer speaking, writing, reading and academic expression.</p>
-          <details class="article-details">
-            <summary>Read article</summary>
-            <div class="article-full">Strong academic English develops through repeated exposure, purposeful vocabulary, model texts, guided speaking and structured writing practice. Learners benefit most when new language is immediately used in meaningful academic and real-world contexts.</div>
-          </details>
-        </div>
-      </article>
-
-      <article class="article-card">
-        <div class="article-top">
-          <span class="article-category">Online Learning</span>
-          <span class="article-mark">03</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta"><span>Study Skills</span><span>4 min read</span></div>
-          <h3>How to Make Online Learning More Effective</h3>
-          <p>Create a focused routine, participate actively and turn online lessons into measurable learning progress.</p>
-          <details class="article-details">
-            <summary>Read article</summary>
-            <div class="article-full">Effective online learning needs a clear goal for every session. Prepare before the lesson, keep distractions low, ask questions, practise during the lesson and finish with a short review. Small, consistent routines usually create stronger progress than occasional long study sessions.</div>
-          </details>
-        </div>
-      </article>
-
-      <article class="article-card">
-        <div class="article-top">
-          <span class="article-category">Exam Preparation</span>
-          <span class="article-mark">04</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta"><span>IELTS & PTE</span><span>5 min read</span></div>
-          <h3>IELTS or PTE: What Should You Prepare For?</h3>
-          <p>Consider your destination, test format, strengths and preparation style before selecting an English test.</p>
-          <details class="article-details">
-            <summary>Read article</summary>
-            <div class="article-full">The right test depends on the institution or pathway accepting your score, the test format you are comfortable with and the skills you need to strengthen. Always confirm the current requirements of your intended university, employer or immigration pathway before booking an exam.</div>
-          </details>
-        </div>
-      </article>
-
-      <article class="article-card">
-        <div class="article-top">
-          <span class="article-category">Learning Support</span>
-          <span class="article-mark">05</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta"><span>Inclusive Learning</span><span>5 min read</span></div>
-          <h3>Why Personalised Learning Matters</h3>
-          <p>Every learner brings different strengths, challenges, pace and goals. Support should respond to the individual.</p>
-          <details class="article-details">
-            <summary>Read article</summary>
-            <div class="article-full">Personalised learning can involve adjusting explanations, pace, practice formats, feedback and communication. The aim is not to lower expectations, but to create an accessible route toward meaningful progress and greater independence.</div>
-          </details>
-        </div>
-      </article>
-
-      <article class="article-card">
-        <div class="article-top">
-          <span class="article-category">Quran & Islamic Studies</span>
-          <span class="article-mark">06</span>
-        </div>
-        <div class="article-body">
-          <div class="article-meta"><span>Quran Learning</span><span>4 min read</span></div>
-          <h3>A Gentle Starting Point for Quran Learning</h3>
-          <p>A structured approach can help beginners build reading confidence, pronunciation and consistent practice.</p>
-          <details class="article-details">
-            <summary>Read article</summary>
-            <div class="article-full">Beginners can start with letter recognition, joining letters, basic pronunciation and gradual reading practice before moving into more advanced recitation skills. Consistency, patient correction and a comfortable learning pace can make the journey more manageable.</div>
-          </details>
-        </div>
-      </article>
-
-    </div>
-  </div>
+</div>
+<div class="article-grid">
+<article class="article-card">
+<div class="article-top">
+<span class="article-category">International Education</span>
+<span class="article-mark">01</span>
+</div>
+<div class="article-body">
+<div class="article-meta"><span>Learning Guide</span><span>5 min read</span></div>
+<h3>How to Choose the Right International Curriculum</h3>
+<p>Understand the key differences between international pathways and choose learning support that matches your goals.</p>
+<details class="article-details">
+<summary>Read article</summary>
+<div class="article-full">Start with the learner's age, target qualification, university or career pathway, current level and preferred learning style. A good tutoring plan should then align subject knowledge, assessment requirements, study skills and exam technique rather than simply following a textbook.</div>
+</details>
+</div>
+</article>
+<article class="article-card">
+<div class="article-top">
+<span class="article-category">English Development</span>
+<span class="article-mark">02</span>
+</div>
+<div class="article-body">
+<div class="article-meta"><span>Language</span><span>4 min read</span></div>
+<h3>Building Stronger Academic English</h3>
+<p>Move beyond memorising vocabulary and develop clearer speaking, writing, reading and academic expression.</p>
+<details class="article-details">
+<summary>Read article</summary>
+<div class="article-full">Strong academic English develops through repeated exposure, purposeful vocabulary, model texts, guided speaking and structured writing practice. Learners benefit most when new language is immediately used in meaningful academic and real-world contexts.</div>
+</details>
+</div>
+</article>
+<article class="article-card">
+<div class="article-top">
+<span class="article-category">Online Learning</span>
+<span class="article-mark">03</span>
+</div>
+<div class="article-body">
+<div class="article-meta"><span>Study Skills</span><span>4 min read</span></div>
+<h3>How to Make Online Learning More Effective</h3>
+<p>Create a focused routine, participate actively and turn online lessons into measurable learning progress.</p>
+<details class="article-details">
+<summary>Read article</summary>
+<div class="article-full">Effective online learning needs a clear goal for every session. Prepare before the lesson, keep distractions low, ask questions, practise during the lesson and finish with a short review. Small, consistent routines usually create stronger progress than occasional long study sessions.</div>
+</details>
+</div>
+</article>
+<article class="article-card">
+<div class="article-top">
+<span class="article-category">Exam Preparation</span>
+<span class="article-mark">04</span>
+</div>
+<div class="article-body">
+<div class="article-meta"><span>IELTS &amp; PTE</span><span>5 min read</span></div>
+<h3>IELTS or PTE: What Should You Prepare For?</h3>
+<p>Consider your destination, test format, strengths and preparation style before selecting an English test.</p>
+<details class="article-details">
+<summary>Read article</summary>
+<div class="article-full">The right test depends on the institution or pathway accepting your score, the test format you are comfortable with and the skills you need to strengthen. Always confirm the current requirements of your intended university, employer or immigration pathway before booking an exam.</div>
+</details>
+</div>
+</article>
+<article class="article-card">
+<div class="article-top">
+<span class="article-category">Learning Support</span>
+<span class="article-mark">05</span>
+</div>
+<div class="article-body">
+<div class="article-meta"><span>Inclusive Learning</span><span>5 min read</span></div>
+<h3>Why Personalised Learning Matters</h3>
+<p>Every learner brings different strengths, challenges, pace and goals. Support should respond to the individual.</p>
+<details class="article-details">
+<summary>Read article</summary>
+<div class="article-full">Personalised learning can involve adjusting explanations, pace, practice formats, feedback and communication. The aim is not to lower expectations, but to create an accessible route toward meaningful progress and greater independence.</div>
+</details>
+</div>
+</article>
+<article class="article-card">
+<div class="article-top">
+<span class="article-category">Quran &amp; Islamic Studies</span>
+<span class="article-mark">06</span>
+</div>
+<div class="article-body">
+<div class="article-meta"><span>Quran Learning</span><span>4 min read</span></div>
+<h3>A Gentle Starting Point for Quran Learning</h3>
+<p>A structured approach can help beginners build reading confidence, pronunciation and consistent practice.</p>
+<details class="article-details">
+<summary>Read article</summary>
+<div class="article-full">Beginners can start with letter recognition, joining letters, basic pronunciation and gradual reading practice before moving into more advanced recitation skills. Consistency, patient correction and a comfortable learning pace can make the journey more manageable.</div>
+</details>
+</div>
+</article>
+</div>
+</div>
 </section>
-
-
 <!-- GALLERY -->
 <section class="gallery" id="gallery">
-  <div class="container">
-
-    <div class="section-heading center">
-      <div class="eyebrow">Learning Gallery</div>
-      <h2>Learning in action.</h2>
-      <p>
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Learning Gallery</div>
+<h2>Learning in action.</h2>
+<p>
         Visual moments from academic learning, language development,
         digital education and independent study.
       </p>
-    </div>
-
-    <div class="gallery-grid">
-
-      <div class="gallery-item large">
-        <img src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1600&q=85" alt="Students in classroom">
-        <span class="gallery-label">Academic Learning</span>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85" alt="Student">
-        <span class="gallery-label">Personalised Learning</span>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1200&q=85" alt="Online learning">
-        <span class="gallery-label">Online Education</span>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1200&q=85" alt="Quran">
-        <span class="gallery-label">Quran Learning</span>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=85" alt="Books">
-        <span class="gallery-label">Learning Resources</span>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=1200&q=85" alt="Study">
-        <span class="gallery-label">Independent Study</span>
-      </div>
-
-      <div class="gallery-item">
-        <img src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1200&q=85" alt="Digital learning">
-        <span class="gallery-label">Digital Learning</span>
-      </div>
-
-    </div>
-  </div>
+</div>
+<div class="gallery-grid">
+<div class="gallery-item large">
+<img alt="Students in classroom" src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&amp;fit=crop&amp;w=1600&amp;q=85"/>
+<span class="gallery-label">Academic Learning</span>
+</div>
+<div class="gallery-item">
+<img alt="Student" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="gallery-label">Personalised Learning</span>
+</div>
+<div class="gallery-item">
+<img alt="Online learning" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="gallery-label">Online Education</span>
+</div>
+<div class="gallery-item">
+<img alt="Quran" src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="gallery-label">Quran Learning</span>
+</div>
+<div class="gallery-item">
+<img alt="Books" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="gallery-label">Learning Resources</span>
+</div>
+<div class="gallery-item">
+<img alt="Study" src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="gallery-label">Independent Study</span>
+</div>
+<div class="gallery-item">
+<img alt="Digital learning" src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&amp;fit=crop&amp;w=1200&amp;q=85"/>
+<span class="gallery-label">Digital Learning</span>
+</div>
+</div>
+</div>
 </section>
-
-
 <!-- TESTIMONIALS -->
 <section class="testimonials">
-  <div class="container">
-
-    <div class="section-heading center">
-      <div class="eyebrow">Student Experiences</div>
-      <h2>What learners have shared.</h2>
-      <p>
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Student Experiences</div>
+<h2>What learners have shared.</h2>
+<p>
         Selected feedback areas from learners and professionals
         supported through Learning Hub.
       </p>
-    </div>
-
-    <div class="testimonial-grid">
-
-      <div class="testimonial">
-        <div class="quote">“</div>
-        <p>
+</div>
+<div class="testimonial-grid">
+<div class="testimonial">
+<div class="quote">“</div>
+<p>
           A-Level Psychology preparation completed within two months,
           with focused exam guidance and support that helped the student pass.
         </p>
-        <small>A-Level Psychology Student • India</small>
-      </div>
-
-      <div class="testimonial">
-        <div class="quote">“</div>
-        <p>
-          Psychology and English Language & Literature support focused on
+<small>A-Level Psychology Student • India</small>
+</div>
+<div class="testimonial">
+<div class="quote">“</div>
+<p>
+          Psychology and English Language &amp; Literature support focused on
           academic learning, exam confidence and language development.
         </p>
-        <small>International Student • Indonesia</small>
-      </div>
-
-      <div class="testimonial">
-        <div class="quote">“</div>
-        <p>
+<small>International Student • Indonesia</small>
+</div>
+<div class="testimonial">
+<div class="quote">“</div>
+<p>
           English communication support focused on confidence,
           sentence formation and practical communication.
         </p>
-        <small>Dr. Nispa • Afghanistan</small>
-      </div>
-
-    </div>
-  </div>
+<small>Dr. Nispa • Afghanistan</small>
+</div>
+</div>
+</div>
 </section>
-
-
-
 <!-- FAQ -->
 <section class="faq-section" id="faq">
-  <div class="container">
-    <div class="section-heading center">
-      <div class="eyebrow">Frequently Asked Questions</div>
-      <h2>Everything you need to know.</h2>
-      <p>Simple answers to common questions about Learning Hub, lessons, programmes and resources.</p>
-    </div>
-    <div class="faq-wrap">
-      <div class="faq-list">
-        <div class="faq-item"><button class="faq-question" type="button">How do online lessons work?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level.</div></div></div>
-        <div class="faq-item"><button class="faq-question" type="button">Which learners can join Learning Hub?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support.</div></div></div>
-        <div class="faq-item"><button class="faq-question" type="button">Which international boards do you support?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning.</div></div></div>
-        <div class="faq-item"><button class="faq-question" type="button">Do you offer Quran and Islamic Studies?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Learning pathways include Quran reading, foundational Quran learning, Tajweed and Islamic Studies, with structured learning for different levels.</div></div></div>
-        <div class="faq-item"><button class="faq-question" type="button">Can adults improve their English?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals.</div></div></div>
-        <div class="faq-item"><button class="faq-question" type="button">How can I access the learning resources?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Available digital resources are presented in the Learning Library, where learners can access resources according to their availability and format.</div></div></div>
-      </div>
-    </div>
-  </div>
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Frequently Asked Questions</div>
+<h2>Everything you need to know.</h2>
+<p>Simple answers to common questions about Learning Hub, lessons, programmes and resources.</p>
+</div>
+<div class="faq-wrap">
+<div class="faq-list">
+<div class="faq-item"><button class="faq-question" type="button">How do online lessons work?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level.</div></div></div>
+<div class="faq-item"><button class="faq-question" type="button">Which learners can join Learning Hub?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support.</div></div></div>
+<div class="faq-item"><button class="faq-question" type="button">Which international boards do you support?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning.</div></div></div>
+<div class="faq-item"><button class="faq-question" type="button">Do you offer Quran and Islamic Studies?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Learning pathways include Quran reading, foundational Quran learning, Tajweed and Islamic Studies, with structured learning for different levels.</div></div></div>
+<div class="faq-item"><button class="faq-question" type="button">Can adults improve their English?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals.</div></div></div>
+<div class="faq-item"><button class="faq-question" type="button">How can I access the learning resources?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Available digital resources are presented in the Learning Library, where learners can access resources according to their availability and format.</div></div></div>
+</div>
+</div>
+</div>
 </section>
-
 <!-- PRICING -->
-<section class="pricing">
-  <div class="container">
-
-    <div class="section-heading center">
-      <div class="eyebrow">Flexible Learning</div>
-      <h2>Simple options for different needs.</h2>
-    </div>
-
-    <div class="price-grid">
-
-      <div class="price-card">
-        <h3>Starter</h3>
-        <div class="price">$30</div>
-
-        <ul>
-          <li>✓ Monthly learning support</li>
-          <li>✓ Selected resources</li>
-          <li>✓ Progress guidance</li>
-        </ul>
-
-        <a href="mailto:hublearning117@gmail.com?subject=Starter Membership" class="btn btn-gold">
-          Enquire
-        </a>
-      </div>
-
-      <div class="price-card">
-        <h3>Growth</h3>
-        <div class="price">$50</div>
-
-        <ul>
-          <li>✓ Extended learning support</li>
-          <li>✓ Practice resources</li>
-          <li>✓ Learning guidance</li>
-        </ul>
-
-        <a href="mailto:hublearning117@gmail.com?subject=Growth Membership" class="btn btn-gold">
-          Enquire
-        </a>
-      </div>
-
-      <div class="price-card featured">
-        <h3>Focus</h3>
-        <div class="price">$70</div>
-
-        <ul>
-          <li>✓ Structured support</li>
-          <li>✓ International curriculum</li>
-          <li>✓ Resources and practice</li>
-        </ul>
-
-        <a href="https://calendly.com/hublearning117" target="_blank" rel="noopener" class="btn btn-gold">
-          Book Consultation
-        </a>
-      </div>
-
-      <div class="price-card">
-        <h3>Unlimited</h3>
-        <div class="price">$95</div>
-
-        <ul>
-          <li>✓ Intensive learning support</li>
-          <li>✓ Multiple learning areas</li>
-          <li>✓ Priority guidance</li>
-        </ul>
-
-        <a href="mailto:hublearning117@gmail.com?subject=Unlimited Membership" class="btn btn-gold">
-          Enquire
-        </a>
-      </div>
-
-    </div>
-  </div>
+<section class="pricing" id="pricing" style="display:none">
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">Flexible Learning</div>
+<h2>Simple options for different needs.</h2>
+<p>Flexible monthly packages with defined live classes, learning support, worksheets, e-books and digital resources. Choose the level that fits your goals.</p></div>
+<div class="price-grid">
+<div class="price-card featured">
+<h3>Demo Booking</h3>
+<div class="price">$3</div>
+<ul>
+<li>✓ One introductory demo lesson</li>
+<li>✓ Meet your tutor and discuss goals</li>
+<li>✓ Suitable for new learners</li>
+</ul>
+<button class="btn btn-gold" data-open-enquiry="Demo Booking ($3)" type="button">
+          Book Demo — $3
+        </button>
+</div>
+<div class="price-card">
+<h3>Starter</h3>
+<div class="price">$20</div><div class="package-classes">4 live classes / month</div><div class="package-duration">30–40 minutes per class</div>
+<ul><li>✓ 4 personalised live classes each month</li><li>✓ Monthly learning support</li><li>✓ Selected worksheets &amp; practice resources</li><li>✓ Relevant free resources</li><li>✓ Progress guidance</li><li>✓ Resource / course request support</li></ul>
+<a class="btn btn-gold" data-open-enquiry="Starter Package — $20 / 4 live classes / month" href="#contact" rel target>Enquire</a>
+</div>
+<div class="price-card">
+<h3>Growth</h3>
+<div class="price">$30</div><div class="package-classes">5 live classes / month</div><div class="package-duration">30–40 minutes per class</div>
+<ul><li>✓ 5 personalised live classes each month</li><li>✓ Extended learning support</li><li>✓ Practice worksheets &amp; learning resources</li><li>✓ Relevant e-books / digital resources where included</li><li>✓ Learning guidance &amp; progress support</li><li>✓ Priority resource recommendations</li></ul>
+<a class="btn btn-gold" data-open-enquiry="Growth Package — $30 / 5 live classes / month" href="#contact" rel target>Enquire</a>
+</div>
+<div class="price-card featured">
+<h3>Focus</h3>
+<div class="price">$50</div><div class="package-classes">6 live classes / month</div><div class="package-duration">30–40 minutes per class</div>
+<ul><li>✓ 6 personalised live classes each month</li><li>✓ Structured academic support</li><li>✓ International curriculum support</li><li>✓ Subject-specific worksheets &amp; practice</li><li>✓ Relevant e-books / premium resources where included</li><li>✓ Progress guidance &amp; targeted feedback</li></ul>
+<a class="btn btn-gold" data-open-enquiry="Focus Package — $50 / 6 live classes / month" href="#contact" rel target>Enquire</a>
+</div>
+<div class="price-card">
+<h3>Unlimited</h3>
+<div class="price">$70</div><div class="package-classes">8 live classes / month</div><div class="package-duration">30–40 minutes per class</div>
+<ul><li>✓ 8 personalised live classes each month</li><li>✓ Intensive learning support</li><li>✓ Multiple subject / learning areas</li><li>✓ International curriculum &amp; exam support</li><li>✓ Expanded worksheets, e-books &amp; digital resources</li><li>✓ Priority guidance and progress support</li></ul>
+<a class="btn btn-gold" data-open-enquiry="Unlimited Package — $70 / 8 live classes / month" href="#contact" rel target>Enquire</a>
+</div>
+</div>
+</div>
 </section>
-
-
+<!-- GENERAL RESOURCE / COURSE REQUEST FORM -->
+<div aria-hidden="true" class="enquiry-modal" id="lh-enquiry-modal">
+<div class="enquiry-modal-inner">
+<button aria-label="Close enquiry form" class="enquiry-close" id="lh-enquiry-close" type="button">×</button>
+<div class="eyebrow">Learning Hub Request</div>
+<h2 id="lh-enquiry-title">Request a Course, Resource or Custom Learning Material</h2>
+<p>Choose the closest options below. If your requirement is not listed, use the “Other” fields and tell us exactly what you need.</p>
+<form id="lh-enquiry-form">
+<div class="enquiry-grid">
+<div class="enquiry-field">
+<label for="lh-name">Name *</label>
+<input autocomplete="name" id="lh-name" name="name" required=""/>
+</div>
+<div class="enquiry-field">
+<label for="lh-email">Email *</label>
+<input autocomplete="email" id="lh-email" name="email" required="" type="email"/>
+</div>
+<div class="enquiry-field full">
+<label for="lh-package">Learning Option / Package</label>
+<select id="lh-package" name="learning_option">
+<option value="">Select an option</option>
+<option>$3 Demo — 1 introductory demo lesson</option>
+<option>Starter — $20/month — 4 live classes</option>
+<option>Growth — $30/month — 5 live classes</option>
+<option>Focus — $50/month — 6 live classes</option>
+<option>Unlimited — $70/month — 8 live classes</option>
+<option>Custom learning / resource request</option>
+</select>
+<small>Choose a package to continue with booking, or select custom learning/resource support.</small>
+</div>
+<div class="enquiry-field">
+<label for="lh-type">What do you need? *</label>
+<select id="lh-type" name="resource_type" required="">
+<option value="">Select resource type</option>
+<option>Course</option><option>Worksheet</option><option>E-book</option>
+<option>Workbook</option><option>Study Guide</option><option>Lesson Material</option>
+<option>Notes / Handout</option><option>Assessment / Test</option>
+<option>Past Paper / Exam Practice</option><option>Vocabulary Resource</option>
+<option>Reading Resource</option><option>Speaking Resource</option>
+<option>Writing Resource</option><option>Research / Academic Resource</option>
+<option>Other</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-subject">Subject *</label>
+<select id="lh-subject" name="subject" required="">
+<option value="">Select subject</option>
+<option>English Language</option><option>English Literature</option><option>Language &amp; Literature</option>
+<option>Mathematics</option><option>Additional Mathematics</option><option>Statistics</option>
+<option>Biology</option><option>Chemistry</option><option>Physics</option><option>Psychology</option>
+<option>Business Studies</option><option>Business Management</option><option>Economics</option>
+<option>Sociology</option><option>Geography</option><option>History</option><option>Global Politics</option>
+<option>Philosophy</option><option>Environmental Systems &amp; Societies</option><option>Environmental Management</option>
+<option>Computer Science</option><option>Information Technology</option><option>Design Technology</option>
+<option>Arabic</option><option>Urdu</option><option>Chinese</option><option>Japanese</option><option>Korean</option><option>Italian</option>
+<option>Quran</option><option>Islamic Studies</option><option>Academic Writing</option><option>Research Skills</option>
+<option>Study Skills</option><option>Communication</option><option>Vocabulary</option><option>Reading</option><option>Speaking</option><option>Writing</option>
+<option>Other</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-subsubject">Sub-subject / Topic Area</label>
+<select id="lh-subsubject" name="subsubject">
+<option value="">Select subject first</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-topic">Specific Topic / Chapter</label>
+<input id="lh-topic" name="specific_topic" placeholder="e.g. Photosynthesis, Quadratic equations, Poetry analysis"/>
+</div>
+<div class="enquiry-field">
+<label for="lh-other-subject">Other Subject / Topic</label>
+<input id="lh-other-subject" name="other_subject" placeholder="Anything not listed above"/>
+</div>
+<div class="enquiry-field">
+<label for="lh-board">Board / Curriculum</label>
+<select id="lh-board" name="board">
+<option value="">Select board / curriculum</option>
+<option>Cambridge</option><option>Pearson Edexcel</option><option>IB</option><option>GCSE</option>
+<option>O Level</option><option>A Level</option><option>National Curriculum</option>
+<option>University</option><option>Other / Not applicable</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-level">Programme / Level</label>
+<select id="lh-level" name="level">
+<option value="">Select level</option>
+<option>Primary</option><option>Lower Secondary</option><option>Middle School</option>
+<option>IGCSE</option><option>GCSE</option><option>O Level</option><option>A Level</option>
+<option>IB PYP</option><option>IB MYP</option><option>IB DP</option><option>University</option>
+<option>Adult / Professional</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option><option>Other</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-grade">Grade / Year</label>
+<select id="lh-grade" name="grade">
+<option value="">Select grade / year</option>
+<option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option>
+<option>Grade 5</option><option>Grade 6</option><option>Grade 7</option><option>Grade 8</option>
+<option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+<option>Undergraduate</option><option>Postgraduate</option><option>Adult</option><option>Other</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-purpose">Purpose</label>
+<select id="lh-purpose" name="purpose">
+<option value="">Select purpose</option>
+<option>Homework</option><option>Classroom Teaching</option><option>Exam Preparation</option>
+<option>Revision</option><option>Self-study</option><option>Tutoring</option><option>School Assignment</option>
+<option>Professional Use</option><option>Research</option><option>Other</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-format">Preferred Format</label>
+<select id="lh-format" name="format">
+<option value="">Select format</option>
+<option>PDF</option><option>Word / Editable</option><option>PowerPoint</option>
+<option>Printable Worksheet</option><option>Interactive Worksheet</option><option>E-book</option>
+<option>Video</option><option>Audio</option><option>Online Lesson</option>
+<option>Any suitable format</option><option>Other</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-quantity">Quantity</label>
+<select id="lh-quantity" name="quantity">
+<option value="">Select quantity</option><option>1 resource</option><option>2–5 resources</option>
+<option>6–10 resources</option><option>10+ resources</option><option>Custom quantity</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-deadline">When do you need it?</label>
+<select id="lh-deadline" name="deadline">
+<option value="">Select timeframe</option><option>No deadline</option><option>Within 24 hours</option>
+<option>Within 2–3 days</option><option>Within a week</option><option>Specific date — mention below</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-currency">Budget Currency</label>
+<select id="lh-currency" name="currency">
+<option>USD</option><option>GBP</option><option>EUR</option><option>PKR</option><option>AED</option><option>Other</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-budget">Budget *</label>
+<select id="lh-budget" name="budget" required="">
+<option value="">Select budget</option>
+<option>Under $5</option><option>$5–$10</option><option>$10–$25</option>
+<option>$25–$50</option><option>$50–$100</option><option>$100+</option>
+<option>No fixed budget — please advise</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-budget-flex">Budget Flexibility</label>
+<select id="lh-budget-flex" name="budget_flexibility">
+<option>Fixed budget</option><option>Flexible</option><option>Please suggest the best option</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-language">Language</label>
+<select id="lh-language" name="language">
+<option>English</option><option>Urdu</option><option>Arabic</option><option>Chinese</option>
+<option>Italian</option><option>Japanese</option><option>Korean</option><option>Bilingual</option><option>Other</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-enquiry-type">Enquiry Type</label>
+<select id="lh-enquiry-type" name="enquiry_type">
+<option>Resource Request</option><option>Course Enquiry</option><option>General Enquiry</option><option>Demo Booking ($3)</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-contact">Preferred Response</label>
+<select id="lh-contact" name="preferred_response">
+<option>Email</option><option>WhatsApp</option><option>Email + WhatsApp</option>
+</select>
+</div>
+<div class="enquiry-field">
+<label for="lh-other-resource">Other Resource Type</label>
+<input id="lh-other-resource" name="other_resource_type" placeholder="If your requirement is not listed"/>
+</div>
+<div class="enquiry-field full">
+<label>Additional Requirements</label>
+<div class="enquiry-checks">
+<label><input name="extras" type="checkbox" value="Answer key"/> Answer key</label>
+<label><input name="extras" type="checkbox" value="Mark scheme"/> Mark scheme</label>
+<label><input name="extras" type="checkbox" value="Teacher version"/> Teacher version</label>
+<label><input name="extras" type="checkbox" value="Student version"/> Student version</label>
+<label><input name="extras" type="checkbox" value="Editable version"/> Editable version</label>
+<label><input name="extras" type="checkbox" value="Printable version"/> Printable version</label>
+<label><input name="extras" type="checkbox" value="Dyslexia-friendly"/> Accessibility / dyslexia-friendly</label>
+<label><input name="extras" type="checkbox" value="Custom branding"/> Custom branding</label>
+</div>
+</div>
+<div class="enquiry-field full">
+<label for="lh-reference">Reference File / Material</label>
+<input accept=".pdf,.doc,.docx,.ppt,.pptx,.jpg,.jpeg,.png" id="lh-reference" name="reference_file" type="file"/>
+<small>Optional: syllabus, assignment, past paper, worksheet or screenshot.</small>
+</div>
+<div class="enquiry-field full" id="lh-demo-details" style="display:none;">
+<div class="demo-request-box">
+<strong>$3 Demo Booking</strong>
+<p>Please provide your preferred demo date, time and time zone in the details box below.</p>
+</div>
+</div>
+<div class="enquiry-field full">
+<label for="lh-message">Requirements / Details *</label>
+<textarea id="lh-message" name="message" placeholder="Tell us the exact topic, chapters, resource style, deadline, number of pages, difficulty level, or any other requirement..." required=""></textarea>
+</div>
+<div class="enquiry-field full">
+<button class="btn btn-gold" type="submit">Submit Request</button>
+</div>
+</div>
+<div aria-live="polite" class="enquiry-status" id="lh-enquiry-status"></div>
+</form>
+</div>
+</div>
+<!-- MERCHANT-FACING SERVICE PRICING -->
+<section class="compliance-strip" id="service-pricing">
+<div class="container">
+<div class="section-heading center" style="margin-bottom:28px"><div class="eyebrow">Services &amp; Pricing</div><h2 style="color:#fff">Clear learning options and starting prices.</h2><p style="color:#bcb4a7">International customers may view USD reference pricing; PKR amounts are shown for payment-gateway transparency. Final custom quotations are confirmed before payment.</p></div>
+<div class="compliance-grid">
+<div class="compliance-card"><strong>Regular Live Lesson</strong><span>$5 / class · 30–40 minutes</span><div class="price-pkr">PKR 1,400 reference amount</div></div>
+<div class="compliance-card"><strong>3-Month Prepaid</strong><span>15% discount on eligible prepaid regular classes</span><div class="price-pkr">PKR amount confirmed before payment</div></div>
+<div class="compliance-card"><strong>Exam Preparation</strong><span>From $10 / hour</span><div class="price-pkr">PKR 2,800 / hour reference amount</div></div>
+<div class="compliance-card"><strong>Comprehensive Notes</strong><span>$50 / subject · optional add-on</span><div class="price-pkr">PKR 13,900 / subject reference amount</div></div>
+</div>
+<p class="merchant-note">PKR reference amounts use approximately PKR 277.75 per USD as a current reference rate; the final PKR payable amount is confirmed at checkout.</p>
+</div>
+</section>
+<!-- BUSINESS MODEL & CUSTOMER JOURNEY -->
+<section class="business-model" id="business-model">
+<div class="container">
+<div class="section-heading center">
+<div class="eyebrow">How Learning Hub Works</div>
+<h2>Clear learning, booking and payment journey.</h2>
+<p>Learning Hub provides online tutoring, international curriculum support, English and language development, examination preparation, specialist learning support, Quran and Islamic Studies, and selected digital educational resources. Customers browse the available learning services, submit a request or select a learning option, receive the applicable quotation or billing amount, complete payment through the available secure payment method, and then receive booking or resource-delivery confirmation.</p>
+</div>
+<div class="compliance-grid">
+<div class="compliance-card"><strong>Online Learning</strong><span>Live one-to-one and structured learning support for students, professionals and lifelong learners.</span></div>
+<div class="compliance-card"><strong>Exam Preparation</strong><span>Concept revision, guided practice, past-paper work, examination technique and revision support.</span></div>
+<div class="compliance-card"><strong>Digital Resources</strong><span>Educational worksheets, workbooks, notes and selected digital learning materials.</span></div>
+<div class="compliance-card"><strong>Custom Programmes</strong><span>Subject, curriculum and examination requirements can be reviewed before a customised programme is confirmed.</span></div>
+</div>
+<div class="journey">
+<div class="journey-step"><strong>1. Browse</strong><span>Review programmes, services and available resources.</span></div>
+<div class="journey-step"><strong>2. Select</strong><span>Choose a learning option or submit a specific enquiry.</span></div>
+<div class="journey-step"><strong>3. Review</strong><span>Learning Hub confirms requirements, availability and applicable amount.</span></div>
+<div class="journey-step"><strong>4. Pay</strong><span>Customer completes payment through the secure payment checkout.</span></div>
+<div class="journey-step"><strong>5. Confirm</strong><span>Learning Hub confirms the lesson/programme or digital resource delivery.</span></div>
+</div>
+<div class="policy-links"><a href="billing.html">View Billing &amp; Learning Options →</a><a href="policies.html">Read Customer Policies →</a></div>
+</div>
+</section>
 <!-- TEACHER APPLICATION -->
 <section class="cta" id="teacher">
-  <div class="container cta-inner">
-
-    <div class="eyebrow">Join Learning Hub</div>
-
-    <h2>Are you an educator?</h2>
-
-    <p>
+<div class="container cta-inner">
+<div class="eyebrow">Join Learning Hub</div>
+<h2>Are you an educator?</h2>
+<p>
       Apply to teach through Learning Hub and contribute to a global learning platform.
     </p>
-
-    <a
-      href="https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform"
-      target="_blank"
-      rel="noopener"
-      class="btn btn-gold">
+<a class="btn btn-gold" href="https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform" rel="noopener" target="_blank">
       Apply to Teach
     </a>
-
-  </div>
+</div>
 </section>
-
-
 <!-- CONTACT -->
 <section class="contact" id="contact">
-  <div class="container">
-
-    <div class="section-heading">
-      <div class="eyebrow">Contact Learning Hub</div>
-      <h2>Start your learning journey.</h2>
-      <p>
+<div class="container">
+<div class="section-heading">
+<div class="eyebrow">Contact Learning Hub</div>
+<h2>Start your learning journey.</h2>
+<p>
         For tutoring, Quran courses, international curriculum support,
         resources, partnerships or teaching applications, contact Learning Hub.
       </p>
-    </div>
-
-    <div class="contact-grid">
-
-      <div class="contact-box">
-
-        <div class="contact-item">
-          <strong>Book a lesson</strong>
-          <a href="https://calendly.com/hublearning117" target="_blank" rel="noopener">
-            Open Learning Hub Booking →
+</div>
+<div class="contact-grid">
+<div class="contact-box">
+<div class="contact-item">
+<strong>Book / Enquire</strong>
+<a href="#contact" data-open-enquiry="General Learning Enquiry">
+            Start a Learning Enquiry →
           </a>
-        </div>
-
-        <div class="contact-item">
-          <strong>Email</strong>
-          <a href="mailto:hublearning117@gmail.com">
+</div>
+<div class="contact-item">
+<strong>Email</strong>
+<a href="mailto:hublearning117@gmail.com">
             hublearning117@gmail.com
           </a>
-        </div>
-
-        <div class="contact-item">
-          <strong>Teacher application</strong>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform"
-            target="_blank"
-            rel="noopener">
+</div>
+<div class="contact-item contact-detail">
+<strong>Contact number</strong>
+<span>Contact number: please use the number shown in your merchant application</span>
+</div>
+<div class="contact-item contact-detail">
+<strong>Business address</strong>
+<span class="business-address">Registered business address: please use the exact address shown in your merchant application</span>
+</div>
+<div class="contact-item">
+<strong>Policies</strong>
+<div class="policy-links"><a href="policies.html#refund">Refund Policy</a><a href="policies.html#privacy">Privacy Policy</a><a href="policies.html#terms">Terms &amp; Conditions</a><a href="policies.html#shipping">Shipping Policy</a></div>
+</div>
+<div class="contact-item">
+<strong>Teacher application</strong>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform" rel="noopener" target="_blank">
             Open Teacher Application →
           </a>
-        </div>
-
-      </div>
-
-      <div class="contact-box" id="payments">
-
-        <h3>Secure Online Payments</h3>
-
-        <p style="margin-top:12px;">
-          Learning Hub is connected to RapidPay in TEST mode for secure payment-flow testing.
-          No real money is charged in this environment.
-        </p>
-
-        <div class="payment-test-card">
-          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
-            <strong>Rapid Gateway — TEST MODE</strong>
-            <span style="padding:5px 9px;border-radius:999px;background:#eef7f8;font-size:.8rem;">No real money</span>
-          </div>
-          <p style="margin:10px 0 16px;">
-            Use the sandbox amounts below to test success, failure, pending and other checkout outcomes.
-          </p>
-          <div class="payment-row">
-            <div>
-              <label for="lh-test-service">Test payment</label>
-              <select id="lh-test-service">
-                <option value="100">TEST — PKR 100 (Success)</option>
-                <option value="200">TEST — PKR 200 (Failed)</option>
-                <option value="300">TEST — PKR 300 (Pending)</option>
-                <option value="400">TEST — PKR 400 (Expired)</option>
-                <option value="500">TEST — PKR 500 (Timeout)</option>
-              </select>
-            </div>
-            <div>
-              <label for="lh-test-email">Email</label>
-              <input id="lh-test-email" type="email" autocomplete="email" placeholder="your@email.com">
-            </div>
-            <div>
-              <label for="lh-test-mobile">Mobile</label>
-              <input id="lh-test-mobile" type="tel" autocomplete="tel" placeholder="03XXXXXXXXX">
-            </div>
-            <button type="button" class="btn btn-gold" id="lh-start-payment">Pay securely — TEST</button>
-          </div>
-          <div class="payment-status" id="lh-payment-status" aria-live="polite"></div>
-        </div>
-
-        <p style="margin-top:14px;font-size:.9rem;">
-          For payment support: 
-          <a href="mailto:hublearning117@gmail.com?subject=Learning Hub Payment Support">Contact Learning Hub Support</a>
-        </p>
-      </div>
-
-      <div class="rapidpay-modal" id="lh-rapidpay-modal" aria-hidden="true">
-        <div class="rapidpay-modal-inner">
-          <button type="button" class="rapidpay-close" id="lh-close-payment" aria-label="Close payment">&times;</button>
-          <div id="rapidpay-checkout"></div>
-        </div>
-      </div>
-
-    </div>
-  </div>
+</div>
+</div>
+<div class="contact-box" id="payments">
+<h3>Secure Online Payments</h3>
+<p style="margin-top:12px;">Learning Hub uses an authorised online payment gateway to collect payment for confirmed tutoring, examination-preparation services and eligible digital learning resources. Customers receive the applicable PKR amount and payment instructions after their selected service and requirements have been reviewed.</p>
+<div class="payment-test-card">
+<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+<strong>How payment works</strong>
+<span style="padding:5px 9px;border-radius:999px;background:#eef7f8;font-size:.8rem;">Secure gateway checkout</span>
+</div>
+<ol style="margin:12px 0 0 20px;">
+<li>Choose a service or submit a learning request.</li>
+<li>Learning Hub confirms availability, requirements and the applicable PKR amount.</li>
+<li>Customer receives the checkout/payment instructions.</li>
+<li>Payment is completed through the authorised gateway.</li>
+<li>Learning Hub confirms the booking and delivers the agreed lesson, programme or digital resource.</li>
+</ol>
+</div>
+<p style="margin-top:14px;font-size:.9rem;">For payment support: <a href="mailto:hublearning117@gmail.com?subject=Learning Hub Payment Support">Contact Learning Hub Support</a></p>
+</div>
 </section>
-
-
 </main>
-
 <!-- FOOTER -->
 <footer>
-
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-
-        <div class="brand">
-          <span class="brand-mark">LH</span>
-
-          <span class="brand-copy">
-            <strong>Learning Hub</strong>
-            <small>Global Education Platform</small>
-          </span>
-        </div>
-
-        <p>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="brand">
+<span class="brand-mark">LH</span>
+<span class="brand-copy">
+<strong>Learning Hub</strong>
+<small>Global Education Platform</small>
+</span>
+</div>
+<p>
           Learning for everyone, everywhere — academic tutoring,
           international education, Quran and Islamic Studies,
           specialist support and digital learning resources.
         </p>
-
-      </div>
-
-      <div class="footer-col">
-
-        <h4>Learning</h4>
-
-        <a href="#programmes">Programmes</a>
-        <a href="#subjects">Subjects</a>
-        <a href="#quran">Quran & Islamic Studies</a>
-        <a href="#boards">International Boards</a>
-        <a href="#exams">Exams</a>
-
-      </div>
-
-      <div class="footer-col">
-
-        <h4>Platform</h4>
-
-        <a href="#support">Learning Support</a>
-        <a href="#library">Resources</a>
-        <a href="#articles">Articles & Blog</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#teacher">Apply to Teach</a>
-        <a href="#contact">Contact</a>
-        <a href="policies.html">Policies & Terms</a>
-        <a href="billing.html">Billing & Invoices</a>
-
-      </div>
-
+</div>
+<div class="footer-col">
+<h4>Learning</h4>
+<a href="#programmes">Programmes</a>
+<a href="#subjects">Subjects</a>
+<a href="#quran">Quran &amp; Islamic Studies</a>
+<a href="#boards">International Boards</a>
+<a href="#exams">Exams</a>
+</div>
+<div class="footer-col">
+<h4>Contact</h4>
+<a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>
+<span style="display:block;margin-top:8px;color:#aaa398;font-size:.78rem">Contact number: please use the number shown in your merchant application</span>
+<span style="display:block;margin-top:8px;color:#aaa398;font-size:.78rem">Karachi, Sindh, Pakistan</span>
+<a href="policies.html#refund">Refund Policy</a>
+<a href="policies.html#privacy">Privacy Policy</a>
+<a href="policies.html#terms">Terms &amp; Conditions</a>
+<a href="policies.html#shipping">Shipping Policy</a>
+</div>
+<div class="footer-col">
+<h4>Business Information</h4>
+<a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>
+<a href="#contact">Contact number</a>
+<a href="#contact">Business address</a>
+<a href="policies.html#refund">Refund Policy</a>
+<a href="policies.html#privacy">Privacy Policy</a>
+<a href="policies.html#terms">Terms &amp; Conditions</a>
+<a href="policies.html#shipping">Shipping &amp; Service Delivery</a>
+</div>
+<div class="footer-col">
+<h4>Platform</h4>
+<a href="#support">Learning Support</a>
+<a href="#library">Resources</a>
+<a href="#articles">Articles &amp; Blog</a>
+<a href="#gallery">Gallery</a>
+<a href="#teacher">Apply to Teach</a>
+<a href="#contact">Contact</a>
+<a href="policies.html">Policies &amp; Terms</a>
+<a href="billing.html">Billing &amp; Invoices</a>
+</div>
+</div>
+<div class="footer-bottom">
+      © 2026 Learning Hub. Global Education Platform. | Online education and digital learning services.
     </div>
-
-    <div class="footer-bottom">
-      © 2026 Learning Hub. Global Education Platform.
-    </div>
-
-  </div>
-
+</div>
 </footer>
-
-
 <!-- CONCIERGE -->
 <div class="concierge">
-
-  <button
-    class="concierge-button"
-    onclick="toggleConcierge()"
-    aria-label="Open Learning Concierge"
-    aria-expanded="false">
+<button aria-expanded="false" aria-label="Open Learning Concierge" class="concierge-button" onclick="toggleConcierge()">
     ✦
   </button>
-
-  <div class="concierge-panel" id="conciergePanel">
-
-    <h3>Learning Concierge</h3>
-
-    <p>What would you like help with?</p>
-
-    <button class="concierge-option" onclick="conciergeMessage('Academic tutoring')">
+<div class="concierge-panel" id="conciergePanel">
+<h3>Learning Concierge</h3>
+<p>What would you like help with?</p>
+<button class="concierge-option" onclick="conciergeMessage('Academic tutoring')">
       Academic tutoring
     </button>
-
-    <button class="concierge-option" onclick="conciergeMessage('IB support')">
+<button class="concierge-option" onclick="conciergeMessage('IB support')">
       IB support
     </button>
-
-    <button class="concierge-option" onclick="conciergeMessage('Cambridge support')">
+<button class="concierge-option" onclick="conciergeMessage('Cambridge support')">
       Cambridge support
     </button>
-
-    <button class="concierge-option" onclick="conciergeMessage('Quran & Islamic Studies')">
-      Quran & Islamic Studies
+<button class="concierge-option" onclick="conciergeMessage('Quran &amp; Islamic Studies')">
+      Quran &amp; Islamic Studies
     </button>
-
-    <button class="concierge-option" onclick="conciergeMessage('Exam preparation')">
+<button class="concierge-option" onclick="conciergeMessage('Exam preparation')">
       Exam preparation
     </button>
-
-    <button class="concierge-option" onclick="conciergeMessage('Learning support')">
+<button class="concierge-option" onclick="conciergeMessage('Learning support')">
       Specialist learning support
     </button>
-
-  </div>
 </div>
-
-
+</div>
 <script>
 
 /* =========================
@@ -3211,11 +3420,62 @@ function getResourceCategory(name){
 }
 
 
-function getResourceImage(category,index){
 
-  /* Each resource receives a different premium cover image.
-     The index is global across the library, so the same image
-     is never intentionally reused for another resource. */
+/* =========================
+   LEARNING LIBRARY
+========================= */
+
+const resourceData = [
+  {name:"30_High_Value_Daily_Life_Vocabulary_Intermediate_Advanced.docx", type:"free", subject:"English", kind:"worksheet"},
+  {name:"5_Essential_Steps_Learning_to_Read.docx", type:"free", subject:"English", kind:"worksheet"},
+  {name:"A Doll’s House Devices & Delicacy_20260822_104019_0000.pdf", type:"free", subject:"English", kind:"worksheet"},
+  {name:"Advanced_Linking_Words_and_Phrases.docx", type:"free", subject:"English", kind:"worksheet"},
+  {name:"Advanced_Vocabulary_Meanings.docx", type:"free", subject:"English", kind:"worksheet"},
+  {name:"Bilingual_Mathematics_Assessment_50_Marks.docx", type:"free", subject:"Mathematics", kind:"worksheet"},
+  {name:"Common_Mispronounced_and_Misspelled_Words.docx", type:"free", subject:"English", kind:"worksheet"},
+  {name:"Grade_4_5_Mental_Math_Italian_English.pdf", type:"free", subject:"Mathematics", kind:"worksheet"},
+  {name:"Grade_5_Numbers_Bilingual_Italian_English_Worksheet.docx", type:"free", subject:"Mathematics", kind:"worksheet"},
+  {name:"Grade_5_Subtraction_Bilingual_Italian_English_Worksheet.pdf", type:"free", subject:"Mathematics", kind:"worksheet"},
+  {name:"IB_English_SL_Intermediate_to_Advanced_Worksheet_and_Answer_Key.pdf", type:"free", subject:"English", kind:"worksheet"},
+  {name:"IB_English_SL_Literary_Analysis_Practice_Activities.pdf", type:"free", subject:"English", kind:"worksheet"},
+  {name:"Must_Have_to_Should_Ought_to_Worksheet.docx", type:"free", subject:"English", kind:"worksheet"},
+  {name:"_Bias in Psychological Research.pdf", type:"free", subject:"Psychology", kind:"worksheet"},
+  {name:"chinese_beginner_formal_vocab_worksheet.pdf", type:"free", subject:"Languages", kind:"worksheet"},
+  {name:"urdu_english_italian_formal_vocab_worksheet (1).pdf", type:"free", subject:"Languages", kind:"worksheet"},
+  {name:"Learning_Hub_academic_english_essay_writing_toolkit.pdf", type:"premium", subject:"English", kind:"resource"},
+  {name:"Learning_Hub_adult_esl_speaking_vocabulary_workbook.pdf", type:"premium", subject:"English", kind:"resource"},
+  {name:"Learning_Hub_dyslexia_friendly_english_reading_teens_adults.pdf", type:"premium", subject:"English", kind:"resource"},
+  {name:"Learning_Hub_english_pronunciation_shadowing_practice.pdf", type:"premium", subject:"English", kind:"resource"},
+  {name:"Learning_Hub_everyday_english_chinese_speakers.pdf", type:"premium", subject:"Languages", kind:"resource"},
+  {name:"Learning_Hub_everyday_english_japanese_speakers.pdf", type:"premium", subject:"Languages", kind:"resource"},
+  {name:"Learning_Hub_everyday_english_korean_speakers.pdf", type:"premium", subject:"Languages", kind:"resource"},
+  {name:"Learning_Hub_real_life_english_conversation_practice.pdf", type:"premium", subject:"English", kind:"resource"},
+  {name:"Learning_Hub_Academic_Writing_Ebook.pdf", type:"premium", subject:"English", kind:"ebook"},
+  {name:"Learning_Hub_Study_Skills_Ebook.pdf", type:"premium", subject:"Study Skills", kind:"ebook"},
+  {name:"Learning_Hub_English_Vocabulary_Workbook.pdf", type:"premium", subject:"English", kind:"ebook"}
+];
+
+function resourceTypeLabel(name){
+  const ext=(name.split(".").pop()||"").toUpperCase();
+  if(ext==="DOCX"||ext==="DOC") return "DOCX";
+  if(ext==="PDF") return "PDF";
+  if(ext==="PPT"||ext==="PPTX") return "PRESENTATION";
+  if(ext==="XLS"||ext==="XLSX") return "SPREADSHEET";
+  return ext || "RESOURCE";
+}
+
+function makeResourceTitle(name){
+  return name.replace(/\.[^/.]+$/i,"")
+    .replace(/^Learning_Hub_/i,"")
+    .replace(/^_+/,"")
+    .replace(/[_-]+/g," ")
+    .replace(/\s+/g," ")
+    .trim()
+    .replace(/\b\w/g,function(char){return char.toUpperCase();});
+}
+
+function resourceImage(index){
+  /* One distinct cover image per resource. No cycling/reuse. */
   const images=[
     "https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1000&q=85",
     "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1000&q=85",
@@ -3236,153 +3496,150 @@ function getResourceImage(category,index){
     "https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=1000&q=85",
     "https://images.unsplash.com/photo-1501504905252-473c47e087f8?auto=format&fit=crop&w=1000&q=85",
     "https://images.unsplash.com/photo-1511108690759-009324a90311?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1000&q=85",
     "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=85",
     "https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=85",
     "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=1000&q=85",
-    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=85"
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85",
+    "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1000&q=85"
   ];
-
-  return images[index % images.length];
+  return images[index] || images[0];
 }
 
+function renderResourceCards(items, gridId){
+  const grid=document.getElementById(gridId);
+  if(!grid)return;
+  if(!items.length){
+    grid.innerHTML='<div class="library-status">No resources are currently listed in this category.</div>';
+    return;
+  }
+
+  const lockedResources=[
+    "Learning_Hub_everyday_english_chinese_speakers.pdf",
+    "Learning_Hub_everyday_english_korean_speakers.pdf",
+    "Learning_Hub_English_Vocabulary_Workbook.pdf"
+  ];
+
+  grid.innerHTML=items.map(function(item,index){
+    const title=makeResourceTitle(item.name);
+    const type=resourceTypeLabel(item.name);
+    const url="/resources/"+encodeURIComponent(item.name);
+    const isLocked=lockedResources.includes(item.name);
+
+    return `
+      <article class="resource-card" data-resource-type="${escapeHTML(item.type)}" data-subject="${escapeHTML(item.subject)}">
+        <div class="resource-cover ${isLocked ? "locked" : ""}">
+          <img src="${escapeHTML(resourceImage(index))}" alt="${escapeHTML(title)}" loading="lazy"
+               onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1000&q=85';">
+        </div>
+        <div class="resource-body">
+          <span class="resource-meta">${escapeHTML(type)} • ${escapeHTML(item.subject)}</span>
+          <h3>${escapeHTML(title)}</h3>
+          <p>${isLocked ? "Premium resource. Download access is currently locked." : (item.type==="premium" ? "Premium resource available as a downloadable Learning Hub resource." : "Free Learning Hub resource for independent study and tutoring support.")}</p>
+          ${isLocked
+            ? '<span class="btn btn-outline resource-download" style="width:100%">🔒 Premium Download Locked</span>'
+            : `<a href="${escapeHTML(url)}" class="btn btn-gold resource-download" download target="_blank" rel="noopener">Download ${escapeHTML(type)}</a>`
+          }
+        </div>
+      </article>`;
+  }).join("");
+}
+
+function loadLearningLibrary(){
+  renderResourceCards(resourceData.filter(r=>r.type==="free"),"freeResourceGrid");
+  renderResourceCards(resourceData.filter(r=>r.type==="premium" && r.kind!=="ebook"),"premiumResourceGrid");
+  renderResourceCards(resourceData.filter(r=>r.kind==="ebook"),"ebookResourceGrid");
+}
+
+function initialiseResourceFilters(){
+  document.querySelectorAll("[data-resource-filter]").forEach(function(button){
+    button.addEventListener("click",function(){
+      document.querySelectorAll("[data-resource-filter]").forEach(b=>b.classList.remove("active"));
+      button.classList.add("active");
+      const filter=button.getAttribute("data-resource-filter");
+      const sections={all:["freeResourceGrid","premiumResourceGrid","ebookResourceGrid"],free:["freeResourceGrid"],premium:["premiumResourceGrid"],ebooks:["ebookResourceGrid"]};
+      ["freeResourceGrid","premiumResourceGrid","ebookResourceGrid"].forEach(function(id){
+        const el=document.getElementById(id);
+        if(el) el.closest(".resource-subsection").style.display=sections[filter].includes(id) ? "" : "none";
+      });
+      const subjectBlock=document.getElementById("resource-subjects");
+      if(subjectBlock) subjectBlock.style.display=filter==="all" ? "" : "none";
+      const banner=document.querySelector(".premium-banner");
+      if(banner) banner.style.display=(filter==="all"||filter==="premium"||filter==="ebooks") ? "" : "none";
+    });
+  });
+
+  document.querySelectorAll("[data-subject-jump]").forEach(function(link){
+    link.addEventListener("click",function(event){
+      event.preventDefault();
+      const subject=link.getAttribute("data-subject-jump");
+      ["freeResourceGrid","premiumResourceGrid","ebookResourceGrid"].forEach(function(id){
+        const grid=document.getElementById(id);
+        if(!grid)return;
+        grid.closest(".resource-subsection").style.display="";
+        grid.querySelectorAll(".resource-card").forEach(function(card){card.style.display=card.getAttribute("data-subject")===subject ? "" : "none";});
+      });
+      document.querySelectorAll("[data-resource-filter]").forEach(function(b){b.classList.remove("active");});
+      const allButton=document.querySelector('[data-resource-filter="all"]');
+      if(allButton)allButton.classList.add("active");
+      const banner=document.querySelector(".premium-banner");
+      if(banner)banner.style.display="";
+      const block=document.getElementById("resource-subjects");
+      if(block)block.style.display="";
+      document.getElementById("resource-subjects").scrollIntoView({behavior:"smooth",block:"start"});
+    });
+  });
+}
 
 /* =========================
-   LEARNING LIBRARY
+   TEACHER DIRECTORY TABS
 ========================= */
-
-async function loadLearningLibrary(){
-
-  const grid=document.getElementById("resourceGrid");
-
-  if(!grid)return;
-
-  const files=[
-
-    "30_High_Value_Daily_Life_Vocabulary_Intermediate_Advanced.docx",
-
-    "5_Essential_Steps_Learning_to_Read.docx",
-
-    "A Doll’s House Devices & Delicacy_20260822_104019_0000.pdf",
-
-    "Advanced_Linking_Words_and_Phrases.docx",
-
-    "Advanced_Vocabulary_Meanings.docx",
-
-    "Bilingual_Mathematics_Assessment_50_Marks.docx",
-
-    "Common_Mispronounced_and_Misspelled_Words.docx",
-
-    "Grade_4_5_Mental_Math_Italian_English.pdf",
-
-    "Grade_5_Numbers_Bilingual_Italian_English_Worksheet.docx",
-
-    "Grade_5_Subtraction_Bilingual_Italian_English_Worksheet.pdf",
-
-    "IB_English_SL_Intermediate_to_Advanced_Worksheet_and_Answer_Key.pdf",
-
-    "IB_English_SL_Literary_Analysis_Practice_Activities.pdf",
-
-    "Must_Have_to_Should_Ought_to_Worksheet.docx",
-
-    "_Bias in Psychological Research.pdf",
-
-    "chinese_beginner_formal_vocab_worksheet.pdf",
-
-    "urdu_english_italian_formal_vocab_worksheet (1).pdf",
-
-    "Learning_Hub_academic_english_essay_writing_toolkit.pdf",
-
-    "Learning_Hub_adult_esl_speaking_vocabulary_workbook.pdf",
-
-    "Learning_Hub_dyslexia_friendly_english_reading_teens_adults.pdf",
-
-    "Learning_Hub_english_pronunciation_shadowing_practice.pdf",
-
-    "Learning_Hub_everyday_english_chinese_speakers.pdf",
-
-    "Learning_Hub_everyday_english_japanese_speakers.pdf",
-
-    "Learning_Hub_everyday_english_korean_speakers.pdf",
-
-    "Learning_Hub_real_life_english_conversation_practice.pdf"
-
-  ];
-
-
-  try{
-
-    const cards=files.map(function(name,index){
-
-      const type=getResourceType(name);
-      const title=makeResourceTitle(name);
-      const category=getResourceCategory(name);
-
-      /*
-        encodeURIComponent is important here because some
-        filenames contain spaces, apostrophes and brackets.
-      */
-
-      const url="/resources/"+encodeURIComponent(name);
-
-      const image=getResourceImage(category,index);
-
-      return `
-        <article class="resource-card">
-
-          <div class="resource-cover">
-
-            <img
-              src="${escapeHTML(image)}"
-              alt="${escapeHTML(title)} learning resource"
-              loading="lazy"
-              onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=1000&q=85';">
-
-          </div>
-
-          <div class="resource-body">
-
-            <span class="resource-meta">
-              ${escapeHTML(type)} • ${escapeHTML(category)}
-            </span>
-
-            <h3>${escapeHTML(title)}</h3>
-
-            <p>
-              Learning Hub resource for independent study and tutoring support.
-            </p>
-
-            <a
-              href="${escapeHTML(url)}"
-              class="btn btn-gold resource-download"
-              download
-              target="_blank"
-              rel="noopener">
-              Download ${escapeHTML(type)}
-            </a>
-
-          </div>
-
-        </article>
-      `;
-
+function initialiseTeacherTabs(){
+  document.querySelectorAll("[data-teacher-tab]").forEach(function(tab){
+    tab.addEventListener("click",function(){
+      const target=tab.getAttribute("data-teacher-tab");
+      document.querySelectorAll("[data-teacher-tab]").forEach(t=>t.classList.remove("active"));
+      document.querySelectorAll("[data-teacher-panel]").forEach(p=>p.style.display="none");
+      tab.classList.add("active");
+      const panel=document.querySelector('[data-teacher-panel="'+target+'"]');
+      if(panel)panel.style.display="grid";
     });
-
-    grid.innerHTML=cards.join("");
-
-  }catch(error){
-
-    console.error("Learning Hub resource library error:",error);
-
-    grid.innerHTML=`
-      <div class="library-status">
-        Learning resources are temporarily unavailable.
-        Please try again shortly.
-      </div>
-    `;
-  }
+  });
 }
 
+/* =========================
+   FEEDBACK FRONT-END
+   IMPORTANT: connect the form to your real secure backend.
+========================= */
+function initialiseFeedbackForm(){
+  const form=document.getElementById("feedbackForm");
+  const status=document.getElementById("feedbackStatus");
+  if(!form)return;
+
+  form.addEventListener("submit",function(event){
+    event.preventDefault();
+    const rating=form.querySelector('input[name="rating"]:checked');
+    const message=document.getElementById("feedbackMessage").value.trim();
+
+    if(!rating){
+      status.textContent="Please select a star rating.";
+      return;
+    }
+    if(!message && !document.getElementById("feedbackVoice").files.length && !document.getElementById("feedbackVideo").files.length){
+      status.textContent="Please add written feedback, a voice note or a video note.";
+      return;
+    }
+
+    /*
+      Front-end validation is complete. A production deployment should POST
+      this FormData to a secure server endpoint that stores/moderates reviews.
+      No email or media file is published by this page itself.
+    */
+    status.textContent="Thank you. Your feedback is ready to be submitted for moderation.";
+  });
+}
 
 /* =========================
    CONCIERGE OUTSIDE CLICK
@@ -3480,17 +3737,16 @@ window.addEventListener("error",function(event){
 document.addEventListener("DOMContentLoaded",function(){
 
   loadLearningLibrary();
+  initialiseResourceFilters();
+  initialiseTeacherTabs();
+  initialiseFeedbackForm();
   initialiseCardMotion();
 
 });
 
 </script>
-
-
 <!-- TIDIO -->
-<script src="//code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js" async></script>
-
-
+<script async="" src="//code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js"></script>
 <style id="learning-hub-premium-images">
 /* Premium image treatment — presentation only. Existing elements, content and functions remain unchanged. */
 .hero,
@@ -3640,8 +3896,6 @@ document.addEventListener("DOMContentLoaded",function(){
   .quran{background-attachment:scroll}
 }
 </style>
-
-
 <script>
 document.addEventListener("DOMContentLoaded",function(){
   document.querySelectorAll(".faq-question").forEach(function(button){
@@ -3655,50 +3909,293 @@ document.addEventListener("DOMContentLoaded",function(){
   });
 });
 </script>
-
 <script>
 (function(){
-  const button=document.getElementById('lh-start-payment');
-  const status=document.getElementById('lh-payment-status');
-  const email=document.getElementById('lh-test-email');
-  const mobile=document.getElementById('lh-test-mobile');
-  const amount=document.getElementById('lh-test-service');
-  if(!button) return;
-  function setStatus(msg){ status.textContent=msg; }
-  button.addEventListener('click',async function(){
-    const customerEmail=email.value.trim();
-    const customerMobile=mobile.value.trim();
-    if(!customerEmail || !customerMobile){
-      setStatus('Please enter your email and mobile number.');
-      return;
+  const modal=document.getElementById('lh-enquiry-modal');
+  const close=document.getElementById('lh-enquiry-close');
+  const form=document.getElementById('lh-enquiry-form');
+  const title=document.getElementById('lh-enquiry-title');
+  const type=document.getElementById('lh-type');
+  const subject=document.getElementById('lh-subject');
+  const subsubject=document.getElementById('lh-subsubject');
+  const enquiryType=document.getElementById('lh-enquiry-type');
+  const demoDetails=document.getElementById('lh-demo-details');
+  const status=document.getElementById('lh-enquiry-status');
+  if(!modal || !form) return;
+
+  const subjectTopics={
+    "English Language":["Grammar","Vocabulary","Reading","Writing","Speaking","Listening","Pronunciation","Academic English","Business English","IELTS / PTE / TOEFL"],
+    "English Literature":["Poetry","Prose","Drama","Literary Analysis","Unseen Text","Essay Writing"],
+    "Language & Literature":["Language Analysis","Literary Analysis","Comparative Study","Individual Oral","Essay Writing"],
+    "Mathematics":["Arithmetic","Algebra","Geometry","Mensuration","Trigonometry","Functions","Calculus","Probability","Statistics","Problem Solving"],
+    "Additional Mathematics":["Algebra","Functions","Coordinate Geometry","Trigonometry","Calculus","Vectors","Statistics"],
+    "Statistics":["Data Collection","Data Representation","Probability","Distributions","Correlation","Regression","Hypothesis Testing"],
+    "Biology":["Cell Biology","Molecular Biology","Genetics","Enzymes","Photosynthesis","Respiration","Human Physiology","Ecology","Evolution"],
+    "Chemistry":["Atomic Structure","Bonding","Stoichiometry","Organic Chemistry","Energetics","Rates of Reaction","Equilibria","Acids & Bases","Electrochemistry"],
+    "Physics":["Mechanics","Motion","Forces","Energy","Waves","Electricity","Magnetism","Thermal Physics","Optics","Nuclear Physics"],
+    "Psychology":["Research Methods","Biological Psychology","Cognitive Psychology","Developmental Psychology","Social Psychology","Abnormal Psychology"],
+    "Business Studies":["Business Activity","Marketing","Operations","Human Resources","Finance","Business Strategy","Case Study Analysis"],
+    "Business Management":["Business Organisation","Human Resource Management","Finance","Marketing","Operations Management","Strategy"],
+    "Economics":["Microeconomics","Macroeconomics","International Trade","Development Economics","Market Failure","Economic Policy"],
+    "Sociology":["Family","Education","Socialisation","Culture & Identity","Research Methods","Crime & Deviance","Media","Social Stratification"],
+    "Geography":["Physical Geography","Human Geography","Population","Urbanisation","Resources","Climate","Hazards","Fieldwork"],
+    "History":["Source Analysis","Essay Writing","Modern History","World Wars","Colonialism","Pakistan Studies","Cold War","Historical Interpretation"],
+    "Global Politics":["Power","Human Rights","Development","Peace & Conflict","Global Governance","Political Participation"],
+    "Philosophy":["Ethics","Epistemology","Metaphysics","Logic","Philosophical Argument"],
+    "Environmental Systems & Societies":["Ecosystems","Biodiversity","Climate Change","Resource Management","Sustainability"],
+    "Environmental Management":["Natural Resources","Conservation","Pollution","Climate","Agriculture","Energy"],
+    "Computer Science":["Programming","Algorithms","Data Structures","Databases","Networks","Cybersecurity","AI","Computational Thinking"],
+    "Information Technology":["Word Processing","Spreadsheets","Databases","Presentations","Web Design","Digital Communication"],
+    "Design Technology":["Design Process","Materials","Manufacturing","Product Design","CAD","Systems"],
+    "Arabic":["Reading","Writing","Grammar","Vocabulary","Conversation","Quranic Arabic"],
+    "Urdu":["Reading","Writing","Grammar","Vocabulary","Literature","Conversation"],
+    "Chinese":["Pinyin","Characters","Vocabulary","Grammar","Reading","Writing","Speaking"],
+    "Japanese":["Hiragana","Katakana","Kanji","Grammar","Vocabulary","Reading","Speaking"],
+    "Korean":["Hangul","Grammar","Vocabulary","Reading","Writing","Speaking"],
+    "Italian":["Grammar","Vocabulary","Reading","Writing","Speaking","Conversation"],
+    "Quran":["Quran Reading","Tajweed","Memorisation","Translation","Tafsir","Quranic Arabic"],
+    "Islamic Studies":["Aqidah","Seerah","Quran","Hadith","Fiqh","Islamic History","Ethics"],
+    "Academic Writing":["Essay Writing","Research Writing","Critical Analysis","Referencing","Dissertation Support","Academic Vocabulary"],
+    "Research Skills":["Research Methods","Literature Review","Data Collection","Academic Referencing","Research Proposal"],
+    "Study Skills":["Study Planning","Note Taking","Time Management","Exam Technique","Revision Skills","Independent Learning"],
+    "Communication":["Conversation","Presentation Skills","Professional Communication","Difficult Conversations","Email Writing"],
+    "Vocabulary":["Academic Vocabulary","Everyday English","Professional Vocabulary","Phrasal Verbs","Idioms","Collocations"],
+    "Reading":["Reading Fluency","Comprehension","Critical Reading","Phonics","Vocabulary in Context"],
+    "Speaking":["Conversation","Fluency","Pronunciation","Presentation","Interview Skills","Public Speaking"],
+    "Writing":["Creative Writing","Essay Writing","Report Writing","Email Writing","Academic Writing","Grammar & Accuracy"]
+  };
+
+  function populateSubsubjects(){
+    const topics=subjectTopics[subject.value]||[];
+    subsubject.innerHTML='<option value="">Select sub-subject / topic area</option>';
+    topics.forEach(function(topic){
+      const option=document.createElement('option');
+      option.value=topic;
+      option.textContent=topic;
+      subsubject.appendChild(option);
+    });
+    if(subject.value==='Other') subsubject.innerHTML+='<option value="Other">Other</option>';
+  }
+
+  function updateDemoFields(){
+    demoDetails.style.display=enquiryType.value==='Demo Booking ($3)'?'block':'none';
+  }
+
+  function openEnquiry(context){
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    title.textContent=context ? 'Request: '+context : 'Request a Course, Resource or Custom Learning Material';
+    const packageField=document.getElementById('lh-package');
+    if(packageField && context){
+      const match=[...packageField.options].find(function(o){return o.textContent.toLowerCase().includes(context.toLowerCase().split(' — ')[0]);});
+      if(match) packageField.value=match.value;
     }
-    button.disabled=true;
-    setStatus('Preparing secure checkout…');
-    try{
-      const res=await fetch('/api/rapidpay/create-checkout',{
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({email:customerEmail,mobile:customerMobile,amount:Number(amount.value)})
-      });
-      const raw=await res.text();
-      let data={};
-      if(raw.trim()){
-        try{ data=JSON.parse(raw); }
-        catch(e){ throw new Error('Server returned an invalid response (HTTP '+res.status+').'); }
-      }
-      if(!res.ok) throw new Error(data.error||'Unable to start secure payment.');
-      if(!data.checkoutUrl) throw new Error('Rapid Gateway did not return a checkout URL.');
-      setStatus('Redirecting to secure Rapid Gateway checkout…');
-      window.location.href=data.checkoutUrl;
-    }catch(err){
-      console.error(err);
-      setStatus(err.message||'Unable to start payment. Please try again.');
-    }finally{
-      button.disabled=false;
+    if(context && context.toLowerCase().includes('demo')){
+      type.value='Course';
+      enquiryType.value='Demo Booking ($3)';
+      updateDemoFields();
     }
+    document.getElementById('lh-name').focus();
+  }
+
+  function closeEnquiry(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+  }
+
+  subject.addEventListener('change',populateSubsubjects);
+  enquiryType.addEventListener('change',updateDemoFields);
+
+  document.querySelectorAll('[data-open-enquiry]').forEach(function(btn){
+    btn.addEventListener('click',function(){ openEnquiry(btn.getAttribute('data-open-enquiry')); });
+  });
+
+  close.addEventListener('click',closeEnquiry);
+  modal.addEventListener('click',function(e){ if(e.target===modal) closeEnquiry(); });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && modal.classList.contains('open')) closeEnquiry();
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const data=new FormData(form);
+    const extras=data.getAll('extras').join(', ')||'None';
+    const reference=document.getElementById('lh-reference').files[0];
+
+    const summary=[
+      'LEARNING HUB REQUEST',
+      'Name: '+data.get('name'),
+      'Email: '+data.get('email'),
+      'Learning Option: '+(data.get('learning_option')||'Not specified'),
+      'Resource Type: '+data.get('resource_type'),
+      'Other Resource Type: '+(data.get('other_resource_type')||'Not specified'),
+      'Subject: '+data.get('subject'),
+      'Sub-subject / Topic Area: '+(data.get('subsubject')||'Not specified'),
+      'Specific Topic / Chapter: '+(data.get('specific_topic')||'Not specified'),
+      'Other Subject / Topic: '+(data.get('other_subject')||'Not specified'),
+      'Board / Curriculum: '+(data.get('board')||'Not specified'),
+      'Programme / Level: '+(data.get('level')||'Not specified'),
+      'Grade / Year: '+(data.get('grade')||'Not specified'),
+      'Purpose: '+(data.get('purpose')||'Not specified'),
+      'Preferred Format: '+(data.get('format')||'Not specified'),
+      'Quantity: '+(data.get('quantity')||'Not specified'),
+      'Deadline: '+(data.get('deadline')||'Not specified'),
+      'Currency: '+data.get('currency'),
+      'Budget: '+data.get('budget'),
+      'Budget Flexibility: '+data.get('budget_flexibility'),
+      'Language: '+data.get('language'),
+      'Enquiry Type: '+data.get('enquiry_type'),
+      'Preferred Response: '+data.get('preferred_response'),
+      'Additional Requirements: '+extras,
+      'Reference File: '+(reference ? reference.name : 'None'),
+      'Details: '+data.get('message')
+    ].join('\n');
+
+    status.textContent=reference
+      ? 'Your request is ready. Your email app will open; please attach the selected reference file before sending.'
+      : 'Your request is ready. Your email app will open so you can send it to Learning Hub.';
+
+    window.location.href='mailto:hublearning117@gmail.com?subject='+
+      encodeURIComponent('Learning Hub Request — '+(data.get('resource_type')||'General'))+
+      '&body='+encodeURIComponent(summary);
   });
 })();
 </script>
+<script>
+(function(){
+  const modal=document.getElementById('lh-enquiry-modal');
+  const close=document.getElementById('lh-enquiry-close');
+  const form=document.getElementById('lh-enquiry-form');
+  const title=document.getElementById('lh-enquiry-title');
+  const type=document.getElementById('lh-type');
+  const subject=document.getElementById('lh-subject');
+  const subsubject=document.getElementById('lh-subsubject');
+  const enquiryType=document.getElementById('lh-demo');
+  const status=document.getElementById('lh-enquiry-status');
+  if(!modal || !form) return;
 
+  const subjectTopics = {
+    "English Language":["Grammar","Vocabulary","Reading","Writing","Speaking","Listening","Pronunciation","Academic English","Business English","IELTS / PTE / TOEFL"],
+    "English Literature":["Poetry","Prose","Drama","Literary Analysis","Unseen Text","Essay Writing"],
+    "Language & Literature":["Language Analysis","Literary Analysis","Comparative Study","Individual Oral","Essay Writing"],
+    "Mathematics":["Arithmetic","Algebra","Geometry","Mensuration","Trigonometry","Functions","Calculus","Probability","Statistics","Problem Solving"],
+    "Additional Mathematics":["Algebra","Functions","Coordinate Geometry","Trigonometry","Calculus","Vectors","Statistics"],
+    "Statistics":["Data Collection","Data Representation","Probability","Distributions","Correlation","Regression","Hypothesis Testing"],
+    "Biology":["Cell Biology","Molecular Biology","Genetics","Enzymes","Photosynthesis","Respiration","Human Physiology","Ecology","Evolution"],
+    "Chemistry":["Atomic Structure","Bonding","Stoichiometry","Organic Chemistry","Energetics","Rates of Reaction","Equilibria","Acids & Bases","Electrochemistry"],
+    "Physics":["Mechanics","Motion","Forces","Energy","Waves","Electricity","Magnetism","Thermal Physics","Optics","Nuclear Physics"],
+    "Psychology":["Research Methods","Biological Psychology","Cognitive Psychology","Developmental Psychology","Social Psychology","Abnormal Psychology"],
+    "Business Studies":["Business Activity","Marketing","Operations","Human Resources","Finance","Business Strategy","Case Study Analysis"],
+    "Business Management":["Business Organisation","Human Resource Management","Finance","Marketing","Operations Management","Strategy"],
+    "Economics":["Microeconomics","Macroeconomics","International Trade","Development Economics","Market Failure","Economic Policy"],
+    "Sociology":["Family","Education","Socialisation","Culture & Identity","Research Methods","Crime & Deviance","Media","Social Stratification"],
+    "Geography":["Physical Geography","Human Geography","Population","Urbanisation","Resources","Climate","Hazards","Fieldwork"],
+    "History":["Source Analysis","Essay Writing","Modern History","World Wars","Colonialism","Pakistan Studies","Cold War","Historical Interpretation"],
+    "Global Politics":["Power","Human Rights","Development","Peace & Conflict","Global Governance","Political Participation"],
+    "Philosophy":["Ethics","Epistemology","Metaphysics","Logic","Philosophical Argument"],
+    "Environmental Systems & Societies":["Ecosystems","Biodiversity","Climate Change","Pollution","Resource Management","Sustainability"],
+    "Environmental Management":["Natural Resources","Conservation","Pollution","Climate","Agriculture","Energy"],
+    "Computer Science":["Programming","Algorithms","Data Structures","Databases","Networks","Cybersecurity","AI","Computational Thinking"],
+    "Information Technology":["Word Processing","Spreadsheets","Databases","Presentations","Web Design","Digital Communication"],
+    "Design Technology":["Design Process","Materials","Manufacturing","Product Design","CAD","Systems"],
+    "Arabic":["Reading","Writing","Grammar","Vocabulary","Conversation","Quranic Arabic"],
+    "Urdu":["Reading","Writing","Grammar","Vocabulary","Literature","Conversation"],
+    "Chinese":["Pinyin","Characters","Vocabulary","Grammar","Reading","Writing","Speaking"],
+    "Japanese":["Hiragana","Katakana","Kanji","Grammar","Vocabulary","Reading","Speaking"],
+    "Korean":["Hangul","Grammar","Vocabulary","Reading","Writing","Speaking"],
+    "Italian":["Grammar","Vocabulary","Reading","Writing","Speaking","Conversation"],
+    "Quran":["Quran Reading","Tajweed","Memorisation","Translation","Tafsir","Quranic Arabic"],
+    "Islamic Studies":["Aqidah","Seerah","Quran","Hadith","Fiqh","Islamic History","Ethics"],
+    "Academic Writing":["Essay Writing","Research Writing","Critical Analysis","Referencing","Dissertation Support","Academic Vocabulary"],
+    "Research Skills":["Research Methods","Literature Review","Data Collection","Academic Referencing","Research Proposal"],
+    "Study Skills":["Study Planning","Note Taking","Time Management","Exam Technique","Revision Skills","Independent Learning"],
+    "Communication":["Conversation","Presentation Skills","Professional Communication","Difficult Conversations","Email Writing"],
+    "Vocabulary":["Academic Vocabulary","Everyday English","Professional Vocabulary","Phrasal Verbs","Idioms","Collocations"],
+    "Reading":["Reading Fluency","Comprehension","Critical Reading","Phonics","Vocabulary in Context"],
+    "Speaking":["Conversation","Fluency","Pronunciation","Presentation","Interview Skills","Public Speaking"],
+    "Writing":["Creative Writing","Essay Writing","Report Writing","Email Writing","Academic Writing","Grammar & Accuracy"]
+  };
+
+  function populateSubsubjects(){
+    const selected=subject.value;
+    const topics=subjectTopics[selected] || [];
+    subsubject.innerHTML='<option value="">Select sub-subject / topic</option>';
+    topics.forEach(function(topic){
+      const option=document.createElement('option');
+      option.value=topic;
+      option.textContent=topic;
+      subsubject.appendChild(option);
+    });
+    if(selected==='Other'){
+      subsubject.innerHTML+='<option value="Other">Other</option>';
+    }
+  }
+
+  function openEnquiry(context){
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden','false');
+    title.textContent=context ? 'Request: '+context : 'Request a Course or Resource';
+
+    if(context && context.toLowerCase().includes('quran')){
+      subject.value='Quran';
+      populateSubsubjects();
+    }
+    if(context && context.toLowerCase().includes('demo')){
+      type.value='Course';
+      enquiryType.value='Demo Booking ($3)';
+    }
+
+    document.getElementById('lh-name').focus();
+  }
+
+  function closeEnquiry(){
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden','true');
+  }
+
+  subject.addEventListener('change',populateSubsubjects);
+
+  document.querySelectorAll('[data-open-enquiry]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      openEnquiry(btn.getAttribute('data-open-enquiry'));
+    });
+  });
+
+  close.addEventListener('click',closeEnquiry);
+  modal.addEventListener('click',function(e){
+    if(e.target===modal) closeEnquiry();
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape' && modal.classList.contains('open')) closeEnquiry();
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    const data=new FormData(form);
+
+    const summary=[
+      'Learning Hub Resource / Course Request',
+      'Name: '+data.get('name'),
+      'Email: '+data.get('email'),
+      'Resource Type: '+data.get('resource_type'),
+      'Other Resource Type: '+(data.get('other_resource_type')||'Not specified'),
+      'Subject: '+data.get('subject'),
+      'Sub-subject / Topic: '+(data.get('subsubject')||'Not specified'),
+      'Other Subject / Topic: '+(data.get('other_subject')||'Not specified'),
+      'Programme/Level: '+(data.get('level')||'Not specified'),
+      'Budget: '+data.get('budget'),
+      'Enquiry Type: '+data.get('enquiry_type'),
+      'Requirements: '+data.get('message')
+    ].join('\n');
+
+    const mailto='mailto:hublearning117@gmail.com?subject='+
+      encodeURIComponent('Learning Hub Request — '+(data.get('resource_type')||'General'))+
+      '&body='+encodeURIComponent(summary);
+
+    status.textContent='Your request is ready. Your email app will open so you can send it to Learning Hub.';
+    window.location.href=mailto;
+  });
+})();
+</script>
 </body>
 </html>
