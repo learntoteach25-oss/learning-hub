@@ -1588,7 +1588,7 @@ footer p{
 .skip-link{position:fixed;left:14px;top:-60px;z-index:3000;background:#f0d58e;color:#111;padding:10px 16px;border-radius:999px;font-weight:700}.skip-link:focus{top:14px}
 
 .course-book-btn{margin-top:10px;align-self:flex-start;border:1px solid rgba(224,190,105,.65);background:transparent;color:#e9cc82;border-radius:999px;padding:7px 14px;font:inherit;font-size:.82rem;font-weight:700;cursor:pointer;transition:.2s ease}.course-book-btn:hover{background:#e0be69;color:#111}
-</style>
+.card-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.card-actions .btn{display:inline-flex}.exam-book-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:8px;padding:6px 12px;border:1px solid rgba(224,190,105,.65);border-radius:999px;color:#e9cc82;text-decoration:none;font-size:.76rem;font-weight:700}.exam-book-btn:hover{background:#e0be69;color:#111}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do online lessons work?","acceptedAnswer":{"@type":"Answer","text":"Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level."}},{"@type":"Question","name":"Which learners can join Learning Hub?","acceptedAnswer":{"@type":"Answer","text":"Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support."}},{"@type":"Question","name":"Which international boards do you support?","acceptedAnswer":{"@type":"Answer","text":"Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning."}},{"@type":"Question","name":"Can adults improve their English?","acceptedAnswer":{"@type":"Answer","text":"Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals."}}]}</script></head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1618,7 +1618,7 @@ footer p{
 <a href="#teacher">Teach</a>
 </div>
 <div class="nav-actions">
-<a class="btn btn-gold" href="billing.html?type=booking">Book Now</a>
+<a class="btn btn-gold" href="billing.html?type=booking&v=20260914">Book Now</a>
 <button aria-expanded="false" aria-label="Open menu" class="mobile-toggle" id="mobileToggle" onclick="toggleMenu()">☰</button>
 </div>
 </div>
@@ -1637,7 +1637,7 @@ footer p{
       </p>
 <div class="hero-buttons">
 <a class="btn btn-gold" href="#programmes">Explore Learning</a>
-<a class="btn btn-outline" href="billing.html?type=booking">Book a Lesson</a>
+<a class="btn btn-outline" href="billing.html?type=booking&v=20260914">Book a Lesson</a>
 </div>
 <div class="hero-statbar">
 <div class="hero-stat">
@@ -1718,7 +1718,7 @@ footer p{
 <div class="card-body">
 <h3>Academic Tutoring</h3>
 <p>School subjects, homework support, concept building, revision and exam-focused learning.</p>
-<a class="card-link" href="/subjects/">Explore Subjects →</a>
+<div class="card-actions"><a class="btn btn-gold" href="billing.html?type=booking&programme=School%20Subjects&v=20260914">Book Now</a></div>
 </div>
 </article>
 <article class="visual-card">
@@ -1729,7 +1729,7 @@ footer p{
 <div class="card-body">
 <h3>International Curriculum</h3>
 <p>IB, Cambridge and other international qualification support for global learners.</p>
-<a class="card-link" href="/international-curriculum/">View Boards →</a>
+<div class="card-actions"><a class="btn btn-gold" href="billing.html?type=booking&programme=International%20Curriculum&v=20260914">Book Now</a></div>
 </div>
 </article>
 <article class="visual-card">
@@ -1740,7 +1740,7 @@ footer p{
 <div class="card-body">
 <h3>English Development</h3>
 <p>Academic English, communication, speaking, writing, vocabulary and language confidence.</p>
-<a class="card-link" href="/english/">Learn English →</a>
+<div class="card-actions"><a class="btn btn-gold" href="billing.html?type=booking&programme=General%20Language&v=20260914">Book Now</a></div>
 </div>
 </article>
 <article class="visual-card">
@@ -1751,7 +1751,7 @@ footer p{
 <div class="card-body">
 <h3>Exam Preparation</h3>
 <p>Structured preparation, practice questions, feedback and examination techniques.</p>
-<a class="card-link" href="/exam-preparation/">Explore Exams →</a>
+<div class="card-actions"><a class="btn btn-gold" href="billing.html?type=booking&programme=Exam%20Preparation&v=20260914">Book Now</a></div>
 </div>
 </article>
 <article class="visual-card">
@@ -1762,7 +1762,7 @@ footer p{
 <div class="card-body">
 <h3>Study Skills</h3>
 <p>Organisation, academic writing, independent study, research and confidence.</p>
-<a class="card-link" href="#methodology">Our Method →</a>
+<div class="card-actions"><a class="btn btn-gold" href="billing.html?type=booking&programme=Study%20Skills&v=20260914">Book Now</a></div>
 </div>
 </article>
 <article class="visual-card">
@@ -1773,7 +1773,7 @@ footer p{
 <div class="card-body">
 <h3>Specialist Learning Support</h3>
 <p>Personalised approaches for learning differences, communication and confidence.</p>
-<a class="card-link" href="#support">Explore Support →</a>
+<div class="card-actions"><a class="btn btn-gold" href="billing.html?type=booking&programme=Specialist%20Learning%20Support&v=20260914">Book Now</a></div>
 </div>
 </article>
 </div>
@@ -1793,22 +1793,22 @@ footer p{
         adults and beginners, with flexible online learning.
       </p>
 <div class="course-list">
-<div class="course-item"><strong>Noorani Qaida</strong><span>Foundational Quran reading</span><button class="course-book-btn" data-open-enquiry="Noorani Qaida" type="button">Book Now</button></div>
-<div class="course-item"><strong>Quran Reading</strong><span>Fluency and accuracy</span><button class="course-book-btn" data-open-enquiry="Quran Reading" type="button">Book Now</button></div>
-<div class="course-item"><strong>Tajweed</strong><span>Rules and correct recitation</span><button class="course-book-btn" data-open-enquiry="Tajweed" type="button">Book Now</button></div>
-<div class="course-item"><strong>Hifz Support</strong><span>Memorisation and revision</span><button class="course-book-btn" data-open-enquiry="Hifz Support" type="button">Book Now</button></div>
-<div class="course-item"><strong>Quran Translation</strong><span>Understand the meaning</span><button class="course-book-btn" data-open-enquiry="Quran Translation" type="button">Book Now</button></div>
-<div class="course-item"><strong>Tafseer</strong><span>Context and explanation</span><button class="course-book-btn" data-open-enquiry="Tafseer" type="button">Book Now</button></div>
-<div class="course-item"><strong>Arabic for Quran</strong><span>Language foundations</span><button class="course-book-btn" data-open-enquiry="Arabic for Quran" type="button">Book Now</button></div>
-<div class="course-item"><strong>Quran for Adults</strong><span>Flexible adult learning</span><button class="course-book-btn" data-open-enquiry="Quran for Adults" type="button">Book Now</button></div>
-<div class="course-item"><strong>Islamic Studies</strong><span>Structured Islamic education</span><button class="course-book-btn" data-open-enquiry="Islamic Studies" type="button">Book Now</button></div>
-<div class="course-item"><strong>Seerah</strong><span>Life of Prophet Muhammad ﷺ</span><button class="course-book-btn" data-open-enquiry="Seerah" type="button">Book Now</button></div>
-<div class="course-item"><strong>Hadith Studies</strong><span>Introduction and learning</span><button class="course-book-btn" data-open-enquiry="Hadith Studies" type="button">Book Now</button></div>
-<div class="course-item"><strong>Islamic History</strong><span>People, events and civilisation</span><button class="course-book-btn" data-open-enquiry="Islamic History" type="button">Book Now</button></div>
-<div class="course-item"><strong>Fiqh</strong><span>Islamic practices and principles</span><button class="course-book-btn" data-open-enquiry="Fiqh" type="button">Book Now</button></div>
-<div class="course-item"><strong>Duas</strong><span>Daily supplications</span><button class="course-book-btn" data-open-enquiry="Duas" type="button">Book Now</button></div>
-<div class="course-item"><strong>Salah Learning</strong><span>Prayer guidance</span><button class="course-book-btn" data-open-enquiry="Salah Learning" type="button">Book Now</button></div>
-<div class="course-item"><strong>Islamic Manners</strong><span>Character and everyday conduct</span><button class="course-book-btn" data-open-enquiry="Islamic Manners" type="button">Book Now</button></div>
+<div class="course-item"><strong>Noorani Qaida</strong><span>Foundational Quran reading</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Noorani%20Qaida">Book Now</a></div>
+<div class="course-item"><strong>Quran Reading</strong><span>Fluency and accuracy</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Quran%20Reading">Book Now</a></div>
+<div class="course-item"><strong>Tajweed</strong><span>Rules and correct recitation</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Tajweed">Book Now</a></div>
+<div class="course-item"><strong>Hifz Support</strong><span>Memorisation and revision</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Hifz%20Support">Book Now</a></div>
+<div class="course-item"><strong>Quran Translation</strong><span>Understand the meaning</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Quran%20Translation">Book Now</a></div>
+<div class="course-item"><strong>Tafseer</strong><span>Context and explanation</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Tafseer">Book Now</a></div>
+<div class="course-item"><strong>Arabic for Quran</strong><span>Language foundations</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Arabic%20for%20Quran">Book Now</a></div>
+<div class="course-item"><strong>Quran for Adults</strong><span>Flexible adult learning</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Quran%20for%20Adults">Book Now</a></div>
+<div class="course-item"><strong>Islamic Studies</strong><span>Structured Islamic education</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Islamic%20Studies">Book Now</a></div>
+<div class="course-item"><strong>Seerah</strong><span>Life of Prophet Muhammad ﷺ</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Seerah">Book Now</a></div>
+<div class="course-item"><strong>Hadith Studies</strong><span>Introduction and learning</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Hadith%20Studies">Book Now</a></div>
+<div class="course-item"><strong>Islamic History</strong><span>People, events and civilisation</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Islamic%20History">Book Now</a></div>
+<div class="course-item"><strong>Fiqh</strong><span>Islamic practices and principles</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Fiqh">Book Now</a></div>
+<div class="course-item"><strong>Duas</strong><span>Daily supplications</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Duas">Book Now</a></div>
+<div class="course-item"><strong>Salah Learning</strong><span>Prayer guidance</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Salah%20Learning">Book Now</a></div>
+<div class="course-item"><strong>Islamic Manners</strong><span>Character and everyday conduct</span><a class="course-book-btn" href="billing.html?type=booking&programme=Quran%20%2F%20Islamic%20Studies&subject=Islamic%20Manners">Book Now</a></div>
 </div>
 </div>
 </div>
@@ -1990,54 +1990,54 @@ footer p{
 <p>Current Cambridge syllabus naming and codes are shown where applicable.</p>
 </div>
 <div class="exam-grid">
-<div class="exam"><strong>Accounting — 7707</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Arabic — 3180</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Art &amp; Design — 6090</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Biology — 5090</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Business — 7081</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Business Studies — 7115</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Chemistry — 5070</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Computer Science — 2210</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Economics — 2281</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>English Language — 1123</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Environmental Management — 5014</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Geography — 2217</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Global Perspectives — 2069</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>History — 2147</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Islamic Studies — 2068</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Islamiyat — 2058</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Literature in English — 2010</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Mathematics D — 4024</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Additional Mathematics — 4037</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Pakistan Studies — 2059</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Physics — 5054</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Science — Combined — 5129</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Sociology — 2251</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Statistics — 4040</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Travel &amp; Tourism — 7096</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Urdu First Language — 3247</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Urdu Second Language — 3248</strong><span>Cambridge O Level</span></div>
-<div class="exam"><strong>Biology — 9700</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Chemistry — 9701</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Physics — 9702</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Mathematics — 9709</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Economics — 9708</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>English Language — 9093</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>English Literature — 9695</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>English Language &amp; Literature — 8695</strong><span>AS Level only</span></div>
-<div class="exam"><strong>English General Paper — 8021</strong><span>AS Level only</span></div>
-<div class="exam"><strong>Environmental Management — 8291</strong><span>AS Level only</span></div>
-<div class="exam"><strong>Further Mathematics — 9231</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Geography — 9696</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Global Perspectives &amp; Research — 9239</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>History — 9489</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Information Technology — 9626</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Islamic Studies — 9488</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Law — 9084</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Marine Science — 9693</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Psychology — 9990</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Sociology — 9699</strong><span>Cambridge AS &amp; A Level</span></div>
-<div class="exam"><strong>Business — 9609</strong><span>Cambridge AS &amp; A Level</span></div>
+<div class="exam"><strong>Accounting — 7707</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Accounting&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Arabic — 3180</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Arabic&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Art &amp; Design — 6090</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Art &amp; Design&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Biology — 5090</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Biology&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Business — 7081</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Business&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Business Studies — 7115</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Business Studies&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Chemistry — 5070</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Chemistry&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Computer Science — 2210</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Computer Science&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Economics — 2281</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Economics&v=20260914">Book Now</a></div>
+<div class="exam"><strong>English Language — 1123</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=English Language&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Environmental Management — 5014</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Environmental Management&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Geography — 2217</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Geography&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Global Perspectives — 2069</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Global Perspectives&v=20260914">Book Now</a></div>
+<div class="exam"><strong>History — 2147</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=History&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Islamic Studies — 2068</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Islamic Studies&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Islamiyat — 2058</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Islamiyat&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Literature in English — 2010</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Literature in English&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Mathematics D — 4024</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Mathematics D&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Additional Mathematics — 4037</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Additional Mathematics&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Pakistan Studies — 2059</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Pakistan Studies&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Physics — 5054</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Physics&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Science — Combined — 5129</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Science&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Sociology — 2251</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Sociology&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Statistics — 4040</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Statistics&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Travel &amp; Tourism — 7096</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Travel &amp; Tourism&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Urdu First Language — 3247</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Urdu First Language&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Urdu Second Language — 3248</strong><span>Cambridge O Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Urdu Second Language&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Biology — 9700</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Biology&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Chemistry — 9701</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Chemistry&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Physics — 9702</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Physics&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Mathematics — 9709</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Mathematics&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Economics — 9708</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Economics&v=20260914">Book Now</a></div>
+<div class="exam"><strong>English Language — 9093</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=English Language&v=20260914">Book Now</a></div>
+<div class="exam"><strong>English Literature — 9695</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=English Literature&v=20260914">Book Now</a></div>
+<div class="exam"><strong>English Language &amp; Literature — 8695</strong><span>AS Level only</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=English Language &amp; Literature&v=20260914">Book Now</a></div>
+<div class="exam"><strong>English General Paper — 8021</strong><span>AS Level only</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=English General Paper&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Environmental Management — 8291</strong><span>AS Level only</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Environmental Management&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Further Mathematics — 9231</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Further Mathematics&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Geography — 9696</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Geography&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Global Perspectives &amp; Research — 9239</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Global Perspectives &amp; Research&v=20260914">Book Now</a></div>
+<div class="exam"><strong>History — 9489</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=History&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Information Technology — 9626</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Information Technology&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Islamic Studies — 9488</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Islamic Studies&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Law — 9084</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Law&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Marine Science — 9693</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Marine Science&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Psychology — 9990</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Psychology&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Sociology — 9699</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Sociology&v=20260914">Book Now</a></div>
+<div class="exam"><strong>Business — 9609</strong><span>Cambridge AS &amp; A Level</span><a class="exam-book-btn" href="billing.html?type=booking&programme=Exam%20Preparation&subject=Business&v=20260914">Book Now</a></div>
 </div>
 </div>
 </section>
@@ -3027,7 +3027,7 @@ footer p{
 </div>
 <div class="contact-box" id="payments">
 <h3>Secure Online Payments</h3>
-<p style="margin-top:12px;">Learning Hub uses an authorised online payment gateway to collect payment for confirmed tutoring, examination-preparation services and eligible digital learning resources. Customers receive the applicable PKR amount and payment instructions after their selected service and requirements have been reviewed.</p>
+<p style="margin-top:12px;">Learning Hub uses an authorised online payment gateway to collect payment for confirmed tutoring, examination-preparation services and eligible digital learning resources. Learning Hub prices are displayed in USD. Optional currency conversion is provided only as a customer reference; the final supported payment currency is determined by the payment provider.</p>
 <div class="payment-info-card">
 <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
 <strong>How payment works</strong>
@@ -3035,7 +3035,7 @@ footer p{
 </div>
 <ol style="margin:12px 0 0 20px;">
 <li>Choose a service or submit a learning request.</li>
-<li>Learning Hub confirms availability, requirements and the applicable PKR amount.</li>
+<li>Learning Hub displays the confirmed price in USD. Any local-currency conversion is optional and remains the customer’s responsibility or is determined by the payment provider.</li>
 <li>Customer receives the checkout/payment instructions.</li>
 <li>Payment is completed through the authorised gateway.</li>
 <li>Learning Hub confirms the booking and delivers the agreed lesson, programme or digital resource.</li>
@@ -3052,11 +3052,11 @@ footer p{
 <div>
 <label for="lh-test-service">Test payment scenario</label>
 <select id="lh-test-service">
-<option value="100">TEST — PKR 100 (Success)</option>
-<option value="200">TEST — PKR 200 (Failed)</option>
-<option value="300">TEST — PKR 300 (Pending)</option>
-<option value="400">TEST — PKR 400 (Expired)</option>
-<option value="500">TEST — PKR 500 (Timeout)</option>
+<option value="100">TEST — 100 (Success)</option>
+<option value="200">TEST — 200 (Failed)</option>
+<option value="300">TEST — 300 (Pending)</option>
+<option value="400">TEST — 400 (Expired)</option>
+<option value="500">TEST — 500 (Timeout)</option>
 </select>
 </div>
 <div>
@@ -3138,7 +3138,7 @@ footer p{
 <a href="#teacher">Apply to Teach</a>
 <a href="#contact">Contact</a>
 <a href="policies.html">Policies &amp; Terms</a>
-<a href="billing.html">Billing &amp; Invoices</a>
+<a href="billing.html">Checkout &amp; Payment</a>
 </div>
 </div>
 <div class="footer-bottom">
@@ -3449,7 +3449,7 @@ function renderResourceCards(items, gridId){
     const type=resourceTypeLabel(item.name);
     const isPremium=item.type==="premium";
     const price=isPremium ? Number(item.price||5) : 0;
-    const url="billing.html?type=resource&resource="+encodeURIComponent(title)+"&price="+price+"&file="+encodeURIComponent(item.name)+(item.pages?"&pages="+encodeURIComponent(item.pages):"");
+    const url="billing.html?type=resource&v=20260914&resource="+encodeURIComponent(title)+"&price="+price+"&file="+encodeURIComponent(item.name)+(item.pages?"&pages="+encodeURIComponent(item.pages):"");
     return `
       <article class="resource-card" data-resource-type="${escapeHTML(item.type)}" data-subject="${escapeHTML(item.subject)}">
         <div class="resource-cover ${isPremium ? "locked" : ""}">
@@ -3459,8 +3459,8 @@ function renderResourceCards(items, gridId){
         <div class="resource-body">
           <span class="resource-meta">${escapeHTML(type)} • ${escapeHTML(item.subject)}</span>
           <h3>${escapeHTML(title)}</h3>
-          <p>${isPremium ? "Premium digital resource. Unlock it, review the price, place your order and proceed to secure payment." : "Free Learning Hub resource for independent study and tutoring support."}</p>
-          <a href="${escapeHTML(url)}" class="btn btn-gold resource-download">${isPremium ? "Unlock & Pay" : "Open Free Download"}</a>
+          <p>${isPremium ? "Premium digital resource. Book now, review the price, place your order and proceed to secure payment." : "Free Learning Hub resource for independent study and tutoring support."}</p>
+          <a href="${escapeHTML(url)}" class="btn btn-gold resource-download">${isPremium ? "Book Now" : "Open Free Download"}</a>
         </div>
       </article>`;
   }).join("");
