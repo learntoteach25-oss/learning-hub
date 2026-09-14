@@ -180,7 +180,7 @@ p{color:var(--muted)}
   gap:22px
 }
 
-.nav-links a{
+.nav-links a{white-space:nowrap;
   font-size:.78rem;
   color:#ddd7cc;
   transition:.25s
@@ -1322,7 +1322,7 @@ footer p{
 
   .nav-links.mobile-open{display:flex}
 
-  .nav-links a{
+  .nav-links a{white-space:nowrap;
     padding:13px 10px;
     border-bottom:1px solid rgba(255,255,255,.06)
   }
@@ -1565,7 +1565,7 @@ footer p{
 @media(max-width:1320px){
   .nav-links{display:none;position:absolute;top:82px;left:18px;right:18px;flex-direction:column;align-items:stretch;gap:0;padding:15px;background:#0d0d0d;border:1px solid rgba(201,164,92,.25);border-radius:18px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
   .nav-links.mobile-open{display:flex}
-  .nav-links a{padding:13px 10px;border-bottom:1px solid rgba(255,255,255,.06)}
+  .nav-links a{white-space:nowrap;padding:13px 10px;border-bottom:1px solid rgba(255,255,255,.06)}
   .nav-links a:last-child{border-bottom:0}
   .mobile-toggle{display:block}
 }
@@ -1603,7 +1603,7 @@ footer p{
 </span>
 </a>
 <div class="nav-links" id="mainNav">
-<a href="?checkout=booking">Billing</a>
+<a href="?checkout=booking">Checkout</a>
 <a href="#programmes">Programmes</a>
 <a href="#subjects">Subjects</a>
 <a href="#quran">Quran &amp; Islamic Studies</a>
@@ -2249,16 +2249,6 @@ footer p{
 </div>
 </div>
 </section>
-<section class="outcomes" id="seo-pathways">
-<div class="container">
-<div class="section-heading center"><div class="eyebrow">Explore Learning Hub</div><h2>Find the pathway that fits your goal.</h2><p>Explore focused pages for tutoring, international curricula, English, exams and individual subjects.</p></div>
-<div class="outcomes-grid">
-<article class="outcome-card"><div class="outcome-number">01 / TUTORING</div><h3>Online Tutoring</h3><p>Personalised academic support for school, university and adult learners.</p><a class="card-link" href="/online-tutoring/">Explore online tutoring →</a></article>
-<article class="outcome-card"><div class="outcome-number">02 / CURRICULUM</div><h3>International Curriculum</h3><p>Explore IB, IGCSE, GCSE, O Level and A Level pathways.</p><a class="card-link" href="/international-curriculum/">Explore curricula →</a></article>
-<article class="outcome-card"><div class="outcome-number">03 / ENGLISH</div><h3>English &amp; Communication</h3><p>Build academic English, speaking, writing, vocabulary and confidence.</p><a class="card-link" href="/english/">Improve your English →</a></article>
-<article class="outcome-card"><div class="outcome-number">04 / EXAMS</div><h3>IELTS, PTE &amp; More</h3><p>Structured preparation, practice and feedback for English proficiency tests.</p><a class="card-link" href="/exam-preparation/ielts/">Explore IELTS preparation →</a></article>
-</div>
-</div>
 </section>
 <!-- GLOBAL LEARNERS -->
 <section class="global-learners" id="global-learners">
@@ -2508,7 +2498,7 @@ footer p{
 </div>
 <div class="full">
 <button class="btn btn-gold" type="submit">Submit Feedback</button>
-<div class="feedback-note" id="feedbackStatus"></div>
+<div class="feedback-note" id="feedbackStatus" aria-live="polite"></div>
 </div>
 </div>
 </form>
@@ -3551,12 +3541,20 @@ function initialiseFeedbackForm(){
       return;
     }
 
-    /*
-      Front-end validation is complete. A production deployment should POST
-      this FormData to a secure server endpoint that stores/moderates reviews.
-      No email or media file is published by this page itself.
-    */
-    status.textContent="Thank you. Your feedback is ready to be submitted for moderation.";
+    status.textContent="Submitting your feedback securely…";
+    const submitButton=form.querySelector('button[type="submit"]');
+    if(submitButton) submitButton.disabled=true;
+    fetch('/api/feedback',{method:'POST',body:new FormData(form)})
+      .then(async function(response){
+        let data={}; try{data=await response.json();}catch(e){}
+        if(!response.ok) throw new Error(data.error||'Feedback submission is currently unavailable.');
+        status.textContent=data.message||'Thank you. Your feedback has been submitted for review.';
+        form.reset();
+      })
+      .catch(function(error){
+        status.textContent=error.message||'Unable to submit feedback. Please try again.';
+      })
+      .finally(function(){ if(submitButton) submitButton.disabled=false; });
   });
 }
 
@@ -4070,7 +4068,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 .lh-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.lh-status{margin-top:13px;font-weight:800}.lh-ok{color:#315c4b}.lh-err{color:#9d2c20}
 .lh-converter{margin-top:20px;border-top:1px solid rgba(23,21,18,.1);padding-top:18px}.lh-conv-grid{display:grid;grid-template-columns:1.1fr 1fr auto;gap:10px;align-items:end}.lh-conv-result{margin-top:10px;font-weight:800}
 .lh-resource{display:grid;grid-template-columns:180px 1fr;gap:22px;align-items:center}.lh-resource-cover{height:230px;border-radius:18px;overflow:hidden;background:#eee}.lh-resource-cover img{width:100%;height:100%;object-fit:cover}
-.lh-payment{margin-top:20px;border-radius:20px;background:#17140f;color:#fff;padding:24px;border:1px solid rgba(201,164,92,.3)}.lh-payment h3{margin-top:0;color:#f0d58e}.lh-payment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.lh-payment input,.lh-payment select{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#26221a;color:#fff;font:inherit}.lh-payment label{display:block;font-size:.78rem;margin-bottom:5px;font-weight:700;color:#e5ddcf}.lh-payment-full{grid-column:1/-1}.lh-test-note{font-size:.8rem;color:#d8d0c4;margin-top:12px}.lh-hidden{display:none!important}
+.lh-payment{margin-top:20px;border-radius:20px;background:#17140f;color:#fff;padding:24px;border:1px solid rgba(201,164,92,.3)}.lh-payment h3{margin-top:0;color:#f0d58e}.lh-payment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.lh-payment input,.lh-payment select{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#26221a;color:#fff;font:inherit}.lh-payment label{display:block;font-size:.78rem;margin-bottom:5px;font-weight:700;color:#e5ddcf}.lh-payment-full{grid-column:1/-1}.lh-test-note{font-size:.8rem;color:#d8d0c4;margin-top:12px}.lh-hidden{display:none!important}.lh-co-card,.lh-co-card *{box-sizing:border-box}.lh-co-field label,.lh-co-note,.lh-summary,.lh-converter{text-align:left}.lh-summary-row span{color:#d8d0c4}.lh-summary-row strong{text-align:right}.lh-order-note{margin-top:10px;font-size:.82rem;color:#746c61}.lh-checkout-confirm{padding:13px 16px;border:1px solid rgba(201,164,92,.28);background:#fbf6ea;border-radius:14px;margin-top:14px;color:#514a40}
 @media(max-width:800px){.lh-co-top-inner{align-items:flex-start;flex-direction:column}.lh-co-grid,.lh-payment-grid{grid-template-columns:1fr}.lh-full,.lh-payment-full{grid-column:auto}.lh-session{grid-template-columns:1fr 1fr}.lh-resource{grid-template-columns:1fr}.lh-conv-grid{grid-template-columns:1fr}}
 </style>
 
@@ -4100,7 +4098,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
           <div class="lh-co-field"><label for="lhBoard">Board / Curriculum</label><select id="lhBoard"><option>Not applicable</option><option>Cambridge</option><option>IGCSE</option><option>O Level</option><option>A Level</option><option>Pearson Edexcel</option><option>IB</option><option>GCSE</option><option>National Curriculum</option><option>University</option><option>Other</option></select></div>
           <div class="lh-co-field"><label for="lhLevel">Level / Grade</label><select id="lhLevel"><option>Primary</option><option>Lower Secondary</option><option>Middle School</option><option>IGCSE</option><option>GCSE</option><option>O Level</option><option>A Level</option><option>IB PYP</option><option>IB MYP</option><option>IB DP</option><option>University</option><option>Adult / Professional</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
           <div class="lh-co-field"><label for="lhPlan">Booking Plan</label><select id="lhPlan"><option value="single">Single lesson</option><option value="weekly">Weekly plan</option><option value="monthly">Monthly plan — 10% discount</option></select></div>
-          <div class="lh-co-field"><label for="lhTimezone">Time Zone</label><select id="lhTimezone"><option>Pakistan Standard Time (PKT)</option><option>Gulf Standard Time (GST)</option><option>UK / Ireland</option><option>Central European Time</option><option>US / Canada Eastern</option><option>US / Canada Central</option><option>US / Canada Pacific</option><option>China Standard Time</option><option>Japan Standard Time</option><option>Australian Eastern Time</option><option>Other</option></select></div>
+          <div class="lh-co-field"><label for="lhTimezone">Time Zone (optional)</label><select id="lhTimezone"><option>China Standard Time (UTC+8)</option><option>Not specified</option><option>Gulf Standard Time (GST)</option><option>UK / Ireland</option><option>Central European Time</option><option>US / Canada Eastern</option><option>US / Canada Central</option><option>US / Canada Pacific</option><option>Japan Standard Time</option><option>Australian Eastern Time</option><option>Other</option></select></div>
           <div class="lh-co-field"><label for="lhTeacherPreference">Teacher Preference</label><select id="lhTeacherPreference"><option>No preference</option><option>Male teacher</option><option>Female teacher</option><option>I have a preferred teacher — discuss after booking</option></select></div>
           <div class="lh-co-field lh-hidden" id="lhQuranFocusWrap"><label for="lhQuranFocus">Quran Learning Focus</label><select id="lhQuranFocus"><option>No specific focus</option><option>Noorani Qaida</option><option>Quran Reading</option><option>Tajweed / Proper Recitation</option><option>Hifz / Memorisation</option><option>Quran Translation</option><option>Tafseer</option><option>Arabic for Quran</option><option>Quran for Adults</option><option>Islamic Studies</option><option>Seerah</option><option>Hadith Studies</option><option>Islamic History</option><option>Fiqh</option><option>Duas</option><option>Salah Learning</option><option>Islamic Manners</option><option>Other</option></select></div>
           <div class="lh-co-field lh-full"><label>Lesson Selection</label><div class="lh-co-note">Students may book one 50-minute lesson or multiple separate 25-minute lessons. A separate lesson is charged separately even when several lessons are on the same day.</div><div class="lh-sessions" id="lhSessions"></div><div class="lh-actions"><button class="lh-btn lh-btn-outline" type="button" id="lhAddSession">+ Add Another Lesson</button></div></div>
@@ -4111,7 +4109,8 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
           <div class="lh-co-field lh-full"><label for="lhRequirements">Learning Requirements / Additional Notes</label><textarea id="lhRequirements" placeholder="Tell us about your goals, preferred teacher, examination needs or other requirements."></textarea></div>
         </div>
         <div class="lh-summary">
-          <h3>Order &amp; Billing Summary</h3>
+          <h3>Price Preview &amp; Billing Summary</h3>
+          <div class="lh-summary-row lh-hidden" id="lhOrderRow"><span>Order / Invoice</span><strong id="lhSummaryOrder">—</strong></div>
           <div class="lh-summary-row"><span>Programme</span><strong id="lhSummaryProgramme">General Language</strong></div>
           <div class="lh-summary-row"><span>Booking type</span><strong id="lhSummaryBookingType">Regular lesson</strong></div>
           <div class="lh-summary-row"><span>Lessons</span><strong id="lhSummaryLessons">1</strong></div>
@@ -4123,24 +4122,24 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
         <div class="lh-converter">
           <strong>Convert into your currency (optional)</strong>
           <div class="lh-co-note">Enter your own currency and exchange rate to calculate a personal estimate. This does not change the USD price.</div>
-          <div class="lh-conv-grid" style="margin-top:10px;"><div class="lh-co-field"><label for="lhConvCurrency">Currency code</label><input id="lhConvCurrency" value="PKR" maxlength="6"></div><div class="lh-co-field"><label for="lhConvRate">Your USD → currency rate</label><input id="lhConvRate" type="number" min="0" step="0.0001" placeholder="e.g. 277.75"></div><button class="lh-btn lh-btn-outline" type="button" id="lhConvBtn">Convert</button></div>
+          <div class="lh-conv-grid" style="margin-top:10px;"><div class="lh-co-field"><label for="lhConvCurrency">Currency code</label><input id="lhConvCurrency" value="" maxlength="6" placeholder="e.g. PKR"></div><div class="lh-co-field"><label for="lhConvRate">Your USD → currency rate</label><input id="lhConvRate" type="number" min="0" step="0.0001" placeholder="e.g. 277.75"></div><button class="lh-btn lh-btn-outline" type="button" id="lhConvBtn">Convert</button></div>
           <div class="lh-conv-result" id="lhConvResult"></div>
         </div>
-        <div class="lh-actions"><button class="lh-btn lh-btn-gold" type="button" id="lhPlaceOrder">Place Order &amp; Continue to Payment</button></div>
+        <div class="lh-order-note">Your order/invoice number is created only when you place the order. The secure payment module opens after the order is created.</div><div class="lh-actions"><button class="lh-btn lh-btn-gold" type="button" id="lhPlaceOrder">Place Order &amp; Continue to Payment</button></div>
         <div class="lh-status" id="lhBookingStatus" aria-live="polite"></div>
       </div>
     </section>
 
     <section class="lh-co-wrap lh-hidden" id="lhResourcePanel">
       <div class="lh-co-card"><div class="lh-resource"><div class="lh-resource-cover"><img id="lhResourceImg" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Digital resource"></div><div><div class="lh-co-eyebrow" style="text-align:left">Premium Digital Resource</div><h2 id="lhResourceTitle" style="font-family:Georgia,serif;font-size:2rem;margin:8px 0">Premium Resource</h2><p id="lhResourceDesc" style="color:#746c61">Payment is required before access is released.</p><div id="lhResourcePages" class="lh-co-note"></div></div></div>
-        <div class="lh-summary"><h3>Order &amp; Billing Summary</h3><div class="lh-summary-row"><span>Resource</span><strong id="lhResourceSummary">Premium Resource</strong></div><div class="lh-summary-row" id="lhResourcePagesRow"><span>Pages</span><strong id="lhResourcePagesValue">—</strong></div><div class="lh-summary-total"><span>Total: </span><span id="lhResourceTotal">$5.00 USD</span></div><div class="lh-summary-note">Premium resource pricing: 1–5 pages = $2; 6+ pages = $5. Official price is shown in USD.</div></div>
-        <div class="lh-converter"><strong>Convert into your currency (optional)</strong><div class="lh-co-note">Use your own exchange rate for a personal estimate only.</div><div class="lh-conv-grid" style="margin-top:10px;"><div class="lh-co-field"><label for="lhResConvCurrency">Currency code</label><input id="lhResConvCurrency" value="PKR" maxlength="6"></div><div class="lh-co-field"><label for="lhResConvRate">Your USD → currency rate</label><input id="lhResConvRate" type="number" min="0" step="0.0001" placeholder="e.g. 277.75"></div><button class="lh-btn lh-btn-outline" type="button" id="lhResConvBtn">Convert</button></div><div class="lh-conv-result" id="lhResConvResult"></div></div>
+        <div class="lh-summary"><h3>Price Preview &amp; Billing Summary</h3><div class="lh-summary-row"><span>Resource</span><strong id="lhResourceSummary">Premium Resource</strong></div><div class="lh-summary-row" id="lhResourcePagesRow"><span>Pages</span><strong id="lhResourcePagesValue">—</strong></div><div class="lh-summary-total"><span>Total: </span><span id="lhResourceTotal">$5.00 USD</span></div><div class="lh-summary-note">Premium resource pricing: 1–5 pages = $2; 6+ pages = $5. Official price is shown in USD.</div></div>
+        <div class="lh-converter"><strong>Convert into your currency (optional)</strong><div class="lh-co-note">Use your own exchange rate for a personal estimate only.</div><div class="lh-conv-grid" style="margin-top:10px;"><div class="lh-co-field"><label for="lhResConvCurrency">Currency code</label><input id="lhResConvCurrency" value="" maxlength="6" placeholder="e.g. PKR"></div><div class="lh-co-field"><label for="lhResConvRate">Your USD → currency rate</label><input id="lhResConvRate" type="number" min="0" step="0.0001" placeholder="e.g. 277.75"></div><button class="lh-btn lh-btn-outline" type="button" id="lhResConvBtn">Convert</button></div><div class="lh-conv-result" id="lhResConvResult"></div></div>
         <div class="lh-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px"><div class="lh-co-field"><label for="lhResourceName">Name</label><input id="lhResourceName" type="text" autocomplete="name" placeholder="Full name"></div><div class="lh-co-field"><label for="lhResourceEmail">Email</label><input id="lhResourceEmail" type="email" autocomplete="email" placeholder="you@example.com"></div><div class="lh-co-field"><label for="lhResourceMobile">Phone / WhatsApp (optional)</label><input id="lhResourceMobile" type="tel" autocomplete="tel" placeholder="Optional"></div></div>
         <div class="lh-actions"><button class="lh-btn lh-btn-gold" type="button" id="lhResourcePay">Place Order &amp; Continue to Payment</button></div><div class="lh-status" id="lhResourceStatus" aria-live="polite"></div>
       </div>
     </section>
 
-    <section class="lh-co-wrap"><div class="lh-co-card"><div class="lh-payment" id="lhGatewayModule">
+    <section class="lh-co-wrap lh-hidden" id="lhGatewaySection"><div class="lh-co-card"><div class="lh-payment" id="lhGatewayModule">
       <h3>Rapid Gateway — TEST / SANDBOX</h3>
       <div>No real money is charged in test mode. This payment module demonstrates the intended customer payment journey before live gateway activation.</div>
       <div class="lh-payment-grid" style="margin-top:16px"><div><label for="lhScenario">Test scenario</label><select id="lhScenario"><option value="100">TEST — Success</option><option value="200">TEST — Failed</option><option value="300">TEST — Pending</option><option value="400">TEST — Expired</option><option value="500">TEST — Timeout</option></select></div><div><label for="lhPayEmail">Email</label><input id="lhPayEmail" type="email" placeholder="your@email.com"></div><div><label for="lhCardName">Cardholder name</label><input id="lhCardName" autocomplete="cc-name" placeholder="Test Customer"></div><div><label for="lhCardNumber">Card number</label><input id="lhCardNumber" inputmode="numeric" autocomplete="cc-number" placeholder="TEST CARD NUMBER"></div><div><label for="lhCardExpiry">Expiry</label><input id="lhCardExpiry" autocomplete="cc-exp" placeholder="MM/YY"></div><div><label for="lhCardCvv">CVV</label><input id="lhCardCvv" inputmode="numeric" autocomplete="cc-csc" placeholder="CVV"></div><div class="lh-payment-full"><button class="lh-btn lh-btn-gold" type="button" id="lhPayTest">Pay securely — TEST</button></div></div>
@@ -4156,7 +4155,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
   if(!mode)return;
   document.body.classList.add('lh-checkout-mode'); root.setAttribute('aria-hidden','false');
   const $=id=>document.getElementById(id), money=n=>'$'+Number(n||0).toFixed(2);
-  const orderId='LH-'+new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14)+'-'+Math.floor(1000+Math.random()*9000);
+  let orderId='';
   const pricing={general:{25:4,50:7},board:{25:5,50:10},quran:{25:4,50:7}};
   const groupFor=programme=>programme==='General Language'?'general':programme==='Quran / Islamic Studies'?'quran':'board';
   let sessions=[{duration:25,date:'',time:''}]; let resourcePrice=0, resourceFile='', resourcePages=0;
@@ -4168,9 +4167,15 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
     list.querySelectorAll('[data-remove]').forEach(el=>el.addEventListener('click',()=>{if(sessions.length>1){sessions.splice(Number(el.dataset.remove),1);renderSessions();}}));
     updateTotals();
   }
+  function generateOrderId(){ return 'LH-'+new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14)+'-'+Math.floor(1000+Math.random()*9000); }
   function updateTotals(){
     const demo=$('lhBookingType').value==='demo', group=groupFor($('lhProgramme').value); let subtotal=demo?2:sessions.reduce((sum,s)=>sum+(pricing[group][Number(s.duration)]||0),0); const discount=!demo&&$('lhPlan').value==='monthly'?subtotal*.10:0, total=subtotal-discount;
     $('lhSummaryProgramme').textContent=$('lhProgramme').value; $('lhSummaryBookingType').textContent=demo?'Demo class — $2':'Regular lesson'; $('lhSummaryLessons').textContent=sessions.length; $('lhSummarySubtotal').textContent=money(subtotal); $('lhSummaryDiscount').textContent='−'+money(discount); $('lhDiscountRow').classList.toggle('lh-hidden',!discount); $('lhSummaryTotal').textContent=money(total)+' USD'; return {subtotal,discount,total};
+  }
+  function showGateway(orderRef,email){
+    if(orderRef){ $('lhOrderRow').classList.remove('lh-hidden'); $('lhSummaryOrder').textContent=orderRef; }
+    $('lhGatewaySection').classList.remove('lh-hidden');
+    if(email) $('lhPayEmail').value=email;
   }
   function setProgrammeFromQuery(){
     const qp=params.get('programme'), qs=params.get('subject');
@@ -4184,17 +4189,44 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
   }
   $('lhProgramme').addEventListener('change',()=>{updateQuran();renderSessions();}); $('lhBookingType').addEventListener('change',()=>{$('lhPlan').disabled=$('lhBookingType').value==='demo';if($('lhBookingType').value==='demo')$('lhPlan').value='single';renderSessions();}); $('lhPlan').addEventListener('change',updateTotals); $('lhAddSession').addEventListener('click',()=>{if($('lhBookingType').value!=='demo'){sessions.push({duration:25,date:'',time:''});renderSessions();}});
   $('lhConvBtn').addEventListener('click',()=>{const c=$('lhConvCurrency').value.trim().toUpperCase(),r=Number($('lhConvRate').value),t=updateTotals().total;$('lhConvResult').textContent=(!c||!r||r<=0)?'Enter your own exchange rate to calculate an estimate.':'Your estimate: '+c+' '+(t*r).toLocaleString(undefined,{maximumFractionDigits:2})+' for USD '+t.toFixed(2)+'. This is informational only.';});
-  $('lhPlaceOrder').addEventListener('click',()=>{const name=$('lhCustomerName').value.trim(),email=$('lhCustomerEmail').value.trim();if(!name||!email){$('lhBookingStatus').className='lh-status lh-err';$('lhBookingStatus').textContent='Please enter the student/customer name and email address.';return;}const calc=updateTotals(),payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:$('lhCustomerMobile').value.trim(),parentName:$('lhParentName').value.trim()},programme:$('lhProgramme').value,subject:$('lhSubject').value,board:$('lhBoard').value,level:$('lhLevel').value,bookingType:$('lhBookingType').value,plan:$('lhPlan').value,timezone:$('lhTimezone').value,teacherPreference:$('lhTeacherPreference').value,quranFocus:$('lhQuranFocus').value,requirements:$('lhRequirements').value,sessions,total:calc.total,currency:'USD',createdAt:new Date().toISOString()};sessionStorage.setItem('lh_order_'+orderId,JSON.stringify(payload));$('lhPayEmail').value=email;callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:Math.round(calc.total*100)/100,currency:'USD',description:'Learning Hub — '+$('lhProgramme').value,booking:payload},$('lhBookingStatus'),$('lhPlaceOrder'));});
+  $('lhPlaceOrder').addEventListener('click',()=>{
+    const name=$('lhCustomerName').value.trim(),email=$('lhCustomerEmail').value.trim();
+    if(!name||!email){$('lhBookingStatus').className='lh-status lh-err';$('lhBookingStatus').textContent='Please enter the student/customer name and email address.';return;}
+    if(!sessions.length || sessions.some(s=>!s.date||!s.time)){ $('lhBookingStatus').className='lh-status lh-err'; $('lhBookingStatus').textContent='Please select a date and preferred time for every lesson.'; return; }
+    orderId=generateOrderId();
+    const calc=updateTotals();
+    const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:$('lhCustomerMobile').value.trim(),parentName:$('lhParentName').value.trim()},programme:$('lhProgramme').value,subject:$('lhSubject').value,board:$('lhBoard').value,level:$('lhLevel').value,bookingType:$('lhBookingType').value,plan:$('lhPlan').value,timezone:$('lhTimezone').value,teacherPreference:$('lhTeacherPreference').value,quranFocus:$('lhQuranFocus').value,requirements:$('lhRequirements').value,sessions,total:calc.total,currency:'USD',createdAt:new Date().toISOString()};
+    sessionStorage.setItem('lh_order_'+orderId,JSON.stringify(payload));
+    showGateway(orderId,email);
+    callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:Math.round(calc.total*100)/100,currency:'USD',description:'Learning Hub — '+$('lhProgramme').value,booking:payload},$('lhBookingStatus'),$('lhPlaceOrder'));
+  });
   $('lhResConvBtn').addEventListener('click',()=>{const c=$('lhResConvCurrency').value.trim().toUpperCase(),r=Number($('lhResConvRate').value),t=resourcePrice;$('lhResConvResult').textContent=(!c||!r||r<=0)?'Enter your own exchange rate to calculate an estimate.':'Your estimate: '+c+' '+(t*r).toLocaleString(undefined,{maximumFractionDigits:2})+' for USD '+t.toFixed(2)+'. This is informational only.';});
-  $('lhResourcePay').addEventListener('click',()=>{const name=$('lhResourceName').value.trim(),email=$('lhResourceEmail').value.trim();if(!name||!email){$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='Please enter your name and email address.';return;}const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:$('lhResourceMobile').value.trim()},resource:decodeURIComponent(params.get('resource')||'Premium Resource'),file:resourceFile,pages:resourcePages,price:resourcePrice,currency:'USD',createdAt:new Date().toISOString()};sessionStorage.setItem('lh_order_'+orderId,JSON.stringify(payload));$('lhPayEmail').value=email;callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:resourcePrice,currency:'USD',description:'Learning Hub — '+payload.resource,resource:payload.resource,file:resourceFile,pages:resourcePages},$('lhResourceStatus'),$('lhResourcePay'));});
-  $('lhPayTest').addEventListener('click',()=>{const email=$('lhPayEmail').value.trim(),scenario=$('lhScenario').value;if(!email){$('lhPaymentStatus').className='lh-status lh-err';$('lhPaymentStatus').textContent='Enter the customer email to run the TEST payment flow.';return;} const names={100:'Payment successful — TEST order confirmed.',200:'Payment failed — TEST result.',300:'Payment pending — TEST order created.',400:'Payment expired — TEST result.',500:'Payment timeout — TEST result.'};$('lhPaymentStatus').className='lh-status '+(scenario==='100'?'lh-ok':scenario==='300'?'':'lh-err');$('lhPaymentStatus').textContent=names[scenario]+' Order reference: '+orderId; try{const k='lh_order_'+orderId,d=JSON.parse(sessionStorage.getItem(k)||'{}');d.status=scenario==='100'?'Paid':scenario==='300'?'Pending':scenario==='200'?'Failed':scenario==='400'?'Expired':'Timeout';d.paymentScenario=scenario;d.paidAt=scenario==='100'?new Date().toISOString():null;sessionStorage.setItem(k,JSON.stringify(d));}catch(e){}});
+  $('lhResourcePay').addEventListener('click',()=>{
+    const name=$('lhResourceName').value.trim(),email=$('lhResourceEmail').value.trim();
+    if(!name||!email){$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='Please enter your name and email address.';return;}
+    if(resourcePrice<=0){$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='This resource is free and does not require payment.';return;}
+    orderId=generateOrderId();
+    const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:$('lhResourceMobile').value.trim()},resource:decodeURIComponent(params.get('resource')||'Premium Resource'),file:resourceFile,pages:resourcePages,price:resourcePrice,currency:'USD',createdAt:new Date().toISOString()};
+    sessionStorage.setItem('lh_order_'+orderId,JSON.stringify(payload));
+    $('lhPayEmail').value=email; showGateway(orderId,email);
+    callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:resourcePrice,currency:'USD',description:'Learning Hub — '+payload.resource,resource:payload.resource,file:resourceFile,pages:resourcePages},$('lhResourceStatus'),$('lhResourcePay'));
+  });
+  $('lhPayTest').addEventListener('click',()=>{const email=$('lhPayEmail').value.trim(),scenario=$('lhScenario').value;if(!email||!orderId){$('lhPaymentStatus').className='lh-status lh-err';$('lhPaymentStatus').textContent='Create an order first, then enter the customer email to run the TEST payment flow.';return;} const names={100:'Payment successful — TEST order confirmed.',200:'Payment failed — TEST result.',300:'Payment pending — TEST order created.',400:'Payment expired — TEST result.',500:'Payment timeout — TEST result.'};$('lhPaymentStatus').className='lh-status '+(scenario==='100'?'lh-ok':scenario==='300'?'':'lh-err');$('lhPaymentStatus').textContent=names[scenario]+' Order reference: '+orderId; try{const k='lh_order_'+orderId,d=JSON.parse(sessionStorage.getItem(k)||'{}');d.status=scenario==='100'?'Paid':scenario==='300'?'Pending':scenario==='200'?'Failed':scenario==='400'?'Expired':'Timeout';d.paymentScenario=scenario;d.paidAt=scenario==='100'?new Date().toISOString():null;sessionStorage.setItem(k,JSON.stringify(d));}catch(e){}});
   // Initialise mode
   if(mode==='resource'){
     $('lhBookingPanel').classList.add('lh-hidden');$('lhResourcePanel').classList.remove('lh-hidden');$('lhCoEyebrow').textContent='Digital Resource Checkout';$('lhCoTitle').textContent='Unlock & Pay';$('lhCoIntro').textContent='Review your selected premium resource, place your order and proceed immediately to secure payment.';
     const title=decodeURIComponent(params.get('resource')||'Premium Resource'),pages=Math.max(0,Number(params.get('pages')||0)),supplied=Number(params.get('price')); resourcePages=pages;resourceFile=params.get('file')?decodeURIComponent(params.get('file')):''; const isFree=supplied===0; resourcePrice=isFree?0:(pages>0?(pages<=5?2:5):(supplied===2?2:5));
     $('lhResourceTitle').textContent=title;$('lhResourceSummary').textContent=title;$('lhResourceDesc').textContent=isFree?'Free Learning Hub resource — no payment is required.':'Premium digital resource. Payment is required before access is released.';$('lhResourceTotal').textContent=isFree?'FREE':money(resourcePrice)+' USD';if(pages){$('lhResourcePagesValue').textContent=pages;$('lhResourcePages').textContent='Page count: '+pages+' • Pricing: '+(pages<=5?'$2 for 1–5 pages':'$5 for 6+ pages');}else{$('lhResourcePagesRow').classList.add('lh-hidden');$('lhResourcePages').textContent='Pricing: $2 for 1–5 pages; $5 for 6+ pages.';}
     if(isFree){$('lhResourcePay').textContent='Open Free Resource';$('lhResourcePay').onclick=()=>{const path=resourceFile?(resourceFile.startsWith('/')?resourceFile:'/resources/'+resourceFile.split('/').filter(Boolean).map(encodeURIComponent).join('/')):'';if(path)location.href=path;else{$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='The resource file has not been assigned yet.';}};}
-  } else { setProgrammeFromQuery(); updateQuran(); renderSessions(); }
+  } else {
+    setProgrammeFromQuery(); updateQuran(); renderSessions();
+    const payment=params.get('payment'), returnedOrder=params.get('order');
+    if(payment && returnedOrder){
+      orderId=returnedOrder; showGateway(orderId,'');
+      const msg=payment==='success'?'Payment successful. Your Learning Hub order has returned to the checkout confirmation screen.':payment==='failure'?'Payment was not completed. You may review your order and try again.':'Payment status: '+payment+'.';
+      $('lhBookingStatus').className='lh-status '+(payment==='success'?'lh-ok':'lh-err'); $('lhBookingStatus').textContent=msg;
+    }
+  }
 })();
 </script>
 </body>
