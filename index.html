@@ -1715,7 +1715,25 @@ footer{padding:42px 0 22px!important}
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr!important}.contact-box{grid-template-columns:1fr 1fr!important}.feedback-layout{grid-template-columns:1fr!important}.review-card{flex-basis:calc(50% - 8px)!important}.footer-grid{grid-template-columns:1.4fr 1fr 1fr!important}}
 @media(max-width:620px){.contact-box{grid-template-columns:1fr!important;padding:24px!important}.feedback-layout{grid-template-columns:1fr!important}.review-grid{overflow-x:auto!important;scroll-snap-type:x mandatory!important;scrollbar-width:none!important}.review-grid::-webkit-scrollbar{display:none}.review-card{flex-basis:88%!important;scroll-snap-align:start!important}.footer-grid{grid-template-columns:1fr 1fr!important}}
 @media(max-width:430px){.footer-grid{grid-template-columns:1fr!important}}
-</style></head>
+</style><style id="learning-hub-final-layout">
+/* FINAL CONSOLIDATED LAYOUT */
+body{padding-top:0!important}
+main#main-content{display:block!important;min-height:0}
+main#main-content>section{display:block}
+footer{position:relative;z-index:1;background:#070707;color:#f4eee2}
+footer .footer-grid{display:grid;grid-template-columns:1.45fr 1fr 1.15fr .9fr 1fr;gap:28px;align-items:start}
+footer .footer-grid>div{min-width:0}
+footer .footer-col{display:flex;flex-direction:column;gap:8px}
+footer .footer-col h4{color:#f0d58e;margin-bottom:6px}
+footer .footer-col a,footer .footer-col span{color:#c9c0b2;font-size:.78rem;line-height:1.55}
+.contact-grid{grid-template-columns:minmax(0,1.25fr) minmax(320px,.75fr)!important;max-width:1180px!important}
+.contact-box{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.contact-box>*{min-width:0}
+.lh-co-main,.lh-checkout-main{display:block}
+@media(max-width:1000px){footer .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact-grid{grid-template-columns:1fr!important}}
+@media(max-width:620px){footer .footer-grid{grid-template-columns:1fr}.contact-box{grid-template-columns:1fr}.contact-side-panel{padding:26px!important}}
+</style>
+</head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- NAVIGATION -->
@@ -1740,14 +1758,12 @@ footer{padding:42px 0 22px!important}
 <!-- HERO -->
 <!-- INTRO -->
 <!-- PROGRAMMES -->
-<!-- PRICING PLANS -->
 <!-- QURAN -->
 <!-- INTERNATIONAL BOARDS -->
 <!-- IB -->
 <!-- CAMBRIDGE -->
 <!-- INTERNATIONAL EXAMS -->
 <!-- SUPPORT -->
-<!-- TUTORING PLANS: END OF COURSE LIST -->
 <!-- GLOBAL LEARNERS -->
 <!-- ARTICLES & BLOG -->
 <!-- GALLERY -->
@@ -1756,55 +1772,7 @@ footer{padding:42px 0 22px!important}
 <!-- TEACHER APPLICATION -->
 <!-- CONTACT -->
 <!-- FEEDBACK & REVIEWS -->
-<footer>
-<div class="container">
-<div class="footer-grid">
-<div>
-<div class="brand">
-<span class="brand-mark">LH</span>
-<span class="brand-copy">
-<strong>Learning Hub</strong>
-<small>Global Education Platform</small>
-</span>
-</div>
-<p>
-          Learning for everyone, everywhere — academic tutoring,
-          international education, Quran and Islamic Studies,
-          specialist support and digital learning resources.
-        </p>
-</div>
-<div class="footer-col">
-<h4>Learning</h4>
-<a href="#programmes">Programmes</a>
-<a href="#quran">Quran &amp; Islamic Studies</a>
-<a href="#boards">International Boards</a>
-<a href="#exams">Exams</a>
-</div>
-<div class="footer-col">
-<h4>Contact</h4>
-<a href="?policies=1#refund">Refund Policy</a>
-<a href="?policies=1#privacy">Privacy Policy</a>
-<a href="?policies=1#terms">Terms &amp; Conditions</a>
-</div>
-<div class="footer-col">
-<h4>Business Information</h4>
-<span style="display:block;color:#aaa398;font-size:.78rem;line-height:1.6">Karachi, Pakistan – 75300</span>
-</div>
-<div class="footer-col">
-<h4>Platform</h4>
-<a href="#support">Learning Support</a>
-<a href="#articles">Resources &amp; Articles</a>
-<a href="#articles">Articles &amp; Blog</a>
-<a href="#gallery">Gallery</a>
-<a href="#teacher">Apply to Teach</a>
-<a href="#contact">Contact</a>
-</div>
-</div>
-<div class="footer-bottom">
-      © 2026 Learning Hub. Global Education Platform. | Online education and digital learning services.
-    </div>
-</div>
-</footer>
+
 <!-- CONCIERGE -->
 <div class="concierge">
 <button aria-expanded="false" aria-label="Open Learning Concierge" class="concierge-button" onclick="toggleConcierge()">
@@ -2042,17 +2010,17 @@ const resourceData = [
   {name:"_Bias in Psychological Research.pdf", title:"Bias in Psychological Research", type:"free", subject:"Psychology", kind:"worksheet"},
   {name:"chinese_beginner_formal_vocab_worksheet.pdf", title:"Chinese Beginner: Formal Vocabulary Worksheet", type:"free", subject:"Languages", kind:"worksheet"},
   {name:"urdu_english_italian_formal_vocab_worksheet (1).pdf", title:"Formal Vocabulary: Urdu–English–Italian", type:"free", subject:"Languages", kind:"worksheet"},
-  {name:"Learning_Hub_academic_english_essay_writing_toolkit.pdf", title:"Academic English Essay Writing Toolkit", type:"premium", subject:"English", kind:"resource", price:5},
-  {name:"Learning_Hub_adult_esl_speaking_vocabulary_workbook.pdf", title:"Adult ESL Speaking & Vocabulary Workbook", type:"premium", subject:"English", kind:"resource", price:5},
-  {name:"Learning_Hub_dyslexia_friendly_english_reading_teens_adults.pdf", title:"Dyslexia-Friendly English Reading: Teens & Adults", type:"premium", subject:"English", kind:"resource", price:5},
-  {name:"Learning_Hub_english_pronunciation_shadowing_practice.pdf", title:"English Pronunciation: Shadowing Practice", type:"premium", subject:"English", kind:"resource", price:5},
-  {name:"Learning_Hub_everyday_english_chinese_speakers.pdf", title:"Everyday English for Chinese Speakers", type:"premium", subject:"Languages", kind:"resource", price:5},
-  {name:"Learning_Hub_everyday_english_japanese_speakers.pdf", title:"Everyday English for Japanese Speakers", type:"premium", subject:"Languages", kind:"resource", price:5},
-  {name:"Learning_Hub_everyday_english_korean_speakers.pdf", title:"Everyday English for Korean Speakers", type:"premium", subject:"Languages", kind:"resource", price:5},
-  {name:"Learning_Hub_real_life_english_conversation_practice.pdf", title:"Real-Life English Conversation Practice", type:"premium", subject:"English", kind:"resource", price:5},
-  {name:"Learning_Hub_Academic_Writing_Ebook.pdf", title:"Academic Writing E-book", type:"premium", subject:"English", kind:"ebook", price:5},
-  {name:"Learning_Hub_Study_Skills_Ebook.pdf", title:"Study Skills E-book", type:"premium", subject:"Study Skills", kind:"ebook", price:5},
-  {name:"Learning_Hub_English_Vocabulary_Workbook.pdf", title:"English Vocabulary Workbook", type:"premium", subject:"English", kind:"ebook", price:5}
+  {name:"Learning_Hub_academic_english_essay_writing_toolkit.pdf", title:"Academic English Essay Writing Toolkit", type:"premium", subject:"English", kind:"resource"},
+  {name:"Learning_Hub_adult_esl_speaking_vocabulary_workbook.pdf", title:"Adult ESL Speaking & Vocabulary Workbook", type:"premium", subject:"English", kind:"resource"},
+  {name:"Learning_Hub_dyslexia_friendly_english_reading_teens_adults.pdf", title:"Dyslexia-Friendly English Reading: Teens & Adults", type:"premium", subject:"English", kind:"resource"},
+  {name:"Learning_Hub_english_pronunciation_shadowing_practice.pdf", title:"English Pronunciation: Shadowing Practice", type:"premium", subject:"English", kind:"resource"},
+  {name:"Learning_Hub_everyday_english_chinese_speakers.pdf", title:"Everyday English for Chinese Speakers", type:"premium", subject:"Languages", kind:"resource"},
+  {name:"Learning_Hub_everyday_english_japanese_speakers.pdf", title:"Everyday English for Japanese Speakers", type:"premium", subject:"Languages", kind:"resource"},
+  {name:"Learning_Hub_everyday_english_korean_speakers.pdf", title:"Everyday English for Korean Speakers", type:"premium", subject:"Languages", kind:"resource"},
+  {name:"Learning_Hub_real_life_english_conversation_practice.pdf", title:"Real-Life English Conversation Practice", type:"premium", subject:"English", kind:"resource"},
+  {name:"Learning_Hub_Academic_Writing_Ebook.pdf", title:"Academic Writing E-book", type:"premium", subject:"English", kind:"ebook"},
+  {name:"Learning_Hub_Study_Skills_Ebook.pdf", title:"Study Skills E-book", type:"premium", subject:"Study Skills", kind:"ebook"},
+  {name:"Learning_Hub_English_Vocabulary_Workbook.pdf", title:"English Vocabulary Workbook", type:"premium", subject:"English", kind:"ebook"}
 ];
 
 function resourceTypeLabel(name){
@@ -2107,8 +2075,8 @@ function renderResourceCards(items, gridId){
     const title=makeResourceTitle(item);
     const type=resourceTypeLabel(item.name);
     const isPremium=item.type==="premium";
-    const price=isPremium ? Number(item.price||5) : 0;
-    const url="?checkout=resource&v=20260914&resource="+encodeURIComponent(title)+"&price="+price+"&file="+encodeURIComponent(item.name)+(item.pages?"&pages="+encodeURIComponent(item.pages):"");
+    const price=0;
+    const url=isPremium ? "#contact" : "?checkout=resource&v=20260914&resource="+encodeURIComponent(title)+"&price=0&file="+encodeURIComponent(item.name)+(item.pages?"&pages="+encodeURIComponent(item.pages):"");
     return `
       <article class="resource-card" data-resource-type="${escapeHTML(item.type)}" data-subject="${escapeHTML(item.subject)}">
         <div class="resource-cover ${isPremium ? "locked" : ""}">
@@ -2118,8 +2086,8 @@ function renderResourceCards(items, gridId){
         <div class="resource-body">
           <span class="resource-meta">${escapeHTML(type)} • ${escapeHTML(item.subject)}</span>
           <h3>${escapeHTML(title)}</h3>
-          <p>${isPremium ? "Premium digital resource. Book now, review the price, place your order and proceed to secure payment." : "Free Learning Hub resource for independent study and tutoring support."}</p>
-          <a href="${escapeHTML(url)}" class="btn btn-gold resource-download">${isPremium ? "Book Now" : "Open Free Download"}</a>
+          <p>${isPremium ? "Premium digital resource. Enquire for the approved PKR price and access arrangements." : "Free Learning Hub resource for independent study and tutoring support."}</p>
+          <a href="${escapeHTML(url)}" class="btn btn-gold resource-download">${isPremium ? "Enquire for Price" : "Open Free Download"}</a>
         </div>
       </article>`;
   }).join("");
@@ -2721,212 +2689,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 .lh-billing-result{line-height:1.55}
 @media(max-width:900px){.contact-grid{grid-template-columns:1fr!important}.contact-box{padding:28px!important}}
 </style>
-<div class="policy-view" id="policyView"><div class="policy-wrap"><div class="policy-intro"><div class="eyebrow">CUSTOMER INFORMATION</div><h1>Learning Hub Policies</h1><p>Terms &amp; Conditions, Refund, Cancellation &amp; Service Delivery, and Privacy Policy.</p></div><nav aria-label="Policy navigation" class="policy-nav"><a href="?policies=1#terms">Terms &amp; Conditions</a><a href="?policies=1#refund">Refund, Cancellation &amp; Service Delivery</a><a href="?policies=1#privacy">Privacy Policy</a></nav><section class="policy-card" id="terms">
-<h2>Terms &amp; Conditions</h2><div class="policy-highlight"><strong>Registered / Business Address</strong><br/>Karachi, Pakistan – 75300</div><h3>1. Acceptance of Terms</h3><p>By accessing or using Learning Hub Tutoring, booking a lesson, purchasing a service or accessing a digital resource, you agree to these Terms &amp; Conditions. If you do not agree, please do not use the service.</p>
-<h3>2. About Learning Hub Tutoring</h3><p>Learning Hub Tutoring is an online education and tutoring platform providing academic tutoring, international curriculum support, Quran and Islamic Studies, English development, examination preparation, specialist learning support, counselling and digital educational resources.</p>
-<h3>3. Services and Service Availability</h3><p>Services are delivered online and may be provided by Learning Hub or an appropriately engaged tutor or educator. Availability, tutor allocation, lesson timing and programme arrangements may vary according to the selected service.</p>
-<h3>4. Customer Information</h3><p>Customers must provide accurate information required for booking, service delivery, payment verification and communication. Parents or guardians are responsible for providing appropriate information and supervision where a learner is a minor.</p>
-<h3>5. Pricing and Payment</h3><p>Tutoring prices are displayed in PKR. The applicable price is the price shown at checkout before payment. Monthly-plan discounts, where offered, are applied at checkout. For international bookings, the checkout identifies the payer country or region and calculates the corresponding payable amount in the applicable payment currency. The PKR amount remains the underlying base price, while the selected regional currency and payable amount are shown before payment. Where the payment provider supports the selected currency, payment may be completed in that currency.</p>
-<h3>6. Payment Verification and Access</h3><p>Learning Hub may verify payment before activating the relevant service or Student Portal access. A successful payment attempt does not by itself guarantee immediate service activation if verification, fraud screening or payment-provider confirmation is still pending.</p>
-<h3>7. Cancellation, Rescheduling and Refunds</h3><p>Cancellation and refund rules are set out in the Refund, Cancellation &amp; Service Delivery Policy below. Customers should review that policy before booking.</p>
-<h3>8. Digital Educational Resources</h3><p>Digital resources may be delivered electronically by email, download, access link or another stated method. Resources are for the purchaser's personal educational use unless a separate licence or written permission states otherwise.</p>
-<h3>9. Intellectual Property</h3><p>Learning Hub materials, original lesson content, worksheets, e-books, graphics, text and other original resources remain the intellectual property of Learning Hub or the relevant rights holder. Customers may not reproduce, resell, redistribute, upload, publish or commercially exploit protected materials without permission.</p>
-<h3>10. Acceptable Use</h3><p>Users must not misuse the website, attempt unauthorised access, interfere with services, submit fraudulent information, or use Learning Hub materials for unlawful or unauthorised commercial purposes.</p>
-<h3>11. Educational Disclaimer</h3><p>Learning Hub provides educational support and preparation. Learning outcomes, grades, examination results, admissions, employment outcomes or other results cannot be guaranteed because they depend on individual effort, circumstances and external requirements.</p>
-<h3>12. Third-Party Services and Links</h3><p>Learning Hub may use or link to third-party payment providers, communication tools, scheduling services and external websites. Their separate terms and privacy practices may apply.</p>
-<h3>13. Changes to These Terms</h3><p>Learning Hub may update these Terms when necessary. The current version published on the website will apply to future use and bookings.</p>
-<h3>14. Governing Law and Jurisdiction</h3><p>These Terms are governed by the laws of Pakistan. Subject to any mandatory legal rights available to a customer, the courts of competent jurisdiction in Karachi, Sindh, Pakistan shall have jurisdiction over disputes arising from these Terms or the services.</p>
-<h3>15. Contact</h3><p>For general and booking enquiries, contact <a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>. For complaints, technical issues, payment problems or customer-support matters, contact <a href="mailto:learninghubcustomersupport@gmail.com">learninghubcustomersupport@gmail.com</a>. Complaints are acknowledged within 2 business days and Learning Hub aims to provide a substantive response or resolution within 7 business days, subject to the complexity of the matter and any third-party payment-provider investigation.</p>
-</section><section class="policy-card" id="refund">
-<h2>Refund, Cancellation &amp; Service Delivery Policy</h2><h3>1. Purpose and Scope</h3><p>This policy explains cancellation, rescheduling, refunds and delivery arrangements for Learning Hub Tutoring's online lessons, plans and premium digital educational resources.</p>
-<h3>2. Student Cancellation — 12 Hours or More Before Class</h3><p>If a student cancels a scheduled lesson at least 12 hours before the scheduled start time, the eligible refund will be processed less a 15% cancellation and payment-processing fee.</p>
-<h3>3. Late Cancellation — Less Than 12 Hours</h3><p>Cancellations made less than 12 hours before the scheduled lesson are not eligible for a refund. Learning Hub may provide one rescheduling opportunity, subject to tutor availability.</p>
-<h3>4. Cancellation by Learning Hub or Tutor</h3><p>If Learning Hub or the assigned tutor cancels a confirmed lesson and a suitable replacement time cannot be arranged, the customer may choose a full refund for the affected lesson or free rescheduling.</p>
-<h3>5. Refund Processing</h3><p>Approved refunds are normally processed within <strong>7 business days</strong>. The time for the refunded amount to appear in the customer's account may also depend on the payment provider or financial institution.</p>
-<h3>6. Premium Digital Resources</h3><p>Premium digital resources are non-refundable after delivery or access has been provided, except where the resource is defective, corrupted or materially inaccessible.</p>
-<h3>7. Defective, Corrupted or Inaccessible Resources</h3><p>If a paid digital resource is defective, corrupted or inaccessible, Learning Hub will make reasonable efforts to provide a working replacement or restore access. If the issue cannot reasonably be resolved, a full refund may be provided for the affected resource.</p>
-<h3>8. Digital Resource Delivery</h3><p>Premium digital resources are normally delivered within <strong>7 days after payment confirmation and verification</strong>. Delivery may be by email, secure access link, download or another electronic method stated for the resource.</p>
-<h3>9. Student Portal and Service Access</h3><p>Where a Student Portal is applicable, access is activated after the relevant payment has been confirmed and verified. Portal information may include teacher details, lesson timing, links and other service information.</p>
-<h3>10. Refund Requests and Customer Support</h3><p>Refund or cancellation requests should be sent to <a href="mailto:learninghubcustomersupport@gmail.com">learninghubcustomersupport@gmail.com</a> with the customer's name, booking/order details and reason for the request. General and booking enquiries may be sent to <a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>.</p>
-</section><section class="policy-card" id="privacy">
-<h2>Privacy Policy</h2><h3>1. Purpose and Scope</h3><p>This Privacy Policy explains how Learning Hub Tutoring may collect, use, store and protect personal information in connection with its website, bookings, educational services, support and digital resources.</p>
-<h3>2. Information We May Collect</h3><p>Depending on the service, we may collect information such as name, email address, booking details, learner level or requirements, communication preferences, service-related information and information voluntarily submitted through forms or support requests.</p>
-<h3>3. Use of Personal Information</h3><p>Information may be used to process bookings, deliver lessons and resources, verify payments, provide customer support, communicate about services, manage enquiries, improve the platform and maintain appropriate service records.</p>
-<h3>4. Payment Processing</h3><p>Payments may be processed by third-party payment providers. Learning Hub does not intentionally store complete payment-card details when those details are processed directly by the payment provider.</p>
-<h3>5. Sharing and Service Providers</h3><p>Information may be shared with relevant service providers where necessary to deliver the requested service, process payment, provide communication or operate website functions. Learning Hub does not sell personal information.</p>
-<h3>6. Data Security</h3><p>Learning Hub takes reasonable administrative and technical measures to protect information against unauthorised access, loss, misuse or disclosure. No online system can guarantee absolute security.</p>
-<h3>7. Data Retention</h3><p>Information may be retained for as long as reasonably necessary for service delivery, customer support, transaction records, legal obligations, dispute handling and legitimate business administration.</p>
-<h3>8. Communications</h3><p>We may contact customers about bookings, payments, service delivery, support requests and other necessary account or service matters. Marketing communications, where used, should provide an appropriate way to stop receiving them.</p>
-<h3>9. Students and Minors</h3><p>Where services are provided to minors, parents or guardians should make bookings and provide required information where appropriate. Learning Hub does not knowingly request unnecessary personal information from children.</p>
-<h3>10. Third-Party Websites and Services</h3><p>External websites, payment providers and other third-party services may have their own privacy policies and terms. Customers should review those policies where applicable.</p>
-<h3>11. Customer Privacy Requests</h3><p>For privacy-related questions or requests concerning personal information, contact <a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>. Complaints, technical issues and payment matters should be directed to <a href="mailto:learninghubcustomersupport@gmail.com">learninghubcustomersupport@gmail.com</a>.</p>
-<h3>12. Policy Updates</h3><p>Learning Hub may update this Privacy Policy when necessary. The current published version will apply to future use and bookings.</p>
-<h3>13. Contact</h3><p>For privacy-related questions or requests, contact <a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>. For complaints, technical issues, payment problems or customer-support matters, contact <a href="mailto:learninghubcustomersupport@gmail.com">learninghubcustomersupport@gmail.com</a>.</p>
-</section><a class="policy-back" href="#home">← Back to Learning Hub</a></div></div><div aria-hidden="true" id="lhCheckoutRoot">
-<header class="lh-co-top"><div class="lh-co-wrap lh-co-top-inner">
-<div class="lh-co-brand">LH   Learning Hub<small>Global Online Education &amp; Tutoring</small></div>
-<a class="lh-co-back" href="index.html">← Back to Learning Hub</a>
-</div></header>
-<main>
-<section class="lh-co-hero"><div class="lh-co-wrap">
-<div class="lh-co-eyebrow" id="lhCoEyebrow">Learning Hub Checkout</div>
-<h1 id="lhCoTitle">Book &amp; Pay</h1>
-<p id="lhCoIntro">Choose your learning option, configure your lessons, identify the payer region, review the converted payable amount and proceed to secure payment.</p>
-</div></section>
-<section class="lh-co-wrap" id="lhBookingPanel">
-<div class="lh-co-card">
-<div class="lh-co-info"><strong>Book Now = immediate checkout.</strong> Select your course and lesson details, review your calculated bill, place the order and continue to the payment module. No quotation request is required.</div>
-<div class="lh-co-grid">
-<div class="lh-co-field"><label for="lhProgramme">Course / Programme</label><select id="lhProgramme">
-<option value="General Language">General Language Courses</option>
-<option value="School Board / Cambridge">School Board / Cambridge &amp; International Curriculum</option>
-<option value="Quran / Islamic Studies">Quran &amp; Islamic Studies</option>
-</select></div>
-<div class="lh-co-field"><label for="lhBookingType">Booking Type</label><select id="lhBookingType"><option value="standard">Regular lesson</option><option value="demo">Demo class — PKR 500</option></select></div>
-<div class="lh-co-field"><label for="lhSubject">Subject / Course</label><select id="lhSubject"><option>English Language</option><option>English Literature</option><option>Mathematics</option><option>Biology</option><option>Chemistry</option><option>Physics</option><option>Business Studies</option><option>Economics</option><option>Sociology</option><option>Geography</option><option>History</option><option>Psychology</option><option>Computer Science</option><option>Chinese</option><option>Japanese</option><option>Korean</option><option>Italian</option><option>Urdu</option><option>Arabic</option><option>Academic Writing</option><option>Study Skills</option><option>Other</option></select></div>
-<div class="lh-co-field"><label for="lhBoard">Board / Curriculum</label><select id="lhBoard"><option>Not applicable</option><option>Cambridge</option><option>IGCSE</option><option>O Level</option><option>A Level</option><option>Pearson Edexcel</option><option>IB</option><option>GCSE</option><option>National Curriculum</option><option>University</option><option>Other</option></select></div>
-<div class="lh-co-field"><label for="lhLevel">Level / Grade</label><select id="lhLevel"><option>Primary</option><option>Lower Secondary</option><option>Middle School</option><option>IGCSE</option><option>GCSE</option><option>O Level</option><option>A Level</option><option>IB PYP</option><option>IB MYP</option><option>IB DP</option><option>University</option><option>Adult / Professional</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
-<div class="lh-co-field"><label for="lhPlan">Booking Plan</label><select id="lhPlan"><option value="single">Single lesson</option><option value="weekly">Weekly plan</option><option value="monthly">Monthly plan — 10% discount</option></select></div>
-<div class="lh-co-field"><label for="lhTimezone">Time Zone (optional)</label><select id="lhTimezone"><option>China Standard Time (UTC+8)</option><option>Not specified</option><option>Gulf Standard Time (GST)</option><option>UK / Ireland</option><option>Central European Time</option><option>US / Canada Eastern</option><option>US / Canada Central</option><option>US / Canada Pacific</option><option>Japan Standard Time</option><option>Australian Eastern Time</option><option>Other</option></select></div>
-<div class="lh-co-field"><label for="lhTeacherPreference">Teacher Preference</label><select id="lhTeacherPreference"><option>No preference</option><option>Male teacher</option><option>Female teacher</option><option>I have a preferred teacher — discuss after booking</option></select></div>
-<div class="lh-co-field lh-hidden" id="lhQuranFocusWrap"><label for="lhQuranFocus">Quran Learning Focus</label><select id="lhQuranFocus"><option>No specific focus</option><option>Noorani Qaida</option><option>Quran Reading</option><option>Tajweed / Proper Recitation</option><option>Hifz / Memorisation</option><option>Quran Translation</option><option>Tafseer</option><option>Arabic for Quran</option><option>Quran for Adults</option><option>Islamic Studies</option><option>Seerah</option><option>Hadith Studies</option><option>Islamic History</option><option>Fiqh</option><option>Duas</option><option>Salah Learning</option><option>Islamic Manners</option><option>Other</option></select></div>
-<div class="lh-co-field lh-full"><label>Lesson Selection</label><div class="lh-co-note">Students may book one 50-minute lesson or multiple separate 25-minute lessons. A separate lesson is charged separately even when several lessons are on the same day.</div><div class="lh-sessions" id="lhSessions"></div><div class="lh-actions"><button class="lh-btn lh-btn-outline" id="lhAddSession" type="button">+ Add Another Lesson</button></div></div>
-<div class="lh-co-field"><label for="lhCustomerName">Student / Customer Name</label><input autocomplete="name" id="lhCustomerName" placeholder="Full name" type="text"/></div>
-<div class="lh-co-field"><label for="lhCustomerEmail">Email Address</label><input autocomplete="email" id="lhCustomerEmail" placeholder="you@example.com" type="email"/></div>
-<div class="lh-co-field"><label for="lhParentName">Parent / Guardian (optional)</label><input id="lhParentName" placeholder="For school-age students" type="text"/></div>
-<div class="lh-co-field lh-full"><label for="lhRequirements">Learning Requirements / Additional Notes</label><textarea id="lhRequirements" placeholder="Tell us about your goals, preferred teacher, examination needs or other requirements."></textarea></div>
-</div>
-<div class="lh-summary">
-<h3>Price Preview &amp; Billing Summary</h3>
-<div class="lh-summary-row lh-hidden" id="lhOrderRow"><span>Order / Invoice</span><strong id="lhSummaryOrder">—</strong></div>
-<div class="lh-summary-row"><span>Programme</span><strong id="lhSummaryProgramme">General Language</strong></div>
-<div class="lh-summary-row"><span>Booking type</span><strong id="lhSummaryBookingType">Regular lesson</strong></div>
-<div class="lh-summary-row"><span>Lessons</span><strong id="lhSummaryLessons">1</strong></div>
-<div class="lh-summary-row"><span>Subtotal</span><strong id="lhSummarySubtotal">PKR 1,200</strong></div>
-<div class="lh-summary-row lh-hidden" id="lhDiscountRow"><span>Monthly discount (10%)</span><strong id="lhSummaryDiscount">−PKR 0</strong></div>
-<div class="lh-summary-total"><span>Total: </span><span id="lhSummaryTotal">PKR 1,200</span></div><div class="lh-billing-converter"><div><strong>International billing</strong><small>Select the payer's region so the checkout can calculate the corresponding payment amount. The base tutoring price is maintained in PKR.</small></div><div class="lh-billing-controls-grid"><div><label for="lhPayerRegion">Payer country / region</label><select aria-label="Payer country or region" id="lhPayerRegion"><option value="PKR">Pakistan — PKR</option><option value="AED">Gulf &amp; UAE — AED</option><option value="SAR">Saudi Arabia — SAR</option><option value="USD">United States — USD</option><option value="CAD">Canada — CAD</option><option value="GBP">United Kingdom / Ireland — GBP</option><option value="EUR">Europe — EUR</option><option value="CNY">China — CNY</option><option value="JPY">Japan — JPY</option><option value="KRW">South Korea — KRW</option><option value="MYR">Malaysia — MYR</option><option value="AUD">Australia — AUD</option><option value="NZD">New Zealand — NZD</option><option value="TRY">Türkiye — TRY</option><option value="OTHER">Other country / region — choose currency</option></select></div><div><label for="lhBillingCurrency">Payment currency</label><select aria-label="Payment currency" id="lhBillingCurrency"><option value="PKR">PKR — Pakistani Rupee</option><option value="USD">USD — US Dollar</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="AED">AED — UAE Dirham</option><option value="SAR">SAR — Saudi Riyal</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="CNY">CNY — Chinese Yuan</option><option value="JPY">JPY — Japanese Yen</option><option value="KRW">KRW — South Korean Won</option><option value="NZD">NZD — New Zealand Dollar</option><option value="MYR">MYR — Malaysian Ringgit</option><option value="TRY">TRY — Turkish Lira</option></select></div><button class="lh-btn lh-btn-outline" id="lhBillingConvert" type="button">Calculate payment amount</button></div><div aria-live="polite" class="lh-billing-result" id="lhBillingResult">Pakistan — PKR selected. Choose your region/currency to calculate the amount.</div><div class="lh-billing-note">For international bookings, select the payer country/region. The recommended regional currency is applied automatically; the payable amount is calculated from the PKR base price and rounded upward to reduce underpayment caused by exchange-rate rounding. The selected payment currency and amount are passed with the booking order.</div></div>
-</div>
-<div class="lh-actions"><button class="lh-btn lh-btn-gold" id="lhPlaceOrder" type="button">Place Order &amp; Continue to Payment</button></div>
-<div aria-live="polite" class="lh-status" id="lhBookingStatus"></div>
-</div>
-</section>
-<section class="lh-co-wrap lh-hidden" id="lhResourcePanel">
-<div class="lh-co-card"><div class="lh-resource"><div class="lh-resource-cover"><img alt="Digital resource" id="lhResourceImg" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"/></div><div><div class="lh-co-eyebrow" style="text-align:left">Premium Digital Resource</div><h2 id="lhResourceTitle" style="font-family:Georgia,serif;font-size:2rem;margin:8px 0">Premium Resource</h2><p id="lhResourceDesc" style="color:#746c61">Payment is required before access is released.</p><div class="lh-co-note" id="lhResourcePages"></div></div></div>
-<div class="lh-summary"><h3>Price Preview &amp; Billing Summary</h3><div class="lh-summary-row"><span>Resource</span><strong id="lhResourceSummary">Premium Resource</strong></div><div class="lh-summary-row" id="lhResourcePagesRow"><span>Pages</span><strong id="lhResourcePagesValue">—</strong></div><div class="lh-summary-total"><span>Total: </span><span id="lhResourceTotal">$5.00 USD</span></div><div class="lh-summary-note">Premium resource pricing: 1–5 pages = $2; 6+ pages = $5. Official price is shown in USD.</div></div>
-<div class="lh-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px"><div class="lh-co-field"><label for="lhResourceName">Name</label><input autocomplete="name" id="lhResourceName" placeholder="Full name" type="text"/></div><div class="lh-co-field"><label for="lhResourceEmail">Email</label><input autocomplete="email" id="lhResourceEmail" placeholder="you@example.com" type="email"/></div></div>
-<div class="lh-actions"><button class="lh-btn lh-btn-gold" id="lhResourcePay" type="button">Place Order &amp; Continue to Payment</button></div><div aria-live="polite" class="lh-status" id="lhResourceStatus"></div>
-</div>
-</section>
-<section class="lh-co-wrap lh-hidden" id="lhGatewaySection"><div class="lh-co-card"><div class="lh-payment" id="lhGatewayModule">
-<h3>Rapid Gateway — TEST / SANDBOX</h3>
-<div>No real money is charged in test mode. This payment module demonstrates the intended customer payment journey before live gateway activation.</div>
-<div class="lh-payment-grid" style="margin-top:16px"><div><label for="lhScenario">Test scenario</label><select id="lhScenario"><option value="100">TEST — Success</option><option value="200">TEST — Failed</option><option value="300">TEST — Pending</option><option value="400">TEST — Expired</option><option value="500">TEST — Timeout</option></select></div><div><label for="lhPayEmail">Email</label><input id="lhPayEmail" placeholder="your@email.com" type="email"/></div><div><label for="lhCardName">Cardholder name</label><input autocomplete="cc-name" id="lhCardName" placeholder="Test Customer"/></div><div><label for="lhCardNumber">Card number</label><input autocomplete="cc-number" id="lhCardNumber" inputmode="numeric" placeholder="TEST CARD NUMBER"/></div><div><label for="lhCardExpiry">Expiry</label><input autocomplete="cc-exp" id="lhCardExpiry" placeholder="MM/YY"/></div><div><label for="lhCardCvv">CVV</label><input autocomplete="cc-csc" id="lhCardCvv" inputmode="numeric" placeholder="CVV"/></div><div class="lh-payment-full"><button class="lh-btn lh-btn-gold" id="lhPayTest" type="button">Pay securely — TEST</button></div></div>
-<div class="lh-test-note">This is a trial/sandbox payment flow. No real money is charged in test mode. The production gateway configuration will be handled separately when the merchant account is ready.</div><div aria-live="polite" class="lh-status" id="lhPaymentStatus"></div>
-</div></div></section>
-</main>
-</div>
-<script id="lh-one-page-checkout">
-(function(){
-  const root=document.getElementById('lhCheckoutRoot'); if(!root)return;
-  const params=new URLSearchParams(location.search), mode=params.get('checkout')||'';
-  if(!mode)return;
-  document.body.classList.add('lh-checkout-mode'); root.setAttribute('aria-hidden','false');
-  const $=id=>document.getElementById(id), money=n=>'$'+Number(n||0).toFixed(2);
-  let orderId='';
-  const pricing={general:{25:1200,50:1600},board:{25:1200,50:1600},quran:{25:1200,50:1600}};
-  const groupFor=programme=>programme==='General Language'?'general':programme==='Quran / Islamic Studies'?'quran':'board';
-  let sessions=[{duration:25,date:'',time:''}]; let resourcePrice=0, resourceFile='', resourcePages=0;
-  let lhRatesPromise=null;
-  const lhFallbackRates={PKR:1,USD:1/278,GBP:0.75/278,EUR:0.86/278,AED:3.6725/278,SAR:3.75/278,CAD:1.38/278,AUD:1.53/278,CNY:7.12/278,JPY:147/278,KRW:1390/278,NZD:1.68/278,MYR:4.20/278,TRY:41.0/278};
-  function loadLhRates(){
-    if(lhRatesPromise) return lhRatesPromise;
-    lhRatesPromise=fetch('https://open.er-api.com/v6/latest/PKR',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Rate service unavailable');return r.json();}).then(d=>d && d.result==='success' && d.rates ? d.rates : lhFallbackRates).catch(()=>lhFallbackRates);
-    return lhRatesPromise;
-  }
-  function updateQuran(){ $('lhQuranFocusWrap').classList.toggle('lh-hidden',$('lhProgramme').value!=='Quran / Islamic Studies'); }
-  function renderSessions(){ const list=$('lhSessions'), demo=$('lhBookingType').value==='demo';
-    if(demo){ sessions=[{duration:25,date:'',time:''}]; }
-    list.innerHTML=sessions.map((s,i)=>`<div class="lh-session"><div class="lh-co-field"><label>Lesson ${i+1} duration</label><select data-si="${i}" data-key="duration" ${demo?'disabled':''}><option value="25" ${Number(s.duration)===25?'selected':''}>25 minutes</option><option value="50" ${Number(s.duration)===50?'selected':''}>50 minutes</option></select></div><div class="lh-co-field"><label>Date</label><input type="date" data-si="${i}" data-key="date" value="${s.date||''}"></div><div class="lh-co-field"><label>Preferred time</label><input type="time" data-si="${i}" data-key="time" value="${s.time||''}"></div>${demo?'':'<button type="button" class="lh-remove" data-remove="'+i+'">Remove</button>'}</div>`).join('');
-    list.querySelectorAll('[data-key]').forEach(el=>el.addEventListener('change',()=>{sessions[Number(el.dataset.si)][el.dataset.key]=el.key==='duration'?Number(el.value):el.value; updateTotals();}));
-    list.querySelectorAll('[data-remove]').forEach(el=>el.addEventListener('click',()=>{if(sessions.length>1){sessions.splice(Number(el.dataset.remove),1);renderSessions();}}));
-    updateTotals();
-  }
-  function generateOrderId(){ return 'LH-'+new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14)+'-'+Math.floor(1000+Math.random()*9000); }
-  function updateTotals(){
-    const demo=$('lhBookingType').value==='demo', group=groupFor($('lhProgramme').value); let subtotal=demo?500:sessions.reduce((sum,s)=>sum+(pricing[group][Number(s.duration)]||0),0); const discount=!demo&&$('lhPlan').value==='monthly'?subtotal*.10:0, total=subtotal-discount;
-    $('lhSummaryProgramme').textContent=$('lhProgramme').value; $('lhSummaryBookingType').textContent=demo?'Demo class — PKR 500':'Regular lesson'; $('lhSummaryLessons').textContent=sessions.length; $('lhSummarySubtotal').textContent='PKR '+Math.round(subtotal).toLocaleString(); $('lhSummaryDiscount').textContent='−PKR '+Math.round(discount).toLocaleString(); $('lhDiscountRow').classList.toggle('lh-hidden',!discount); $('lhSummaryTotal').textContent='PKR '+Math.round(total).toLocaleString(); updateBillingReference(total); return {subtotal,discount,total};
-  }
-  function updateBillingReference(total){ const out=$('lhBillingResult'); if(out) out.textContent='Select a currency and click Convert.'; }
-  async function convertBillingReference(){
-    const cEl=$('lhBillingCurrency'),regionEl=$('lhPayerRegion'),out=$('lhBillingResult'),btn=$('lhBillingConvert'); if(!cEl||!out||!btn)return;
-    const c=cEl.value,total=updateTotals().total; btn.disabled=true; out.textContent='Calculating…';
-    try{const rates=await loadLhRates(); const rate=Number(rates[c]||0); if(!rate)throw new Error('Rate unavailable'); const raw=total*rate; const payable=c==='PKR'?Math.round(raw):Math.ceil(raw); const region=regionEl ? regionEl.options[regionEl.selectedIndex].textContent.split(' — ')[0] : c; out.textContent=region+' • '+c+' '+payable.toLocaleString()+' payable for PKR '+Math.round(total).toLocaleString()+' base price (rate refreshed at checkout; rounded upward).';}
-    catch(e){out.textContent='Currency calculation is temporarily unavailable. The PKR base price remains the source amount.';}
-    finally{btn.disabled=false;}
-  }
-  function showOrderCreated(orderRef){
-    if(orderRef){ $('lhOrderRow').classList.remove('lh-hidden'); $('lhSummaryOrder').textContent=orderRef; }
-  }
-  function setProgrammeFromQuery(){
-    const qp=params.get('programme'), qs=params.get('subject');
-    const qplan=params.get('plan'); if(qplan && $('lhPlan')) $('lhPlan').value=qplan;
-    const map={'English Development':'General Language','Study Skills':'General Language','Specialist Learning Support':'General Language','Academic Tutoring':'School Board / Cambridge','International Curriculum':'School Board / Cambridge','Exam Preparation':'School Board / Cambridge','School Subjects':'School Board / Cambridge'};
-    if(qp){ const v=decodeURIComponent(qp); $('lhProgramme').value=map[v]||([...$('lhProgramme').options].some(o=>o.value===v)?v:'General Language'); }
-    if(qs){ const v=decodeURIComponent(qs); if([...$('lhSubject').options].some(o=>o.textContent===v))$('lhSubject').value=v; }
-  }
-  function callGateway(payload,statusEl,button){
-    button.disabled=true; statusEl.className='lh-status'; statusEl.textContent='Creating your order and opening the test payment module…';
-    return fetch('/api/rapidpay/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...payload,mode:'test'})}).then(async res=>{let data={};try{data=await res.json()}catch(e){} if(res.ok&&data.checkoutUrl){location.href=data.checkoutUrl; return true;} throw new Error(data.error||'Secure payment is currently unavailable. Please contact Learning Hub Support.');}).catch(err=>{statusEl.className='lh-status lh-err';statusEl.textContent=err.message;button.disabled=false;return false;});
-  }
-  $('lhProgramme').addEventListener('change',()=>{updateQuran();renderSessions();}); $('lhBookingType').addEventListener('change',()=>{$('lhPlan').disabled=$('lhBookingType').value==='demo';if($('lhBookingType').value==='demo')$('lhPlan').value='single';renderSessions();}); $('lhPlan').addEventListener('change',updateTotals); $('lhAddSession').addEventListener('click',()=>{if($('lhBookingType').value!=='demo'){sessions.push({duration:25,date:'',time:''});renderSessions();}});
-  if($('lhBillingConvert')) $('lhBillingConvert').addEventListener('click',convertBillingReference);
-  function detectPayerRegion(){const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';const lang=(navigator.language||'').toLowerCase();if(tz==='Asia/Karachi'||lang.endsWith('-pk'))return 'PKR';if(tz==='Asia/Dubai')return 'AED';if(/^Asia\/(Riyadh|Qatar|Kuwait|Bahrain|Muscat|Aden|Amman)/.test(tz))return 'SAR';if(/^Europe\//.test(tz))return 'EUR';if(/^America\//.test(tz))return lang.startsWith('fr-ca')||lang.endsWith('-ca')?'CAD':'USD';if(/^Australia\//.test(tz))return 'AUD';if(/^Pacific\//.test(tz))return 'NZD';if(tz.includes('Shanghai')||tz.includes('Hong_Kong'))return 'CNY';if(tz.includes('Tokyo'))return 'JPY';if(tz.includes('Seoul'))return 'KRW';if(tz.includes('Kuala_Lumpur'))return 'MYR';if(tz.includes('Istanbul'))return 'TRY';return 'USD';}
-const detectedRegion=detectPayerRegion();if($('lhPayerRegion')){const opt=[...$('lhPayerRegion').options].find(o=>o.value===detectedRegion);if(opt){$('lhPayerRegion').value=detectedRegion;}}
-  const syncBillingCurrency=()=>{const r=$('lhPayerRegion')?.value,c=$('lhBillingCurrency');if(!c)return;if(r!=='OTHER'){c.value=r;c.disabled=true;}else{c.disabled=false;if(c.value==='PKR')c.value='USD';}if($('lhBillingResult'))$('lhBillingResult').textContent=r==='OTHER'?'Choose the payment currency for your country/region, then calculate the payable amount.':'The recommended payment currency is '+c.options[c.selectedIndex].textContent+'. Click Calculate payment amount to confirm the payable amount.';};
-  if($('lhPayerRegion')) $('lhPayerRegion').addEventListener('change',syncBillingCurrency);
-  if($('lhBillingCurrency')) $('lhBillingCurrency').addEventListener('change',()=>{if($('lhBillingResult'))$('lhBillingResult').textContent='Click Calculate payment amount to update the payable amount.';});
-  syncBillingCurrency();
-  $('lhPlaceOrder').addEventListener('click',async()=>{
-    const name=$('lhCustomerName').value.trim(),email=$('lhCustomerEmail').value.trim();
-    if(!name||!email){$('lhBookingStatus').className='lh-status lh-err';$('lhBookingStatus').textContent='Please enter the student/customer name and email address.';return;}
-    if(!sessions.length || sessions.some(s=>!s.date||!s.time)){ $('lhBookingStatus').className='lh-status lh-err'; $('lhBookingStatus').textContent='Please select a date and preferred time for every lesson.'; return; }
-    orderId=generateOrderId();
-    const calc=updateTotals();
-    const payerCurrency=$('lhBillingCurrency')?.value||'PKR', payerRegion=$('lhPayerRegion')?.value||'PKR', rates=await loadLhRates(), fxRate=Number(rates[payerCurrency]||0), baseAmountPKR=Math.round(calc.total), rawForeign=baseAmountPKR*fxRate, payableAmount=payerCurrency==='PKR'?baseAmountPKR:Math.ceil(rawForeign);
-    const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:'',parentName:$('lhParentName').value.trim()},programme:$('lhProgramme').value,subject:$('lhSubject').value,board:$('lhBoard').value,level:$('lhLevel').value,bookingType:$('lhBookingType').value,plan:$('lhPlan').value,timezone:$('lhTimezone').value,teacherPreference:$('lhTeacherPreference').value,quranFocus:$('lhQuranFocus').value,requirements:$('lhRequirements').value,sessions,total:baseAmountPKR,baseCurrency:'PKR',baseAmountPKR,payerRegion,paymentCurrency:payerCurrency,paymentAmount:payableAmount,fxRate,createdAt:new Date().toISOString()};
-    sessionStorage.setItem('lh_order_'+orderId,JSON.stringify(payload));
-    showOrderCreated(orderId);
-    $('lhGatewaySection').classList.remove('lh-hidden'); $('lhPayEmail').value=email;
-    callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:payableAmount,currency:payerCurrency,baseAmountPKR,payerRegion,fxRate,description:'Learning Hub — '+$('lhProgramme').value,booking:payload},$('lhBookingStatus'),$('lhPlaceOrder'));
-  });
-  $('lhResourcePay').addEventListener('click',()=>{
-    const name=$('lhResourceName').value.trim(),email=$('lhResourceEmail').value.trim();
-    if(!name||!email){$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='Please enter your name and email address.';return;}
-    if(resourcePrice<=0){$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='This resource is free and does not require payment.';return;}
-    orderId=generateOrderId();
-    const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:''},resource:decodeURIComponent(params.get('resource')||'Premium Resource'),file:resourceFile,pages:resourcePages,price:resourcePrice,currency:'USD',createdAt:new Date().toISOString()};
-    sessionStorage.setItem('lh_order_'+orderId,JSON.stringify(payload));
-    showOrderCreated(orderId);
-    callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:resourcePrice,currency:'USD',description:'Learning Hub — '+payload.resource,resource:payload.resource,file:resourceFile,pages:resourcePages},$('lhResourceStatus'),$('lhResourcePay'));
-  });
-  $('lhPayTest').addEventListener('click',()=>{const email=$('lhPayEmail').value.trim(),scenario=$('lhScenario').value;if(!email||!orderId){$('lhPaymentStatus').className='lh-status lh-err';$('lhPaymentStatus').textContent='Create an order first, then enter the customer email to run the TEST payment flow.';return;} const names={100:'Payment successful — TEST order confirmed.',200:'Payment failed — TEST result.',300:'Payment pending — TEST order created.',400:'Payment expired — TEST result.',500:'Payment timeout — TEST result.'};$('lhPaymentStatus').className='lh-status '+(scenario==='100'?'lh-ok':scenario==='300'?'':'lh-err');$('lhPaymentStatus').textContent=names[scenario]+' Order reference: '+orderId; try{const k='lh_order_'+orderId,d=JSON.parse(sessionStorage.getItem(k)||'{}');d.status=scenario==='100'?'Paid':scenario==='300'?'Pending':scenario==='200'?'Failed':scenario==='400'?'Expired':'Timeout';d.paymentScenario=scenario;d.paidAt=scenario==='100'?new Date().toISOString():null;sessionStorage.setItem(k,JSON.stringify(d));}catch(e){}});
-  // Initialise mode
-  if(mode==='resource'){
-    $('lhBookingPanel').classList.add('lh-hidden');$('lhResourcePanel').classList.remove('lh-hidden');$('lhCoEyebrow').textContent='Digital Resource Checkout';$('lhCoTitle').textContent='Unlock & Pay';$('lhCoIntro').textContent='Review your selected premium resource, place your order and proceed immediately to secure payment.';
-    const title=decodeURIComponent(params.get('resource')||'Premium Resource'),pages=Math.max(0,Number(params.get('pages')||0)),supplied=Number(params.get('price')); resourcePages=pages;resourceFile=params.get('file')?decodeURIComponent(params.get('file')):''; const isFree=supplied===0; resourcePrice=isFree?0:(pages>0?(pages<=5?2:5):(supplied===2?2:5));
-    $('lhResourceTitle').textContent=title;$('lhResourceSummary').textContent=title;$('lhResourceDesc').textContent=isFree?'Free Learning Hub resource — no payment is required.':'Premium digital resource. Payment is required before access is released.';$('lhResourceTotal').textContent=isFree?'FREE':money(resourcePrice)+' USD';if(pages){$('lhResourcePagesValue').textContent=pages;$('lhResourcePages').textContent='Page count: '+pages+' • Pricing: '+(pages<=5?'$2 for 1–5 pages':'$5 for 6+ pages');}else{$('lhResourcePagesRow').classList.add('lh-hidden');$('lhResourcePages').textContent='Pricing: $2 for 1–5 pages; $5 for 6+ pages.';}
-    if(isFree){$('lhResourcePay').textContent='Open Free Resource';$('lhResourcePay').onclick=()=>{const path=resourceFile?(resourceFile.startsWith('/')?resourceFile:'/resources/'+resourceFile.split('/').filter(Boolean).map(encodeURIComponent).join('/')):'';if(path)location.href=path;else{$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='The resource file has not been assigned yet.';}};}
-  } else {
-    setProgrammeFromQuery(); if(params.get('plan')){ const qpPlan=params.get('plan'); if($('lhPlan')){$('lhPlan').value=qpPlan; updateTotals();} } updateQuran(); renderSessions();
-    const payment=params.get('payment'), returnedOrder=params.get('order');
-    if(payment && returnedOrder){
-      orderId=returnedOrder; showOrderCreated(orderId);
-      const msg=payment==='success'?'Payment successful. Your Learning Hub order has been received.':payment==='failure'?'Payment was not completed. You may return to checkout and try again.':'Payment status: '+payment+'.';
-      $('lhBookingStatus').className='lh-status '+(payment==='success'?'lh-ok':'lh-err'); $('lhBookingStatus').textContent=msg;
-    }
-  }
-})();
-</script>
+
 <script>
 (function(){
   document.querySelectorAll('.region-pin').forEach(function(pin){
@@ -3622,9 +3385,9 @@ const detectedRegion=detectPayerRegion();if($('lhPayerRegion')){const opt=[...$(
 </div>
 </section><section class="testimonials" id="feedback"><div class="container">
 <div class="section-heading center"><div class="eyebrow">Feedback &amp; Reviews</div><h2>Share your Learning Hub experience.</h2><p>Clients and learners can submit a written review, voice note or video note and leave a 1–5 star rating.</p></div>
-<div class="feedback-layout"><div class="rating-summary"><div class="eyebrow">Client Rating</div><div class="rating-score" id="averageRating">4.5</div><div aria-label="4.5 out of 5 stars" class="stars rating-stars-45">★★★★½</div><p id="ratingCount">Displayed rating • update when your verified review feed is connected.</p><div class="feedback-note">Published feedback is displayed by name only. New submissions are sent for review and are not published automatically.</div></div>
+<div class="feedback-layout"><div class="rating-summary"><div class="eyebrow">Client Rating</div><div class="rating-score" id="averageRating">—</div><div aria-label="Verified ratings will appear here" class="stars rating-stars-45">★★★★★</div><p id="ratingCount">Verified ratings will appear here after approved reviews are connected.</p><div class="feedback-note">Published feedback is displayed by name only. New submissions are sent for review and are not published automatically.</div></div>
 <form class="feedback-form" enctype="multipart/form-data" id="feedbackFormAnchor"><div class="feedback-form-grid"><div><label for="feedbackName">Name</label><input autocomplete="name" id="feedbackName" name="name" required=""/></div><div><label for="feedbackEmail">Email</label><input autocomplete="email" id="feedbackEmail" name="email" required="" type="email"/></div><div class="full"><label>Rating</label><div aria-label="Choose a rating" class="rating-input"><input id="star5" name="rating" required="" type="radio" value="5"/><label for="star5">★</label><input id="star4" name="rating" type="radio" value="4"/><label for="star4">★</label><input id="star3" name="rating" type="radio" value="3"/><label for="star3">★</label><input id="star2" name="rating" type="radio" value="2"/><label for="star2">★</label><input id="star1" name="rating" type="radio" value="1"/><label for="star1">★</label></div></div><div class="full"><label for="feedbackMessage">Written Feedback</label><textarea id="feedbackMessage" name="message" placeholder="Write your feedback here…"></textarea></div><div><label for="feedbackVoice">Voice Note</label><input accept="audio/*" id="feedbackVoice" name="voice" type="file"/><div class="media-note">Optional audio feedback.</div></div><div><label for="feedbackVideo">Video Note</label><input accept="video/*" id="feedbackVideo" name="video" type="file"/><div class="media-note">Optional video feedback.</div></div><div class="full"><button class="btn btn-gold" type="submit">Submit Feedback</button><div aria-live="polite" class="feedback-note" id="feedbackStatus"></div></div></div></form></div>
-<div class="review-grid" id="reviewGrid"><article class="review-card"><div class="stars">★★★★★</div><p>A-Level Psychology preparation completed within two months, with focused exam guidance and support that helped the student pass.</p><small>A-Level Psychology Student</small></article><article class="review-card"><div class="stars">★★★★★</div><p>Psychology and English Language &amp; Literature support focused on academic learning, exam confidence and language development.</p><small>International Student</small></article><article class="review-card"><div class="stars">★★★★★</div><p>English communication support focused on confidence, sentence formation and practical communication.</p><small>Dr. Nispa</small></article><article class="review-card review-cta-card"><div class="eyebrow">YOUR VOICE MATTERS</div><p>Completed a lesson or course with Learning Hub? Share what helped you learn, prepare or communicate with greater confidence.</p><a class="card-link" href="#feedback-form-anchor">Leave your feedback →</a></article></div>
+<div class="review-grid" id="reviewGrid"><article class="review-card review-cta-card"><div class="eyebrow">YOUR VOICE MATTERS</div><p>Completed a lesson or course with Learning Hub? Share what helped you learn, prepare or communicate with greater confidence.</p><a class="card-link" href="#feedback-form-anchor">Leave your feedback →</a></article></div>
 </div></section><div aria-hidden="true" class="enquiry-modal" id="lh-enquiry-modal">
 <div class="enquiry-modal-inner">
 <button aria-label="Close enquiry form" class="enquiry-close" id="lh-enquiry-close" type="button">×</button>
@@ -3783,8 +3546,7 @@ const detectedRegion=detectPayerRegion();if($('lhPayerRegion')){const opt=[...$(
 <label for="lh-budget">Budget *</label>
 <select id="lh-budget" name="budget" required="">
 <option value="">Select budget</option>
-<option>Under $5</option><option>$5–$10</option><option>$10–$25</option>
-<option>$25–$50</option><option>$50–$100</option><option>$100+</option>
+<option>Budget to be discussed</option>
 <option>No fixed budget — please advise</option>
 </select>
 </div>
@@ -3852,7 +3614,264 @@ const detectedRegion=detectPayerRegion();if($('lhPayerRegion')){const opt=[...$(
 <div aria-live="polite" class="enquiry-status" id="lh-enquiry-status"></div>
 </form>
 </div>
-</div></main><script id="policy-route">if(new URLSearchParams(location.search).get('policies')==='1'){document.documentElement.classList.add('policy-route')}</script><style>
+</div>
+<footer>
+<div class="container">
+<div class="footer-grid">
+<div>
+<div class="brand">
+<span class="brand-mark">LH</span>
+<span class="brand-copy">
+<strong>Learning Hub</strong>
+<small>Global Education Platform</small>
+</span>
+</div>
+<p>
+          Learning for everyone, everywhere — academic tutoring,
+          international education, Quran and Islamic Studies,
+          specialist support and digital learning resources.
+        </p>
+</div>
+<div class="footer-col">
+<h4>Learning</h4>
+<a href="#programmes">Programmes</a>
+<a href="#quran">Quran &amp; Islamic Studies</a>
+<a href="#boards">International Boards</a>
+<a href="#exams">Exams</a>
+</div>
+<div class="footer-col">
+<h4>Contact &amp; Legal</h4>
+<a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>
+<a href="mailto:learninghubcustomersupport@gmail.com">Support / Complaints</a>
+<a href="?policies=1#refund">Refund Policy</a>
+<a href="?policies=1#privacy">Privacy Policy</a>
+<a href="?policies=1#terms">Terms &amp; Conditions</a>
+</div>
+<div class="footer-col">
+<h4>Business Information</h4>
+<span style="display:block;color:#aaa398;font-size:.78rem;line-height:1.6">Karachi, Pakistan – 75300</span>
+</div>
+<div class="footer-col">
+<h4>Platform</h4>
+<a href="#support">Learning Support</a>
+<a href="#articles">Resources &amp; Articles</a>
+<a href="#gallery">Gallery</a>
+<a href="#teacher">Apply to Teach</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+<div class="footer-bottom">
+      © 2026 Learning Hub. Global Education Platform. | Online education and digital learning services.
+    </div>
+</div>
+</footer>
+</main><div class="policy-view" id="policyView"><div class="policy-wrap"><div class="policy-intro"><div class="eyebrow">CUSTOMER INFORMATION</div><h1>Learning Hub Policies</h1><p>Terms &amp; Conditions, Refund, Cancellation &amp; Service Delivery, and Privacy Policy.</p></div><nav aria-label="Policy navigation" class="policy-nav"><a href="?policies=1#terms">Terms &amp; Conditions</a><a href="?policies=1#refund">Refund, Cancellation &amp; Service Delivery</a><a href="?policies=1#privacy">Privacy Policy</a></nav><section class="policy-card" id="terms">
+<h2>Terms &amp; Conditions</h2><div class="policy-highlight"><strong>Registered / Business Address</strong><br/>Karachi, Pakistan – 75300</div><h3>1. Acceptance of Terms</h3><p>By accessing or using Learning Hub Tutoring, booking a lesson, purchasing a service or accessing a digital resource, you agree to these Terms &amp; Conditions. If you do not agree, please do not use the service.</p>
+<h3>2. About Learning Hub Tutoring</h3><p>Learning Hub Tutoring is an online education and tutoring platform providing academic tutoring, international curriculum support, Quran and Islamic Studies, English development, examination preparation, specialist learning support, counselling and digital educational resources.</p>
+<h3>3. Services and Service Availability</h3><p>Services are delivered online and may be provided by Learning Hub or an appropriately engaged tutor or educator. Availability, tutor allocation, lesson timing and programme arrangements may vary according to the selected service.</p>
+<h3>4. Customer Information</h3><p>Customers must provide accurate information required for booking, service delivery, payment verification and communication. Parents or guardians are responsible for providing appropriate information and supervision where a learner is a minor.</p>
+<h3>5. Pricing and Payment</h3><p>Tutoring prices are displayed in PKR. The applicable price is the price shown at checkout before payment. Monthly-plan discounts, where offered, are applied at checkout. For international bookings, the checkout identifies the payer country or region and calculates the corresponding payable amount in the applicable payment currency. The PKR amount remains the underlying base price, while the selected regional currency and payable amount are shown before payment. Where the payment provider supports the selected currency, payment may be completed in that currency.</p>
+<h3>6. Payment Verification and Access</h3><p>Learning Hub may verify payment before activating the relevant service or Student Portal access. A successful payment attempt does not by itself guarantee immediate service activation if verification, fraud screening or payment-provider confirmation is still pending.</p>
+<h3>7. Cancellation, Rescheduling and Refunds</h3><p>Cancellation and refund rules are set out in the Refund, Cancellation &amp; Service Delivery Policy below. Customers should review that policy before booking.</p>
+<h3>8. Digital Educational Resources</h3><p>Digital resources may be delivered electronically by email, download, access link or another stated method. Resources are for the purchaser's personal educational use unless a separate licence or written permission states otherwise.</p>
+<h3>9. Intellectual Property</h3><p>Learning Hub materials, original lesson content, worksheets, e-books, graphics, text and other original resources remain the intellectual property of Learning Hub or the relevant rights holder. Customers may not reproduce, resell, redistribute, upload, publish or commercially exploit protected materials without permission.</p>
+<h3>10. Acceptable Use</h3><p>Users must not misuse the website, attempt unauthorised access, interfere with services, submit fraudulent information, or use Learning Hub materials for unlawful or unauthorised commercial purposes.</p>
+<h3>11. Educational Disclaimer</h3><p>Learning Hub provides educational support and preparation. Learning outcomes, grades, examination results, admissions, employment outcomes or other results cannot be guaranteed because they depend on individual effort, circumstances and external requirements.</p>
+<h3>12. Third-Party Services and Links</h3><p>Learning Hub may use or link to third-party payment providers, communication tools, scheduling services and external websites. Their separate terms and privacy practices may apply.</p>
+<h3>13. Changes to These Terms</h3><p>Learning Hub may update these Terms when necessary. The current version published on the website will apply to future use and bookings.</p>
+<h3>14. Governing Law and Jurisdiction</h3><p>These Terms are governed by the laws of Pakistan. Subject to any mandatory legal rights available to a customer, the courts of competent jurisdiction in Karachi, Sindh, Pakistan shall have jurisdiction over disputes arising from these Terms or the services.</p>
+<h3>15. Contact</h3><p>For general and booking enquiries, contact <a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>. For complaints, technical issues, payment problems or customer-support matters, contact <a href="mailto:learninghubcustomersupport@gmail.com">learninghubcustomersupport@gmail.com</a>. Complaints are acknowledged within 2 business days and Learning Hub aims to provide a substantive response or resolution within 7 business days, subject to the complexity of the matter and any third-party payment-provider investigation.</p>
+</section><section class="policy-card" id="refund">
+<h2>Refund, Cancellation &amp; Service Delivery Policy</h2><h3>1. Purpose and Scope</h3><p>This policy explains cancellation, rescheduling, refunds and delivery arrangements for Learning Hub Tutoring's online lessons, plans and premium digital educational resources.</p>
+<h3>2. Student Cancellation — 12 Hours or More Before Class</h3><p>If a student cancels a scheduled lesson at least 12 hours before the scheduled start time, the eligible refund will be processed less a 15% cancellation and payment-processing fee.</p>
+<h3>3. Late Cancellation — Less Than 12 Hours</h3><p>Cancellations made less than 12 hours before the scheduled lesson are not eligible for a refund. Learning Hub may provide one rescheduling opportunity, subject to tutor availability.</p>
+<h3>4. Cancellation by Learning Hub or Tutor</h3><p>If Learning Hub or the assigned tutor cancels a confirmed lesson and a suitable replacement time cannot be arranged, the customer may choose a full refund for the affected lesson or free rescheduling.</p>
+<h3>5. Refund Processing</h3><p>Approved refunds are normally processed within <strong>7 business days</strong>. The time for the refunded amount to appear in the customer's account may also depend on the payment provider or financial institution.</p>
+<h3>6. Premium Digital Resources</h3><p>Premium digital resources are non-refundable after delivery or access has been provided, except where the resource is defective, corrupted or materially inaccessible.</p>
+<h3>7. Defective, Corrupted or Inaccessible Resources</h3><p>If a paid digital resource is defective, corrupted or inaccessible, Learning Hub will make reasonable efforts to provide a working replacement or restore access. If the issue cannot reasonably be resolved, a full refund may be provided for the affected resource.</p>
+<h3>8. Digital Resource Delivery</h3><p>Premium digital resources are normally delivered within <strong>7 days after payment confirmation and verification</strong>. Delivery may be by email, secure access link, download or another electronic method stated for the resource.</p>
+<h3>9. Student Portal and Service Access</h3><p>Where a Student Portal is applicable, access is activated after the relevant payment has been confirmed and verified. Portal information may include teacher details, lesson timing, links and other service information.</p>
+<h3>10. Refund Requests and Customer Support</h3><p>Refund or cancellation requests should be sent to <a href="mailto:learninghubcustomersupport@gmail.com">learninghubcustomersupport@gmail.com</a> with the customer's name, booking/order details and reason for the request. General and booking enquiries may be sent to <a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>.</p>
+</section><section class="policy-card" id="privacy">
+<h2>Privacy Policy</h2><h3>1. Purpose and Scope</h3><p>This Privacy Policy explains how Learning Hub Tutoring may collect, use, store and protect personal information in connection with its website, bookings, educational services, support and digital resources.</p>
+<h3>2. Information We May Collect</h3><p>Depending on the service, we may collect information such as name, email address, booking details, learner level or requirements, communication preferences, service-related information and information voluntarily submitted through forms or support requests.</p>
+<h3>3. Use of Personal Information</h3><p>Information may be used to process bookings, deliver lessons and resources, verify payments, provide customer support, communicate about services, manage enquiries, improve the platform and maintain appropriate service records.</p>
+<h3>4. Payment Processing</h3><p>Payments may be processed by third-party payment providers. Learning Hub does not intentionally store complete payment-card details when those details are processed directly by the payment provider.</p>
+<h3>5. Sharing and Service Providers</h3><p>Information may be shared with relevant service providers where necessary to deliver the requested service, process payment, provide communication or operate website functions. Learning Hub does not sell personal information.</p>
+<h3>6. Data Security</h3><p>Learning Hub takes reasonable administrative and technical measures to protect information against unauthorised access, loss, misuse or disclosure. No online system can guarantee absolute security.</p>
+<h3>7. Data Retention</h3><p>Information may be retained for as long as reasonably necessary for service delivery, customer support, transaction records, legal obligations, dispute handling and legitimate business administration.</p>
+<h3>8. Communications</h3><p>We may contact customers about bookings, payments, service delivery, support requests and other necessary account or service matters. Marketing communications, where used, should provide an appropriate way to stop receiving them.</p>
+<h3>9. Students and Minors</h3><p>Where services are provided to minors, parents or guardians should make bookings and provide required information where appropriate. Learning Hub does not knowingly request unnecessary personal information from children.</p>
+<h3>10. Third-Party Websites and Services</h3><p>External websites, payment providers and other third-party services may have their own privacy policies and terms. Customers should review those policies where applicable.</p>
+<h3>11. Customer Privacy Requests</h3><p>For privacy-related questions or requests concerning personal information, contact <a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>. Complaints, technical issues and payment matters should be directed to <a href="mailto:learninghubcustomersupport@gmail.com">learninghubcustomersupport@gmail.com</a>.</p>
+<h3>12. Policy Updates</h3><p>Learning Hub may update this Privacy Policy when necessary. The current published version will apply to future use and bookings.</p>
+<h3>13. Contact</h3><p>For privacy-related questions or requests, contact <a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>. For complaints, technical issues, payment problems or customer-support matters, contact <a href="mailto:learninghubcustomersupport@gmail.com">learninghubcustomersupport@gmail.com</a>.</p>
+</section><a class="policy-back" href="#home">← Back to Learning Hub</a></div></div>
+<div aria-hidden="true" id="lhCheckoutRoot">
+<header class="lh-co-top"><div class="lh-co-wrap lh-co-top-inner">
+<div class="lh-co-brand">LH   Learning Hub<small>Global Online Education &amp; Tutoring</small></div>
+<a class="lh-co-back" href="index.html">← Back to Learning Hub</a>
+</div></header>
+<div class="lh-checkout-main">
+<section class="lh-co-hero"><div class="lh-co-wrap">
+<div class="lh-co-eyebrow" id="lhCoEyebrow">Learning Hub Checkout</div>
+<h1 id="lhCoTitle">Book &amp; Pay</h1>
+<p id="lhCoIntro">Choose your learning option, configure your lessons, identify the payer region, review the converted payable amount and proceed to secure payment.</p>
+</div></section>
+<section class="lh-co-wrap" id="lhBookingPanel">
+<div class="lh-co-card">
+<div class="lh-co-info"><strong>Book Now = immediate checkout.</strong> Select your course and lesson details, review your calculated bill, place the order and continue to the payment module. No quotation request is required.</div>
+<div class="lh-co-grid">
+<div class="lh-co-field"><label for="lhProgramme">Course / Programme</label><select id="lhProgramme">
+<option value="General Language">General Language Courses</option>
+<option value="School Board / Cambridge">School Board / Cambridge &amp; International Curriculum</option>
+<option value="Quran / Islamic Studies">Quran &amp; Islamic Studies</option>
+</select></div>
+
+<div class="lh-co-field"><label for="lhSubject">Subject / Course</label><select id="lhSubject"><option>English Language</option><option>English Literature</option><option>Mathematics</option><option>Biology</option><option>Chemistry</option><option>Physics</option><option>Business Studies</option><option>Economics</option><option>Sociology</option><option>Geography</option><option>History</option><option>Psychology</option><option>Computer Science</option><option>Chinese</option><option>Japanese</option><option>Korean</option><option>Italian</option><option>Urdu</option><option>Arabic</option><option>Academic Writing</option><option>Study Skills</option><option>Other</option></select></div>
+<div class="lh-co-field"><label for="lhBoard">Board / Curriculum</label><select id="lhBoard"><option>Not applicable</option><option>Cambridge</option><option>IGCSE</option><option>O Level</option><option>A Level</option><option>Pearson Edexcel</option><option>IB</option><option>GCSE</option><option>National Curriculum</option><option>University</option><option>Other</option></select></div>
+<div class="lh-co-field"><label for="lhLevel">Level / Grade</label><select id="lhLevel"><option>Primary</option><option>Lower Secondary</option><option>Middle School</option><option>IGCSE</option><option>GCSE</option><option>O Level</option><option>A Level</option><option>IB PYP</option><option>IB MYP</option><option>IB DP</option><option>University</option><option>Adult / Professional</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
+<div class="lh-co-field"><label for="lhPlan">Booking Plan</label><select id="lhPlan"><option value="single">Single lesson</option><option value="weekly">Weekly plan</option><option value="monthly">Monthly plan — 10% discount</option></select></div>
+<div class="lh-co-field"><label for="lhTimezone">Time Zone (optional)</label><select id="lhTimezone"><option>China Standard Time (UTC+8)</option><option>Not specified</option><option>Gulf Standard Time (GST)</option><option>UK / Ireland</option><option>Central European Time</option><option>US / Canada Eastern</option><option>US / Canada Central</option><option>US / Canada Pacific</option><option>Japan Standard Time</option><option>Australian Eastern Time</option><option>Other</option></select></div>
+<div class="lh-co-field"><label for="lhTeacherPreference">Teacher Preference</label><select id="lhTeacherPreference"><option>No preference</option><option>Male teacher</option><option>Female teacher</option><option>I have a preferred teacher — discuss after booking</option></select></div>
+<div class="lh-co-field lh-hidden" id="lhQuranFocusWrap"><label for="lhQuranFocus">Quran Learning Focus</label><select id="lhQuranFocus"><option>No specific focus</option><option>Noorani Qaida</option><option>Quran Reading</option><option>Tajweed / Proper Recitation</option><option>Hifz / Memorisation</option><option>Quran Translation</option><option>Tafseer</option><option>Arabic for Quran</option><option>Quran for Adults</option><option>Islamic Studies</option><option>Seerah</option><option>Hadith Studies</option><option>Islamic History</option><option>Fiqh</option><option>Duas</option><option>Salah Learning</option><option>Islamic Manners</option><option>Other</option></select></div>
+<div class="lh-co-field lh-full"><label>Lesson Selection</label><div class="lh-co-note">Students may book one 50-minute lesson or multiple separate 25-minute lessons. A separate lesson is charged separately even when several lessons are on the same day.</div><div class="lh-sessions" id="lhSessions"></div><div class="lh-actions"><button class="lh-btn lh-btn-outline" id="lhAddSession" type="button">+ Add Another Lesson</button></div></div>
+<div class="lh-co-field"><label for="lhCustomerName">Student / Customer Name</label><input autocomplete="name" id="lhCustomerName" placeholder="Full name" type="text"/></div>
+<div class="lh-co-field"><label for="lhCustomerEmail">Email Address</label><input autocomplete="email" id="lhCustomerEmail" placeholder="you@example.com" type="email"/></div>
+<div class="lh-co-field"><label for="lhParentName">Parent / Guardian (optional)</label><input id="lhParentName" placeholder="For school-age students" type="text"/></div>
+<div class="lh-co-field lh-full"><label for="lhRequirements">Learning Requirements / Additional Notes</label><textarea id="lhRequirements" placeholder="Tell us about your goals, preferred teacher, examination needs or other requirements."></textarea></div>
+</div>
+<div class="lh-summary">
+<h3>Price Preview &amp; Billing Summary</h3>
+<div class="lh-summary-row lh-hidden" id="lhOrderRow"><span>Order / Invoice</span><strong id="lhSummaryOrder">—</strong></div>
+<div class="lh-summary-row"><span>Programme</span><strong id="lhSummaryProgramme">General Language</strong></div>
+<div class="lh-summary-row"><span>Booking type</span><strong id="lhSummaryBookingType">Regular lesson</strong></div>
+<div class="lh-summary-row"><span>Lessons</span><strong id="lhSummaryLessons">1</strong></div>
+<div class="lh-summary-row"><span>Subtotal</span><strong id="lhSummarySubtotal">PKR 1,200</strong></div>
+<div class="lh-summary-row lh-hidden" id="lhDiscountRow"><span>Monthly discount (10%)</span><strong id="lhSummaryDiscount">−PKR 0</strong></div>
+<div class="lh-summary-total"><span>Total: </span><span id="lhSummaryTotal">PKR 1,200</span></div><div class="lh-billing-converter"><div><strong>International billing</strong><small>Select the payer's region so the checkout can calculate the corresponding payment amount. The base tutoring price is maintained in PKR.</small></div><div class="lh-billing-controls-grid"><div><label for="lhPayerRegion">Payer country / region</label><select aria-label="Payer country or region" id="lhPayerRegion"><option value="PKR">Pakistan — PKR</option><option value="AED">Gulf &amp; UAE — AED</option><option value="SAR">Saudi Arabia — SAR</option><option value="USD">United States — USD</option><option value="CAD">Canada — CAD</option><option value="GBP">United Kingdom / Ireland — GBP</option><option value="EUR">Europe — EUR</option><option value="CNY">China — CNY</option><option value="JPY">Japan — JPY</option><option value="KRW">South Korea — KRW</option><option value="MYR">Malaysia — MYR</option><option value="AUD">Australia — AUD</option><option value="NZD">New Zealand — NZD</option><option value="TRY">Türkiye — TRY</option><option value="OTHER">Other country / region — choose currency</option></select></div><div><label for="lhBillingCurrency">Payment currency</label><select aria-label="Payment currency" id="lhBillingCurrency"><option value="PKR">PKR — Pakistani Rupee</option><option value="USD">USD — US Dollar</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="AED">AED — UAE Dirham</option><option value="SAR">SAR — Saudi Riyal</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="CNY">CNY — Chinese Yuan</option><option value="JPY">JPY — Japanese Yen</option><option value="KRW">KRW — South Korean Won</option><option value="NZD">NZD — New Zealand Dollar</option><option value="MYR">MYR — Malaysian Ringgit</option><option value="TRY">TRY — Turkish Lira</option></select></div><button class="lh-btn lh-btn-outline" id="lhBillingConvert" type="button">Calculate payment amount</button></div><div aria-live="polite" class="lh-billing-result" id="lhBillingResult">Pakistan — PKR selected. Choose your region/currency to calculate the amount.</div><div class="lh-billing-note">For international bookings, select the payer country/region. The recommended regional currency is applied automatically; the payable amount is calculated from the PKR base price and rounded upward to reduce underpayment caused by exchange-rate rounding. The selected payment currency and amount are passed with the booking order.</div></div>
+</div>
+<div class="lh-actions"><button class="lh-btn lh-btn-gold" id="lhPlaceOrder" type="button">Place Order &amp; Continue to Payment</button></div>
+<div aria-live="polite" class="lh-status" id="lhBookingStatus"></div>
+</div>
+</section>
+<section class="lh-co-wrap lh-hidden" id="lhResourcePanel">
+<div class="lh-co-card"><div class="lh-resource"><div class="lh-resource-cover"><img alt="Digital resource" id="lhResourceImg" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"/></div><div><div class="lh-co-eyebrow" style="text-align:left">Premium Digital Resource</div><h2 id="lhResourceTitle" style="font-family:Georgia,serif;font-size:2rem;margin:8px 0">Premium Resource</h2><p id="lhResourceDesc" style="color:#746c61">Payment is required before access is released.</p><div class="lh-co-note" id="lhResourcePages"></div></div></div>
+<div class="lh-summary"><h3>Price Preview &amp; Billing Summary</h3><div class="lh-summary-row"><span>Resource</span><strong id="lhResourceSummary">Premium Resource</strong></div><div class="lh-summary-row" id="lhResourcePagesRow"><span>Pages</span><strong id="lhResourcePagesValue">—</strong></div><div class="lh-summary-total"><span>Total: </span><span id="lhResourceTotal">PKR —</span></div><div class="lh-summary-note">Premium resource pricing will be displayed in PKR once an approved merchant price is assigned. No unapproved USD price is used.</div></div>
+<div class="lh-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px"><div class="lh-co-field"><label for="lhResourceName">Name</label><input autocomplete="name" id="lhResourceName" placeholder="Full name" type="text"/></div><div class="lh-co-field"><label for="lhResourceEmail">Email</label><input autocomplete="email" id="lhResourceEmail" placeholder="you@example.com" type="email"/></div></div>
+<div class="lh-actions"><button class="lh-btn lh-btn-gold" id="lhResourcePay" type="button">Place Order &amp; Continue to Payment</button></div><div aria-live="polite" class="lh-status" id="lhResourceStatus"></div>
+</div>
+</section>
+<section class="lh-co-wrap lh-hidden" id="lhGatewaySection"><div class="lh-co-card"><div class="lh-payment" id="lhGatewayModule">
+<h3>Rapid Gateway — TEST / SANDBOX</h3>
+<div>No real money is charged in test mode. This payment module demonstrates the intended customer payment journey before live gateway activation.</div>
+<div class="lh-payment-grid" style="margin-top:16px"><div><label for="lhScenario">Test scenario</label><select id="lhScenario"><option value="100">TEST — Success</option><option value="200">TEST — Failed</option><option value="300">TEST — Pending</option><option value="400">TEST — Expired</option><option value="500">TEST — Timeout</option></select></div><div><label for="lhPayEmail">Email</label><input id="lhPayEmail" placeholder="your@email.com" type="email"/></div><div><label for="lhCardName">Cardholder name</label><input autocomplete="cc-name" id="lhCardName" placeholder="Test Customer"/></div><div><label for="lhCardNumber">Card number</label><input autocomplete="cc-number" id="lhCardNumber" inputmode="numeric" placeholder="TEST CARD NUMBER"/></div><div><label for="lhCardExpiry">Expiry</label><input autocomplete="cc-exp" id="lhCardExpiry" placeholder="MM/YY"/></div><div><label for="lhCardCvv">CVV</label><input autocomplete="cc-csc" id="lhCardCvv" inputmode="numeric" placeholder="CVV"/></div><div class="lh-payment-full"><button class="lh-btn lh-btn-gold" id="lhPayTest" type="button">Pay securely — TEST</button></div></div>
+<div class="lh-test-note">This is a trial/sandbox payment flow. No real money is charged in test mode. The production gateway configuration will be handled separately when the merchant account is ready.</div><div aria-live="polite" class="lh-status" id="lhPaymentStatus"></div>
+</div></div></section>
+</div>
+</div>
+<script id="lh-one-page-checkout">
+(function(){
+  const root=document.getElementById('lhCheckoutRoot'); if(!root)return;
+  const params=new URLSearchParams(location.search), mode=params.get('checkout')||'';
+  if(!mode)return;
+  document.body.classList.add('lh-checkout-mode'); root.setAttribute('aria-hidden','false');
+  const $=id=>document.getElementById(id), money=n=>'$'+Number(n||0).toFixed(2);
+  let orderId='';
+  const pricing={general:{25:1200,50:1600},board:{25:1200,50:1600},quran:{25:1200,50:1600}};
+  const groupFor=programme=>programme==='General Language'?'general':programme==='Quran / Islamic Studies'?'quran':'board';
+  let sessions=[{duration:25,date:'',time:''}]; let resourcePrice=0, resourceFile='', resourcePages=0;
+  let lhRatesPromise=null;
+  const lhFallbackRates={PKR:1,USD:1/278,GBP:0.75/278,EUR:0.86/278,AED:3.6725/278,SAR:3.75/278,CAD:1.38/278,AUD:1.53/278,CNY:7.12/278,JPY:147/278,KRW:1390/278,NZD:1.68/278,MYR:4.20/278,TRY:41.0/278};
+  function loadLhRates(){
+    if(lhRatesPromise) return lhRatesPromise;
+    lhRatesPromise=fetch('https://open.er-api.com/v6/latest/PKR',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Rate service unavailable');return r.json();}).then(d=>d && d.result==='success' && d.rates ? d.rates : lhFallbackRates).catch(()=>lhFallbackRates);
+    return lhRatesPromise;
+  }
+  function updateQuran(){ $('lhQuranFocusWrap').classList.toggle('lh-hidden',$('lhProgramme').value!=='Quran / Islamic Studies'); }
+  function renderSessions(){ const list=$('lhSessions');
+    list.innerHTML=sessions.map((s,i)=>`<div class="lh-session"><div class="lh-co-field"><label>Lesson ${i+1} duration</label><select data-si="${i}" data-key="duration"><option value="25" ${Number(s.duration)===25?'selected':''}>25 minutes — PKR 1,200</option><option value="50" ${Number(s.duration)===50?'selected':''}>50 minutes — PKR 1,600</option></select></div><div class="lh-co-field"><label>Date</label><input type="date" data-si="${i}" data-key="date" value="${s.date||''}"></div><div class="lh-co-field"><label>Preferred time</label><input type="time" data-si="${i}" data-key="time" value="${s.time||''}"></div>${sessions.length>1?'<button type="button" class="lh-remove" data-remove="'+i+'">Remove</button>':''}</div>`).join('');
+    list.querySelectorAll('[data-key]').forEach(el=>el.addEventListener('change',()=>{sessions[Number(el.dataset.si)][el.dataset.key]=el.dataset.key==='duration'?Number(el.value):el.value; updateTotals();}));
+    list.querySelectorAll('[data-remove]').forEach(el=>el.addEventListener('click',()=>{if(sessions.length>1){sessions.splice(Number(el.dataset.remove),1);renderSessions();}}));
+    updateTotals();
+  }
+  function generateOrderId(){ return 'LH-'+new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14)+'-'+Math.floor(1000+Math.random()*9000); }
+  function updateTotals(){
+    const group=groupFor($('lhProgramme').value); let subtotal=sessions.reduce((sum,s)=>sum+(pricing[group][Number(s.duration)]||0),0); const discount=$('lhPlan').value==='monthly'?subtotal*.10:0, total=subtotal-discount;
+    $('lhSummaryProgramme').textContent=$('lhProgramme').value; $('lhSummaryBookingType').textContent='Regular lesson'; $('lhSummaryLessons').textContent=sessions.length; $('lhSummarySubtotal').textContent='PKR '+Math.round(subtotal).toLocaleString(); $('lhSummaryDiscount').textContent='−PKR '+Math.round(discount).toLocaleString(); $('lhDiscountRow').classList.toggle('lh-hidden',!discount); $('lhSummaryTotal').textContent='PKR '+Math.round(total).toLocaleString(); updateBillingReference(total); return {subtotal,discount,total};
+  }
+  function updateBillingReference(total){ const out=$('lhBillingResult'); if(out) out.textContent='Select a currency and click Convert.'; }
+  async function convertBillingReference(){
+    const cEl=$('lhBillingCurrency'),regionEl=$('lhPayerRegion'),out=$('lhBillingResult'),btn=$('lhBillingConvert'); if(!cEl||!out||!btn)return;
+    const c=cEl.value,total=updateTotals().total; btn.disabled=true; out.textContent='Calculating…';
+    try{const rates=await loadLhRates(); const rate=Number(rates[c]||0); if(!rate)throw new Error('Rate unavailable'); const raw=total*rate; const payable=c==='PKR'?Math.round(raw):Math.ceil(raw); const region=regionEl ? regionEl.options[regionEl.selectedIndex].textContent.split(' — ')[0] : c; out.textContent=region+' • '+c+' '+payable.toLocaleString()+' payable for PKR '+Math.round(total).toLocaleString()+' base price (rate refreshed at checkout; rounded upward).';}
+    catch(e){out.textContent='Currency calculation is temporarily unavailable. The PKR base price remains the source amount.';}
+    finally{btn.disabled=false;}
+  }
+  function showOrderCreated(orderRef){
+    if(orderRef){ $('lhOrderRow').classList.remove('lh-hidden'); $('lhSummaryOrder').textContent=orderRef; }
+  }
+  function setProgrammeFromQuery(){
+    const qp=params.get('programme'), qs=params.get('subject');
+    const qplan=params.get('plan'); if(qplan && $('lhPlan')) $('lhPlan').value=qplan;
+    const map={'English Development':'General Language','Study Skills':'General Language','Specialist Learning Support':'General Language','Academic Tutoring':'School Board / Cambridge','International Curriculum':'School Board / Cambridge','Exam Preparation':'School Board / Cambridge','School Subjects':'School Board / Cambridge'};
+    if(qp){ const v=decodeURIComponent(qp); $('lhProgramme').value=map[v]||([...$('lhProgramme').options].some(o=>o.value===v)?v:'General Language'); }
+    if(qs){ const v=decodeURIComponent(qs); if([...$('lhSubject').options].some(o=>o.textContent===v))$('lhSubject').value=v; }
+  }
+  function callGateway(payload,statusEl,button){
+    button.disabled=true; statusEl.className='lh-status'; statusEl.textContent='Creating your order and opening the test payment module…';
+    return fetch('/api/rapidpay/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...payload,mode:'test'})}).then(async res=>{let data={};try{data=await res.json()}catch(e){} if(res.ok&&data.checkoutUrl){location.href=data.checkoutUrl; return true;} throw new Error(data.error||'Secure payment is currently unavailable. Please contact Learning Hub Support.');}).catch(err=>{statusEl.className='lh-status lh-err';statusEl.textContent=err.message;button.disabled=false;return false;});
+  }
+  $('lhProgramme').addEventListener('change',()=>{updateQuran();renderSessions();}); $('lhPlan').addEventListener('change',updateTotals); $('lhAddSession').addEventListener('click',()=>{sessions.push({duration:25,date:'',time:''});renderSessions();});
+  if($('lhBillingConvert')) $('lhBillingConvert').addEventListener('click',convertBillingReference);
+  function detectPayerRegion(){const tz=Intl.DateTimeFormat().resolvedOptions().timeZone||'';const lang=(navigator.language||'').toLowerCase();if(tz==='Asia/Karachi'||lang.endsWith('-pk'))return 'PKR';if(tz==='Asia/Dubai')return 'AED';if(/^Asia\/(Riyadh|Qatar|Kuwait|Bahrain|Muscat|Aden|Amman)/.test(tz))return 'SAR';if(/^Europe\//.test(tz))return 'EUR';if(/^America\//.test(tz))return lang.startsWith('fr-ca')||lang.endsWith('-ca')?'CAD':'USD';if(/^Australia\//.test(tz))return 'AUD';if(/^Pacific\//.test(tz))return 'NZD';if(tz.includes('Shanghai')||tz.includes('Hong_Kong'))return 'CNY';if(tz.includes('Tokyo'))return 'JPY';if(tz.includes('Seoul'))return 'KRW';if(tz.includes('Kuala_Lumpur'))return 'MYR';if(tz.includes('Istanbul'))return 'TRY';return 'USD';}
+const detectedRegion=detectPayerRegion();if($('lhPayerRegion')){const opt=[...$('lhPayerRegion').options].find(o=>o.value===detectedRegion);if(opt){$('lhPayerRegion').value=detectedRegion;}}
+  const syncBillingCurrency=()=>{const r=$('lhPayerRegion')?.value,c=$('lhBillingCurrency');if(!c)return;if(r!=='OTHER'){c.value=r;c.disabled=true;}else{c.disabled=false;if(c.value==='PKR')c.value='USD';}if($('lhBillingResult'))$('lhBillingResult').textContent=r==='OTHER'?'Choose the payment currency for your country/region, then calculate the payable amount.':'The recommended payment currency is '+c.options[c.selectedIndex].textContent+'. Click Calculate payment amount to confirm the payable amount.';};
+  if($('lhPayerRegion')) $('lhPayerRegion').addEventListener('change',syncBillingCurrency);
+  if($('lhBillingCurrency')) $('lhBillingCurrency').addEventListener('change',()=>{if($('lhBillingResult'))$('lhBillingResult').textContent='Click Calculate payment amount to update the payable amount.';});
+  syncBillingCurrency();
+  $('lhPlaceOrder').addEventListener('click',async()=>{
+    const name=$('lhCustomerName').value.trim(),email=$('lhCustomerEmail').value.trim();
+    if(!name||!email){$('lhBookingStatus').className='lh-status lh-err';$('lhBookingStatus').textContent='Please enter the student/customer name and email address.';return;}
+    if(!sessions.length || sessions.some(s=>!s.date||!s.time)){ $('lhBookingStatus').className='lh-status lh-err'; $('lhBookingStatus').textContent='Please select a date and preferred time for every lesson.'; return; }
+    orderId=generateOrderId();
+    const calc=updateTotals();
+    const payerCurrency=$('lhBillingCurrency')?.value||'PKR', payerRegion=$('lhPayerRegion')?.value||'PKR', rates=await loadLhRates(), fxRate=Number(rates[payerCurrency]||0), baseAmountPKR=Math.round(calc.total), rawForeign=baseAmountPKR*fxRate, payableAmount=payerCurrency==='PKR'?baseAmountPKR:Math.ceil(rawForeign);
+    const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:'',parentName:$('lhParentName').value.trim()},programme:$('lhProgramme').value,subject:$('lhSubject').value,board:$('lhBoard').value,level:$('lhLevel').value,bookingType:'standard',plan:$('lhPlan').value,timezone:$('lhTimezone').value,teacherPreference:$('lhTeacherPreference').value,quranFocus:$('lhQuranFocus').value,requirements:$('lhRequirements').value,sessions,total:baseAmountPKR,baseCurrency:'PKR',baseAmountPKR,payerRegion,paymentCurrency:payerCurrency,paymentAmount:payableAmount,fxRate,createdAt:new Date().toISOString()};
+    sessionStorage.setItem('lh_order_'+orderId,JSON.stringify(payload));
+    showOrderCreated(orderId);
+    $('lhGatewaySection').classList.remove('lh-hidden'); $('lhPayEmail').value=email;
+    callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:payableAmount,currency:payerCurrency,baseAmountPKR,payerRegion,fxRate,description:'Learning Hub — '+$('lhProgramme').value,booking:payload},$('lhBookingStatus'),$('lhPlaceOrder'));
+  });
+  $('lhResourcePay').addEventListener('click',()=>{
+    const name=$('lhResourceName').value.trim(),email=$('lhResourceEmail').value.trim();
+    if(!name||!email){$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='Please enter your name and email address.';return;}
+    if(resourcePrice<=0){$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='Premium resource payment is not enabled until an approved PKR price is assigned.';return;}
+    orderId=generateOrderId();
+    const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:''},resource:decodeURIComponent(params.get('resource')||'Premium Resource'),file:resourceFile,pages:resourcePages,price:resourcePrice,currency:'PKR',createdAt:new Date().toISOString()};
+    sessionStorage.setItem('lh_order_'+orderId,JSON.stringify(payload));
+    showOrderCreated(orderId);
+    callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:resourcePrice,currency:'PKR',description:'Learning Hub — '+payload.resource,resource:payload.resource,file:resourceFile,pages:resourcePages},$('lhResourceStatus'),$('lhResourcePay'));
+  });
+  $('lhPayTest').addEventListener('click',()=>{const email=$('lhPayEmail').value.trim(),scenario=$('lhScenario').value;if(!email||!orderId){$('lhPaymentStatus').className='lh-status lh-err';$('lhPaymentStatus').textContent='Create an order first, then enter the customer email to run the TEST payment flow.';return;} const names={100:'Payment successful — TEST order confirmed.',200:'Payment failed — TEST result.',300:'Payment pending — TEST order created.',400:'Payment expired — TEST result.',500:'Payment timeout — TEST result.'};$('lhPaymentStatus').className='lh-status '+(scenario==='100'?'lh-ok':scenario==='300'?'':'lh-err');$('lhPaymentStatus').textContent=names[scenario]+' Order reference: '+orderId; try{const k='lh_order_'+orderId,d=JSON.parse(sessionStorage.getItem(k)||'{}');d.status=scenario==='100'?'Paid':scenario==='300'?'Pending':scenario==='200'?'Failed':scenario==='400'?'Expired':'Timeout';d.paymentScenario=scenario;d.paidAt=scenario==='100'?new Date().toISOString():null;sessionStorage.setItem(k,JSON.stringify(d));}catch(e){}});
+  // Initialise mode
+  if(mode==='resource'){
+    $('lhBookingPanel').classList.add('lh-hidden');$('lhResourcePanel').classList.remove('lh-hidden');$('lhCoEyebrow').textContent='Digital Resource Checkout';$('lhCoTitle').textContent='Unlock & Pay';$('lhCoIntro').textContent='Review your selected premium resource, place your order and proceed immediately to secure payment.';
+    const title=decodeURIComponent(params.get('resource')||'Premium Resource'),pages=Math.max(0,Number(params.get('pages')||0)),supplied=Number(params.get('price')); resourcePages=pages;resourceFile=params.get('file')?decodeURIComponent(params.get('file')):''; const isFree=supplied===0; resourcePrice=0;
+    $('lhResourceTitle').textContent=title;$('lhResourceSummary').textContent=title;$('lhResourceDesc').textContent=isFree?'Free Learning Hub resource — no payment is required.':'Premium digital resource. The approved PKR price will be shown before payment is enabled.';$('lhResourceTotal').textContent=isFree?'FREE':'PKR —';if(pages){$('lhResourcePagesValue').textContent=pages;$('lhResourcePages').textContent='Page count: '+pages+' • Pricing: '+(pages<=5?'$2 for 1–5 pages':'$5 for 6+ pages');}else{$('lhResourcePagesRow').classList.add('lh-hidden');$('lhResourcePages').textContent='Approved PKR price will be shown before payment.';}
+    if(isFree){$('lhResourcePay').textContent='Open Free Resource';$('lhResourcePay').onclick=()=>{const path=resourceFile?(resourceFile.startsWith('/')?resourceFile:'/resources/'+resourceFile.split('/').filter(Boolean).map(encodeURIComponent).join('/')):'';if(path)location.href=path;else{$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='The resource file has not been assigned yet.';}};}
+  } else {
+    setProgrammeFromQuery(); if(params.get('plan')){ const qpPlan=params.get('plan'); if($('lhPlan')){$('lhPlan').value=qpPlan; updateTotals();} } updateQuran(); renderSessions();
+    const payment=params.get('payment'), returnedOrder=params.get('order');
+    if(payment && returnedOrder){
+      orderId=returnedOrder; showOrderCreated(orderId);
+      const msg=payment==='success'?'Payment successful. Your Learning Hub order has been received.':payment==='failure'?'Payment was not completed. You may return to checkout and try again.':'Payment status: '+payment+'.';
+      $('lhBookingStatus').className='lh-status '+(payment==='success'?'lh-ok':'lh-err'); $('lhBookingStatus').textContent=msg;
+    }
+  }
+})();
+</script>
+<script id="policy-route">if(new URLSearchParams(location.search).get('policies')==='1'){document.documentElement.classList.add('policy-route')}</script><style>
 /* FINAL BOARD PRESENTATION — self-contained, no external logo dependency */
 .lh-boards-premium{padding:88px 0 82px;background:linear-gradient(180deg,#f7fbff 0%,#ffffff 100%)}
 .lh-board-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:34px}
