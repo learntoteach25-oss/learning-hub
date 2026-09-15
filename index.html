@@ -1575,7 +1575,16 @@ footer p{
 .skip-link{position:fixed;left:14px;top:-60px;z-index:3000;background:#f0d58e;color:#111;padding:10px 16px;border-radius:999px;font-weight:700}.skip-link:focus{top:14px}
 
 .course-book-btn{margin-top:10px;align-self:flex-start;border:1px solid rgba(224,190,105,.65);background:transparent;color:#e9cc82;border-radius:999px;padding:7px 14px;font:inherit;font-size:.82rem;font-weight:700;cursor:pointer;transition:.2s ease}.course-book-btn:hover{background:#e0be69;color:#111}
-.card-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.card-actions .btn{display:inline-flex}.exam-book-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:8px;padding:6px 12px;border:1px solid rgba(224,190,105,.65);border-radius:999px;color:#e9cc82;text-decoration:none;font-size:.76rem;font-weight:700}.exam-book-btn:hover{background:#e0be69;color:#111}</style>
+.card-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}.card-actions .btn{display:inline-flex}.exam-book-btn{display:inline-flex;align-items:center;justify-content:center;margin-top:8px;padding:6px 12px;border:1px solid rgba(224,190,105,.65);border-radius:999px;color:#e9cc82;text-decoration:none;font-size:.76rem;font-weight:700}.exam-book-btn:hover{background:#e0be69;color:#111}
+/* RAPID GATEWAY TEST / SANDBOX */
+#rapidpay-test-checkout{min-height:120px;margin-top:18px}
+.payment-test-card{margin-top:18px;padding:22px;border:1px solid rgba(0,0,0,.10);border-radius:16px;background:#fff}
+.payment-test-card .payment-row{display:flex;gap:14px;flex-wrap:wrap;align-items:end}
+.payment-test-card label{display:block;font-weight:600;margin-bottom:6px}
+.payment-test-card select,.payment-test-card input{padding:12px 14px;border:1px solid #d7dde2;border-radius:10px;min-width:220px;background:#fff}
+.payment-test-card .payment-status{margin-top:14px;font-size:.95rem}
+.lh-payment{margin-top:20px;border-radius:20px;background:#17140f;color:#fff;padding:24px;border:1px solid rgba(201,164,92,.3)}.lh-payment h3{margin-top:0;color:#f0d58e}.lh-payment-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.lh-payment input,.lh-payment select{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:#26221a;color:#fff;font:inherit}.lh-payment label{display:block;font-size:.78rem;margin-bottom:5px;font-weight:700;color:#e5ddcf}.lh-payment-full{grid-column:1/-1}.lh-test-note{font-size:.8rem;color:#d8d0c4;margin-top:12px}
+</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do online lessons work?","acceptedAnswer":{"@type":"Answer","text":"Lessons are delivered online with structured teaching, guided practice, feedback and learning support tailored to the learner's goals and level."}},{"@type":"Question","name":"Which learners can join Learning Hub?","acceptedAnswer":{"@type":"Answer","text":"Learning Hub supports school students, international-curriculum learners, university students, adults and learners seeking Quran, language, exam or specialist learning support."}},{"@type":"Question","name":"Which international boards do you support?","acceptedAnswer":{"@type":"Answer","text":"Support includes IB, Cambridge and other international programmes, with subject and curriculum requirements considered when planning learning."}},{"@type":"Question","name":"Can adults improve their English?","acceptedAnswer":{"@type":"Answer","text":"Yes. English development can focus on communication, speaking, writing, vocabulary, academic English and confidence according to the learner's goals."}}]}</script></head>
 <body>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -1591,6 +1600,7 @@ footer p{
 </a>
 <div class="nav-links" id="mainNav">
 <a href="?checkout=booking">Book Now</a>
+<a href="#pricing-plans">Pricing</a>
 <a href="#programmes">Programmes</a>
 <a href="#subjects">Subjects</a>
 <a href="#quran">Quran &amp; Islamic Studies</a>
@@ -1645,6 +1655,43 @@ footer p{
 </div>
 </div>
 </div>
+</div>
+</section>
+<!-- PRICING PLANS -->
+<section class="pricing" id="pricing-plans">
+<div class="container">
+<div class="section-heading">
+<div class="eyebrow">Tutoring Plans</div>
+<h2>Flexible Learning Packages</h2>
+<p>Choose a lesson format or a prepaid learning package. Official tutoring prices are shown in PKR.</p>
+</div>
+<div class="price-grid">
+<div class="price-card">
+<h3>Single Lesson</h3>
+<div class="price">PKR 1,200 <small>/ 25 min</small></div>
+<ul><li>One personalised online lesson</li><li>Choose your subject and preferred time</li><li>Suitable for flexible, occasional learning</li></ul>
+<a class="btn btn-gold" href="?checkout=booking">Book a Lesson</a>
+</div>
+<div class="price-card featured">
+<h3>50-Minute Lesson</h3>
+<div class="price">PKR 1,600</div>
+<ul><li>Extended personalised online lesson</li><li>Subject-focused teaching and guided practice</li><li>Ideal for regular academic support</li></ul>
+<a class="btn btn-gold" href="?checkout=booking">Book a Lesson</a>
+</div>
+<div class="price-card">
+<h3>Weekly Learning Plan</h3>
+<div class="price">From PKR 6,000</div>
+<ul><li>Four 25-minute lessons</li><li>Structured weekly learning</li><li>Ideal for consistent practice and support</li></ul>
+<a class="btn btn-gold" href="?checkout=booking">Choose Plan</a>
+</div>
+<div class="price-card">
+<h3>Monthly Learning Plan</h3>
+<div class="price">10% Off</div>
+<ul><li>Prepaid regular learning</li><li>10% monthly package discount</li><li>Designed for continued learning and progress</li></ul>
+<a class="btn btn-gold" href="?checkout=booking">Choose Plan</a>
+</div>
+</div>
+<div style="margin-top:22px;text-align:center;color:var(--muted);font-size:.82rem">For 50-minute lessons, package totals are calculated from the official PKR 1,600 lesson rate. The applicable package price is confirmed at checkout.</div>
 </div>
 </section>
 <!-- INTRO -->
@@ -2892,7 +2939,7 @@ footer p{
 <div class="enquiry-field">
 <label for="lh-contact">Preferred Response</label>
 <select id="lh-contact" name="preferred_response">
-<option>Email</option><option>WhatsApp</option><option>Email + WhatsApp</option>
+<option>Email</option><option></option><option>Email + </option>
 </select>
 </div>
 <div class="enquiry-field">
@@ -2968,7 +3015,7 @@ footer p{
           </a>
 </div>
 <div class="contact-item">
-<strong>Email</strong>
+<strong>Booking &amp; General Enquiries</strong>
 <a href="mailto:hublearning117@gmail.com">
             hublearning117@gmail.com
           </a>
@@ -2981,20 +3028,12 @@ footer p{
 <span style="display:block;margin-top:6px;font-size:.82rem;color:#aaa398">For complaints, technical issues, payment problems or other support requests.</span>
 </div>
 <div class="contact-item contact-detail">
-<strong>Contact number</strong>
-<a href="tel:+923053750105">+92 305 3750105</a>
-</div>
-<div class="contact-item contact-detail">
 <strong>Support hours</strong>
 <span>24/7 Customer Support</span>
 </div>
 <div class="contact-item contact-detail">
 <strong>Business address</strong>
-<span class="business-address">Karachi, Sindh, Pakistan</span>
-</div>
-<div class="contact-item">
-<strong>Policies</strong>
-<div class="policy-links"><a href="policies.html#refund">Refund Policy</a><a href="policies.html#privacy">Privacy Policy</a><a href="policies.html#terms">Terms &amp; Conditions</a></div>
+<span class="business-address">Karachi, Pakistan – 75300</span>
 </div>
 <div class="contact-item">
 <strong>Teacher application</strong>
@@ -3005,7 +3044,7 @@ footer p{
 </div>
 <div class="contact-box" id="payments">
 <h3>Secure Online Payments</h3>
-<p style="margin-top:12px;">Learning Hub uses an authorised online payment gateway to collect payment for confirmed tutoring, examination-preparation services and eligible digital learning resources. Learning Hub prices are displayed in USD. Optional currency conversion is provided only as a customer reference; the final supported payment currency is determined by the payment provider.</p>
+<p style="margin-top:12px;">Learning Hub uses an authorised online payment gateway to collect payment for confirmed tutoring, examination-preparation services and eligible digital learning resources. Tutoring prices are displayed and charged in PKR. Optional currency conversion is provided only as a customer reference; payment is processed in PKR.</p>
 <div class="payment-info-card">
 <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
 <strong>How payment works</strong>
@@ -3013,11 +3052,25 @@ footer p{
 </div>
 <ol style="margin:12px 0 0 20px;">
 <li>Choose a service or submit a learning request.</li>
-<li>Learning Hub displays the confirmed price in USD. Any local-currency conversion is optional and remains the customer’s responsibility or is determined by the payment provider.</li>
+<li>Learning Hub displays the confirmed tutoring price in PKR. Any displayed local-currency conversion is indicative only and does not change the PKR payment amount.</li>
 <li>Customer receives the checkout/payment instructions.</li>
 <li>Payment is completed through the authorised gateway.</li>
 <li>Learning Hub confirms the booking and delivers the agreed lesson, programme or digital resource.</li>
 </ol>
+</div>
+
+<div class="payment-test-card" id="rapidpay-test-checkout">
+<div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+<strong>Rapid Gateway — TEST / SANDBOX</strong>
+<span style="padding:5px 9px;border-radius:999px;background:#eef7f8;font-size:.8rem;">No real money charged</span>
+</div>
+<p style="margin:10px 0 16px;">This test checkout is available for payment-flow verification. Sandbox scenarios allow the merchant to demonstrate successful, failed, pending, expired and timed-out payment outcomes before live gateway credentials are activated.</p>
+<div class="payment-row">
+<div><label for="lh-test-service">Test payment scenario</label><select id="lh-test-service"><option value="100">TEST — 100 (Success)</option><option value="200">TEST — 200 (Failed)</option><option value="300">TEST — 300 (Pending)</option><option value="400">TEST — 400 (Expired)</option><option value="500">TEST — 500 (Timeout)</option></select></div>
+<div><label for="lh-test-email">Email</label><input id="lh-test-email" type="email" autocomplete="email" placeholder="your@email.com"></div>
+<button type="button" class="btn btn-gold" id="lh-start-payment">Pay securely — TEST</button>
+</div>
+<div class="payment-status" id="lh-payment-status" aria-live="polite"></div>
 </div>
 
 <p style="margin-top:14px;font-size:.9rem;">For payment support: <a href="mailto:learninghubcustomersupport@gmail.com?subject=Learning%20Hub%20Payment%20Support">Contact Learning Hub Support</a></p>
@@ -3052,10 +3105,6 @@ footer p{
 </div>
 <div class="footer-col">
 <h4>Contact</h4>
-<a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>
-<span style="display:block;color:#aaa398;font-size:.78rem;line-height:1.5">General enquiries, counselling bookings &amp; confirmations</span>
-<a href="mailto:learninghubcustomersupport@gmail.com?subject=Support%20or%20Complaint">learninghubcustomersupport@gmail.com</a>
-<span style="display:block;color:#aaa398;font-size:.78rem;line-height:1.5">Support, complaints &amp; problem resolution</span>
 <a href="tel:+923053750105">+92 305 3750105</a>
 <span style="display:block;margin-top:8px;color:#aaa398;font-size:.78rem">Customer Support: 24/7</span>
 <a href="policies.html#refund">Refund Policy</a>
@@ -3064,10 +3113,8 @@ footer p{
 </div>
 <div class="footer-col">
 <h4>Business Information</h4>
-<span style="display:block;color:#aaa398;font-size:.78rem;line-height:1.6">Business address: Karachi, Sindh, Pakistan</span>
-<a href="#contact">Business address</a>
+<span style="display:block;color:#aaa398;font-size:.78rem;line-height:1.6">Business address: Karachi, Pakistan – 75300</span>
 <a href="#payments">Secure Online Payments</a>
-<a href="?checkout=booking">Checkout &amp; Payment</a>
 </div>
 <div class="footer-col">
 <h4>Platform</h4>
@@ -3978,7 +4025,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
     <section class="lh-co-hero"><div class="lh-co-wrap">
       <div class="lh-co-eyebrow" id="lhCoEyebrow">Learning Hub Checkout</div>
       <h1 id="lhCoTitle">Book &amp; Pay</h1>
-      <p id="lhCoIntro">Choose your learning option, configure your lessons, review the bill in USD and proceed to secure payment.</p>
+      <p id="lhCoIntro">Choose your learning option, configure your lessons, review the bill in PKR and proceed to secure payment.</p>
     </div></section>
 
     <section class="lh-co-wrap" id="lhBookingPanel">
@@ -3990,7 +4037,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
             <option value="School Board / Cambridge">School Board / Cambridge &amp; International Curriculum</option>
             <option value="Quran / Islamic Studies">Quran &amp; Islamic Studies</option>
           </select></div>
-          <div class="lh-co-field"><label for="lhBookingType">Booking Type</label><select id="lhBookingType"><option value="standard">Regular lesson</option><option value="demo">Demo class — $2</option></select></div>
+          <div class="lh-co-field"><label for="lhBookingType">Booking Type</label><select id="lhBookingType"><option value="standard">Regular lesson</option><option value="demo">Demo class — PKR 500</option></select></div>
           <div class="lh-co-field"><label for="lhSubject">Subject / Course</label><select id="lhSubject"><option>English Language</option><option>English Literature</option><option>Mathematics</option><option>Biology</option><option>Chemistry</option><option>Physics</option><option>Business Studies</option><option>Economics</option><option>Sociology</option><option>Geography</option><option>History</option><option>Psychology</option><option>Computer Science</option><option>Chinese</option><option>Japanese</option><option>Korean</option><option>Italian</option><option>Urdu</option><option>Arabic</option><option>Academic Writing</option><option>Study Skills</option><option>Other</option></select></div>
           <div class="lh-co-field"><label for="lhBoard">Board / Curriculum</label><select id="lhBoard"><option>Not applicable</option><option>Cambridge</option><option>IGCSE</option><option>O Level</option><option>A Level</option><option>Pearson Edexcel</option><option>IB</option><option>GCSE</option><option>National Curriculum</option><option>University</option><option>Other</option></select></div>
           <div class="lh-co-field"><label for="lhLevel">Level / Grade</label><select id="lhLevel"><option>Primary</option><option>Lower Secondary</option><option>Middle School</option><option>IGCSE</option><option>GCSE</option><option>O Level</option><option>A Level</option><option>IB PYP</option><option>IB MYP</option><option>IB DP</option><option>University</option><option>Adult / Professional</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
@@ -4001,7 +4048,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
           <div class="lh-co-field lh-full"><label>Lesson Selection</label><div class="lh-co-note">Students may book one 50-minute lesson or multiple separate 25-minute lessons. A separate lesson is charged separately even when several lessons are on the same day.</div><div class="lh-sessions" id="lhSessions"></div><div class="lh-actions"><button class="lh-btn lh-btn-outline" type="button" id="lhAddSession">+ Add Another Lesson</button></div></div>
           <div class="lh-co-field"><label for="lhCustomerName">Student / Customer Name</label><input id="lhCustomerName" type="text" autocomplete="name" placeholder="Full name"></div>
           <div class="lh-co-field"><label for="lhCustomerEmail">Email Address</label><input id="lhCustomerEmail" type="email" autocomplete="email" placeholder="you@example.com"></div>
-          <div class="lh-co-field"><label for="lhCustomerMobile">Phone / WhatsApp (optional)</label><input id="lhCustomerMobile" type="tel" autocomplete="tel" placeholder="Optional"></div>
+          
           <div class="lh-co-field"><label for="lhParentName">Parent / Guardian (optional)</label><input id="lhParentName" type="text" placeholder="For school-age students"></div>
           <div class="lh-co-field lh-full"><label for="lhRequirements">Learning Requirements / Additional Notes</label><textarea id="lhRequirements" placeholder="Tell us about your goals, preferred teacher, examination needs or other requirements."></textarea></div>
         </div>
@@ -4011,14 +4058,14 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
           <div class="lh-summary-row"><span>Programme</span><strong id="lhSummaryProgramme">General Language</strong></div>
           <div class="lh-summary-row"><span>Booking type</span><strong id="lhSummaryBookingType">Regular lesson</strong></div>
           <div class="lh-summary-row"><span>Lessons</span><strong id="lhSummaryLessons">1</strong></div>
-          <div class="lh-summary-row"><span>Subtotal</span><strong id="lhSummarySubtotal">$4.00</strong></div>
-          <div class="lh-summary-row lh-hidden" id="lhDiscountRow"><span>Monthly discount (10%)</span><strong id="lhSummaryDiscount">−$0.00</strong></div>
-          <div class="lh-summary-total"><span>Total: </span><span id="lhSummaryTotal">$4.00 USD</span></div>
-          <div class="lh-summary-note">Official Learning Hub prices are displayed in USD. A currency converter below is optional for your own reference. Learning Hub does not set your local-currency conversion.</div>
+          <div class="lh-summary-row"><span>Subtotal</span><strong id="lhSummarySubtotal">PKR 1,200</strong></div>
+          <div class="lh-summary-row lh-hidden" id="lhDiscountRow"><span>Monthly discount (10%)</span><strong id="lhSummaryDiscount">−PKR 0</strong></div>
+          <div class="lh-summary-total"><span>Total: </span><span id="lhSummaryTotal">PKR 1,200</span></div>
+          <div class="lh-summary-note">Official Learning Hub tutoring prices are displayed and charged in PKR. Use the currency converter below to view an indicative equivalent in another currency.</div>
         </div>
         <div class="lh-converter">
           <strong>Currency conversion (optional)</strong>
-          <div class="lh-co-note">Official Learning Hub prices remain in USD. Select another currency to view an indicative conversion; this does not change the amount charged by the payment provider.</div>
+          <div class="lh-co-note">Official Learning Hub tutoring prices are charged in PKR. Select another currency to view an indicative conversion for reference; the payment amount remains in PKR.</div>
           <div class="lh-conv-grid" style="margin-top:10px;"><div class="lh-co-field"><label for="lhConvCurrency">Display currency</label><select id="lhConvCurrency"><option value="USD">USD — US Dollar</option><option value="PKR">PKR — Pakistani Rupee</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="AED">AED — UAE Dirham</option><option value="SAR">SAR — Saudi Riyal</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="CNY">CNY — Chinese Yuan</option><option value="JPY">JPY — Japanese Yen</option><option value="KRW">KRW — South Korean Won</option><option value="NZD">NZD — New Zealand Dollar</option><option value="MYR">MYR — Malaysian Ringgit</option><option value="TRY">TRY — Turkish Lira</option></select></div><button class="lh-btn lh-btn-outline" type="button" id="lhConvBtn">Convert</button></div>
           <div class="lh-conv-result" id="lhConvResult" aria-live="polite"></div>
         </div>
@@ -4030,12 +4077,18 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
     <section class="lh-co-wrap lh-hidden" id="lhResourcePanel">
       <div class="lh-co-card"><div class="lh-resource"><div class="lh-resource-cover"><img id="lhResourceImg" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Digital resource"></div><div><div class="lh-co-eyebrow" style="text-align:left">Premium Digital Resource</div><h2 id="lhResourceTitle" style="font-family:Georgia,serif;font-size:2rem;margin:8px 0">Premium Resource</h2><p id="lhResourceDesc" style="color:#746c61">Payment is required before access is released.</p><div id="lhResourcePages" class="lh-co-note"></div></div></div>
         <div class="lh-summary"><h3>Price Preview &amp; Billing Summary</h3><div class="lh-summary-row"><span>Resource</span><strong id="lhResourceSummary">Premium Resource</strong></div><div class="lh-summary-row" id="lhResourcePagesRow"><span>Pages</span><strong id="lhResourcePagesValue">—</strong></div><div class="lh-summary-total"><span>Total: </span><span id="lhResourceTotal">$5.00 USD</span></div><div class="lh-summary-note">Premium resource pricing: 1–5 pages = $2; 6+ pages = $5. Official price is shown in USD.</div></div>
-        <div class="lh-converter"><strong>Currency conversion (optional)</strong><div class="lh-co-note">Official resource prices remain in USD. Select another currency to view an indicative conversion only.</div><div class="lh-conv-grid" style="margin-top:10px;"><div class="lh-co-field"><label for="lhResConvCurrency">Display currency</label><select id="lhResConvCurrency"><option value="USD">USD — US Dollar</option><option value="PKR">PKR — Pakistani Rupee</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="AED">AED — UAE Dirham</option><option value="SAR">SAR — Saudi Riyal</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="CNY">CNY — Chinese Yuan</option><option value="JPY">JPY — Japanese Yen</option><option value="KRW">KRW — South Korean Won</option><option value="NZD">NZD — New Zealand Dollar</option><option value="MYR">MYR — Malaysian Ringgit</option><option value="TRY">TRY — Turkish Lira</option></select></div><button class="lh-btn lh-btn-outline" type="button" id="lhResConvBtn">Convert</button></div><div class="lh-conv-result" id="lhResConvResult" aria-live="polite"></div></div>
-        <div class="lh-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px"><div class="lh-co-field"><label for="lhResourceName">Name</label><input id="lhResourceName" type="text" autocomplete="name" placeholder="Full name"></div><div class="lh-co-field"><label for="lhResourceEmail">Email</label><input id="lhResourceEmail" type="email" autocomplete="email" placeholder="you@example.com"></div><div class="lh-co-field"><label for="lhResourceMobile">Phone / WhatsApp (optional)</label><input id="lhResourceMobile" type="tel" autocomplete="tel" placeholder="Optional"></div></div>
+        <div class="lh-converter"><strong>Currency conversion (optional)</strong><div class="lh-co-note">Official resource prices remain in USD for now. Select another currency to view an indicative conversion only.</div><div class="lh-conv-grid" style="margin-top:10px;"><div class="lh-co-field"><label for="lhResConvCurrency">Display currency</label><select id="lhResConvCurrency"><option value="USD">USD — US Dollar</option><option value="PKR">PKR — Pakistani Rupee</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="AED">AED — UAE Dirham</option><option value="SAR">SAR — Saudi Riyal</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="CNY">CNY — Chinese Yuan</option><option value="JPY">JPY — Japanese Yen</option><option value="KRW">KRW — South Korean Won</option><option value="NZD">NZD — New Zealand Dollar</option><option value="MYR">MYR — Malaysian Ringgit</option><option value="TRY">TRY — Turkish Lira</option></select></div><button class="lh-btn lh-btn-outline" type="button" id="lhResConvBtn">Convert</button></div><div class="lh-conv-result" id="lhResConvResult" aria-live="polite"></div></div>
+        <div class="lh-grid" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:20px"><div class="lh-co-field"><label for="lhResourceName">Name</label><input id="lhResourceName" type="text" autocomplete="name" placeholder="Full name"></div><div class="lh-co-field"><label for="lhResourceEmail">Email</label><input id="lhResourceEmail" type="email" autocomplete="email" placeholder="you@example.com"></div></div>
         <div class="lh-actions"><button class="lh-btn lh-btn-gold" type="button" id="lhResourcePay">Place Order &amp; Continue to Payment</button></div><div class="lh-status" id="lhResourceStatus" aria-live="polite"></div>
       </div>
     </section>
 
+  <section class="lh-co-wrap lh-hidden" id="lhGatewaySection"><div class="lh-co-card"><div class="lh-payment" id="lhGatewayModule">
+      <h3>Rapid Gateway — TEST / SANDBOX</h3>
+      <div>No real money is charged in test mode. This payment module demonstrates the intended customer payment journey before live gateway activation.</div>
+      <div class="lh-payment-grid" style="margin-top:16px"><div><label for="lhScenario">Test scenario</label><select id="lhScenario"><option value="100">TEST — Success</option><option value="200">TEST — Failed</option><option value="300">TEST — Pending</option><option value="400">TEST — Expired</option><option value="500">TEST — Timeout</option></select></div><div><label for="lhPayEmail">Email</label><input id="lhPayEmail" type="email" placeholder="your@email.com"></div><div><label for="lhCardName">Cardholder name</label><input id="lhCardName" autocomplete="cc-name" placeholder="Test Customer"></div><div><label for="lhCardNumber">Card number</label><input id="lhCardNumber" inputmode="numeric" autocomplete="cc-number" placeholder="TEST CARD NUMBER"></div><div><label for="lhCardExpiry">Expiry</label><input id="lhCardExpiry" autocomplete="cc-exp" placeholder="MM/YY"></div><div><label for="lhCardCvv">CVV</label><input id="lhCardCvv" inputmode="numeric" autocomplete="cc-csc" placeholder="CVV"></div><div class="lh-payment-full"><button class="lh-btn lh-btn-gold" type="button" id="lhPayTest">Pay securely — TEST</button></div></div>
+      <div class="lh-test-note">This is a trial/sandbox payment flow. No real money is charged in test mode. The production gateway configuration will be handled separately when the merchant account is ready.</div><div class="lh-status" id="lhPaymentStatus" aria-live="polite"></div>
+    </div></div></section>
   </main>
 </div>
 
@@ -4047,26 +4100,38 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
   document.body.classList.add('lh-checkout-mode'); root.setAttribute('aria-hidden','false');
   const $=id=>document.getElementById(id), money=n=>'$'+Number(n||0).toFixed(2);
   let orderId='';
-  const pricing={general:{25:4,50:7},board:{25:5,50:10},quran:{25:4,50:7}};
+  const pricing={general:{25:1500,50:2500},board:{25:1500,50:2500},quran:{25:1500,50:2500}};
   const groupFor=programme=>programme==='General Language'?'general':programme==='Quran / Islamic Studies'?'quran':'board';
   let sessions=[{duration:25,date:'',time:''}]; let resourcePrice=0, resourceFile='', resourcePages=0;
   let lhRatesPromise=null;
-  const lhFallbackRates={USD:1,PKR:278,GBP:0.75,EUR:0.86,AED:3.6725,SAR:3.75,CAD:1.38,AUD:1.53,CNY:7.12,JPY:147,KRW:1390,NZD:1.68,MYR:4.20,TRY:41.0};
+  const lhFallbackRates={PKR:1,USD:1/278,GBP:0.75/278,EUR:0.86/278,AED:3.6725/278,SAR:3.75/278,CAD:1.38/278,AUD:1.53/278,CNY:7.12/278,JPY:147/278,KRW:1390/278,NZD:1.68/278,MYR:4.20/278,TRY:41.0/278};
   function loadLhRates(){
     if(lhRatesPromise) return lhRatesPromise;
-    lhRatesPromise=fetch('https://open.er-api.com/v6/latest/USD',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Rate service unavailable');return r.json();}).then(d=>d && d.result==='success' && d.rates ? d.rates : lhFallbackRates).catch(()=>lhFallbackRates);
+    lhRatesPromise=fetch('https://open.er-api.com/v6/latest/PKR',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Rate service unavailable');return r.json();}).then(d=>d && d.result==='success' && d.rates ? d.rates : lhFallbackRates).catch(()=>lhFallbackRates);
     return lhRatesPromise;
   }
-  async function convertUSD(selectId,buttonId,resultId,usdAmount){
-    const c=$(selectId).value, out=$(resultId), btn=$(buttonId), amount=Number(usdAmount||0);
+  async function convertPKR(selectId,buttonId,resultId,pkrAmount){
+    const c=$(selectId).value, out=$(resultId), btn=$(buttonId), amount=Number(pkrAmount||0);
     if(!out) return;
-    if(c==='USD'){out.textContent='USD '+amount.toFixed(2)+' (official Learning Hub price).';return;}
+    if(c==='PKR'){out.textContent='PKR '+Math.round(amount).toLocaleString()+' (official Learning Hub price).';return;}
     btn.disabled=true; out.textContent='Calculating indicative conversion…';
     try{
       const rates=await loadLhRates(), rate=Number(rates[c]||lhFallbackRates[c]);
       if(!rate) throw new Error('Conversion rate unavailable');
-      out.textContent='Indicative estimate: '+c+' '+(amount*rate).toLocaleString(undefined,{maximumFractionDigits:2})+' for USD '+amount.toFixed(2)+'. This does not change the official USD price or payment amount.';
-    }catch(e){ out.textContent='Conversion is temporarily unavailable. The official price remains USD '+amount.toFixed(2)+'.'; }
+      out.textContent='Indicative estimate: '+c+' '+(amount*rate).toLocaleString(undefined,{maximumFractionDigits:2})+' for PKR '+Math.round(amount).toLocaleString()+'. Payment remains in PKR.';
+    }catch(e){ out.textContent='Conversion is temporarily unavailable. The official price remains PKR '+Math.round(amount).toLocaleString()+'.'; }
+    finally{btn.disabled=false;}
+  }
+  async function convertResourceUSD(selectId,buttonId,resultId,usdAmount){
+    const c=$(selectId).value, out=$(resultId), btn=$(buttonId), amount=Number(usdAmount||0);
+    if(!out) return;
+    if(c==='USD'){out.textContent='USD '+amount.toFixed(2)+' (official resource price).';return;}
+    btn.disabled=true; out.textContent='Calculating indicative conversion…';
+    try{
+      const rates=await fetch('https://open.er-api.com/v6/latest/USD',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Rate service unavailable');return r.json();}).then(d=>d && d.result==='success' && d.rates ? d.rates : {PKR:278,GBP:0.75,EUR:0.86,AED:3.6725,SAR:3.75,CAD:1.38,AUD:1.53,CNY:7.12,JPY:147,KRW:1390,NZD:1.68,MYR:4.20,TRY:41});
+      const rate=Number(rates[c]); if(!rate) throw new Error('Conversion rate unavailable');
+      out.textContent='Indicative estimate: '+c+' '+(amount*rate).toLocaleString(undefined,{maximumFractionDigits:2})+' for USD '+amount.toFixed(2)+'. Payment remains in USD for this resource.';
+    }catch(e){ out.textContent='Conversion is temporarily unavailable. The official resource price remains USD '+amount.toFixed(2)+'.'; }
     finally{btn.disabled=false;}
   }
   function updateQuran(){ $('lhQuranFocusWrap').classList.toggle('lh-hidden',$('lhProgramme').value!=='Quran / Islamic Studies'); }
@@ -4079,8 +4144,8 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
   }
   function generateOrderId(){ return 'LH-'+new Date().toISOString().replace(/[-:TZ.]/g,'').slice(0,14)+'-'+Math.floor(1000+Math.random()*9000); }
   function updateTotals(){
-    const demo=$('lhBookingType').value==='demo', group=groupFor($('lhProgramme').value); let subtotal=demo?2:sessions.reduce((sum,s)=>sum+(pricing[group][Number(s.duration)]||0),0); const discount=!demo&&$('lhPlan').value==='monthly'?subtotal*.10:0, total=subtotal-discount;
-    $('lhSummaryProgramme').textContent=$('lhProgramme').value; $('lhSummaryBookingType').textContent=demo?'Demo class — $2':'Regular lesson'; $('lhSummaryLessons').textContent=sessions.length; $('lhSummarySubtotal').textContent=money(subtotal); $('lhSummaryDiscount').textContent='−'+money(discount); $('lhDiscountRow').classList.toggle('lh-hidden',!discount); $('lhSummaryTotal').textContent=money(total)+' USD'; return {subtotal,discount,total};
+    const demo=$('lhBookingType').value==='demo', group=groupFor($('lhProgramme').value); let subtotal=demo?500:sessions.reduce((sum,s)=>sum+(pricing[group][Number(s.duration)]||0),0); const discount=!demo&&$('lhPlan').value==='monthly'?subtotal*.10:0, total=subtotal-discount;
+    $('lhSummaryProgramme').textContent=$('lhProgramme').value; $('lhSummaryBookingType').textContent=demo?'Demo class — PKR 500':'Regular lesson'; $('lhSummaryLessons').textContent=sessions.length; $('lhSummarySubtotal').textContent='PKR '+Math.round(subtotal).toLocaleString(); $('lhSummaryDiscount').textContent='−PKR '+Math.round(discount).toLocaleString(); $('lhDiscountRow').classList.toggle('lh-hidden',!discount); $('lhSummaryTotal').textContent='PKR '+Math.round(total).toLocaleString(); return {subtotal,discount,total};
   }
   function showOrderCreated(orderRef){
     if(orderRef){ $('lhOrderRow').classList.remove('lh-hidden'); $('lhSummaryOrder').textContent=orderRef; }
@@ -4092,33 +4157,35 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
     if(qs){ const v=decodeURIComponent(qs); if([...$('lhSubject').options].some(o=>o.textContent===v))$('lhSubject').value=v; }
   }
   function callGateway(payload,statusEl,button){
-    button.disabled=true; statusEl.className='lh-status'; statusEl.textContent='Creating your order and opening secure payment…';
-    return fetch('/api/rapidpay/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...payload,mode:'live'})}).then(async res=>{let data={};try{data=await res.json()}catch(e){} if(res.ok&&data.checkoutUrl){location.href=data.checkoutUrl; return true;} throw new Error(data.error||'Secure payment is currently unavailable. Please contact Learning Hub Support.');}).catch(err=>{statusEl.className='lh-status lh-err';statusEl.textContent=err.message;button.disabled=false;return false;});
+    button.disabled=true; statusEl.className='lh-status'; statusEl.textContent='Creating your order and opening the test payment module…';
+    return fetch('/api/rapidpay/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({...payload,mode:'test'})}).then(async res=>{let data={};try{data=await res.json()}catch(e){} if(res.ok&&data.checkoutUrl){location.href=data.checkoutUrl; return true;} throw new Error(data.error||'Secure payment is currently unavailable. Please contact Learning Hub Support.');}).catch(err=>{statusEl.className='lh-status lh-err';statusEl.textContent=err.message;button.disabled=false;return false;});
   }
   $('lhProgramme').addEventListener('change',()=>{updateQuran();renderSessions();}); $('lhBookingType').addEventListener('change',()=>{$('lhPlan').disabled=$('lhBookingType').value==='demo';if($('lhBookingType').value==='demo')$('lhPlan').value='single';renderSessions();}); $('lhPlan').addEventListener('change',updateTotals); $('lhAddSession').addEventListener('click',()=>{if($('lhBookingType').value!=='demo'){sessions.push({duration:25,date:'',time:''});renderSessions();}});
-  $('lhConvBtn').addEventListener('click',()=>convertUSD('lhConvCurrency','lhConvBtn','lhConvResult',updateTotals().total));
+  $('lhConvBtn').addEventListener('click',()=>convertPKR('lhConvCurrency','lhConvBtn','lhConvResult',updateTotals().total));
   $('lhPlaceOrder').addEventListener('click',()=>{
     const name=$('lhCustomerName').value.trim(),email=$('lhCustomerEmail').value.trim();
     if(!name||!email){$('lhBookingStatus').className='lh-status lh-err';$('lhBookingStatus').textContent='Please enter the student/customer name and email address.';return;}
     if(!sessions.length || sessions.some(s=>!s.date||!s.time)){ $('lhBookingStatus').className='lh-status lh-err'; $('lhBookingStatus').textContent='Please select a date and preferred time for every lesson.'; return; }
     orderId=generateOrderId();
     const calc=updateTotals();
-    const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:$('lhCustomerMobile').value.trim(),parentName:$('lhParentName').value.trim()},programme:$('lhProgramme').value,subject:$('lhSubject').value,board:$('lhBoard').value,level:$('lhLevel').value,bookingType:$('lhBookingType').value,plan:$('lhPlan').value,timezone:$('lhTimezone').value,teacherPreference:$('lhTeacherPreference').value,quranFocus:$('lhQuranFocus').value,requirements:$('lhRequirements').value,sessions,total:calc.total,currency:'USD',createdAt:new Date().toISOString()};
+    const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:'',parentName:$('lhParentName').value.trim()},programme:$('lhProgramme').value,subject:$('lhSubject').value,board:$('lhBoard').value,level:$('lhLevel').value,bookingType:$('lhBookingType').value,plan:$('lhPlan').value,timezone:$('lhTimezone').value,teacherPreference:$('lhTeacherPreference').value,quranFocus:$('lhQuranFocus').value,requirements:$('lhRequirements').value,sessions,total:calc.total,currency:'PKR',createdAt:new Date().toISOString()};
     sessionStorage.setItem('lh_order_'+orderId,JSON.stringify(payload));
     showOrderCreated(orderId);
-    callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:Math.round(calc.total*100)/100,currency:'USD',description:'Learning Hub — '+$('lhProgramme').value,booking:payload},$('lhBookingStatus'),$('lhPlaceOrder'));
+    $('lhGatewaySection').classList.remove('lh-hidden'); $('lhPayEmail').value=email;
+    callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:Math.round(calc.total),currency:'PKR',description:'Learning Hub — '+$('lhProgramme').value,booking:payload},$('lhBookingStatus'),$('lhPlaceOrder'));
   });
-  $('lhResConvBtn').addEventListener('click',()=>convertUSD('lhResConvCurrency','lhResConvBtn','lhResConvResult',resourcePrice));
+  $('lhResConvBtn').addEventListener('click',()=>convertResourceUSD('lhResConvCurrency','lhResConvBtn','lhResConvResult',resourcePrice));
   $('lhResourcePay').addEventListener('click',()=>{
     const name=$('lhResourceName').value.trim(),email=$('lhResourceEmail').value.trim();
     if(!name||!email){$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='Please enter your name and email address.';return;}
     if(resourcePrice<=0){$('lhResourceStatus').className='lh-status lh-err';$('lhResourceStatus').textContent='This resource is free and does not require payment.';return;}
     orderId=generateOrderId();
-    const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:$('lhResourceMobile').value.trim()},resource:decodeURIComponent(params.get('resource')||'Premium Resource'),file:resourceFile,pages:resourcePages,price:resourcePrice,currency:'USD',createdAt:new Date().toISOString()};
+    const payload={orderId,invoiceNumber:orderId,status:'Payment Pending',customer:{name,email,mobile:''},resource:decodeURIComponent(params.get('resource')||'Premium Resource'),file:resourceFile,pages:resourcePages,price:resourcePrice,currency:'USD',createdAt:new Date().toISOString()};
     sessionStorage.setItem('lh_order_'+orderId,JSON.stringify(payload));
     showOrderCreated(orderId);
     callGateway({name,email,mobile:payload.customer.mobile,orderId,invoiceNumber:orderId,amount:resourcePrice,currency:'USD',description:'Learning Hub — '+payload.resource,resource:payload.resource,file:resourceFile,pages:resourcePages},$('lhResourceStatus'),$('lhResourcePay'));
   });
+  $('lhPayTest').addEventListener('click',()=>{const email=$('lhPayEmail').value.trim(),scenario=$('lhScenario').value;if(!email||!orderId){$('lhPaymentStatus').className='lh-status lh-err';$('lhPaymentStatus').textContent='Create an order first, then enter the customer email to run the TEST payment flow.';return;} const names={100:'Payment successful — TEST order confirmed.',200:'Payment failed — TEST result.',300:'Payment pending — TEST order created.',400:'Payment expired — TEST result.',500:'Payment timeout — TEST result.'};$('lhPaymentStatus').className='lh-status '+(scenario==='100'?'lh-ok':scenario==='300'?'':'lh-err');$('lhPaymentStatus').textContent=names[scenario]+' Order reference: '+orderId; try{const k='lh_order_'+orderId,d=JSON.parse(sessionStorage.getItem(k)||'{}');d.status=scenario==='100'?'Paid':scenario==='300'?'Pending':scenario==='200'?'Failed':scenario==='400'?'Expired':'Timeout';d.paymentScenario=scenario;d.paidAt=scenario==='100'?new Date().toISOString():null;sessionStorage.setItem(k,JSON.stringify(d));}catch(e){}});
   // Initialise mode
   if(mode==='resource'){
     $('lhBookingPanel').classList.add('lh-hidden');$('lhResourcePanel').classList.remove('lh-hidden');$('lhCoEyebrow').textContent='Digital Resource Checkout';$('lhCoTitle').textContent='Unlock & Pay';$('lhCoIntro').textContent='Review your selected premium resource, place your order and proceed immediately to secure payment.';
