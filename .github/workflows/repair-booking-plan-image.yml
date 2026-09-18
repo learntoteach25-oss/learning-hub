@@ -1,0 +1,32 @@
+name: Repair booking plan image
+on:
+  push:
+    paths:
+      - '.github/workflows/repair-booking-plan-image.yml'
+permissions:
+  contents: write
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace oversized embedded plan image
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+          p = Path("index.html")
+          s = p.read_text()
+          s, count = re.subn(r'src="data:image/png;base64,[^"]+"(?=/><button class="lh-plan-image-choice)', 'src="assets/plans/learning-hub-plan-options.jpg"', s, count=1)
+          if count != 1:
+              raise SystemExit(f"Expected one plan image, changed {count}")
+          p.write_text(s)
+          PY
+      - name: Commit repair and remove helper
+        run: |
+          git config user.name "Learning Hub Updates"
+          git config user.email "updates@learninghubtutoring.com"
+          git rm .github/workflows/repair-booking-plan-image.yml
+          git add index.html
+          git commit -m "Fix booking plan image"
+          git push
