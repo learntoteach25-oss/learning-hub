@@ -3695,5 +3695,28 @@ body.lh-route-checkout > #lhCheckoutRoot { display:block !important; visibility:
  #feedback .review-cta-card::before{background:linear-gradient(90deg,rgba(7,7,7,.95),rgba(7,7,7,.72))!important}
 }
 </style>
+
+<style id="learning-hub-readable-header-fix">
+@media(max-width:1180px) and (min-width:901px){
+ .nav-inner{
+   height:auto!important;min-height:122px!important;padding:13px 0 11px!important;
+   display:grid!important;grid-template-columns:1fr auto!important;grid-template-rows:auto auto!important;
+   column-gap:20px!important;row-gap:9px!important
+ }
+ .brand{grid-column:1!important;grid-row:1!important;justify-self:start!important}
+ .nav-actions{grid-column:2!important;grid-row:1!important;justify-self:end!important}
+ .nav-links{
+   grid-column:1 / -1!important;grid-row:2!important;width:100%!important;
+   display:flex!important;justify-content:center!important;gap:clamp(14px,2vw,25px)!important;
+   padding-top:9px!important;border-top:1px solid rgba(240,213,142,.16)!important
+ }
+ .nav-links a{font-size:.8rem!important;font-weight:700!important;color:#f7f2e9!important;letter-spacing:.005em!important}
+ .brand-mark-image{width:52px!important;height:52px!important}
+ .brand-copy strong{font-size:1.02rem!important}
+ .brand-copy small{font-size:.66rem!important}
+ .nav-actions .btn{min-height:46px!important}
+ .hero{padding-top:190px!important}
+}
+</style>
 </body>
 </html>
