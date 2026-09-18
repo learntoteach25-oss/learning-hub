@@ -3373,5 +3373,71 @@ body.lh-route-checkout > #lhCheckoutRoot { display:block !important; visibility:
   }
 })();
 </script>
-</body>
+<style id="learning-hub-board-dropdowns">
+/* Interactive curriculum board cards */
+.lh-board-grid{align-items:start!important}
+.lh-board-card{position:relative!important;min-height:250px!important;padding:0!important;overflow:hidden!important;border:1px solid rgba(23,21,18,.10)!important;box-shadow:0 14px 35px rgba(23,21,18,.07)!important;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease!important}
+.lh-board-card:nth-child(1){background:linear-gradient(145deg,#fffdf8,#f4f0ff)!important;border-top:4px solid #7463a8!important}
+.lh-board-card:nth-child(2){background:linear-gradient(145deg,#fffdf8,#edf8f5)!important;border-top:4px solid #3b8b7a!important}
+.lh-board-card:nth-child(3){background:linear-gradient(145deg,#fffdf8,#eef5fb)!important;border-top:4px solid #477aa3!important}
+.lh-board-card:nth-child(4){background:linear-gradient(145deg,#fffdf8,#fff4df)!important;border-top:4px solid #c9933b!important}
+.lh-board-card:hover{transform:translateY(-7px)!important;box-shadow:0 24px 48px rgba(23,21,18,.13)!important;border-color:rgba(142,107,45,.30)!important}
+.lh-board-head{position:relative!important;min-height:246px!important;padding:28px 62px 28px 28px!important;display:flex!important;align-items:center!important;cursor:pointer!important;outline:none!important}
+.lh-board-head::before{content:"Explore subjects";position:absolute;left:28px;bottom:25px;font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--gold3)}
+.lh-board-head::after{content:"+";position:absolute;right:26px;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:#17130f;color:var(--gold2);font-size:1.35rem;line-height:1;transition:transform .25s ease,background .25s ease}
+.lh-board-head:hover::after{transform:translateY(-50%) scale(1.1);background:var(--gold3)}
+.lh-board-head:focus-visible{box-shadow:inset 0 0 0 3px var(--gold)}
+.lh-board-card.is-open{min-height:0!important}
+.lh-board-card.is-open .lh-board-head{min-height:170px!important;border-bottom:1px solid rgba(142,107,45,.16)!important}
+.lh-board-card.is-open .lh-board-head::before{content:"Hide subjects"}
+.lh-board-card.is-open .lh-board-head::after{content:"−";transform:translateY(-50%) rotate(180deg)}
+.lh-board-card:not(.is-open)>.lh-board-desc,
+.lh-board-card:not(.is-open)>.lh-subject-label,
+.lh-board-card:not(.is-open)>.lh-subject-chips,
+.lh-board-card:not(.is-open)>.lh-core-strip,
+.lh-board-card:not(.is-open)>.card-link{display:none!important}
+.lh-board-card>.lh-board-desc{padding:24px 28px 0!important;margin:0!important;text-align:left!important}
+.lh-board-card>.lh-subject-label{padding:22px 28px 8px!important;text-align:left!important}
+.lh-board-card>.lh-subject-chips{padding:0 28px 8px!important}
+.lh-board-card>.lh-core-strip{margin:14px 28px 0!important}
+.lh-board-card>.card-link{display:inline-flex!important;margin:20px 28px 28px!important}
+.lh-subject-chips span{transition:transform .2s ease,box-shadow .2s ease,background .2s ease!important}
+.lh-subject-chips span:hover{transform:translateY(-3px) scale(1.025)!important;box-shadow:0 7px 15px rgba(23,21,18,.10)!important;background:#fff!important}
+.lh-board-kicker,.lh-board-card h3,.lh-board-desc,.lh-subject-label{text-align:left!important}
+.lh-board-card h3{font-size:clamp(1.25rem,2vw,1.65rem)!important;line-height:1.22!important;text-wrap:balance}
+.lh-board-desc,.section-heading p,.card-body p,.support-overlay p,.article-body p,.contact p,.policy-content p{overflow-wrap:anywhere;text-wrap:pretty}
+.section-heading h2,.world-copy h2,.contact h2,.cta h2{overflow-wrap:anywhere;text-wrap:balance}
+.lh-board-disclaimer{text-wrap:pretty!important}
+@media(max-width:720px){
+ .lh-board-head{min-height:220px!important;padding:24px 54px 24px 22px!important}
+ .lh-board-head::before{left:22px;bottom:20px}
+ .lh-board-head::after{right:18px}
+ .lh-board-card.is-open .lh-board-head{min-height:155px!important}
+ .lh-board-card>.lh-board-desc{padding:21px 22px 0!important}
+ .lh-board-card>.lh-subject-label{padding:19px 22px 8px!important}
+ .lh-board-card>.lh-subject-chips{padding:0 22px 8px!important}
+ .lh-board-card>.lh-core-strip{margin:12px 22px 0!important}
+ .lh-board-card>.card-link{margin:18px 22px 24px!important}
+}
+@media(prefers-reduced-motion:reduce){.lh-board-card,.lh-board-head::after,.lh-subject-chips span{transition:none!important}.lh-board-card:hover,.lh-subject-chips span:hover{transform:none!important}}
+</style>
+<script id="learning-hub-board-dropdowns-script">
+(()=>{
+ document.querySelectorAll('.lh-board-card').forEach((card,index)=>{
+   const head=card.querySelector('.lh-board-head');
+   if(!head)return;
+   head.setAttribute('role','button');
+   head.setAttribute('tabindex','0');
+   head.setAttribute('aria-expanded','false');
+   head.setAttribute('aria-label',(card.querySelector('h3')?.textContent.trim()||'Curriculum board')+' — show subjects');
+   const toggle=()=>{
+     const open=card.classList.toggle('is-open');
+     head.setAttribute('aria-expanded',open?'true':'false');
+     head.setAttribute('aria-label',(card.querySelector('h3')?.textContent.trim()||'Curriculum board')+(open?' — hide subjects':' — show subjects'));
+   };
+   head.addEventListener('click',toggle);
+   head.addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();toggle()}});
+ });
+})();
+</script></body>
 </html>
