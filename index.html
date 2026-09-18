@@ -2133,7 +2133,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="container">
 <div class="hero-content">
 <div class="eyebrow">Global Online Learning Platform</div>
-<h1>Learn smarter.<br/>Grow with Learning Hub.</h1>
+<h1 class="hero-title"><span>Learn smarter.</span><span>Grow with <em>Learning Hub.</em></span></h1>
 <p>
         A global education platform connecting learners with personalised tutoring,
         international curriculum support, Quran and Islamic Studies, exam preparation,
@@ -2736,7 +2736,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <p>Book a single lesson or select a weekly or monthly plan. International learners can review the payable amount in their regional currency during billing.</p>
 <div class="contact-side-points"><span>✓ Personalised online learning</span><span>✓ International curriculum support</span><span>✓ Secure booking and payment flow</span></div>
 <a class="btn btn-gold" href="?checkout=booking&amp;v=20260916">Book Now →</a>
-<details class="support-form-details"><summary>Support / Complaints Form</summary><form action="#" data-gmail-compose="support" id="support-form" method="POST"><input name="_next" type="hidden" value="https://learninghubtutoring.com/?submitted=support"/><input name="_template" type="hidden" value="table"/><input name="_captcha" type="hidden" value="false"/><input name="_subject" type="hidden" value="Learning Hub — Support / Complaint"/><label for="support-name">Name</label><input autocomplete="name" id="support-name" name="name" required="" type="text"/><label for="support-email">Email</label><input autocomplete="email" id="support-email" name="email" required="" type="email"/><label for="support-message">Message</label><textarea id="support-message" name="message" placeholder="Tell us how we can help." required=""></textarea><button class="btn btn-gold" type="submit">Send to Support</button></form></details></div>
+<details class="support-form-details"><summary>Support / Complaints Form</summary><form action="https://formsubmit.co/learninghubcustomersupport@gmail.com" id="support-form" method="POST"><input name="_next" type="hidden" value="https://learninghubtutoring.com/?submitted=support"/><input name="_template" type="hidden" value="table"/><input name="_captcha" type="hidden" value="true"/><input name="_autoresponse" type="hidden" value="Thank you for contacting Learning Hub Support. We have received your message and will respond as soon as possible."/><input name="_honey" style="display:none" type="text"/><input name="_subject" type="hidden" value="Learning Hub — Support / Complaint"/><label for="support-name">Name</label><input autocomplete="name" id="support-name" name="name" required="" type="text"/><label for="support-email">Email</label><input autocomplete="email" id="support-email" name="email" required="" type="email"/><label for="support-message">Message</label><textarea id="support-message" name="message" placeholder="Tell us how we can help." required=""></textarea><button class="btn btn-gold" type="submit">Send to Support</button></form></details></div>
 </div>
 </div>
 </section><section class="testimonials" id="feedback"><div class="container">
@@ -3525,7 +3525,7 @@ body.lh-route-checkout > #lhCheckoutRoot { display:block !important; visibility:
      window.open(url,'_blank','noopener');
    });
  }
- bind(document.querySelector('#support-form'),'support');
+ bind(document.querySelector('#support-form[data-gmail-compose]'),'support');
  bind(document.querySelector('#feedbackFormAnchor'),'feedback');
 })();
 </script>
@@ -3601,5 +3601,19 @@ body.lh-route-checkout > #lhCheckoutRoot { display:block !important; visibility:
  });
 })();
 </script>
+
+<style id="learning-hub-hero-title-balance">
+.hero-content{max-width:1080px!important}
+.hero-title{font-size:clamp(3.35rem,6vw,5.65rem)!important;line-height:1.04!important;letter-spacing:-.025em!important;max-width:1040px!important;text-wrap:balance}
+.hero-title>span{display:block}
+.hero-title>span+span{margin-top:8px}
+.hero-title em{font-style:normal;color:var(--gold2);text-shadow:0 5px 30px rgba(201,164,92,.18)}
+.hero .hero-content>p{max-width:760px!important;font-size:1.06rem!important;line-height:1.72!important}
+@media(max-width:760px){
+ .hero-title{font-size:clamp(3rem,14vw,4.8rem)!important}
+ .hero-title>span:nth-child(2){max-width:10ch}
+ .hero-title em{display:block}
+}
+</style>
 </body>
 </html>
