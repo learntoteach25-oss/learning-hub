@@ -1,0 +1,38 @@
+name: Apply booking page refinements
+on:
+  push:
+    paths:
+      - '.github/workflows/apply-booking-refinements.yml'
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update booking page
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("index.html")
+          s = p.read_text()
+          s = s.replace('Choose your learning option, configure your lessons, identify the payer region, review the converted payable amount and proceed to secure payment.', '')
+          s = s.replace('src="assets/plans/learning-hub-plan-options.png"', 'src="assets/plans/learning-hub-plan-options.jpg"')
+          s = s.replace('<option value="Quran / Islamic Studies">Quran &amp; Islamic Studies</option>', '<option value="Quran / Islamic Studies">Quran &amp; Islamic Studies</option><option value="Counselling">Counselling</option>')
+          css = """<style id="learning-hub-booking-refinement">
+          #lhCoIntro{display:none!important}
+          .lh-whatsapp-float{left:auto!important;right:94px!important;bottom:22px!important}
+          .concierge{right:22px!important;bottom:22px!important}
+          @media(max-width:620px){.lh-whatsapp-float{left:auto!important;right:82px!important;bottom:14px!important}.concierge{right:14px!important;bottom:14px!important}}
+          </style>"""
+          s = s.replace('</body>', css + '</body>')
+          p.write_text(s)
+          PY
+      - name: Commit page change and remove helper
+        run: |
+          git config user.name "Learning Hub Updates"
+          git config user.email "updates@learninghubtutoring.com"
+          git rm .github/workflows/apply-booking-refinements.yml
+          git add index.html
+          git commit -m "Refine booking page and align contact buttons"
+          git push
