@@ -1919,35 +1919,8 @@ footer .footer-grid{align-items:start!important}
 <!-- TEACHER APPLICATION -->
 <!-- CONTACT -->
 <!-- FEEDBACK & REVIEWS -->
-<!-- CONCIERGE -->
-<div class="concierge">
-<button aria-expanded="false" aria-label="Open Learning Concierge" class="concierge-button">
-    ✦
-  </button>
-<div class="concierge-panel" id="conciergePanel">
-<h3>Learning Concierge</h3>
-<p>What would you like help with?</p>
-<button class="concierge-option">
-      Academic tutoring
-    </button>
-<button class="concierge-option">
-      IB support
-    </button>
-<button class="concierge-option">
-      Cambridge support
-    </button>
-<button class="concierge-option">
-      Quran &amp; Islamic Studies
-    </button>
-<button class="concierge-option">
-      Exam preparation
-    </button>
-<button class="concierge-option">
-      Specialist learning support
-    </button>
-</div>
-</div>
-<!-- TIDIO -->
+<!-- TIDIO LIVE CHAT -->
+<script async src="https://code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js"></script>
 <style id="learning-hub-premium-images">
 /* Premium image treatment — presentation only. Existing elements, content and functions remain unchanged. */
 .hero,
@@ -3399,50 +3372,6 @@ body.lh-route-checkout > #lhCheckoutRoot { display:block !important; visibility:
     if(anchor){const n=document.createElement('div');n.className='form-success-banner';n.textContent=msg;anchor.parentNode.insertBefore(n,anchor)}
   }
 })();
-</script><style id="learning-hub-concierge-live-fix">
-.concierge{display:block!important;position:fixed!important;right:22px!important;bottom:22px!important;left:auto!important;z-index:12000!important}
-.concierge-button{display:grid!important;place-items:center!important}
-.concierge-panel{right:0!important;left:auto!important;bottom:72px!important;z-index:12001!important}
-@media(max-width:520px){.concierge{right:14px!important;bottom:14px!important}.concierge-panel{width:min(310px,calc(100vw - 28px))!important}}
-</style>
-<script id="learning-hub-concierge-live-script">
-(()=>{
-  const button=document.querySelector('.concierge-button');
-  const panel=document.querySelector('#conciergePanel');
-  const concierge=document.querySelector('.concierge');
-  if(!button||!panel)return;
-  button.type='button';
-  button.setAttribute('aria-controls','conciergePanel');
-  const setOpen=open=>{
-    panel.classList.toggle('open',open);
-    button.setAttribute('aria-expanded',open?'true':'false');
-    button.setAttribute('aria-label',open?'Close Learning Concierge':'Open Learning Concierge');
-  };
-  button.addEventListener('click',event=>{
-    event.stopPropagation();
-    setOpen(!panel.classList.contains('open'));
-  });
-  panel.querySelectorAll('.concierge-option').forEach(option=>{
-    option.type='button';
-    option.addEventListener('click',()=>{
-      const choice=option.textContent.trim();
-      setOpen(false);
-      const modal=document.querySelector('#lh-enquiry-modal');
-      if(modal){
-        modal.classList.add('open');
-        modal.setAttribute('aria-hidden','false');
-        const title=document.querySelector('#lh-enquiry-title');
-        if(title)title.textContent=choice+' Enquiry';
-        const topic=document.querySelector('#lh-topic');
-        if(topic&&!topic.value)topic.value=choice;
-        setTimeout(()=>document.querySelector('#lh-name')?.focus(),0);
-      }else{
-        document.querySelector('#contact')?.scrollIntoView({behavior:'smooth'});
-      }
-    });
-  });
-  document.addEventListener('click',event=>{if(!concierge.contains(event.target))setOpen(false)});
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'){setOpen(false);button.focus()}});
-})();
-</script></body>
+</script>
+</body>
 </html>
