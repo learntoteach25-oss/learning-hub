@@ -3674,5 +3674,26 @@ body.lh-route-checkout > #lhCheckoutRoot { display:block !important; visibility:
 .lh-notice-icon{margin:0!important;transform:none!important}
 @media(max-width:620px){.lh-board-disclaimer{width:calc(100% - 20px)!important}}
 </style>
+
+<style id="learning-hub-feedback-banner-fix">
+/* Full-width feedback invitation: removes the narrow detached card presentation. */
+#feedback .review-grid{display:block!important;width:100%!important;margin-top:24px!important;overflow:visible!important}
+#feedback .review-cta-card{
+ width:100%!important;max-width:none!important;min-height:270px!important;height:auto!important;
+ flex:0 0 100%!important;border-radius:24px!important;background-position:center 58%!important
+}
+#feedback .review-cta-card::before{background:linear-gradient(90deg,rgba(7,7,7,.97) 0%,rgba(7,7,7,.88) 43%,rgba(7,7,7,.40) 72%,rgba(7,7,7,.18) 100%)!important}
+#feedback .review-cta-link{
+ min-height:270px!important;padding:34px 42px!important;justify-content:center!important;
+ max-width:100%!important
+}
+#feedback .review-cta-link h3{max-width:590px!important;font-size:clamp(1.9rem,3.5vw,3rem)!important}
+#feedback .review-cta-link p{max-width:560px!important;font-size:.94rem!important}
+@media(max-width:720px){
+ #feedback .review-cta-card,#feedback .review-cta-link{min-height:330px!important}
+ #feedback .review-cta-link{padding:28px 24px!important}
+ #feedback .review-cta-card::before{background:linear-gradient(90deg,rgba(7,7,7,.95),rgba(7,7,7,.72))!important}
+}
+</style>
 </body>
 </html>
