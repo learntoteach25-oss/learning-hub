@@ -3529,5 +3529,77 @@ body.lh-route-checkout > #lhCheckoutRoot { display:block !important; visibility:
  bind(document.querySelector('#feedbackFormAnchor'),'feedback');
 })();
 </script>
+
+<style id="learning-hub-policy-document-fix">
+/* One disclosure control only: the existing summary indicator. */
+.policy-card details>summary small::after{content:none!important;display:none!important}
+.policy-card details>summary::after{
+ content:"+"!important;width:34px!important;height:34px!important;border-radius:50%!important;
+ display:grid!important;place-items:center!important;flex:0 0 34px!important;
+ background:#17130f!important;color:var(--gold2)!important;font-size:1.15rem!important;line-height:1!important
+}
+.policy-card details[open]>summary::after{content:"−"!important}
+.policy-card details>summary small{margin-left:auto!important;padding-right:4px!important}
+
+/* Policy text is presented as a formal, readable document. */
+.policy-card .policy-content{
+ width:min(100%,820px)!important;max-width:820px!important;margin:0 auto!important;
+ padding:26px 28px 42px!important;border-top:1px solid rgba(142,107,45,.14)!important;
+ overflow:visible!important
+}
+.policy-clause{
+ position:relative;margin:0 0 14px!important;padding:20px 22px 20px 25px!important;
+ background:#fff!important;border:1px solid rgba(142,107,45,.15)!important;border-radius:12px!important;
+ box-shadow:0 5px 16px rgba(36,27,15,.035)!important
+}
+.policy-clause::before{
+ content:"";position:absolute;left:0;top:16px;bottom:16px;width:3px;border-radius:3px;background:var(--gold)
+}
+.policy-card .policy-content .policy-clause h3{
+ margin:0 0 8px!important;padding:0!important;color:#211a12!important;
+ font-family:"DM Sans",sans-serif!important;font-size:.98rem!important;font-weight:800!important;
+ line-height:1.4!important;text-align:left!important;white-space:normal!important;overflow-wrap:anywhere!important
+}
+.policy-card .policy-content .policy-clause p,
+.policy-card .policy-content .policy-clause li{
+ width:100%!important;max-width:100%!important;margin:0 0 9px!important;color:#625a50!important;
+ font-size:.9rem!important;line-height:1.72!important;text-align:left!important;
+ white-space:normal!important;overflow-wrap:anywhere!important;word-break:normal!important
+}
+.policy-card .policy-content .policy-clause p:last-child,
+.policy-card .policy-content .policy-clause ul:last-child,
+.policy-card .policy-content .policy-clause ol:last-child{margin-bottom:0!important}
+.policy-card .policy-content .policy-clause ul,
+.policy-card .policy-content .policy-clause ol{margin:8px 0 10px!important;padding-left:22px!important}
+.policy-highlight{width:100%!important;max-width:100%!important}
+@media(max-width:720px){
+ .policy-card details>summary small{display:none!important}
+ .policy-card details>summary::after{width:32px!important;height:32px!important;flex-basis:32px!important}
+ .policy-card .policy-content{padding:18px 13px 26px!important}
+ .policy-clause{padding:17px 16px 17px 19px!important}
+ .policy-card .policy-content .policy-clause p,.policy-card .policy-content .policy-clause li{font-size:.86rem!important;line-height:1.68!important}
+}
+</style>
+<script id="learning-hub-policy-clause-layout">
+(()=>{
+ document.querySelectorAll('.policy-content').forEach(content=>{
+   if(content.querySelector('.policy-clause'))return;
+   const children=[...content.children];
+   let clause=null;
+   children.forEach(node=>{
+     if(node.matches('h3')){
+       clause=document.createElement('section');
+       clause.className='policy-clause';
+       content.insertBefore(clause,node);
+       clause.appendChild(node);
+     }else if(clause && !node.matches('.policy-highlight')){
+       clause.appendChild(node);
+     }else{
+       clause=null;
+     }
+   });
+ });
+})();
+</script>
 </body>
 </html>
