@@ -3028,7 +3028,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <section class="lh-co-hero"><div class="lh-co-wrap">
 <div class="lh-co-eyebrow" id="lhCoEyebrow">Learning Hub Checkout</div>
 <h1 id="lhCoTitle">Book &amp; Pay</h1>
-<p id="lhCoIntro">Choose your learning option, configure your lessons, identify the payer region, review the converted payable amount and proceed to secure payment.</p>
+<p id="lhCoIntro"></p>
 </div></section>
 <section class="lh-co-wrap" id="lhBookingPanel">
 <div class="lh-co-card">
@@ -3039,7 +3039,7 @@ jzKc8wKEwSHk3sAZC25+Fh/WgN8BXnqBcQNzw7QjaCj5MiPxDIb5H3jahuwVPpETa7RdB3eEoI1MO0XZ
 <div class="lh-co-field"><label for="lhProgramme">Course / Programme</label><select id="lhProgramme">
 <option value="General Language">General Language Courses</option>
 <option value="School Board / Cambridge">School Board / Cambridge &amp; International Curriculum</option>
-<option value="Quran / Islamic Studies">Quran &amp; Islamic Studies</option>
+<option value="Quran / Islamic Studies">Quran &amp; Islamic Studies</option><option value="Counselling">Counselling</option>
 </select></div>
 <div class="lh-co-field"><label for="lhBookingType">Booking Type</label><select id="lhBookingType"><option value="standard">Regular lesson</option></select></div>
 <div class="lh-co-field"><label for="lhSubject">Subject / Course</label><select id="lhSubject"><option>English Language</option><option>English Literature</option><option>Mathematics</option><option>Biology</option><option>Chemistry</option><option>Physics</option><option>Business Studies</option><option>Economics</option><option>Sociology</option><option>Geography</option><option>History</option><option>Psychology</option><option>Computer Science</option><option>Chinese</option><option>Japanese</option><option>Korean</option><option>Italian</option><option>Urdu</option><option>Arabic</option><option>Academic Writing</option><option>Study Skills</option><option>Other</option></select></div>
@@ -4160,5 +4160,10 @@ section[id]{
  }
 })();
 </script>
-</body>
+<style id="learning-hub-booking-refinement">
+#lhCoIntro{display:none!important}
+.lh-whatsapp-float{left:auto!important;right:94px!important;bottom:22px!important}
+.concierge{right:22px!important;bottom:22px!important}
+@media(max-width:620px){.lh-whatsapp-float{left:auto!important;right:82px!important;bottom:14px!important}.concierge{right:14px!important;bottom:14px!important}}
+</style></body>
 </html>
