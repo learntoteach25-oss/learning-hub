@@ -2754,7 +2754,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 </section><section class="testimonials" id="feedback"><div class="container">
 <div class="section-heading center"><div class="eyebrow">Feedback &amp; Reviews</div><h2>Share your Learning Hub experience.</h2><p>Clients and learners can submit written feedback and leave a 1–5 star rating.</p></div>
 <div class="feedback-layout"><div class="rating-summary"><div class="eyebrow">Client Rating</div><div class="rating-score" id="averageRating">4.5/5</div><div aria-label="4.5 out of 5 stars" class="stars rating-stars-45">★★★★<span class="rating-half">★</span></div><span class="rating-display-label">Published rating display</span><p id="ratingCount"><strong>4.5 out of 5</strong><br/>Customer feedback is reviewed before publication.</p><div class="feedback-note">Rating scale: 1–5 stars. Use the form to submit a rating and feedback.</div></div>
-<form action="https://formsubmit.co/learninghubcustomersupport@gmail.com" class="feedback-form" enctype="multipart/form-data" id="feedbackFormAnchor" method="POST"><input name="_next" type="hidden" value="https://learninghubtutoring.com/?submitted=feedback"/><input name="_template" type="hidden" value="table"/><input name="_captcha" type="hidden" value="true"/><input name="_subject" type="hidden" value="Learning Hub — New Learner Feedback"/><div class="feedback-form-grid"><div><label for="feedbackName">Name</label><input autocomplete="name" id="feedbackName" name="name" required=""/></div><div><label for="feedbackEmail">Email</label><input autocomplete="email" id="feedbackEmail" name="email" required="" type="email"/></div><div class="full"><label>Rating</label><div aria-label="Choose a rating" class="rating-input"><input id="star5" name="rating" required="" type="radio" value="5"/><label for="star5">★</label><input id="star4" name="rating" type="radio" value="4"/><label for="star4">★</label><input id="star3" name="rating" type="radio" value="3"/><label for="star3">★</label><input id="star2" name="rating" type="radio" value="2"/><label for="star2">★</label><input id="star1" name="rating" type="radio" value="1"/><label for="star1">★</label></div></div><div class="full"><label for="feedbackMessage">Written Feedback</label><textarea id="feedbackMessage" name="message" placeholder="Write your feedback here…"></textarea></div><div class="full"><div class="feedback-upload-grid">
+<form action="#" class="feedback-form" enctype="multipart/form-data" id="feedbackFormAnchor" method="POST" novalidate><div class="feedback-form-grid"><div><label for="feedbackName">Name</label><input autocomplete="name" id="feedbackName" name="name" required=""/></div><div><label for="feedbackEmail">Email</label><input autocomplete="email" id="feedbackEmail" name="email" required="" type="email"/></div><div class="full"><label>Rating</label><div aria-label="Choose a rating" class="rating-input"><input id="star5" name="rating" required="" type="radio" value="5"/><label for="star5">★</label><input id="star4" name="rating" type="radio" value="4"/><label for="star4">★</label><input id="star3" name="rating" type="radio" value="3"/><label for="star3">★</label><input id="star2" name="rating" type="radio" value="2"/><label for="star2">★</label><input id="star1" name="rating" type="radio" value="1"/><label for="star1">★</label></div></div><div class="full"><label for="feedbackMessage">Written Feedback</label><textarea id="feedbackMessage" name="message" placeholder="Write your feedback here…"></textarea></div><div class="full"><div class="feedback-upload-grid">
   <div class="feedback-upload"><label for="feedbackAudio">Audio message <span>(optional)</span></label><input accept="audio/*" id="feedbackAudio" name="audio_message" type="file"/><small>Upload an audio message.</small></div>
   <div class="feedback-upload"><label for="feedbackVideo">Short video <span>(optional)</span></label><input accept="video/*" id="feedbackVideo" name="short_video" type="file"/><small>Upload a short video.</small></div>
   <div class="feedback-upload"><label for="feedbackDocument">Written note or document <span>(optional)</span></label><input accept=".pdf,.doc,.docx,.txt,.jpg,.jpeg,.png" id="feedbackDocument" name="written_note_or_document" type="file"/><small>Upload a written note or document.</small></div>
@@ -4298,6 +4298,62 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
     }
     if(status){status.textContent=total?'Files accepted: '+(total/1024/1024).toFixed(1)+' MB of 10 MB maximum.':'';
       status.style.color='';}
+  });
+})();
+</script>
+<script id="learning-hub-google-feedback">
+(()=>{
+  const endpoint="https://script.google.com/macros/s/AKfycbwSk4_o4kUnuWIjtoFZJskX1iMSU2Pbik718EQ4gZihLKAIaqngZ4Iv-duLWPohVJfe/exec";
+  const form=document.querySelector('#feedbackFormAnchor');
+  const status=document.querySelector('#feedbackStatus');
+  if(!form) return;
+  const toBase64=file=>new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>resolve(String(reader.result).split(',')[1]);
+    reader.onerror=reject;
+    reader.readAsDataURL(file);
+  });
+  form.addEventListener('submit',async event=>{
+    event.preventDefault();
+    if(!form.reportValidity()) return;
+    const uploadInputs=[...form.querySelectorAll('input[type="file"]')];
+    const selected=uploadInputs.flatMap(input=>[...input.files]);
+    const total=selected.reduce((sum,file)=>sum+file.size,0);
+    const limit=10*1024*1024;
+    if(total>limit){
+      status.textContent='Your selected files total '+(total/1024/1024).toFixed(1)+' MB. Please keep all files together under 10 MB.';
+      status.style.color='#9b2c2c';
+      return;
+    }
+    const button=form.querySelector('button[type="submit"]');
+    button.disabled=true;
+    status.textContent='Submitting securely…';
+    status.style.color='';
+    try{
+      const data=new FormData(form);
+      const files=await Promise.all(selected.map(async file=>({
+        name:file.name,mimeType:file.type,size:file.size,base64:await toBase64(file)
+      })));
+      const payload={
+        type:'feedback',
+        fields:{
+          Name:data.get('name')||'',
+          Email:data.get('email')||'',
+          Rating:data.get('rating')||'',
+          'Written Feedback':data.get('message')||''
+        },
+        files
+      };
+      await fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+      form.reset();
+      status.textContent='Thank you. Your feedback has been submitted for review.';
+      status.style.color='#23633f';
+    }catch(error){
+      status.textContent='We could not submit your feedback. Please try again.';
+      status.style.color='#9b2c2c';
+    }finally{
+      button.disabled=false;
+    }
   });
 })();
 </script>
