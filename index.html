@@ -2560,7 +2560,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="resource-choice-grid">
 <article class="resource-choice-card"><div class="resource-choice-image"><img alt="Learner using digital study resources" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"/></div><div class="resource-choice-body"><span class="resource-meta">FREE LEARNING LIBRARY</span><h3>Free Learning Library</h3><p>Selected worksheets, study materials and learning support resources available for independent learning.</p><a class="btn btn-outline" href="#articles">Explore Free Resources →</a></div></article>
 <article class="resource-choice-card"><div class="resource-choice-image"><img alt="Digital educational resource" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"/></div><div class="resource-choice-body"><span class="resource-meta">PREMIUM DIGITAL RESOURCES</span><h3>Premium Digital Resources</h3><p>Paid e-books, workbooks and specialist materials with approved PKR pricing shown before payment.</p><a class="btn btn-gold" href="#articles">View Premium Resources →</a></div></article>
-</div></div></section><section class="sample-resources" id="sample-resources"><div class="container"><div class="section-heading center"><div class="eyebrow">Learning Materials</div><h2>See the learning in action.</h2><p>These Learning Hub sample materials show the kind of structured, practical resources available on request.</p></div><div class="sample-resource-grid"><article class="sample-resource-card"><div class="sample-resource-image"><img alt="Preview of Learning Hub academic English essay writing toolkit" src="resources/academic_english_essay_writing_toolkit_etsy_cover.png"/></div><div class="sample-resource-body"><span class="resource-meta">ACADEMIC ENGLISH</span><h3>Essay Writing Toolkit</h3><p>A structured resource to build clearer academic writing, organisation and confidence.</p><a class="btn btn-outline" data-open-enquiry="Academic English Essay Writing Toolkit" href="#contact">Request this resource</a></div></article><article class="sample-resource-card"><div class="sample-resource-image"><img alt="Preview of IB English Language and Literature literary analysis practice activities" src="assets/previews/ib-english-literary-analysis.png"/></div><div class="sample-resource-body"><span class="resource-meta">IB ENGLISH</span><h3>Literary Analysis Practice</h3><p>Guided activities for authorial choices, evidence, analysis and IB-style responses.</p><a class="btn btn-outline" data-open-enquiry="IB English Literary Analysis Practice Activities" href="#contact">Request this resource</a></div></article><article class="sample-resource-card"><div class="sample-resource-image"><img alt="Preview of bilingual Grade 4 and 5 mental mathematics worksheet" src="assets/previews/grade-4-5-mental-maths.png"/></div><div class="sample-resource-body"><span class="resource-meta">CHILDREN'S MATHS</span><h3>Bilingual Mental Maths</h3><p>English-Italian Grade 4-5 practice supporting everyday mathematical vocabulary and fluency.</p><a class="btn btn-outline" data-open-enquiry="Bilingual Grade 4-5 Mental Maths Worksheet" href="#contact">Request this resource</a></div></article></div></div></section><section class="articles" id="articles">
+</div></div></section><section class="sample-resources" id="sample-resources"><div class="container"><div class="section-heading center"><div class="eyebrow">Learning Materials</div><h2>See the learning in action.</h2><p>These Learning Hub sample materials show the kind of structured, practical resources available on request.</p></div><div class="sample-resource-grid"><article class="sample-resource-card"><div class="sample-resource-image"><img alt="Preview of Learning Hub academic English essay writing toolkit" src="resources/academic_english_essay_writing_toolkit_etsy_cover.png"/></div><div class="sample-resource-body"><span class="resource-meta">ACADEMIC ENGLISH</span><h3>Essay Writing Toolkit</h3><p>A structured resource to build clearer academic writing, organisation and confidence.</p><a class="btn btn-outline" data-open-enquiry="Academic English Essay Writing Toolkit" href="#contact">Request this resource</a></div></article><article class="sample-resource-card"><div class="sample-resource-image"><img alt="Preview of IB English Language and Literature literary analysis practice activities" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=85"/></div><div class="sample-resource-body"><span class="resource-meta">IB ENGLISH</span><h3>Literary Analysis Practice</h3><p>Guided activities for authorial choices, evidence, analysis and IB-style responses.</p><a class="btn btn-outline" data-open-enquiry="IB English Literary Analysis Practice Activities" href="#contact">Request this resource</a></div></article><article class="sample-resource-card"><div class="sample-resource-image"><img alt="Preview of bilingual Grade 4 and 5 mental mathematics worksheet" src="https://images.unsplash.com/photo-1596495578068-8dfba3f9f8b2?auto=format&fit=crop&w=1200&q=85"/></div><div class="sample-resource-body"><span class="resource-meta">CHILDREN'S MATHS</span><h3>Bilingual Mental Maths</h3><p>English-Italian Grade 4-5 practice supporting everyday mathematical vocabulary and fluency.</p><a class="btn btn-outline" data-open-enquiry="Bilingual Grade 4-5 Mental Maths Worksheet" href="#contact">Request this resource</a></div></article></div></div></section><section class="articles" id="articles">
 <div class="container">
 <div class="section-heading center">
 <div class="eyebrow">Articles &amp; Blog</div>
@@ -4211,6 +4211,41 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
    const overFooter=entries.some(entry=>entry.isIntersecting);
    controls.forEach(control=>{control.style.visibility=overFooter?'hidden':'';control.style.pointerEvents=overFooter?'none':''});
  },{threshold:.08}).observe(footer);
+})();
+</script>
+
+<style id="learning-hub-checkout-clarity-fix">
+/* Checkout: show only choices that are actionable, with one compact visual hierarchy. */
+#lhCheckoutRoot .lh-co-hero{padding:10px 0 2px!important}
+#lhCheckoutRoot .lh-co-hero h1{margin:2px 0 5px!important}
+#lhCheckoutRoot .lh-co-card{margin-bottom:12px!important}
+#lhCheckoutRoot .lh-plan-image-picker{margin-bottom:14px!important}
+#lhBookingPanel .lh-co-note{line-height:1.55!important}
+#lhBookingPanel .lh-sessions{margin:0!important}
+#lhBookingPanel .lh-session-row{align-items:end!important}
+#lhBookingPanel .lh-session-row label{margin:0!important}
+#lhBookingPanel .lh-billing-converter{margin-top:14px!important}
+</style>
+<script id="learning-hub-feedback-direct-email">
+(()=>{
+ const recipient='learninghubcustomersupport@gmail.com';
+ const sendDirect=(form,kind)=>{
+  form.addEventListener('submit',event=>{
+   event.preventDefault();
+   const data=new FormData(form);
+   const body=[
+    'Name: '+(data.get('name')||''),
+    'Email: '+(data.get('email')||''),
+    data.get('rating')?'Rating: '+data.get('rating')+'/5':'',
+    '',String(data.get('message')||'')
+   ].filter(Boolean).join('\\n');
+   window.location.href='mailto:'+recipient+'?subject='+encodeURIComponent('Learning Hub — '+kind)+'&body='+encodeURIComponent(body);
+  });
+ };
+ const feedback=document.querySelector('#feedbackFormAnchor');
+ if(feedback){feedback.removeAttribute('action');sendDirect(feedback,'Customer Feedback');}
+ const support=document.querySelector('#support-form');
+ if(support){support.removeAttribute('action');sendDirect(support,'Support Request');}
 })();
 </script>
 </body>
