@@ -4281,80 +4281,50 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
 </script>
 <!-- TIDIO LIVE CHAT -->
 <script async src="https://code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js"></script>
-<script id="learning-hub-feedback-file-limit">
+<script id="learning-hub-feedback-submit">
 (()=>{
-  const form=document.querySelector('#feedbackFormAnchor');
-  if(!form) return;
-  const status=document.querySelector('#feedbackStatus');
-  form.addEventListener('submit',(event)=>{
-    const uploads=[...form.querySelectorAll('input[type="file"]')];
-    const total=uploads.reduce((bytes,input)=>bytes+[...input.files].reduce((sum,file)=>sum+file.size,0),0);
-    const limit=10*1024*1024;
-    if(total>limit){
-      event.preventDefault();
-      if(status){status.textContent='Your selected files total '+(total/1024/1024).toFixed(1)+' MB. Please keep all files together under 10 MB.';status.style.color='#9b2c2c';}
-      uploads[0]?.focus();
-      return;
-    }
-    if(status){status.textContent=total?'Files accepted: '+(total/1024/1024).toFixed(1)+' MB of 10 MB maximum.':'';
-      status.style.color='';}
-  });
-})();
-</script>
-<script id="learning-hub-google-feedback">
-(()=>{
-  // Live Apps Script endpoint for feedback delivery and Drive file storage.
   const endpoint="https://script.google.com/macros/s/AKfycbwSk4_o4kUnuWIjtoFZJskX1iMSU2Pbik718EQ4gZihLKAIaqngZ4Iv-duLWPohVJfe/exec";
   const form=document.querySelector('#feedbackFormAnchor');
   const status=document.querySelector('#feedbackStatus');
-  if(!form) return;
+  if(!form||!status) return;
+  const setStatus=(message,color='')=>{status.textContent=message;status.style.color=color;};
   const toBase64=file=>new Promise((resolve,reject)=>{
     const reader=new FileReader();
     reader.onload=()=>resolve(String(reader.result).split(',')[1]);
     reader.onerror=reject;
     reader.readAsDataURL(file);
   });
-  form.addEventListener('submit',async event=>{
+  form.addEventListener('submit',async(event)=>{
     event.preventDefault();
-    if(!form.reportValidity()) return;
-    const uploadInputs=[...form.querySelectorAll('input[type="file"]')];
-    const selected=uploadInputs.flatMap(input=>[...input.files]);
+    const data=new FormData(form);
+    if(!data.get('name')||!data.get('email')||!data.get('rating')){
+      setStatus('Please enter your name and email, then choose a star rating.','#9b2c2c');
+      return;
+    }
+    const selected=[...form.querySelectorAll('input[type="file"]')].flatMap(input=>[...input.files]);
     const total=selected.reduce((sum,file)=>sum+file.size,0);
     const limit=10*1024*1024;
     if(total>limit){
-      status.textContent='Your selected files total '+(total/1024/1024).toFixed(1)+' MB. Please keep all files together under 10 MB.';
-      status.style.color='#9b2c2c';
+      setStatus('Your selected files total '+(total/1024/1024).toFixed(1)+' MB. Please keep all files together under 10 MB.','#9b2c2c');
       return;
     }
     const button=form.querySelector('button[type="submit"]');
     button.disabled=true;
-    status.textContent='Submitting securely…';
-    status.style.color='';
+    setStatus('Sending your feedback…');
     try{
-      const data=new FormData(form);
       const files=await Promise.all(selected.map(async file=>({
         name:file.name,mimeType:file.type,size:file.size,base64:await toBase64(file)
       })));
-      const payload={
-        type:'feedback',
-        fields:{
-          Name:data.get('name')||'',
-          Email:data.get('email')||'',
-          Rating:data.get('rating')||'',
-          'Written Feedback':data.get('message')||''
-        },
-        files
-      };
-      await fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+      const payload={type:'feedback',fields:{
+        Name:data.get('name')||'',Email:data.get('email')||'',Rating:data.get('rating')||'',
+        'Written Feedback':data.get('message')||''
+      },files};
+      await fetch(endpoint,{method:'POST',mode:'no-cors',body:JSON.stringify(payload)});
       form.reset();
-      status.textContent='Thank you. Your feedback has been submitted for review.';
-      status.style.color='#23633f';
+      setStatus('Thank you. Your feedback has been sent for review.','#23633f');
     }catch(error){
-      status.textContent='We could not submit your feedback. Please try again.';
-      status.style.color='#9b2c2c';
-    }finally{
-      button.disabled=false;
-    }
+      setStatus('We could not send your feedback. Please try again.','#9b2c2c');
+    }finally{button.disabled=false;}
   });
 })();
 </script>
