@@ -4283,7 +4283,7 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
 <script async src="https://code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js"></script>
 <script id="learning-hub-feedback-submit">
 (()=>{
-  const endpoint="https://script.google.com/macros/s/AKfycbwSk4_o4kUnuWIjtoFZJskX1iMSU2Pbik718EQ4gZihLKAIaqngZ4Iv-duLWPohVJfe/exec";
+  const endpoint="https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec";
   const form=document.querySelector('#feedbackFormAnchor');
   const status=document.querySelector('#feedbackStatus');
   if(!form||!status) return;
@@ -4328,7 +4328,132 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
   });
 })();
 </script>
-</body>
+
+<script id="learning-hub-google-submissions">
+(()=>{
+  const endpoint="https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec";
+  const maxBytes=10*1024*1024;
+  const selectedFiles=inputs=>inputs.flatMap(input=>Array.from(input.files||[]));
+  const toBase64=file=>new Promise((resolve,reject)=>{
+    const reader=new FileReader();
+    reader.onload=()=>resolve(String(reader.result).split(',')[1]||'');
+    reader.onerror=reject;
+    reader.readAsDataURL(file);
+  });
+  const makeFiles=async files=>Promise.all(files.map(async file=>({
+    name:file.name,mimeType:file.type,size:file.size,base64:await toBase64(file)
+  })));
+  const fieldsFrom=form=>{
+    const fields={};
+    new FormData(form).forEach((value,key)=>{
+      if(typeof value==='string'&&value) fields[key]=value;
+    });
+    return fields;
+  };
+  const statusFor=form=>{
+    let status=form.querySelector('.lh-google-submit-status');
+    if(!status){
+      status=document.createElement('p');
+      status.className='lh-google-submit-status';
+      status.setAttribute('role','status');
+      form.appendChild(status);
+    }
+    return status;
+  };
+  const send=payload=>fetch(endpoint,{
+    method:'POST',mode:'no-cors',
+    headers:{'Content-Type':'text/plain;charset=utf-8'},
+    body:JSON.stringify(payload)
+  });
+  const validEmail=value=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value||''));
+
+  // Stops legacy mailto/FormSubmit handlers and sends all public forms to Google.
+  document.addEventListener('submit',async event=>{
+    const form=event.target;
+    if(!(form instanceof HTMLFormElement)) return;
+    const kind=form.id==='feedbackFormAnchor'?'feedback':form.id==='support-form'?'support':form.id==='lh-enquiry-form'?'enquiry':'';
+    if(!kind) return;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+
+    const status=kind==='feedback'?document.querySelector('#feedbackStatus'):statusFor(form);
+    const set=(message,color)=>{if(status){status.textContent=message;status.style.color=color||'';}};
+    const fields=fieldsFrom(form);
+    const name=fields.name||fields.Name||fields['Student / Customer Name']||'';
+    const email=fields.email||fields.Email||fields['Email Address']||'';
+    if(!name||!validEmail(email)){
+      set('Please enter a valid name and email address.','#9b2c2c');
+      return;
+    }
+    if(kind==='feedback'&&!fields.rating){
+      set('Please choose a star rating.','#9b2c2c');
+      return;
+    }
+    const rawFiles=selectedFiles(Array.from(form.querySelectorAll('input[type="file"]')));
+    const total=rawFiles.reduce((sum,file)=>sum+file.size,0);
+    if(total>maxBytes){
+      set('Your selected files total '+(total/1024/1024).toFixed(1)+' MB. Please keep all files together under 10 MB.','#9b2c2c');
+      return;
+    }
+    const button=form.querySelector('button[type="submit"],input[type="submit"]');
+    if(button) button.disabled=true;
+    set('Sending your submission…');
+    try{
+      await send({type:kind,fields,files:await makeFiles(rawFiles)});
+      form.reset();
+      set('Thank you. Your submission was sent to Learning Hub. Please check your email for confirmation.','#23633f');
+    }catch(error){
+      set('We could not send your submission. Please try again.','#9b2c2c');
+    }finally{
+      if(button) button.disabled=false;
+    }
+  },true);
+
+  // Parent/guardian phone field for school-age student bookings.
+  const parent=document.querySelector('#lhParentName');
+  if(parent&&!document.querySelector('#lhParentPhone')){
+    const wrap=document.createElement('div');
+    wrap.className='lh-co-field';
+    wrap.innerHTML='<label for="lhParentPhone">Parent / Guardian Contact Number <span>(optional)</span></label><input id="lhParentPhone" name="parent_guardian_contact" type="tel" autocomplete="tel" placeholder="+92 300 0000000">';
+    const host=parent.closest('.lh-co-field');
+    if(host) host.insertAdjacentElement('afterend',wrap);
+  }
+
+  // A booking remains unpaid until the payment feature is introduced.
+  const place=document.querySelector('#lhPlaceOrder');
+  if(place){
+    place.addEventListener('click',async()=>{
+      const name=document.querySelector('#lhCustomerName')?.value.trim()||'';
+      const email=document.querySelector('#lhCustomerEmail')?.value.trim()||'';
+      if(!name||!validEmail(email)) return;
+      const rawFiles=selectedFiles(Array.from(document.querySelectorAll('#lhBookingFiles')));
+      const total=rawFiles.reduce((sum,file)=>sum+file.size,0);
+      const status=document.querySelector('#lhCheckoutStatus')||document.querySelector('#lhBookingUploadStatus');
+      const set=(message,color)=>{if(status){status.textContent=message;status.style.color=color||'';}};
+      if(total>maxBytes){
+        set('Your selected files total '+(total/1024/1024).toFixed(1)+' MB. Please keep all files together under 10 MB.','#9b2c2c');
+        return;
+      }
+      const fields={
+        'Student / Customer Name':name,
+        'Email Address':email,
+        'Parent / Guardian':document.querySelector('#lhParentName')?.value.trim()||'',
+        'Parent / Guardian Contact Number':document.querySelector('#lhParentPhone')?.value.trim()||'',
+        'Learning Requirements / Additional Notes':document.querySelector('#lhRequirements')?.value.trim()||'',
+        'Booking Reference':document.querySelector('#lhSummaryOrder')?.textContent.trim()||''
+      };
+      set('Sending your booking request…');
+      try{
+        await send({type:'booking',fields,files:await makeFiles(rawFiles)});
+        set('Booking request sent to Learning Hub. Payment remains pending.','#23633f');
+      }catch(error){
+        set('We could not send your booking request. Please try again.','#9b2c2c');
+      }
+    });
+  }
+})();
+</script>
+\n</body>
 </html>
 
 <!-- refreshed plan image asset -->
