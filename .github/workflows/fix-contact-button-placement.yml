@@ -1,0 +1,34 @@
+name: Fix contact button placement
+on:
+  push:
+    paths:
+      - '.github/workflows/fix-contact-button-placement.yml'
+permissions:
+  contents: write
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Keep contact buttons in separate corners
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("index.html")
+          s = p.read_text()
+          css = """<style id="learning-hub-contact-button-placement">
+          .lh-whatsapp-float{left:22px!important;right:auto!important;bottom:22px!important}
+          .concierge{right:22px!important;bottom:22px!important}
+          @media(max-width:620px){.lh-whatsapp-float{left:14px!important;right:auto!important;bottom:14px!important}.concierge{right:14px!important;bottom:14px!important}}
+          </style>"""
+          s = s.replace('</body>', css + '</body>')
+          p.write_text(s)
+          PY
+      - name: Commit fix and remove helper
+        run: |
+          git config user.name "Learning Hub Updates"
+          git config user.email "updates@learninghubtutoring.com"
+          git rm .github/workflows/fix-contact-button-placement.yml
+          git add index.html
+          git commit -m "Place contact buttons in separate corners"
+          git push
