@@ -1,0 +1,21 @@
+name: Refresh image deployment
+on:
+  push:
+    paths:
+      - '.github/workflows/refresh-image-deployment.yml'
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refresh deployment revision
+        run: |
+          git config user.name "Learning Hub Updates"
+          git config user.email "updates@learninghubtutoring.com"
+          git rm .github/workflows/refresh-image-deployment.yml
+          printf '\n<!-- refreshed plan image asset -->\n' >> index.html
+          git add index.html
+          git commit -m "Refresh booking plan image deployment"
+          git push
