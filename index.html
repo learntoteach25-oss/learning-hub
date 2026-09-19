@@ -3052,6 +3052,12 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="lh-co-field"><label for="lhCustomerEmail">Email Address</label><input autocomplete="email" id="lhCustomerEmail" placeholder="you@example.com" type="email"/></div>
 <div class="lh-co-field"><label for="lhParentName">Parent / Guardian (optional)</label><input id="lhParentName" placeholder="For school-age students" type="text"/></div>
 <div class="lh-co-field lh-full"><label for="lhRequirements">Learning Requirements / Additional Notes</label><textarea id="lhRequirements" placeholder="Tell us about your goals, preferred teacher, examination needs or other requirements."></textarea></div>
+<div class="lh-co-field lh-full lh-booking-upload">
+  <label for="lhBookingFiles">Learning material for this lesson <span>(optional)</span></label>
+  <input accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" id="lhBookingFiles" multiple type="file"/>
+  <small>Attach a syllabus, assignment, worksheet, past paper, project brief or screenshot. Accepted: PDF, Word, JPG and PNG.</small>
+  <div aria-live="polite" class="lh-upload-status" id="lhBookingUploadStatus"></div>
+</div>
 </div>
 <div class="lh-summary">
 <h3>Price Preview &amp; Billing Summary</h3>
@@ -4256,6 +4262,21 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
 .policy-nav a:hover,.policy-nav a:focus-visible{background:#a98d5a!important;color:#fff!important;border-color:#a98d5a!important}
 @media(max-width:700px){.policy-nav{grid-template-columns:1fr!important}.policy-nav a{min-height:48px!important}}
 </style>
+
+<style id="learning-hub-booking-upload-ui">
+.lh-booking-upload{padding:15px 16px!important;border:1px dashed rgba(142,107,45,.48)!important;border-radius:14px!important;background:#fbf7ed!important}
+.lh-booking-upload label span{font-weight:500!important;color:#746c61!important}
+.lh-booking-upload input[type=file]{padding:10px!important;background:#fff!important}
+.lh-booking-upload small{display:block!important;margin-top:7px!important;color:#655c52!important;line-height:1.45!important}
+.lh-upload-status{margin-top:8px!important;color:#6f4c10!important;font-size:.8rem!important;font-weight:700!important}
+</style>
+<script id="learning-hub-booking-upload-selection">
+(()=>{
+ const input=document.querySelector('#lhBookingFiles'),status=document.querySelector('#lhBookingUploadStatus');
+ if(!input||!status)return;
+ input.addEventListener('change',()=>{const n=input.files?.length||0;status.textContent=n? n+' file'+(n===1?'':'s')+' selected for this booking.':''});
+})();
+</script>
 </body>
 </html>
 
