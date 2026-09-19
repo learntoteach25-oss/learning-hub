@@ -1,0 +1,40 @@
+name: Simplify booking page
+on:
+  push:
+    paths:
+      - '.github/workflows/simplify-booking-page.yml'
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Simplify checkout layout and previews
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path("index.html")
+          s = p.read_text()
+          s = s.replace('<select id="lhTimezone"><option>China Standard Time (UTC+8)</option>', '<select id="lhTimezone"><option selected value="">Select your time zone (optional)</option>')
+          s = s.replace('Pakistan — PKR selected. Choose your region/currency to calculate the amount.', 'Select your region and currency to calculate the amount.')
+          css = """<style id="learning-hub-checkout-simplify">
+          .lh-co-hero{padding:26px 0 8px!important}
+          .lh-co-card{padding:20px!important;margin-bottom:14px!important}
+          .lh-co-grid{gap:12px!important}
+          .lh-summary>h3,.lh-summary>.lh-summary-row,.lh-summary>.lh-summary-total{display:none!important}
+          .lh-summary{padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important}
+          .lh-billing-converter{margin-top:0!important}
+          #lhResourcePanel{display:none!important}
+          </style>"""
+          s = s.replace('</body>', css + '</body>')
+          p.write_text(s)
+          PY
+      - name: Commit changes and remove helper
+        run: |
+          git config user.name "Learning Hub Updates"
+          git config user.email "updates@learninghubtutoring.com"
+          git rm .github/workflows/simplify-booking-page.yml
+          git add index.html
+          git commit -m "Simplify booking layout and remove price preview"
+          git push
