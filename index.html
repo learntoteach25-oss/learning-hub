@@ -4194,7 +4194,26 @@ body.lh-checkout-mode #lhGatewaySection{display:block!important}
 body.lh-checkout-mode #lhResourcePanel{margin-top:14px!important}
 body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
 </style>
-<style id="learning-hub-footer-contact-layout">.footer-col .footer-contact-detail{display:block;margin:0 0 10px;color:#f3ead9;font-size:.84rem;line-height:1.45}</style></body>
+<style id="learning-hub-footer-contact-layout">.footer-col .footer-contact-detail{display:block;margin:0 0 10px;color:#f3ead9;font-size:.84rem;line-height:1.45}</style>
+<style id="learning-hub-footer-uniformity-fix">
+/* Footer: make every item read as a consistent vertical list. */
+.footer-col h4{margin-bottom:14px!important}
+.footer-col>a,.footer-col>.footer-contact-detail{display:block!important;min-height:26px!important;margin:0!important;padding:3px 0!important;line-height:1.45!important}
+.footer-col>.footer-contact-detail{color:#f3ead9!important;font-size:.84rem!important}
+.footer-col>a{font-size:.84rem!important}
+</style>
+<script id="learning-hub-footer-contact-controls">
+(()=>{
+ const footer=document.querySelector('footer');
+ const controls=[document.querySelector('.lh-whatsapp-float'),document.querySelector('.concierge')].filter(Boolean);
+ if(!footer||!controls.length||!('IntersectionObserver' in window)) return;
+ new IntersectionObserver(entries=>{
+   const overFooter=entries.some(entry=>entry.isIntersecting);
+   controls.forEach(control=>{control.style.visibility=overFooter?'hidden':'';control.style.pointerEvents=overFooter?'none':''});
+ },{threshold:.08}).observe(footer);
+})();
+</script>
+</body>
 </html>
 
 <!-- refreshed plan image asset -->
