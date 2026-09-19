@@ -4281,6 +4281,26 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
 </script>
 <!-- TIDIO LIVE CHAT -->
 <script async src="https://code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js"></script>
+<script id="learning-hub-feedback-file-limit">
+(()=>{
+  const form=document.querySelector('#feedbackFormAnchor');
+  if(!form) return;
+  const status=document.querySelector('#feedbackStatus');
+  form.addEventListener('submit',(event)=>{
+    const uploads=[...form.querySelectorAll('input[type="file"]')];
+    const total=uploads.reduce((bytes,input)=>bytes+[...input.files].reduce((sum,file)=>sum+file.size,0),0);
+    const limit=10*1024*1024;
+    if(total>limit){
+      event.preventDefault();
+      if(status){status.textContent='Your selected files total '+(total/1024/1024).toFixed(1)+' MB. Please keep all files together under 10 MB.';status.style.color='#9b2c2c';}
+      uploads[0]?.focus();
+      return;
+    }
+    if(status){status.textContent=total?'Files accepted: '+(total/1024/1024).toFixed(1)+' MB of 10 MB maximum.':'';
+      status.style.color='';}
+  });
+})();
+</script>
 </body>
 </html>
 
