@@ -3043,7 +3043,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <option value="School Board / Cambridge">School Board / Cambridge &amp; International Curriculum</option>
 <option value="Quran / Islamic Studies">Quran &amp; Islamic Studies</option><option value="Counselling">Counselling</option>
 </select></div>
-<div class="lh-co-field"><label for="lhBookingType">Booking Type</label><select id="lhBookingType"><option value="standard">Regular lesson</option></select></div>
+<div class="lh-co-field"><label for="lhBookingType">Booking Type</label><select id="lhBookingType"><option value="standard">Regular lesson</option><option value="demo">Demo Lesson — US$2 / 30 minutes</option></select></div>
 <div class="lh-co-field"><label for="lhSubject">Subject / Course</label><select id="lhSubject"><option>English Language</option><option>English Literature</option><option>Mathematics</option><option>Biology</option><option>Chemistry</option><option>Physics</option><option>Business Studies</option><option>Economics</option><option>Sociology</option><option>Geography</option><option>History</option><option>Psychology</option><option>Computer Science</option><option>Chinese</option><option>Japanese</option><option>Korean</option><option>Italian</option><option>Urdu</option><option>Arabic</option><option>Academic Writing</option><option>Study Skills</option><option>Other</option></select></div>
 <div class="lh-co-field"><label for="lhBoard">Board / Curriculum</label><select id="lhBoard"><option>Not applicable</option><option>Cambridge</option><option>IGCSE</option><option>O Level</option><option>A Level</option><option>Pearson Edexcel</option><option>IB</option><option>GCSE</option><option>National Curriculum</option><option>University</option><option>Other</option></select></div>
 <div class="lh-co-field"><label for="lhLevel">Level / Grade</label><select id="lhLevel"><option>Primary</option><option>Lower Secondary</option><option>Middle School</option><option>IGCSE</option><option>GCSE</option><option>O Level</option><option>A Level</option><option>IB PYP</option><option>IB MYP</option><option>IB DP</option><option>University</option><option>Adult / Professional</option><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select></div>
@@ -3051,7 +3051,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="lh-co-field"><label for="lhTimezone">Time Zone (optional)</label><select id="lhTimezone"><option selected value="">Select your time zone (optional)</option><option>Not specified</option><option>Gulf Standard Time (GST)</option><option>UK / Ireland</option><option>Central European Time</option><option>US / Canada Eastern</option><option>US / Canada Central</option><option>US / Canada Pacific</option><option>Japan Standard Time</option><option>Australian Eastern Time</option><option>Other</option></select></div>
 <div class="lh-co-field"><label for="lhTeacherPreference">Teacher Preference</label><select id="lhTeacherPreference"><option>No preference</option><option>Male teacher</option><option>Female teacher</option><option>I have a preferred teacher — discuss after booking</option></select></div>
 <div class="lh-co-field lh-hidden" id="lhQuranFocusWrap"><label for="lhQuranFocus">Quran Learning Focus</label><select id="lhQuranFocus"><option>No specific focus</option><option>Noorani Qaida</option><option>Quran Reading</option><option>Tajweed / Proper Recitation</option><option>Hifz / Memorisation</option><option>Quran Translation</option><option>Tafseer</option><option>Arabic for Quran</option><option>Quran for Adults</option><option>Islamic Studies</option><option>Seerah</option><option>Hadith Studies</option><option>Islamic History</option><option>Fiqh</option><option>Duas</option><option>Salah Learning</option><option>Islamic Manners</option><option>Other</option></select></div>
-<div class="lh-co-field lh-full"><label>Lesson Selection</label><div class="lh-co-note">Students may book one 50-minute lesson or multiple separate 25-minute lessons. A separate lesson is charged separately even when several lessons are on the same day.</div><div class="lh-sessions" id="lhSessions"></div><div class="lh-actions"><button class="lh-btn lh-btn-outline" id="lhAddSession" type="button">+ Add Another Lesson</button></div></div>
+<div class="lh-co-field lh-full" id="lhLessonSelection"><label>Lesson Selection</label><div class="lh-co-note">Students may book one 50-minute lesson or multiple separate 25-minute lessons. A separate lesson is charged separately even when several lessons are on the same day.</div><div class="lh-sessions" id="lhSessions"></div><div class="lh-actions"><button class="lh-btn lh-btn-outline" id="lhAddSession" type="button">+ Add Another Lesson</button></div></div>
 <div class="lh-co-field"><label for="lhCustomerName">Student / Customer Name</label><input autocomplete="name" id="lhCustomerName" placeholder="Full name" type="text"/></div>
 <div class="lh-co-field"><label for="lhCustomerEmail">Email Address</label><input autocomplete="email" id="lhCustomerEmail" placeholder="you@example.com" type="email"/></div>
 <div class="lh-co-field"><label for="lhParentName">Parent / Guardian (optional)</label><input id="lhParentName" placeholder="For school-age students" type="text"/></div>
@@ -3071,7 +3071,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="lh-summary-row"><span>Lessons</span><strong id="lhSummaryLessons">1</strong></div>
 <div class="lh-summary-row"><span>Subtotal</span><strong id="lhSummarySubtotal">PKR 2,000</strong></div>
 <div class="lh-summary-row lh-hidden" id="lhDiscountRow"><span>Monthly discount (10%)</span><strong id="lhSummaryDiscount">−PKR 0</strong></div>
-<div class="lh-summary-total"><span>Total: </span><span id="lhSummaryTotal">PKR 2,000</span></div><div class="lh-billing-converter"><div><strong>International billing</strong><small>Select the payer's region so the checkout can calculate the corresponding payment amount. The base tutoring price is maintained in PKR.</small></div><div class="lh-billing-controls-grid"><div><label for="lhPayerRegion">Payer country / region</label><select aria-label="Payer country or region" id="lhPayerRegion"><option value="PKR">Pakistan — PKR</option><option value="AED">Gulf &amp; UAE — AED</option><option value="SAR">Saudi Arabia — SAR</option><option value="USD">United States — USD</option><option value="CAD">Canada — CAD</option><option value="GBP">United Kingdom / Ireland — GBP</option><option value="EUR">Europe — EUR</option><option value="CNY">China — CNY</option><option value="JPY">Japan — JPY</option><option value="KRW">South Korea — KRW</option><option value="MYR">Malaysia — MYR</option><option value="AUD">Australia — AUD</option><option value="NZD">New Zealand — NZD</option><option value="TRY">Türkiye — TRY</option><option value="OTHER">Other country / region — choose currency</option></select></div><div><label for="lhBillingCurrency">Payment currency</label><select aria-label="Payment currency" id="lhBillingCurrency"><option value="PKR">PKR — Pakistani Rupee</option><option value="USD">USD — US Dollar</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="AED">AED — UAE Dirham</option><option value="SAR">SAR — Saudi Riyal</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="CNY">CNY — Chinese Yuan</option><option value="JPY">JPY — Japanese Yen</option><option value="KRW">KRW — South Korean Won</option><option value="NZD">NZD — New Zealand Dollar</option><option value="MYR">MYR — Malaysian Ringgit</option><option value="TRY">TRY — Turkish Lira</option></select></div><button class="lh-btn lh-btn-outline" id="lhBillingConvert" type="button">Calculate payment amount</button></div><div aria-live="polite" class="lh-billing-result" id="lhBillingResult">Select your region and currency to calculate the amount.</div><div class="lh-billing-note">For international bookings, select the payer country/region. The recommended regional currency is applied automatically; the payable amount is calculated from the PKR base price and rounded upward to reduce underpayment caused by exchange-rate rounding. The selected payment currency and amount are passed with the booking order.</div></div>
+<div class="lh-summary-total"><span>Total: </span><span id="lhSummaryTotal">PKR 2,000</span></div><div class="lh-billing-converter"><div><strong>International billing</strong><small id="lhBillingBaseNote">Select the payer’s region so the checkout can calculate the corresponding payment amount.</small></div><div class="lh-billing-controls-grid"><div><label for="lhPayerRegion">Payer country / region</label><select aria-label="Payer country or region" id="lhPayerRegion"><option value="PKR">Pakistan — PKR</option><option value="AED">Gulf &amp; UAE — AED</option><option value="SAR">Saudi Arabia — SAR</option><option value="USD">United States — USD</option><option value="CAD">Canada — CAD</option><option value="GBP">United Kingdom / Ireland — GBP</option><option value="EUR">Europe — EUR</option><option value="CNY">China — CNY</option><option value="JPY">Japan — JPY</option><option value="KRW">South Korea — KRW</option><option value="MYR">Malaysia — MYR</option><option value="AUD">Australia — AUD</option><option value="NZD">New Zealand — NZD</option><option value="TRY">Türkiye — TRY</option><option value="OTHER">Other country / region — choose currency</option></select></div><div><label for="lhBillingCurrency">Payment currency</label><select aria-label="Payment currency" id="lhBillingCurrency"><option value="PKR">PKR — Pakistani Rupee</option><option value="USD">USD — US Dollar</option><option value="GBP">GBP — British Pound</option><option value="EUR">EUR — Euro</option><option value="AED">AED — UAE Dirham</option><option value="SAR">SAR — Saudi Riyal</option><option value="CAD">CAD — Canadian Dollar</option><option value="AUD">AUD — Australian Dollar</option><option value="CNY">CNY — Chinese Yuan</option><option value="JPY">JPY — Japanese Yen</option><option value="KRW">KRW — South Korean Won</option><option value="NZD">NZD — New Zealand Dollar</option><option value="MYR">MYR — Malaysian Ringgit</option><option value="TRY">TRY — Turkish Lira</option></select></div><button class="lh-btn lh-btn-outline" id="lhBillingConvert" type="button">Calculate payment amount</button></div><div aria-live="polite" class="lh-billing-result" id="lhBillingResult">Select your region and currency to calculate the amount.</div><div class="lh-billing-note">For international bookings, select the payer country/region. The recommended regional currency is applied automatically; the payable amount is calculated from the PKR base price and rounded upward to reduce underpayment caused by exchange-rate rounding. The selected payment currency and amount are passed with the booking order.</div></div>
 </div>
 <div class="lh-actions"><button class="lh-btn lh-btn-gold" id="lhPlaceOrder" type="button">Place Order &amp; Continue to Payment</button></div>
 <div aria-live="polite" class="lh-status" id="lhBookingStatus"></div>
@@ -3632,6 +3632,8 @@ section[id]{
   const plan=qs('#lhPlan'), planCards=qsa('[data-plan-choice]'), sessions=qs('#lhSessions'), add=qs('#lhAddSession');
   const subtotal=qs('#lhSummarySubtotal'), total=qs('#lhSummaryTotal'), lessonsOut=qs('#lhSummaryLessons'), discountRow=qs('#lhDiscountRow'), discountOut=qs('#lhSummaryDiscount');
   const orderRow=qs('#lhOrderRow'), orderOut=qs('#lhSummaryOrder'), status=qs('#lhBookingStatus');
+  const bookingType=qs('#lhBookingType'), lessonSelection=qs('#lhLessonSelection');
+  const isDemo=()=>bookingType&&bookingType.value==='demo';
   let rows=[];
   function money(n){return 'PKR '+Number(n).toLocaleString('en-PK',{maximumFractionDigits:0});}
   function sessionRow(i){
@@ -3641,6 +3643,18 @@ section[id]{
   }
   function calc(){
     if(!sessions)return;
+    const demo=isDemo();
+    if(lessonSelection) lessonSelection.classList.toggle('lh-hidden',demo);
+    const billingNote=qs('#lhBillingBaseNote');
+    if(billingNote) billingNote.textContent=demo?'Demo Lesson is fixed at US$2. Select the payer’s currency to view the exact payable amount.':'Select the payer’s region so the checkout can calculate the corresponding payment amount.';
+    if(demo){
+      if(lessonsOut) lessonsOut.textContent='1';
+      if(subtotal) subtotal.textContent='USD 2.00';
+      if(discountRow) discountRow.classList.add('lh-hidden');
+      if(total) total.textContent='USD 2.00';
+      const bt=qs('#lhSummaryBookingType'); if(bt) bt.textContent='Demo Lesson — 30 minutes';
+      return;
+    }
     const vals=rows.map(r=>Number(qs('.lh-session-duration',r)?.value||2000));
     if(!vals.length){if(subtotal)subtotal.textContent=money(0);if(total)total.textContent=money(0);return}
     const sub=vals.reduce((a,b)=>a+b,0); const monthly=plan&&plan.value==='monthly'; const custom=plan&&plan.value==='custom';
@@ -3661,6 +3675,7 @@ section[id]{
   }
   planCards.forEach(card=>card.addEventListener('click',()=>{if(plan){plan.value=card.dataset.planChoice;syncPlanCards();}}));
   if(plan)plan.addEventListener('change',syncPlanCards);
+  if(bookingType) bookingType.addEventListener('change',calc);
 
   // Billing conversion uses transparent approximate display rates only for checkout preview; payment provider currency support must be configured before live activation.
   const region=qs('#lhPayerRegion'), currency=qs('#lhBillingCurrency'), convert=qs('#lhBillingConvert'), result=qs('#lhBillingResult');
@@ -3668,10 +3683,17 @@ section[id]{
   const recommended={PKR:'PKR',AED:'AED',SAR:'SAR',USD:'USD',CAD:'CAD',GBP:'GBP',EUR:'EUR',CNY:'CNY',JPY:'JPY',KRW:'KRW',MYR:'MYR',AUD:'AUD',NZD:'NZD',TRY:'TRY'};
   if(region&&currency){region.addEventListener('change',()=>{if(recommended[region.value])currency.value=recommended[region.value]});}
   if(convert)convert.addEventListener('click',()=>{
+    const demo=isDemo();
     const base=rows.map(r=>Number(qs('.lh-session-duration',r)?.value||2000)).reduce((a,b)=>a+b,0)||2000;
     const monthly=plan&&plan.value==='monthly'; const custom=plan&&plan.value==='custom';
     if(custom){if(result)result.textContent='Custom Exam Plan selected. We will confirm the schedule and final amount before payment.';return;}
     const pk=monthly?Math.round(base*.90):base, cur=currency?currency.value:'PKR';
+    if(demo){
+      const raw=2*((rates[cur]||1)/rates.USD);
+      const amount=['PKR','JPY','KRW'].includes(cur)?Math.ceil(raw):Math.ceil(raw*100)/100;
+      if(result)result.textContent='Demo Lesson payable amount: '+cur+' '+Number(amount).toLocaleString('en-US',{maximumFractionDigits:2})+' (US$2.00 base price). This amount will appear on your invoice before payment.';
+      return;
+    }
     if(cur==='PKR'){if(result)result.textContent='Pakistan — PKR: '+money(pk);return;}
     const amount=Math.ceil(pk*(rates[cur]||1));
     if(result)result.textContent='Calculated preview: '+cur+' '+amount.toLocaleString('en-US')+' from '+money(pk)+' base price. Final payable currency availability depends on the approved payment-gateway configuration.';
@@ -4419,7 +4441,9 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
         'Parent / Guardian':document.querySelector('#lhParentName')?.value.trim()||'',
         'Parent / Guardian Contact Number':document.querySelector('#lhParentPhone')?.value.trim()||'',
         'Learning Requirements / Additional Notes':document.querySelector('#lhRequirements')?.value.trim()||'',
-        'Booking Reference':document.querySelector('#lhSummaryOrder')?.textContent.trim()||''
+        'Booking Reference':document.querySelector('#lhSummaryOrder')?.textContent.trim()||'',
+        'Booking Type':document.querySelector('#lhBookingType')?.selectedOptions[0]?.textContent.trim()||'Regular lesson',
+        'Invoice / Payment Amount':document.querySelector('#lhSummaryTotal')?.textContent.trim()||''
       };
       set('Sending your booking request…');
       try{
