@@ -2748,7 +2748,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <p>Book a single lesson or select a weekly or monthly plan. International learners can review the payable amount in their regional currency during billing.</p>
 <div class="contact-side-points"><span>✓ Personalised online learning</span><span>✓ International curriculum support</span><span>✓ Secure booking and payment flow</span></div>
 <a class="btn btn-gold" href="?checkout=booking&amp;v=20260916">Book Now →</a>
-<details class="support-form-details"><summary>Support / Complaints Form</summary><form action="https://formsubmit.co/learninghubcustomersupport@gmail.com" id="support-form" method="POST"><input name="_next" type="hidden" value="https://learninghubtutoring.com/?submitted=support"/><input name="_template" type="hidden" value="table"/><input name="_captcha" type="hidden" value="true"/><input name="_autoresponse" type="hidden" value="Thank you for contacting Learning Hub Support. We have received your message and will respond as soon as possible."/><input name="_honey" style="display:none" type="text"/><input name="_subject" type="hidden" value="Learning Hub — Support / Complaint"/><label for="support-name">Name</label><input autocomplete="name" id="support-name" name="name" required="" type="text"/><label for="support-email">Email</label><input autocomplete="email" id="support-email" name="email" required="" type="email"/><label for="support-message">Message</label><textarea id="support-message" name="message" placeholder="Tell us how we can help." required=""></textarea><button class="btn btn-gold" type="submit">Send to Support</button></form></details></div>
+<details class="support-form-details"><summary>Support / Complaints Form</summary><form id="support-form" method="POST"><input name="_next" type="hidden" value="https://learninghubtutoring.com/?submitted=support"/><input name="_template" type="hidden" value="table"/><input name="_captcha" type="hidden" value="true"/><input name="_autoresponse" type="hidden" value="Thank you for contacting Learning Hub Support. We have received your message and will respond as soon as possible."/><input name="_honey" style="display:none" type="text"/><input name="_subject" type="hidden" value="Learning Hub — Support / Complaint"/><label for="support-name">Name</label><input autocomplete="name" id="support-name" name="name" required="" type="text"/><label for="support-email">Email</label><input autocomplete="email" id="support-email" name="email" required="" type="email"/><label for="support-message">Message</label><textarea id="support-message" name="message" placeholder="Tell us how we can help." required=""></textarea><button class="btn btn-gold" type="submit">Send to Support</button></form></details></div>
 </div>
 </div>
 </section><section class="testimonials" id="feedback"><div class="container">
@@ -2766,7 +2766,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="eyebrow">Learning Hub Request</div>
 <h2 id="lh-enquiry-title">Request a Course, Resource or Custom Learning Material</h2>
 <p>Choose the closest options below. If your requirement is not listed, use the “Other” fields and tell us exactly what you need.</p>
-<form action="https://formsubmit.co/hublearning117@gmail.com" enctype="multipart/form-data" id="lh-enquiry-form" method="POST"><input name="_next" type="hidden" value="https://learninghubtutoring.com/?submitted=enquiry"/><input name="_template" type="hidden" value="table"/><input name="_captcha" type="hidden" value="false"/><input name="_subject" type="hidden" value="Learning Hub — New Learning Enquiry"/>
+<form enctype="multipart/form-data" id="lh-enquiry-form" method="POST"><input name="_next" type="hidden" value="https://learninghubtutoring.com/?submitted=enquiry"/><input name="_template" type="hidden" value="table"/><input name="_captcha" type="hidden" value="false"/><input name="_subject" type="hidden" value="Learning Hub — New Learning Enquiry"/>
 <div class="enquiry-grid">
 <div class="enquiry-field">
 <label for="lh-name">Name *</label>
@@ -4236,27 +4236,6 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
 #lhBookingPanel .lh-session-row label{margin:0!important}
 #lhBookingPanel .lh-billing-converter{margin-top:14px!important}
 </style>
-<script id="learning-hub-feedback-direct-email">
-(()=>{
- const recipient='learninghubcustomersupport@gmail.com';
- const sendDirect=(form,kind)=>{
-  form.addEventListener('submit',event=>{
-   event.preventDefault();
-   const data=new FormData(form);
-   const body=[
-    'Name: '+(data.get('name')||''),
-    'Email: '+(data.get('email')||''),
-    data.get('rating')?'Rating: '+data.get('rating')+'/5':'',
-    '',String(data.get('message')||'')
-   ].filter(Boolean).join('\\n');
-   window.location.href='mailto:'+recipient+'?subject='+encodeURIComponent('Learning Hub — '+kind)+'&body='+encodeURIComponent(body);
-  });
- };
- const support=document.querySelector('#support-form');
- if(support){support.removeAttribute('action');sendDirect(support,'Support Request');}
-})();
-</script>
-
 <style id="learning-hub-policy-navigation-cleanup">
 /* A single clean policy navigation: no chat link or unrelated control. */
 .policy-nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:12px!important;width:100%!important;margin:0 0 30px!important;padding:12px!important;border:1px solid rgba(142,107,45,.25)!important;border-radius:20px!important;background:rgba(255,255,255,.93)!important;box-shadow:0 12px 30px rgba(73,50,17,.10)!important}
