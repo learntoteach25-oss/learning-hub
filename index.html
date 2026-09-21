@@ -1933,7 +1933,10 @@ html{scroll-behavior:smooth}
 <script id="learning-hub-catalogue-scroll-script">
 document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('catalogue-view');});
 </script>
-</head>
+<style id="lh-checkout-route-repair">
+body.lh-route-checkout > nav,body.lh-route-checkout > #main-content,body.lh-route-checkout > footer,body.lh-route-checkout > #policyView{display:none!important}
+body.lh-route-checkout > #lhCheckoutRoot{display:block!important;position:relative!important;z-index:5000!important;min-height:100vh!important}
+</style></head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- NAVIGATION -->
