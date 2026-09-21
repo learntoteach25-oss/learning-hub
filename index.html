@@ -1914,20 +1914,26 @@ footer .footer-grid{align-items:start!important}
 </script>
 
 <style id="learning-hub-catalogue-scroll">
-/* Catalogue presentation only — existing content, branding and section order are unchanged. */
+/* Desktop catalogue-style section paging. Content, branding and section order stay unchanged. */
 html{scroll-behavior:smooth}
 @media (min-width:901px){
-  body.catalogue-view{scroll-snap-type:y proximity}
-  body.catalogue-view>main>section:not(.policy-card),
-  body.catalogue-view>section:not(.policy-card){scroll-snap-align:start;scroll-snap-stop:normal;min-height:calc(100vh - 76px);display:flex;flex-direction:column;justify-content:center;position:relative}
-  body.catalogue-view .hero{min-height:calc(100vh - 76px)!important}
-  body.catalogue-view .sample-resources,
-  body.catalogue-view .articles,
-  body.catalogue-view .gallery,
-  body.catalogue-view .faq-section,
-  body.catalogue-view .contact,
-  body.catalogue-view .testimonials{padding-top:88px!important;padding-bottom:88px!important}
+  body.catalogue-view.lh-route-home{scroll-snap-type:y mandatory}
+  body.catalogue-view.lh-route-home #main-content>section{
+    scroll-snap-align:start;
+    scroll-snap-stop:always;
+    min-height:calc(100vh - 82px);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+  }
+  body.catalogue-view.lh-route-home #main-content>section>.container,
+  body.catalogue-view.lh-route-home #main-content>section>.section-inner{
+    width:100%;
+  }
 }
+@media (max-width:900px){body.catalogue-view{scroll-snap-type:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 <script id="learning-hub-catalogue-scroll-script">
