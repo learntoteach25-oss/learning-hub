@@ -1914,30 +1914,35 @@ footer .footer-grid{align-items:start!important}
 </script>
 
 <style id="learning-hub-catalogue-scroll">
-/* Desktop catalogue-style section paging. Content, branding and section order stay unchanged. */
 html{scroll-behavior:smooth}
 @media (min-width:901px){
-  body.catalogue-view.lh-route-home{scroll-snap-type:y mandatory}
-  body.catalogue-view.lh-route-home #main-content>section{
-    scroll-snap-align:start;
-    scroll-snap-stop:always;
-    min-height:calc(100vh - 82px);
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    position:relative;
-    overflow:hidden;
-  }
-  body.catalogue-view.lh-route-home #main-content>section>.container,
-  body.catalogue-view.lh-route-home #main-content>section>.section-inner{
-    width:100%;
-  }
+ body.catalogue-view.lh-route-home{scroll-snap-type:y mandatory}
+ body.catalogue-view.lh-route-home #main-content>section{
+  scroll-snap-align:start;scroll-snap-stop:always;
+  min-height:calc(100vh - 160px)!important;
+  position:relative;display:flex!important;align-items:center;overflow:hidden;
+  border-bottom:1px solid rgba(177,132,48,.18)
+ }
+ body.catalogue-view.lh-route-home #main-content>section>.container,
+ body.catalogue-view.lh-route-home #main-content>section>.section-inner{
+  width:min(1180px,calc(100% - 64px));margin-inline:auto
+ }
+ body.catalogue-view.lh-route-home #main-content>section:nth-child(even){
+  background-color:#f7f2e8
+ }
+ body.catalogue-view.lh-route-home #main-content>section:nth-child(odd):not(.hero){
+  background-color:#fffdf8
+ }
+ body.catalogue-view.lh-route-home #main-content>section:not(.hero)::after{
+  content:"";position:absolute;right:30px;bottom:22px;width:42px;height:2px;
+  background:#c79a42;opacity:.65
+ }
 }
-@media (max-width:900px){body.catalogue-view{scroll-snap-type:none}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(max-width:900px){body.catalogue-view{scroll-snap-type:none!important}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 <script id="learning-hub-catalogue-scroll-script">
-document.addEventListener('DOMContentLoaded',function(){document.body.classList.add('catalogue-view');});
+document.addEventListener('DOMContentLoaded',()=>document.body.classList.add('catalogue-view'));
 </script>
 <style id="lh-checkout-route-repair">
 body.lh-route-checkout > nav,body.lh-route-checkout > #main-content,body.lh-route-checkout > footer,body.lh-route-checkout > #policyView{display:none!important}
