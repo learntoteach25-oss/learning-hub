@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Resources | Learning Hub</title>
+<style>
+:root{--ink:#15130f;--cream:#f7f2e8;--gold:#c99737;--green:#153d35;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,sans-serif}
+header{background:#050505;color:#fff;padding:18px 6%;display:flex;align-items:center;gap:18px;position:sticky;top:0;z-index:2}
+.brandmark{width:48px;height:48px;border:1px solid var(--gold);display:grid;place-items:center;color:#f1c968;font-family:Georgia,serif;font-size:18px}
+header strong{font-size:18px}header small{display:block;color:#e5c36f;letter-spacing:.08em;margin-top:4px}
+main{max-width:1180px;margin:auto;padding:64px 24px 90px}
+.kicker{color:#946600;font-weight:700;letter-spacing:.16em;font-size:12px}h1{font:700 52px/1.05 Georgia,serif;margin:10px 0 14px}
+.intro{max-width:720px;font-size:17px;line-height:1.65;color:#554c41}
+.tools{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0}.tools input,.tools select{padding:13px 15px;border:1px solid #d9cfbf;border-radius:10px;background:#fff;font-size:15px}
+.tools input{min-width:300px;flex:1}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid #e4dacb;border-radius:18px;padding:22px;box-shadow:0 10px 30px rgba(42,32,18,.05)}
+.card .type{font-size:11px;color:#946600;font-weight:700;letter-spacing:.12em}.card h2{font:700 23px/1.2 Georgia,serif;margin:10px 0}.card p{color:#665b4d;line-height:1.5}
+.card a{display:inline-block;margin-top:8px;padding:11px 16px;border-radius:999px;background:var(--green);color:#fff;text-decoration:none;font-weight:700}
+.empty{padding:36px;background:#fff;border-radius:18px;border:1px solid #e4dacb;color:#665b4d}
+.back{color:#fff;text-decoration:none;margin-left:auto}
+@media(max-width:800px){h1{font-size:38px}.grid{grid-template-columns:1fr}.tools input{min-width:100%}}
+</style></head>
+<body><header><div class="brandmark">LH</div><div><strong>Learning Hub</strong><small>GLOBAL EDUCATION PLATFORM</small></div><a class="back" href="./">← Website</a></header>
+<main><div class="kicker">FREE LEARNING LIBRARY</div><h1>Download & Learn</h1><p class="intro">Browse Learning Hub's free educational resources. Use search and subject filters as the library grows.</p>
+<div class="tools"><input id="q" type="search" placeholder="Search resources…"><select id="cat"><option value="">All subjects</option><option>English</option><option>IB</option><option>Mathematics</option><option>Psychology</option><option>General</option></select></div>
+<div id="grid" class="grid"><div class="empty">New resources are being uploaded. They will appear here as downloadable cards.</div></div>
+</main>
+<script>
+const resources=[];
+const grid=document.getElementById('grid'),q=document.getElementById('q'),cat=document.getElementById('cat');
+function render(){const term=q.value.toLowerCase(),c=cat.value;const a=resources.filter(r=>(!term||r.title.toLowerCase().includes(term))&&(!c||r.category===c));grid.innerHTML=a.length?a.map(r=>'<article class="card"><span class="type">'+r.category+'</span><h2>'+r.title+'</h2><p>'+r.description+'</p><a href="'+r.file+'" download>Download free resource ↓</a></article>').join(''):'<div class="empty">New resources are being uploaded. They will appear here as downloadable cards.</div>'}
+q.addEventListener('input',render);cat.addEventListener('change',render);render();
+</script></body></html>
