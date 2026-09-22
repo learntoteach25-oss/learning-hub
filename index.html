@@ -2589,6 +2589,37 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
  window.addEventListener('load',clean);
 })();
 </script>
+<style id="lh-content-quality-access-final-20260923">
+/* Clear browse/access affordance without calling the interface a catalogue. */
+.lh-cat-card{cursor:pointer!important}
+.lh-cat-card::marker{display:none!important}
+.lh-cat-card .lh-cat-arrow{opacity:1!important}
+.lh-cat-card:hover .lh-cat-card-copy strong,.lh-cat-card:focus-visible .lh-cat-card-copy strong{color:#f0d58e!important}
+.lh-cat-card:focus-visible{outline:3px solid #f0d58e!important;outline-offset:4px!important}
+.lh-cat-card-copy span{max-width:95%!important;color:#eee5d7!important;font-size:.82rem!important;line-height:1.5!important}
+.lh-cat-card-copy strong{max-width:95%!important}
+/* Opened sections: polished readable editorial copy. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page p{
+ line-height:1.7!important
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading p{
+ font-size:1.02rem!important;line-height:1.65!important
+}
+</style>
+<script id="lh-card-access-final-20260923">
+(function(){
+ function bind(){
+  document.querySelectorAll('.lh-cat-card[href^="#"]').forEach(function(card){
+    var id=(card.getAttribute('href')||'').slice(1);
+    var target=document.getElementById(id);
+    if(!target)return;
+    card.setAttribute('aria-label','Open '+((card.querySelector('strong')||{}).textContent||id));
+    card.setAttribute('title','Open section');
+  });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
+})();
+</script>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -5130,15 +5161,15 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .cont
 
     const about=document.querySelector('.intro'); if(about&&!about.id) about.id='about';
     const sectionMeta={
-      about:['About Learning Hub','One platform. Many pathways.','Personalised learning, curriculum support and digital resources.'],
-      programmes:['Learning Programmes','Choose your learning pathway.','Academic tutoring, international curriculum, English and specialist support.'],
-      quran:['Quran & Islamic Studies','Faith-based learning with structure and care.','Quran reading, Tajweed, Islamic Studies and related courses.'],
-      boards:['International Boards','International Boards & Curriculum','Explore curriculum pathways, subjects and examination support.'],
-      cambridge:['Cambridge International','Subjects and syllabus pathways.','Cambridge O Level and AS & A Level support.'],
-      exams:['International Exams','Prepare with purpose.','IELTS, PTE, TOEFL and other examination pathways.'],
-      'learning-method':['How Learning Works','Focused support for every stage.','See how Learning Hub structures teaching, practice and feedback.'],
-      progress:['Learning Progress','Progress made visible.','Simple check-ins, evidence and targeted next steps.'],
-      support:['Learning Support','Learning designed around the learner.','Personalised strategies for confidence, communication and study skills.'],
+      about:['About Learning Hub','One platform. Many pathways.','Discover our approach, learning pathways, academic support and digital resources.'],
+      programmes:['Learning Programmes','Choose your learning pathway.','Explore structured tutoring across school subjects, English, international curricula and specialist learning needs.'],
+      quran:['Quran & Islamic Studies','Faith-based learning with structure and care.','Explore Quran reading, Tajweed and Islamic Studies through structured, learner-focused support.'],
+      boards:['International Boards','International Boards & Curriculum','Compare international curriculum pathways, subjects and focused examination preparation.'],
+      cambridge:['Cambridge International','Subjects and syllabus pathways.','Explore Cambridge O Level, AS & A Level subjects, syllabus-focused tutoring and exam preparation.'],
+      exams:['International Exams','Prepare with purpose.','Explore IELTS, PTE, TOEFL and other international exam preparation pathways.'],
+      'learning-method':['How Learning Works','Focused support for every stage.','Follow the learning journey from initial goals to guided teaching, practice, feedback and review.'],
+      progress:['Learning Progress','Progress made visible.','See how goals, practice evidence, feedback and regular reviews make learning progress visible.'],
+      support:['Learning Support','Learning designed around the learner.','Explore targeted support for learning differences, study skills, communication and academic confidence.'],
       'global-learners':['Global Connection','Learn from anywhere in the world.','Discover how Learning Hub supports learners internationally.'],
       resources:['Learning Resources','Free learning and premium digital resources.','Browse free materials and premium educational resources.'],
       'sample-resources':['Learning Materials','See the learning in action.','Preview structured Learning Hub resources and downloads.'],
