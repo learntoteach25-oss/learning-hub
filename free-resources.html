@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Free Resources | Learning Hub</title>
+<title>Free Resources | Learning Hub Global Education Platform</title>
 <style>
 :root{--ink:#15130f;--cream:#f7f2e8;--gold:#c99737;--green:#153d35;--white:#fff}
 *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,sans-serif}
@@ -20,14 +20,17 @@ main{max-width:1180px;margin:auto;padding:64px 24px 90px}
 .back{color:#fff;text-decoration:none;margin-left:auto}
 @media(max-width:800px){h1{font-size:38px}.grid{grid-template-columns:1fr}.tools input{min-width:100%}}
 </style></head>
-<body><header><div class="brandmark">LH</div><div><strong>Learning Hub</strong><small>GLOBAL EDUCATION PLATFORM</small></div><a class="back" href="./">← Website</a></header>
+<body><header><div class="brandmark">LH</div><div><strong>Learning Hub Global Education Platform</strong><small>FREE LEARNING LIBRARY</small></div><a class="back" href="./">← Website</a></header>
 <main><div class="kicker">FREE LEARNING LIBRARY</div><h1>Download & Learn</h1><p class="intro">Browse Learning Hub's free educational resources. Use search and subject filters as the library grows.</p>
 <div class="tools"><input id="q" type="search" placeholder="Search resources…"><select id="cat"><option value="">All subjects</option><option>English</option><option>IB</option><option>Mathematics</option><option>Psychology</option><option>General</option></select></div>
 <div id="grid" class="grid"><div class="empty">New resources are being uploaded. They will appear here as downloadable cards.</div></div>
 </main>
 <script>
-const resources=[];
+const resources=[
+ {title:"IB English Literary Analysis Practice",category:"IB",description:"Guided literary-analysis practice for authorial choices, evidence and structured responses.",file:"IB_English_SL_Literary_Analysis_Practice_Activities.pdf"},
+ {title:"Grade 5 Subtraction — Italian & English",category:"Mathematics",description:"Bilingual subtraction practice supporting mathematical vocabulary and fluency.",file:"Grade_5_Subtraction_Bilingual_Italian_English_Worksheet.pdf"}
+];
 const grid=document.getElementById('grid'),q=document.getElementById('q'),cat=document.getElementById('cat');
-function render(){const term=q.value.toLowerCase(),c=cat.value;const a=resources.filter(r=>(!term||r.title.toLowerCase().includes(term))&&(!c||r.category===c));grid.innerHTML=a.length?a.map(r=>'<article class="card"><span class="type">'+r.category+'</span><h2>'+r.title+'</h2><p>'+r.description+'</p><a href="'+r.file+'" download>Download free resource ↓</a></article>').join(''):'<div class="empty">New resources are being uploaded. They will appear here as downloadable cards.</div>'}
+function render(){const term=q.value.toLowerCase(),c=cat.value;const a=resources.filter(r=>(!term||(r.title+' '+r.description+' '+r.category).toLowerCase().includes(term))&&(!c||r.category===c));grid.innerHTML=a.length?a.map(r=>'<article class="card"><span class="type">'+r.category+'</span><h2>'+r.title+'</h2><p>'+r.description+'</p><a href="'+r.file+'" download>Download free resource ↓</a></article>').join(''):'<div class="empty">New resources are being uploaded. They will appear here as downloadable cards.</div>'}
 q.addEventListener('input',render);cat.addEventListener('change',render);render();
 </script></body></html>
