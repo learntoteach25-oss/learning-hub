@@ -2285,6 +2285,33 @@ body.lh-catalogue-mode.lh-detail-view #feedback.lh-active-page .section-heading 
  body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading{margin-bottom:28px!important;padding-bottom:22px!important}
 }
 </style>
+<style id="lh-logo-visibility-fix-20260923">
+/* Approved LH logo visibility fix — header, catalogue and footer only. */
+.brand-mark-image{
+  width:92px!important;height:92px!important;flex:0 0 92px!important;
+  padding:0!important;object-fit:contain!important;opacity:1!important;
+  filter:none!important;background:#000!important;
+}
+.brand{min-width:310px!important}
+.lh-cat-head::before{
+  width:112px!important;height:112px!important;flex:0 0 112px!important;
+  margin-right:20px!important;border-radius:0!important;
+  background-color:#000!important;
+  background-image:url("assets/learning-hub-logo.png?v=approved-20260923")!important;
+  background-repeat:no-repeat!important;background-position:center!important;background-size:contain!important;
+}
+.footer-brand-logo{
+  width:150px!important;height:150px!important;max-height:none!important;
+  padding:0!important;object-fit:contain!important;opacity:1!important;
+  filter:none!important;background:#000!important;
+}
+@media(max-width:900px){
+ .brand{min-width:0!important}
+ .brand-mark-image{width:66px!important;height:66px!important;flex-basis:66px!important}
+ .lh-cat-head::before{width:82px!important;height:82px!important;flex-basis:82px!important;margin:0 0 16px!important}
+ .footer-brand-logo{width:112px!important;height:112px!important}
+}
+</style>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
