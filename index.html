@@ -2422,6 +2422,89 @@ footer .social-links,footer .social-icons,footer [class~="social-links"],footer 
  window.addEventListener('load',tidy);
 })();
 </script>
+<style id="lh-visual-catalogue-no-catalogue-heading-20260923">
+/* Visual catalogue treatment only. Do NOT label the website or sections as a catalogue. */
+#lhCatalogueLauncher .lh-cat-head{display:none!important}
+#lhCatalogueLauncher{padding:34px 0 70px!important}
+#lhCatalogueLauncher .lh-cat-grid{margin-top:0!important}
+
+/* Remove catalogue wording from the route bar while preserving navigation. */
+#lhCatalogueBar #lhCatalogueCurrent{font-size:0!important}
+#lhCatalogueBar #lhCatalogueCurrent::after{content:"Explore Learning Hub";font-size:1rem!important}
+#lhCatalogueBar .lh-cat-back{font-size:0!important}
+#lhCatalogueBar .lh-cat-back::after{content:"← Explore";font-size:.95rem!important}
+
+/* Section pages: use visual catalogue elements, not catalogue labels. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading{
+ text-align:left!important;max-width:1180px!important;margin:0 auto 34px!important;
+ display:grid!important;grid-template-columns:minmax(0,1.25fr) minmax(260px,.75fr)!important;
+ column-gap:54px!important;align-items:end!important;padding-bottom:25px!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading .eyebrow{
+ grid-column:1/-1!important;margin-bottom:10px!important
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading h2{
+ margin:0!important;max-width:760px!important
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading p{
+ margin:0!important;max-width:520px!important;align-self:end!important
+}
+
+/* Existing grids/cards should visually read as browseable catalogue entries. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
+.visual-grid,.support-grid,.board-grid,.international-exam-grid,.sample-resource-grid,
+.lh-editorial-grid,.reviews-grid,.gallery-grid,.courses-grid,.learning-method-grid
+){gap:24px!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
+.visual-card,.support-card,.board-card,.international-exam-card,.sample-resource-card,
+.lh-editorial-card,.gallery-item,.course-item,.learning-method-step
+){
+ position:relative!important;overflow:hidden!important;
+ border:1px solid rgba(166,125,47,.25)!important;
+ box-shadow:0 12px 30px rgba(28,22,15,.08)!important
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
+.visual-card,.support-card,.board-card,.international-exam-card,.sample-resource-card,
+.lh-editorial-card,.gallery-item,.course-item,.learning-method-step
+):hover{
+ transform:translateY(-5px)!important;border-color:#c89d4d!important;
+ box-shadow:0 20px 44px rgba(28,22,15,.14)!important
+}
+
+/* Fix cream sections accidentally inheriting white text from dark visual cards. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page:not(#articles):not(#feedback)
+ :is(.learning-method-step,.progress-card,.support-point,.info-card){
+ color:#211b13!important;background:#fffdf8!important
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page:not(#articles):not(#feedback)
+ :is(.learning-method-step,.progress-card,.support-point,.info-card) :is(h2,h3,h4,strong){
+ color:#211b13!important
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page:not(#articles):not(#feedback)
+ :is(.learning-method-step,.progress-card,.support-point,.info-card) p{
+ color:#625747!important
+}
+
+@media(max-width:800px){
+ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading{
+  grid-template-columns:1fr!important;row-gap:12px!important
+ }
+}
+</style>
+<script id="lh-remove-catalogue-copy-20260923">
+(function(){
+ function apply(){
+  var launcher=document.getElementById('lhCatalogueLauncher');
+  if(launcher){
+   var head=launcher.querySelector('.lh-cat-head'); if(head)head.remove();
+  }
+  var current=document.getElementById('lhCatalogueCurrent');
+  if(current && /catalogue/i.test(current.textContent||'')) current.textContent='Explore Learning Hub';
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);else apply();
+ window.addEventListener('load',apply);
+})();
+</script>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
