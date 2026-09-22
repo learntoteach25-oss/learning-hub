@@ -2695,6 +2695,108 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{
  window.addEventListener('load',fromHash);
 })();
 </script>
+<style id="lh-catalogue-access-visibility-authority-20260923">
+/* Home = visual browse grid. One click = one focused section. */
+body.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher{
+ display:block!important;visibility:visible!important;opacity:1!important;
+}
+body.lh-catalogue-mode:not(.lh-detail-view) #main-content>section{
+ display:none!important;
+}
+body.lh-catalogue-mode:not(.lh-detail-view) #main-content>section.hero{
+ display:block!important;
+}
+body.lh-catalogue-mode.lh-detail-view #lhCatalogueLauncher{display:none!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section{display:none!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{
+ display:block!important;visibility:visible!important;opacity:1!important;
+}
+
+/* Premium catalogue readability. */
+.lh-cat-card::after{
+ background:linear-gradient(180deg,rgba(0,0,0,.05) 10%,rgba(0,0,0,.42) 48%,rgba(0,0,0,.94) 100%)!important;
+}
+.lh-cat-card img{opacity:.82!important}
+.lh-cat-card-copy{left:24px!important;right:62px!important;bottom:23px!important}
+.lh-cat-card-copy strong{
+ color:#fff!important;text-shadow:0 2px 12px rgba(0,0,0,.85)!important;
+ font-size:clamp(1.38rem,1.8vw,1.7rem)!important;line-height:1.06!important;
+}
+.lh-cat-card-copy span{
+ color:#fff!important;text-shadow:0 1px 8px rgba(0,0,0,.95)!important;
+ font-size:.84rem!important;line-height:1.5!important;font-weight:600!important;
+}
+.lh-cat-card-copy::before{
+ background:#f0d58e!important;color:#111!important;box-shadow:0 3px 12px rgba(0,0,0,.3)!important;
+}
+.lh-cat-arrow{
+ width:42px!important;height:42px!important;background:rgba(10,10,9,.82)!important;
+ border:1px solid #e4bd62!important;color:#f4d77f!important;font-size:1.15rem!important;
+}
+.lh-cat-card:hover,.lh-cat-card:focus-visible{
+ border-color:#e4bd62!important;box-shadow:0 22px 48px rgba(0,0,0,.42)!important;
+}
+
+/* Opened segment = clean, readable exploration page. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading h2{
+ color:#17130f!important;text-shadow:none!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading p{
+ color:#51483d!important;font-weight:500!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(.card-body,.content,.info-card,.learning-method-step,.progress-card) p{
+ color:#51483d!important;
+}
+</style>
+<script id="lh-catalogue-access-visibility-authority-script-20260923">
+(function(){
+ 'use strict';
+ function cleanSectionStyles(){
+   document.querySelectorAll('#main-content>section[id]').forEach(function(s){
+     s.style.removeProperty('display');
+     s.style.removeProperty('visibility');
+     s.style.removeProperty('opacity');
+   });
+ }
+ function browse(){
+   cleanSectionStyles();
+   document.body.classList.add('lh-catalogue-mode');
+   document.body.classList.remove('lh-detail-view');
+   document.querySelectorAll('#main-content>section[id]').forEach(function(s){s.classList.remove('lh-active-page')});
+   var launcher=document.getElementById('lhCatalogueLauncher');
+   if(launcher)launcher.style.removeProperty('display');
+ }
+ function explore(id,push){
+   var target=document.getElementById(id);
+   if(!target || !target.matches('#main-content>section[id]'))return false;
+   cleanSectionStyles();
+   document.body.classList.add('lh-catalogue-mode','lh-detail-view');
+   document.querySelectorAll('#main-content>section[id]').forEach(function(s){s.classList.toggle('lh-active-page',s===target)});
+   if(push && location.hash!=='#'+id)history.pushState(null,'','#'+id);
+   requestAnimationFrame(function(){
+     var nav=document.querySelector('.navbar');
+     var y=target.getBoundingClientRect().top+scrollY-(nav?nav.offsetHeight:0)-6;
+     scrollTo(0,Math.max(0,y));
+   });
+   return true;
+ }
+ window.addEventListener('click',function(e){
+   var card=e.target.closest&&e.target.closest('#lhCatalogueLauncher a.lh-cat-card[href^="#"]');
+   if(!card)return;
+   var id=decodeURIComponent((card.getAttribute('href')||'').slice(1));
+   if(explore(id,true)){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();}
+ },true);
+ window.addEventListener('popstate',function(){
+   var id=decodeURIComponent((location.hash||'').slice(1));
+   if(id&&id!=='home')explore(id,false);else browse();
+ });
+ function init(){
+   var id=decodeURIComponent((location.hash||'').slice(1));
+   if(id&&id!=='home')explore(id,false);else browse();
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);else init();
+})();
+</script>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
