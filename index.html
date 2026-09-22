@@ -2505,6 +2505,90 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page:not(#
  window.addEventListener('load',apply);
 })();
 </script>
+<style id="lh-sequential-visual-catalogue-final-20260923">
+/* FINAL VISUAL DIRECTION:
+   catalogue = browsing experience only, never a visible label/heading. */
+
+/* Remove the standalone catalogue route/bar/heading completely. */
+#lhCatalogueBar{display:none!important}
+#lhCatalogueLauncher{padding:28px 0 64px!important}
+#lhCatalogueLauncher .lh-cat-head{display:none!important}
+
+/* Header must be a clearly visible premium brand anchor. */
+.navbar{background:#050505!important;border-top:2px solid #d4ad58!important;border-bottom:1px solid rgba(240,213,142,.30)!important}
+.nav-inner{min-height:108px!important;padding:10px 0!important}
+.brand{display:flex!important;align-items:center!important;gap:18px!important;min-width:350px!important}
+.brand-mark-image{
+ width:108px!important;height:108px!important;flex:0 0 108px!important;
+ object-fit:contain!important;opacity:1!important;visibility:visible!important;filter:none!important;background:#000!important
+}
+.brand-copy{display:flex!important;flex-direction:column!important;justify-content:center!important}
+.brand-copy strong{font-family:"Playfair Display",Georgia,serif!important;font-size:1.65rem!important;color:#fff!important;line-height:1!important}
+.brand-copy small{display:block!important;color:#f0d58e!important;font-size:.68rem!important;font-weight:800!important;letter-spacing:.06em!important;margin-top:8px!important}
+
+/* Sequential visual browsing: each tile is an obvious next destination. */
+.lh-cat-grid{counter-reset:lhbrowse!important;gap:24px!important}
+.lh-cat-card{counter-increment:lhbrowse!important;min-height:315px!important}
+.lh-cat-card-copy small{display:none!important}
+.lh-cat-card-copy::before{
+ content:counter(lhbrowse,decimal-leading-zero)!important;
+ display:inline-grid!important;place-items:center!important;width:42px!important;height:32px!important;
+ margin-bottom:10px!important;border-radius:999px!important;background:#f0d58e!important;color:#111!important;
+ font:900 .76rem/1 Inter,Arial,sans-serif!important;letter-spacing:.06em!important
+}
+.lh-cat-card-copy strong{display:block!important;font-size:1.55rem!important;line-height:1.05!important}
+.lh-cat-card-copy span{display:block!important;margin-top:7px!important;line-height:1.45!important;max-width:92%!important}
+.lh-cat-arrow{display:grid!important;place-items:center!important}
+
+/* Opened sections continue the same sequence visually, using their real headings/content. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{padding-top:56px!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading{
+ text-align:left!important;max-width:1180px!important;margin:0 auto 38px!important;
+ grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr)!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading h2{
+ font-size:clamp(2.4rem,4.2vw,4.1rem)!important;line-height:1.03!important
+}
+
+/* Stronger readable card hierarchy. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
+.visual-card,.support-card,.board-card,.international-exam-card,.sample-resource-card,
+.lh-editorial-card,.gallery-item,.course-item,.learning-method-step,.progress-card
+) h3{font-family:"Playfair Display",Georgia,serif!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
+.visual-card,.support-card,.board-card,.international-exam-card,.sample-resource-card,
+.lh-editorial-card,.gallery-item,.course-item
+){cursor:pointer!important}
+
+/* Never show catalogue wording injected by earlier patches. */
+.lh-cat-kicker,.lh-cat-badge{display:none!important}
+
+@media(max-width:900px){
+ .brand{min-width:0!important}
+ .brand-mark-image{width:82px!important;height:82px!important;flex-basis:82px!important}
+ .brand-copy strong{font-size:1.3rem!important}
+}
+@media(max-width:700px){
+ .nav-inner{min-height:78px!important}
+ .brand-mark-image{width:64px!important;height:64px!important;flex-basis:64px!important}
+ .brand-copy strong{font-size:1.05rem!important}.brand-copy small{font-size:.52rem!important}
+}
+</style>
+<script id="lh-sequential-visual-catalogue-final-script-20260923">
+(function(){
+ function clean(){
+   var bar=document.getElementById('lhCatalogueBar'); if(bar)bar.remove();
+   document.querySelectorAll('#lhCatalogueLauncher .lh-cat-head,.lh-cat-kicker,.lh-cat-badge').forEach(function(n){n.remove()});
+   document.querySelectorAll('h1,h2,h3,p,span,a,button').forEach(function(n){
+     var t=(n.textContent||'').trim();
+     if(t==='Learning Catalogue') n.remove();
+     if(t==='Catalogue' || t==='← Catalogue') n.style.display='none';
+   });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',clean);else clean();
+ window.addEventListener('load',clean);
+})();
+</script>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
