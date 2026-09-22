@@ -17,11 +17,11 @@
 <meta content="Learning Hub | Global Online Tutoring &amp; International Education" property="og:title"/>
 <meta content="Personalised online tutoring, international curriculum support, English development, exam preparation, Quran and Islamic Studies, learning support and digital resources." property="og:description"/>
 <meta content="https://learninghubtutoring.com/" property="og:url"/>
-<meta content="https://learninghubtutoring.com/assets/learning-hub-logo.png?v=20260923" property="og:image"/>
+<meta content="https://learninghubtutoring.com/assets/learning-hub-logo.png?v=approved-20260923" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Learning Hub | Global Online Tutoring &amp; International Education" name="twitter:title"/>
 <meta content="Personalised online learning for students, professionals and lifelong learners worldwide." name="twitter:description"/>
-<meta content="https://learninghubtutoring.com/assets/learning-hub-logo.png?v=20260923" name="twitter:image"/>
+<meta content="https://learninghubtutoring.com/assets/learning-hub-logo.png?v=approved-20260923" name="twitter:image"/>
 <style>
 :root{
   --black:#070707;
@@ -1896,7 +1896,7 @@ footer .footer-grid{align-items:start!important}
       "@id":"https://learninghubtutoring.com/#organization",
       "name":"Learning Hub",
       "url":"https://learninghubtutoring.com/",
-      "logo":"https://learninghubtutoring.com/assets/learning-hub-logo.png?v=20260923",
+      "logo":"https://learninghubtutoring.com/assets/learning-hub-logo.png?v=approved-20260923",
       "email":"learninghubcustomersupport@gmail.com",
       "description":"Global online tutoring for IB, A-Level, GCSE, English, IELTS, Quran and international curriculum learners."
     },
@@ -1975,21 +1975,150 @@ body:has(#lhCheckoutRoot:target)>#lhCheckoutRoot{display:block!important;positio
  .brand-mark-image{width:62px!important;height:62px!important;flex-basis:62px!important}
  .brand-copy strong{font-size:1.5rem!important}
 }
-</style></head>
+</style>
+<style id="lh-final-authoritative-v7">
+/* FINAL AUTHORITATIVE V7 — presentation, catalogue interaction and integration guardrails. */
+:root{
+  --lh-gold:#c9a45c;--lh-gold2:#f0d58e;--lh-ivory:#fbf8f1;--lh-cream:#f4eee2;--lh-black:#080807;
+}
+/* Header/logo */
+body.lh-catalogue-mode .navbar{
+  position:sticky!important;top:0!important;z-index:12000!important;
+  background:rgba(7,7,7,.985)!important;backdrop-filter:blur(16px)!important;
+  border-bottom:1px solid rgba(240,213,142,.30)!important;
+}
+body.lh-catalogue-mode .nav-inner{min-height:86px!important;align-items:center!important}
+body.lh-catalogue-mode .brand-mark-image{
+  width:66px!important;height:66px!important;flex:0 0 66px!important;
+  object-fit:contain!important;object-position:center!important;background:#000!important;
+  padding:3px!important;border:0!important;box-shadow:none!important;
+}
+body.lh-catalogue-mode .brand-copy strong{font-size:1.28rem!important;line-height:1.08!important;color:#fffdf8!important}
+body.lh-catalogue-mode .brand-copy small{font-size:.67rem!important;color:var(--lh-gold2)!important;margin-top:4px!important}
+/* Catalogue cards: clear hover lift and clickable affordance. */
+.lh-cat-card,.lh-cat-card *{cursor:pointer!important}
+.lh-cat-card{
+  border:1px solid rgba(240,213,142,.18)!important;
+  box-shadow:0 18px 45px rgba(0,0,0,.28)!important;
+  transition:transform .30s cubic-bezier(.2,.8,.2,1),box-shadow .30s ease,border-color .30s ease!important;
+}
+.lh-cat-card:hover,.lh-cat-card:focus-visible{
+  transform:translateY(-9px) scale(1.012)!important;
+  border-color:rgba(240,213,142,.72)!important;
+  box-shadow:0 28px 62px rgba(0,0,0,.42),0 0 0 1px rgba(240,213,142,.10)!important;
+}
+.lh-cat-card:hover img{transform:scale(1.045)!important;opacity:.84!important}
+.lh-cat-card:hover .lh-cat-arrow{transform:translateX(3px)!important;background:var(--lh-gold2)!important;color:#111!important}
+.lh-cat-card:focus-visible{outline:2px solid var(--lh-gold2)!important;outline-offset:4px!important}
+/* Detail pages: enough space below the navigation so headings are never clipped. */
+body.lh-catalogue-mode.lh-detail-view #lhCatalogueBar{top:86px!important;z-index:11900!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{
+  padding-top:118px!important;padding-bottom:84px!important;min-height:calc(100vh - 154px)!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading{margin-bottom:38px!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading h2{
+  overflow:visible!important;line-height:1.08!important;letter-spacing:-.02em!important;text-wrap:balance!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading p{line-height:1.72!important}
+/* Images: consistent containers and graceful local fallbacks. */
+#articles .lh-editorial-image,#articles .article-image{overflow:hidden!important;border-radius:18px!important;background:#1a1712!important}
+#articles .lh-editorial-image img,#articles .article-image img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important}
+.exam-summary-image{overflow:hidden!important;background:#1b1712!important}
+/* Separate resources from articles visually. */
+#resources{border-top:1px solid rgba(201,164,92,.28)!important}
+#sample-resources{border-top:1px solid rgba(201,164,92,.18)!important}
+#articles{border-top:2px solid rgba(240,213,142,.30)!important}
+/* Headings / copy. */
+.section-heading h2{overflow:visible!important;text-wrap:balance!important}
+.section-heading p{line-height:1.7!important}
+/* Buttons / interactive cards. */
+.lh-cat-back,.lh-cat-home-link,.lh-cat-quick,.btn,.price-card,.support-card,.board-card,.international-exam-card,.exam-accordion,.sample-resource-card,.lh-editorial-card,.review-card,.gallery-item,.faq-item,.learning-method-step,.course-item,.exam,.ib-dropdown,.cambridge-dropdown{cursor:pointer!important}
+/* Enquiry control */
+#lhAuditEnquire{z-index:15000!important}
+/* Feedback/contact remain reachable and visually distinct. */
+#contact .contact-box,#feedback .feedback-form{border-color:rgba(201,164,92,.45)!important}
+/* Policy access */
+#lhPolicyAuditLink{white-space:nowrap!important}
+html.lh-policy-route body>nav,html.lh-policy-route body>#main-content,html.lh-policy-route body>footer,html.lh-policy-route body>#lhCheckoutRoot{display:none!important}
+html.lh-policy-route body>#policyView{display:block!important;visibility:visible!important;opacity:1!important;position:relative!important;z-index:20000!important;min-height:100vh!important}
+@media(max-width:900px){
+  body.lh-catalogue-mode .nav-inner{min-height:78px!important}
+  body.lh-catalogue-mode .brand-mark-image{width:56px!important;height:56px!important;flex-basis:56px!important}
+  body.lh-catalogue-mode .brand-copy strong{font-size:1.12rem!important}
+  body.lh-catalogue-mode .brand-copy small{font-size:.58rem!important}
+  body.lh-catalogue-mode.lh-detail-view #lhCatalogueBar{top:78px!important}
+  body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{padding-top:86px!important}
+}
+@media(max-width:620px){
+  body.lh-catalogue-mode .brand-mark-image{width:50px!important;height:50px!important;flex-basis:50px!important}
+  body.lh-catalogue-mode .brand-copy strong{font-size:1rem!important}
+  body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{padding-top:78px!important}
+  body.lh-catalogue-mode.lh-detail-view #lhCatalogueBar{top:72px!important}
+  #articles .lh-editorial-image,#articles .article-image{min-height:220px!important}
+}
+</style>
+<script id="lh-final-integration-guard-v7">
+(function(){
+  'use strict';
+  const ENDPOINT='https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec';
+  const SUPPORT='learninghubcustomersupport@gmail.com';
+  const TEACHER='https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform';
+  window.LH_INTEGRATIONS=window.LH_INTEGRATIONS||{};
+  window.LH_INTEGRATIONS.submissionsAppsScript=ENDPOINT;
+  window.LH_INTEGRATIONS.supportEmail=SUPPORT;
+  window.LH_INTEGRATIONS.generalEmail='hublearning117@gmail.com';
+  window.LH_INTEGRATIONS.teacherGoogleForm=TEACHER;
+  function enforceTeacherLinks(){
+    document.querySelectorAll('a').forEach(function(a){
+      const text=(a.textContent||'').trim().toLowerCase();
+      if(text.includes('apply to teach')||text.includes('teaching application')){
+        a.href=TEACHER;
+        a.target='_blank';
+        a.rel='noopener';
+      }
+    });
+  }
+  function bindEnquiryFallback(){
+    document.querySelectorAll('[data-open-enquiry]').forEach(function(el){
+      if(el.dataset.v7Enquiry==='1')return;
+      el.dataset.v7Enquiry='1';
+      el.addEventListener('click',function(){
+        setTimeout(function(){
+          const modal=document.getElementById('lh-enquiry-modal');
+          if(modal && modal.classList.contains('open')) modal.setAttribute('aria-hidden','false');
+        },0);
+      });
+    });
+  }
+  function auditFormRouting(){
+    ['feedbackFormAnchor','support-form','lh-enquiry-form'].forEach(function(id){
+      const form=document.getElementById(id);
+      if(form){
+        form.dataset.googleSubmissionEndpoint=ENDPOINT;
+        form.dataset.googleRecipient=SUPPORT;
+      }
+    });
+  }
+  function run(){enforceTeacherLinks();bindEnquiryFallback();auditFormRouting();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run); else run();
+  window.addEventListener('load',run);
+})();
+</script>
+</head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- NAVIGATION -->
 <nav class="navbar">
 <div class="container nav-inner">
 <a aria-label="Learning Hub home" class="brand" href="#home">
-<img alt="Learning Hub approved logo" class="brand-mark-image" src="assets/learning-hub-logo.png?v=20260923"/>
+<img alt="Learning Hub approved logo" class="brand-mark-image" src="assets/learning-hub-logo.png?v=approved-20260923"/>
 <span class="brand-copy">
 <strong>Learning Hub</strong>
 <small>Global Education Platform</small>
 </span>
 </a>
 <div class="nav-links" id="mainNav">
-<a aria-current="page" href="#programmes">Programmes</a><a href="#quran">Quran &amp; Islamic Studies</a><a href="#boards">International Boards</a><a href="#exams">Exams</a><a href="#support">Learning Support</a><a href="#articles">Resources &amp; Articles</a><a href="#teacher">Teach with Us</a><a href="#contact">Contact</a><a href="#feedback">Feedback</a><a href="?policies=1#terms">Policies</a></div>
+<a aria-current="page" href="#programmes">Programmes</a><a href="#quran">Quran &amp; Islamic Studies</a><a href="#boards">International Boards</a><a href="#exams">Exams</a><a href="#support">Learning Support</a><a href="#resources">Resources</a><a href="#articles">Articles &amp; Blog</a><a href="#teacher">Teach with Us</a><a href="#contact">Contact</a><a href="#feedback">Feedback</a><a href="?policies=1#terms">Policies</a></div>
 <div class="nav-actions">
 <a class="btn btn-gold" href="?checkout=booking&amp;v=20260916#lhCheckoutRoot">Book Now</a>
 <button aria-expanded="false" aria-label="Open menu" class="mobile-toggle" id="mobileToggle">☰</button>
@@ -2533,31 +2662,31 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 </div>
 <div class="exam-accordion-grid">
 <details class="exam-accordion">
-<summary><span class="exam-summary-content"><img alt="IELTS preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&amp;fit=crop&amp;w=1200&amp;q=90"/><span class="exam-summary-text"><strong>IELTS</strong><small>Academic &amp; General Training</small></span></span><b>+</b></summary>
+<summary><span class="exam-summary-content"><img alt="IELTS preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1200&q=90"/><span class="exam-summary-text"><strong>IELTS</strong><small>Academic &amp; General Training</small></span></span><b>+</b></summary>
 <div class="exam-accordion-body">
 <div class="exam-option"><h3>IELTS Academic</h3><p>Preparation for higher education and professional registration pathways.</p><div class="exam-components"><span class="exam-component">Listening</span><span class="exam-component">Reading</span><span class="exam-component">Writing</span><span class="exam-component">Speaking</span></div></div>
 <div class="exam-option"><h3>IELTS General Training</h3><p>Preparation focused on everyday, workplace and migration-related English.</p><div class="exam-components"><span class="exam-component">Listening</span><span class="exam-component">Reading</span><span class="exam-component">Writing</span><span class="exam-component">Speaking</span></div></div>
 </div></details>
 <details class="exam-accordion">
-<summary><span class="exam-summary-content"><img alt="PTE preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&amp;fit=crop&amp;w=1200&amp;q=90"/><span class="exam-summary-text"><strong>PTE</strong><small>Academic &amp; Core</small></span></span><b>+</b></summary>
+<summary><span class="exam-summary-content"><img alt="PTE preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1200&q=90"/><span class="exam-summary-text"><strong>PTE</strong><small>Academic &amp; Core</small></span></span><b>+</b></summary>
 <div class="exam-accordion-body">
 <div class="exam-option"><h3>PTE Academic</h3><p>Academic English preparation for study and international education pathways.</p><div class="exam-components"><span class="exam-component">Speaking</span><span class="exam-component">Writing</span><span class="exam-component">Reading</span><span class="exam-component">Listening</span></div></div>
 <div class="exam-option"><h3>PTE Core</h3><p>Practical English preparation for everyday and immigration-related language goals.</p><div class="exam-components"><span class="exam-component">Speaking</span><span class="exam-component">Writing</span><span class="exam-component">Reading</span><span class="exam-component">Listening</span></div></div>
 </div></details>
 <details class="exam-accordion">
-<summary><span class="exam-summary-content"><img alt="OET preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&amp;fit=crop&amp;w=1200&amp;q=90"/><span class="exam-summary-text"><strong>OET</strong><small>Healthcare English</small></span></span><b>+</b></summary>
+<summary><span class="exam-summary-content"><img alt="OET preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=90"/><span class="exam-summary-text"><strong>OET</strong><small>Healthcare English</small></span></span><b>+</b></summary>
 <div class="exam-accordion-body"><div class="exam-option"><h3>Occupational English Test</h3><p>English preparation for healthcare professionals with emphasis on clinical communication and profession-specific language.</p><div class="exam-components"><span class="exam-component">Listening</span><span class="exam-component">Reading</span><span class="exam-component">Writing</span><span class="exam-component">Speaking</span></div></div></div>
 </details>
 <details class="exam-accordion">
-<summary><span class="exam-summary-content"><img alt="TOEFL preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&amp;fit=crop&amp;w=1200&amp;q=90"/><span class="exam-summary-text"><strong>TOEFL</strong><small>TOEFL iBT</small></span></span><b>+</b></summary>
+<summary><span class="exam-summary-content"><img alt="TOEFL preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=1200&q=90"/><span class="exam-summary-text"><strong>TOEFL</strong><small>TOEFL iBT</small></span></span><b>+</b></summary>
 <div class="exam-accordion-body"><div class="exam-option"><h3>TOEFL iBT</h3><p>Academic English preparation for international university and study-related pathways.</p><div class="exam-components"><span class="exam-component">Reading</span><span class="exam-component">Listening</span><span class="exam-component">Speaking</span><span class="exam-component">Writing</span></div></div></div>
 </details>
 <details class="exam-accordion">
-<summary><span class="exam-summary-content"><img alt="Duolingo English Test preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1498075702571-ecb018f3752d?auto=format&amp;fit=crop&amp;w=1200&amp;q=90"/><span class="exam-summary-text"><strong>Duolingo English Test</strong><small>English proficiency</small></span></span><b>+</b></summary>
+<summary><span class="exam-summary-content"><img alt="Duolingo English Test preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1498075702571-ecb018f3752d?auto=format&fit=crop&w=1200&q=90"/><span class="exam-summary-text"><strong>Duolingo English Test</strong><small>English proficiency</small></span></span><b>+</b></summary>
 <div class="exam-accordion-body"><div class="exam-option"><h3>Duolingo English Test</h3><p>Preparation for online English proficiency testing with focused practice, timing and response strategies.</p><div class="exam-components"><span class="exam-component">Literacy</span><span class="exam-component">Comprehension</span><span class="exam-component">Conversation</span><span class="exam-component">Production</span></div></div></div>
 </details>
 <details class="exam-accordion">
-<summary><span class="exam-summary-content"><img alt="Cambridge English preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&amp;fit=crop&amp;w=1200&amp;q=90"/><span class="exam-summary-text"><strong>Cambridge English</strong><small>English Qualifications</small></span></span><b>+</b></summary>
+<summary><span class="exam-summary-content"><img alt="Cambridge English preparation" class="exam-summary-image" src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?auto=format&fit=crop&w=1200&q=90"/><span class="exam-summary-text"><strong>Cambridge English</strong><small>English Qualifications</small></span></span><b>+</b></summary>
 <div class="exam-accordion-body"><div class="exam-option"><h3>Cambridge English Qualifications</h3><p>English language development and preparation for appropriate Cambridge English qualification pathways.</p><div class="exam-components"><span class="exam-component">Reading</span><span class="exam-component">Writing</span><span class="exam-component">Listening</span><span class="exam-component">Speaking</span></div></div></div>
 </details>
 </div>
@@ -2668,7 +2797,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <a class="btn btn-gold" data-open-enquiry="Premium Digital Resource Purchase" href="#contact">View &amp; Enquire About Premium Resources →</a>
 </article>
 </div>
-<div class="lh-resource-note"><strong>Not an article section.</strong> Learning resources are downloadable or paid educational products. For educational guidance and longer-form reading, visit <a href="#articles">Resources &amp; Articles</a>.</div>
+<div class="lh-resource-note"><strong>Not an article section.</strong> Learning resources are downloadable or paid educational products. For educational guidance and longer-form reading, visit <a href="#articles">Articles &amp; Blog</a>.</div>
 </div>
 </section>
 <section class="sample-resources" id="sample-resources">
@@ -3098,7 +3227,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <h3>13. Contact</h3><p>For privacy-related questions or requests, contact <a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>. For complaints, technical issues, payment problems or customer-support matters, contact <a href="mailto:learninghubcustomersupport@gmail.com">learninghubcustomersupport@gmail.com</a>.</p>
 </div></details></section><a class="policy-back" href="./">← Back to Learning Hub</a></div></div><div aria-hidden="true" id="lhCheckoutRoot">
 <header class="lh-co-top"><div class="lh-co-wrap lh-co-top-inner">
-<div class="lh-co-brand"><img alt="Learning Hub approved logo" class="lh-co-brand-logo" src="assets/learning-hub-logo.png?v=20260923"/><span>Learning Hub<small>Global Online Education &amp; Tutoring</small></span></div>
+<div class="lh-co-brand"><img alt="Learning Hub approved logo" class="lh-co-brand-logo" src="assets/learning-hub-logo.png?v=approved-20260923"/><span>Learning Hub<small>Global Online Education &amp; Tutoring</small></span></div>
 <a class="lh-co-back" href="./">← Back to Learning Hub</a>
 </div></header>
 <main>
@@ -3169,7 +3298,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="footer-grid">
 <div>
 <div class="footer-brand">
-<img alt="Learning Hub approved logo" class="footer-brand-logo" src="assets/learning-hub-logo.png?v=20260923"/>
+<img alt="Learning Hub approved logo" class="footer-brand-logo" src="assets/learning-hub-logo.png?v=approved-20260923"/>
 </div>
 <p>Better Learning for Everyone</p>
 </div>
@@ -3721,7 +3850,7 @@ section[id]{
     const demo=isDemo();
     if(lessonSelection) lessonSelection.classList.toggle('lh-hidden',demo);
     const billingNote=qs('#lhBillingBaseNote');
-    if(billingNote) billingNote.textContent=demo?'Demo Lesson is fixed at US
+    if(billingNote) billingNote.textContent=demo?'Demo Lesson pricing is shown in USD.':'Tutoring prices are calculated from the selected lesson plan.';
     if(demo){
       if(lessonsOut) lessonsOut.textContent='1';
       if(subtotal) subtotal.textContent='USD '+demoPrice().toFixed(2);
@@ -3767,7 +3896,7 @@ section[id]{
       const raw=demoPrice()*((rates[cur]||1)/rates.USD);
       const amount=['PKR','JPY','KRW'].includes(cur)?Math.ceil(raw):Math.ceil(raw*100)/100;
       if(total) total.textContent=cur+' '+Number(amount).toLocaleString('en-US',{maximumFractionDigits:2});
-      if(result)result.textContent='Demo Lesson payable amount: '+cur+' '+Number(amount).toLocaleString('en-US',{maximumFractionDigits:2})+' (US
+      if(result)result.textContent='Demo Lesson payable amount: '+cur+' '+Number(amount).toLocaleString('en-US',{maximumFractionDigits:2})+'.';
       return;
     }
     if(cur==='PKR'){if(result)result.textContent='Pakistan — PKR: '+money(pk);return;}
@@ -3929,40 +4058,6 @@ section[id]{
 /* Support and feedback submit directly through Gmail instead of FormSubmit activation. */
 .gmail-compose-note{margin-top:10px;color:#c8bda9;font-size:.69rem;line-height:1.5}
 </style>
-<script id="learning-hub-gmail-compose">
-(()=>{
- const recipient='learninghubcustomersupport@gmail.com';
- function bind(form,type){
-   if(!form)return;
-   [...form.querySelectorAll('input[type="hidden"][name^="_"]')].forEach(el=>el.remove());
-   const note=document.createElement('p');
-   note.className='gmail-compose-note';
-   note.textContent='Your email will open in Gmail for review before sending.';
-   form.appendChild(note);
-   form.addEventListener('submit',event=>{
-     event.preventDefault();
-     const data=new FormData(form);
-     const entries=[...data.entries()].filter(([key,value])=>value && typeof value==='string' && key!=='rating');
-     const name=String(data.get('name')||'').trim();
-     const email=String(data.get('email')||'').trim();
-     const message=String(data.get('message')||data.get('feedback')||data.get('comments')||'').trim();
-     const rating=String(data.get('rating')||'').trim();
-     const subject=type==='feedback'?'Learning Hub — Learner Feedback':'Learning Hub — Support / Complaint';
-     const body=[
-       'Name: '+name,
-       'Email: '+email,
-       rating?'Rating: '+rating+' / 5':'',
-       '',
-       message||entries.map(([key,value])=>key+': '+value).join('\n')
-     ].filter((line,index,arr)=>line!=='' || (index>0 && arr[index-1]!=='')).join('\n');
-     const url='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent(recipient)+'&su='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
-     window.open(url,'_blank','noopener');
-   });
- }
- bind(document.querySelector('#support-form[data-gmail-compose]'),'support');
- bind(document.querySelector('#feedbackFormAnchor[data-gmail-compose]'),'feedback');
-})();
-</script>
 <style id="learning-hub-policy-document-fix">
 /* One disclosure control only: the existing summary indicator. */
 .policy-card details>summary small::after{content:none!important;display:none!important}
@@ -4349,53 +4444,6 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
 </script>
 <!-- TIDIO LIVE CHAT -->
 <script async="" src="https://code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js"></script>
-<script id="learning-hub-feedback-submit">
-(()=>{
-  const endpoint="https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec";
-  const form=document.querySelector('#feedbackFormAnchor');
-  const status=document.querySelector('#feedbackStatus');
-  if(!form||!status) return;
-  const setStatus=(message,color='')=>{status.textContent=message;status.style.color=color;};
-  const toBase64=file=>new Promise((resolve,reject)=>{
-    const reader=new FileReader();
-    reader.onload=()=>resolve(String(reader.result).split(',')[1]);
-    reader.onerror=reject;
-    reader.readAsDataURL(file);
-  });
-  form.addEventListener('submit',async(event)=>{
-    event.preventDefault();
-    const data=new FormData(form);
-    if(!data.get('name')||!data.get('email')||!data.get('rating')){
-      setStatus('Please enter your name and email, then choose a star rating.','#9b2c2c');
-      return;
-    }
-    const selected=[...form.querySelectorAll('input[type="file"]')].flatMap(input=>[...input.files]);
-    const total=selected.reduce((sum,file)=>sum+file.size,0);
-    const limit=10*1024*1024;
-    if(total>limit){
-      setStatus('Your selected files total '+(total/1024/1024).toFixed(1)+' MB. Please keep all files together under 10 MB.','#9b2c2c');
-      return;
-    }
-    const button=form.querySelector('button[type="submit"]');
-    button.disabled=true;
-    setStatus('Sending your feedback…');
-    try{
-      const files=await Promise.all(selected.map(async file=>({
-        name:file.name,mimeType:file.type,size:file.size,base64:await toBase64(file)
-      })));
-      const payload={type:'feedback',fields:{
-        Name:data.get('name')||'',Email:data.get('email')||'',Rating:data.get('rating')||'',
-        'Written Feedback':data.get('message')||''
-      },files};
-      await fetch(endpoint,{method:'POST',mode:'no-cors',body:JSON.stringify(payload)});
-      form.reset();
-      setStatus('Thank you. Your feedback has been sent for review.','#23633f');
-    }catch(error){
-      setStatus('We could not send your feedback. Please try again.','#9b2c2c');
-    }finally{button.disabled=false;}
-  });
-})();
-</script>
 <script id="learning-hub-google-submissions">
 (()=>{
   const endpoint="https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec";
@@ -4741,7 +4789,7 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .cont
   display:block;
   width:82px;height:82px;flex:0 0 82px;
   margin-right:4px;
-  background:url("assets/learning-hub-logo.png?v=20260923") center/contain no-repeat;
+  background:url("assets/learning-hub-logo.png?v=approved-20260923") center/contain no-repeat;
   border-radius:16px;
 }
 .lh-cat-head>div{flex:1;min-width:0}
@@ -5043,7 +5091,7 @@ footer .footer-brand + p{
   width:86px!important;
   height:86px!important;
   flex:0 0 86px!important;
-  background:url("assets/learning-hub-logo.png?v=20260923") center/contain no-repeat!important;
+  background:url("assets/learning-hub-logo.png?v=approved-20260923") center/contain no-repeat!important;
   border-radius:0!important;
   margin-right:2px!important;
 }
@@ -5135,7 +5183,7 @@ footer .footer-brand + p{
 
 /* Catalogue masthead: approved mark remains visible and does not become a mystery placeholder. */
 #lhCatalogueLauncher .lh-cat-head{position:relative!important;align-items:center!important}
-#lhCatalogueLauncher .lh-cat-head::before{content:""!important;display:block!important;width:86px!important;height:86px!important;flex:0 0 86px!important;background:url("assets/learning-hub-logo.png?v=20260923") center/contain no-repeat!important;border-radius:0!important;margin:0 8px 0 0!important}
+#lhCatalogueLauncher .lh-cat-head::before{content:""!important;display:block!important;width:86px!important;height:86px!important;flex:0 0 86px!important;background:url("assets/learning-hub-logo.png?v=approved-20260923") center/contain no-repeat!important;border-radius:0!important;margin:0 8px 0 0!important}
 #lhCatalogueLauncher .lh-cat-head>div{min-width:0!important}
 
 /* Editorial cards: image area is always present, followed by readable copy. */
@@ -5200,7 +5248,7 @@ body.lh-route-policy>#lhCheckoutRoot{display:none!important}
   function fix(){
     /* Make the approved logo request unambiguous and resilient to stale browser cache. */
     document.querySelectorAll('img[src^="assets/learning-hub-logo.png"]').forEach(function(img){
-      img.src='assets/learning-hub-logo.png?v=20260923';
+      img.src='assets/learning-hub-logo.png?v=approved-20260923';
       img.alt='Learning Hub approved LH logo';
     });
     /* Ensure article images remain visible and report a meaningful fallback rather than a broken icon. */
@@ -5219,6 +5267,211 @@ body.lh-route-policy>#lhCheckoutRoot{display:none!important}
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fix); else fix();
 })();
+</script>
+
+<style id="lh-final-audit-v5">
+/* FINAL AUDIT V5 — preservation layer. No existing sections or content are removed. */
+:root{--lh-gold:#c9a45c;--lh-gold2:#f0d58e;--lh-cream:#f4eee2;--lh-ivory:#fbf8f1;--lh-black:#080807}
+/* Never allow a missing remote photo to show the browser's broken-image icon. */
+img{background:linear-gradient(135deg,#17130d,#3a2b16)!important}
+img[src^="https://images.unsplash.com"]{min-height:20px}
+/* Strong, consistent heading hierarchy and readable contrast. */
+section .section-heading h2,.section-heading h2{color:#17130f!important;line-height:1.08!important;letter-spacing:-.025em!important;text-wrap:balance}
+section .section-heading p,.section-heading p{color:#4f473d!important;line-height:1.7!important}
+.eyebrow{color:#8a641f!important;font-weight:900!important;letter-spacing:.16em!important}
+#articles .section-heading h2,#feedback .section-heading h2,#articles .section-heading p,#feedback .section-heading p{color:#fffdf8!important}
+#articles .eyebrow,#feedback .eyebrow{color:var(--lh-gold2)!important}
+/* Catalogue quick actions: high contrast and unmistakable. */
+.lh-cat-head{position:relative!important}
+.lh-cat-quick-actions{background:rgba(7,7,7,.72)!important;padding:8px!important;border:1px solid rgba(240,213,142,.28)!important;border-radius:16px!important}
+.lh-cat-quick{font-size:.78rem!important;min-height:44px!important;padding:0 17px!important}
+.lh-cat-quick.primary{background:var(--lh-gold2)!important;color:#111!important}
+/* A persistent, obvious enquiry control. */
+#lhAuditEnquire{position:fixed;right:24px;bottom:24px;z-index:9998;display:inline-flex;align-items:center;gap:8px;padding:13px 19px;border-radius:999px;background:var(--lh-gold2);color:#111!important;border:1px solid #fff1bf;box-shadow:0 14px 35px rgba(0,0,0,.28);font-weight:900;text-decoration:none;font-size:.78rem}
+#lhAuditEnquire:hover{background:#fff2c5;transform:translateY(-2px)}
+@media(max-width:620px){#lhAuditEnquire{right:14px;bottom:76px;padding:11px 15px}}
+/* Enquiry modal: unmistakable, bright and comfortably readable. */
+#lh-enquiry-modal.open{display:block!important;background:rgba(4,4,3,.84)!important;backdrop-filter:blur(5px)!important}
+#lh-enquiry-modal .enquiry-modal-inner{border:2px solid var(--lh-gold)!important;background:#fffdf8!important;color:#17130f!important;max-height:90vh;overflow:auto}
+#lh-enquiry-modal .enquiry-modal-inner h2{color:#17130f!important;line-height:1.12!important;margin-top:10px!important}
+#lh-enquiry-modal .enquiry-modal-inner p{color:#51483d!important;line-height:1.65!important}
+#lh-enquiry-modal .enquiry-field label{color:#211a12!important;font-weight:800!important}
+#lh-enquiry-modal .enquiry-close{background:#111!important;color:#fff!important;border:1px solid var(--lh-gold)!important;width:42px;height:42px;border-radius:50%!important}
+#lh-enquiry-modal .btn-gold{background:var(--lh-gold2)!important;color:#111!important;border-color:var(--lh-gold2)!important;font-weight:900!important}
+/* Policy route: support BOTH html and body route classes and defeat legacy preview overrides. */
+html.lh-policy-route body>nav,html.lh-policy-route body>#main-content,html.lh-policy-route body>footer,html.lh-policy-route body>#lhCheckoutRoot{display:none!important}
+html.lh-policy-route body>#policyView{display:block!important;visibility:visible!important;opacity:1!important;position:relative!important;z-index:20000!important;min-height:100vh!important}
+html.lh-policy-route body{background:#f7f2e8!important}
+#policyView .policy-intro h1{color:#17130f!important;text-wrap:balance}
+#policyView .policy-intro p{color:#51483d!important}
+#policyView .policy-nav a{color:#342719!important;background:#fffdf8!important}
+/* Restore visible policy access from every route. */
+.lh-policy-link{display:inline-flex!important;align-items:center;justify-content:center;min-height:44px;padding:0 16px;border-radius:12px;background:#111;color:var(--lh-gold2)!important;border:1px solid var(--lh-gold);font-weight:900;text-decoration:none}
+/* Images: preserve aspect ratio and keep all image points visible. */
+.exam-summary-image,.exam-summary-image img,.sample-resource-image img,.article-image img,.lh-editorial-image img,.gallery-item img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important}
+.exam-summary-image{min-width:72px!important;min-height:54px!important;object-fit:cover!important}
+.sample-resource-image img{min-height:100%!important}
+/* Editorial cards: consistent punctuation and no decorative truncation. */
+.lh-editorial-card h3{margin:12px 0 10px!important;line-height:1.22!important;overflow:visible!important;display:block!important}
+.lh-editorial-card p{min-height:0!important;line-height:1.7!important}
+.lh-editorial-card .article-meta{letter-spacing:.05em!important}
+/* Contact and Feedback headings/actions are prominent. */
+#contact .contact-heading h2,#feedback .section-heading h2{font-size:clamp(2.4rem,5vw,4rem)!important}
+#contact .contact-box,#feedback .feedback-form{border-color:rgba(201,164,92,.45)!important}
+#feedback .feedback-form{background:#fffdf8!important;color:#17130f!important}
+#feedback .feedback-note{font-weight:800!important}
+</style>
+<script id="lh-final-audit-v5-script">
+(function(){
+  'use strict';
+  const SUPPORT='learninghubcustomersupport@gmail.com';
+  const ENDPOINT='https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec';
+  window.LH_INTEGRATIONS=Object.freeze({
+    teacherGoogleForm:'https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform',
+    submissionsAppsScript:ENDPOINT,
+    supportEmail:SUPPORT,
+    generalEmail:'hublearning117@gmail.com'
+  });
+  function routePolicy(){
+    const params=new URLSearchParams(location.search);
+    const isPolicy=params.has('policies');
+    const isCheckout=params.has('checkout');
+    document.documentElement.classList.toggle('lh-policy-route',isPolicy);
+    document.documentElement.classList.toggle('lh-checkout-route',isCheckout);
+    document.body.classList.toggle('lh-route-policy',isPolicy);
+    document.body.classList.toggle('lh-route-checkout',isCheckout);
+    document.body.classList.toggle('lh-route-home',!isPolicy&&!isCheckout);
+  }
+  function openEnquiry(title){
+    const modal=document.getElementById('lh-enquiry-modal'); if(!modal)return;
+    modal.classList.add('open'); modal.setAttribute('aria-hidden','false');
+    const t=document.getElementById('lh-enquiry-title'); if(t)t.textContent=title||'Start a Learning Enquiry';
+    document.body.classList.add('lh-enquiry-open');
+  }
+  function bindEnquiry(){
+    document.querySelectorAll('[data-open-enquiry]').forEach(function(el){
+      if(el.dataset.auditBound==='1')return;
+      el.dataset.auditBound='1';
+      el.addEventListener('click',function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        openEnquiry(this.dataset.openEnquiry||'Start a Learning Enquiry');
+      });
+    });
+    const modal=document.getElementById('lh-enquiry-modal');
+    const close=document.getElementById('lh-enquiry-close');
+    if(close&&!close.dataset.auditBound){
+      close.dataset.auditBound='1';
+      close.addEventListener('click',function(){
+        if(!modal)return;
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden','true');
+        document.body.classList.remove('lh-enquiry-open');
+      });
+    }
+  }
+  function addControls(){
+    if(!document.getElementById('lhAuditEnquire') && !document.documentElement.classList.contains('lh-policy-route') && !document.documentElement.classList.contains('lh-checkout-route')){
+      const b=document.createElement('a');
+      b.id='lhAuditEnquire';
+      b.href='#contact';
+      b.setAttribute('data-open-enquiry','Start a Learning Enquiry');
+      b.innerHTML='Enquire <span aria-hidden="true">→</span>';
+      document.body.appendChild(b);
+    }
+    if(!document.getElementById('lhPolicyAuditLink') && !document.documentElement.classList.contains('lh-policy-route')){
+      const existing=document.querySelector('#mainNav a[href^="?policies="]');
+      if(!existing){
+        const host=document.querySelector('#mainNav .nav-actions')||document.querySelector('#mainNav');
+        if(host){
+          const a=document.createElement('a');
+          a.id='lhPolicyAuditLink';
+          a.className='lh-policy-link';
+          a.href='?policies=1#terms';
+          a.textContent='Policies';
+          host.appendChild(a);
+        }
+      }
+    }
+    bindEnquiry();
+  }
+  function init(){routePolicy();addControls();}
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init); else init();
+  window.addEventListener('popstate',routePolicy);
+  document.addEventListener('click',function(e){
+    const a=e.target.closest('a[href]'); if(!a)return;
+    const href=a.getAttribute('href')||'';
+    if(href.includes('?policies=1')){
+      e.preventDefault();
+      const target=href.includes('#')?href.split('#')[1]:'terms';
+      location.href=location.pathname+'?policies=1#'+target;
+    }
+  },true);
+})();
+</script>
+
+
+<style id="lh-v5-visibility-polish">
+/* Detail pages must begin below the fixed/overlay navigation, never underneath it. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{scroll-margin-top:190px!important}
+/* Bright but controlled palette contrast for light sections. */
+#boards,#exams,#cambridge,#learning-method,#progress,#support,#global-learners,#faq,#teacher,#contact{color:#17130f}
+#boards .section-heading h2,#exams .section-heading h2,#cambridge .section-heading h2,#learning-method .section-heading h2,#progress .section-heading h2,#support .section-heading h2,#global-learners .section-heading h2,#faq .section-heading h2,#teacher .section-heading h2,#contact .section-heading h2{color:#17130f!important}
+/* Prevent broken-image glyphs from becoming visible during remote-image failures. */
+img[data-lh-fallback]{object-fit:cover!important}
+</style>
+<script id="lh-v5-image-and-copy-audit">
+(function(){
+ const fallbacks={
+  'quran':'assets/lh-fallback-quran.jpg','quran learning':'assets/lh-fallback-quran.jpg','islamic':'assets/lh-fallback-quran.jpg',
+  'exam':'assets/lh-fallback-exam.jpg','ielts':'assets/lh-fallback-exam.jpg','pte':'assets/lh-fallback-exam.jpg','toefl':'assets/lh-fallback-exam.jpg','oet':'assets/lh-fallback-exam.jpg','cambridge':'assets/lh-fallback-exam.jpg','duolingo':'assets/lh-fallback-exam.jpg',
+  'resource':'assets/lh-fallback-resources.jpg','book':'assets/lh-fallback-resources.jpg','article':'assets/lh-fallback-articles.jpg','blog':'assets/lh-fallback-articles.jpg',
+  'teacher':'assets/lh-fallback-teaching.jpg','learning':'assets/lh-fallback-learning.jpg','student':'assets/lh-fallback-learning.jpg'
+ };
+ function fallbackFor(img){const text=((img.alt||'')+' '+(img.closest('section')?.id||'')).toLowerCase();for(const k in fallbacks)if(text.includes(k))return fallbacks[k];return 'assets/lh-fallback-learning.jpg'}
+ function bindImages(){document.querySelectorAll('img').forEach(img=>{if(img.dataset.lhBound)return;img.dataset.lhBound='1';img.addEventListener('error',function(){if(this.dataset.lhFallback)return;this.dataset.lhFallback='1';this.src=fallbackFor(this);this.removeAttribute('srcset');this.removeAttribute('loading')},{once:true})})}
+ function punctuate(){
+  const selectors=['.lh-editorial-card p','.lh-cat-card-copy span','.section-heading p','.lh-editorial-intro p','.lh-resource-hub-card p','.sample-resource-body p'];
+  document.querySelectorAll(selectors.join(',')).forEach(el=>{const t=el.textContent.trim();if(!t||/[.!?…:;]$/.test(t)||t.endsWith('→'))return;el.textContent=t+'.'})
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{bindImages();punctuate()});else{bindImages();punctuate()}
+})();
+</script>
+
+
+<style id="lh-v6-premium-interaction-layer">
+:root{--lh-gold:#c9a45c;--lh-gold2:#f0d58e}
+body.lh-catalogue-mode .navbar{display:block!important;position:sticky!important;top:0!important;z-index:12000!important;background:rgba(7,7,7,.98)!important;backdrop-filter:blur(14px);border-bottom:1px solid rgba(240,213,142,.30)!important}
+body.lh-catalogue-mode .nav-inner{min-height:86px!important}
+body.lh-catalogue-mode .brand{display:flex!important;align-items:center!important;gap:14px!important;min-width:260px!important}
+body.lh-catalogue-mode .brand-mark-image{width:66px!important;height:66px!important;flex:0 0 66px!important;object-fit:contain!important;background:#000!important}
+body.lh-catalogue-mode .brand-copy strong{display:block!important;color:#fffdf8!important;font-size:1.35rem!important;line-height:1.1!important}
+body.lh-catalogue-mode .brand-copy small{display:block!important;color:#f0d58e!important;margin-top:4px!important;font-size:.68rem!important}
+.lh-cat-card,.visual-card,.board-card,.support-card,.price-card,.international-exam-card,.exam-accordion,.sample-resource-card,.lh-editorial-card,.review-card,.gallery-item,.faq-item,.learning-method-step,.course-item,.exam,.ib-dropdown,.cambridge-dropdown{cursor:pointer;transition:transform .28s cubic-bezier(.2,.8,.2,1),box-shadow .28s ease,border-color .28s ease,background-color .28s ease}
+.lh-cat-card:hover,.lh-cat-card:focus-visible,.visual-card:hover,.board-card:hover,.support-card:hover,.price-card:hover,.international-exam-card:hover,.exam-accordion:hover,.sample-resource-card:hover,.lh-editorial-card:hover,.review-card:hover,.gallery-item:hover,.faq-item:hover,.learning-method-step:hover,.course-item:hover,.exam:hover,.ib-dropdown:hover,.cambridge-dropdown:hover{transform:translateY(-7px)!important;border-color:rgba(201,164,92,.72)!important;box-shadow:0 24px 55px rgba(7,7,7,.18)!important}
+.lh-cat-card:hover .lh-cat-arrow,.lh-cat-card:focus-visible .lh-cat-arrow{background:var(--lh-gold2)!important;color:#10100f!important;transform:translateX(2px)!important}
+.lh-cat-card:focus-visible,.international-exam-card:focus-visible{outline:2px solid var(--lh-gold2)!important;outline-offset:4px!important}
+body.lh-catalogue-mode.lh-detail-view #lhCatalogueBar{position:sticky!important;top:86px!important;z-index:11900!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{padding-top:112px!important;min-height:calc(100vh - 150px)!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading{margin-bottom:40px!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading h2{color:#17130f!important;text-shadow:none!important;letter-spacing:-.018em}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading p{color:#51483d!important}
+.lh-editorial-card h3,.lh-editorial-card h3 a{color:#fffdf8!important}.lh-editorial-card p{color:#ded6ca!important}.lh-editorial-card .article-meta,.lh-editorial-card .article-category,.lh-editorial-card .read-article,.lh-editorial-card a{color:#f0d58e!important}
+.exam-summary-image,.exam-summary-image img{background:linear-gradient(135deg,#17130f,#40331f)!important}.exam-summary-image{width:72px!important;height:54px!important;min-width:72px!important;flex:0 0 72px!important;border-radius:12px!important;overflow:hidden!important}
+.section-heading .eyebrow,.lh-cat-kicker,.exam-label,.article-category{color:#9a7026!important}.section-heading h2{overflow-wrap:anywhere!important}
+#lhAuditEnquire{position:fixed!important;right:24px!important;bottom:24px!important;z-index:15000!important;display:inline-flex!important;align-items:center!important;gap:9px!important;padding:13px 18px!important;border-radius:999px!important;background:linear-gradient(135deg,#f0d58e,#c9a45c)!important;color:#0b0b0a!important;font-weight:900!important;letter-spacing:.02em!important;box-shadow:0 14px 35px rgba(0,0,0,.25)!important;border:1px solid rgba(255,255,255,.28)!important}
+#lhAuditEnquire:hover{transform:translateY(-3px)!important;box-shadow:0 20px 42px rgba(0,0,0,.32)!important}
+#lhPolicyAuditLink{display:inline-flex!important;align-items:center!important;justify-content:center!important;color:#f0d58e!important;border:1px solid rgba(240,213,142,.65)!important;background:#111!important;border-radius:999px!important;padding:8px 13px!important;font-weight:900!important}#lhPolicyAuditLink:hover{background:#f0d58e!important;color:#111!important}
+body.lh-catalogue-mode #feedback,body.lh-catalogue-mode #contact{overflow:visible!important}body.lh-catalogue-mode.lh-detail-view #feedback,body.lh-catalogue-mode.lh-detail-view #contact{display:block!important}.enquiry-modal.open{display:block!important;z-index:30000!important}
+@media(max-width:720px){body.lh-catalogue-mode .nav-inner{min-height:74px!important}body.lh-catalogue-mode .brand-mark-image{width:52px!important;height:52px!important;flex-basis:52px!important}body.lh-catalogue-mode .brand{min-width:0!important}body.lh-catalogue-mode .brand-copy strong{font-size:1.05rem!important}body.lh-catalogue-mode.lh-detail-view #lhCatalogueBar{top:74px!important}body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{padding-top:78px!important}#lhAuditEnquire{right:14px!important;bottom:14px!important;padding:11px 15px!important}}
+</style>
+<script id="lh-v6-resilience">
+(function(){'use strict';
+const APPROVED_LOGO='assets/learning-hub-logo.png?v=approved-20260923';
+function ensureLogo(){document.querySelectorAll('.brand-mark-image,.lh-co-brand-logo,.footer-brand-logo').forEach(function(img){img.src=APPROVED_LOGO;img.removeAttribute('srcset');img.alt='Learning Hub approved LH logo'})}
+function ensureImages(){const f={exam:'assets/lh-fallback-exam.jpg',article:'assets/lh-fallback-articles.jpg',resource:'assets/lh-fallback-resources.jpg',quran:'assets/lh-fallback-quran.jpg',teaching:'assets/lh-fallback-teaching.jpg',learning:'assets/lh-fallback-learning.jpg'};document.querySelectorAll('img').forEach(function(img){if(img.dataset.v6Bound==='1')return;img.dataset.v6Bound='1';img.addEventListener('error',function(){if(this.dataset.v6Fallback==='1')return;this.dataset.v6Fallback='1';const t=((this.alt||'')+' '+(this.closest('section')?.id||'')).toLowerCase();let src=f.learning;for(const k in f)if(t.includes(k)){src=f[k];break}this.src=src},{once:true})})}
+function punctuate(){const selectors=['.section-heading p','.lh-cat-card-copy span','.lh-editorial-card p','.lh-resource-hub-card p','.sample-resource-body p','.contact-microcopy','.exam-option p'];document.querySelectorAll(selectors.join(',')).forEach(function(el){const t=el.textContent.trim();if(!t||/[.!?…:;]$/.test(t)||t.endsWith('→'))return;el.textContent=t+'.'})}
+function run(){ensureLogo();ensureImages();punctuate()}if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',run);else run();window.addEventListener('load',run)})();
 </script>
 </body>
 </html>
