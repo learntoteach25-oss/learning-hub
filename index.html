@@ -2940,6 +2940,81 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(.
 .lh-chat .lh-chat-teaser,.lh-chat .chat-teaser,.concierge .chat-teaser,.concierge [class*="teaser"]{display:none!important}
 .lh-chat,.concierge{right:22px!important;bottom:22px!important}
 </style>
+<style id="lh-restore-original-catalogue-cards-20260923">
+/* RESTORE REQUESTED CATALOGUE PRESENTATION:
+   main elements first; each card opens the full corresponding section. */
+#lhCatalogueLauncher{
+ display:block!important;background:#070707!important;padding:52px 0 76px!important;
+}
+body.lh-catalogue-mode.lh-detail-view #lhCatalogueLauncher{display:none!important}
+#lhCatalogueLauncher .lh-cat-head{display:none!important}
+#lhCatalogueLauncher .lh-cat-shell{width:min(1180px,calc(100% - 44px))!important;margin:auto!important}
+#lhCatalogueLauncher .lh-cat-grid{
+ display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+ gap:20px!important;grid-auto-flow:row!important;
+}
+#lhCatalogueLauncher .lh-cat-card,
+#lhCatalogueLauncher .lh-cat-card:nth-child(n){
+ grid-column:auto!important;display:block!important;position:relative!important;
+ height:310px!important;min-height:310px!important;border-radius:18px!important;
+ overflow:hidden!important;border:1px solid rgba(240,213,142,.22)!important;
+ background:#111!important;box-shadow:0 14px 32px rgba(0,0,0,.25)!important;
+ cursor:pointer!important;
+}
+#lhCatalogueLauncher .lh-cat-card img{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ object-fit:cover!important;opacity:.84!important;transition:transform .28s ease,opacity .28s ease!important;
+}
+#lhCatalogueLauncher .lh-cat-card::after{
+ content:""!important;position:absolute!important;inset:0!important;z-index:1!important;
+ background:linear-gradient(180deg,rgba(0,0,0,.04) 12%,rgba(0,0,0,.28) 48%,rgba(0,0,0,.94) 100%)!important;
+}
+#lhCatalogueLauncher .lh-cat-card::before{display:none!important}
+#lhCatalogueLauncher .lh-cat-card-copy{
+ position:absolute!important;z-index:3!important;left:22px!important;right:62px!important;bottom:21px!important;
+}
+#lhCatalogueLauncher .lh-cat-card-copy small{
+ display:inline-flex!important;width:38px!important;height:28px!important;align-items:center!important;justify-content:center!important;
+ margin-bottom:10px!important;border-radius:999px!important;background:#f0d58e!important;color:#15110a!important;
+ font:800 .7rem/1 "DM Sans",sans-serif!important;letter-spacing:.06em!important;
+}
+#lhCatalogueLauncher .lh-cat-card-copy strong{
+ display:block!important;color:#fff!important;font-family:"Playfair Display",Georgia,serif!important;
+ font-size:1.48rem!important;line-height:1.08!important;text-shadow:0 2px 10px rgba(0,0,0,.8)!important;
+}
+#lhCatalogueLauncher .lh-cat-card-copy span{
+ display:block!important;color:#f5efe4!important;font-size:.78rem!important;font-weight:500!important;
+ line-height:1.46!important;margin-top:7px!important;text-shadow:0 1px 7px rgba(0,0,0,.95)!important;
+}
+#lhCatalogueLauncher .lh-cat-arrow{
+ position:absolute!important;z-index:4!important;right:18px!important;bottom:20px!important;top:auto!important;
+ display:grid!important;place-items:center!important;width:38px!important;height:38px!important;border-radius:50%!important;
+ border:1px solid #f0d58e!important;background:rgba(7,7,7,.82)!important;color:#f0d58e!important;
+}
+#lhCatalogueLauncher .lh-cat-card:hover,
+#lhCatalogueLauncher .lh-cat-card:focus-visible{
+ transform:translateY(-4px)!important;border-color:#f0d58e!important;
+ box-shadow:0 20px 42px rgba(0,0,0,.38)!important;
+}
+#lhCatalogueLauncher .lh-cat-card:hover img,
+#lhCatalogueLauncher .lh-cat-card:focus-visible img{transform:scale(1.035)!important;opacity:.9!important}
+#lhCatalogueLauncher .lh-cat-card:hover .lh-cat-arrow,
+#lhCatalogueLauncher .lh-cat-card:focus-visible .lh-cat-arrow{background:#f0d58e!important;color:#111!important}
+
+/* Once opened, show only the chosen segment and all of its existing details. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section{display:none!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{
+ display:block!important;visibility:visible!important;opacity:1!important;
+}
+@media(max-width:900px){
+ #lhCatalogueLauncher .lh-cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(max-width:600px){
+ #lhCatalogueLauncher .lh-cat-shell{width:calc(100% - 28px)!important}
+ #lhCatalogueLauncher .lh-cat-grid{grid-template-columns:1fr!important}
+ #lhCatalogueLauncher .lh-cat-card,#lhCatalogueLauncher .lh-cat-card:nth-child(n){height:285px!important;min-height:285px!important}
+}
+</style>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
