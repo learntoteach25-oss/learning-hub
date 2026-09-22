@@ -2204,6 +2204,87 @@ footer a[href*="wa.me"],footer a[href*="whatsapp"]{position:static!important;tra
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
 })();
 </script>
+<style id="lh-section-catalogue-presentation-20260923">
+/* Presentation only: every opened section reads like a premium catalogue page.
+   No routing, forms, downloads, policy, booking or content logic changed. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{
+  background:#f6f0e4!important;
+  color:#1b1712!important;
+  padding:58px 0 82px!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page>.container{
+  width:min(1180px,calc(100% - 56px))!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading{
+  max-width:940px!important;margin:0 auto 42px!important;text-align:center!important;
+  padding-bottom:28px!important;border-bottom:1px solid rgba(142,107,45,.22)!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading .eyebrow{
+  display:inline-flex!important;align-items:center!important;gap:10px!important;
+  color:#946b25!important;font-size:.72rem!important;font-weight:900!important;letter-spacing:.18em!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading h2{
+  color:#17130f!important;font-family:"Playfair Display",Georgia,serif!important;
+  font-size:clamp(2.35rem,4.5vw,4.4rem)!important;line-height:1.02!important;margin:12px auto 14px!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading p{
+  color:#5a5044!important;max-width:760px!important;margin-inline:auto!important;font-size:1rem!important;
+}
+/* Existing content blocks become catalogue tiles without changing their markup or actions. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
+.visual-card,.support-card,.board-card,.international-exam-card,.price-card,
+.sample-resource-card,.lh-editorial-card,.review-card,.gallery-item,.course-item,
+.exam,.ib-dropdown,.cambridge-dropdown,.faq-item,.learning-method-step,.contact-box
+){
+  border-radius:22px!important;
+  border:1px solid rgba(142,107,45,.20)!important;
+  box-shadow:0 14px 34px rgba(38,29,18,.08)!important;
+  transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
+.visual-card,.support-card,.board-card,.international-exam-card,.price-card,
+.sample-resource-card,.lh-editorial-card,.review-card,.gallery-item,.course-item,
+.exam,.ib-dropdown,.cambridge-dropdown,.faq-item,.learning-method-step
+):hover{
+  transform:translateY(-5px)!important;border-color:#c59a4a!important;
+  box-shadow:0 22px 46px rgba(38,29,18,.13)!important;
+}
+/* Images: crisp catalogue crops, consistent presentation. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
+.card-image,.support-card,.resource-cover,.sample-resource-image,.lh-editorial-image,.article-image,.gallery-item,.exam-summary-image
+){overflow:hidden!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
+.card-image,.support-card,.resource-cover,.sample-resource-image,.lh-editorial-image,.article-image,.gallery-item,.exam-summary-image
+) img{
+  width:100%!important;height:100%!important;object-fit:cover!important;
+  filter:saturate(1.04) contrast(1.03)!important;
+  transition:transform .35s ease,filter .35s ease!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(
+.visual-card,.support-card,.sample-resource-card,.lh-editorial-card,.gallery-item,.international-exam-card
+):hover img{transform:scale(1.035)!important;filter:saturate(1.08) contrast(1.05)!important}
+/* Interactive items remain obvious and accessible. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(a,button,summary,[role="button"]):focus-visible{
+  outline:3px solid #c59a4a!important;outline-offset:3px!important;
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page summary{cursor:pointer!important}
+/* Dark editorial/feedback sections retain catalogue styling with readable contrast. */
+body.lh-catalogue-mode.lh-detail-view #articles.lh-active-page,
+body.lh-catalogue-mode.lh-detail-view #feedback.lh-active-page{
+  background:#0b0b0a!important;color:#fffdf8!important;
+}
+body.lh-catalogue-mode.lh-detail-view #articles.lh-active-page .section-heading,
+body.lh-catalogue-mode.lh-detail-view #feedback.lh-active-page .section-heading{border-bottom-color:rgba(240,213,142,.24)!important}
+body.lh-catalogue-mode.lh-detail-view #articles.lh-active-page .section-heading h2,
+body.lh-catalogue-mode.lh-detail-view #feedback.lh-active-page .section-heading h2{color:#fffdf8!important}
+body.lh-catalogue-mode.lh-detail-view #articles.lh-active-page .section-heading p,
+body.lh-catalogue-mode.lh-detail-view #feedback.lh-active-page .section-heading p{color:#d5ccbf!important}
+@media(max-width:700px){
+ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{padding:42px 0 58px!important}
+ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page>.container{width:min(100% - 28px,1180px)!important}
+ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading{margin-bottom:28px!important;padding-bottom:22px!important}
+}
+</style>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
