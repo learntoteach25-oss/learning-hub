@@ -2145,6 +2145,21 @@ body.lh-catalogue-mode.lh-detail-view #boards{background:#f5efe3!important}
 @media(max-width:720px){body.lh-catalogue-mode .navbar,body.lh-catalogue-mode .nav-inner{min-height:76px!important}body.lh-catalogue-mode .brand-mark-image{width:58px!important;height:58px!important;flex-basis:58px!important}#lhCatalogueLauncher{padding:42px 0 54px!important}.lh-cat-grid{grid-template-columns:1fr!important}.lh-cat-card,.lh-cat-card img{height:245px!important;min-height:245px!important}}
 </style>
 <script id="lh-catalogue-cursor-highlight-20260923">document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('.lh-cat-card').forEach(function(card){card.addEventListener('pointermove',function(e){var r=card.getBoundingClientRect();card.style.setProperty('--mx',(e.clientX-r.left)+'px');card.style.setProperty('--my',(e.clientY-r.top)+'px')})})});</script>
+<style id="lh-floating-controls-cleanup-20260923">
+/* Clean footer/contact controls: prevent stacked floating CTAs */
+#lhAuditEnquire,.lh-whatsapp-float,.whatsapp-float,.whatsapp-widget,.chat-widget,.chat-bubble,.floating-chat,[class*="whatsapp-float"]{display:none!important}
+footer a[href*="wa.me"],footer a[href*="whatsapp"]{position:static!important;transform:none!important;box-shadow:none!important}
+</style>
+<script id="lh-floating-controls-cleanup-script-20260923">
+(function(){
+ function clean(){
+  ['lhAuditEnquire'].forEach(function(id){var n=document.getElementById(id);if(n)n.remove()});
+  document.querySelectorAll('.lh-whatsapp-float,.whatsapp-float,.whatsapp-widget,.chat-widget,.chat-bubble,.floating-chat,[class*="whatsapp-float"]').forEach(function(n){n.remove()});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',clean);else clean();
+ window.addEventListener('load',clean);
+})();
+</script>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
