@@ -4553,5 +4553,200 @@ body.lh-checkout-mode #lhGatewaySection{margin-top:14px!important}
   }
 })();
 </script>
+
+<style id="lh-catalogue-router-v2">
+/* LEARNING HUB CATALOGUE MODE — non-destructive presentation layer. */
+body.lh-catalogue-mode{background:#f6f1e7!important}
+body.lh-catalogue-mode.lh-route-home{scroll-behavior:smooth}
+body.lh-catalogue-mode #lhCatalogueLauncher{display:block}
+body.lh-catalogue-mode #main-content>section{display:none!important;min-height:0!important;scroll-snap-align:none!important;scroll-snap-stop:normal!important;overflow:visible!important}
+body.lh-catalogue-mode #main-content>section.lh-active-page{display:block!important;min-height:auto!important}
+body.lh-catalogue-mode #main-content>section.hero{display:block!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.hero{display:none!important}
+body.lh-catalogue-mode.lh-detail-view #lhCatalogueLauncher{display:none!important}
+
+#lhCatalogueLauncher{display:none;background:linear-gradient(180deg,#0a0a09 0%,#11100e 100%);color:#fffdf8;padding:78px 0 88px;border-top:1px solid rgba(201,164,92,.22);border-bottom:1px solid rgba(201,164,92,.28)}
+.lh-cat-shell{width:min(1180px,calc(100% - 48px));margin:auto}
+.lh-cat-kicker{color:#e8c875;text-transform:uppercase;letter-spacing:.18em;font-size:.68rem;font-weight:800;margin-bottom:12px}
+.lh-cat-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:34px}
+.lh-cat-head h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(2.3rem,4vw,4.2rem);line-height:1.02;margin:0;max-width:720px;color:#fffdf8}
+.lh-cat-head p{margin:12px 0 0;max-width:700px;color:#c9c1b5;line-height:1.7}
+.lh-cat-badge{border:1px solid rgba(240,213,142,.45);padding:10px 14px;border-radius:999px;color:#f0d58e;font-size:.72rem;font-weight:800;white-space:nowrap}
+.lh-cat-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.lh-cat-card{position:relative;min-height:245px;border:1px solid rgba(240,213,142,.18);border-radius:22px;overflow:hidden;background:#171613;box-shadow:0 18px 45px rgba(0,0,0,.28);cursor:pointer;text-decoration:none;color:inherit;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}
+.lh-cat-card:hover,.lh-cat-card:focus-visible{transform:translateY(-5px);border-color:rgba(240,213,142,.62);box-shadow:0 25px 55px rgba(0,0,0,.4);outline:none}
+.lh-cat-card img{width:100%;height:245px;display:block;object-fit:cover;opacity:.68;transition:transform .35s ease,opacity .25s ease}
+.lh-cat-card:hover img{transform:scale(1.035);opacity:.8}
+.lh-cat-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 15%,rgba(0,0,0,.9) 100%);pointer-events:none}
+.lh-cat-card-copy{position:absolute;z-index:2;left:22px;right:22px;bottom:20px}
+.lh-cat-card-copy small{display:block;color:#f0d58e;text-transform:uppercase;letter-spacing:.14em;font-size:.62rem;font-weight:800;margin-bottom:7px}
+.lh-cat-card-copy strong{display:block;font-family:"Playfair Display",Georgia,serif;font-size:1.45rem;line-height:1.08;color:#fffdf8}
+.lh-cat-card-copy span{display:block;margin-top:7px;color:#d7d0c5;font-size:.78rem;line-height:1.45}
+.lh-cat-arrow{position:absolute;z-index:3;right:17px;top:17px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(240,213,142,.5);color:#f0d58e;background:rgba(7,7,7,.55);font-size:1rem}
+
+#lhCatalogueBar{display:none;position:sticky;top:132px;z-index:90;background:rgba(10,10,9,.97);border-bottom:1px solid rgba(201,164,92,.3);box-shadow:0 10px 25px rgba(0,0,0,.16)}
+body.lh-catalogue-mode.lh-detail-view #lhCatalogueBar{display:block}
+.lh-cat-bar-inner{width:min(1180px,calc(100% - 48px));min-height:64px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.lh-cat-back{border:1px solid rgba(240,213,142,.48);background:transparent;color:#f0d58e;border-radius:12px;padding:10px 15px;font-weight:800;cursor:pointer;font:inherit}
+.lh-cat-back:hover{background:#f0d58e;color:#111}
+.lh-cat-current{color:#fffdf8;font-family:"Playfair Display",Georgia,serif;font-size:1.15rem}
+.lh-cat-home-link{color:#cfc6b8;font-size:.76rem;font-weight:700;text-decoration:none}
+.lh-cat-home-link:hover{color:#f0d58e}
+
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{padding-top:76px!important;padding-bottom:82px!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page>.container{width:min(1180px,calc(100% - 48px))!important;margin-inline:auto!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading{max-width:850px}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .section-heading.center{margin-inline:auto}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .container{scroll-margin-top:155px}
+
+@media(max-width:900px){
+ #lhCatalogueLauncher{padding:54px 0 62px}
+ .lh-cat-shell,.lh-cat-bar-inner{width:min(100% - 28px,1180px)}
+ .lh-cat-head{display:block}
+ .lh-cat-badge{display:inline-block;margin-top:18px}
+ .lh-cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ #lhCatalogueBar{top:78px}
+ .lh-cat-bar-inner{min-height:58px}
+ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{padding-top:54px!important;padding-bottom:62px!important}
+}
+@media(max-width:560px){
+ .lh-cat-grid{grid-template-columns:1fr}
+ .lh-cat-card,.lh-cat-card img{min-height:210px;height:210px}
+ .lh-cat-head h2{font-size:2.35rem}
+ .lh-cat-current{font-size:1rem}
+ .lh-cat-home-link{display:none}
+}
+</style>
+<script id="lh-catalogue-router-v2-script">
+(function(){
+  'use strict';
+  function initCatalogue(){
+    const body=document.body;
+    const main=document.querySelector('#main-content');
+    const hero=document.querySelector('#home');
+    if(!body||!main||!hero||body.classList.contains('lh-route-policy')||body.classList.contains('lh-route-checkout')) return;
+    body.classList.add('lh-catalogue-mode');
+
+    const about=document.querySelector('.intro'); if(about&&!about.id) about.id='about';
+    const sectionMeta={
+      about:['About Learning Hub','One platform. Many pathways.','Personalised learning, curriculum support and digital resources.'],
+      programmes:['Learning Programmes','Choose your learning pathway.','Academic tutoring, international curriculum, English and specialist support.'],
+      quran:['Quran & Islamic Studies','Faith-based learning with structure and care.','Quran reading, Tajweed, Islamic Studies and related courses.'],
+      boards:['International Boards','Board-focused support, clearly organised.','Explore international curriculum pathways and subjects.'],
+      cambridge:['Cambridge International','Subjects and syllabus pathways.','Cambridge O Level and AS & A Level support.'],
+      exams:['International Exams','Prepare with purpose.','IELTS, PTE, TOEFL and other examination pathways.'],
+      'learning-method':['How Learning Works','Focused support for every stage.','See how Learning Hub structures teaching, practice and feedback.'],
+      progress:['Learning Progress','Progress made visible.','Simple check-ins, evidence and targeted next steps.'],
+      support:['Learning Support','Learning designed around the learner.','Personalised strategies for confidence, communication and study skills.'],
+      'global-learners':['Global Connection','Learn from anywhere in the world.','Discover how Learning Hub supports learners internationally.'],
+      resources:['Learning Resources','Free learning and premium digital resources.','Browse free materials and premium educational resources.'],
+      'sample-resources':['Learning Materials','See the learning in action.','Preview structured Learning Hub resources and downloads.'],
+      articles:['Resources & Articles','Learn beyond the lesson.','Guides, articles and educational insights.'],
+      gallery:['Gallery','Learning in pictures.','Explore the Learning Hub visual collection.'],
+      faq:['Frequently Asked Questions','Everything you need to know.','Simple answers about lessons, programmes and resources.'],
+      teacher:['Teach with Us','Join the Learning Hub teaching network.','Review the teaching opportunity and application pathway.'],
+      contact:['Contact Learning Hub','Start your learning journey.','Enquire about tutoring, courses, resources or partnerships.'],
+      feedback:['Learner Feedback','Hear from our learning community.','Reviews and feedback from learners and families.']
+    };
+    const order=['about','programmes','quran','boards','cambridge','exams','learning-method','progress','support','global-learners','resources','sample-resources','articles','gallery','faq','teacher','contact','feedback'];
+    const imageMap={
+      about:'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=85',
+      programmes:'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=85',
+      quran:'https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1200&q=85',
+      boards:'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=85',
+      cambridge:'https://images.unsplash.com/photo-1491841550275-ad7854e35ca6?auto=format&fit=crop&w=1200&q=85',
+      exams:'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=85',
+      'learning-method':'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=85',
+      progress:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85',
+      support:'https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=85',
+      'global-learners':'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85',
+      resources:'https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=85',
+      'sample-resources':'https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1200&q=85',
+      articles:'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1200&q=85',
+      gallery:'https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1200&q=85',
+      faq:'https://images.unsplash.com/photo-1453738773917-9c3eff1db985?auto=format&fit=crop&w=1200&q=85',
+      teacher:'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85',
+      contact:'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85',
+      feedback:'https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1200&q=85'
+    };
+    const ids=new Set(order.filter(id=>id==='about'||document.getElementById(id)));
+    function findSection(id){ return id==='about'?document.getElementById('about'):document.getElementById(id); }
+
+    const launcher=document.createElement('section');
+    launcher.id='lhCatalogueLauncher';
+    launcher.setAttribute('aria-label','Learning Hub catalogue');
+    launcher.innerHTML='<div class="lh-cat-shell"><div class="lh-cat-head"><div><div class="lh-cat-kicker">Learning Hub Catalogue</div><h2>Explore the platform like a premium learning catalogue.</h2><p>Choose a section to open it as a focused page. Your existing content, booking flow, forms and resources stay in place.</p></div><span class="lh-cat-badge">18 learning areas</span></div><div class="lh-cat-grid"></div></div>';
+    hero.insertAdjacentElement('afterend',launcher);
+    const grid=launcher.querySelector('.lh-cat-grid');
+    order.forEach((id,index)=>{
+      if(!ids.has(id)) return;
+      const meta=sectionMeta[id];
+      const a=document.createElement('a');
+      a.className='lh-cat-card'; a.href='#'+id; a.dataset.catalogueTarget=id;
+      a.innerHTML='<img loading="lazy" src="'+imageMap[id]+'" alt="'+meta[0]+'"><span class="lh-cat-arrow">→</span><span class="lh-cat-card-copy"><small>'+String(index+1).padStart(2,'0')+'</small><strong>'+meta[0]+'</strong><span>'+meta[2]+'</span></span>';
+      grid.appendChild(a);
+    });
+
+    const bar=document.createElement('div');
+    bar.id='lhCatalogueBar';
+    bar.innerHTML='<div class="lh-cat-bar-inner"><button type="button" class="lh-cat-back" id="lhCatalogueBack">← Catalogue</button><span class="lh-cat-current" id="lhCatalogueCurrent">Learning Hub</span><a class="lh-cat-home-link" href="#home">Back to Home</a></div>';
+    main.insertAdjacentElement('beforebegin',bar);
+
+    const pages=Array.from(main.querySelectorAll(':scope > section[id]')).filter(s=>s.id!=='home');
+    pages.forEach(s=>s.classList.remove('lh-active-page'));
+
+    function closeMenu(){
+      const nav=document.querySelector('#mainNav'),toggle=document.querySelector('#mobileToggle');
+      if(nav) nav.classList.remove('mobile-open');
+      if(toggle){toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Open menu')}
+    }
+    function setActiveNav(id){
+      document.querySelectorAll('#mainNav a').forEach(a=>{
+        const target=(a.getAttribute('href')||'').replace(/^#/, '');
+        if(target===id) a.setAttribute('aria-current','page'); else a.removeAttribute('aria-current');
+      });
+    }
+    function openCatalogue(){
+      body.classList.remove('lh-detail-view');
+      pages.forEach(s=>s.classList.remove('lh-active-page'));
+      document.getElementById('lhCatalogueCurrent').textContent='Learning Hub Catalogue';
+      setActiveNav(''); closeMenu();
+      if(location.hash!=='#home') history.replaceState(null,'',location.pathname+location.search+'#home');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function openPage(id,updateHash=true){
+      if(id==='home'||!findSection(id)){openCatalogue();return}
+      const section=findSection(id);
+      body.classList.add('lh-detail-view');
+      pages.forEach(s=>s.classList.remove('lh-active-page'));
+      section.classList.add('lh-active-page');
+      document.getElementById('lhCatalogueCurrent').textContent=sectionMeta[id]?.[0]||section.querySelector('h1,h2,h3')?.textContent||'Learning Hub';
+      setActiveNav(id); closeMenu();
+      if(updateHash && location.hash!=='#'+id) history.pushState(null,'','#'+id);
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    function sync(){
+      const hash=decodeURIComponent(location.hash.replace(/^#/,'')).trim();
+      if(hash && hash!=='home' && findSection(hash)) openPage(hash,false); else openCatalogue();
+    }
+
+    document.addEventListener('click',event=>{
+      const link=event.target.closest('a[href]');
+      if(!link || link.target==='_blank' || link.hasAttribute('download') || link.hasAttribute('data-open-enquiry')) return;
+      const href=link.getAttribute('href')||'';
+      if(!href.startsWith('#')) return;
+      const id=decodeURIComponent(href.slice(1));
+      if(id==='home'){event.preventDefault();openCatalogue();return}
+      if(findSection(id)){event.preventDefault();openPage(id,true);return}
+    });
+    document.getElementById('lhCatalogueBack').addEventListener('click',openCatalogue);
+    window.addEventListener('popstate',sync);
+    window.addEventListener('hashchange',sync);
+    sync();
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',initCatalogue); else initCatalogue();
+})();
+</script>
+
 </body>
 </html>
