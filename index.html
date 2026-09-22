@@ -2620,36 +2620,74 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .sect
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
 })();
 </script>
-<style id="lh-instant-folder-access-20260923">
-html{scroll-behavior:auto!important}
-.lh-cat-card{touch-action:manipulation!important}
+
+<style id="lh-click-access-and-logo-authority-20260923">
+/* Approved monogram: make the actual mark prominent, not a tiny wordmark thumbnail. */
+body.lh-catalogue-mode .nav-inner{min-height:112px!important}
+body.lh-catalogue-mode .brand{gap:16px!important;min-width:330px!important}
+body.lh-catalogue-mode .brand-mark-image{
+ width:94px!important;height:94px!important;flex:0 0 94px!important;
+ padding:0!important;object-fit:contain!important;background:transparent!important;
+ opacity:1!important;visibility:visible!important
+}
+body.lh-catalogue-mode .brand-copy strong{font-size:1.6rem!important;color:#fffdf8!important}
+body.lh-catalogue-mode .brand-copy small{font-size:.69rem!important;color:#f0d58e!important}
+
+/* The browse grid is the visual menu; opened content replaces it immediately. */
+body.lh-catalogue-mode.lh-detail-view #lhCatalogueLauncher{display:none!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page{
+ display:block!important;visibility:visible!important;opacity:1!important
+}
+@media(max-width:760px){
+ body.lh-catalogue-mode .nav-inner{min-height:82px!important}
+ body.lh-catalogue-mode .brand{min-width:0!important}
+ body.lh-catalogue-mode .brand-mark-image{width:68px!important;height:68px!important;flex-basis:68px!important}
+ body.lh-catalogue-mode .brand-copy strong{font-size:1.18rem!important}
+}
 </style>
-<script id="lh-instant-folder-access-script-20260923">
+<script id="lh-authoritative-section-access-20260923">
 (function(){
- function openSection(card,e){
-   var href=card.getAttribute('href')||'';
-   if(!href.startsWith('#')||href.length<2)return;
-   var id=href.slice(1), target=document.getElementById(id);
-   if(!target)return;
-   if(e){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();}
-   /* Avoid legacy delayed/animated catalogue handlers. */
-   document.querySelectorAll('#main-content>section').forEach(function(s){
-     s.classList.remove('lh-active-page');
-   });
-   target.classList.add('lh-active-page');
+ 'use strict';
+ function open(id,push){
+   if(!id || id==='home')return false;
+   var target=document.getElementById(id);
+   if(!target || !target.matches('#main-content > section[id]'))return false;
+
    document.body.classList.add('lh-catalogue-mode','lh-detail-view');
-   history.replaceState(null,'','#'+id);
-   target.scrollIntoView({behavior:'auto',block:'start'});
- }
- function bind(){
-   document.querySelectorAll('.lh-cat-card[href^="#"]').forEach(function(card){
-     if(card.dataset.instantAccess)return;
-     card.dataset.instantAccess='1';
-     card.addEventListener('click',function(e){openSection(card,e)},true);
+   document.querySelectorAll('#main-content > section[id]').forEach(function(s){
+     s.classList.toggle('lh-active-page',s===target);
    });
+   var launcher=document.getElementById('lhCatalogueLauncher');
+   if(launcher)launcher.style.setProperty('display','none','important');
+   target.style.setProperty('display','block','important');
+   target.style.setProperty('visibility','visible','important');
+   target.style.setProperty('opacity','1','important');
+   if(push && location.hash!=='#'+id)history.pushState(null,'','#'+id);
+   requestAnimationFrame(function(){
+     var nav=document.querySelector('.navbar');
+     var y=target.getBoundingClientRect().top+window.pageYOffset-(nav?nav.offsetHeight:0)-8;
+     window.scrollTo(0,Math.max(0,y));
+   });
+   return true;
  }
- if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
- window.addEventListener('load',bind);
+ function fromHash(){
+   var id=decodeURIComponent((location.hash||'').replace(/^#/,''));
+   if(id && id!=='home')open(id,false);
+ }
+ /* Window capture runs before older document-level catalogue listeners. */
+ window.addEventListener('click',function(e){
+   var a=e.target.closest && e.target.closest('a.lh-cat-card[href^="#"]');
+   if(!a)return;
+   var id=decodeURIComponent((a.getAttribute('href')||'').slice(1));
+   if(open(id,true)){
+     e.preventDefault();
+     e.stopPropagation();
+     e.stopImmediatePropagation();
+   }
+ },true);
+ window.addEventListener('hashchange',fromHash);
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',fromHash);else fromHash();
+ window.addEventListener('load',fromHash);
 })();
 </script>
 </head>
@@ -2659,7 +2697,7 @@ html{scroll-behavior:auto!important}
 <nav class="navbar">
 <div class="container nav-inner">
 <a aria-label="Learning Hub home" class="brand" href="#home">
-<img alt="Learning Hub approved logo" class="brand-mark-image" src="assets/learning-hub-logo.png?v=approved-20260923"/>
+<img alt="Learning Hub approved logo" class="brand-mark-image" src="assets/learning-hub-monogram.png?v=20260923b"/>
 <span class="brand-copy">
 <strong>Learning Hub</strong>
 <small>Global Education Platform</small>
@@ -3775,7 +3813,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <h3>13. Contact</h3><p>For privacy-related questions or requests, contact <a href="mailto:hublearning117@gmail.com">hublearning117@gmail.com</a>. For complaints, technical issues, payment problems or customer-support matters, contact <a href="mailto:learninghubcustomersupport@gmail.com">learninghubcustomersupport@gmail.com</a>.</p>
 </div></details></section><a class="policy-back" href="./">← Back to Learning Hub</a></div></div><div aria-hidden="true" id="lhCheckoutRoot">
 <header class="lh-co-top"><div class="lh-co-wrap lh-co-top-inner">
-<div class="lh-co-brand"><img alt="Learning Hub approved logo" class="lh-co-brand-logo" src="assets/learning-hub-logo.png?v=approved-20260923"/><span>Learning Hub<small>Global Online Education &amp; Tutoring</small></span></div>
+<div class="lh-co-brand"><img alt="Learning Hub approved logo" class="lh-co-brand-logo" src="assets/learning-hub-monogram.png?v=20260923b"/><span>Learning Hub<small>Global Online Education &amp; Tutoring</small></span></div>
 <a class="lh-co-back" href="./">← Back to Learning Hub</a>
 </div></header>
 <main>
@@ -3846,7 +3884,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="footer-grid">
 <div>
 <div class="footer-brand">
-<img alt="Learning Hub approved logo" class="footer-brand-logo" src="assets/learning-hub-logo.png?v=approved-20260923"/>
+<img alt="Learning Hub approved logo" class="footer-brand-logo" src="assets/learning-hub-monogram.png?v=20260923b"/>
 </div>
 <p>Better Learning for Everyone</p>
 </div>
