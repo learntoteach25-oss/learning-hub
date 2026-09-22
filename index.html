@@ -2345,6 +2345,83 @@ footer a[href*="wa.me"],footer a[href*="whatsapp"]{
  window.addEventListener('load',cleanFooter);
 })();
 </script>
+<style id="lh-header-footer-authoritative-final-20260923">
+/* AUTHORITATIVE HEADER + FOOTER PRESENTATION. */
+.navbar{background:#050505!important}
+.nav-inner{min-height:112px!important;height:auto!important;padding:12px 0!important}
+.brand{display:flex!important;align-items:center!important;gap:18px!important;min-width:360px!important}
+.brand-mark-image{
+ width:112px!important;height:112px!important;flex:0 0 112px!important;
+ object-fit:contain!important;object-position:center!important;padding:0!important;margin:0!important;
+ opacity:1!important;visibility:visible!important;filter:none!important;background:#000!important
+}
+.brand-copy strong{font-size:1.5rem!important;line-height:1.05!important}
+.brand-copy small{font-size:.72rem!important;color:#f0d58e!important;margin-top:6px!important}
+.nav-actions .btn{min-width:148px!important}
+
+/* Footer is a structured information area, not a floating-widget zone. */
+footer{position:relative!important;background:#030303!important;padding:58px 0 24px!important;border-top:1px solid #9b762f!important}
+footer .container{width:min(1240px,calc(100% - 64px))!important}
+.footer-grid{
+ display:grid!important;grid-template-columns:1.35fr 1fr 1fr 1.15fr!important;
+ gap:54px!important;align-items:start!important;padding-bottom:38px!important
+}
+.footer-brand{display:flex!important;align-items:flex-start!important}
+.footer-brand-logo{
+ width:220px!important;height:220px!important;max-width:100%!important;max-height:none!important;
+ object-fit:contain!important;object-position:left top!important;padding:0!important;margin:0!important;
+ opacity:1!important;visibility:visible!important;filter:none!important;background:#000!important
+}
+footer p{color:#e2d7c6!important;font-size:.88rem!important;margin-top:12px!important}
+.footer-col h4{color:#f0d58e!important;font-size:.88rem!important;margin:7px 0 18px!important}
+.footer-col a,.footer-contact-detail{
+ display:block!important;color:#d8d0c4!important;font-size:.82rem!important;line-height:1.5!important;margin:9px 0!important
+}
+.footer-col a:hover{color:#f0d58e!important}
+.footer-whatsapp{
+ display:flex!important;position:static!important;width:max-content!important;max-width:100%!important;
+ align-items:center!important;gap:10px!important;margin-top:20px!important;padding:10px 14px!important;
+ background:#159447!important;color:#fff!important;border:1px solid rgba(255,255,255,.16)!important;
+ border-radius:12px!important;box-shadow:none!important;transform:none!important
+}
+.footer-whatsapp img{width:25px!important;height:25px!important;flex:0 0 25px!important}
+.footer-whatsapp span{display:flex!important;flex-direction:column!important;line-height:1.12!important}
+.footer-whatsapp strong{font-size:.78rem!important;color:#fff!important}
+.footer-whatsapp small{font-size:.67rem!important;color:#fff!important;margin-top:3px!important}
+.footer-bottom{
+ margin-top:0!important;padding-top:22px!important;border-top:1px solid rgba(240,213,142,.16)!important;
+ color:#9f978a!important;text-align:center!important;font-size:.72rem!important
+}
+/* No social profiles exist. */
+footer .social-links,footer .social-icons,footer [class~="social-links"],footer [class~="social-icons"]{display:none!important}
+/* Keep only the site's real chatbot floating; do not create a second WhatsApp/chat bubble. */
+.lh-whatsapp-float,.whatsapp-float,.whatsapp-widget,[class*="whatsapp-float"]{display:none!important}
+
+@media(max-width:1100px){
+ .brand{min-width:0!important}
+ .brand-mark-image{width:90px!important;height:90px!important;flex-basis:90px!important}
+ .footer-grid{grid-template-columns:1.2fr 1fr 1fr!important}
+ .footer-grid>div:last-child{grid-column:auto!important}
+}
+@media(max-width:760px){
+ .nav-inner{min-height:82px!important;padding:8px 0!important}
+ .brand-mark-image{width:68px!important;height:68px!important;flex-basis:68px!important}
+ .brand-copy strong{font-size:1.08rem!important}.brand-copy small{display:block!important;font-size:.56rem!important}
+ footer .container{width:min(100% - 28px,1240px)!important}
+ .footer-grid{grid-template-columns:1fr!important;gap:28px!important}
+ .footer-brand-logo{width:170px!important;height:170px!important}
+}
+</style>
+<script id="lh-header-footer-authoritative-final-script-20260923">
+(function(){
+ function tidy(){
+   document.querySelectorAll('footer .social-links,footer .social-icons').forEach(function(n){n.remove()});
+   document.querySelectorAll('.lh-whatsapp-float,.whatsapp-float,.whatsapp-widget,[class*="whatsapp-float"]').forEach(function(n){n.remove()});
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',tidy);else tidy();
+ window.addEventListener('load',tidy);
+})();
+</script>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
