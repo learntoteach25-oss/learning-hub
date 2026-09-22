@@ -2620,6 +2620,38 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .sect
  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
 })();
 </script>
+<style id="lh-instant-folder-access-20260923">
+html{scroll-behavior:auto!important}
+.lh-cat-card{touch-action:manipulation!important}
+</style>
+<script id="lh-instant-folder-access-script-20260923">
+(function(){
+ function openSection(card,e){
+   var href=card.getAttribute('href')||'';
+   if(!href.startsWith('#')||href.length<2)return;
+   var id=href.slice(1), target=document.getElementById(id);
+   if(!target)return;
+   if(e){e.preventDefault();e.stopPropagation();e.stopImmediatePropagation();}
+   /* Avoid legacy delayed/animated catalogue handlers. */
+   document.querySelectorAll('#main-content>section').forEach(function(s){
+     s.classList.remove('lh-active-page');
+   });
+   target.classList.add('lh-active-page');
+   document.body.classList.add('lh-catalogue-mode','lh-detail-view');
+   history.replaceState(null,'','#'+id);
+   target.scrollIntoView({behavior:'auto',block:'start'});
+ }
+ function bind(){
+   document.querySelectorAll('.lh-cat-card[href^="#"]').forEach(function(card){
+     if(card.dataset.instantAccess)return;
+     card.dataset.instantAccess='1';
+     card.addEventListener('click',function(e){openSection(card,e)},true);
+   });
+ }
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',bind);else bind();
+ window.addEventListener('load',bind);
+})();
+</script>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
