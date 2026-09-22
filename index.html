@@ -2917,6 +2917,29 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .sect
  window.addEventListener('load',stripLabels);
 })();
 </script>
+<style id="lh-final-refinement-pass-20260923">
+/* Final refinement: stronger legibility and cleaner editorial hierarchy. */
+#lhCatalogueLauncher .lh-cat-card-copy span{font-size:.91rem!important;line-height:1.55!important;color:#fffdf8!important}
+#lhCatalogueLauncher .lh-cat-card-copy strong{max-width:94%!important}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(h2,h3,h4){text-wrap:balance}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page p{max-width:72ch}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(.card-body,.sample-resource-body,.article-body,.progress-card,.learning-method-step){
+ text-align:left!important
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(.card-body,.sample-resource-body,.article-body) p{
+ color:#554d43!important;font-size:.92rem!important;line-height:1.68!important
+}
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(.card-body,.sample-resource-body,.article-body) h3{
+ color:#1c1711!important;line-height:1.15!important
+}
+/* Image-card text must remain bright over photography. */
+body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page :is(.support-card,.visual-card.image-card,.gallery-item) p{
+ color:#f5efe4!important;text-shadow:0 1px 8px rgba(0,0,0,.7)!important
+}
+/* Compact bot footprint: retain launcher, suppress intrusive teaser labels where present. */
+.lh-chat .lh-chat-teaser,.lh-chat .chat-teaser,.concierge .chat-teaser,.concierge [class*="teaser"]{display:none!important}
+.lh-chat,.concierge{right:22px!important;bottom:22px!important}
+</style>
 </head>
 <body><div id="top"></div>
 <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -3240,7 +3263,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="section-heading center">
 <div class="eyebrow">Learning Programmes</div>
 <h2>Choose your learning pathway.</h2>
-<p>Flexible learning designed around academic goals, personal needs and different stages of life.</p>
+<p>Focused tutoring pathways designed around each learner’s goals, level and stage of study.</p>
 </div>
 <div class="card-grid">
 <article class="visual-card">
@@ -3618,7 +3641,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="section-heading center">
 <div class="eyebrow">FREE DOWNLOAD LIBRARY</div>
 <h2>Download free Learning Hub resources.</h2>
-<p>These materials are available as free downloads. Premium paid resources are kept separate and are not mixed into this library.</p>
+<p>Download practical learning materials for independent study and guided practice. Premium resources remain clearly separated from this free library.</p>
 </div>
 <div class="sample-resource-grid">
 <article class="sample-resource-card">
@@ -3639,8 +3662,8 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="container">
 <div class="section-heading center">
 <div class="eyebrow">RESOURCES &amp; ARTICLES — BLOG</div>
-<h2>Ideas for better learning.</h2>
-<p>Practical guidance, study strategies and educational insights for students, parents, professionals and lifelong learners.</p>
+<h2>Practical insight for stronger learning.</h2>
+<p>Clear, practical guidance on study, international education, language development, examinations and independent learning.</p>
 </div>
 <div class="lh-editorial-intro">
 <div><span>LEARNING HUB EDITORIAL</span><strong>Read. Reflect. Apply.</strong></div>
@@ -3660,7 +3683,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="article-body"><div class="article-meta"><span>Online Learning</span><span>4 min read</span></div><h3>How to Make Online Learning More Effective</h3><p>Create a focused routine, participate actively and turn online lessons into measurable learning progress.</p><details class="article-details"><summary>Read article <b aria-hidden="true">→</b></summary><div class="article-full">Effective online learning needs a clear goal for every session. Prepare before the lesson, keep distractions low, ask questions, practise during the lesson and finish with a short review. Small, consistent routines usually create stronger progress than occasional long study sessions.</div></details></div>
 </article>
 <article class="article-card lh-editorial-card">
-<div class="lh-editorial-image"><img loading="eager" decoding="async" referrerpolicy="no-referrer" alt="English examination preparation" src="https://images.unsplash.com/photo-1456324504439-1a0c7b0a5c7b?auto=format&amp;fit=crop&amp;w=1200&amp;q=88"/><span>04</span></div>
+<div class="lh-editorial-image"><img loading="eager" decoding="async" referrerpolicy="no-referrer" alt="English examination preparation" src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&amp;fit=crop&amp;w=1200&amp;q=88"/><span>04</span></div>
 <div class="article-body"><div class="article-meta"><span>Exam Preparation</span><span>5 min read</span></div><h3>IELTS or PTE: What Should You Prepare For?</h3><p>Consider your destination, test format, strengths and preparation style before selecting an English test.</p><details class="article-details"><summary>Read article <b aria-hidden="true">→</b></summary><div class="article-full">The right test depends on the institution or pathway accepting your score, the test format you are comfortable with and the skills you need to strengthen. Always confirm the current requirements of your intended university, employer or immigration pathway before booking an exam.</div></details></div>
 </article>
 <article class="article-card lh-editorial-card">
@@ -3685,7 +3708,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 </div>
 <div class="gallery-grid">
 <div class="gallery-item large">
-<img alt="Students in classroom" src="https://images.unsplash.com/photo-1519681393784-d120267933ba9?auto=format&amp;fit=crop&amp;w=1800&amp;q=90"/>
+<img alt="Students in classroom" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=1800&amp;q=90"/>
 <span class="gallery-label">Academic Learning</span>
 </div>
 <div class="gallery-item">
@@ -3697,7 +3720,7 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <span class="gallery-label">Online Education</span>
 </div>
 <div class="gallery-item">
-<img alt="Quran" src="https://images.unsplash.com/photo-1540932239986-30128078f3c5?auto=format&amp;fit=crop&amp;w=1200&amp;q=90"/>
+<img alt="Quran" src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?auto=format&amp;fit=crop&amp;w=1200&amp;q=90"/>
 <span class="gallery-label">Quran Learning</span>
 </div>
 <div class="gallery-item">
@@ -3718,8 +3741,8 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 <div class="container">
 <div class="section-heading center">
 <div class="eyebrow">Frequently Asked Questions</div>
-<h2>Everything you need to know.</h2>
-<p>Simple answers to common questions about Learning Hub, lessons, programmes and resources.</p>
+<h2>Clear answers before you begin.</h2>
+<p>Find essential information about lessons, programmes, international curricula, resources and learner support.</p>
 </div>
 <div class="faq-wrap">
 <div class="faq-list">
@@ -5472,7 +5495,7 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .cont
       'sample-resources':['Learning Materials','See the learning in action.','Preview structured Learning Hub resources and downloads.'],
       articles:['Resources & Articles','Learn beyond the lesson.','Guides, articles and educational insights.'],
       gallery:['Gallery','Learning in pictures.','Explore the Learning Hub visual collection.'],
-      faq:['Frequently Asked Questions','Everything you need to know.','Simple answers about lessons, programmes and resources.'],
+      faq:['Frequently Asked Questions','Clear answers before you begin.','Simple answers about lessons, programmes and resources.'],
       teacher:['Teach with Us','Join the Learning Hub teaching network.','Review the teaching opportunity and application pathway.'],
       contact:['Contact Learning Hub','Start your learning journey.','Enquire about tutoring, courses, resources or partnerships.'],
       feedback:['Learner Feedback','Hear from our learning community.','Reviews and feedback from learners and families.']
