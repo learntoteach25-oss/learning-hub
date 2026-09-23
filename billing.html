@@ -20,7 +20,7 @@
 <option value="daily">Daily</option>
 <option value="twice" selected>Twice Weekly</option>
 <option value="weekly">Weekly</option>
-<option value="monthly">Monthly · Choose your days/classes</option>
+<option value="monthly">Monthly · Choose your days/classes · 10% off</option>
 </select></div>
 <div class="field"><label for="classCount">NUMBER OF CLASSES</label><input id="classCount" type="number" min="1" max="31" step="1" value="2"><small id="classHint" style="display:block;margin-top:6px;color:#716656;font-size:10px">Choose how many classes you want to book. For Monthly, choose your preferred number of teaching days/classes.</small></div>
 </div>
@@ -92,24 +92,24 @@ const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);
 const course=params.get('programme')||params.get('course');
 if(course){const o=[...$('course').options].find(x=>x.text.toLowerCase().includes(course.toLowerCase())||course.toLowerCase().includes(x.text.toLowerCase()));if(o)$('course').value=o.value}
-const planData={demo:{label:'Demo · 30 min',fixed:550,defaultClasses:1},daily:{label:'Daily',defaultClasses:5},twice:{label:'Twice Weekly',defaultClasses:2},weekly:{label:'Weekly',defaultClasses:1},monthly:{label:'Monthly · Flexible days',defaultClasses:4}};
+const planData={demo:{label:'Demo · 30 min',fixed:550,defaultClasses:1},daily:{label:'Daily',defaultClasses:5},twice:{label:'Twice Weekly',defaultClasses:2},weekly:{label:'Weekly',defaultClasses:1},monthly:{label:'Monthly · Flexible days · 10% off',defaultClasses:4}};
 function update(){
  const key=$('planSelect').value,d=planData[key],isDemo=key==='demo';
  if(isDemo){$('classCount').value=1;$('classCount').disabled=true}else{$('classCount').disabled=false}
  const lessons=isDemo?1:Math.max(1,parseInt($('classCount').value||d.defaultClasses,10));
- const rate=+$('duration').value,total=isDemo?550:lessons*rate;
+ const rate=+$('duration').value,subtotal=isDemo?550:lessons*rate,total=key==='monthly'?subtotal*0.90:subtotal;
  $('duration').disabled=isDemo;
  $('demoNote').classList.toggle('hidden',!isDemo);
  $('sumCourse').textContent=$('course').value;
  $('sumPlan').textContent=d.label;
  $('sumLessons').textContent=lessons+(lessons===1?' lesson':' lessons');
- $('sumTotal').textContent='PKR '+total.toLocaleString();
+ $('sumTotal').textContent='PKR '+total.toLocaleString(undefined,{maximumFractionDigits:0});
 }
 $('planSelect').addEventListener('change',()=>{
  const key=$('planSelect').value,d=planData[key];
  $('classCount').value=d.defaultClasses;
  $('classHint').textContent=key==='monthly'
-   ? 'Choose any number of teaching days/classes you want to book for the month.'
+   ? 'Choose any number of teaching days/classes for the month. A 10% monthly-plan discount is applied automatically.'
    : key==='daily'
    ? 'Choose how many classes you want to book for the week.'
    : 'Choose how many classes you want to book.';
