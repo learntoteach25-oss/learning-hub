@@ -65,6 +65,15 @@
 .footer-brand-copy h3{margin:0!important;color:#f0d58e!important;font:700 22px/1.05 Georgia,serif!important}
 .footer-brand-copy small{display:block!important;margin-top:6px!important;color:#eee!important;font-size:10px!important;letter-spacing:.04em!important}
 .footer-brand-copy p{margin:10px 0 0!important;color:#cfc7b8!important;font-size:12px!important}
+</style><style id="whatsapp-final-sitewide">
+.footer .whatsapp{display:flex!important;width:max-content!important;max-width:100%!important;align-items:center!important;gap:10px!important;background:#fffaf0!important;color:#17130d!important;border:1px solid #d9aa49!important;border-radius:12px!important;padding:10px 13px!important;margin-top:14px!important;text-decoration:none!important;box-shadow:none!important}
+.footer .whatsapp .wa-mark{display:grid!important;place-items:center!important;width:34px!important;height:34px!important;flex:0 0 34px!important;border-radius:50%!important;background:#d9aa49!important;color:#111!important;font:800 10px/1 Arial,sans-serif!important}
+.footer .whatsapp .wa-copy{display:block!important}
+.footer .whatsapp strong{display:block!important;color:#17130d!important;font:700 13px/1.15 Arial,sans-serif!important}
+.footer .whatsapp small{display:block!important;color:#6e5b43!important;font:400 10px/1.2 Arial,sans-serif!important;margin-top:3px!important}
+.floating-chat{position:fixed!important;right:20px!important;bottom:20px!important;z-index:9999!important;display:flex!important;align-items:center!important;gap:9px!important;background:#080807!important;color:#fff!important;border:1px solid #d9aa49!important;border-radius:999px!important;padding:8px 14px 8px 8px!important;text-decoration:none!important;box-shadow:0 8px 24px rgba(0,0,0,.28)!important;font:700 12px/1 Arial,sans-serif!important}
+.floating-chat .chat-mark{display:grid!important;place-items:center!important;width:34px!important;height:34px!important;border-radius:50%!important;background:#d9aa49!important;color:#111!important;font-size:10px!important;font-weight:800!important}
+@media(max-width:640px){.floating-chat{right:12px!important;bottom:12px!important}.floating-chat>span:last-child{display:none!important}}
 </style></head><body>
 <header class="top"><div class="shell brandrow"><img src="assets/learning-hub-logo.png?v=approved-20260923" alt="Learning Hub logo"><div class="brand"><strong>Learning Hub</strong><span>GLOBAL EDUCATION PLATFORM</span></div><a class="standalone-back" href="index.html">← Back to Website</a></div></header>
 <section class="hero"><div class="wrap"><div class="eyebrow">Secure booking flow</div><h1>Booking & Billing</h1><p>Select your course, lesson plan and billing details. Review everything before continuing to payment.</p></div></section>
@@ -225,4 +234,4 @@ $('sendInquiry').addEventListener('click',async()=>{
  }finally{btn.disabled=false}
 });
 $('convert').addEventListener('click',async()=>{const amount=+$('pkr').value,to=$('currency').value;if(!amount)return;const out=$('convertResult');out.textContent='Getting current exchange rate…';try{const r=await fetch('https://open.er-api.com/v6/latest/PKR');const j=await r.json();if(!j.rates||!j.rates[to])throw 0;const converted=amount*j.rates[to];out.innerHTML='<strong>PKR '+amount.toLocaleString()+'</strong> ≈ <strong>'+to+' '+converted.toLocaleString(undefined,{maximumFractionDigits:2})+'</strong><br><small>Rate: 1 PKR ≈ '+j.rates[to].toFixed(6)+' '+to+'</small>'}catch(e){out.textContent='Live conversion is temporarily unavailable. Please try again.'}});
-</script></body></html>
+</script><a class="floating-chat" href="https://wa.me/923053750105" target="_blank" rel="noopener" aria-label="Chat with Learning Hub on WhatsApp"><span class="chat-mark">WA</span><span>Chat with us</span></a></body></html>
