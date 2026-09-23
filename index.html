@@ -2393,7 +2393,9 @@ body.lh-checkout-mode #lhCheckoutRoot{display:block}
 </div>
 </div>
 </div>
-</section><section class="intro" id="about">
+</section>
+<section id="lhCatalogueLauncher" aria-label="Explore Learning Hub"><div class="lh-cat-shell"><div class="lh-cat-head"><div><h2>Explore Our Learning Areas</h2><p>Choose a learning area to explore its programmes, support, resources and opportunities.</p></div></div><div class="lh-cat-grid"><a class="lh-cat-card" href="#programmes" data-catalogue-target="programmes"><img loading="lazy" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=85" alt="Learning Programmes"><span class="lh-cat-arrow">→</span><span class="lh-cat-card-copy"><strong>Learning Programmes</strong><span>Explore structured tutoring across school subjects, English and international curricula.</span></span></a><a class="lh-cat-card" href="#quran" data-catalogue-target="quran"><img loading="lazy" src="https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=1200&q=85" alt="Quran & Islamic Studies"><span class="lh-cat-arrow">→</span><span class="lh-cat-card-copy"><strong>Quran & Islamic Studies</strong><span>Quran reading, Tajweed and Islamic Studies through structured support.</span></span></a><a class="lh-cat-card" href="#boards" data-catalogue-target="boards"><img loading="lazy" src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=85" alt="International Boards"><span class="lh-cat-arrow">→</span><span class="lh-cat-card-copy"><strong>International Boards</strong><span>Explore international curriculum pathways, subjects and examination preparation.</span></span></a><a class="lh-cat-card" href="#exams" data-catalogue-target="exams"><img loading="lazy" src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=1200&q=85" alt="Exams"><span class="lh-cat-arrow">→</span><span class="lh-cat-card-copy"><strong>Exams</strong><span>IELTS, PTE, TOEFL and other international exam preparation pathways.</span></span></a><a class="lh-cat-card" href="#support" data-catalogue-target="support"><img loading="lazy" src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=85" alt="Learning Support"><span class="lh-cat-arrow">→</span><span class="lh-cat-card-copy"><strong>Learning Support</strong><span>Targeted support for learning differences, study skills and academic confidence.</span></span></a><a class="lh-cat-card" href="#resources" data-catalogue-target="resources"><img loading="lazy" src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=1200&q=85" alt="Resources"><span class="lh-cat-arrow">→</span><span class="lh-cat-card-copy"><strong>Resources</strong><span>Browse free learning materials and Premium Digital Resources.</span></span></a><a class="lh-cat-card" href="#articles" data-catalogue-target="articles"><img loading="lazy" src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1200&q=85" alt="Articles & Blog"><span class="lh-cat-arrow">→</span><span class="lh-cat-card-copy"><strong>Articles & Blog</strong><span>Guides, articles and educational insights for learners and families.</span></span></a><a class="lh-cat-card" href="#teacher" data-catalogue-target="teacher"><img loading="lazy" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=85" alt="Teach with Us"><span class="lh-cat-arrow">→</span><span class="lh-cat-card-copy"><strong>Teach with Us</strong><span>Explore the Learning Hub teaching opportunity and application pathway.</span></span></a></div></div></section>
+<section class="intro" id="about">
 <div class="container intro-grid">
 <div aria-label="Learners studying together in a learning environment" class="intro-image">
 <img alt="Students learning together in a classroom" loading="eager" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&amp;fit=crop&amp;w=1600&amp;q=92"/>
@@ -4686,20 +4688,8 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .cont
     const ids=new Set(order.filter(id=>id==='about'||document.getElementById(id)));
     function findSection(id){ return id==='about'?document.getElementById('about'):document.getElementById(id); }
 
-    const launcher=document.createElement('section');
-    launcher.id='lhCatalogueLauncher';
-    launcher.setAttribute('aria-label','Explore Learning Hub');
-    launcher.innerHTML='<div class="lh-cat-shell"><div class="lh-cat-head"><div><h2>Explore Our Learning Areas</h2><p>Choose a learning area to explore programmes, support, resources and opportunities in a focused view.</p></div></div><div class="lh-cat-grid"></div></div>';
-    hero.insertAdjacentElement('afterend',launcher);
-    const grid=launcher.querySelector('.lh-cat-grid');
-    order.forEach((id,index)=>{
-      if(!ids.has(id)) return;
-      const meta=sectionMeta[id];
-      const a=document.createElement('a');
-      a.className='lh-cat-card'; a.href='#'+id; a.dataset.catalogueTarget=id;
-      a.innerHTML='<img loading="lazy" src="'+imageMap[id]+'" alt="'+meta[0]+'"><span class="lh-cat-arrow">→</span><span class="lh-cat-card-copy"><small>'+String(index+1).padStart(2,'0')+'</small><strong>'+meta[0]+'</strong><span>'+meta[2]+'</span></span>';
-      grid.appendChild(a);
-    });
+    const launcher=document.getElementById('lhCatalogueLauncher');
+    if(!launcher) return;
 
     
 
@@ -5634,6 +5624,18 @@ body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .
  body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-grid{grid-template-columns:1fr!important}
  body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-card{height:265px!important;min-height:265px!important}
 }
+</style>
+<style id="lh-home-static-catalogue-failsafe-20260923">
+#lhCatalogueLauncher{display:block!important;background:#0a0908!important;color:#fffdf8!important;padding:42px 0 68px!important;border-top:1px solid rgba(201,164,92,.22)!important}
+#lhCatalogueLauncher .lh-cat-head{display:block!important;margin:0 0 28px!important}
+#lhCatalogueLauncher .lh-cat-head::before,#lhCatalogueLauncher .lh-cat-badge,#lhCatalogueLauncher .lh-cat-quick-actions{display:none!important}
+#lhCatalogueLauncher .lh-cat-head h2{display:block!important;font-size:clamp(2rem,3vw,3rem)!important;color:#fffdf8!important;margin:0 0 8px!important}
+#lhCatalogueLauncher .lh-cat-head p{display:block!important;color:#cfc6b8!important;margin:0!important}
+#lhCatalogueLauncher .lh-cat-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:18px!important}
+#lhCatalogueLauncher .lh-cat-card{display:block!important;height:285px!important;min-height:285px!important}
+body.lh-detail-view #lhCatalogueLauncher{display:none!important}
+@media(max-width:1050px){#lhCatalogueLauncher .lh-cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){#lhCatalogueLauncher .lh-cat-grid{grid-template-columns:1fr!important}}
 </style>
 </body>
 </html>
