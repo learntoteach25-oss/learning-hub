@@ -36,9 +36,9 @@
 </div>
 </section>
 <aside>
-<section class="panel"><div class="hidden"><h2>2. Billing summary</h2><p class="sub">Your selection updates automatically.</p>
-<div class="summary"><div class="sumrow"><span>Course</span><b id="sumCourse"></b></div><div class="sumrow"><span>Plan</span><b id="sumPlan"></b></div><div class="sumrow"><span>Lessons</span><b id="sumLessons"></b></div><div class="sumrow total"><span>Total</span><b id="sumTotal"></b></div></div></div>
-</section><section class="panel converter"><h2>PKR currency converter</h2><p class="sub">International clients can select their local currency to view an indicative equivalent of the PKR price.</p>
+<section class="panel"><h2>2. Billing summary</h2><p class="sub">Your selection updates automatically.</p>
+<div class="summary"><div class="sumrow"><span>Course</span><b id="sumCourse"></b></div><div class="sumrow"><span>Plan</span><b id="sumPlan"></b></div><div class="sumrow"><span>Lessons</span><b id="sumLessons"></b></div><div class="sumrow total"><span>Total</span><b id="sumTotal"></b></div></div>
+<div id="discountLine" class="demo-note hidden"><strong>Monthly plan:</strong> 10% discount applied.</div><section class="panel converter"><h2>Currency Converter</h2><p class="sub">International clients can select their local currency to view an indicative equivalent of the booking price.</p>
 <div class="two"><div class="field"><label for="pkr">AMOUNT IN PKR</label><input id="pkr" type="number" min="1" value="10000"></div><div class="field"><label for="currency">CONVERT TO</label><select id="currency">
 <option value="USD">USD — US Dollar</option>
 <option value="GBP">GBP — British Pound</option>
@@ -85,7 +85,7 @@
 <option value="CLP">CLP — Chilean Peso</option>
 <option value="COP">COP — Colombian Peso</option>
 </select></div></div>
-<button class="paybtn" id="convert" type="button">Convert Currency</button><div class="convert-result" id="convertResult">Select an amount and currency, then convert.</div><p class="fine">Currency conversion is indicative. Final payment availability and the charged currency will depend on the approved payment gateway; provider or bank rates and fees may differ.</p></section>
+<button class="paybtn" id="convert" type="button">Convert Currency</button><div class="convert-result" id="convertResult">Select an amount and currency, then convert.</div><p class="fine">Conversion is indicative. Final charged currency, exchange rate and any fees will depend on the approved payment gateway and payment provider.</p></section>
 </aside></main>
 <script>
 const $=id=>document.getElementById(id);
@@ -103,7 +103,7 @@ function update(){
  $('sumCourse').textContent=$('course').value;
  $('sumPlan').textContent=d.label;
  $('sumLessons').textContent=lessons+(lessons===1?' lesson':' lessons');
- $('sumTotal').textContent='PKR '+total.toLocaleString(undefined,{maximumFractionDigits:0});
+ $('sumTotal').textContent='PKR '+total.toLocaleString(undefined,{maximumFractionDigits:0}); $('discountLine').classList.toggle('hidden',key!=='monthly');
 }
 $('planSelect').addEventListener('change',()=>{
  const key=$('planSelect').value,d=planData[key];
@@ -124,6 +124,23 @@ $('learningFiles').addEventListener('change',()=>{
  $('fileList').innerHTML=files.length
    ? '<strong>Selected:</strong> '+files.map(f=>f.name).join(' · ')
    : '';
+});
+$('method').addEventListener('change',()=>{
+ const isCard=$('method').value==='test-card';
+ $('testCard').classList.toggle('hidden',!isCard);
+ $('pay').textContent=isCard?'Run Test Payment':'Prepare Manual Verification';
+});
+$('pay').addEventListener('click',()=>{
+ if(!$('name').value.trim()||!/^\\S+@\\S+\\.\\S+$/.test($('email').value)){
+   $('status').textContent='Enter the student/customer name and a valid email address first.';
+   $('status').style.color='#9b2c2c'; return;
+ }
+ if($('method').value==='test-card'&&!$('card').value.trim()){
+   $('status').textContent='Enter test card details only.';
+   $('status').style.color='#9b2c2c'; return;
+ }
+ $('status').textContent=$('method').value==='test-card'?'Test payment passed. No real charge was made.':'Booking is ready for manual payment verification.';
+ $('status').style.color='#23633f';
 });
 $('convert').addEventListener('click',async()=>{const amount=+$('pkr').value,to=$('currency').value;if(!amount)return;const out=$('convertResult');out.textContent='Getting current exchange rate…';try{const r=await fetch('https://open.er-api.com/v6/latest/PKR');const j=await r.json();if(!j.rates||!j.rates[to])throw 0;const converted=amount*j.rates[to];out.innerHTML='<strong>PKR '+amount.toLocaleString()+'</strong> ≈ <strong>'+to+' '+converted.toLocaleString(undefined,{maximumFractionDigits:2})+'</strong><br><small>Rate: 1 PKR ≈ '+j.rates[to].toFixed(6)+' '+to+'</small>'}catch(e){out.textContent='Live conversion is temporarily unavailable. Please try again.'}});
 </script></body></html>
