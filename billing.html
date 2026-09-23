@@ -27,8 +27,8 @@
 <div class="field"><label for="notes">LEARNING REQUIREMENTS / NOTES</label><textarea id="notes" rows="3" placeholder="Subject, level, curriculum, goals or preferred schedule"></textarea></div>
 </section>
 <aside>
-<section class="panel"><h2>2. Billing summary</h2><p class="sub">Your selection updates automatically.</p>
-<div class="summary"><div class="sumrow"><span>Course</span><b id="sumCourse"></b></div><div class="sumrow"><span>Plan</span><b id="sumPlan"></b></div><div class="sumrow"><span>Lessons</span><b id="sumLessons"></b></div><div class="sumrow total"><span>Total</span><b id="sumTotal"></b></div></div>
+<section class="panel"><div class="hidden"><h2>2. Billing summary</h2><p class="sub">Your selection updates automatically.</p>
+<div class="summary"><div class="sumrow"><span>Course</span><b id="sumCourse"></b></div><div class="sumrow"><span>Plan</span><b id="sumPlan"></b></div><div class="sumrow"><span>Lessons</span><b id="sumLessons"></b></div><div class="sumrow total"><span>Total</span><b id="sumTotal"></b></div></div></div>
 </section><section class="panel converter"><h2>PKR currency converter</h2><p class="sub">Convert Pakistani rupees to another currency for an indicative billing reference.</p>
 <div class="two"><div class="field"><label for="pkr">AMOUNT IN PKR</label><input id="pkr" type="number" min="1" value="10000"></div><div class="field"><label for="currency">CONVERT TO</label><select id="currency"><option>USD</option><option>GBP</option><option>EUR</option><option>AED</option><option>SAR</option><option>CAD</option><option>AUD</option></select></div></div>
 <button class="paybtn" id="convert" type="button">Convert Currency</button><div class="convert-result" id="convertResult">Select an amount and currency, then convert.</div><p class="fine">Conversion is indicative. The payment provider or bank may use a different rate and may apply fees.</p></section>
