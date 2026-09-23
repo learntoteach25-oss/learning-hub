@@ -17,11 +17,11 @@
 <meta content="Learning Hub | Global Online Tutoring &amp; International Education" property="og:title"/>
 <meta content="Personalised online tutoring, international curriculum support, English development, exam preparation, Quran and Islamic Studies, learning support and digital resources." property="og:description"/>
 <meta content="https://learninghubtutoring.com/" property="og:url"/>
-<meta content="https://learninghubtutoring.com/assets/learning-hub-monogram.png?v=approved-20260923" property="og:image"/>
+<meta content="https://learninghubtutoring.com/assets/learning-hub-logo.png?v=approved-20260923" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Learning Hub | Global Online Tutoring &amp; International Education" name="twitter:title"/>
 <meta content="Personalised online learning for students, professionals and lifelong learners worldwide." name="twitter:description"/>
-<meta content="https://learninghubtutoring.com/assets/learning-hub-monogram.png?v=approved-20260923" name="twitter:image"/>
+<meta content="https://learninghubtutoring.com/assets/learning-hub-logo.png?v=approved-20260923" name="twitter:image"/>
 <style>
 :root{
   --black:#070707;
@@ -1937,7 +1937,7 @@ footer .footer-grid{align-items:start!important}
       "@id":"https://learninghubtutoring.com/#organization",
       "name":"Learning Hub",
       "url":"https://learninghubtutoring.com/",
-      "logo":"https://learninghubtutoring.com/assets/learning-hub-monogram.png?v=approved-20260923",
+      "logo":"https://learninghubtutoring.com/assets/learning-hub-logo.png?v=approved-20260923",
       "email":"hublearning117@gmail.com",
       "description":"Global online tutoring for IB, A-Level, GCSE, English, IELTS, Quran and international curriculum learners."
     },
@@ -2308,7 +2308,7 @@ body.lh-catalogue-mode.lh-detail-view #feedback.lh-active-page .section-heading 
   width:112px!important;height:112px!important;flex:0 0 112px!important;
   margin-right:20px!important;border-radius:0!important;
   background-color:#000!important;
-  background-image:url("assets/learning-hub-monogram.png?v=approved-20260923")!important;
+  background-image:url("assets/learning-hub-logo.png?v=approved-20260923")!important;
   background-repeat:no-repeat!important;background-position:center!important;background-size:contain!important;
 }
 .footer-brand-logo{
@@ -5699,7 +5699,7 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .cont
   display:block;
   width:82px;height:82px;flex:0 0 82px;
   margin-right:4px;
-  background:url("assets/learning-hub-monogram.png?v=approved-20260923") center/contain no-repeat;
+  background:url("assets/learning-hub-logo.png?v=approved-20260923") center/contain no-repeat;
   border-radius:16px;
 }
 .lh-cat-head>div{flex:1;min-width:0}
@@ -6001,7 +6001,7 @@ footer .footer-brand + p{
   width:86px!important;
   height:86px!important;
   flex:0 0 86px!important;
-  background:url("assets/learning-hub-monogram.png?v=approved-20260923") center/contain no-repeat!important;
+  background:url("assets/learning-hub-logo.png?v=approved-20260923") center/contain no-repeat!important;
   border-radius:0!important;
   margin-right:2px!important;
 }
@@ -6093,7 +6093,7 @@ footer .footer-brand + p{
 
 /* Catalogue masthead: approved mark remains visible and does not become a mystery placeholder. */
 #lhCatalogueLauncher .lh-cat-head{position:relative!important;align-items:center!important}
-#lhCatalogueLauncher .lh-cat-head::before{content:""!important;display:block!important;width:86px!important;height:86px!important;flex:0 0 86px!important;background:url("assets/learning-hub-monogram.png?v=approved-20260923") center/contain no-repeat!important;border-radius:0!important;margin:0 8px 0 0!important}
+#lhCatalogueLauncher .lh-cat-head::before{content:""!important;display:block!important;width:86px!important;height:86px!important;flex:0 0 86px!important;background:url("assets/learning-hub-logo.png?v=approved-20260923") center/contain no-repeat!important;border-radius:0!important;margin:0 8px 0 0!important}
 #lhCatalogueLauncher .lh-cat-head>div{min-width:0!important}
 
 /* Editorial cards: image area is always present, followed by readable copy. */
@@ -6158,7 +6158,7 @@ body.lh-route-policy>#lhCheckoutRoot{display:none!important}
   function fix(){
     /* Make the approved logo request unambiguous and resilient to stale browser cache. */
     document.querySelectorAll('img[src^="assets/learning-hub-logo.png"]').forEach(function(img){
-      img.src='assets/learning-hub-monogram.png?v=approved-20260923';
+      img.src='assets/learning-hub-logo.png?v=approved-20260923';
       img.alt='Learning Hub approved LH logo';
     });
     /* Ensure article images remain visible and report a meaningful fallback rather than a broken icon. */
@@ -6377,7 +6377,7 @@ body.lh-catalogue-mode #feedback,body.lh-catalogue-mode #contact{overflow:visibl
 </style>
 <script id="lh-v6-resilience">
 (function(){'use strict';
-const APPROVED_LOGO='assets/learning-hub-monogram.png?v=approved-20260923';
+const APPROVED_LOGO='assets/learning-hub-logo.png?v=approved-20260923';
 function ensureLogo(){document.querySelectorAll('.brand-mark-image,.lh-co-brand-logo,.footer-brand-logo').forEach(function(img){img.src=APPROVED_LOGO;img.removeAttribute('srcset');img.alt='Learning Hub approved LH logo'})}
 function ensureImages(){const f={exam:'assets/lh-fallback-exam.jpg',article:'assets/lh-fallback-articles.jpg',resource:'assets/lh-fallback-resources.jpg',quran:'assets/lh-fallback-quran.jpg',teaching:'assets/lh-fallback-teaching.jpg',learning:'assets/lh-fallback-learning.jpg'};document.querySelectorAll('img').forEach(function(img){if(img.dataset.v6Bound==='1')return;img.dataset.v6Bound='1';img.addEventListener('error',function(){if(this.dataset.v6Fallback==='1')return;this.dataset.v6Fallback='1';const t=((this.alt||'')+' '+(this.closest('section')?.id||'')).toLowerCase();let src=f.learning;for(const k in f)if(t.includes(k)){src=f[k];break}this.src=src},{once:true})})}
 function punctuate(){const selectors=['.section-heading p','.lh-cat-card-copy span','.lh-editorial-card p','.lh-resource-hub-card p','.sample-resource-body p','.contact-microcopy','.exam-option p'];document.querySelectorAll(selectors.join(',')).forEach(function(el){const t=el.textContent.trim();if(!t||/[.!?…:;]$/.test(t)||t.endsWith('→'))return;el.textContent=t+'.'})}
