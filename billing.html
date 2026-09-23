@@ -28,6 +28,12 @@
 <div class="two"><div class="field"><label for="name">STUDENT / CUSTOMER NAME</label><input id="name" autocomplete="name"></div><div class="field"><label for="email">EMAIL ADDRESS</label><input id="email" type="email" autocomplete="email"></div></div>
 <div class="two"><div class="field"><label for="guardian">PARENT / GUARDIAN <span style="font-weight:400">(if applicable)</span></label><input id="guardian"></div><div class="field"><label for="phone">CONTACT NUMBER</label><input id="phone" type="tel" autocomplete="tel"></div></div>
 <div class="field"><label for="notes">LEARNING REQUIREMENTS / NOTES</label><textarea id="notes" rows="3" placeholder="Subject, level, curriculum, goals or preferred schedule"></textarea></div>
+<div class="field">
+<label for="learningFiles">UPLOAD LEARNING MATERIALS <span style="font-weight:400">(optional)</span></label>
+<input id="learningFiles" name="learningFiles" type="file" multiple accept=".pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.jpg,.jpeg,.png,.webp,image/*,application/pdf">
+<small style="display:block;margin-top:6px;color:#716656;font-size:10px;line-height:1.45">Parents and learners can attach e-books, worksheets, assignments, PDF documents and images. Multiple files can be selected.</small>
+<div id="fileList" style="margin-top:8px;font-size:11px;color:#4f463a"></div>
+</div>
 </section>
 <aside>
 <section class="panel"><div class="hidden"><h2>2. Billing summary</h2><p class="sub">Your selection updates automatically.</p>
@@ -113,5 +119,11 @@ $('classCount').addEventListener('input',update);
 $('course').addEventListener('change',update);
 $('duration').addEventListener('change',update);
 update();
+$('learningFiles').addEventListener('change',()=>{
+ const files=[...$('learningFiles').files];
+ $('fileList').innerHTML=files.length
+   ? '<strong>Selected:</strong> '+files.map(f=>f.name).join(' · ')
+   : '';
+});
 $('convert').addEventListener('click',async()=>{const amount=+$('pkr').value,to=$('currency').value;if(!amount)return;const out=$('convertResult');out.textContent='Getting current exchange rate…';try{const r=await fetch('https://open.er-api.com/v6/latest/PKR');const j=await r.json();if(!j.rates||!j.rates[to])throw 0;const converted=amount*j.rates[to];out.innerHTML='<strong>PKR '+amount.toLocaleString()+'</strong> ≈ <strong>'+to+' '+converted.toLocaleString(undefined,{maximumFractionDigits:2})+'</strong><br><small>Rate: 1 PKR ≈ '+j.rates[to].toFixed(6)+' '+to+'</small>'}catch(e){out.textContent='Live conversion is temporarily unavailable. Please try again.'}});
 </script></body></html>
