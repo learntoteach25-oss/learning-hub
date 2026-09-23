@@ -14,13 +14,16 @@
 <option>Academic Tutoring</option><option>International Curriculum</option><option>English Development</option><option>Exam Preparation</option><option>Study Skills</option><option>Specialist Learning Support</option><option>Quran & Islamic Studies</option>
 </select></div>
 <div class="field"><label for="duration">LESSON DURATION</label><select id="duration"><option value="1000">25 minutes — PKR 1,000 per session</option><option value="1500" selected>50 minutes — PKR 1,500 per session</option></select></div>
-<div class="field"><label>PLAN</label><div class="plans">
-<div class="plan"><input id="demo" name="plan" type="radio" value="demo"><label for="demo"><strong>Demo</strong><span>30-minute introductory session · available after payment gateway approval</span></label></div>
-<div class="plan"><input id="daily" name="plan" type="radio" value="daily"><label for="daily"><strong>Daily</strong><span>5 lessons per week · billed weekly</span></label></div>
-<div class="plan"><input id="twice" name="plan" type="radio" value="twice" checked><label for="twice"><strong>Twice Weekly</strong><span>2 lessons per week · billed weekly</span></label></div>
-<div class="plan"><input id="weekly" name="plan" type="radio" value="weekly"><label for="weekly"><strong>Weekly</strong><span>1 lesson per week · billed weekly</span></label></div>
-<div class="plan"><input id="monthly" name="plan" type="radio" value="monthly"><label for="monthly"><strong>Monthly Plan</strong><span>4 lessons per month · billed monthly</span></label></div>
-</div></div>
+<div class="two">
+<div class="field"><label for="planSelect">BOOKING PLAN</label><select id="planSelect">
+<option value="demo">Demo · 30 minutes</option>
+<option value="daily">Daily</option>
+<option value="twice" selected>Twice Weekly</option>
+<option value="weekly">Weekly</option>
+<option value="monthly">Monthly</option>
+</select></div>
+<div class="field"><label for="classCount">NUMBER OF CLASSES</label><input id="classCount" type="number" min="1" max="31" step="1" value="2"><small id="classHint" style="display:block;margin-top:6px;color:#716656;font-size:10px">Choose how many classes you want to book.</small></div>
+</div>
 <div id="demoNote" class="demo-note hidden"><strong>Demo booking:</strong> 30-minute introductory session · fixed PKR 550.</div>
 <div class="two"><div class="field"><label for="name">STUDENT / CUSTOMER NAME</label><input id="name" autocomplete="name"></div><div class="field"><label for="email">EMAIL ADDRESS</label><input id="email" type="email" autocomplete="email"></div></div>
 <div class="two"><div class="field"><label for="guardian">PARENT / GUARDIAN <span style="font-weight:400">(if applicable)</span></label><input id="guardian"></div><div class="field"><label for="phone">CONTACT NUMBER</label><input id="phone" type="tel" autocomplete="tel"></div></div>
@@ -38,8 +41,27 @@ const $=id=>document.getElementById(id);
 const params=new URLSearchParams(location.search);
 const course=params.get('programme')||params.get('course');
 if(course){const o=[...$('course').options].find(x=>x.text.toLowerCase().includes(course.toLowerCase())||course.toLowerCase().includes(x.text.toLowerCase()));if(o)$('course').value=o.value}
-const planData={demo:{label:'Demo · 30 min',lessons:1,fixed:550},daily:{label:'Daily',lessons:5},twice:{label:'Twice Weekly',lessons:2},weekly:{label:'Weekly',lessons:1},monthly:{label:'Monthly Plan',lessons:4}};
-function update(){const key=document.querySelector('input[name=plan]:checked').value,d=planData[key],rate=+$('duration').value,total=d.fixed??d.lessons*rate;$('duration').disabled=key==='demo';$('demoNote').classList.toggle('hidden',key!=='demo');$('sumCourse').textContent=$('course').value;$('sumPlan').textContent=d.label;$('sumLessons').textContent=d.lessons+(d.lessons===1?' lesson':' lessons');$('sumTotal').textContent='PKR '+total.toLocaleString()}
-document.querySelectorAll('input[name=plan]').forEach(x=>x.addEventListener('change',update));$('course').addEventListener('change',update);$('duration').addEventListener('change',update);update();
+const planData={demo:{label:'Demo · 30 min',fixed:550,defaultClasses:1},daily:{label:'Daily',defaultClasses:5},twice:{label:'Twice Weekly',defaultClasses:2},weekly:{label:'Weekly',defaultClasses:1},monthly:{label:'Monthly',defaultClasses:4}};
+function update(){
+ const key=$('planSelect').value,d=planData[key],isDemo=key==='demo';
+ if(isDemo){$('classCount').value=1;$('classCount').disabled=true}else{$('classCount').disabled=false}
+ const lessons=isDemo?1:Math.max(1,parseInt($('classCount').value||d.defaultClasses,10));
+ const rate=+$('duration').value,total=isDemo?550:lessons*rate;
+ $('duration').disabled=isDemo;
+ $('demoNote').classList.toggle('hidden',!isDemo);
+ $('sumCourse').textContent=$('course').value;
+ $('sumPlan').textContent=d.label;
+ $('sumLessons').textContent=lessons+(lessons===1?' lesson':' lessons');
+ $('sumTotal').textContent='PKR '+total.toLocaleString();
+}
+$('planSelect').addEventListener('change',()=>{
+ const d=planData[$('planSelect').value];
+ $('classCount').value=d.defaultClasses;
+ update();
+});
+$('classCount').addEventListener('input',update);
+$('course').addEventListener('change',update);
+$('duration').addEventListener('change',update);
+update();
 $('convert').addEventListener('click',async()=>{const amount=+$('pkr').value,to=$('currency').value;if(!amount)return;const out=$('convertResult');out.textContent='Getting current exchange rate…';try{const r=await fetch('https://open.er-api.com/v6/latest/PKR');const j=await r.json();if(!j.rates||!j.rates[to])throw 0;const converted=amount*j.rates[to];out.innerHTML='<strong>PKR '+amount.toLocaleString()+'</strong> ≈ <strong>'+to+' '+converted.toLocaleString(undefined,{maximumFractionDigits:2})+'</strong><br><small>Rate: 1 PKR ≈ '+j.rates[to].toFixed(6)+' '+to+'</small>'}catch(e){out.textContent='Live conversion is temporarily unavailable. Please try again.'}});
 </script></body></html>
