@@ -43,7 +43,16 @@
 <aside>
 <section class="panel"><h2>2. Billing summary</h2><p class="sub">Your selection updates automatically.</p>
 <div class="summary"><div class="sumrow"><span>Course</span><b id="sumCourse"></b></div><div class="sumrow"><span>Plan</span><b id="sumPlan"></b></div><div class="sumrow"><span>Lessons</span><b id="sumLessons"></b></div><div class="sumrow total"><span>Total</span><b id="sumTotal"></b></div></div>
-<div id="discountLine" class="demo-note hidden"><strong>Monthly plan:</strong> 10% discount applied.</div><section class="panel converter"><h2>Currency Converter</h2><p class="sub">International clients can select their local currency to view an indicative equivalent of the booking price.</p>
+<div id="discountLine" class="demo-note hidden"><strong>Monthly plan:</strong> 10% discount applied.</div>
+<div class="gateway" id="gatewayTester">
+<span class="gateway-badge">Gateway Tester</span>
+<h2 style="margin-bottom:5px">Payment Gateway Test</h2>
+<p class="sub">Test the secure Rapid Gateway connection before live payment approval.</p>
+<button class="paybtn" id="pay" type="button">Test Gateway Checkout</button>
+<p class="status" id="status"></p>
+<p class="fine">Test environment only. No real payment is charged.</p>
+</div>
+<section class="panel converter"><h2>Currency Converter</h2><p class="sub">International clients can select their local currency to view an indicative equivalent of the booking price.</p>
 <div class="two"><div class="field"><label for="pkr">AMOUNT IN PKR</label><input id="pkr" type="number" min="1" value="10000"></div><div class="field"><label for="currency">CONVERT TO</label><select id="currency">
 <option value="USD">USD — US Dollar</option>
 <option value="GBP">GBP — British Pound</option>
@@ -129,41 +138,6 @@ $('learningFiles').addEventListener('change',()=>{
  $('fileList').innerHTML=files.length
    ? '<strong>Selected:</strong> '+files.map(f=>f.name).join(' · ')
    : '';
-});
-$('method').addEventListener('change',()=>{
- const isCard=$('method').value==='test-card';
- $('testCard').classList.toggle('hidden',!isCard);
- $('pay').textContent=isCard?'Run Test Payment':'Prepare Manual Verification';
-});
-$('pay').addEventListener('click',()=>{
- if(!$('name').value.trim()||!/^\\S+@\\S+\\.\\S+$/.test($('email').value)){
-   $('status').textContent='Enter the student/customer name and a valid email address first.';
-   $('status').style.color='#9b2c2c'; return;
- }
- if($('method').value==='test-card'&&!$('card').value.trim()){
-   $('status').textContent='Enter test card details only.';
-   $('status').style.color='#9b2c2c'; return;
- }
- $('status').textContent=$('method').value==='test-card'?'Test payment passed. No real charge was made.':'Booking is ready for manual payment verification.';
- $('status').style.color='#23633f';
-});
-const BOOKING_ENDPOINT='https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec';
-$('sendInquiry').addEventListener('click',async()=>{
- const status=$('inquiryStatus'),email=$('email').value.trim(),name=$('name').value.trim();
- if(!name||!/^\S+@\S+\.\S+$/.test(email)){status.textContent='Please enter the student/customer name and a valid email address.';status.style.color='#9b2c2c';return}
- const key=$('planSelect').value,isDemo=key==='demo',lessons=isDemo?1:Math.max(1,parseInt($('classCount').value||1,10));
- const rate=+$('duration').value,subtotal=isDemo?550:lessons*rate,total=key==='monthly'?subtotal*.9:subtotal;
- const payload={type:'booking',source:'Booking & Billing',studentName:name,email,parentGuardian:$('guardian').value.trim(),phone:$('phone').value.trim(),course:$('course').value,plan:planData[key].label,lessonDuration:isDemo?'30 minutes':$('duration').options[$('duration').selectedIndex].text,classes:lessons,totalPkr:Math.round(total),requirements:$('notes').value.trim(),fileNames:[...$('learningFiles').files].map(f=>f.name),driveFolderId:'17vxnxNeSz2BiUROAfGmeQq0Kc3P1DOAi'};
- status.textContent='Sending booking inquiry…';status.style.color='#6a6052';$('sendInquiry').disabled=true;
- try{
-   const r=await fetch(BOOKING_ENDPOINT,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
-   if(!r.ok) throw new Error('Submission failed');
-   status.textContent='Booking inquiry sent successfully. Learning Hub will review your request.';
-   status.style.color='#23633f';
- }catch(e){
-   status.textContent='The inquiry could not be sent. Please try again.';
-   status.style.color='#9b2c2c';
- }finally{$('sendInquiry').disabled=false}
 });
 $('convert').addEventListener('click',async()=>{const amount=+$('pkr').value,to=$('currency').value;if(!amount)return;const out=$('convertResult');out.textContent='Getting current exchange rate…';try{const r=await fetch('https://open.er-api.com/v6/latest/PKR');const j=await r.json();if(!j.rates||!j.rates[to])throw 0;const converted=amount*j.rates[to];out.innerHTML='<strong>PKR '+amount.toLocaleString()+'</strong> ≈ <strong>'+to+' '+converted.toLocaleString(undefined,{maximumFractionDigits:2})+'</strong><br><small>Rate: 1 PKR ≈ '+j.rates[to].toFixed(6)+' '+to+'</small>'}catch(e){out.textContent='Live conversion is temporarily unavailable. Please try again.'}});
 </script></body></html>
