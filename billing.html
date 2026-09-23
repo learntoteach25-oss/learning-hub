@@ -139,5 +139,38 @@ $('learningFiles').addEventListener('change',()=>{
    ? '<strong>Selected:</strong> '+files.map(f=>f.name).join(' · ')
    : '';
 });
+const BOOKING_RECEIVER='https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec';
+$('sendInquiry').addEventListener('click',async()=>{
+ const status=$('inquiryStatus'),btn=$('sendInquiry');
+ const name=$('name').value.trim(),email=$('email').value.trim();
+ if(!name||!email){status.textContent='Please enter the student/customer name and email address.';return}
+ const key=$('planSelect').value,isDemo=key==='demo';
+ const lessons=isDemo?1:Math.max(1,parseInt($('classCount').value||1,10));
+ const rate=+$('duration').value,subtotal=isDemo?550:lessons*rate,total=key==='monthly'?subtotal*0.90:subtotal;
+ const files=[...$('learningFiles').files].map(f=>f.name);
+ const payload={
+  formType:'booking',source:'billing.html',
+  name,Name:name,'Student / Customer Name':name,
+  email,Email:email,'Email Address':email,
+  guardian:$('guardian').value.trim(),'Parent / Guardian':$('guardian').value.trim(),
+  phone:$('phone').value.trim(),'Contact Number':$('phone').value.trim(),
+  course:$('course').value,'Course / Service':$('course').value,
+  plan:planData[key].label,'Booking Plan':planData[key].label,
+  duration:isDemo?'30 minutes':$('duration').options[$('duration').selectedIndex].text.split(' — ')[0],
+  classCount:lessons,'Number of Classes':lessons,
+  amountPKR:Math.round(total),'Total PKR':Math.round(total),
+  notes:$('notes').value.trim(),'Learning Requirements / Notes':$('notes').value.trim(),
+  filenames:files.join(', '),'Learning Material Filenames':files.join(', ')
+ };
+ btn.disabled=true;status.textContent='Sending booking inquiry…';
+ try{
+  await fetch(BOOKING_RECEIVER,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(payload)});
+  status.textContent='Booking inquiry sent successfully. Learning Hub will contact you to confirm the next step.';
+  status.style.color='#287044';
+ }catch(e){
+  status.textContent='The booking inquiry could not be sent. Please try again.';
+  status.style.color='#9b2c2c';
+ }finally{btn.disabled=false}
+});
 $('convert').addEventListener('click',async()=>{const amount=+$('pkr').value,to=$('currency').value;if(!amount)return;const out=$('convertResult');out.textContent='Getting current exchange rate…';try{const r=await fetch('https://open.er-api.com/v6/latest/PKR');const j=await r.json();if(!j.rates||!j.rates[to])throw 0;const converted=amount*j.rates[to];out.innerHTML='<strong>PKR '+amount.toLocaleString()+'</strong> ≈ <strong>'+to+' '+converted.toLocaleString(undefined,{maximumFractionDigits:2})+'</strong><br><small>Rate: 1 PKR ≈ '+j.rates[to].toFixed(6)+' '+to+'</small>'}catch(e){out.textContent='Live conversion is temporarily unavailable. Please try again.'}});
 </script></body></html>
