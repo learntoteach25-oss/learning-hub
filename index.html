@@ -4689,7 +4689,7 @@ body.lh-catalogue-mode.lh-detail-view #main-content>section.lh-active-page .cont
     const launcher=document.createElement('section');
     launcher.id='lhCatalogueLauncher';
     launcher.setAttribute('aria-label','Explore Learning Hub');
-    launcher.innerHTML='<div class="lh-cat-shell"><div class="lh-cat-grid"></div></div>';
+    launcher.innerHTML='<div class="lh-cat-shell"><div class="lh-cat-head"><div><h2>Explore Our Learning Areas</h2><p>Choose a learning area to explore programmes, support, resources and opportunities in a focused view.</p></div></div><div class="lh-cat-grid"></div></div>';
     hero.insertAdjacentElement('afterend',launcher);
     const grid=launcher.querySelector('.lh-cat-grid');
     order.forEach((id,index)=>{
@@ -5600,6 +5600,40 @@ body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .
 body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-card-copy strong{font-size:1.42rem!important}
 @media(max-width:1050px){body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:600px){body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-grid{grid-template-columns:1fr!important}body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-card{height:280px!important;min-height:280px!important}}
+</style>
+<style id="lh-homepage-catalogue-authority-20260923">
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #home{
+ min-height:300px!important;height:auto!important;padding:62px 0 48px!important;
+ background:linear-gradient(90deg,rgba(5,5,5,.96),rgba(5,5,5,.70)),url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1800&q=88") center/cover no-repeat!important;
+}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #home .container{min-height:0!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #home .hero-content{max-width:920px!important;padding:0!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #home .eyebrow{margin-bottom:14px!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #home .hero-title{font-size:clamp(2.7rem,5vw,5.2rem)!important;line-height:.98!important;margin:0 0 18px!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #home .hero-content>p{max-width:760px!important;margin:0 0 24px!important;font-size:1rem!important;line-height:1.65!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #home .hero-buttons{margin-top:0!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #home .hero-statbar{display:none!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher{display:block!important;padding:42px 0 68px!important;background:#0a0908!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-head{display:block!important;margin:0 0 28px!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-head::before,
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-badge,
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-quick-actions{display:none!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-head h2{display:block!important;color:#fffdf8!important;font-size:clamp(2rem,3vw,3rem)!important;margin:0 0 8px!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-head h2::before{content:"Explore Our Learning Areas"!important;font-size:inherit!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-head h2{font-size:0!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-head p{display:block!important;color:#cfc6b8!important;max-width:720px!important;margin:0!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:18px!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-card{display:block!important;height:285px!important;min-height:285px!important;border-radius:18px!important;overflow:hidden!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-card-copy small{display:none!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-card-copy strong{font-size:1.35rem!important}
+body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-card-copy span{font-size:.78rem!important}
+@media(max-width:1050px){body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:600px){
+ body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #home{padding:42px 0 36px!important}
+ body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #home .hero-title{font-size:2.65rem!important}
+ body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-grid{grid-template-columns:1fr!important}
+ body.lh-route-home.lh-catalogue-mode:not(.lh-detail-view) #lhCatalogueLauncher .lh-cat-card{height:265px!important;min-height:265px!important}
+}
 </style>
 </body>
 </html>
