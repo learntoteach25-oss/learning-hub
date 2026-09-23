@@ -84,8 +84,17 @@
 .top .standalone-back{grid-column:3!important;grid-row:1!important;align-self:center!important;justify-self:end!important}
 .top .nav{grid-column:1/4!important}
 @media(max-width:700px){.top .brandrow{width:calc(100% - 24px)!important;grid-template-columns:48px minmax(0,1fr) auto!important;column-gap:8px!important;min-height:68px!important;grid-template-rows:68px!important}.top .brandrow>img{width:44px!important;height:44px!important}.top .brandrow>.brand{padding-left:9px!important}.top .brandrow>.brand strong{font-size:21px!important;line-height:23px!important}.top .brandrow>.brand span{font-size:8px!important;line-height:10px!important}}
+</style><style id="brand-image-only-authoritative">
+/* The approved asset already contains the LH mark + Learning Hub + GLOBAL EDUCATION PLATFORM.
+   Never render a second HTML wordmark beside it. */
+.top .brandrow{width:min(1240px,calc(100% - 40px))!important;margin:0 auto!important;display:grid!important;grid-template-columns:minmax(220px,320px) 1fr auto!important;grid-template-rows:78px!important;align-items:center!important;padding:0!important}
+.top .brandrow>.brand-lockup-image{grid-column:1!important;grid-row:1!important;width:auto!important;height:64px!important;max-width:300px!important;max-height:64px!important;object-fit:contain!important;object-position:left center!important;margin:0!important;padding:0!important;border:0!important}
+.top .brandrow>.brand{display:none!important}
+.top .standalone-back{grid-column:3!important;grid-row:1!important;justify-self:end!important}
+.top .nav{grid-column:1/4!important}
+@media(max-width:700px){.top .brandrow{width:calc(100% - 24px)!important;grid-template-columns:minmax(180px,240px) 1fr auto!important;grid-template-rows:68px!important}.top .brandrow>.brand-lockup-image{height:54px!important;max-width:235px!important}}
 </style></head><body>
-<header class="top"><div class="shell brandrow"><img src="assets/learning-hub-logo.png?v=approved-20260923" alt="Learning Hub logo"><div class="brand"><strong>Learning Hub</strong><span>GLOBAL EDUCATION PLATFORM</span></div><a class="standalone-back" href="index.html">← Back to Website</a></div></header>
+<header class="top"><div class="shell brandrow"><img class="brand-lockup-image" src="assets/learning-hub-logo.png?v=approved-20260923" alt="Learning Hub — Global Education Platform"><a class="standalone-back" href="index.html">← Back to Website</a></div></header>
 <section class="hero"><div class="wrap"><div class="eyebrow">Secure booking flow</div><h1>Booking & Billing</h1><p>Select your course, lesson plan and billing details. Review everything before continuing to payment.</p></div></section>
 <main class="wrap layout">
 <section class="panel"><h2>1. Choose your learning plan</h2><p class="sub">Select the course first, then choose a lesson schedule.</p>
