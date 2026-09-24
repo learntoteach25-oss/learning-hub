@@ -600,5 +600,22 @@
 })();
 </script>
 
-<script async src="https://code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js"></script>
+<script src="https://code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js"></script>
+<script id="tidio-visibility-restore-20260924">
+(function () {
+  function restoreTidio() {
+    if (!window.tidioChatApi) return;
+    try {
+      window.tidioChatApi.show();
+      window.tidioChatApi.display(true);
+    } catch (e) {}
+  }
+  if (window.tidioChatApi) {
+    window.tidioChatApi.on('ready', restoreTidio);
+    restoreTidio();
+  } else {
+    document.addEventListener('tidioChat-ready', restoreTidio);
+  }
+})();
+</script>
 </body></html>
