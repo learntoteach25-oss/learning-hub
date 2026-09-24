@@ -541,7 +541,7 @@
 <div class="feedback-form-grid"><div><label for="lhFeedbackName">Name</label><input id="lhFeedbackName" name="name" type="text" autocomplete="name" required></div><div><label for="lhFeedbackEmail">Email</label><input id="lhFeedbackEmail" name="email" type="email" autocomplete="email" required></div></div>
 <div class="feedback-rating"><label for="lhFeedbackRating">Your Rating</label><select id="lhFeedbackRating" name="rating" required><option value="">Choose a rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Very good</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Needs improvement</option></select></div>
 <h3>Choose Feedback Type</h3><p class="feedback-help">Share your feedback in the way that feels most comfortable for you.</p>
-<label class="feedback-choice written-choice"><span class="feedback-icon">✎</span><span class="feedback-choice-body"><span class="feedback-choice-title"><input type="radio" name="feedback_format" value="Written" checked> Written Feedback</span><small>Write a few lines about your experience.</small><textarea id="lhFeedbackMessage" name="message" placeholder="Type your feedback here..." required></textarea></span></label>
+<label class="feedback-choice written-choice"><span class="feedback-icon">✎</span><span class="feedback-choice-body"><span class="feedback-choice-title"><input type="radio" name="feedback_format" value="Written" checked> Written Feedback</span><small>Write a few lines about your experience.</small><textarea id="lhFeedbackMessage" name="message" placeholder="Type your feedback here..."></textarea></span></label>
 <label class="feedback-choice audio-choice"><span class="feedback-icon">🎙</span><span class="feedback-choice-body"><span class="feedback-choice-title"><input type="radio" name="feedback_format" value="Audio"> Audio Feedback</span><small>Upload an audio message.</small><span class="feedback-upload"><input id="lhFeedbackAudio" name="feedback_audio" type="file" accept="audio/*"><span>Choose an audio file</span><button type="button" class="feedback-remove-file" data-clear-file="lhFeedbackAudio" hidden>Remove selected file</button></span></span></label>
 <label class="feedback-choice video-choice"><span class="feedback-icon">▶</span><span class="feedback-choice-body"><span class="feedback-choice-title"><input type="radio" name="feedback_format" value="Video"> Video Feedback</span><small>Upload a video message.</small><span class="feedback-upload"><input id="lhFeedbackVideo" name="feedback_video" type="file" accept="video/*"><span>Choose a video file</span><button type="button" class="feedback-remove-file" data-clear-file="lhFeedbackVideo" hidden>Remove selected file</button></span></span></label>
 <button class="btn btn-gold feedback-submit" type="submit">Submit Feedback</button><p id="feedbackStatus" role="status"></p>
@@ -555,7 +555,9 @@ document.addEventListener('change',function(e){
   if(e.target && e.target.name==='feedback_format'){
     const v=e.target.value;
     const msg=document.getElementById('lhFeedbackMessage'), audio=document.getElementById('lhFeedbackAudio'), video=document.getElementById('lhFeedbackVideo');
-    if(msg) msg.required=v==='Written'; if(audio) audio.required=v==='Audio'; if(video) video.required=v==='Video';
+    if(msg) msg.required=false;
+    if(audio) audio.required=false;
+    if(video) video.required=false;
   }
 });
 document.addEventListener('change',function(e){
