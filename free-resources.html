@@ -46,7 +46,19 @@ header{min-height:100px;padding:0 max(34px,4%);gap:24px}.site-brand img{width:15
 @media(max-width:760px){header{min-height:82px}.site-brand img{width:118px;height:72px;flex-basis:118px}.folder-open{grid-template-columns:1fr}.hero-photo{min-height:0}.hero-photo img{min-height:0}.folder-open>img{grid-column:1;grid-row:1;min-height:250px;height:250px}.folder-copy{grid-column:1;grid-row:2;padding:28px 24px}.folder-title{font-size:31px}}
 </style>
 
-</head>
+<style id="kids-normal-layout">
+/* Restore the Kids' Stories collection to the site's normal light library presentation. */
+.story-collection{background:#fffaf0!important;color:#15130f!important;border-color:#dfd1b8!important}
+.story-head h2,.story-head p,.collection-back{color:#15130f!important}
+.story-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px!important}
+.story-card{background:#fff!important;color:#15130f!important;border:1px solid #e4d8c3!important;border-radius:16px!important;box-shadow:0 8px 24px rgba(42,32,18,.05)!important;overflow:hidden!important}
+.story-cover{display:block!important;width:100%!important;height:190px!important;overflow:hidden!important;background:#f4efe5!important;border-radius:14px 14px 0 0!important}
+.story-cover iframe{position:absolute!important;left:0!important;top:0!important;width:100%!important;height:430px!important;border:0!important;pointer-events:none!important;transform-origin:top center!important}
+.story-card h3{color:#211b13!important;margin:18px 20px 10px!important;min-height:53px!important}
+.story-card>a:last-child{margin:6px 20px 20px!important;background:var(--green)!important;color:#fff!important}
+@media(max-width:900px){.story-grid{grid-template-columns:repeat(2,1fr)!important}}
+@media(max-width:650px){.story-grid{grid-template-columns:1fr!important}}
+</style></head>
 <body><header><a class="site-brand" href="./" aria-label="Learning Hub home"><img src="assets/learning-hub-logo.png" alt="Learning Hub logo" onerror="this.style.display='none'"><span><strong>LEARNING HUB</strong><small>GLOBAL EDUCATION PLATFORM</small></span></a><a class="back" href="./">← Website</a></header>
 <main><a class="library-back" href="./">← Back to Website</a>
 <section class="library-hero" aria-label="Free Learning Library — Read. Practise. Grow."><div class="hero-photo"><img src="assets/ChatGPT%20Image%20Sep%2024%2C%202026%2C%2001_12_45%20PM.png?v=20260925-banner" alt="Free Learning Library — Read. Practise. Grow. Every page is a chance to discover something new."></div></section>
