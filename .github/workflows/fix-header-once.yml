@@ -1,0 +1,58 @@
+name: Fix header alignment once
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/fix-header-once.yml']
+permissions:
+  contents: write
+jobs:
+  fix-header:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Patch header CSS only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          ids=['header-final-lockup-fix','brand-exact-lockup-v2','header-approved-final-v3','brand-reference-exact-v4','brand-lockup-authoritative']
+          for i in ids:
+              s=re.sub(r'<style id="'+re.escape(i)+r'">.*?</style>','',s,flags=re.S)
+          css='''<style id="header-authoritative-final">
+          /* Header-only authoritative layout. No page/content styles. */
+          @media(min-width:981px){
+            .top .brandrow{width:min(1240px,calc(100% - 40px))!important;margin:0 auto!important;min-height:104px!important;padding:0!important;display:grid!important;grid-template-columns:62px minmax(250px,1fr) auto!important;grid-template-rows:66px 38px!important;column-gap:12px!important;align-items:center!important}
+            .top .brandrow>img{grid-column:1!important;grid-row:1!important;width:56px!important;height:56px!important;max-width:56px!important;max-height:56px!important;margin:0!important;padding:0!important;object-fit:contain!important;justify-self:start!important;align-self:center!important}
+            .top .brandrow>.brand{grid-column:2!important;grid-row:1!important;align-self:center!important;justify-self:start!important;display:block!important;margin:0!important;padding:2px 0 2px 12px!important;border-left:1px solid rgba(217,170,73,.55)!important;min-width:0!important}
+            .top .brandrow>.brand:before{display:none!important;content:none!important}
+            .top .brandrow>.brand strong{display:block!important;margin:0!important;padding:0!important;color:#fff!important;font:700 28px/30px Georgia,"Times New Roman",serif!important;letter-spacing:0!important;white-space:nowrap!important;text-align:left!important}
+            .top .brandrow>.brand span{display:block!important;margin:4px 0 0!important;padding:0!important;color:#f0d58e!important;font:700 10px/12px Arial,sans-serif!important;letter-spacing:.02em!important;white-space:nowrap!important;text-align:left!important}
+            .top .nav{grid-column:1/4!important;grid-row:2!important;width:100%!important;margin:0!important;padding:5px 0 0!important;border-top:1px solid rgba(217,173,76,.22)!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:18px!important;white-space:nowrap!important}
+            .top .nav button,.top .nav a{font-size:12px!important;line-height:1!important;padding:7px 0!important}
+            .top .nav .book{margin-left:auto!important;padding:10px 18px!important;min-width:100px!important;text-align:center!important}
+            .detail-toolbar{top:104px!important}
+            .catalogue-page{min-height:calc(100vh - 104px)!important}
+          }
+          @media(max-width:980px){
+            .top .brandrow{width:calc(100% - 24px)!important;margin:0 auto!important;min-height:74px!important;display:grid!important;grid-template-columns:50px minmax(0,1fr)!important;grid-template-rows:74px!important;column-gap:9px!important;align-items:center!important;padding:0!important}
+            .top .brandrow>img{grid-column:1!important;grid-row:1!important;width:46px!important;height:46px!important;margin:0!important;object-fit:contain!important}
+            .top .brandrow>.brand{grid-column:2!important;grid-row:1!important;margin:0!important;padding:2px 0 2px 9px!important;border-left:1px solid rgba(217,170,73,.55)!important}
+            .top .brandrow>.brand strong{font-size:21px!important;line-height:23px!important}
+            .top .brandrow>.brand span{font-size:8px!important;line-height:10px!important;margin-top:3px!important}
+            .top .nav{display:none!important}
+            .detail-toolbar{top:74px!important}
+          }
+          </style>'''
+          s=s.replace('</head>',css+'</head>',1)
+          p.write_text(s,encoding='utf-8')
+          PY
+      - name: Commit isolated header fix
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m "Fix header alignment without changing page content"
+          git push
