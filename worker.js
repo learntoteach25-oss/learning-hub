@@ -375,7 +375,28 @@ export default {
     // ALL OTHER WEBSITE REQUESTS
     // =========================================================
 
-    return env.ASSETS.fetch(request);
+    const assetResponse = await env.ASSETS.fetch(request);
+    const contentType = assetResponse.headers.get("Content-Type") || "";
+
+    // Footer-only legal identity update. This deliberately leaves the
+    // existing page structure, layout, navigation and styling untouched.
+    if (contentType.includes("text/html")) {
+      const html = await assetResponse.text();
+      const oldFooter = '<div class="copyright">© 2026 Learning Hub. All rights reserved.</div>';
+      const newFooter = '<div class="copyright"><div>Learning Hub – Global Education Platform</div><div style="margin-top:4px">Operated by Learning Hub Global Educational Services (SMC-Private) Limited</div><div style="margin-top:4px">© 2026 Learning Hub Global Educational Services (SMC-Private) Limited. All rights reserved.</div></div>';
+
+      if (html.includes(oldFooter)) {
+        const headers = new Headers(assetResponse.headers);
+        headers.delete("content-length");
+        return new Response(html.replace(oldFooter, newFooter), {
+          status: assetResponse.status,
+          statusText: assetResponse.statusText,
+          headers
+        });
+      }
+    }
+
+    return assetResponse;
   }
 };
 
