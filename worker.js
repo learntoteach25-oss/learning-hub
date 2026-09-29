@@ -159,21 +159,6 @@ export default {
         const failureUrl =
           `${siteUrl}/?payment=failed`;
 
-        /*
-         * Rapid Gateway specifically requires:
-         *
-         * application/x-www-form-urlencoded
-         *
-         * Required:
-         * MERCHANT_ID
-         * TXNAMT
-         * BASKET_ID
-         * CUSTOMER_MOBILE_NO
-         * CUSTOMER_EMAIL_ADDRESS
-         * SUCCESS_URL
-         * FAILURE_URL
-         */
-
         const form = new URLSearchParams();
 
         form.set(
@@ -221,19 +206,10 @@ export default {
           "Learning Hub Test Payment"
         );
 
-        // PKR is the default currency.
         form.set(
           "CURRENCY_CODE",
           "PKR"
         );
-
-        // -------------------------------------------------------
-        // IMPORTANT:
-        // redirect: "manual" prevents Cloudflare from following
-        // Rapid Gateway's hosted-checkout redirect.
-        // We need the Location header so the browser can be
-        // redirected to Rapid Gateway.
-        // -------------------------------------------------------
 
         const checkoutResponse =
           await fetch(
@@ -251,10 +227,6 @@ export default {
             }
           );
 
-        // -------------------------------------------------------
-        // FIRST: CHECK HTTP REDIRECT
-        // -------------------------------------------------------
-
         const location =
           checkoutResponse.headers.get(
             "Location"
@@ -270,10 +242,6 @@ export default {
           });
         }
 
-        // -------------------------------------------------------
-        // SECOND: CHECK RESPONSE BODY
-        // -------------------------------------------------------
-
         const checkoutText =
           await checkoutResponse.text();
 
@@ -287,10 +255,6 @@ export default {
             checkoutData = null;
           }
         }
-
-        // -------------------------------------------------------
-        // POSSIBLE JSON CHECKOUT URL FIELDS
-        // -------------------------------------------------------
 
         if (checkoutData) {
           const checkoutUrl =
@@ -314,10 +278,6 @@ export default {
           }
         }
 
-        // -------------------------------------------------------
-        // THIRD: SOME GATEWAYS RETURN THE URL AS PLAIN TEXT
-        // -------------------------------------------------------
-
         const plainUrl =
           checkoutText
             .trim()
@@ -334,10 +294,6 @@ export default {
             currency: "PKR"
           });
         }
-
-        // -------------------------------------------------------
-        // ERROR — RETURN THE ACTUAL GATEWAY RESPONSE
-        // -------------------------------------------------------
 
         return json(
           {
@@ -378,12 +334,11 @@ export default {
     const assetResponse = await env.ASSETS.fetch(request);
     const contentType = assetResponse.headers.get("Content-Type") || "";
 
-    // Footer-only legal identity update. This deliberately leaves the
-    // existing page structure, layout, navigation and styling untouched.
+    // Footer-only legal identity update. Existing layout remains untouched.
     if (contentType.includes("text/html")) {
       const html = await assetResponse.text();
       const oldFooter = '<div class="copyright">© 2026 Learning Hub. All rights reserved.</div>';
-      const newFooter = '<div class="copyright"><div>Learning Hub – Global Education Platform</div><div style="margin-top:4px">Operated by Learning Hub Global Educational Services (SMC-Private) Limited</div><div style="margin-top:4px">© 2026 Learning Hub Global Educational Services (SMC-Private) Limited. All rights reserved.</div></div>';
+      const newFooter = '<div class="copyright"><div style="color:#ddd;font-weight:600">Learning Hub – Global Education Platform</div><div style="margin-top:4px;color:#aaa;font-size:13px">Operated by Learning Hub Global Educational Services (SMC-Private) Limited</div><div style="margin-top:4px;color:#888;font-size:12px">© 2026. All rights reserved.</div></div>';
 
       if (html.includes(oldFooter)) {
         const headers = new Headers(assetResponse.headers);
@@ -399,11 +354,6 @@ export default {
     return assetResponse;
   }
 };
-
-
-// =============================================================
-// JSON RESPONSE HELPER
-// =============================================================
 
 function json(
   data,
