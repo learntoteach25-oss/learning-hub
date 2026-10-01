@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Lock approved homepage and shared chrome
+      - name: Keep catalogue-only homepage and shared chrome
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -18,51 +18,45 @@ jobs:
           root=Path('.')
           home=root/'index.html'
           s=home.read_text(encoding='utf-8')
-
-          # Remove previous injected locks so this workflow stays idempotent.
           s=re.sub(r'<style id="lh-approved-chrome">.*?</style>','',s,flags=re.S|re.I)
           s=re.sub(r'<style id="lh-homepage-catalogue-lock">.*?</style>','',s,flags=re.S|re.I)
+          s=re.sub(r'<script id="lh-homepage-reset">.*?</script>','',s,flags=re.S|re.I)
 
-          # One-row premium header. No second row below it.
           chrome='''<style id="lh-approved-chrome">
           @media (min-width:981px){
             .top .brandrow{min-height:88px!important;display:flex!important;align-items:center!important;gap:18px!important;padding:0!important;grid-template:none!important}
             .top .brandrow>img{width:72px!important;height:72px!important;object-fit:contain!important;flex:0 0 72px!important}
-            .top .brand{min-width:150px!important}
-            .top .brand strong{font-size:28px!important;line-height:1!important}
-            .top .brand span{font-size:9px!important;margin-top:5px!important}
+            .top .brand{min-width:150px!important}.top .brand strong{font-size:28px!important;line-height:1!important}.top .brand span{font-size:9px!important;margin-top:5px!important}
             .top .nav{margin-left:auto!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:16px!important;flex-wrap:nowrap!important;white-space:nowrap!important;border:0!important;padding:0!important}
-            .top .nav button,.top .nav a{font-size:12px!important;padding:8px 0!important;white-space:nowrap!important}
-            .top .nav .book{margin-left:4px!important;padding:12px 20px!important;border-radius:13px!important}
+            .top .nav button,.top .nav a{font-size:12px!important;padding:8px 0!important;white-space:nowrap!important}.top .nav .book{margin-left:4px!important;padding:12px 20px!important;border-radius:13px!important}
             .detail-toolbar,.detail-view .detail-toolbar{top:88px!important}
-          }
-          </style>'''
+          }</style>'''
 
-          # The URL / is the catalogue homepage. Hero/contact/feedback/about content
-          # must never be the front screen. Catalogue remains the navigation hub.
+          # Root homepage is catalogue only. Enquiry/contact, feedback/reviews, hero
+          # and about content stay accessible only through their designated links/views.
           home_lock='''<style id="lh-homepage-catalogue-lock">
-          body.home-front .hero,body.home-front .contact-wrap,body.home-front .feedback-wrap,body.home-front .about-wrap{display:none!important}
+          body.home-front .hero,
+          body.home-front .contact-wrap,
+          body.home-front .feedback-wrap,
+          body.home-front .about-wrap,
+          body.home-front #contact,
+          body.home-front #feedback,
+          body.home-front [data-section="contact"],
+          body.home-front [data-section="feedback"]{display:none!important}
           body.home-front .areas,body.home-front .catalogue-page{display:block!important}
           </style>'''
           s=s.replace('</head>',chrome+home_lock+'</head>',1)
-
-          # Mark initial front page as catalogue. Existing section JS may remove this
-          # class when a catalogue card/nav item opens a detail view.
           s=re.sub(r'<body(?![^>]*class=)([^>]*)>',r'<body class="home-front"\1>',s,count=1,flags=re.I)
           s=re.sub(r'<body class="([^"]*)"',lambda m:'<body class="'+(('home-front '+m.group(1)).strip() if 'home-front' not in m.group(1).split() else m.group(1))+'"',s,count=1,flags=re.I)
 
-          # Force clean catalogue whenever the root URL is loaded/reloaded.
-          reset='''<script id="lh-homepage-reset">document.addEventListener('DOMContentLoaded',function(){if(location.pathname==='/'||location.pathname==='/index.html'){document.body.classList.add('home-front');document.querySelectorAll('.detail-view.active').forEach(function(x){x.classList.remove('active')});var a=document.querySelector('.areas');if(a)a.style.display='block';}});</script>'''
+          reset='''<script id="lh-homepage-reset">document.addEventListener('DOMContentLoaded',function(){if(location.pathname==='/'||location.pathname==='/index.html'){document.body.classList.add('home-front');document.querySelectorAll('.detail-view.active').forEach(function(x){x.classList.remove('active')});['.contact-wrap','.feedback-wrap','.about-wrap','#contact','#feedback'].forEach(function(sel){document.querySelectorAll(sel).forEach(function(x){x.style.display='none'})});var a=document.querySelector('.areas');if(a)a.style.display='block';}});</script>'''
           s=s.replace('</body>',reset+'</body>',1)
           home.write_text(s,encoding='utf-8')
 
-          hm=re.search(r'<header class="top".*?</header>',s,re.S|re.I)
-          fm=re.search(r'<footer class="footer".*?</footer>',s,re.S|re.I)
+          hm=re.search(r'<header class="top".*?</header>',s,re.S|re.I); fm=re.search(r'<footer class="footer".*?</footer>',s,re.S|re.I)
           if not hm or not fm: raise SystemExit('Homepage header/footer not found')
           header,footer=hm.group(0),fm.group(0)
-
-          pages=['about.html','policies.html','ownership.html','billing.html','free-resources.html','404.html']
-          for name in pages:
+          for name in ['about.html','policies.html','ownership.html','billing.html','free-resources.html','404.html']:
             p=root/name
             if not p.exists(): continue
             body=p.read_text(encoding='utf-8')
@@ -78,6 +72,6 @@ jobs:
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add index.html about.html policies.html ownership.html billing.html free-resources.html 404.html 2>/dev/null || true
           if ! git diff --cached --quiet; then
-            git commit -m 'Restore catalogue as front homepage and shared header'
+            git commit -m 'Keep enquiry and feedback off catalogue homepage'
             git push
           fi
