@@ -1,0 +1,53 @@
+name: Sync approved site chrome
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/sync-approved-site-chrome.yml']
+permissions:
+  contents: write
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use homepage header and footer on public pages
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+
+          root=Path('.')
+          home=root/'index.html'
+          s=home.read_text(encoding='utf-8')
+          hm=re.search(r'<header class="top".*?</header>',s,re.S|re.I)
+          fm=re.search(r'<footer class="footer".*?</footer>',s,re.S|re.I)
+          if not hm or not fm:
+              raise SystemExit('Homepage approved header/footer not found')
+          header=hm.group(0)
+          footer=fm.group(0)
+
+          pages=['about.html','policies.html','ownership.html','billing.html','free-resources.html','404.html']
+          changed=[]
+          for name in pages:
+              p=root/name
+              if not p.exists():
+                  continue
+              body=p.read_text(encoding='utf-8')
+              new,n1=re.subn(r'<header class="top".*?</header>',header,body,count=1,flags=re.S|re.I)
+              new,n2=re.subn(r'<footer class="footer".*?</footer>',footer,new,count=1,flags=re.S|re.I)
+              if n1 and n2 and new != body:
+                  p.write_text(new,encoding='utf-8')
+                  changed.append(name)
+          print('Synced:', ', '.join(changed) if changed else 'nothing to change')
+          PY
+      - name: Commit synchronized chrome
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add about.html policies.html ownership.html billing.html free-resources.html 404.html 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo 'No page changes needed.'
+          else
+            git commit -m 'Match public page header and footer to homepage'
+            git push
+          fi
