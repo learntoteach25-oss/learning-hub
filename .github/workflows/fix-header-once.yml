@@ -1,4 +1,4 @@
-name: Fix sitewide header and footer once
+name: Apply approved sitewide website corrections
 on:
   push:
     branches: [main]
@@ -6,50 +6,89 @@ on:
 permissions:
   contents: write
 jobs:
-  fix-site-chrome:
+  approved-site-fixes:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Apply one authoritative header and footer to HTML pages
+      - name: Apply only approved website corrections
         run: |
           python - <<'PY'
           from pathlib import Path
           import re
+
           root=Path('.')
-          index=(root/'index.html').read_text(encoding='utf-8')
-          hm=re.search(r'(<header class="top">.*?</header>)',index,re.S)
-          fm=re.search(r'(<footer class="footer">.*?</footer>)',index,re.S)
-          if not hm or not fm: raise SystemExit('Master header/footer not found')
+          ip=root/'index.html'
+          index=ip.read_text(encoding='utf-8')
+
+          # 1) Add ONLY About Us to the existing homepage navigation, immediately before Policies.
+          if '>About Us<' not in index:
+              index=index.replace('<a href="policies.html">Policies</a>', '<a href="#about">About Us</a><a href="policies.html">Policies</a>', 1)
+
+          # 2) Make the existing About/company section directly accessible and keep Ownership inside it.
+          # If an about-like section already exists, give it the stable id. Otherwise add a compact company section before Contact.
+          if 'id="about"' not in index:
+              about_match=re.search(r'<section([^>]*)(?:class="[^"]*(?:about|company)[^"]*"[^>]*)>', index, re.I)
+              if about_match:
+                  tag=about_match.group(0)
+                  index=index.replace(tag, tag[:-1]+' id="about">', 1)
+              else:
+                  ownership='''<section id="about" style="padding:56px 0;background:#fbf8f1"><div class="shell"><div class="section-title"><div class="eyebrow" style="color:#9a6f20">About Learning Hub</div><h2>Learning Hub – Global Education Platform</h2></div><div style="max-width:900px;margin:0 auto;background:#fff;border:1px solid #e5d8bf;border-radius:20px;padding:26px"><p>Learning Hub – Global Education Platform is operated by <strong>Learning Hub Global Educational Services (SMC-Private) Limited</strong>, a company incorporated in Pakistan. Our platform brings together academic support, learning resources, and global education opportunities to help learners achieve their goals.</p><h3 style="font-family:Georgia,serif;margin-top:24px">Ownership Statement</h3><p><strong>Legal Entity:</strong> Learning Hub Global Educational Services (SMC-Private) Limited<br><strong>Company Unique Identification Number (CUIN):</strong> 0358546<br><strong>Registered Office:</strong> Sindh, Pakistan<br><strong>Website:</strong> learninghubtutoring.com</p></div></div></section>'''
+                  marker='<div class="contact-wrap"'
+                  if marker in index:
+                      index=index.replace(marker, ownership+marker, 1)
+                  else:
+                      index=index.replace('<footer', ownership+'<footer', 1)
+
+          # If About exists but Ownership text is not inside it, insert ownership block before that section closes.
+          am=re.search(r'(<section[^>]*id="about"[^>]*>)(.*?)(</section>)', index, re.S|re.I)
+          if am and 'Ownership Statement' not in am.group(2):
+              own='''<div style="margin-top:24px"><h3 style="font-family:Georgia,serif">Ownership Statement</h3><p><strong>Learning Hub – Global Education Platform</strong> is owned and operated by <strong>Learning Hub Global Educational Services (SMC-Private) Limited</strong>, a company incorporated in Pakistan.</p><p><strong>Company Unique Identification Number (CUIN):</strong> 0358546 &nbsp; | &nbsp; <strong>Registered Office:</strong> Sindh, Pakistan</p></div>'''
+              replacement=am.group(1)+am.group(2)+own+am.group(3)
+              index=index[:am.start()]+replacement+index[am.end():]
+
+          # 3) Footer address: exact same typography/color/line-height as adjacent footer links; text unchanged.
+          index=index.replace('.footer small{color:#aaa}', '.footer small{color:#ddd;font-size:14px;line-height:1.45;font-family:Arial,Helvetica,sans-serif;font-weight:400}')
+          # Add final narrow override if later CSS competes.
+          if 'id="footer-address-match"' not in index:
+              index=index.replace('</head>','<style id="footer-address-match">.footer .footer-contact-group small{font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.45!important;font-weight:400!important;color:#ddd!important}</style></head>',1)
+
+          ip.write_text(index,encoding='utf-8')
+
+          # Use the now-correct homepage header/footer as the literal master for every public root HTML subpage.
+          index=ip.read_text(encoding='utf-8')
+          hm=re.search(r'(<header class="top">.*?</header>)',index,re.S|re.I)
+          fm=re.search(r'(<footer class="footer">.*?</footer>)',index,re.S|re.I)
+          if not hm or not fm: raise SystemExit('Homepage master header/footer not found')
           header,footer=hm.group(1),fm.group(1)
-          css='''<style id="sitewide-chrome-authoritative">
-          .top{position:sticky!important;top:0!important;z-index:50!important;background:#050505!important;border-top:0!important;border-bottom:1px solid rgba(201,164,92,.25)!important}
-          .top .brandrow{width:min(1240px,calc(100% - 32px))!important;margin:0 auto!important;min-height:94px!important;height:94px!important;padding:0!important;display:grid!important;grid-template-columns:180px 1fr auto!important;grid-template-rows:54px 40px!important;column-gap:16px!important;align-items:center!important}
-          .top .brandrow>img{grid-column:1!important;grid-row:1/3!important;width:150px!important;height:88px!important;max-width:150px!important;max-height:88px!important;object-fit:contain!important;object-position:left center!important;margin:0!important;padding:0!important;align-self:center!important;justify-self:start!important}
-          .top .brandrow>.brand{display:none!important}
-          .top .nav{grid-column:2/4!important;grid-row:2!important;width:100%!important;margin:0!important;padding:6px 0 0!important;border-top:1px solid rgba(217,173,76,.22)!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:20px!important;white-space:nowrap!important}
-          .top .nav button,.top .nav a{border:0!important;background:none;color:#fff!important;font-weight:700!important;font-size:12px!important;line-height:1!important;cursor:pointer!important;padding:7px 0!important;white-space:nowrap!important;text-decoration:none!important}
-          .top .nav .book{margin-left:auto!important;background:linear-gradient(135deg,#f1d27e,#c99d43)!important;color:#111!important;padding:10px 20px!important;border-radius:12px!important;min-width:100px!important;text-align:center!important}
-          .footer{background:#050505!important;color:#fff!important;padding:54px 0 22px!important;border-top:1px solid rgba(201,164,92,.28)!important}
-          .footer>.shell{width:min(1240px,calc(100% - 32px))!important;margin:auto!important}.footer .footer-grid{display:grid!important;grid-template-columns:1.25fr 1fr 1fr 1.15fr!important;gap:48px!important;align-items:start!important}.footer .footer-grid>div{min-width:0!important;text-align:left!important}.footer .footer-brand-lockup{display:flex!important;align-items:flex-start!important;justify-content:flex-start!important;padding-top:18px!important}.footer .footer-brand-lockup .logo{width:auto!important;height:132px!important;max-width:100%!important;object-fit:contain!important;object-position:left top!important;margin:0!important}.footer h3{font:700 18px Georgia,serif!important;color:#f0d58e!important;margin:0 0 14px!important;line-height:1.2!important}.footer a,.footer button{display:block!important;color:#ddd!important;margin:0 0 8px!important;font-size:14px!important;line-height:1.45!important;text-align:left!important;text-decoration:none!important}.footer-contact-group{margin:0 0 14px!important}.footer-contact-group small{display:block!important;margin:4px 0 0!important;font-size:14px!important;line-height:1.45!important;color:#aaa!important}.footer-legal-links{border-top:1px solid #29251f!important;padding-top:12px!important}.footer-contact-actions{margin-top:12px!important}.footer .copyright{text-align:center!important;border-top:1px solid #29251f!important;margin-top:36px!important;padding-top:20px!important;color:#aaa!important}
-          @media(max-width:980px){.top .brandrow{width:calc(100% - 24px)!important;height:74px!important;min-height:74px!important;display:flex!important}.top .brandrow>img{width:125px!important;height:68px!important;max-width:125px!important}.top .nav{display:none!important}.footer .footer-grid{grid-template-columns:1fr 1fr!important;gap:34px 42px!important}.footer .footer-brand-lockup{padding-top:0!important}}
-          @media(max-width:640px){.footer .footer-grid{grid-template-columns:1fr!important;gap:28px!important}.footer .footer-brand-lockup .logo{height:110px!important}}
-          </style>'''
+
+          # Extract homepage header/footer-relevant CSS rather than imposing alternate geometry.
+          # Remove the old authoritative override from subpages; preserve their page-specific content/styles.
           for p in root.glob('*.html'):
               if p.name=='index.html': continue
               s=p.read_text(encoding='utf-8')
               if '<header' not in s or '<footer' not in s: continue
               s=re.sub(r'<header\b.*?</header>',header,s,count=1,flags=re.S|re.I)
               s=re.sub(r'<footer\b.*?</footer>',footer,s,count=1,flags=re.S|re.I)
-              s=re.sub(r'<style id="sitewide-chrome-authoritative">.*?</style>','',s,flags=re.S)
-              s=s.replace('</head>',css+'</head>',1)
+              s=re.sub(r'<style id="sitewide-chrome-authoritative">.*?</style>','',s,flags=re.S|re.I)
+              # Neutralize standalone page header rules by appending homepage geometry only.
+              master_css='''<style id="homepage-chrome-master">
+              .top{position:sticky!important;top:0!important;z-index:50!important;background:#050505!important;border-bottom:1px solid rgba(201,164,92,.25)!important}
+              .top .brandrow{width:min(1240px,calc(100% - 32px))!important;margin:auto!important;min-height:116px!important;height:auto!important;display:grid!important;grid-template-columns:82px 1fr auto!important;grid-template-rows:66px 42px!important;column-gap:16px!important;align-items:center!important;padding:4px 0!important}
+              .top .brandrow>img{width:76px!important;height:76px!important;max-width:none!important;max-height:none!important;object-fit:contain!important;grid-column:1!important;grid-row:1/3!important;align-self:center!important;margin:0!important;padding:0!important}
+              .top .brandrow>.brand{display:block!important;grid-column:2!important;grid-row:1!important;align-self:center!important;min-width:0!important}.top .brand strong{display:block!important;color:#fff!important;font-family:Georgia,serif!important;font-size:32px!important;line-height:1!important}.top .brand span{display:block!important;color:#f0d58e!important;font-size:11px!important;font-weight:800!important;letter-spacing:.08em!important;margin-top:6px!important}
+              .top .nav{grid-column:2/4!important;grid-row:2!important;margin:0!important;width:100%!important;display:flex!important;align-items:center!important;justify-content:flex-start!important;gap:20px!important;white-space:nowrap!important;border-top:1px solid rgba(217,173,76,.22)!important;padding-top:7px!important}.top .nav button,.top .nav a{border:0!important;background:none!important;color:#fff!important;font-weight:700!important;font-size:12px!important;cursor:pointer!important;padding:7px 0!important;white-space:nowrap!important;text-decoration:none!important}.top .nav .book{margin-left:auto!important;background:linear-gradient(135deg,#f1d27e,#c99d43)!important;color:#111!important;padding:10px 20px!important;border-radius:12px!important}
+              .footer .footer-contact-group small{font-family:Arial,Helvetica,sans-serif!important;font-size:14px!important;line-height:1.45!important;font-weight:400!important;color:#ddd!important}
+              @media(max-width:980px){.top .brandrow{width:min(1180px,calc(100% - 36px))!important;min-height:74px!important;height:auto!important;display:flex!important;padding:0!important}.top .brandrow>img{width:62px!important;height:62px!important}.top .nav{display:none!important}}
+              </style>'''
+              s=re.sub(r'<style id="homepage-chrome-master">.*?</style>','',s,flags=re.S|re.I)
+              s=s.replace('</head>',master_css+'</head>',1)
               p.write_text(s,encoding='utf-8')
           PY
-      - name: Commit sitewide chrome fix
+      - name: Commit approved corrections
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add '*.html'
           git diff --cached --quiet && exit 0
-          git commit -m "Standardize header and footer across website pages"
+          git commit -m "Apply approved About Us and sitewide chrome corrections"
           git push
-# Re-run approved homepage chrome sync across subpages — 2026-10-01
