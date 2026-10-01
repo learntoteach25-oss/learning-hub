@@ -6,6 +6,14 @@
   const views=()=>qsa('.detail-view');
   function normalize(v){return String(v||'').toLowerCase().trim().replace(/\s+/g,'-').replace(/&/g,'and')}
   function findView(name){const n=normalize(name);return views().find(v=>normalize(v.dataset.view||v.id)===n)||null}
+  function normalizeGlobalChrome(){
+    qsa('footer a').forEach(a=>{
+      const label=(a.textContent||'').trim().toLowerCase();
+      if(label==='ownership statement'){a.remove();return}
+      if(label==='contact & enquire')a.setAttribute('href','contact.html#enquiry-form');
+      if(label==='support / complaints')a.setAttribute('href','contact.html#support-form');
+    });
+  }
   function showCatalogue(push=true){
     if(!root){location.href='/';return}
     document.body.classList.add('lh-catalogue-home');
@@ -25,6 +33,7 @@
     scrollTo({top:0,behavior:'smooth'});
   }
   function initial(){
+    normalizeGlobalChrome();
     if(!root)return;
     document.body.classList.add('lh-catalogue-home');
     const requested=new URLSearchParams(location.search).get('view');
