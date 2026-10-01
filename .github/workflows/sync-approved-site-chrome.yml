@@ -1,4 +1,4 @@
-name: Sync approved site chrome
+name: Restore approved Learning Hub layout
 on:
   push:
     branches: [main]
@@ -6,50 +6,103 @@ on:
 permissions:
   contents: write
 jobs:
-  sync:
+  restore:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Keep catalogue homepage clean and polish feedback
+      - name: Restore approved catalogue home, header/footer and Tidio
         run: |
           python - <<'PY'
           from pathlib import Path
           import re
-          root=Path('.'); home=root/'index.html'; s=home.read_text(encoding='utf-8')
-          for ident in ['lh-approved-chrome','lh-homepage-catalogue-lock','lh-feedback-polish']:
-            s=re.sub(r'<style id="'+ident+r'">.*?</style>','',s,flags=re.S|re.I)
-          s=re.sub(r'<script id="lh-homepage-reset">.*?</script>','',s,flags=re.S|re.I)
+          root=Path('.')
+          home=root/'index.html'
+          s=home.read_text(encoding='utf-8')
 
-          chrome='''<style id="lh-approved-chrome">@media (min-width:981px){.top .brandrow{min-height:88px!important;display:flex!important;align-items:center!important;gap:18px!important;padding:0!important;grid-template:none!important}.top .brandrow>img{width:72px!important;height:72px!important;object-fit:contain!important;flex:0 0 72px!important}.top .brand{min-width:150px!important}.top .brand strong{font-size:28px!important;line-height:1!important}.top .brand span{font-size:9px!important;margin-top:5px!important}.top .nav{margin-left:auto!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:16px!important;flex-wrap:nowrap!important;white-space:nowrap!important;border:0!important;padding:0!important}.top .nav button,.top .nav a{font-size:12px!important;padding:8px 0!important;white-space:nowrap!important}.top .nav .book{margin-left:4px!important;padding:12px 20px!important;border-radius:13px!important}}</style>'''
-          lock='''<style id="lh-homepage-catalogue-lock">body.home-front .hero,body.home-front .contact-wrap,body.home-front .feedback-wrap,body.home-front .feedback-section,body.home-front .feedback-page,body.home-front .about-wrap,body.home-front #contact,body.home-front #feedback,body.home-front form[action*="feedback" i]{display:none!important}body.home-front .areas,body.home-front .catalogue-page{display:block!important}</style>'''
-          polish='''<style id="lh-feedback-polish">
-          .feedback-wrap,.feedback-section,.feedback-page{max-width:1120px!important;margin:42px auto!important;padding:0 24px!important}
-          .feedback-wrap form,.feedback-section form,.feedback-page form{max-width:820px!important;margin:28px auto!important;padding:34px!important;background:#fff!important;border:1px solid #e6d2a5!important;border-radius:22px!important;box-shadow:0 14px 38px rgba(0,0,0,.07)!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:20px 24px!important}
-          .feedback-wrap form label,.feedback-section form label,.feedback-page form label{font-weight:700!important;margin:0 0 7px!important;display:block!important}
-          .feedback-wrap form input,.feedback-wrap form select,.feedback-wrap form textarea,.feedback-section form input,.feedback-section form select,.feedback-section form textarea,.feedback-page form input,.feedback-page form select,.feedback-page form textarea{width:100%!important;box-sizing:border-box!important;border:1px solid #d8c9ac!important;border-radius:10px!important;padding:12px 14px!important;font:inherit!important;background:#fff!important}
-          .feedback-wrap form textarea,.feedback-section form textarea,.feedback-page form textarea{min-height:130px!important;resize:vertical!important}
-          .feedback-wrap form button,.feedback-section form button,.feedback-page form button{min-height:46px!important;border-radius:12px!important;font-weight:700!important}
-          @media(max-width:700px){.feedback-wrap form,.feedback-section form,.feedback-page form{grid-template-columns:1fr!important;padding:22px!important}}
+          # Remove repair blocks from earlier iterations.
+          for ident in ['lh-approved-chrome','lh-homepage-catalogue-lock','lh-feedback-polish','lh-final-home-lock','lh-tidio-restore']:
+              s=re.sub(r'<style id="'+ident+r'">.*?</style>','',s,flags=re.S|re.I)
+          for ident in ['lh-homepage-reset','lh-final-home-reset']:
+              s=re.sub(r'<script id="'+ident+r'">.*?</script>','',s,flags=re.S|re.I)
+
+          # One balanced desktop header row: approved logo, navigation and Book Now.
+          chrome='''<style id="lh-approved-chrome">
+          @media(min-width:981px){
+            .top{min-height:96px!important}
+            .top .brandrow{height:96px!important;min-height:96px!important;display:flex!important;align-items:center!important;padding:0!important;gap:20px!important;grid-template:none!important}
+            .top .brandrow>img{display:block!important;width:92px!important;height:82px!important;object-fit:contain!important;flex:0 0 92px!important;margin:0!important}
+            .top .brand{display:none!important}
+            .top .nav{display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:18px!important;flex-wrap:nowrap!important;white-space:nowrap!important;margin-left:auto!important;padding:0!important;border:0!important;width:auto!important}
+            .top .nav button,.top .nav a{font-size:12px!important;line-height:1!important;padding:10px 0!important;white-space:nowrap!important}
+            .top .nav .book{padding:14px 22px!important;border-radius:13px!important;margin-left:2px!important}
+            .detail-toolbar,.detail-view .detail-toolbar{top:96px!important}
+          }
           </style>'''
-          s=s.replace('</head>',chrome+lock+polish+'</head>',1)
-          s=re.sub(r'<body(?![^>]*class=)([^>]*)>',r'<body class="home-front"\1>',s,count=1,flags=re.I)
-          s=re.sub(r'<body class="([^"]*)"',lambda m:'<body class="'+(('home-front '+m.group(1)).strip() if 'home-front' not in m.group(1).split() else m.group(1))+'"',s,count=1,flags=re.I)
-          reset='''<script id="lh-homepage-reset">document.addEventListener('DOMContentLoaded',function(){var root=location.pathname==='/'||location.pathname==='/index.html';if(root&&!location.hash){document.body.classList.add('home-front');document.querySelectorAll('.detail-view.active').forEach(x=>x.classList.remove('active'));document.querySelectorAll('section,div').forEach(function(x){var t=(x.querySelector('h1,h2,h3')||{}).textContent||'';if(/feedback means a lot|feedback & reviews|send an enquiry|general enquiries/i.test(t)){var box=x.closest('section')||x;box.style.display='none'}});var a=document.querySelector('.areas');if(a)a.style.display='block';}else if(location.hash){document.body.classList.remove('home-front');}});</script>'''
-          s=s.replace('</body>',reset+'</body>',1); home.write_text(s,encoding='utf-8')
-          hm=re.search(r'<header class="top".*?</header>',s,re.S|re.I); fm=re.search(r'<footer class="footer".*?</footer>',s,re.S|re.I)
-          if not hm or not fm: raise SystemExit('Homepage header/footer not found')
+
+          # Root URL is ALWAYS the approved catalogue. No About, Contact or Feedback body on entry.
+          lock='''<style id="lh-final-home-lock">
+          body.lh-root-home .hero,body.lh-root-home .contact-wrap,body.lh-root-home .feedback-wrap,body.lh-root-home .feedback-section,body.lh-root-home .feedback-page,body.lh-root-home .about-wrap,body.lh-root-home #contact,body.lh-root-home #feedback,body.lh-root-home #about,body.lh-root-home .detail-view{display:none!important}
+          body.lh-root-home .areas,body.lh-root-home .catalogue-page{display:block!important;visibility:visible!important}
+          </style>'''
+          s=s.replace('</head>',chrome+lock+'</head>',1)
+
+          # Proven native Tidio embed. Remove duplicates first.
+          s=re.sub(r'<!-- TIDIO LIVE CHAT -->\s*<script[^>]+code\.tidio\.co/7aoz1jeb789oh2rtkwr2llropicgqdar\.js[^>]*></script>','',s,flags=re.I)
+          s=re.sub(r'<script[^>]+code\.tidio\.co/7aoz1jeb789oh2rtkwr2llropicgqdar\.js[^>]*></script>','',s,flags=re.I)
+          tidio='''<!-- TIDIO LIVE CHAT --><script async src="https://code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js"></script>'''
+
+          reset='''<script id="lh-final-home-reset">
+          (function(){
+            function showCatalogue(){
+              if(location.pathname!=='/' && location.pathname!=='/index.html') return;
+              document.body.classList.add('lh-root-home');
+              document.querySelectorAll('.detail-view').forEach(function(v){v.classList.remove('active');v.style.display='none'});
+              ['.hero','.contact-wrap','.feedback-wrap','.feedback-section','.feedback-page','.about-wrap','#contact','#feedback','#about'].forEach(function(sel){document.querySelectorAll(sel).forEach(function(el){el.style.display='none'})});
+              document.querySelectorAll('.areas,.catalogue-page').forEach(function(el){el.style.display='block';el.style.visibility='visible'});
+              if(location.hash) history.replaceState(null,'',location.pathname);
+              window.scrollTo(0,0);
+            }
+            document.addEventListener('DOMContentLoaded',showCatalogue);
+            window.addEventListener('pageshow',showCatalogue);
+            // Keep only footer WhatsApp; Tidio is the sole floating chat widget.
+            document.addEventListener('DOMContentLoaded',function(){
+              document.querySelectorAll('a[href*="wa.me"],a[href*="whatsapp.com"]').forEach(function(a){if(!a.closest('.footer')){a.style.display='none'}});
+            });
+          })();
+          </script>'''
+          s=s.replace('</body>',reset+tidio+'</body>',1)
+          home.write_text(s,encoding='utf-8')
+
+          hm=re.search(r'<header class="top".*?</header>',s,re.S|re.I)
+          fm=re.search(r'<footer class="footer".*?</footer>',s,re.S|re.I)
+          if not hm or not fm: raise SystemExit('Master homepage header/footer not found')
           header,footer=hm.group(0),fm.group(0)
-          for name in ['about.html','policies.html','ownership.html','billing.html','free-resources.html','404.html']:
-            p=root/name
-            if not p.exists(): continue
-            b=p.read_text(encoding='utf-8')
-            b=re.sub(r'<style id="lh-approved-chrome">.*?</style>','',b,flags=re.S|re.I)
-            b,_=re.subn(r'<header class="top".*?</header>',header,b,count=1,flags=re.S|re.I); b,_=re.subn(r'<footer class="footer".*?</footer>',footer,b,count=1,flags=re.S|re.I)
-            b=b.replace('</head>',chrome+'</head>',1); p.write_text(b,encoding='utf-8')
+
+          pages=['about.html','policies.html','ownership.html','billing.html','free-resources.html','404.html']
+          for name in pages:
+              p=root/name
+              if not p.exists(): continue
+              b=p.read_text(encoding='utf-8')
+              for ident in ['lh-approved-chrome','lh-final-home-lock']:
+                  b=re.sub(r'<style id="'+ident+r'">.*?</style>','',b,flags=re.S|re.I)
+              b=re.sub(r'<script id="lh-final-home-reset">.*?</script>','',b,flags=re.S|re.I)
+              b=re.sub(r'<!-- TIDIO LIVE CHAT -->\s*<script[^>]+code\.tidio\.co/7aoz1jeb789oh2rtkwr2llropicgqdar\.js[^>]*></script>','',b,flags=re.I)
+              b=re.sub(r'<script[^>]+code\.tidio\.co/7aoz1jeb789oh2rtkwr2llropicgqdar\.js[^>]*></script>','',b,flags=re.I)
+              b,_=re.subn(r'<header class="top".*?</header>',header,b,count=1,flags=re.S|re.I)
+              b,_=re.subn(r'<footer class="footer".*?</footer>',footer,b,count=1,flags=re.S|re.I)
+              b=b.replace('</head>',chrome+'</head>',1)
+              # Native Tidio on every page. Hide non-footer WhatsApp duplicates.
+              subscript='''<script id="lh-chat-cleanup">document.addEventListener('DOMContentLoaded',function(){document.querySelectorAll('a[href*="wa.me"],a[href*="whatsapp.com"]').forEach(function(a){if(!a.closest('.footer'))a.style.display='none'});});</script>'''
+              b=re.sub(r'<script id="lh-chat-cleanup">.*?</script>','',b,flags=re.S|re.I)
+              b=b.replace('</body>',subscript+tidio+'</body>',1)
+              p.write_text(b,encoding='utf-8')
           PY
-      - name: Commit synchronized site
+      - name: Commit restored site
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add index.html about.html policies.html ownership.html billing.html free-resources.html 404.html 2>/dev/null || true
-          if ! git diff --cached --quiet; then git commit -m 'Remove feedback from homepage and polish feedback form'; git push; fi
+          if ! git diff --cached --quiet; then
+            git commit -m 'Restore catalogue homepage shared chrome and Tidio'
+            git push
+          fi
