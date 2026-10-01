@@ -1,4 +1,4 @@
-name: Enforce professional site chrome and chat UI
+name: Consolidate Learning Hub final site
 on:
   push:
     branches: [main]
@@ -6,64 +6,61 @@ on:
 permissions:
   contents: write
 jobs:
-  fix:
+  consolidate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Clean duplicate chat controls and polish WhatsApp
+      - name: Remove accumulated overrides and enforce one site system
         run: |
           python - <<'PY'
           from pathlib import Path
           import re
 
           pages=['index.html','about.html','policies.html','ownership.html','billing.html','free-resources.html','404.html']
-          css='''<style id="lh-chat-ui-authoritative">
-          /* One clean WhatsApp action in the footer; Tidio remains the only floating chat. */
-          .footer .whatsapp{
-            display:inline-flex!important;align-items:center!important;gap:11px!important;
-            width:auto!important;max-width:260px!important;min-height:54px!important;
-            margin:16px 0 0!important;padding:9px 14px!important;
-            background:#fff!important;color:#111!important;border:1px solid #d9aa49!important;
-            border-radius:13px!important;box-shadow:none!important;text-decoration:none!important;
-            font-family:Arial,Helvetica,sans-serif!important;
-          }
-          .footer .whatsapp::before{display:none!important;content:none!important}
-          .footer .whatsapp .wa-mark,.footer .whatsapp .wa-icon{
-            display:grid!important;place-items:center!important;width:34px!important;height:34px!important;
-            flex:0 0 34px!important;border-radius:50%!important;background:#25D366!important;color:#fff!important;
-            font:800 10px/1 Arial,sans-serif!important;
-          }
-          .footer .whatsapp strong{display:block!important;margin:0!important;color:#111!important;font:700 13px/1.15 Arial,sans-serif!important}
-          .footer .whatsapp small{display:block!important;margin:3px 0 0!important;color:#6b6258!important;font:400 10px/1.2 Arial,sans-serif!important}
-          .floating-chat,.footer-ai-chat{display:none!important}
-          /* Separate Tidio from the footer WhatsApp control and keep the viewport tidy. */
-          #tidio-chat-iframe{left:14px!important;right:auto!important}
-          @media(max-width:640px){
-            .footer .whatsapp{max-width:235px!important;min-height:50px!important;padding:8px 12px!important}
-            #tidio-chat-iframe{left:8px!important;right:auto!important}
-          }
-          </style>'''
+          header='''<header class="top"><div class="shell brandrow"><img src="assets/learning-hub-logo.png?v=approved-20260923" alt="Learning Hub"><nav class="nav" aria-label="Primary navigation"><a href="/?view=programmes">Programmes</a><a href="/?view=quran">Quran &amp; Islamic Studies</a><a href="about.html">About Us</a><a href="policies.html">Policies</a><a class="book" href="billing.html">Book Now</a></nav><button class="mobile-menu-button" type="button" aria-label="Open menu">☰</button></div><nav class="mobile-nav" aria-label="Mobile navigation"><a href="/">Home</a><a href="/?view=programmes">Programmes</a><a href="/?view=quran">Quran &amp; Islamic Studies</a><a href="about.html">About Us</a><a href="policies.html">Policies</a><a class="book" href="billing.html">Book Now</a></nav></header>'''
+          footer='''<footer class="footer"><div class="shell"><div class="footer-grid"><div><a href="/" aria-label="Learning Hub home"><img class="logo" src="assets/learning-hub-logo.png?v=approved-20260923" alt="Learning Hub"></a></div><div><h3>Learning</h3><a href="/?view=programmes">Programmes</a><a href="/?view=quran">Quran &amp; Islamic Studies</a><a href="/?view=boards">International Boards</a><a href="/?view=exams">International Exams</a><a href="/?view=support">Learning Support</a></div><div><h3>Resources</h3><a href="free-resources.html">Free Learning Library</a><a href="/?view=resources">Premium Digital Resources</a><a href="/?view=feedback">Feedback &amp; Reviews</a><a href="/?view=teach">Teach with Us</a></div><div><h3>Contact &amp; Legal</h3><a href="/?view=contact">Contact &amp; Enquire</a><a href="/?view=contact">Support / Complaints</a><small>Karachi, Pakistan — 75300</small><a href="policies.html">Terms &amp; Conditions</a><a href="policies.html">Refund, Cancellation &amp; Service Delivery</a><a href="policies.html">Privacy Policy</a><a href="ownership.html">Ownership Statement</a><a class="whatsapp" href="https://wa.me/" aria-label="Chat on WhatsApp"><span class="wa-mark">WA</span><span><strong>Chat on WhatsApp</strong><small>Quick enquiries &amp; support</small></span></a></div></div><div class="copyright"><strong>Learning Hub – Global Education Platform</strong><br><small>Operated by Learning Hub Global Educational Services (SMC-Private) Limited</small><br><small>© 2026. All rights reserved.</small></div></div></footer>'''
 
           for name in pages:
             p=Path(name)
-            if not p.exists():
-              continue
+            if not p.exists(): continue
             s=p.read_text(encoding='utf-8')
-            s=re.sub(r'<style id="lh-chat-ui-authoritative">.*?</style>','',s,flags=re.S|re.I)
-            # Remove any legacy custom floating WhatsApp/chat anchors; Tidio is retained.
+            # Keep the original base stylesheet/content, remove the accumulated named patch styles.
+            s=re.sub(r'<style\s+id=["\'][^"\']+["\'][^>]*>.*?</style>','',s,flags=re.S|re.I)
+            # Remove prior site-final links/scripts before adding one copy.
+            s=re.sub(r'<link[^>]+site-final\.css[^>]*>','',s,flags=re.I)
+            s=re.sub(r'<script[^>]+site-final\.js[^>]*>\s*</script>','',s,flags=re.I)
+            # Remove obsolete forced-home/reset scripts only; preserve business/form/Tidio scripts.
+            s=re.sub(r'<script\s+id=["\'](?:lh-final-home-reset|lh-entry-router|lh-homepage-reset)["\'][^>]*>.*?</script>','',s,flags=re.S|re.I)
+            # Remove legacy custom floating chat controls; Tidio embed itself is untouched.
             s=re.sub(r'<a\b[^>]*class=["\'][^"\']*floating-chat[^"\']*["\'][^>]*>.*?</a>','',s,flags=re.S|re.I)
-            # Remove legacy footer AI-chat buttons that duplicate Tidio.
             s=re.sub(r'<button\b[^>]*class=["\'][^"\']*footer-ai-chat[^"\']*["\'][^>]*>.*?</button>','',s,flags=re.S|re.I)
+            # Replace any existing shared chrome with the one authoritative version.
+            s,n=re.subn(r'<header\b[^>]*class=["\'][^"\']*top[^"\']*["\'][^>]*>.*?</header>',header,s,count=1,flags=re.S|re.I)
+            if not n:
+              s=s.replace('<body>','<body>'+header,1)
+            s,n=re.subn(r'<footer\b[^>]*class=["\'][^"\']*footer[^"\']*["\'][^>]*>.*?</footer>',footer,s,count=1,flags=re.S|re.I)
+            if not n:
+              s=s.replace('</body>',footer+'</body>',1)
+            # Load one final stylesheet after page/base styles.
             if '</head>' in s:
-              s=s.replace('</head>',css+'</head>',1)
+              s=s.replace('</head>','<link rel="stylesheet" href="assets/site-final.css?v=20261002"></head>',1)
+            # Root homepage: catalogue only; designated content remains available through links/views.
+            if name=='index.html':
+              s=re.sub(r'<body([^>]*)>',lambda m:'<body'+m.group(1)+' class="lh-catalogue-home">' if 'class=' not in m.group(1) else re.sub(r'class=["\']([^"\']*)["\']',lambda x:'class="'+x.group(1)+' lh-catalogue-home"',m.group(0),count=1),s,count=1,flags=re.I)
+              s=s.replace('</body>','<script src="assets/site-final.js?v=20261002"></script></body>',1)
+            elif name=='billing.html':
+              s=re.sub(r'<body([^>]*)>',lambda m:'<body'+m.group(1)+' class="lh-billing">' if 'class=' not in m.group(1) else re.sub(r'class=["\']([^"\']*)["\']',lambda x:'class="'+x.group(1)+' lh-billing"',m.group(0),count=1),s,count=1,flags=re.I)
+              s=s.replace('</body>','<script src="assets/site-final.js?v=20261002"></script></body>',1)
+            else:
+              s=s.replace('</body>','<script src="assets/site-final.js?v=20261002"></script></body>',1)
             p.write_text(s,encoding='utf-8')
           PY
-      - name: Commit professional chat UI
+      - name: Commit consolidated source
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add index.html about.html policies.html ownership.html billing.html free-resources.html 404.html 2>/dev/null || true
+          git add index.html about.html policies.html ownership.html billing.html free-resources.html 404.html
           if ! git diff --cached --quiet; then
-            git commit -m 'Polish WhatsApp and Tidio presentation site-wide'
+            git commit -m 'Consolidate header footer homepage routing and forms'
             git push
           fi
