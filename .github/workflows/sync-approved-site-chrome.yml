@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Use homepage header and footer on public pages
+      - name: Lock one-line approved header and sync public pages
         run: |
           python - <<'PY'
           from pathlib import Path
@@ -19,35 +19,64 @@ jobs:
           root=Path('.')
           home=root/'index.html'
           s=home.read_text(encoding='utf-8')
+
+          # Remove the later desktop override that turned the approved one-line header
+          # into a two-row/grid header. Keep the original homepage flex header rules.
+          bad=r'@media\(min-width:981px\)\{\.top \.brandrow\{min-height:116px!important;.*?\.detail-toolbar\{top:116px!important\}\}'
+          s,n=re.subn(bad,'',s,count=1,flags=re.S)
+          if not n:
+              print('Two-row header override was already absent.')
+          home.write_text(s,encoding='utf-8')
+
           hm=re.search(r'<header class="top".*?</header>',s,re.S|re.I)
           fm=re.search(r'<footer class="footer".*?</footer>',s,re.S|re.I)
           if not hm or not fm:
-              raise SystemExit('Homepage approved header/footer not found')
+              raise SystemExit('Homepage header/footer not found')
           header=hm.group(0)
           footer=fm.group(0)
 
-          pages=['about.html','policies.html','ownership.html','billing.html','free-resources.html','404.html']
+          # Exact desktop chrome rules: logo + brand + all navigation + Book Now
+          # stay in one horizontal header row; no content is allowed beneath it.
+          chrome='''<style id="lh-approved-chrome">
+          @media (min-width:981px){
+            .top .brandrow{min-height:82px!important;display:flex!important;align-items:center!important;gap:14px!important;padding:0!important;grid-template-columns:none!important;grid-template-rows:none!important}
+            .top .brandrow>img{width:62px!important;height:62px!important;object-fit:contain!important;flex:0 0 62px!important;grid-row:auto!important;align-self:center!important}
+            .top .brand{min-width:128px!important;grid-column:auto!important;grid-row:auto!important;align-self:center!important}
+            .top .brand strong{font-size:27px!important;line-height:1!important}
+            .top .brand span{font-size:10px!important;margin-top:5px!important}
+            .top .nav{margin-left:auto!important;width:auto!important;display:flex!important;align-items:center!important;justify-content:flex-end!important;gap:13px!important;flex-wrap:nowrap!important;white-space:nowrap!important;border-top:0!important;padding-top:0!important;grid-column:auto!important;grid-row:auto!important}
+            .top .nav button,.top .nav a{font-size:12px!important;padding:7px 0!important;white-space:nowrap!important}
+            .top .nav .book{margin-left:0!important;padding:11px 16px!important;border-radius:12px!important}
+            .catalogue-page{min-height:calc(100vh - 82px)!important}
+            .detail-toolbar,.detail-view .detail-toolbar{top:82px!important}
+          }
+          </style>'''
+
+          pages=['index.html','about.html','policies.html','ownership.html','billing.html','free-resources.html','404.html']
           changed=[]
           for name in pages:
               p=root/name
-              if not p.exists():
-                  continue
+              if not p.exists(): continue
               body=p.read_text(encoding='utf-8')
-              new,n1=re.subn(r'<header class="top".*?</header>',header,body,count=1,flags=re.S|re.I)
-              new,n2=re.subn(r'<footer class="footer".*?</footer>',footer,new,count=1,flags=re.S|re.I)
-              if n1 and n2 and new != body:
-                  p.write_text(new,encoding='utf-8')
-                  changed.append(name)
-          print('Synced:', ', '.join(changed) if changed else 'nothing to change')
+              body=re.sub(r'<style id="lh-approved-chrome">.*?</style>','',body,flags=re.S|re.I)
+              if name!='index.html':
+                  body,n1=re.subn(r'<header class="top".*?</header>',header,body,count=1,flags=re.S|re.I)
+                  body,n2=re.subn(r'<footer class="footer".*?</footer>',footer,body,count=1,flags=re.S|re.I)
+                  if not n1 or not n2:
+                      print('Warning:',name,'missing replaceable header/footer')
+              body=body.replace('</head>',chrome+'</head>',1)
+              p.write_text(body,encoding='utf-8')
+              changed.append(name)
+          print('Locked approved chrome on:',', '.join(changed))
           PY
       - name: Commit synchronized chrome
         run: |
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
-          git add about.html policies.html ownership.html billing.html free-resources.html 404.html 2>/dev/null || true
+          git add index.html about.html policies.html ownership.html billing.html free-resources.html 404.html 2>/dev/null || true
           if git diff --cached --quiet; then
             echo 'No page changes needed.'
           else
-            git commit -m 'Match public page header and footer to homepage'
+            git commit -m 'Lock approved one-line header on all public pages'
             git push
           fi
