@@ -22,16 +22,9 @@ export default {
       }catch(error){return json({error:"Server error while creating checkout.",details:String(error?.message||error)},500)}
     }
 
-    // Canonical extensionless page routing: /about -> /about.html, etc.
-    // This prevents Cloudflare's asset fallback from serving the wrong page for clean URLs.
-    if ((request.method === "GET" || request.method === "HEAD") && url.pathname !== "/" && !url.pathname.endsWith("/") && !url.pathname.split("/").pop().includes(".")) {
-      const assetUrl = new URL(request.url);
-      assetUrl.pathname = `${url.pathname}.html`;
-      const assetRequest = new Request(assetUrl.toString(), request);
-      const response = await env.ASSETS.fetch(assetRequest);
-      if (response.status !== 404) return response;
-    }
-
+    // Serve static assets directly. Cloudflare Static Assets already handles
+    // extensionless HTML paths such as /about -> /about.html. Rewriting those
+    // paths here caused a canonical redirect loop between /about and /about.html.
     return env.ASSETS.fetch(request);
   }
 };
