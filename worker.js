@@ -22,10 +22,38 @@ export default {
       }catch(error){return json({error:"Server error while creating checkout.",details:String(error?.message||error)},500)}
     }
 
-    // Serve static assets directly. Cloudflare Static Assets already handles
-    // extensionless HTML paths such as /about -> /about.html. Rewriting those
-    // paths here caused a canonical redirect loop between /about and /about.html.
-    return env.ASSETS.fetch(request);
+    // Serve the requested static asset first.
+    const response = await env.ASSETS.fetch(request);
+    const contentType = response.headers.get("content-type") || "";
+
+    // GLOBAL SITE SHELL FIX:
+    // Every HTML page, including pages inside folders such as /services/,
+    // must load the same shared shell from the site root. Older nested pages
+    // used assets/site-shell.js, which incorrectly resolved to
+    // /services/assets/site-shell.js and caused the footer/chat widgets to be
+    // missing or inconsistent.
+    if (contentType.includes("text/html")) {
+      let html = await response.text();
+
+      // Repair any relative site-shell reference, regardless of folder depth.
+      html = html.replace(/src=["'](?:\.\.\/)*assets\/site-shell\.js([^"']*)["']/gi,
+        (_match, suffix) => `src="/assets/site-shell.js${suffix}"`);
+
+      // Pages that never included the shell get it automatically.
+      if (!/\/assets\/site-shell\.js/i.test(html)) {
+        const shell = '<script src="/assets/site-shell.js?v=20261004-global"></script>';
+        html = /<\/body>/i.test(html)
+          ? html.replace(/<\/body>/i, `${shell}</body>`)
+          : `${html}${shell}`;
+      }
+
+      const headers = new Headers(response.headers);
+      headers.delete("content-length");
+      headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
+      return new Response(html, {status: response.status, statusText: response.statusText, headers});
+    }
+
+    return response;
   }
 };
 function json(data,status=200){return new Response(JSON.stringify(data),{status,headers:{"Content-Type":"application/json; charset=UTF-8","Cache-Control":"no-store"}})}
