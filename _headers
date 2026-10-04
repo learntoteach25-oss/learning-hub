@@ -1,4 +1,10 @@
-/free-resources
+/*
   Cache-Control: no-cache, no-store, must-revalidate
-/free-resources.html
+  Pragma: no-cache
+  Expires: 0
+
+/assets/site-shell.js
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/assets/site.css
   Cache-Control: no-cache, no-store, must-revalidate
