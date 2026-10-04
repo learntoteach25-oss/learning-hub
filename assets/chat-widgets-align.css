@@ -1,6 +1,7 @@
-/* Global floating contact alignment — keep both widgets on one baseline */
-:root{--floating-chat-edge:24px;--floating-chat-bottom:24px;--floating-chat-height:54px}
-.whatsapp-contact{position:fixed!important;left:var(--floating-chat-edge)!important;right:auto!important;bottom:var(--floating-chat-bottom)!important;top:auto!important;height:var(--floating-chat-height)!important;min-height:var(--floating-chat-height)!important;margin:0!important;transform:none!important;z-index:2147482998!important}
-#tidio-chat{position:relative!important;z-index:2147482999!important}
-#tidio-chat iframe,#tidio-chat-iframe{position:fixed!important;right:var(--floating-chat-edge)!important;left:auto!important;bottom:var(--floating-chat-bottom)!important;top:auto!important;margin:0!important;transform:none!important;z-index:2147482999!important}
-@media(max-width:700px){:root{--floating-chat-edge:12px;--floating-chat-bottom:14px}.whatsapp-contact{height:48px!important;min-height:48px!important;padding:5px 10px 5px 6px!important}.whatsapp-icon{width:36px!important;height:36px!important}.whatsapp-contact small{display:none!important}#tidio-chat iframe,#tidio-chat-iframe{right:12px!important;bottom:14px!important}}
+/* Global floating contacts: fixed viewport corners, one visual baseline */
+:root{--floating-edge:24px;--floating-bottom:24px;--floating-wa-h:58px}
+html,body{overflow-x:hidden!important}
+.whatsapp-contact{position:fixed!important;left:var(--floating-edge)!important;right:auto!important;top:auto!important;bottom:var(--floating-bottom)!important;width:240px!important;height:var(--floating-wa-h)!important;min-height:var(--floating-wa-h)!important;margin:0!important;padding:7px 14px 7px 8px!important;box-sizing:border-box!important;display:flex!important;align-items:center!important;gap:10px!important;transform:none!important;z-index:2147483000!important}
+#tidio-chat{position:fixed!important;right:var(--floating-edge)!important;left:auto!important;top:auto!important;bottom:var(--floating-bottom)!important;margin:0!important;transform:none!important;z-index:2147483001!important}
+#tidio-chat iframe,#tidio-chat-iframe{right:0!important;left:auto!important;bottom:0!important;top:auto!important;margin:0!important;transform:none!important;z-index:2147483001!important}
+@media(max-width:700px){:root{--floating-edge:12px;--floating-bottom:12px;--floating-wa-h:52px}.whatsapp-contact{left:12px!important;bottom:12px!important;width:190px!important;height:52px!important;min-height:52px!important;padding:5px 10px 5px 6px!important}.whatsapp-contact small{display:none!important}#tidio-chat{right:12px!important;bottom:12px!important}}
