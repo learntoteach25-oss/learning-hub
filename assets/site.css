@@ -422,3 +422,11 @@ body:has(.exam-view) #detailContent{padding:0!important;margin:0!important}
 body:has(.exam-view) #detailContent>.exam-view{padding:0!important;margin:0!important}
 body:has(.exam-view) .exam-hero{margin:-26px 0 0!important;padding-top:26px!important}
 body:has(.exam-view) #backToCatalogue{top:calc(var(--header-height,72px) + 34px)!important}
+
+/* 2026-10-07 FINAL: remove actual 25px shell spacer above Exam hero */
+body:has(.exam-view) main,
+body:has(.exam-view) #app,
+body:has(.exam-view) #detailView,
+body:has(.exam-view) #detailContent{padding-top:0!important;margin-top:0!important}
+body:has(.exam-view) #detailContent>.exam-view{position:relative!important;top:-25px!important;margin-bottom:-25px!important}
+body:has(.exam-view) .exam-hero{margin:0!important;padding-top:0!important;min-height:520px!important}
