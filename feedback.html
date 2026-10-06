@@ -399,6 +399,45 @@
 .attachment input[type=file]{margin-top:14px!important;min-height:38px!important;padding:8px!important;font-family:Arial,sans-serif!important;font-size:10px!important;background:#fff7e8!important}
 .submit{min-height:52px!important;margin-top:20px!important;font-family:Arial,sans-serif!important;font-size:14px!important;font-weight:900!important;border-radius:10px!important}
 .privacy{font-family:Arial,sans-serif!important;font-size:10px!important;line-height:1.4!important;color:#383028!important}
+
+/* TESTIMONIAL MODAL REDESIGN 20261006 */
+.review-modal .translate-btn,.review-modal [class*="translate"],.review-modal [id*="translate"],
+.review-modal .translation-btn,.review-modal [class*="translation"],.review-modal [id*="translation"]{display:none!important}
+
+.review-modal{background:rgba(0,0,0,.82)!important;backdrop-filter:blur(8px)!important;padding:28px!important}
+.review-modal-card,.review-modal-content,.modal-card{
+ width:min(720px,calc(100vw - 40px))!important;max-width:720px!important;
+ padding:34px 38px!important;border:1px solid #c9952d!important;border-radius:18px!important;
+ background:#fffaf0!important;color:#111!important;box-shadow:0 24px 70px rgba(0,0,0,.45)!important
+}
+.review-modal .close,.review-modal-close,.modal-close{
+ width:40px!important;height:40px!important;display:grid!important;place-items:center!important;
+ border:1px solid #d09c34!important;border-radius:50%!important;background:#090806!important;
+ color:#f1bd48!important;font-size:20px!important;line-height:1!important
+}
+.review-modal .review-origin,.modal-card .review-origin{margin:0 52px 10px 0!important;color:#111!important}
+.review-modal .review-origin strong,.modal-card .review-origin strong{font-size:15px!important;line-height:1.3!important;color:#111!important}
+.review-modal .review-origin small,.modal-card .review-origin small{font-size:11px!important;color:#805b18!important}
+.review-modal .stars,.modal-card .stars{font-size:16px!important;letter-spacing:3px!important;color:#b77900!important;margin:6px 0 22px!important}
+.review-modal .original,.review-modal .review-full,.modal-card .original,.modal-card .review-full{
+ font-family:Georgia,serif!important;font-size:22px!important;line-height:1.65!important;font-weight:700!important;
+ color:#111!important;margin:0!important;padding:0 0 22px!important;border-bottom:1px solid #d5b36d!important
+}
+.review-modal .english,.review-modal .translation,.modal-card .english,.modal-card .translation{
+ display:block!important;font-family:Arial,sans-serif!important;font-size:16px!important;line-height:1.65!important;
+ color:#302b24!important;margin:20px 0 0!important;padding:0!important
+}
+/* cards themselves: larger readable comment text */
+.review-card{height:210px!important;padding:20px!important}
+.review-origin strong{font-size:13px!important}.review-origin small{font-size:9px!important}
+.review-text{font-size:15px!important;line-height:1.55!important;color:#17130d!important;font-weight:600!important}
+.review-actions{font-size:10px!important;font-weight:800!important;color:#8a5b00!important}
+@media(max-width:620px){
+ .review-modal{padding:14px!important}
+ .review-modal-card,.review-modal-content,.modal-card{width:calc(100vw - 28px)!important;padding:28px 22px!important}
+ .review-modal .original,.review-modal .review-full,.modal-card .original,.modal-card .review-full{font-size:18px!important}
+ .review-modal .english,.review-modal .translation,.modal-card .english,.modal-card .translation{font-size:14px!important}
+}
 </style>
 </head>
 <body>
@@ -447,7 +486,7 @@
   </form>
 </section>
 
-<section class="reviews" aria-label="Student feedback"><div class="reviews-head"><div class="reviews-title"><span class="eyebrow">Learner Voices</span><div><h2>What our learners say</h2><p>Real comments in learners’ own languages. Select a card to read.</p></div></div><div class="review-controls"><button id="reviewPrev" type="button" aria-label="Previous reviews">←</button><button id="reviewNext" type="button" aria-label="Next reviews">→</button></div></div><div class="review-window"><div class="review-track" id="reviewTrack"><article class="review-slide" data-place="China" data-lang="中文" data-text="挺好。善于用道具。引导孩子。" data-translation="Very good. She uses teaching materials effectively and guides children well."><div class="review-card"><div class="review-top"><div class="review-origin"><span class="language-badge">中文</span><span><strong>Learner Feedback</strong><small>China</small></span></div><span class="stars">★★★★★</span></div><p class="review-text" lang="zh">挺好。善于用道具。引导孩子。</p><div class="review-actions"><button class="translate-btn" type="button">🌐 Translate</button><span class="read-cue">Click to read ↗</span></div></div></article><article class="review-slide" data-place="China" data-lang="中文" data-text="我很喜欢这个老师。" data-translation="I really like this teacher."><div class="review-card"><div class="review-top"><div class="review-origin"><span class="language-badge">中文</span><span><strong>Learner Feedback</strong><small>China</small></span></div><span class="stars">★★★★★</span></div><p class="review-text" lang="zh">我很喜欢这个老师。</p><div class="review-actions"><button class="translate-btn" type="button">🌐 Translate</button><span class="read-cue">Click to read ↗</span></div></div></article><article class="review-slide" data-place="Arabic-speaking learner" data-lang="العربية" data-text="واااااااو… نطق واوو و الشرح واوو و تفاعل واووو" data-translation="Wow! The pronunciation, explanations and interaction are amazing."><div class="review-card"><div class="review-top"><div class="review-origin"><span class="language-badge">العربية</span><span><strong>Learner Feedback</strong><small>Arabic-speaking learner</small></span></div><span class="stars">★★★★★</span></div><p class="review-text" lang="ar" dir="rtl">واااااااو… نطق واوو و الشرح واوو و تفاعل واووو</p><div class="review-actions"><button class="translate-btn" type="button">🌐 Translate</button><span class="read-cue">Click to read ↗</span></div></div></article></div></div><div class="review-dots" id="reviewDots"></div></section><div class="review-modal" id="reviewModal" aria-hidden="true"><div class="review-modal-card"><button class="modal-close" id="modalClose" type="button">×</button><div class="modal-meta" id="modalMeta"></div><div class="modal-stars">★★★★★</div><p class="modal-text" id="modalText"></p><button class="translate-btn" id="modalTranslate" type="button">🌐 Translate to English</button><p class="modal-translation" id="modalTranslation"></p></div></div>
+<section class="reviews" aria-label="Student feedback"><div class="reviews-head"><div class="reviews-title"><span class="eyebrow">Learner Voices</span><div><h2>What our learners say</h2><p>Real comments in learners’ own languages. Select a card to read.</p></div></div><div class="review-controls"><button id="reviewPrev" type="button" aria-label="Previous reviews">←</button><button id="reviewNext" type="button" aria-label="Next reviews">→</button></div></div><div class="review-window"><div class="review-track" id="reviewTrack"><article class="review-slide" data-place="China" data-lang="中文" data-text="挺好。善于用道具。引导孩子。" data-translation="Very good. She uses teaching materials effectively and guides children well."><div class="review-card"><div class="review-top"><div class="review-origin"><span class="language-badge">中文</span><span><strong>Learner Feedback</strong><small>China</small></span></div><span class="stars">★★★★★</span></div><p class="review-text" lang="zh">挺好。善于用道具。引导孩子。</p><div class="review-actions"><span class="read-cue">Click to read ↗</span></div></div></article><article class="review-slide" data-place="China" data-lang="中文" data-text="我很喜欢这个老师。" data-translation="I really like this teacher."><div class="review-card"><div class="review-top"><div class="review-origin"><span class="language-badge">中文</span><span><strong>Learner Feedback</strong><small>China</small></span></div><span class="stars">★★★★★</span></div><p class="review-text" lang="zh">我很喜欢这个老师。</p><div class="review-actions"><span class="read-cue">Click to read ↗</span></div></div></article><article class="review-slide" data-place="Arabic-speaking learner" data-lang="العربية" data-text="واااااااو… نطق واوو و الشرح واوو و تفاعل واووو" data-translation="Wow! The pronunciation, explanations and interaction are amazing."><div class="review-card"><div class="review-top"><div class="review-origin"><span class="language-badge">العربية</span><span><strong>Learner Feedback</strong><small>Arabic-speaking learner</small></span></div><span class="stars">★★★★★</span></div><p class="review-text" lang="ar" dir="rtl">واااااااو… نطق واوو و الشرح واوو و تفاعل واووو</p><div class="review-actions"><span class="read-cue">Click to read ↗</span></div></div></article></div></div><div class="review-dots" id="reviewDots"></div></section><div class="review-modal" id="reviewModal" aria-hidden="true"><div class="review-modal-card"><button class="modal-close" id="modalClose" type="button">×</button><div class="modal-meta" id="modalMeta"></div><div class="modal-stars">★★★★★</div><p class="modal-text" id="modalText"></p></div></div>
 
 <section class="journey">
   <div class="journey-mark">LH</div>
