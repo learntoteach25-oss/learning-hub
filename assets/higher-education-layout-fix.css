@@ -186,3 +186,26 @@ body:has(.programmes-view) a[href*="group="]:is(.back-button,.back-link,.program
  .learning-detail:has(.programmes-view) .detail-toolbar{padding:10px 16px!important}
  .learning-detail:has(.programmes-view) .programmes-hero{height:320px!important;min-height:320px!important}
 }
+
+/* Match subsection hero treatment on main programmes banner */
+.learning-detail:has(.programmes-view) .programmes-hero{
+ width:100%!important;
+ height:390px!important;
+ min-height:390px!important;
+ background-size:cover!important;
+ background-position:center center!important;
+ margin:0!important;
+ border-radius:0!important;
+}
+.learning-detail:has(.programmes-view) .programmes-hero-copy{
+ position:absolute!important;
+ inset:0!important;
+ width:100%!important;
+ max-width:none!important;
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ justify-content:center!important;
+ box-sizing:border-box!important;
+ padding:34px 56px!important;
+}
