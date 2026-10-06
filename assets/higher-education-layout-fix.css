@@ -254,3 +254,38 @@ body:has(.programmes-view) a[href*="group="]:is(.back-button,.back-link,.program
  .learning-detail:has(.programmes-view) .programmes-hero{height:310px!important;min-height:310px!important}
  .learning-detail:has(.programmes-view) .programmes-hero-copy{padding:24px 20px!important;gap:10px!important}
 }
+
+/* 2026-10-06 exact requested programmes landing composition:
+   back control overlays top-left of hero; hero starts immediately below header */
+.learning-detail:has(.programmes-view){
+ position:relative!important;
+}
+.learning-detail:has(.programmes-view) .detail-toolbar{
+ position:absolute!important;
+ top:18px!important;
+ left:56px!important;
+ width:auto!important;
+ height:auto!important;
+ min-height:0!important;
+ margin:0!important;
+ padding:0!important;
+ background:transparent!important;
+ z-index:30!important;
+}
+.learning-detail:has(.programmes-view) #backToCatalogue{
+ background:#fff!important;
+}
+.learning-detail:has(.programmes-view) .programmes-hero{
+ height:390px!important;
+ min-height:390px!important;
+ margin:0!important;
+ background-size:cover!important;
+ background-position:center 50%!important;
+}
+.learning-detail:has(.programmes-view) .programmes-hero-copy{
+ padding-top:38px!important;
+}
+@media(max-width:620px){
+ .learning-detail:has(.programmes-view) .detail-toolbar{top:12px!important;left:16px!important;width:auto!important;height:auto!important;padding:0!important}
+ .learning-detail:has(.programmes-view) .programmes-hero{height:330px!important;min-height:330px!important}
+}
