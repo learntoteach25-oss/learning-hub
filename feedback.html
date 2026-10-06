@@ -451,6 +451,23 @@
 .modal-text[dir="rtl"]{font-family:Tahoma,Arial,sans-serif!important;font-size:23px!important;font-weight:600!important;line-height:1.9!important;text-align:right!important;direction:rtl!important}
 .review-modal [class*="translat"],.review-modal [id*="Translat"],.review-modal [id*="translat"]{display:none!important}
 @media(max-width:620px){.review-modal{padding:12px!important}.review-modal-card{width:calc(100vw - 24px)!important;padding:34px 22px 28px!important}.modal-close{right:12px!important;top:12px!important;width:40px!important;height:40px!important}.modal-meta{padding-right:48px!important;font-size:11px!important}.modal-text{font-size:19px!important}.modal-text[dir="rtl"]{font-size:19px!important}}
+
+/* 20261006 premium testimonial modal — compact, high-visibility */
+.review-modal{background:rgba(0,0,0,.74)!important;backdrop-filter:blur(14px)!important}
+.review-modal-card{
+ width:min(680px,calc(100vw - 40px))!important;
+ min-height:0!important;max-height:calc(100vh - 80px)!important;
+ padding:0!important;overflow:hidden!important;
+ border:1px solid #c8952d!important;border-top:0!important;border-radius:18px!important;
+ background:#fffaf0!important;box-shadow:0 28px 80px rgba(0,0,0,.55)!important
+}
+.review-modal-card:before{content:"LEARNER VOICE"!important;display:block!important;padding:13px 26px!important;background:#090806!important;border-bottom:1px solid #c8952d!important;color:#e7b94e!important;font:900 10px/1 Arial,sans-serif!important;letter-spacing:2.3px!important}
+.modal-close{right:15px!important;top:8px!important;width:36px!important;height:36px!important;border-color:#d3a33c!important;background:#090806!important;color:#f1c65b!important;font-size:22px!important}
+.modal-meta{margin:0!important;padding:24px 30px 0!important;color:#8a5c08!important;font:900 12px/1.4 Arial,sans-serif!important;letter-spacing:.3px!important}
+.modal-stars{margin:8px 30px 0!important;padding:0 0 17px!important;border-bottom:1px solid #dec897!important;color:#b77a06!important;font-size:15px!important;letter-spacing:3px!important}
+.modal-text{margin:0!important;padding:24px 30px 30px!important;border:0!important;color:#0b0906!important;font:600 22px/1.65 Georgia,"Times New Roman",serif!important}
+.modal-text[dir="rtl"]{padding:24px 30px 30px!important;color:#0b0906!important;font:600 21px/1.9 Tahoma,Arial,sans-serif!important;text-align:right!important}
+@media(max-width:620px){.review-modal-card{width:calc(100vw - 24px)!important}.review-modal-card:before{padding:12px 18px!important}.modal-meta{padding:21px 20px 0!important}.modal-stars{margin:8px 20px 0!important}.modal-text,.modal-text[dir="rtl"]{padding:21px 20px 25px!important;font-size:18px!important}}
 </style>
 </head>
 <body>
