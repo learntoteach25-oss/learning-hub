@@ -415,3 +415,10 @@ body:has(.exam-view) #backToCatalogue{position:absolute!important;z-index:20!imp
 body:has(.exam-view) #detailView{padding-top:0!important;margin-top:0!important}
 body:has(.exam-view) .exam-view{margin-top:0!important}
 body:has(.exam-view) .exam-hero{margin-top:0!important}
+
+/* 2026-10-07 Exam hero: eliminate inherited top spacer completely */
+body:has(.exam-view) #detailView{padding:0!important;margin:0!important}
+body:has(.exam-view) #detailContent{padding:0!important;margin:0!important}
+body:has(.exam-view) #detailContent>.exam-view{padding:0!important;margin:0!important}
+body:has(.exam-view) .exam-hero{margin:-26px 0 0!important;padding-top:26px!important}
+body:has(.exam-view) #backToCatalogue{top:calc(var(--header-height,72px) + 34px)!important}
