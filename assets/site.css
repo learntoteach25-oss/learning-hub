@@ -251,3 +251,26 @@
 .boards-premium .board-card-copy a{width:34px!important;height:34px!important;margin-top:auto!important;background:#d99a10!important;box-shadow:0 5px 12px rgba(197,137,14,.22)!important}
 @media(max-width:1080px){.boards-premium .boards-premium-grid{grid-template-columns:repeat(3,1fr)!important}}
 @media(max-width:620px){.boards-premium #boards-list{padding:28px 13px 32px!important}.boards-premium .boards-premium-grid{grid-template-columns:1fr!important}.boards-premium .boards-premium-grid article{grid-template-rows:220px 1fr!important}.boards-premium .board-photo{height:220px!important}}
+
+/* 2026-10-07 Boards desktop scale correction */
+@media(min-width:1090px){
+ .boards-premium #boards-list{padding:28px 24px 34px!important}
+ .boards-premium #boards-list .boards-head{margin-bottom:20px!important}
+ .boards-premium #boards-list .boards-head h2{font-size:42px!important}
+ .boards-premium #boards-list .boards-head p{font-size:12px!important}
+ .boards-premium .boards-premium-grid{width:min(92vw,1280px)!important;max-width:1280px!important;gap:12px!important}
+ .boards-premium .boards-premium-grid article{grid-template-rows:220px 1fr!important;min-height:410px!important}
+ .boards-premium .board-photo{height:220px!important}
+ .boards-premium .board-logo{height:58px!important;min-height:58px!important}
+ .boards-premium .board-wordmark b{font-size:17px!important}
+ .boards-premium .board-wordmark small{font-size:7px!important}
+ .boards-premium .board-card-copy{padding:18px 12px 14px!important}
+ .boards-premium .board-card-copy h3{font-size:18px!important;min-height:46px!important}
+ .boards-premium .board-card-copy p{font-size:10px!important;max-width:185px!important}
+ .boards-premium .board-card-copy a{width:36px!important;height:36px!important}
+ .boards-premium .boards-pathways{padding:34px 24px 42px!important}
+ .boards-premium .boards-pathway-intro h2{font-size:38px!important}
+ .boards-premium .boards-pathway-intro p{font-size:12px!important}
+ .boards-premium .pathway-grid{width:min(92vw,1280px)!important;max-width:1280px!important;grid-template-columns:repeat(4,1fr)!important;gap:14px!important}
+ .boards-premium .pathway-grid>a{min-height:205px!important}
+}
