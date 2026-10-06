@@ -117,3 +117,30 @@
 .boards-premium .board-photo{position:relative!important}
 .boards-premium .board-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),transparent 55%,rgba(0,0,0,.2));pointer-events:none}
 .boards-premium .board-badge{z-index:4!important}
+
+/* 2026-10-06 Boards cards — approved reference presentation */
+.boards-premium #boards-list{position:relative!important;padding:34px 38px 38px!important;background:#fbf6ec!important;overflow:hidden!important}
+.boards-premium #boards-list:before,.boards-premium #boards-list:after{content:"";position:absolute!important;top:0!important;width:300px!important;height:155px!important;opacity:.18!important;pointer-events:none!important;background-image:radial-gradient(circle,#c99a37 1.2px,transparent 1.3px)!important;background-size:8px 8px!important}
+.boards-premium #boards-list:before{left:12px!important;border-radius:50%!important}.boards-premium #boards-list:after{right:12px!important;border-radius:50%!important}
+.boards-premium #boards-list .boards-head{position:relative!important;z-index:2!important;margin:0 auto 27px!important;text-align:center!important}
+.boards-premium #boards-list .boards-head .eyebrow{display:flex!important;align-items:center!important;justify-content:center!important;gap:13px!important;color:#b67a13!important;font-size:10px!important;letter-spacing:.17em!important}
+.boards-premium #boards-list .boards-head .eyebrow:before,.boards-premium #boards-list .boards-head .eyebrow:after{content:""!important;width:58px!important;height:1px!important;background:#d6a236!important}
+.boards-premium #boards-list .boards-head h2{margin:7px 0 5px!important;color:#101827!important;font:700 39px/1.05 Georgia,serif!important}
+.boards-premium #boards-list .boards-head h2 em{color:#bd8019!important;font-weight:400!important}
+.boards-premium #boards-list .boards-head p{color:#586472!important;font:13px/1.45 Arial!important}
+.boards-premium .boards-premium-grid{position:relative!important;z-index:2!important;display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:12px!important;max-width:1280px!important;margin:auto!important;align-items:stretch!important}
+.boards-premium .boards-premium-grid article{display:grid!important;grid-template-rows:190px 1fr!important;min-height:395px!important;overflow:hidden!important;border:1px solid #d9b25c!important;border-radius:11px!important;background:#fffdf8!important;box-shadow:0 8px 22px rgba(49,35,13,.06)!important}
+.boards-premium .board-photo{position:relative!important;height:190px!important;overflow:hidden!important;background:#111!important;border-bottom:1px solid #d8b05a!important}
+.boards-premium .board-photo img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;filter:saturate(.9) contrast(1.02)!important}
+.boards-premium .board-logo{position:absolute!important;left:10px!important;right:10px!important;top:11px!important;z-index:4!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;min-height:58px!important;padding:7px 8px!important;border:0!important;border-radius:7px!important;background:rgba(255,255,255,.94)!important;color:#111827!important;box-shadow:0 4px 14px rgba(0,0,0,.12)!important;text-align:center!important}
+.boards-premium .board-logo strong{color:#101827!important;font:900 17px/1 Georgia,serif!important}
+.boards-premium .board-logo small{color:#23344d!important;font:700 9px/1.12 Arial!important}
+.boards-premium .board-logo .ib-mark{display:grid!important;place-items:center!important;width:39px!important;height:39px!important;border-radius:50%!important;background:#138fc5!important;color:#fff!important;font:900 18px Georgia,serif!important}
+.boards-premium .board-badge{position:absolute!important;left:10px!important;bottom:10px!important;z-index:5!important;display:grid!important;place-items:center!important;min-width:52px!important;height:34px!important;padding:0 10px!important;border:1px solid #dca52b!important;border-radius:8px!important;background:rgba(8,8,7,.92)!important;color:#efbd45!important;font:900 11px Arial!important}
+.boards-premium .board-photo:after{display:none!important}
+.boards-premium .board-card-copy{display:flex!important;flex-direction:column!important;align-items:center!important;height:100%!important;padding:18px 15px 15px!important;text-align:center!important}
+.boards-premium .board-card-copy h3{display:flex!important;align-items:center!important;justify-content:center!important;min-height:48px!important;margin:0 0 9px!important;color:#101827!important;font:700 20px/1.08 Georgia,serif!important}
+.boards-premium .board-card-copy p{min-height:52px!important;margin:0!important;color:#53606e!important;font:12px/1.45 Arial!important}
+.boards-premium .board-card-copy a{display:grid!important;place-items:center!important;width:38px!important;height:38px!important;margin:auto auto 0!important;border-radius:50%!important;background:#dfa520!important;color:#fff!important;font:700 18px Arial!important;text-decoration:none!important}
+@media(max-width:1080px){.boards-premium .boards-premium-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:620px){.boards-premium #boards-list{padding:28px 13px 32px!important}.boards-premium #boards-list .boards-head h2{font-size:31px!important}.boards-premium .boards-premium-grid{grid-template-columns:1fr 1fr!important;gap:9px!important}.boards-premium .boards-premium-grid article{grid-template-rows:150px 1fr!important;min-height:350px!important}.boards-premium .board-photo{height:150px!important}.boards-premium .board-logo{min-height:46px!important}.boards-premium .board-logo strong{font-size:13px!important}.boards-premium .board-card-copy h3{font-size:16px!important}.boards-premium .board-card-copy p{font-size:10px!important}}
