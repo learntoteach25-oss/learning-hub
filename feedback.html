@@ -54,7 +54,13 @@
 .review-modal{position:fixed!important;inset:0!important;z-index:99999!important;display:none!important;place-items:center!important;padding:22px!important;background:rgba(0,0,0,.82)!important;backdrop-filter:blur(7px)!important}
 .review-modal.open{display:grid!important}.review-modal-card{position:relative!important;width:min(620px,100%)!important;padding:34px!important;border:1px solid #ad7e27!important;border-radius:20px!important;background:linear-gradient(145deg,#f1e1c1,#e4cda2)!important;box-shadow:0 30px 90px #000!important}.modal-close{position:absolute!important;right:16px!important;top:14px!important;width:36px!important;height:36px!important;border:1px solid #b98a2d!important;border-radius:50%!important;background:#080706!important;color:#e5b64c!important;font-size:20px!important;cursor:pointer!important}.modal-meta{color:#875907!important;font:900 10px Arial!important;letter-spacing:1px!important}.modal-stars{margin:13px 0!important;color:#9d6808!important}.modal-text{color:#120e08!important;font:700 21px/1.6 Georgia!important}.modal-translation{display:none!important;margin-top:15px!important;padding-top:15px!important;border-top:1px solid #b9954e!important;color:#4d402f!important;font:13px/1.65 Arial!important}.modal-translation.open{display:block!important}
 @media(max-width:900px){.review-slide{flex-basis:calc((100% - 16px)/2)!important}}
-@media(max-width:620px){.reviews{margin:20px 10px!important;padding:22px 14px 18px!important}.reviews-head{grid-template-columns:1fr!important;align-items:start!important}.review-controls{justify-self:end!important}.reviews-head h2{font-size:25px!important}.review-slide{flex-basis:100%!important}.review-card{height:210px!important}}</style>
+@media(max-width:620px){.reviews{margin:20px 10px!important;padding:22px 14px 18px!important}.reviews-head{grid-template-columns:1fr!important;align-items:start!important}.review-controls{justify-self:end!important}.reviews-head h2{font-size:25px!important}.review-slide{flex-basis:100%!important}.review-card{height:210px!important}}/* feedback intro clipping fix */
+.feedback-intro{padding-top:42px!important;overflow:visible!important}
+.feedback-intro h2{display:block!important;position:relative!important;z-index:2!important;margin:9px auto 7px!important;padding:2px 0 4px!important;color:#f1dfb4!important;font:700 36px/1.18 Georgia,serif!important;letter-spacing:0!important;text-indent:0!important;overflow:visible!important}
+.feedback-intro h2:first-letter{color:inherit!important}
+.feedback-intro>span{display:block!important;position:relative!important;z-index:2!important}
+.feedback-intro p{position:relative!important;z-index:2!important}
+</style>
 </head>
 <body>
 <header></header>
