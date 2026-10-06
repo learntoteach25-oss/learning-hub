@@ -295,3 +295,10 @@
 .boards-premium .board-card-copy h3{width:100%!important;min-height:44px!important;font-size:16px!important;line-height:1.08!important;overflow-wrap:normal!important}
 .boards-premium .board-card-copy p{width:100%!important;max-width:175px!important;min-height:42px!important;font-size:9px!important;line-height:1.4!important}
 @media(min-width:1090px) and (max-width:1250px){.boards-premium .boards-premium-grid{width:96%!important;gap:8px!important}.boards-premium .board-logo .board-wordmark b{font-size:13px!important}.boards-premium .board-card-copy h3{font-size:14px!important}}
+
+/* 2026-10-07 remove leaked hero artwork and restore full-width board presentation */
+.boards-premium .boards-hero{overflow:hidden!important}
+.boards-premium .boards-hero:before{display:none!important;content:none!important;background:none!important}
+.boards-premium #boards-list{width:100%!important;max-width:none!important;box-sizing:border-box!important}
+.boards-premium .boards-premium-grid{width:min(94vw,1320px)!important;max-width:1320px!important;margin-left:auto!important;margin-right:auto!important}
+.boards-premium .boards-support-banner{width:min(94vw,1320px)!important;max-width:1320px!important;margin:28px auto 42px!important;box-sizing:border-box!important}
