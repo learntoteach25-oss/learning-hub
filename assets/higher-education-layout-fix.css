@@ -85,3 +85,23 @@
 .learning-detail:has(.programmes-view) .programme-folders{
  width:min(1120px,calc(100% - 56px))!important;margin-left:auto!important;margin-right:auto!important;
 }
+
+/* FINAL main programmes hero: no back control, true edge-to-edge */
+.learning-detail:has(.programmes-view) .detail-toolbar{display:none!important}
+.learning-detail:has(.programmes-view){
+ width:100%!important;max-width:none!important;margin:0!important;padding:0!important;
+}
+.learning-detail:has(.programmes-view) .programmes-view{
+ width:100%!important;max-width:none!important;margin:0!important;padding:0!important;
+}
+.learning-detail:has(.programmes-view) .programmes-hero{
+ position:relative!important;
+ left:50%!important;
+ width:100vw!important;
+ max-width:100vw!important;
+ margin-left:-50vw!important;
+ margin-right:0!important;
+ height:390px!important;
+ min-height:390px!important;
+ border-radius:0!important;
+}
