@@ -17,3 +17,12 @@
 @media (max-width:620px){
   .programmes-view::before{height:290px!important;background-position:center!important}
 }
+
+/* Restore missing Higher Education folder image */
+.programme-folder:nth-child(3){
+  background:
+    linear-gradient(0deg,rgba(5,5,5,.78),rgba(5,5,5,.10) 72%),
+    url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=92') center 42%/cover no-repeat !important;
+  background-color:#111!important;
+}
+.programme-folder:nth-child(3) .folder-shade{background:linear-gradient(0deg,rgba(5,5,5,.72),rgba(5,5,5,.02) 70%)!important}
