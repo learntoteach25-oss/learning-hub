@@ -21,3 +21,17 @@
 .programme-group-view .visual-card>img{width:100%;height:190px;object-fit:cover;object-position:center}.programme-group-view .card-body{min-height:285px;padding:20px 22px 22px;display:flex;flex-direction:column}.programme-group-view .detail-card h2,.programme-group-view .detail-card p{text-align:center}.programme-group-view .detail-card a{align-self:center}
 @media(max-width:900px){.programme-group-view .programme-items{grid-template-columns:repeat(2,minmax(0,1fr))}.programme-group-view .programme-items>.detail-card{grid-column:auto!important}.programme-group-hero .inline-back{left:24px!important}}
 @media(max-width:620px){.learning-detail:has(.programmes-view) .detail-toolbar{left:16px;top:100px}.programme-folders,.programme-group-view .programme-items{width:calc(100% - 32px);grid-template-columns:1fr}.programme-folder{height:230px}.programme-group-hero{height:300px;min-height:300px}.programme-group-hero .inline-back{left:16px!important;top:14px!important}.programme-hero-copy{width:calc(100% - 34px);padding-top:34px}.programme-hero-copy h1{font-size:38px}.programme-group-view .card-body{min-height:0}}
+
+/* Final fit/alignment correction */
+.programmes-view::before{width:100vw!important;margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important}
+.programme-group-view{overflow:visible!important}
+.programme-group-hero{width:100vw!important;margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;border-radius:0!important}
+.programme-group-view .programme-items{grid-auto-rows:1fr!important}
+.programme-group-view .programme-items>.detail-card{height:100%!important}
+.programme-group-view .card-body{height:100%!important}
+.programme-group-view .subject-book{margin-top:auto!important}
+.programme-group-view .visual-card>img{height:190px!important;object-fit:cover!important}
+.group-core .programme-group-hero{background-position:center 52%!important}
+.group-business .programme-group-hero{background-position:center 50%!important}
+.group-higher .programme-group-hero{background-position:center 48%!important}
+.group-primary .programme-group-hero{background-position:center 42%!important}
