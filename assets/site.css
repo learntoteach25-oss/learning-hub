@@ -79,3 +79,15 @@
 .boards-premium .boards-resource-banner{max-width:1240px!important;min-height:235px!important;border-radius:12px!important;background:linear-gradient(90deg,rgba(255,248,233,.08),rgba(255,248,233,.93) 53%,rgba(255,248,233,.99)),url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=1800&q=90') center/cover no-repeat!important}
 @media(max-width:900px){.learning-detail:has(.boards-premium) .detail-toolbar{left:22px!important}.boards-premium .pathway-grid{grid-template-columns:repeat(2,1fr)!important}}
 @media(max-width:620px){.learning-detail:has(.boards-premium) .detail-toolbar{top:12px!important;left:14px!important}.boards-premium .boards-hero{min-height:540px!important;padding:72px 20px 28px!important;background-position:64% center!important}.boards-premium .boards-hero-copy{width:100%!important;padding:22px!important;border-radius:14px!important;background:rgba(4,4,3,.78)!important}.boards-premium .pathway-grid{grid-template-columns:1fr 1fr!important}.boards-premium .pathway-photo{height:105px!important}}
+
+/* 2026-10-06 Boards hero image visibility correction */
+.boards-premium .boards-hero{
+ background-image:
+ linear-gradient(90deg,rgba(4,4,3,.97) 0%,rgba(4,4,3,.90) 38%,rgba(4,4,3,.25) 59%,rgba(4,4,3,.05) 100%),
+ url('https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=2000&q=92')!important;
+ background-position:center center!important;
+ background-size:cover!important;
+ background-repeat:no-repeat!important
+}
+.boards-premium .boards-hero::after{content:"";position:absolute;inset:0 0 0 54%;pointer-events:none;background:radial-gradient(circle at 70% 48%,rgba(216,164,48,.13),transparent 55%);z-index:0}
+.boards-premium .boards-hero-copy{position:relative;z-index:1}
