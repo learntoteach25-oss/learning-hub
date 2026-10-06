@@ -281,3 +281,17 @@
 .boards-premium .board-logo .board-wordmark{align-items:center!important;text-align:center!important}
 .boards-premium .board-logo .board-wordmark b{font:700 16px/1 Georgia,serif!important;color:#071426!important;white-space:nowrap!important}
 .boards-premium .board-logo .board-wordmark small{font:700 6.5px/1.1 Arial!important;color:#26364b!important;text-transform:none!important;letter-spacing:.01em!important}
+
+/* 2026-10-07 Boards alignment and presentation correction */
+.boards-premium #boards-list{overflow:hidden!important}
+.boards-premium .boards-premium-grid{box-sizing:border-box!important;width:min(94%,1280px)!important;margin:0 auto!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;align-items:stretch!important}
+.boards-premium .boards-premium-grid article{min-width:0!important;width:100%!important;grid-template-rows:205px 185px!important}
+.boards-premium .board-photo{height:205px!important}
+.boards-premium .board-logo{box-sizing:border-box!important;left:9px!important;right:9px!important;width:auto!important;overflow:hidden!important}
+.boards-premium .board-logo .board-wordmark{width:100%!important;min-width:0!important;overflow:hidden!important}
+.boards-premium .board-logo .board-wordmark b{display:block!important;max-width:100%!important;font-size:15px!important;line-height:1.05!important;white-space:normal!important;text-align:center!important;overflow-wrap:normal!important}
+.boards-premium .board-logo .board-wordmark small{display:block!important;max-width:100%!important;font-size:6px!important;white-space:normal!important;text-align:center!important}
+.boards-premium .board-card-copy{box-sizing:border-box!important;height:185px!important;padding:15px 10px 12px!important}
+.boards-premium .board-card-copy h3{width:100%!important;min-height:44px!important;font-size:16px!important;line-height:1.08!important;overflow-wrap:normal!important}
+.boards-premium .board-card-copy p{width:100%!important;max-width:175px!important;min-height:42px!important;font-size:9px!important;line-height:1.4!important}
+@media(min-width:1090px) and (max-width:1250px){.boards-premium .boards-premium-grid{width:96%!important;gap:8px!important}.boards-premium .board-logo .board-wordmark b{font-size:13px!important}.boards-premium .board-card-copy h3{font-size:14px!important}}
