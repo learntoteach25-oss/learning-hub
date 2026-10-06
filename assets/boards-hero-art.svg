@@ -1,18 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620">
-<defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#050505"/><stop offset=".52" stop-color="#0b0906"/><stop offset="1" stop-color="#24190c"/></linearGradient><radialGradient id="g"><stop stop-color="#d8a631"/><stop offset="1" stop-color="#8b5b0c"/></radialGradient></defs>
+<defs>
+<linearGradient id="bg" x1="0" x2="1"><stop stop-color="#050403"/><stop offset=".48" stop-color="#171006"/><stop offset="1" stop-color="#5a3514"/></linearGradient>
+<radialGradient id="gl" cx=".35" cy=".3"><stop stop-color="#d8aa4b"/><stop offset=".55" stop-color="#9c681c"/><stop offset="1" stop-color="#2b1b08"/></radialGradient>
+<linearGradient id="desk"><stop stop-color="#4c2d12"/><stop offset="1" stop-color="#17100a"/></linearGradient>
+<filter id="blur"><feGaussianBlur stdDeviation="10"/></filter>
+<filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-opacity=".55"/></filter>
+</defs>
 <rect width="1600" height="620" fill="url(#bg)"/>
-<g opacity=".12" stroke="#d8a631" fill="none"><path d="M0 470 Q260 300 560 470T1100 450T1600 410"/><path d="M0 500 Q300 340 600 500T1200 470T1600 440"/></g>
-<g transform="translate(930 40)">
-<ellipse cx="190" cy="230" rx="185" ry="28" fill="#000" opacity=".45"/>
-<circle cx="190" cy="190" r="155" fill="#080808" stroke="#d6a22d" stroke-width="9"/>
-<ellipse cx="190" cy="190" rx="78" ry="155" fill="none" stroke="#b98522" stroke-width="3"/><ellipse cx="190" cy="190" rx="130" ry="155" fill="none" stroke="#8e641c" stroke-width="2"/>
-<path d="M38 145h304M35 190h310M47 238h286" stroke="#a87820" stroke-width="3"/>
-<path d="M105 110l55-34 42 18 33-16 50 38-17 34-52-7-24 29-43-15-42 14-31-29zM210 220l45-23 54 22-18 55-49 28-37-35z" fill="url(#g)" opacity=".9"/>
-<path d="M190 345v58M125 405h130" stroke="#d6a22d" stroke-width="13" stroke-linecap="round"/>
+<!-- warm library -->
+<g opacity=".42" filter="url(#blur)" fill="#d39b4a">
+<rect x="1010" y="0" width="90" height="330"/><rect x="1130" y="10" width="70" height="300"/><rect x="1240" width="95" height="340"/><rect x="1370" y="5" width="65" height="310"/><rect x="1470" width="105" height="350"/>
 </g>
-<g transform="translate(1160 190)">
-<g fill="#0b0b0b" stroke="#c9972d" stroke-width="3"><rect y="0" width="330" height="65" rx="7"/><rect y="70" width="330" height="65" rx="7"/><rect y="140" width="330" height="65" rx="7"/><rect y="210" width="330" height="65" rx="7"/><rect y="280" width="330" height="65" rx="7"/></g>
-<g fill="#e7b94b" font-family="Georgia,serif" font-weight="700" font-size="28"><text x="30" y="42">CAMBRIDGE</text><text x="30" y="112">IGCSE</text><text x="30" y="182">GCSE</text><text x="30" y="252">IB</text><text x="30" y="322">A-LEVEL</text></g>
+<!-- flags -->
+<g opacity=".72"><path d="M830 40v250" stroke="#b69a68" stroke-width="6"/><path d="M835 55l55 25-55 28z" fill="#a82c25"/><path d="M900 45v250" stroke="#b69a68" stroke-width="6"/><path d="M905 60l55 25-55 28z" fill="#eee"/><path d="M970 38v250" stroke="#b69a68" stroke-width="6"/><path d="M975 55l55 25-55 28z" fill="#1f5e9d"/></g>
+<!-- desk -->
+<path d="M650 500H1600V620H600z" fill="url(#desk)"/>
+<ellipse cx="1080" cy="535" rx="430" ry="38" fill="#000" opacity=".45"/>
+<!-- globe -->
+<g transform="translate(710 70)" filter="url(#shadow)">
+<circle cx="250" cy="210" r="180" fill="#070707" stroke="#d4a033" stroke-width="12"/>
+<circle cx="250" cy="210" r="164" fill="url(#gl)" opacity=".24"/>
+<g fill="none" stroke="#b17a20" stroke-width="3" opacity=".9"><ellipse cx="250" cy="210" rx="86" ry="180"/><ellipse cx="250" cy="210" rx="140" ry="180"/><path d="M72 160h356M70 210h360M82 264h336"/></g>
+<g fill="#c39232"><path d="M135 105l66-41 55 21 43-19 62 45-20 42-64-9-31 36-54-18-50 18-38-35z"/><path d="M270 245l53-28 66 27-22 67-60 35-45-43z"/><path d="M120 238l48-18 42 31-15 54-50 16-34-38z"/></g>
+<path d="M250 390v70M175 465h150" stroke="#d4a033" stroke-width="14" stroke-linecap="round"/>
 </g>
-<g transform="translate(1420 420)" stroke="#d4a32f" stroke-width="5" fill="#090909"><rect width="145" height="105" rx="7"/><path d="M-25 118h190l-18 22H-10z"/></g>
+<!-- books -->
+<g transform="translate(1050 220)" filter="url(#shadow)">
+<g stroke="#c9952c" stroke-width="3"><rect y="0" width="420" height="62" rx="8" fill="#14243a"/><rect y="66" width="420" height="62" rx="8" fill="#6f241e"/><rect y="132" width="420" height="62" rx="8" fill="#18372c"/><rect y="198" width="420" height="68" rx="8" fill="#17375e"/><rect y="270" width="420" height="68" rx="8" fill="#b5862d"/></g>
+<g font-family="Georgia,serif" font-weight="700" font-size="28"><text x="85" y="40" fill="#f3e4bd">CAMBRIDGE</text><text x="85" y="106" fill="#f3e4bd">IGCSE</text><text x="85" y="172" fill="#f3e4bd">Pearson Edexcel</text><text x="85" y="239" fill="#f3e4bd">International Baccalaureate</text><text x="85" y="312" fill="#1a2535">A-LEVEL</text></g>
+<g><rect x="24" y="16" width="43" height="31" rx="4" fill="#d6a13a"/><text x="31" y="39" font-family="Georgia" font-size="18" font-weight="700">C</text><circle cx="46" cy="163" r="20" fill="#2796c2"/><text x="37" y="171" fill="#fff" font-family="Arial" font-size="20" font-weight="700">P</text><circle cx="46" cy="231" r="20" fill="#2796c2"/><text x="38" y="239" fill="#fff" font-family="Georgia" font-size="19" font-weight="700">ib</text></g>
+</g>
+<!-- laptop -->
+<g transform="translate(1450 350)" filter="url(#shadow)"><rect width="190" height="135" rx="8" fill="#090909" stroke="#b78a35" stroke-width="5"/><path d="M-30 145h245l-20 25H-12z" fill="#24201b" stroke="#9a7330" stroke-width="4"/></g>
+<!-- stationery -->
+<g transform="translate(1220 555) rotate(-5)"><rect width="210" height="20" rx="10" fill="#111" stroke="#b78a35" stroke-width="2"/><rect x="20" y="6" width="145" height="4" fill="#c99836"/></g>
 </svg>
