@@ -468,6 +468,44 @@
 .modal-text{margin:0!important;padding:24px 30px 30px!important;border:0!important;color:#0b0906!important;font:600 22px/1.65 Georgia,"Times New Roman",serif!important}
 .modal-text[dir="rtl"]{padding:24px 30px 30px!important;color:#0b0906!important;font:600 21px/1.9 Tahoma,Arial,sans-serif!important;text-align:right!important}
 @media(max-width:620px){.review-modal-card{width:calc(100vw - 24px)!important}.review-modal-card:before{padding:12px 18px!important}.modal-meta{padding:21px 20px 0!important}.modal-stars{margin:8px 20px 0!important}.modal-text,.modal-text[dir="rtl"]{padding:21px 20px 25px!important;font-size:18px!important}}
+
+/* 20261006 learner voices carousel — premium modern rebuild */
+.reviews-section,.learner-voices{
+ background:linear-gradient(135deg,#070706 0%,#171208 100%)!important;
+ border:1px solid #bd8a25!important;border-radius:22px!important;
+ padding:30px 32px 32px!important;box-shadow:0 20px 50px rgba(50,35,8,.14)!important
+}
+.reviews-head{display:grid!important;grid-template-columns:1fr auto!important;align-items:end!important;gap:18px!important;padding-bottom:18px!important;margin-bottom:22px!important;border-bottom:1px solid rgba(218,169,67,.35)!important}
+.reviews-kicker{font:900 10px/1 Arial,sans-serif!important;letter-spacing:2.1px!important;color:#e8b846!important;margin-bottom:8px!important}
+.reviews-title{font:700 31px/1.1 Georgia,serif!important;color:#fff7e8!important;margin:0!important}
+.reviews-subtitle{font:400 13px/1.55 Arial,sans-serif!important;color:#d9c9aa!important;margin:7px 0 0!important}
+.review-controls{display:flex!important;gap:9px!important}
+.review-controls button,#reviewPrev,#reviewNext{width:42px!important;height:42px!important;border:1px solid #c9972e!important;border-radius:12px!important;background:#171208!important;color:#f0c65b!important;font-size:18px!important}
+.review-viewport{overflow:hidden!important;padding:2px 2px 6px!important}
+.review-track{gap:18px!important}
+.review-slide{flex:0 0 calc((100% - 36px)/3)!important;min-width:0!important}
+.review-card{
+ position:relative!important;height:235px!important;box-sizing:border-box!important;
+ padding:24px 24px 22px!important;border:1px solid #d7b66f!important;border-radius:16px!important;
+ background:#fffaf0!important;box-shadow:0 10px 25px rgba(0,0,0,.16)!important;
+ display:flex!important;flex-direction:column!important;cursor:pointer!important;overflow:hidden!important
+}
+.review-card:before{content:"“"!important;position:absolute!important;right:18px!important;top:7px!important;color:#e4cf9c!important;font:700 58px/1 Georgia,serif!important}
+.review-origin{display:flex!important;align-items:baseline!important;gap:6px!important;padding-right:38px!important;margin:0 0 7px!important;white-space:normal!important}
+.review-origin strong{font:800 14px/1.25 Arial,sans-serif!important;color:#15110b!important}
+.review-origin small{font:700 10px/1.3 Arial,sans-serif!important;color:#9a6c16!important}
+.review-card .stars{margin:0 0 13px!important;color:#c18a1d!important;font-size:12px!important;letter-spacing:2px!important}
+.review-text{
+ display:-webkit-box!important;-webkit-line-clamp:4!important;-webkit-box-orient:vertical!important;overflow:hidden!important;
+ margin:0!important;color:#17130d!important;font:600 17px/1.5 Georgia,"Times New Roman",serif!important
+}
+.review-slide[data-lang="العربية"] .review-text{font-family:Tahoma,Arial,sans-serif!important;text-align:right!important;direction:rtl!important;line-height:1.7!important}
+.review-actions{margin-top:auto!important;padding-top:15px!important;color:#8a5c09!important;font:800 10px/1 Arial,sans-serif!important;letter-spacing:.25px!important}
+.review-dots{display:flex!important;justify-content:center!important;gap:7px!important;margin-top:19px!important}
+.review-dot{width:7px!important;height:7px!important;padding:0!important;border:0!important;border-radius:50%!important;background:#79684a!important}
+.review-dot.active{width:25px!important;border-radius:10px!important;background:#efc453!important}
+@media(max-width:900px){.review-slide{flex-basis:calc((100% - 18px)/2)!important}}
+@media(max-width:620px){.reviews-section,.learner-voices{padding:23px 18px 25px!important;border-radius:16px!important}.reviews-head{grid-template-columns:1fr!important}.reviews-title{font-size:26px!important}.review-controls{position:absolute!important;right:20px!important}.review-slide{flex-basis:100%!important}.review-card{height:220px!important;padding:21px!important}.review-text{font-size:16px!important}}
 </style>
 </head>
 <body>
