@@ -878,32 +878,17 @@ body{overflow-x:hidden!important}
 }
 </style>
 
-<style id="feedback-banner-edgefix">
-/* Keep the global header untouched; only make the feedback banner edge-to-edge below it. */
-.feedback-page{width:100%;max-width:none!important;margin:0!important;padding-left:0!important;padding-right:0!important}
-.feedback-shell{width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
-.feedback-hero{
- display:block!important;
- width:100%!important;
- max-width:none!important;
- margin:0!important;
- padding:0!important;
- overflow:hidden!important;
- border:0!important;
- border-radius:0!important;
- background:#fff!important;
+
+<style id="feedback-page-width-repair">
+/* Repair accidental global shrink: page/header/footer stay full viewport width. */
+html,body{width:100%!important;max-width:none!important;min-width:0!important;margin:0!important}
+body>header,body>main,body>footer,main.feedback-page,.feedback-shell{
+ width:100%!important;max-width:none!important;margin-left:0!important;margin-right:0!important;
 }
-.feedback-banner{
- display:block!important;
- width:100%!important;
- max-width:none!important;
- height:auto!important;
- margin:0!important;
- padding:0!important;
- border:0!important;
- border-radius:0!important;
- object-fit:cover!important;
-}
+.feedback-page{padding-left:0!important;padding-right:0!important}
+.feedback-hero{display:block!important;width:100%!important;max-width:none!important;margin:0!important;padding:0!important;overflow:hidden!important;border:0!important;border-radius:0!important}
+.feedback-banner{display:block!important;width:100%!important;max-width:none!important;height:auto!important;margin:0!important;border:0!important;border-radius:0!important}
+.reference-layout{width:min(1240px,calc(100% - 32px))!important;max-width:1240px!important;margin-left:auto!important;margin-right:auto!important}
 </style>
 </head>
 <body>
