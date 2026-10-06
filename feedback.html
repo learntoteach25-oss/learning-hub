@@ -539,6 +539,36 @@
 .review-dot{background:#77674a!important}.review-dot.active{background:#f2c957!important}
 @media(max-width:900px){.review-slide{flex-basis:calc((100% - 20px)/2)!important}}
 @media(max-width:620px){.reviews-section,.learner-voices{padding:22px 16px!important}.reviews-title{font-size:27px!important}.reviews-subtitle{font-size:13px!important}.review-slide{flex-basis:100%!important}.review-card{height:245px!important}.review-text{font-size:17px!important}}
+
+/* Learner voices v4: replace dense legacy card look with clean testimonial tiles */
+.reviews-section,.learner-voices{padding:34px 38px 30px!important;background:#0b0a08!important;border-radius:22px!important}
+.reviews-head{margin-bottom:26px!important}
+.reviews-title{font-size:34px!important}
+.review-track{gap:22px!important}
+.review-slide{flex:0 0 calc((100% - 44px)/3)!important}
+.review-card{
+ height:285px!important;padding:28px 26px 25px!important;
+ background:linear-gradient(180deg,#fffdf8 0%,#f7ecd5 100%)!important;
+ border:1px solid #d8b466!important;border-top:5px solid #d4a235!important;border-radius:18px!important;
+ box-shadow:0 12px 30px rgba(0,0,0,.2)!important
+}
+.review-card:before{content:"“"!important;right:22px!important;top:12px!important;font-size:64px!important;color:#d7b96f!important;opacity:.45!important}
+.review-origin{padding-right:55px!important;margin:0 0 12px!important}
+.review-origin strong{font-size:17px!important;font-weight:900!important;color:#0b0906!important;margin-bottom:5px!important}
+.review-origin small{font-size:11px!important;font-weight:700!important;color:#80560a!important}
+.review-card .stars{font-size:14px!important;letter-spacing:2px!important;margin:0 0 18px!important}
+.review-text{
+ -webkit-line-clamp:5!important;font-size:19px!important;line-height:1.58!important;font-weight:600!important;
+ color:#17120b!important
+}
+.review-slide[data-lang="العربية"] .review-text{font-size:19px!important;line-height:1.85!important}
+.review-actions{display:inline-flex!important;align-items:center!important;gap:6px!important;width:max-content!important;
+ margin-top:auto!important;padding:9px 12px!important;border:1px solid #c99832!important;border-radius:999px!important;
+ background:#0b0a08!important;color:#f0c45b!important;font-size:10px!important;letter-spacing:.3px!important}
+.review-actions:after{content:"→"!important;font-size:12px!important}
+.review-dots{margin-top:23px!important}
+@media(max-width:900px){.review-slide{flex-basis:calc((100% - 22px)/2)!important}}
+@media(max-width:620px){.reviews-section,.learner-voices{padding:24px 18px!important}.review-slide{flex-basis:100%!important}.review-card{height:270px!important;padding:24px 21px!important}.review-text,.review-slide[data-lang="العربية"] .review-text{font-size:17px!important}}
 </style>
 </head>
 <body>
