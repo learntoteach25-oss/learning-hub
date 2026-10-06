@@ -179,6 +179,23 @@
 .submit{width:100%!important;margin-top:15px!important;padding:13px 18px!important;border:0!important;border-radius:10px!important;background:linear-gradient(90deg,#bd8622,#edc35a,#bd8622)!important;color:#080706!important;font:900 10px Arial!important;letter-spacing:.02em!important;box-shadow:0 7px 16px rgba(147,99,14,.16)!important;cursor:pointer!important}
 .feedback-form .form-note{margin-top:10px!important;color:#75654e!important;font-size:8px!important;text-align:center!important}
 @media(max-width:620px){.feedback-form{padding:27px 17px!important}.attachments{grid-template-columns:1fr!important}.attachment{min-height:98px!important}}
+/* high-visibility form correction */
+.feedback-form{background:#f2dfb9!important}
+.feedback-form h2{color:#050505!important;font-size:33px!important}
+.feedback-form>p{color:#3d3326!important;font-size:11px!important;font-weight:500!important}
+.feedback-form label{color:#050505!important;font-size:11px!important;font-weight:900!important}
+.feedback-form input:not([type=file]),.feedback-form select,.feedback-form textarea{background:#fff!important;border:2px solid #9b6a17!important;color:#050505!important;font-size:12px!important;box-shadow:none!important}
+.feedback-form input:not([type=file]),.feedback-form select{height:46px!important}
+.feedback-form textarea{min-height:118px!important}
+.feedback-form input::placeholder,.feedback-form textarea::placeholder{color:#595959!important;opacity:1!important}
+.attachments{gap:16px!important}
+.attachment{min-height:118px!important;padding:16px!important;background:#fff!important;border:2px solid #a8751d!important;border-radius:12px!important;display:grid!important;grid-template-columns:42px 1fr!important;grid-template-rows:auto auto 1fr!important;column-gap:12px!important}
+.attachment .attachment-icon,.attachment>i{position:static!important;grid-column:1!important;grid-row:1/3!important;width:40px!important;height:40px!important;background:#e6b84e!important;color:#050505!important}
+.attachment b{grid-column:2!important;grid-row:1!important;color:#050505!important;font-size:13px!important;line-height:1.2!important}
+.attachment small{grid-column:2!important;grid-row:2!important;color:#4b4031!important;font-size:9px!important;margin:2px 0 8px!important}
+.attachment input[type=file]{grid-column:1/3!important;grid-row:3!important;width:100%!important;margin-top:8px!important;padding:8px!important;background:#f7edd8!important;border:1px solid #b68b3c!important;color:#111!important;font-size:10px!important}
+.submit{min-height:46px!important;background:#090806!important;color:#f1c85f!important;border:2px solid #c8962e!important;font-size:11px!important}
+.feedback-form .form-note{color:#493d2d!important;font-size:9px!important;font-weight:600!important}
 </style>
 </head>
 <body>
