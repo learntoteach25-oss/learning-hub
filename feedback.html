@@ -8,27 +8,20 @@
 <link rel="icon" href="assets/learning-hub-logo.png?v=approved-20260923">
 <link rel="stylesheet" href="assets/site.css?v=20261003-feedback-final">
 <style>
-:root{--navy:#082f50;--gold:#c58a18;--cream:#fbf6ec;--paper:#fffdf8;--ink:#211a12;--muted:#655b4d;--line:#e2c98d}
-*{box-sizing:border-box}
-body{margin:0}.feedback-page{background:var(--cream);padding:0 0 54px}.feedback-shell{width:100%}
+:root{--navy:#082f50;--navy2:#061f35;--gold:#c88d18;--gold2:#edc35e;--cream:#fbf6ec;--paper:#fffdf8;--ink:#201a12;--muted:#6a5f50;--line:#e3cc96}
+*{box-sizing:border-box}body{margin:0}.feedback-page{background:linear-gradient(180deg,#fffaf1,#f8f0e2);padding:0 0 58px}.feedback-shell{width:100%}
 .feedback-hero{width:100%;overflow:hidden;background:#fff}.feedback-banner{display:block;width:100%;height:auto}
-.reference-layout{width:min(1180px,calc(100% - 44px));margin:0 auto;background:var(--paper);border-left:1px solid var(--line);border-right:1px solid var(--line)}
-.benefit-strip{display:grid;grid-template-columns:repeat(4,1fr);padding:22px 42px 20px;border-bottom:1px solid #ead9b5;background:#fffdf8}
-.benefit{position:relative;text-align:center;padding:0 18px}.benefit:not(:last-child):after{content:"";position:absolute;right:0;top:8px;bottom:8px;width:1px;background:#ead9b5}
-.benefit-icon{width:54px;height:54px;margin:0 auto 8px;display:grid;place-items:center;border-radius:50%;background:#f8eed9;color:#a86e09;font:700 22px Georgia,serif}
-.benefit b{display:block;color:var(--navy);font:700 13px/1.25 Georgia,serif}.benefit small{display:block;margin-top:3px;color:#8b7350;font:9px Arial,sans-serif}
-.feedback-workspace{display:grid;grid-template-columns:38% 62%;min-height:360px;border-bottom:1px solid #ead9b5}
-.workspace-visual{position:relative;overflow:hidden;background:linear-gradient(145deg,#16140f,#57401c 58%,#b98b34)}
-.workspace-visual:before{content:"WE'RE\A Listening!";white-space:pre;position:absolute;left:9%;top:17%;width:72%;padding:32px 12px;border:8px solid #c99a32;border-radius:4px;background:#10100d;color:#fff;text-align:center;font:700 31px/1.05 Georgia,serif;box-shadow:0 12px 28px rgba(0,0,0,.25)}
-.workspace-visual:after{content:"Better programmes  •  Better resources  •  Better support";position:absolute;left:8%;right:8%;bottom:12%;color:#f3d783;text-align:center;font:700 10px/1.5 Arial,sans-serif}
-.feedback-form{padding:25px 30px 22px;background:#fff}
-.form-kicker{color:#a56b08;font:900 9px Arial,sans-serif;letter-spacing:1.8px}.feedback-form h2{margin:5px 0 5px;color:var(--navy);font:700 25px Georgia,serif}.feedback-form>p{margin:0 0 16px;color:var(--muted);font:11px/1.45 Arial,sans-serif}
-.fields{display:grid;grid-template-columns:1fr 1fr;gap:11px 14px}.full{grid-column:1/-1}.feedback-form label{display:block;color:#26384a;font:800 10px Arial,sans-serif}.feedback-form input,.feedback-form select,.feedback-form textarea{display:block;width:100%;margin-top:5px;padding:9px 10px;border:1px solid #dbc9a4;border-radius:5px;background:#fff;font:11px Arial,sans-serif}.feedback-form textarea{min-height:72px;resize:vertical}
-.attachments{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:11px}.attachment{padding:9px 11px;border:1px solid #e3d2ad;border-radius:6px;background:#fffaf0}.attachment b{display:block;color:var(--navy);font:700 11px Georgia,serif}.attachment small{display:block;margin:2px 0 5px;color:#786b59;font:9px Arial,sans-serif}.attachment input{margin:0;padding:0;border:0;font-size:9px}
-.submit{display:block;width:100%;margin-top:12px;padding:10px;border:0;border-radius:5px;background:linear-gradient(90deg,#dca936,#efc75f);color:#17120a;font:900 10px Arial,sans-serif;cursor:pointer}.status,.privacy{margin:7px 0 0!important;text-align:center;font:9px Arial,sans-serif!important;color:#756b5e!important}
-.impact{padding:22px 42px 20px;background:#fffdf8}.impact-head{text-align:center}.impact-head span{color:#a56b08;font:900 8px Arial,sans-serif;letter-spacing:1.8px}.impact-head h2{margin:4px 0 17px;color:var(--navy);font:700 23px Georgia,serif}.impact-head em{color:#b8780a;font-weight:400}.impact-grid{display:grid;grid-template-columns:repeat(4,1fr)}.impact-item{text-align:center;position:relative;padding:0 14px}.impact-item:not(:last-child):after{content:"";position:absolute;right:0;top:5px;bottom:5px;width:1px;background:#ead9b5}.impact-item i{display:grid;width:47px;height:47px;place-items:center;margin:0 auto 7px;border-radius:50%;background:#edf5ee;color:#8e6414;font:normal 19px Georgia,serif}.impact-item b{color:#173954;font:700 10px/1.3 Georgia,serif}
-.journey{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:20px 42px;background:linear-gradient(105deg,#071d30,#10100d 70%,#3c2a0c);color:#fff}.journey strong{font:700 18px Georgia,serif}.journey strong em{color:#efc65e;font-weight:400}.journey p{margin:4px 0 0;color:#d9d0c1;font:9px Arial,sans-serif}.journey a{padding:10px 17px;border-radius:999px;background:#e5b642;color:#111;text-decoration:none;font:900 9px Arial,sans-serif}
-@media(max-width:760px){.reference-layout{width:calc(100% - 24px)}.benefit-strip,.impact-grid{grid-template-columns:1fr 1fr}.benefit,.impact-item{padding:12px 8px}.feedback-workspace{grid-template-columns:1fr}.workspace-visual{min-height:280px}.fields,.attachments{grid-template-columns:1fr}.full{grid-column:auto}.journey{grid-template-columns:1fr}.journey a{width:max-content}}
+.reference-layout{width:min(1180px,calc(100% - 46px));margin:0 auto;background:#fffdf8;box-shadow:0 18px 55px rgba(55,38,12,.08)}
+.feedback-intro{text-align:center;padding:34px 24px 19px}.feedback-intro>span,.impact-head>span{color:#a66d09;font:900 9px Arial,sans-serif;letter-spacing:2.5px}.feedback-intro h2{margin:7px 0 8px;color:var(--navy);font:700 31px/1.05 Georgia,serif}.feedback-intro p{max-width:720px;margin:0 auto;color:var(--muted);font:12px/1.6 Arial,sans-serif}
+.benefit-strip{display:grid;grid-template-columns:repeat(4,1fr);margin:0 38px;padding:18px 0 24px;border-bottom:1px solid #eadab8}.benefit{text-align:center;padding:0 22px;position:relative}.benefit:not(:last-child):after{content:"";position:absolute;right:0;top:11px;bottom:4px;width:1px;background:#eadab8}.benefit-icon{display:grid;width:54px;height:54px;place-items:center;margin:0 auto 9px;border-radius:50%;background:linear-gradient(145deg,#fff7e7,#f4dfae);border:1px solid #e4c77d;color:#a66d09;font:700 21px Georgia,serif;box-shadow:0 6px 14px rgba(144,94,8,.08)}.benefit b{display:block;color:var(--navy);font:700 13px Georgia,serif}.benefit small{display:block;margin-top:4px;color:#86745c;font:9px/1.4 Arial,sans-serif}
+.feedback-workspace{display:grid;grid-template-columns:40% 60%;margin:28px 38px 0;overflow:hidden;border:1px solid #d9b96f;border-radius:18px;box-shadow:0 14px 34px rgba(43,30,10,.10)}
+.workspace-visual{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:430px;padding:42px 36px 30px;overflow:hidden;background:radial-gradient(circle at 85% 18%,rgba(236,193,87,.24),transparent 26%),linear-gradient(145deg,#071d30 0%,#0b1113 64%,#38270c 100%);color:#fff}.workspace-visual:before{content:"";position:absolute;width:260px;height:260px;right:-120px;bottom:-90px;border:1px solid rgba(237,195,94,.35);border-radius:50%;box-shadow:0 0 0 25px rgba(237,195,94,.03),0 0 0 50px rgba(237,195,94,.025)}.visual-copy{position:relative;z-index:1}.visual-copy>span{color:#efc65e;font:900 9px Arial,sans-serif;letter-spacing:2.5px}.visual-copy h3{margin:12px 0 15px;color:#fff;font:700 34px/1.08 Georgia,serif}.visual-copy p{max-width:330px;margin:0;color:#d9d1c4;font:12px/1.65 Arial,sans-serif}.visual-points{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:8px}.visual-points span{padding:7px 10px;border:1px solid rgba(239,198,94,.38);border-radius:999px;color:#f5df9c;font:800 8px Arial,sans-serif;letter-spacing:.4px}
+.feedback-form{padding:34px 36px 28px;background:#fff}.form-kicker{color:#a66d09;font:900 9px Arial,sans-serif;letter-spacing:2px}.feedback-form h2{margin:7px 0 6px;color:var(--navy);font:700 27px/1.1 Georgia,serif}.feedback-form>p{margin:0 0 20px;color:var(--muted);font:11px/1.5 Arial,sans-serif}.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}.full{grid-column:1/-1}.feedback-form label{display:block;color:#273b4d;font:800 9px Arial,sans-serif;letter-spacing:.15px}.feedback-form input,.feedback-form select,.feedback-form textarea{display:block;width:100%;margin-top:6px;padding:11px 12px;border:1px solid #d9c69c;border-radius:8px;background:#fffdfa;color:#211b13;font:11px Arial,sans-serif;outline:none}.feedback-form input:focus,.feedback-form select:focus,.feedback-form textarea:focus{border-color:#bd8520;box-shadow:0 0 0 3px rgba(200,141,24,.09)}.feedback-form textarea{min-height:92px;resize:vertical}
+.attachments{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:14px}.attachment{display:grid!important;grid-template-columns:34px 1fr;align-items:center;gap:2px 8px;padding:12px!important;border:1px solid #e1cca0;border-radius:10px;background:#fff9ed}.attachment>span{grid-row:1/3;display:grid;width:30px;height:30px;place-items:center;border-radius:50%;background:#f3e0b2;color:#9e690d;font-size:13px}.attachment b{display:block;color:var(--navy);font:700 11px Georgia,serif}.attachment small{display:block;margin-top:2px;color:#7d705d;font:8px Arial,sans-serif}.attachment input{grid-column:1/-1;margin-top:7px;padding:0;border:0;background:transparent;font-size:9px}.submit{display:block;width:100%;margin-top:15px;padding:12px;border:0;border-radius:8px;background:linear-gradient(90deg,#dca735,#efc65e);color:#17120a;font:900 10px Arial,sans-serif;cursor:pointer}.status,.privacy{text-align:center!important;color:#786d5e!important;font:9px Arial,sans-serif!important}.privacy{margin:6px 0 0!important}
+.impact{margin:34px 38px 0;padding:28px 0 30px;border-top:1px solid #eadab8}.impact-head{text-align:center}.impact-head h2{margin:5px 0 22px;color:var(--navy);font:700 26px Georgia,serif}.impact-head em{color:#b8780a;font-weight:400}.impact-grid{display:grid;grid-template-columns:repeat(4,1fr)}.impact-item{text-align:center;padding:0 20px;position:relative}.impact-item:not(:last-child):after{content:"";position:absolute;right:0;top:8px;bottom:5px;width:1px;background:#eadab8}.impact-item i{display:grid;width:50px;height:50px;place-items:center;margin:0 auto 8px;border-radius:50%;background:#edf5ee;border:1px solid #d7e6d9;color:#9a6911;font:normal 19px Georgia,serif}.impact-item b{display:block;color:#173954;font:700 12px Georgia,serif}.impact-item small{display:block;max-width:150px;margin:4px auto 0;color:#86745d;font:9px/1.4 Arial,sans-serif}
+.journey{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:18px;padding:22px 38px;background:linear-gradient(105deg,#061d31,#0c1010 68%,#38270b);color:#fff}.journey-mark{display:grid;width:50px;height:50px;place-items:center;border:1px solid #d6a83d;border-radius:50%;color:#efc65e;font:700 17px Georgia,serif}.journey strong{font:700 18px Georgia,serif}.journey strong em{color:#efc65e;font-weight:400}.journey p{margin:4px 0 0;color:#d9d0c1;font:9px Arial,sans-serif}.journey a{padding:11px 18px;border-radius:999px;background:#e5b642;color:#111;text-decoration:none;font:900 9px Arial,sans-serif;white-space:nowrap}
+@media(max-width:850px){.feedback-workspace{grid-template-columns:1fr}.workspace-visual{min-height:300px}.benefit-strip,.impact-grid{grid-template-columns:1fr 1fr}.benefit,.impact-item{padding:14px 10px}.journey{grid-template-columns:auto 1fr}.journey a{grid-column:1/-1;width:max-content;margin-left:68px}}
+@media(max-width:560px){.reference-layout{width:calc(100% - 20px)}.benefit-strip,.feedback-workspace,.impact{margin-left:16px;margin-right:16px}.benefit-strip,.impact-grid{grid-template-columns:1fr 1fr}.feedback-intro h2{font-size:27px}.workspace-visual{padding:30px 22px}.visual-copy h3{font-size:29px}.feedback-form{padding:27px 20px}.fields,.attachments{grid-template-columns:1fr}.full{grid-column:auto}.journey{padding:20px}.journey a{margin-left:0}}
 </style>
 </head>
 <body>
@@ -37,36 +30,61 @@ body{margin:0}.feedback-page{background:var(--cream);padding:0 0 54px}.feedback-
 <div class="feedback-shell">
 <section class="feedback-hero" aria-label="Feedback and Reviews"><img class="feedback-banner" src="assets/Feedback%20%26%20Reviews%20Learning%20Together.png?v=20261006" alt="Feedback & Reviews — Learning Together"></section>
 <div class="reference-layout">
+
+<section class="feedback-intro">
+  <span>YOUR EXPERIENCE MATTERS</span>
+  <h2>Help us make learning better.</h2>
+  <p>Share what worked, suggest what could improve, and help us create a stronger learning experience for every learner.</p>
+</section>
+
 <section class="benefit-strip">
-<div class="benefit"><span class="benefit-icon">✦</span><b>Share<br>Your Experience</b><small>Tell us what worked well</small></div>
-<div class="benefit"><span class="benefit-icon">♡</span><b>Suggest<br>New Ideas</b><small>Help shape what comes next</small></div>
-<div class="benefit"><span class="benefit-icon">▥</span><b>Help Us<br>Improve</b><small>Strengthen learning support</small></div>
-<div class="benefit"><span class="benefit-icon">♙</span><b>Support<br>Learner Success</b><small>Build a better experience</small></div>
+  <div class="benefit"><span class="benefit-icon">✦</span><b>Share Your Experience</b><small>Tell us what worked well</small></div>
+  <div class="benefit"><span class="benefit-icon">♡</span><b>Suggest New Ideas</b><small>Tell us what you would value next</small></div>
+  <div class="benefit"><span class="benefit-icon">↗</span><b>Help Us Improve</b><small>Strengthen teaching and resources</small></div>
+  <div class="benefit"><span class="benefit-icon">◎</span><b>Support Learner Success</b><small>Help shape better learner support</small></div>
 </section>
+
 <section class="feedback-workspace">
-<div class="workspace-visual" aria-hidden="true"></div>
-<form id="feedbackFormAnchor" class="feedback-form">
-<span class="form-kicker">SHARE YOUR EXPERIENCE</span><h2>Your Feedback</h2><p>Your voice helps Learning Hub improve teaching, resources, communication and learner support.</p>
-<div class="fields">
-<label>Name<input name="name" type="text" required></label>
-<label>Email<input name="email" type="email" required></label>
-<label class="full">Rating<select name="rating" required><option value="">Choose a rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Very good</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Needs improvement</option></select></label>
-<label class="full">Your Feedback<textarea name="message" placeholder="Tell us about your Learning Hub experience..."></textarea></label>
-</div>
-<div class="attachments">
-<label class="attachment"><b>Audio Feedback</b><small>Optional audio message</small><input name="feedback_audio" type="file" accept="audio/*"></label>
-<label class="attachment"><b>Video Feedback</b><small>Optional video message</small><input name="feedback_video" type="file" accept="video/*"></label>
-</div>
-<button class="submit" type="submit">Send Feedback</button><p id="feedbackStatus" class="status" role="status"></p><p class="privacy">Attachments: maximum 10 MB in total.</p>
-</form>
+  <div class="workspace-visual">
+    <div class="visual-copy"><span>WE’RE LISTENING</span><h3>Your voice shapes<br>what comes next.</h3><p>Thoughtful feedback helps Learning Hub improve programmes, resources, communication and learner support.</p></div>
+    <div class="visual-points"><span>Better teaching</span><span>Better resources</span><span>Better support</span></div>
+  </div>
+  <form id="feedbackFormAnchor" class="feedback-form">
+    <span class="form-kicker">SHARE YOUR FEEDBACK</span>
+    <h2>Tell us about your experience</h2>
+    <p>Written feedback is welcome. You can also attach an audio or video message.</p>
+    <div class="fields">
+      <label>Name<input name="name" type="text" required></label>
+      <label>Email<input name="email" type="email" required></label>
+      <label class="full">Your Rating<select name="rating" required><option value="">Choose a rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Very good</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Needs improvement</option></select></label>
+      <label class="full">Written Feedback<textarea name="message" placeholder="Tell us what worked well, what could be improved, or what you would like us to offer..."></textarea></label>
+    </div>
+    <div class="attachments">
+      <label class="attachment"><span>♫</span><div><b>Audio Feedback</b><small>Attach an optional audio message</small></div><input name="feedback_audio" type="file" accept="audio/*"></label>
+      <label class="attachment"><span>▶</span><div><b>Video Feedback</b><small>Attach an optional video message</small></div><input name="feedback_video" type="file" accept="video/*"></label>
+    </div>
+    <button class="submit" type="submit">Send Feedback →</button>
+    <p id="feedbackStatus" class="status" role="status"></p><p class="privacy">Attachments: maximum 10 MB in total.</p>
+  </form>
 </section>
-<section class="impact"><div class="impact-head"><span>YOUR FEEDBACK HELPS US</span><h2>Together we make a <em>difference</em></h2></div><div class="impact-grid">
-<div class="impact-item"><i>▱</i><b>Enhance<br>our programmes</b></div><div class="impact-item"><i>◇</i><b>Create better<br>resources</b></div><div class="impact-item"><i>⚙</i><b>Improve<br>learner support</b></div><div class="impact-item"><i>◎</i><b>Build a stronger<br>global community</b></div>
-</div></section>
-<section class="journey"><div><strong>Be part of our <em>learning journey</em></strong><p>Your feedback helps us keep improving for every learner.</p></div><a href="#feedbackFormAnchor">Share Your Feedback →</a></section>
-</div>
-</div>
-</main>
+
+<section class="impact">
+  <div class="impact-head"><span>YOUR FEEDBACK HELPS US</span><h2>Together we make a <em>difference.</em></h2></div>
+  <div class="impact-grid">
+    <div class="impact-item"><i>▱</i><b>Enhance our programmes</b><small>Refine what and how we teach</small></div>
+    <div class="impact-item"><i>◇</i><b>Create better resources</b><small>Develop useful learning materials</small></div>
+    <div class="impact-item"><i>⚙</i><b>Improve learner support</b><small>Respond better to learner needs</small></div>
+    <div class="impact-item"><i>◎</i><b>Grow our community</b><small>Build a stronger global learning space</small></div>
+  </div>
+</section>
+
+<section class="journey">
+  <div class="journey-mark">LH</div>
+  <div><strong>Be part of our <em>learning journey.</em></strong><p>Your feedback helps us keep improving for students, families and teachers.</p></div>
+  <a href="#feedbackFormAnchor">Share Your Feedback →</a>
+</section>
+
+</div></div></main>
 <footer></footer>
 <script>
 const endpoint='https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec',form=document.getElementById('feedbackFormAnchor'),status=document.getElementById('feedbackStatus'),maxBytes=10*1024*1024,toBase64=file=>new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result).split(',')[1]||'');r.onerror=reject;r.readAsDataURL(file)});
