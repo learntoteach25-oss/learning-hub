@@ -74,3 +74,14 @@
  .programmes-hero-copy{width:calc(100% - 36px)!important}
  .programmes-hero-copy h1{font-size:38px!important}
 }
+
+/* True viewport-edge programme hero: remove inherited page gutters */
+.learning-detail:has(.programmes-view){padding-left:0!important;padding-right:0!important}
+.learning-detail:has(.programmes-view) .programmes-view{width:100%!important;max-width:none!important;margin:0!important;padding:0!important}
+.learning-detail:has(.programmes-view) .programmes-hero{
+ width:100%!important;max-width:none!important;margin:0!important;
+ border-left:0!important;border-right:0!important;border-radius:0!important;
+}
+.learning-detail:has(.programmes-view) .programme-folders{
+ width:min(1120px,calc(100% - 56px))!important;margin-left:auto!important;margin-right:auto!important;
+}
