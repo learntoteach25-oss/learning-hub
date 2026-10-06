@@ -91,3 +91,20 @@
 }
 .boards-premium .boards-hero::after{content:"";position:absolute;inset:0 0 0 54%;pointer-events:none;background:radial-gradient(circle at 70% 48%,rgba(216,164,48,.13),transparent 55%);z-index:0}
 .boards-premium .boards-hero-copy{position:relative;z-index:1}
+
+/* 2026-10-06 Boards card alignment + Learning Hub palette */
+.boards-premium #boards-list{padding:42px max(4vw,34px)!important;background:#f8f1e5!important;border-top:1px solid #c99a36!important;border-bottom:1px solid #d9bd80!important}
+.boards-premium #boards-list .boards-head{margin-bottom:25px!important}
+.boards-premium #boards-list .boards-head h2{color:#16120d!important}
+.boards-premium #boards-list .boards-head h2 em{color:#b57a16!important}
+.boards-premium .boards-premium-grid{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:14px!important;align-items:stretch!important}
+.boards-premium .boards-premium-grid article{position:relative!important;display:grid!important;grid-template-rows:158px 1fr!important;min-height:350px!important;overflow:hidden!important;border:1px solid #cfa94f!important;border-radius:13px!important;background:#fffdf8!important;box-shadow:0 8px 22px rgba(44,31,8,.07)!important}
+.boards-premium .board-photo{position:relative!important;height:158px!important;overflow:hidden!important;background:#16120d!important;border-bottom:1px solid #d4ae55!important}
+.boards-premium .board-photo img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important}
+.boards-premium .board-badge{position:absolute!important;left:11px!important;bottom:10px!important;display:grid!important;place-items:center!important;min-width:42px!important;height:28px!important;padding:0 8px!important;border:1px solid rgba(235,193,91,.8)!important;border-radius:7px!important;background:rgba(5,5,4,.86)!important;color:#efc55c!important;font:900 10px/1 Arial!important;letter-spacing:.08em!important;box-shadow:0 4px 10px rgba(0,0,0,.18)!important}
+.boards-premium .board-card-copy{display:flex!important;flex-direction:column!important;align-items:center!important;height:100%!important;padding:16px 13px 14px!important;text-align:center!important}
+.boards-premium .board-card-copy h3{min-height:44px!important;display:flex!important;align-items:center!important;justify-content:center!important;margin:0 0 7px!important;color:#17120c!important;font:700 19px/1.05 Georgia,serif!important}
+.boards-premium .board-card-copy p{min-height:48px!important;margin:0!important;color:#665c4e!important;font:11px/1.45 Arial!important}
+.boards-premium .board-card-copy a{display:grid!important;place-items:center!important;width:30px!important;height:30px!important;margin:auto auto 0!important;border-radius:50%!important;background:#d8a52d!important;color:#fff!important;text-decoration:none!important}
+@media(max-width:1050px){.boards-premium .boards-premium-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:620px){.boards-premium #boards-list{padding:32px 15px!important}.boards-premium .boards-premium-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}.boards-premium .boards-premium-grid article{min-height:330px!important}.boards-premium .board-card-copy h3{font-size:16px!important}}
