@@ -656,6 +656,65 @@
 .review-modal-card{background:#fff9ed!important;border:2px solid #d0a03e!important;color:#15110a!important}.review-modal-card:before,.review-modal-card:after{content:none!important}.review-modal-card .modal-stars{color:#c1840c!important;font-size:17px!important;letter-spacing:3px!important}.review-modal-card .modal-text{color:#17130c!important;font:600 22px/1.65 Georgia,"Times New Roman",serif!important}.review-modal-card .modal-meta{color:#76500b!important;font:900 12px Arial!important}.modal-close{cursor:pointer!important}
 @media(max-width:900px){.learner-voices-v7 .review-slide{flex-basis:50%!important}.learner-voices-v7 .review-slide:nth-child(3n){border-right:1px solid rgba(177,128,34,.2)!important}}
 @media(max-width:620px){.learner-voices-v7{margin:24px 10px!important;padding:26px 18px!important}.learner-voices-v7 .reviews-head{align-items:start!important}.learner-voices-v7 .reviews-head h2{font-size:28px!important}.learner-voices-v7 .review-slide{flex-basis:100%!important;padding:0 8px!important;border-right:0!important}.learner-voices-v7 .review-card{height:315px!important}.learner-voices-v7 .review-text,.learner-voices-v7 .review-slide[data-lang="العربية"] .review-text{font-size:19px!important}}
+
+/* Learner Voices v8 — approved light editorial layout; overrides all legacy review styles */
+.learner-voices-v7{
+ margin:34px 30px 30px!important;padding:42px 46px 34px!important;
+ background:#f7ead0!important;border:1px solid #c99832!important;border-radius:22px!important;
+ box-shadow:0 16px 40px rgba(77,50,8,.10)!important;color:#15110b!important
+}
+.learner-voices-v7 .reviews-head{
+ display:grid!important;grid-template-columns:1fr auto!important;align-items:end!important;gap:24px!important;
+ margin:0 0 30px!important;padding:0 0 22px!important;border-bottom:1px solid #d8bb7d!important
+}
+.learner-voices-v7 .reviews-title,.learner-voices-v7 .reviews-title div{display:block!important}
+.learner-voices-v7 .eyebrow{display:block!important;margin:0 0 8px!important;color:#9a6507!important;font:900 10px Arial!important;letter-spacing:2.5px!important}
+.learner-voices-v7 .reviews-head h2{margin:0!important;color:#111!important;font:700 34px/1.08 Georgia,serif!important}
+.learner-voices-v7 .reviews-head p{margin:8px 0 0!important;color:#5f5140!important;font:13px/1.5 Arial!important}
+.learner-voices-v7 .review-controls{display:flex!important;gap:10px!important}
+.learner-voices-v7 .review-controls button{width:44px!important;height:44px!important;border:1px solid #b77c0d!important;border-radius:50%!important;background:#111!important;color:#efbd4d!important;font-size:18px!important}
+.learner-voices-v7 .review-window{overflow:hidden!important;padding:0!important}
+.learner-voices-v7 .review-track{display:flex!important;gap:0!important;transition:transform .55s ease!important}
+.learner-voices-v7 .review-slide{
+ flex:0 0 33.333333%!important;min-width:0!important;padding:4px 30px 6px!important;
+ border-right:1px solid #d7bd86!important;background:transparent!important;color:#111!important
+}
+.learner-voices-v7 .review-slide:first-child{padding-left:4px!important}
+.learner-voices-v7 .review-slide:nth-child(3n){border-right:0!important}
+.learner-voices-v7 .review-card{
+ position:relative!important;height:300px!important;padding:0!important;margin:0!important;
+ display:flex!important;flex-direction:column!important;background:transparent!important;
+ border:0!important;border-radius:0!important;box-shadow:none!important;color:#111!important;overflow:visible!important
+}
+.learner-voices-v7 .review-card:before,.learner-voices-v7 .review-card:after{content:none!important;display:none!important}
+.learner-voices-v7 .stars{
+ position:static!important;order:0!important;margin:0 0 22px!important;color:#bd7b00!important;
+ font:700 16px/1 Arial!important;letter-spacing:3px!important
+}
+.learner-voices-v7 .review-text{
+ order:1!important;flex:1!important;margin:0!important;padding:0!important;color:#17120b!important;
+ font:600 20px/1.58 Georgia,"Times New Roman",serif!important;
+ display:-webkit-box!important;-webkit-line-clamp:5!important;-webkit-box-orient:vertical!important;overflow:hidden!important
+}
+.learner-voices-v7 .review-slide[data-lang="中文"] .review-text{font-family:"Microsoft YaHei","Noto Sans CJK SC",Arial,sans-serif!important;font-weight:700!important}
+.learner-voices-v7 .review-slide[data-lang="العربية"] .review-text{
+ color:#17120b!important;font:700 20px/1.9 Tahoma,Arial,sans-serif!important;text-align:right!important;direction:rtl!important
+}
+.learner-voices-v7 .review-origin{
+ order:2!important;margin:20px 0 0!important;padding:16px 0 0!important;border-top:1px solid #d4b675!important;background:transparent!important
+}
+.learner-voices-v7 .review-origin strong{display:block!important;margin:0 0 5px!important;color:#111!important;font:800 17px/1.2 Arial!important}
+.learner-voices-v7 .review-origin small{display:block!important;color:#80570b!important;font:700 11px/1.35 Arial!important}
+.learner-voices-v7 .review-actions{
+ order:3!important;position:static!important;margin:12px 0 0!important;padding:0!important;width:max-content!important;
+ border:0!important;background:transparent!important;color:#8c5c06!important;font:800 10px Arial!important;text-transform:none!important;letter-spacing:0!important
+}
+.learner-voices-v7 .review-actions:after{content:" →"!important}
+.learner-voices-v7 .review-dots{display:flex!important;justify-content:center!important;gap:8px!important;margin:26px 0 0!important}
+.learner-voices-v7 .review-dot{width:7px!important;height:7px!important;padding:0!important;border:0!important;border-radius:50%!important;background:#c9b58d!important}
+.learner-voices-v7 .review-dot.active{width:25px!important;border-radius:999px!important;background:#b77c0d!important}
+@media(max-width:900px){.learner-voices-v7 .review-slide{flex-basis:50%!important}}
+@media(max-width:620px){.learner-voices-v7{margin:24px 10px!important;padding:28px 20px!important}.learner-voices-v7 .reviews-head h2{font-size:27px!important}.learner-voices-v7 .review-slide{flex-basis:100%!important;padding:4px!important;border-right:0!important}.learner-voices-v7 .review-card{height:290px!important}.learner-voices-v7 .review-text,.learner-voices-v7 .review-slide[data-lang="العربية"] .review-text{font-size:18px!important}}
 </style>
 </head>
 <body>
