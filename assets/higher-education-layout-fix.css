@@ -155,3 +155,34 @@ body:has(.programmes-view) a[href*="group="]:is(.back-button,.back-link,.program
 /* Ensure actual catalogue back button is visible on programmes landing and group pages */
 .learning-detail:has(.programmes-view) #backToCatalogue{display:inline-flex!important;visibility:visible!important;opacity:1!important;position:relative!important;z-index:21!important}
 @media(max-width:620px){.learning-detail:has(.programmes-view) .detail-toolbar{width:calc(100% - 32px)!important;margin:10px auto!important;top:auto!important;left:auto!important}}
+
+/* 2026-10-06 screenshot correction: keep back row, restore clean full-width hero */
+.learning-detail:has(.programmes-view) .detail-toolbar{
+ box-sizing:border-box!important;
+ width:100%!important;
+ max-width:none!important;
+ margin:0!important;
+ padding:14px 56px!important;
+ background:#f8f3e8!important;
+}
+.learning-detail:has(.programmes-view) .programmes-hero{
+ left:auto!important;
+ width:100%!important;
+ max-width:none!important;
+ margin:0!important;
+ height:390px!important;
+ min-height:390px!important;
+ background-size:cover!important;
+ background-position:center 45%!important;
+ border:0!important;
+ border-bottom:1px solid #d4a73e!important;
+}
+.learning-detail:has(.programmes-view) .programmes-hero-copy{
+ width:min(1000px,calc(100% - 80px))!important;
+ margin:0 auto!important;
+ padding:0!important;
+}
+@media(max-width:620px){
+ .learning-detail:has(.programmes-view) .detail-toolbar{padding:10px 16px!important}
+ .learning-detail:has(.programmes-view) .programmes-hero{height:320px!important;min-height:320px!important}
+}
