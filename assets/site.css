@@ -342,3 +342,24 @@
 .exam-view .exam-hero-copy{width:min(92%,1280px)!important;max-width:1280px!important;margin:0 auto!important}
 .exam-view .exam-hero-copy>p{max-width:650px!important}
 @media(max-width:620px){.exam-view .exam-hero{min-height:540px!important;padding:34px 18px!important;background-position:62% center!important}.exam-view .exam-hero-copy{width:100%!important}}
+
+/* 2026-10-07 Exams — dropdown components, uniform cards and section hierarchy */
+.exam-view .exam-test-grid{align-items:stretch!important}
+.exam-view .exam-card{display:grid!important;grid-template-rows:205px 1fr!important;min-height:430px!important}
+.exam-view .exam-card-image{display:block!important;height:205px!important;overflow:hidden!important;background:#111!important}
+.exam-view .exam-card-image img{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important}
+.exam-view .exam-card .card-body{display:flex!important;flex-direction:column!important;height:auto!important;padding:19px!important}
+.exam-view .exam-card .card-body h2{min-height:28px!important;margin-bottom:7px!important}
+.exam-view .exam-card .card-body>p{min-height:36px!important;margin-bottom:14px!important}
+.exam-view .exam-component-label{margin:0 0 6px!important;color:#071426!important;font:800 11px Arial!important}
+.exam-view .exam-component-select{width:100%!important;height:42px!important;padding:0 38px 0 12px!important;border:1px solid #d9a526!important;border-radius:7px!important;background:#fffaf0!important;color:#071426!important;font:700 11px Arial!important;cursor:pointer!important}
+.exam-view .exam-component-go{display:flex!important;align-items:center!important;justify-content:center!important;min-height:38px!important;margin-top:10px!important;border-radius:7px!important;background:#dfa51f!important;color:#080808!important;font:800 10px Arial!important;text-decoration:none!important}
+.exam-view .exam-school-section,.exam-view .competitions-section{margin-top:52px!important;padding-top:38px!important;border-top:1px solid #d6b15e!important}
+.exam-view .exam-section-head{margin-bottom:25px!important}
+.exam-view .exam-section-head .eyebrow{display:block!important;margin-bottom:7px!important}
+.exam-view .exam-school-grid,.exam-view .exam-competition-grid{align-items:stretch!important}
+.exam-view .exam-school-grid .detail-card,.exam-view .exam-competition-grid .detail-card{display:flex!important;flex-direction:column!important;height:100%!important}
+.exam-view .exam-school-grid .detail-card>img,.exam-view .exam-competition-grid .detail-card>img{flex:0 0 auto!important;object-fit:cover!important}
+.exam-view .exam-school-grid .card-body,.exam-view .exam-competition-grid .card-body{display:flex!important;flex-direction:column!important;flex:1!important}
+.exam-view .exam-school-grid .card-body>a,.exam-view .exam-competition-grid .card-body>a{margin-top:auto!important}
+@media(max-width:620px){.exam-view .exam-card{grid-template-rows:210px 1fr!important}.exam-view .exam-card-image{height:210px!important}}
