@@ -1,134 +1,77 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Feedback & Reviews | Learning Hub</title><meta name="description" content="Read learner feedback and share your Learning Hub experience."><link rel="icon" href="assets/learning-hub-logo.png?v=approved-20260923"><link rel="stylesheet" href="assets/site.css?v=20261003-feedback-final"><style>:root{--black:#050505;--gold:#d4a73e;--gold2:#f1cf74;--cream:#f8f3e9;--ink:#17130e;--muted:#6e6559;--line:rgba(212,167,62,.42)}*{box-sizing:border-box}.feedback-page{background:linear-gradient(180deg,#f7f0e2 0,#fbf8f1 45%,#f6eddd 100%);min-height:70vh;padding:0 0 72px}.feedback-shell{width:100%;margin:0 auto}.feedback-shell>section:not(.feedback-hero),.feedback-shell>form{width:min(1180px,calc(100% - 44px));margin-left:auto;margin-right:auto}.feedback-hero{position:relative;width:100%;min-height:0;overflow:hidden;background:#0a0907;border:0;border-radius:0;box-shadow:0 12px 30px rgba(28,19,5,.12)}.feedback-banner{display:block;width:100%;height:auto;max-height:none;object-fit:contain;object-position:center;margin:0}.reviews{position:relative;margin:0 auto!important;padding:42px 38px 34px!important;background:linear-gradient(135deg,#071d30 0%,#0b1720 58%,#171006 100%)!important;border:1px solid #c99528!important;border-radius:0 0 28px 28px!important;box-shadow:0 22px 50px rgba(20,14,4,.16)!important;overflow:hidden}.reviews-head{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:24px;margin:0 0 25px;padding:0}.reviews-title{display:grid;grid-template-columns:auto 1fr;align-items:center;gap:10px 16px}.reviews-title .eyebrow{grid-row:1/3;display:grid;place-items:center;min-width:122px;min-height:42px;padding:10px 15px;border:1px solid #d7a73d;border-radius:999px;background:rgba(0,0,0,.28);color:#f0cf79;font:900 10px Arial,sans-serif;letter-spacing:1.8px;text-transform:uppercase}.reviews-head h2{margin:0;color:#fff8e9;font:700 31px/1.05 Georgia,serif}.reviews-head p{margin:0;color:#dfd2bb;font:12px/1.55 Arial,sans-serif}.review-controls{display:flex;gap:8px}.review-controls button{width:43px;height:43px;border:1px solid #d7a73d;border-radius:50%;background:rgba(255,255,255,.06);color:#f0cf79;font-size:19px;cursor:pointer;transition:.2s}.review-window{position:relative;z-index:2;overflow:hidden;padding:3px 2px 17px}.review-track{display:flex;gap:12px;transition:transform .55s cubic-bezier(.22,.61,.36,1);will-change:transform}.review-slide{flex:0 0 calc((100% - 24px)/3);min-width:0}.review-card{position:relative;height:202px;padding:24px 24px 22px;border:1px solid #e2c783;border-radius:20px;background:linear-gradient(145deg,#fffdf7 0%,#f9edcf 100%);box-shadow:0 12px 28px rgba(0,0,0,.18);cursor:pointer;transition:transform .2s ease,box-shadow .2s ease}.review-card:hover{transform:translateY(-5px);box-shadow:0 18px 36px rgba(0,0,0,.26)}.review-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.review-person strong{display:block;color:#062d4c;font:700 17px Georgia,serif}.review-person small{display:block;margin-top:5px;color:#95640b;font:900 9px Arial,sans-serif;letter-spacing:.7px;text-transform:uppercase}.stars{color:#cf9720;letter-spacing:1px;font-size:10px;white-space:nowrap}.review-text{margin:19px 0 10px;color:#241d14;font:600 15px/1.55 Georgia,serif;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.review-text[dir="rtl"]{text-align:right;font-family:Tahoma,Arial,sans-serif}.read-cue{position:absolute;right:22px;bottom:18px;color:#8e5d08;font:900 9px Arial,sans-serif;letter-spacing:1.1px;text-transform:uppercase}.review-dots{position:relative;z-index:2;display:flex;justify-content:center;gap:7px;margin-top:3px}.review-dot{width:7px;height:7px;padding:0;border:0;border-radius:999px;background:#c9bda8;cursor:pointer}.review-dot.active{width:24px;background:#d6a43a}.review-modal{position:fixed;inset:0;z-index:9999;display:none;place-items:center;padding:22px;background:rgba(0,0,0,.78);backdrop-filter:blur(6px)}.review-modal.open{display:grid}.review-modal-card{position:relative;width:min(610px,100%);padding:30px;border:1px solid var(--gold);border-radius:22px;background:#fffdf8;box-shadow:0 28px 80px rgba(0,0,0,.42)}.modal-close{position:absolute;right:16px;top:14px;width:34px;height:34px;border:1px solid #e1c77f;border-radius:50%;background:#fff8e9;color:#17130e;font-size:19px}.modal-meta{color:#9a6b0b;font:900 11px Arial;letter-spacing:.08em}.modal-stars{margin:9px 0;color:#cf9720;letter-spacing:2px}.modal-text{margin:18px 0 4px;color:#102d4c;font:700 23px/1.55 Georgia,serif}.modal-text[dir="rtl"]{text-align:right;font-family:Tahoma,Arial,sans-serif}.feedback-message{margin:24px auto 0!important;display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid #d9b766;border-top:0;border-radius:0 0 22px 22px;overflow:hidden;background:#fffaf0;box-shadow:0 15px 32px rgba(46,32,8,.07)}.message-card{min-height:128px;padding:25px 27px;border:0;border-right:1px solid #ead6aa;border-radius:0;background:transparent;box-shadow:none}.message-card b{display:block;margin-bottom:5px;color:#102d4c;font:700 15px Georgia,serif}.message-card p{margin:0;color:#65594a;font:12px/1.6 Arial,sans-serif}.feedback-card{position:relative;margin-top:34px!important;background:linear-gradient(180deg,#fffdf9,#fbf3e3);border:1px solid #d9b766;border-radius:26px;padding:0;overflow:hidden;box-shadow:0 20px 44px rgba(45,31,8,.09)}.form-heading{margin:0!important;padding:30px 34px 24px;border-bottom:1px solid #d9b766;background:linear-gradient(110deg,#071d30 0%,#0b1720 72%,#2a1d08 100%)}.form-heading h2{margin:0;color:#fff8e9;font:700 31px Georgia,serif}.form-heading p{margin:7px 0 0;color:#ded2be;font:12px/1.55 Arial,sans-serif}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:26px 34px 0}.full{grid-column:1/-1}.feedback-card label{display:block;font:700 13px Arial;margin:0 0 7px;color:#26384a}.feedback-card input,.feedback-card select,.feedback-card textarea{width:100%;padding:12px 13px;border:1px solid #d7ccb9;border-radius:9px;background:#fff;font:14px Arial}.feedback-card textarea{min-height:130px;resize:vertical}.feedback-types{display:grid;grid-template-columns:1.25fr .875fr .875fr;gap:14px;margin:22px 34px 0}.feedback-type{position:relative;border:1px solid #dec58c;border-radius:18px;padding:22px;background:#fffdf8;box-shadow:0 8px 20px rgba(49,34,8,.045)}.feedback-type strong{display:block;margin-bottom:6px;color:#102d4c;font:700 15px Georgia,serif}.feedback-type small{display:block;color:#665d51;margin:4px 0 11px;font:11px/1.4 Arial}.submit{display:block;width:min(340px,calc(100% - 68px));margin:26px auto 32px;border:1px solid #b98218;border-radius:999px;padding:14px 22px;background:linear-gradient(135deg,#f2ce72,#d9a332);color:#17120b;font:900 12px Arial,sans-serif;cursor:pointer;box-shadow:0 9px 18px rgba(132,86,8,.16)}.submit:disabled{opacity:.65}.status{margin:14px 0 0;font:700 13px Arial;color:#102d4c}.privacy-note{margin-top:17px;color:#756b5e;font:11px/1.55 Arial}@media(max-width:900px){.review-slide{flex-basis:calc((100% - 12px)/2)}.feedback-message{grid-template-columns:1fr}.message-card{border-right:0;border-bottom:1px solid #ead6aa}.feedback-types{grid-template-columns:1fr}.reviews-head{align-items:flex-start}.reviews-title{grid-template-columns:1fr}.reviews-title .eyebrow{grid-row:auto;width:max-content}.form-grid{grid-template-columns:1fr}}.feedback-message{grid-template-columns:1fr}.feedback-types{grid-template-columns:1fr 1fr}.feedback-types .feedback-type:first-child{grid-column:1/-1}}@media(max-width:620px){.feedback-shell{width:100%}.feedback-shell>section:not(.feedback-hero),.feedback-shell>form{width:calc(100% - 22px)}.reviews{padding:28px 18px 24px!important;border-radius:0 0 20px 20px!important}.reviews-head{display:block}.reviews-head h2{font-size:25px}.review-controls{margin-top:15px}.review-slide{flex-basis:100%}.review-card{height:194px}.feedback-message{border-radius:0 0 18px 18px}.feedback-card{border-radius:20px}.form-heading{padding:25px 20px 20px}.form-grid{padding:22px 20px 0}.feedback-card>.field{margin-left:20px;margin-right:20px}.feedback-types{margin-left:20px;margin-right:20px}.submit{width:calc(100% - 40px)}}.feedback-shell>section:not(.feedback-hero),.feedback-shell>form{width:calc(100% - 22px)}.reviews{padding:18px 14px}.reviews-head{align-items:flex-start}.reviews-title{display:block}.reviews-head h2{font-size:18px;margin-top:8px}.reviews-head p{display:none}.review-slide{flex-basis:82%}.review-card{height:150px}.form-grid,.feedback-types{grid-template-columns:1fr}.full,.feedback-types .feedback-type:first-child{grid-column:auto}.feedback-card{padding:21px}}
-/* FINAL FEEDBACK REDESIGN — editorial, open layout; approved banner remains unchanged */
-.feedback-page{background:#fbf7ef!important}
-.feedback-shell>section:not(.feedback-hero),.feedback-shell>form{width:min(1180px,calc(100% - 56px))!important}
-.reviews{margin:34px auto 0!important;padding:30px 0 22px!important;background:transparent!important;border:0!important;border-top:1px solid #c99a32!important;border-bottom:1px solid #c99a32!important;border-radius:0!important;box-shadow:none!important;overflow:hidden!important}
-.reviews-head{display:flex!important;align-items:flex-end!important;justify-content:space-between!important;margin:0 0 24px!important;padding:0 2px!important}
-.reviews-title{display:block!important}
-.reviews-title .eyebrow{display:block!important;min-width:0!important;min-height:0!important;width:auto!important;padding:0!important;margin:0 0 8px!important;border:0!important;border-radius:0!important;background:none!important;color:#a66d09!important;font:900 10px Arial,sans-serif!important;letter-spacing:2.4px!important;text-align:left!important}
-.reviews-head h2{margin:0!important;color:#082f50!important;font:700 34px/1.05 Georgia,serif!important}
-.reviews-head p{display:block!important;margin:8px 0 0!important;color:#665c4e!important;font:12px/1.5 Arial,sans-serif!important}
-.review-controls{display:flex!important;gap:8px!important}
-.review-controls button{width:38px!important;height:38px!important;border:1px solid #bd8520!important;border-radius:50%!important;background:transparent!important;color:#8b5a05!important;box-shadow:none!important}
-.review-window{padding:0!important;overflow:hidden!important}
-.review-track{gap:0!important}
-.review-slide{flex:0 0 33.333333%!important;padding:0 24px!important;border-left:1px solid #dfcda7!important}
-.review-slide:first-child{border-left:0!important;padding-left:2px!important}
-.review-card{height:178px!important;padding:2px 0 28px!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
-.review-card:hover{transform:none!important;box-shadow:none!important}
-.review-person strong{color:#082f50!important;font:700 17px Georgia,serif!important}
-.review-person small{margin-top:5px!important;color:#9a6811!important}
-.review-text{margin:18px 0 0!important;color:#282116!important;font:600 15px/1.6 Georgia,serif!important}
-.read-cue{right:0!important;bottom:3px!important;color:#99650b!important}
-.review-dots{margin-top:10px!important}
-.feedback-message{display:flex!important;margin:22px auto 0!important;padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
-.message-card{flex:1!important;min-height:0!important;padding:12px 28px 12px 0!important;margin-right:28px!important;border:0!important;border-right:1px solid #dcc797!important;background:transparent!important}
-.message-card:last-child{margin-right:0!important;padding-right:0!important;border-right:0!important}
-.message-card b{color:#082f50!important;font:700 15px Georgia,serif!important}
-.message-card p{font:11px/1.55 Arial,sans-serif!important}
-.feedback-card{margin-top:38px!important;padding:38px 0 0!important;border:0!important;border-top:1px solid #c99a32!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;overflow:visible!important}
-.form-heading{margin:0 0 28px!important;padding:0!important;border:0!important;background:transparent!important}
-.form-heading h2{color:#082f50!important;font:700 34px Georgia,serif!important}
-.form-heading p{color:#665c4e!important;font:12px/1.55 Arial,sans-serif!important}
-.form-grid{grid-template-columns:1fr 1fr!important;gap:24px 34px!important;padding:0!important}
-.feedback-card label{margin-bottom:8px!important;color:#25374a!important}
-.feedback-card input,.feedback-card select,.feedback-card textarea{border:0!important;border-bottom:1px solid #c9aa69!important;border-radius:0!important;background:transparent!important;padding:11px 2px!important;box-shadow:none!important;outline:none!important}
-.feedback-card input:focus,.feedback-card select:focus,.feedback-card textarea:focus{border-bottom:2px solid #a86f0c!important}
-.feedback-types{display:grid!important;grid-template-columns:1.5fr .75fr .75fr!important;gap:32px!important;margin:30px 0 0!important;padding:28px 0 0!important;border-top:1px solid #e2d4b5!important}
-.feedback-type{padding:0!important;border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
-.feedback-type strong{color:#082f50!important;font:700 17px Georgia,serif!important}
-.feedback-type input[type=file]{padding:10px 0!important;border:0!important}
-.submit{width:auto!important;min-width:230px!important;margin:32px 0 10px!important;padding:14px 28px!important;border-radius:4px!important;box-shadow:none!important}
-.privacy-note{margin-bottom:0!important;padding-bottom:12px!important}
-@media(max-width:900px){
-.review-slide{flex-basis:50%!important}.feedback-message{display:block!important}.message-card{margin:0!important;padding:12px 0!important;border-right:0!important;border-bottom:1px solid #e1d3b4!important}.feedback-types{grid-template-columns:1fr!important}.form-grid{grid-template-columns:1fr!important}
-}
-@media(max-width:620px){
-.feedback-shell>section:not(.feedback-hero),.feedback-shell>form{width:calc(100% - 30px)!important}.reviews{padding:25px 0 18px!important}.reviews-head{display:block!important}.reviews-head h2,.form-heading h2{font-size:28px!important}.review-controls{margin-top:15px!important}.review-slide{flex-basis:100%!important;padding:0 2px!important;border-left:0!important}.review-card{height:188px!important}.feedback-card{padding-top:28px!important}.submit{width:100%!important}
-}
-/* Reference-inspired feedback composition — banner intentionally unchanged */
-.reviews{margin:26px auto 0!important;padding:28px 34px 26px!important;background:#fffdf8!important;border:1px solid #dfbd70!important;border-radius:18px!important;box-shadow:0 10px 26px rgba(54,37,9,.07)!important}
-.reviews-head{align-items:center!important}
-.reviews-title .eyebrow{display:inline-block!important;margin:0 0 6px!important;color:#a56b08!important}
-.reviews-head h2{font-size:29px!important}
-.review-slide{padding:0 16px!important;border-left:1px solid #ead8b3!important}
-.review-slide:first-child{border-left:0!important}
-.review-card{height:166px!important}
-.feedback-message{width:min(1040px,calc(100% - 70px))!important;margin:-1px auto 28px!important;padding:20px 24px!important;display:grid!important;grid-template-columns:repeat(4,1fr)!important;gap:0!important;border:1px solid #dfbd70!important;border-top:0!important;border-radius:0 0 18px 18px!important;background:#fff9ed!important}
-.message-card{display:grid!important;justify-items:center!important;text-align:center!important;margin:0!important;padding:3px 18px!important;border:0!important;border-right:1px solid #ead7ad!important}
-.message-card:last-child{border-right:0!important}
-.benefit-icon{display:grid;width:43px;height:43px;place-items:center;margin-bottom:8px;border-radius:50%;background:#f7e7bf;color:#a56b08;font:700 19px Georgia,serif}
-.message-card b{margin:0!important;color:#082f50!important;font:700 13px Georgia,serif!important}
-.message-card p{margin:4px 0 0!important;color:#756858!important;font:10px/1.4 Arial,sans-serif!important}
-.feedback-card{width:min(920px,calc(100% - 70px))!important;margin:32px auto 0!important;padding:28px 34px 30px!important;border:1px solid #dfbd70!important;border-radius:18px!important;background:#fffdf9!important;box-shadow:0 12px 30px rgba(55,37,8,.075)!important}
-.form-heading{text-align:center!important;margin:0 0 22px!important}
-.form-heading h2{font-size:27px!important}
-.form-heading p{margin:7px auto 0!important;max-width:620px!important}
-.form-grid{gap:18px 24px!important}
-.feedback-card input,.feedback-card select,.feedback-card textarea{padding:11px 12px!important;border:1px solid #ddcda9!important;border-radius:8px!important;background:#fff!important}
-.feedback-types{grid-template-columns:1.35fr .825fr .825fr!important;gap:12px!important;margin-top:22px!important;padding-top:20px!important}
-.feedback-type{padding:16px!important;border:1px solid #e1cfaa!important;border-radius:12px!important;background:#fffaf0!important}
-.feedback-type strong{font-size:14px!important}
-.feedback-type small{font-size:10px!important}
-.submit{display:block!important;margin:24px auto 8px!important;min-width:260px!important;border-radius:999px!important}
-.privacy-note{text-align:center!important}
-.feedback-impact{width:min(1040px,calc(100% - 70px));margin:38px auto 0;padding:30px 38px 0;border:1px solid #dfbd70;border-radius:20px;overflow:hidden;background:#fffdf8;box-shadow:0 12px 30px rgba(55,37,8,.07)}
-.impact-heading{text-align:center}.impact-heading span{color:#a56b08;font:900 9px Arial,sans-serif;letter-spacing:2px}.impact-heading h2{margin:5px 0 22px;color:#082f50;font:700 25px Georgia,serif}.impact-heading em{color:#b8790b;font-weight:400}
-.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0 auto 28px}.impact-grid>div{text-align:center;padding:0 16px;border-right:1px solid #ead8b3}.impact-grid>div:last-child{border-right:0}.impact-grid span{display:grid;width:42px;height:42px;place-items:center;margin:0 auto 8px;border-radius:50%;background:#eef5ef;color:#8e6414;font-size:20px}.impact-grid b{color:#173954;font:700 11px/1.35 Georgia,serif}
-.impact-cta{margin:0 -38px;padding:20px 38px;display:flex;align-items:center;justify-content:space-between;gap:20px;background:linear-gradient(105deg,#071d30,#11100c 72%,#38260b);color:#fff}.impact-cta strong{display:block;font:700 19px/1.15 Georgia,serif}.impact-cta strong em{color:#efc65e;font-weight:400}.impact-cta small{display:block;margin-top:5px;color:#d9d0c1;font:10px Arial,sans-serif}.impact-cta a{display:inline-block;padding:11px 18px;border-radius:999px;background:#e5b642;color:#111;text-decoration:none;font:900 10px Arial,sans-serif}
-@media(max-width:900px){.feedback-message{grid-template-columns:repeat(2,1fr)!important}.message-card{border-bottom:1px solid #ead7ad!important}.impact-grid{grid-template-columns:repeat(2,1fr);row-gap:22px}.feedback-types{grid-template-columns:1fr!important}}
-@media(max-width:620px){.feedback-message,.feedback-card,.feedback-impact{width:calc(100% - 30px)!important}.feedback-message{grid-template-columns:1fr 1fr!important;padding:16px 8px!important}.message-card{padding:10px 6px!important}.feedback-card{padding:24px 18px!important}.feedback-impact{padding:25px 18px 0}.impact-cta{margin:0 -18px;padding:18px;display:block}.impact-cta a{margin-top:14px}.impact-grid{grid-template-columns:1fr 1fr}.reviews{padding:24px 18px!important}}
-
-/* Exact reference-led lower-page structure. Approved banner remains unchanged. */
-.ref-benefits{width:min(900px,calc(100% - 60px))!important;margin:-1px auto 0!important;padding:18px 24px!important;display:grid!important;grid-template-columns:repeat(4,1fr)!important;background:#fffdf8!important;border:1px solid #e2c98d!important;border-top:0!important;border-radius:0 0 18px 18px!important}
-.ref-benefits>div{text-align:center;border-right:1px solid #ead9b4;padding:0 14px}.ref-benefits>div:last-child{border-right:0}.ref-benefits span{display:grid;width:43px;height:43px;place-items:center;margin:0 auto 7px;border-radius:50%;background:#f7ead0;color:#a66d09;font-size:19px}.ref-benefits b{color:#163954;font:700 11px/1.25 Georgia,serif}
-.ref-form-wrap{width:min(900px,calc(100% - 60px))!important;margin:28px auto 0!important;padding:24px 34px 28px!important;background:#fffdf8!important;border:1px solid #e2c98d!important;border-radius:18px!important;box-shadow:0 10px 25px rgba(51,35,8,.06)!important}
-.ref-form-intro{text-align:center;margin-bottom:20px}.ref-form-intro>span,.ref-impact-title>span{color:#a56b08;font:900 8px Arial,sans-serif;letter-spacing:2px}.ref-form-intro h2{margin:5px 0 6px;color:#082f50;font:700 25px Georgia,serif}.ref-form-intro p{max-width:610px;margin:0 auto;color:#6a5e4f;font:11px/1.5 Arial,sans-serif}
-.ref-fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}.ref-form label{display:block;color:#21384b;font:800 10px Arial,sans-serif}.ref-form input,.ref-form select,.ref-form textarea{display:block;width:100%;margin-top:6px;padding:10px 11px;border:1px solid #ddc99d;border-radius:7px;background:#fff;font:12px Arial,sans-serif}.ref-message{margin-top:14px}.ref-form textarea{min-height:90px;resize:vertical}
-.ref-upload-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:13px}.ref-upload-row label{position:relative;padding:12px 14px 11px 42px;border:1px solid #e1cea4;border-radius:8px;background:#fffaf0}.ref-upload-row span{position:absolute;left:13px;top:15px;color:#a56b08;font-size:18px}.ref-upload-row b{display:block;color:#173954;font:700 11px Georgia,serif}.ref-upload-row small{display:block;margin:2px 0 6px;color:#786b59;font:9px Arial,sans-serif}.ref-upload-row input{padding:0;border:0;margin:0;font-size:10px}
-.ref-submit{display:block;min-width:230px;margin:18px auto 0;padding:11px 20px;border:1px solid #b57a12;border-radius:6px;background:linear-gradient(135deg,#f1cc6d,#d9a12f);color:#15110a;font:900 10px Arial,sans-serif}.ref-privacy{text-align:center;color:#7a6e5e;font:9px Arial,sans-serif}
-.ref-impact{width:min(900px,calc(100% - 60px))!important;margin:28px auto 0!important;padding:22px 28px 24px!important;background:#fffdf8!important;border:1px solid #e2c98d!important;border-radius:18px 18px 0 0!important;border-bottom:0!important}
-.ref-impact-title{text-align:center}.ref-impact-title h2{margin:4px 0 20px;color:#082f50;font:700 22px Georgia,serif}.ref-impact-title em{color:#b8780a;font-weight:400}.ref-impact-grid{display:grid;grid-template-columns:repeat(4,1fr)}.ref-impact-grid>div{text-align:center;border-right:1px solid #ead9b4}.ref-impact-grid>div:last-child{border-right:0}.ref-impact-grid i{display:grid;width:40px;height:40px;place-items:center;margin:0 auto 7px;border-radius:50%;background:#eef4ec;color:#9a6a12;font-style:normal;font-size:18px}.ref-impact-grid b{color:#173954;font:700 10px/1.3 Georgia,serif}
-.ref-closing{width:min(900px,calc(100% - 60px))!important;margin:0 auto!important;padding:19px 28px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:20px!important;background:linear-gradient(105deg,#071d30,#0c1112 68%,#38270b)!important;border:1px solid #c4942d!important;border-radius:0 0 18px 18px!important;color:#fff!important}.ref-closing strong{font:700 17px/1.15 Georgia,serif}.ref-closing em{color:#efc65e;font-weight:400}.ref-closing p{margin:5px 0 0;color:#d9d0c1;font:9px Arial,sans-serif}.ref-closing a{padding:10px 16px;border-radius:999px;background:#e5b642;color:#111;text-decoration:none;font:900 9px Arial,sans-serif;white-space:nowrap}
-@media(max-width:760px){.ref-benefits,.ref-impact-grid{grid-template-columns:1fr 1fr!important}.ref-benefits>div,.ref-impact-grid>div{padding:12px 8px}.ref-fields{grid-template-columns:1fr}.ref-upload-row{grid-template-columns:1fr}.ref-closing{display:block!important}.ref-closing a{display:inline-block;margin-top:13px}}
-@media(max-width:480px){.ref-benefits,.ref-form-wrap,.ref-impact,.ref-closing{width:calc(100% - 24px)!important}.ref-form-wrap{padding:22px 16px!important}.ref-impact{padding:20px 12px!important}}
-</style></head><body><header></header><main class="feedback-page"><div class="feedback-shell"><section class="feedback-hero" aria-label="Feedback and Reviews"><img class="feedback-banner" src="assets/Feedback%20%26%20Reviews%20Learning%20Together.png?v=20261006" alt="Feedback & Reviews — Learning Together"></section><section class="ref-benefits" aria-label="Feedback benefits">
-  <div><span>☁</span><b>Share<br>Your Experience</b></div>
-  <div><span>♢</span><b>Suggest<br>New Ideas</b></div>
-  <div><span>▥</span><b>Help Us<br>Improve</b></div>
-  <div><span>♙</span><b>Support<br>Learner Success</b></div>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Feedback & Reviews | Learning Hub</title>
+<meta name="description" content="Read learner feedback and share your Learning Hub experience.">
+<link rel="icon" href="assets/learning-hub-logo.png?v=approved-20260923">
+<link rel="stylesheet" href="assets/site.css?v=20261003-feedback-final">
+<style>
+:root{--navy:#082f50;--gold:#c58a18;--cream:#fbf6ec;--paper:#fffdf8;--ink:#211a12;--muted:#655b4d;--line:#e2c98d}
+*{box-sizing:border-box}
+body{margin:0}.feedback-page{background:var(--cream);padding:0 0 54px}.feedback-shell{width:100%}
+.feedback-hero{width:100%;overflow:hidden;background:#fff}.feedback-banner{display:block;width:100%;height:auto}
+.reference-layout{width:min(1180px,calc(100% - 44px));margin:0 auto;background:var(--paper);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+.benefit-strip{display:grid;grid-template-columns:repeat(4,1fr);padding:22px 42px 20px;border-bottom:1px solid #ead9b5;background:#fffdf8}
+.benefit{position:relative;text-align:center;padding:0 18px}.benefit:not(:last-child):after{content:"";position:absolute;right:0;top:8px;bottom:8px;width:1px;background:#ead9b5}
+.benefit-icon{width:54px;height:54px;margin:0 auto 8px;display:grid;place-items:center;border-radius:50%;background:#f8eed9;color:#a86e09;font:700 22px Georgia,serif}
+.benefit b{display:block;color:var(--navy);font:700 13px/1.25 Georgia,serif}.benefit small{display:block;margin-top:3px;color:#8b7350;font:9px Arial,sans-serif}
+.feedback-workspace{display:grid;grid-template-columns:38% 62%;min-height:360px;border-bottom:1px solid #ead9b5}
+.workspace-visual{position:relative;overflow:hidden;background:linear-gradient(145deg,#16140f,#57401c 58%,#b98b34)}
+.workspace-visual:before{content:"WE'RE\A Listening!";white-space:pre;position:absolute;left:9%;top:17%;width:72%;padding:32px 12px;border:8px solid #c99a32;border-radius:4px;background:#10100d;color:#fff;text-align:center;font:700 31px/1.05 Georgia,serif;box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.workspace-visual:after{content:"Better programmes  •  Better resources  •  Better support";position:absolute;left:8%;right:8%;bottom:12%;color:#f3d783;text-align:center;font:700 10px/1.5 Arial,sans-serif}
+.feedback-form{padding:25px 30px 22px;background:#fff}
+.form-kicker{color:#a56b08;font:900 9px Arial,sans-serif;letter-spacing:1.8px}.feedback-form h2{margin:5px 0 5px;color:var(--navy);font:700 25px Georgia,serif}.feedback-form>p{margin:0 0 16px;color:var(--muted);font:11px/1.45 Arial,sans-serif}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:11px 14px}.full{grid-column:1/-1}.feedback-form label{display:block;color:#26384a;font:800 10px Arial,sans-serif}.feedback-form input,.feedback-form select,.feedback-form textarea{display:block;width:100%;margin-top:5px;padding:9px 10px;border:1px solid #dbc9a4;border-radius:5px;background:#fff;font:11px Arial,sans-serif}.feedback-form textarea{min-height:72px;resize:vertical}
+.attachments{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:11px}.attachment{padding:9px 11px;border:1px solid #e3d2ad;border-radius:6px;background:#fffaf0}.attachment b{display:block;color:var(--navy);font:700 11px Georgia,serif}.attachment small{display:block;margin:2px 0 5px;color:#786b59;font:9px Arial,sans-serif}.attachment input{margin:0;padding:0;border:0;font-size:9px}
+.submit{display:block;width:100%;margin-top:12px;padding:10px;border:0;border-radius:5px;background:linear-gradient(90deg,#dca936,#efc75f);color:#17120a;font:900 10px Arial,sans-serif;cursor:pointer}.status,.privacy{margin:7px 0 0!important;text-align:center;font:9px Arial,sans-serif!important;color:#756b5e!important}
+.impact{padding:22px 42px 20px;background:#fffdf8}.impact-head{text-align:center}.impact-head span{color:#a56b08;font:900 8px Arial,sans-serif;letter-spacing:1.8px}.impact-head h2{margin:4px 0 17px;color:var(--navy);font:700 23px Georgia,serif}.impact-head em{color:#b8780a;font-weight:400}.impact-grid{display:grid;grid-template-columns:repeat(4,1fr)}.impact-item{text-align:center;position:relative;padding:0 14px}.impact-item:not(:last-child):after{content:"";position:absolute;right:0;top:5px;bottom:5px;width:1px;background:#ead9b5}.impact-item i{display:grid;width:47px;height:47px;place-items:center;margin:0 auto 7px;border-radius:50%;background:#edf5ee;color:#8e6414;font:normal 19px Georgia,serif}.impact-item b{color:#173954;font:700 10px/1.3 Georgia,serif}
+.journey{display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;padding:20px 42px;background:linear-gradient(105deg,#071d30,#10100d 70%,#3c2a0c);color:#fff}.journey strong{font:700 18px Georgia,serif}.journey strong em{color:#efc65e;font-weight:400}.journey p{margin:4px 0 0;color:#d9d0c1;font:9px Arial,sans-serif}.journey a{padding:10px 17px;border-radius:999px;background:#e5b642;color:#111;text-decoration:none;font:900 9px Arial,sans-serif}
+@media(max-width:760px){.reference-layout{width:calc(100% - 24px)}.benefit-strip,.impact-grid{grid-template-columns:1fr 1fr}.benefit,.impact-item{padding:12px 8px}.feedback-workspace{grid-template-columns:1fr}.workspace-visual{min-height:280px}.fields,.attachments{grid-template-columns:1fr}.full{grid-column:auto}.journey{grid-template-columns:1fr}.journey a{width:max-content}}
+</style>
+</head>
+<body>
+<header></header>
+<main class="feedback-page">
+<div class="feedback-shell">
+<section class="feedback-hero" aria-label="Feedback and Reviews"><img class="feedback-banner" src="assets/Feedback%20%26%20Reviews%20Learning%20Together.png?v=20261006" alt="Feedback & Reviews — Learning Together"></section>
+<div class="reference-layout">
+<section class="benefit-strip">
+<div class="benefit"><span class="benefit-icon">✦</span><b>Share<br>Your Experience</b><small>Tell us what worked well</small></div>
+<div class="benefit"><span class="benefit-icon">♡</span><b>Suggest<br>New Ideas</b><small>Help shape what comes next</small></div>
+<div class="benefit"><span class="benefit-icon">▥</span><b>Help Us<br>Improve</b><small>Strengthen learning support</small></div>
+<div class="benefit"><span class="benefit-icon">♙</span><b>Support<br>Learner Success</b><small>Build a better experience</small></div>
 </section>
-
-<section class="ref-form-wrap">
-  <div class="ref-form-intro"><span>YOUR VOICE MATTERS</span><h2>Share Your Feedback</h2><p>Tell us about your learning experience. Your feedback helps us improve teaching, resources and learner support.</p></div>
-  <form id="feedbackFormAnchor" class="ref-form">
-    <div class="ref-fields">
-      <label>Name<input name="name" type="text" required></label>
-      <label>Email<input name="email" type="email" required></label>
-      <label>Rating<select name="rating" required><option value="">Choose your rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Very good</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Needs improvement</option></select></label>
-    </div>
-    <label class="ref-message">Your Feedback<textarea name="message" placeholder="Share your experience, suggestion or message..."></textarea></label>
-    <div class="ref-upload-row">
-      <label><span>♫</span><b>Audio Feedback</b><small>Optional audio message</small><input name="feedback_audio" type="file" accept="audio/*"></label>
-      <label><span>▶</span><b>Video Feedback</b><small>Optional video message</small><input name="feedback_video" type="file" accept="video/*"></label>
-    </div>
-    <button class="ref-submit" type="submit">Submit Feedback</button>
-    <p id="feedbackStatus" class="status" role="status"></p>
-    <p class="ref-privacy">Attachments are limited to 10 MB in total.</p>
-  </form>
+<section class="feedback-workspace">
+<div class="workspace-visual" aria-hidden="true"></div>
+<form id="feedbackFormAnchor" class="feedback-form">
+<span class="form-kicker">SHARE YOUR EXPERIENCE</span><h2>Your Feedback</h2><p>Your voice helps Learning Hub improve teaching, resources, communication and learner support.</p>
+<div class="fields">
+<label>Name<input name="name" type="text" required></label>
+<label>Email<input name="email" type="email" required></label>
+<label class="full">Rating<select name="rating" required><option value="">Choose a rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Very good</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Needs improvement</option></select></label>
+<label class="full">Your Feedback<textarea name="message" placeholder="Tell us about your Learning Hub experience..."></textarea></label>
+</div>
+<div class="attachments">
+<label class="attachment"><b>Audio Feedback</b><small>Optional audio message</small><input name="feedback_audio" type="file" accept="audio/*"></label>
+<label class="attachment"><b>Video Feedback</b><small>Optional video message</small><input name="feedback_video" type="file" accept="video/*"></label>
+</div>
+<button class="submit" type="submit">Send Feedback</button><p id="feedbackStatus" class="status" role="status"></p><p class="privacy">Attachments: maximum 10 MB in total.</p>
+</form>
 </section>
-
-<section class="ref-impact">
-  <div class="ref-impact-title"><span>YOUR FEEDBACK HELPS US</span><h2>Together we make a <em>difference</em></h2></div>
-  <div class="ref-impact-grid">
-    <div><i>▱</i><b>Enhance<br>our programmes</b></div>
-    <div><i>◇</i><b>Create better<br>resources</b></div>
-    <div><i>⚙</i><b>Improve<br>learner support</b></div>
-    <div><i>◎</i><b>Build a stronger<br>global community</b></div>
-  </div>
-</section>
-
-<section class="ref-closing">
-  <div><strong>Be part of our<br><em>learning journey</em></strong><p>Your feedback helps us improve and create a better learning experience.</p></div>
-  <a href="#feedbackFormAnchor">Share Your Feedback →</a>
-</section></div></main><footer></footer><script>const endpoint='https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec',form=document.getElementById('feedbackFormAnchor'),status=document.getElementById('feedbackStatus'),maxBytes=10*1024*1024,toBase64=file=>new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result).split(',')[1]||'');r.onerror=reject;r.readAsDataURL(file)});form.addEventListener('submit',async e=>{e.preventDefault();const button=form.querySelector('button[type=submit]'),files=[...form.querySelectorAll('input[type=file]')].flatMap(i=>Array.from(i.files||[]));if(files.reduce((n,f)=>n+f.size,0)>maxBytes){status.textContent='Attachments must be 10 MB or less in total.';return}button.disabled=true;status.textContent='Sending your feedback…';try{const fields=Object.fromEntries([...new FormData(form).entries()].filter(([,v])=>typeof v==='string')),packed=[];for(const f of files)packed.push({name:f.name,type:f.type,size:f.size,data:await toBase64(f)});await fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:'feedback',fields,files:packed})});form.reset();status.textContent='Thank you. Your feedback was sent to Learning Hub.'}catch(err){status.textContent='We could not send your feedback. Please try again.'}finally{button.disabled=false}});</script><script src="//code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js" async></script><script src="assets/site-shell.js?v=20261002-cleanbase"></script></body></html>
+<section class="impact"><div class="impact-head"><span>YOUR FEEDBACK HELPS US</span><h2>Together we make a <em>difference</em></h2></div><div class="impact-grid">
+<div class="impact-item"><i>▱</i><b>Enhance<br>our programmes</b></div><div class="impact-item"><i>◇</i><b>Create better<br>resources</b></div><div class="impact-item"><i>⚙</i><b>Improve<br>learner support</b></div><div class="impact-item"><i>◎</i><b>Build a stronger<br>global community</b></div>
+</div></section>
+<section class="journey"><div><strong>Be part of our <em>learning journey</em></strong><p>Your feedback helps us keep improving for every learner.</p></div><a href="#feedbackFormAnchor">Share Your Feedback →</a></section>
+</div>
+</div>
+</main>
+<footer></footer>
+<script>
+const endpoint='https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvttF4kUzVGahw_m6EGbJJezJFG3fp0uPBTt-wPrk3aI4rS/exec',form=document.getElementById('feedbackFormAnchor'),status=document.getElementById('feedbackStatus'),maxBytes=10*1024*1024,toBase64=file=>new Promise((resolve,reject)=>{const r=new FileReader();r.onload=()=>resolve(String(r.result).split(',')[1]||'');r.onerror=reject;r.readAsDataURL(file)});
+form.addEventListener('submit',async e=>{e.preventDefault();const button=form.querySelector('button[type=submit]'),files=[...form.querySelectorAll('input[type=file]')].flatMap(i=>Array.from(i.files||[]));if(files.reduce((n,f)=>n+f.size,0)>maxBytes){status.textContent='Attachments must be 10 MB or less in total.';return}button.disabled=true;status.textContent='Sending your feedback…';try{const fields=Object.fromEntries([...new FormData(form).entries()].filter(([,v])=>typeof v==='string')),packed=[];for(const f of files)packed.push({name:f.name,type:f.type,size:f.size,data:await toBase64(f)});await fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:'feedback',fields,files:packed})});form.reset();status.textContent='Thank you. Your feedback was sent to Learning Hub.'}catch(err){status.textContent='We could not send your feedback. Please try again.'}finally{button.disabled=false}});
+</script>
+<script src="//code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js" async></script>
+<script src="assets/site-shell.js?v=20261002-cleanbase"></script>
+</body></html>
