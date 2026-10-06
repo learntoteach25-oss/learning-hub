@@ -35,3 +35,40 @@
 .group-business .programme-group-hero{background-position:center 50%!important}
 .group-higher .programme-group-hero{background-position:center 48%!important}
 .group-primary .programme-group-hero{background-position:center 42%!important}
+
+/* Primary programme grid: strict 2x2 alignment */
+.group-primary .programme-items{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:24px!important;
+  max-width:860px!important;
+  margin:36px auto 0!important;
+  align-items:stretch!important;
+}
+.group-primary .programme-items>.detail-card{
+  width:100%!important;
+  max-width:none!important;
+  min-width:0!important;
+  height:100%!important;
+  margin:0!important;
+}
+.group-primary .programme-items>.detail-card:nth-child(4){
+  grid-column:auto!important;
+  justify-self:stretch!important;
+}
+.group-primary .visual-card>img{
+  display:block!important;
+  width:100%!important;
+  height:190px!important;
+  object-fit:cover!important;
+}
+.group-primary .card-body{
+  display:flex!important;
+  flex-direction:column!important;
+  min-height:245px!important;
+}
+.group-primary .board-select{width:100%!important}
+.group-primary .subject-book{margin-top:auto!important;align-self:center!important}
+@media(max-width:760px){
+ .group-primary .programme-items{grid-template-columns:1fr!important;max-width:430px!important}
+}
