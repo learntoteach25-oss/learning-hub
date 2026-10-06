@@ -274,3 +274,10 @@
  .boards-premium .pathway-grid{width:min(92vw,1280px)!important;max-width:1280px!important;grid-template-columns:repeat(4,1fr)!important;gap:14px!important}
  .boards-premium .pathway-grid>a{min-height:205px!important}
 }
+
+/* Board identities: logo-style names only, no duplicate symbols */
+.boards-premium .board-logo{justify-content:center!important;text-align:center!important}
+.boards-premium .board-logo .pearson-symbol,.boards-premium .board-logo .ib-symbol,.boards-premium .board-logo .global-symbol,.boards-premium .board-logo .brand-mark{display:none!important}
+.boards-premium .board-logo .board-wordmark{align-items:center!important;text-align:center!important}
+.boards-premium .board-logo .board-wordmark b{font:700 16px/1 Georgia,serif!important;color:#071426!important;white-space:nowrap!important}
+.boards-premium .board-logo .board-wordmark small{font:700 6.5px/1.1 Arial!important;color:#26364b!important;text-transform:none!important;letter-spacing:.01em!important}
