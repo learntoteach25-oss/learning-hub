@@ -25,11 +25,11 @@ function home(push=true){detail.hidden=true;catalogue.hidden=false;if(push)histo
 function programmesView(){return `<div class="detail-content programmes-view"><section class="programmes-hero"><div class="programmes-hero-copy"><span class="eyebrow">Learning Programmes</span><h1>Academic Programmes &amp; Subject Support</h1><p>Choose the learning area that matches the learner’s needs. Open a category to view the relevant subjects and pathways.</p></div></section><div class="programme-folders">${Object.entries(programmeGroups).map(([key,g])=>`<button class="programme-folder" data-programme-group="${key}"><img src="${g.image}" alt="${g.title}"><span class="folder-shade"></span><span class="folder-copy"><small>Explore</small><strong>${g.title}</strong><em>${g.intro}</em><b>Open category →</b></span></button>`).join('')}</div></div>`}
 function programmeGroupView(key){const g=programmeGroups[key];if(!g)return programmesView();return `<div class="programme-group-view group-${key}"><section class="programme-group-hero" style="background-image:linear-gradient(rgba(0,0,0,.46),rgba(0,0,0,.46)),url('${g.image}')"><button class="inline-back" data-programmes-home>← Academic Programmes</button><div class="programme-hero-copy"><span class="eyebrow">Learning Programmes</span><h1>${g.title}</h1><p>${g.intro}</p></div></section><div class="detail-content programme-group-body"><div class="detail-grid programme-items">${g.items.map(x=>subjectCard(...x)).join('')}</div></div></div>`}
 function boardsView(){const boardCards=[
-['Cambridge International Education','Cambridge curriculum and qualification preparation','https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=900&q=88'],
-['Cambridge IGCSE','Preparation for Cambridge IGCSE subjects','https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=900&q=88'],
-['Pearson Edexcel','Pearson Edexcel qualification preparation','https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=88'],
-['International Baccalaureate (IB)','Support for IB programmes and assessments','https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=88'],
-['OxfordAQA','International GCSE and A-level preparation','https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=88'],
+['Cambridge International','IGCSE, AS & A Level preparation','https://images.unsplash.com/photo-1564981797816-1043664bf78d?auto=format&fit=crop&w=900&q=88'],
+['Pearson Edexcel','GCSE, International GCSE & A Level preparation','https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=900&q=88'],
+['International Baccalaureate (IB)','PYP, MYP and Diploma Programme support','https://images.unsplash.com/photo-1521295121783-8a321d551ad2?auto=format&fit=crop&w=900&q=88'],
+['OxfordAQA','International GCSE & A Level preparation','https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=900&q=88'],
+['AQA','GCSE & A Level preparation','https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=900&q=88'],
 ['Other International Boards','Support for additional international curricula','https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=900&q=88']
 ];const pathways=[
 ['English Language & Literature','Reading, writing and literary analysis','https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=700&q=86'],
@@ -44,11 +44,11 @@ function boardsView(){const boardCards=[
 <section class="boards-hero"><div class="boards-hero-copy"><span class="eyebrow">Global Learning Pathways</span><h1>International <em>Curriculum &amp; Boards</em></h1><h3>Personalised learning for global learners.</h3><p>Expert guidance, structured tutoring and high-quality academic support for internationally recognised curricula and school boards.</p><a href="#boards-list">Explore Boards →</a><div class="boards-trust"><span>◇ Expert Guidance</span><span>▥ Personalised Learning</span><span>◎ Global Perspective</span><span>✓ Proven Support</span></div></div></section>
 <section class="boards-section" id="boards-list"><div class="boards-head"><span class="eyebrow">Choose a Board</span><h2>Explore International <em>Boards</em></h2><p>Find the right curriculum for your learning goals. Click a board to discover subjects, support and resources.</p></div><div class="boards-premium-grid">${boardCards.map(([n,d,img],i)=>`<article><div class="board-photo"><img src="${img}" alt="" loading="lazy"><div class="board-logo board-brand-${i}">${[
 '<span class="board-wordmark"><b>CAMBRIDGE</b><small>International Education</small></span>',
-'<span class="board-wordmark"><b>IGCSE</b><small>Cambridge International</small></span>',
-'<span class="board-wordmark"><b>Pearson Edexcel</b><small>International Qualifications</small></span>',
+'<span class="board-wordmark"><b>Pearson Edexcel</b><small>Qualifications</small></span>',
 '<span class="board-wordmark"><b>IB</b><small>International Baccalaureate</small></span>',
 '<span class="board-wordmark oxford-wordmark"><b>OxfordAQA</b><small>International Qualifications</small></span>',
-'<span class="board-wordmark"><b>International Boards</b><small>Other Curricula</small></span>'
+'<span class="board-wordmark"><b>AQA</b><small>Qualifications</small></span>',
+'<span class="board-wordmark"><b>Other Boards</b><small>International Curricula</small></span>'
 ][i]}</div><span class="board-badge">${['CAM','IGCSE','GCSE','IB','A','INT'][i]}</span></div><div class="board-card-copy"><h3>${n}</h3><p>${d}</p><a href="billing.html?programme=${encodeURIComponent(n)}" aria-label="Explore ${n}">→</a></div></article>`).join('')}</div></section>
 <section class="boards-support-banner"><div><span class="eyebrow">Personalised Academic Support</span><h2>Supporting Every Learner’s <em>Journey</em></h2><p>Whether you need subject tutoring, exam preparation or long-term academic support, we create a customised learning plan to help you achieve your goals.</p><a href="billing.html">Book a Lesson →</a></div></section>
 </div>`}
