@@ -60,6 +60,28 @@
 .feedback-intro h2:first-letter{color:inherit!important}
 .feedback-intro>span{display:block!important;position:relative!important;z-index:2!important}
 .feedback-intro p{position:relative!important;z-index:2!important}
+/* readability and copy presentation fixes */
+.feedback-form{color:#15100a!important}
+.feedback-form h2{color:#080706!important;font-size:32px!important;line-height:1.14!important}
+.feedback-form>p{color:#554b3e!important;font-size:11px!important;line-height:1.55!important}
+.feedback-form label{color:#17110a!important;font-size:10px!important;margin-bottom:1px!important}
+.feedback-form input,.feedback-form select,.feedback-form textarea{color:#17110a!important;background:#fffdf9!important;border-color:#b99552!important;font-size:11px!important}
+.feedback-form textarea{line-height:1.55!important}
+.attachment{background:#fffaf0!important;border-color:#bd9650!important}
+.attachment b{color:#17110a!important;font-size:11px!important}
+.attachment small{display:block!important;color:#655744!important;font-size:8px!important;line-height:1.35!important}
+.submit{background:linear-gradient(90deg,#c9942d,#edc55f,#c9942d)!important;color:#080706!important;font-size:10px!important}
+.review-modal-card{background:linear-gradient(145deg,#f5e6c7,#ead4aa)!important;color:#15100a!important}
+.modal-meta{color:#704805!important;font-size:10px!important}
+.modal-stars{color:#9a6306!important;font-size:14px!important;letter-spacing:2px!important}
+.modal-text{color:#0d0a06!important;font-size:21px!important;line-height:1.65!important}
+.modal-translation{color:#44392b!important;font-size:14px!important;line-height:1.7!important}
+#modalTranslate{background:#090806!important;color:#f0c45a!important;border:1px solid #a97922!important;padding:9px 13px!important;border-radius:999px!important;font:800 9px Arial!important}
+.journey{min-height:92px!important;padding:22px 28px!important}
+.journey strong{display:block!important;color:#f4e5c0!important;font-size:20px!important;line-height:1.2!important}
+.journey strong em{color:#e5b84e!important}
+.journey p{margin-top:6px!important;color:#d3c8b6!important;font-size:10px!important;line-height:1.5!important}
+.journey-mark{flex:0 0 auto!important}
 </style>
 </head>
 <body>
@@ -90,7 +112,7 @@
   <form id="feedbackFormAnchor" class="feedback-form">
     <span class="form-kicker">SHARE YOUR FEEDBACK</span>
     <h2>Tell us about your experience</h2>
-    <p>Written feedback is welcome. You can also attach an audio or video message.</p>
+    <p>Share your feedback in writing, or attach an optional audio or video message.</p>
     <div class="fields">
       <label>Name<input name="name" type="text" required></label>
       <label>Email<input name="email" type="email" required></label>
@@ -98,8 +120,8 @@
       <label class="full">Written Feedback<textarea name="message" placeholder="Tell us what worked well, what could be improved, or what you would like us to offer..."></textarea></label>
     </div>
     <div class="attachments">
-      <label class="attachment"><span>♫</span><div><b>Audio Feedback</b><small>Attach an optional audio message</small></div><input name="feedback_audio" type="file" accept="audio/*"></label>
-      <label class="attachment"><span>▶</span><div><b>Video Feedback</b><small>Attach an optional video message</small></div><input name="feedback_video" type="file" accept="video/*"></label>
+      <label class="attachment"><span>♫</span><div><b>Audio Feedback</b><small>Optional audio message</small></div><input name="feedback_audio" type="file" accept="audio/*"></label>
+      <label class="attachment"><span>▶</span><div><b>Video Feedback</b><small>Optional video message</small></div><input name="feedback_video" type="file" accept="video/*"></label>
     </div>
     <button class="submit" type="submit">Send Feedback →</button>
     <p id="feedbackStatus" class="status" role="status"></p><p class="privacy">Attachments: maximum 10 MB in total.</p>
@@ -110,7 +132,7 @@
 
 <section class="journey">
   <div class="journey-mark">LH</div>
-  <div><strong>Be part of our <em>learning journey.</em></strong><p>Your feedback helps us keep improving for students, families and teachers.</p></div>
+  <div><strong>Be part of our <em>learning journey.</em></strong><p>Your feedback helps us improve the learning experience for students, families, and teachers.</p></div>
   <a href="#feedbackFormAnchor">Share Your Feedback →</a>
 </section>
 
