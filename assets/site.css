@@ -230,3 +230,24 @@
 .boards-premium .board-card-copy a{display:grid!important;place-items:center!important;width:28px!important;height:28px!important;margin:auto auto 0!important;border-radius:50%!important;background:#e0a214!important;color:#fff!important;font:700 13px Arial!important;text-decoration:none!important}
 @media(max-width:1080px){.boards-premium .boards-premium-grid{grid-template-columns:repeat(3,1fr)!important}}
 @media(max-width:620px){.boards-premium .boards-premium-grid{grid-template-columns:1fr 1fr!important}.boards-premium #boards-list{padding:22px 12px 26px!important}}
+
+/* 2026-10-07 Boards cards — premium editorial redesign */
+.boards-premium #boards-list{padding:34px 42px 40px!important;background:linear-gradient(180deg,#fffaf0,#f8efdf)!important}
+.boards-premium #boards-list .boards-head{margin:0 auto 24px!important}
+.boards-premium #boards-list .boards-head h2{font:700 40px/1 Georgia,serif!important;letter-spacing:-.025em!important}
+.boards-premium #boards-list .boards-head p{margin-top:7px!important;font:11px/1.4 Arial!important}
+.boards-premium .boards-premium-grid{max-width:1200px!important;gap:12px!important}
+.boards-premium .boards-premium-grid article{grid-template-rows:210px 1fr!important;min-height:390px!important;border:1px solid rgba(190,132,25,.58)!important;border-radius:12px!important;background:#fffdf9!important;box-shadow:0 12px 28px rgba(63,42,8,.10)!important;transition:transform .2s ease,box-shadow .2s ease!important}
+.boards-premium .boards-premium-grid article:hover{transform:translateY(-4px)!important;box-shadow:0 18px 34px rgba(63,42,8,.15)!important}
+.boards-premium .board-photo{height:210px!important}
+.boards-premium .board-photo:before{content:""!important;position:absolute!important;inset:0!important;z-index:1!important;background:linear-gradient(180deg,rgba(0,0,0,.02) 45%,rgba(0,0,0,.72) 100%)!important;pointer-events:none!important}
+.boards-premium .board-logo{left:10px!important;right:10px!important;top:10px!important;height:54px!important;min-height:54px!important;border-radius:8px!important;padding:7px 10px!important;box-shadow:0 5px 16px rgba(0,0,0,.15)!important}
+.boards-premium .board-wordmark b{font-size:16px!important}
+.boards-premium .board-wordmark small{font-size:6.5px!important}
+.boards-premium .board-badge{z-index:4!important;left:11px!important;bottom:11px!important;height:28px!important;min-width:47px!important;border-radius:6px!important;font-size:9px!important}
+.boards-premium .board-card-copy{padding:17px 13px 13px!important}
+.boards-premium .board-card-copy h3{min-height:43px!important;margin-bottom:8px!important;font:700 17px/1.08 Georgia,serif!important}
+.boards-premium .board-card-copy p{max-width:170px!important;min-height:49px!important;color:#596474!important;font:9.5px/1.45 Arial!important}
+.boards-premium .board-card-copy a{width:34px!important;height:34px!important;margin-top:auto!important;background:#d99a10!important;box-shadow:0 5px 12px rgba(197,137,14,.22)!important}
+@media(max-width:1080px){.boards-premium .boards-premium-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:620px){.boards-premium #boards-list{padding:28px 13px 32px!important}.boards-premium .boards-premium-grid{grid-template-columns:1fr!important}.boards-premium .boards-premium-grid article{grid-template-rows:220px 1fr!important}.boards-premium .board-photo{height:220px!important}}
