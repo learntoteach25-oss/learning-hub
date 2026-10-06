@@ -409,3 +409,9 @@
 .exam-view .exam-card-image img{height:190px!important}
 .exam-view .exam-school-section{display:none!important}
 @media(max-width:620px){.exam-view .exam-card{grid-template-rows:195px 1fr!important}.exam-view .exam-card-image,.exam-view .exam-card-image img{height:195px!important}}
+
+/* 2026-10-07 Exam banner starts directly beneath header */
+body:has(.exam-view) #backToCatalogue{position:absolute!important;z-index:20!important;top:calc(var(--header-height,72px) + 18px)!important;left:max(3vw,38px)!important;margin:0!important;background:rgba(5,5,5,.72)!important;color:#fff!important;border-color:#dfa51f!important}
+body:has(.exam-view) #detailView{padding-top:0!important;margin-top:0!important}
+body:has(.exam-view) .exam-view{margin-top:0!important}
+body:has(.exam-view) .exam-hero{margin-top:0!important}
