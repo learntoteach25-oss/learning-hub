@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 620">
+<defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#050505"/><stop offset=".52" stop-color="#0b0906"/><stop offset="1" stop-color="#24190c"/></linearGradient><radialGradient id="g"><stop stop-color="#d8a631"/><stop offset="1" stop-color="#8b5b0c"/></radialGradient></defs>
+<rect width="1600" height="620" fill="url(#bg)"/>
+<g opacity=".12" stroke="#d8a631" fill="none"><path d="M0 470 Q260 300 560 470T1100 450T1600 410"/><path d="M0 500 Q300 340 600 500T1200 470T1600 440"/></g>
+<g transform="translate(930 40)">
+<ellipse cx="190" cy="230" rx="185" ry="28" fill="#000" opacity=".45"/>
+<circle cx="190" cy="190" r="155" fill="#080808" stroke="#d6a22d" stroke-width="9"/>
+<ellipse cx="190" cy="190" rx="78" ry="155" fill="none" stroke="#b98522" stroke-width="3"/><ellipse cx="190" cy="190" rx="130" ry="155" fill="none" stroke="#8e641c" stroke-width="2"/>
+<path d="M38 145h304M35 190h310M47 238h286" stroke="#a87820" stroke-width="3"/>
+<path d="M105 110l55-34 42 18 33-16 50 38-17 34-52-7-24 29-43-15-42 14-31-29zM210 220l45-23 54 22-18 55-49 28-37-35z" fill="url(#g)" opacity=".9"/>
+<path d="M190 345v58M125 405h130" stroke="#d6a22d" stroke-width="13" stroke-linecap="round"/>
+</g>
+<g transform="translate(1160 190)">
+<g fill="#0b0b0b" stroke="#c9972d" stroke-width="3"><rect y="0" width="330" height="65" rx="7"/><rect y="70" width="330" height="65" rx="7"/><rect y="140" width="330" height="65" rx="7"/><rect y="210" width="330" height="65" rx="7"/><rect y="280" width="330" height="65" rx="7"/></g>
+<g fill="#e7b94b" font-family="Georgia,serif" font-weight="700" font-size="28"><text x="30" y="42">CAMBRIDGE</text><text x="30" y="112">IGCSE</text><text x="30" y="182">GCSE</text><text x="30" y="252">IB</text><text x="30" y="322">A-LEVEL</text></g>
+</g>
+<g transform="translate(1420 420)" stroke="#d4a32f" stroke-width="5" fill="#090909"><rect width="145" height="105" rx="7"/><path d="M-25 118h190l-18 22H-10z"/></g>
+</svg>
