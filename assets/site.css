@@ -153,3 +153,19 @@
 
 /* approved hero artwork refresh */
 .boards-premium .boards-hero{background-image:linear-gradient(90deg,rgba(2,2,2,.99) 0%,rgba(2,2,2,.92) 36%,rgba(2,2,2,.20) 55%,rgba(2,2,2,0) 72%),url('/assets/boards-hero-art.svg?v=approved-20261006-2242')!important;background-position:center!important;background-size:cover!important}
+
+/* 2026-10-06 realistic hero replacement — approved visual direction */
+.boards-premium .boards-hero{
+ background-image:
+ linear-gradient(90deg,rgba(2,2,2,.99) 0%,rgba(2,2,2,.94) 36%,rgba(2,2,2,.34) 55%,rgba(2,2,2,.06) 78%),
+ url('https://images.squarespace-cdn.com/content/v1/5a3d166de5dd5bbf17af47d3/1757760730276-JH6PFBBP26EDPND3B6EA/4.jpg')!important;
+ background-position:center center!important;
+ background-size:cover!important;
+ background-repeat:no-repeat!important
+}
+.boards-premium .boards-hero:before{
+ content:""!important;position:absolute!important;z-index:0!important;right:2.5%!important;top:17%!important;width:34%!important;height:69%!important;
+ background:url('/assets/boards-hero-art.svg?v=books-overlay-20261006') 82% center/118% auto no-repeat!important;
+ clip-path:inset(22% 0 0 42%)!important;opacity:.98!important;pointer-events:none!important
+}
+.boards-premium .boards-hero-copy{position:relative!important;z-index:2!important}
