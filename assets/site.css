@@ -396,3 +396,16 @@
  .exam-view .exam-hero-copy{width:calc(100% - 36px)!important;padding:34px 0!important}
  .exam-view .exam-hero h1{font-size:39px!important}
 }
+
+/* 2026-10-07 Exams final performance/full-bleed correction */
+.exam-view{overflow-x:hidden!important}
+.exam-view .exam-hero{margin-top:0!important;transform:translateY(0)!important}
+.exam-view .exam-body{padding-top:30px!important}
+.exam-view .exam-card-image,.exam-view .exam-card-image img{border-radius:0!important}
+.exam-view .exam-card-image img{object-position:center!important}
+.exam-view .exam-test-grid{gap:18px!important}
+.exam-view .exam-card{grid-template-rows:190px 1fr!important}
+.exam-view .exam-card-image{height:190px!important}
+.exam-view .exam-card-image img{height:190px!important}
+.exam-view .exam-school-section{display:none!important}
+@media(max-width:620px){.exam-view .exam-card{grid-template-rows:195px 1fr!important}.exam-view .exam-card-image,.exam-view .exam-card-image img{height:195px!important}}
