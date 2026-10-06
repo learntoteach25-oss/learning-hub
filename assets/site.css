@@ -189,3 +189,17 @@
 .boards-premium .board-card-copy p{min-height:46px!important;margin:0!important;font:9px/1.35 Arial!important}
 .boards-premium .board-card-copy a{width:31px!important;height:31px!important;font-size:14px!important}
 @media(min-width:1090px){.boards-premium #boards-list{min-height:430px!important}.boards-premium .boards-premium-grid{align-items:stretch!important}}
+
+/* 2026-10-06 Boards brand marks — approved reference treatment */
+.boards-premium .board-logo{justify-content:flex-start!important;gap:7px!important;padding:6px 8px!important;text-align:left!important}
+.boards-premium .board-logo .brand-mark{flex:0 0 auto!important;display:grid!important;place-items:center!important}
+.boards-premium .board-logo .brand-word{display:flex!important;min-width:0!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;line-height:1!important}
+.boards-premium .board-logo .brand-word strong{white-space:nowrap!important;letter-spacing:-.02em!important}
+.boards-premium .board-logo .brand-word small{margin-top:3px!important;white-space:nowrap!important;font-size:7px!important;letter-spacing:-.01em!important}
+.boards-premium .cambridge-mark{width:32px!important;height:36px!important;border-radius:2px!important;background:linear-gradient(135deg,#c81f32 0 50%,#e9b83d 50%)!important;color:#fff!important;border:1px solid #9f1726!important;font-size:19px!important;text-shadow:0 1px #333!important}
+.boards-premium .pearson-mark{width:34px!important;height:34px!important;border-radius:50%!important;background:#1399c8!important;color:#fff!important;font:700 19px Georgia,serif!important}
+.boards-premium .ib-mark{width:35px!important;height:35px!important;border-radius:50%!important;background:#1598ca!important;color:#fff!important;font:700 16px Georgia,serif!important;text-transform:lowercase!important}
+.boards-premium .global-mark{width:33px!important;height:33px!important;border-radius:50%!important;border:2px solid #188fd0!important;color:#188fd0!important;font:700 18px Arial!important}
+.boards-premium .oxford-mark{width:100%!important}
+.boards-premium .oxford-mark strong{font-size:17px!important}
+.boards-premium .oxford-mark small{font-size:6px!important;letter-spacing:.02em!important}
