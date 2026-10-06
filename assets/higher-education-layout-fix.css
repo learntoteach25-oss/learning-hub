@@ -86,8 +86,8 @@
  width:min(1120px,calc(100% - 56px))!important;margin-left:auto!important;margin-right:auto!important;
 }
 
-/* FINAL main programmes hero: no back control, true edge-to-edge */
-.learning-detail:has(.programmes-view) .detail-toolbar{display:none!important}
+/* FINAL main programmes hero: back control visible above hero, true edge-to-edge */
+.learning-detail:has(.programmes-view) .detail-toolbar{display:flex!important;position:relative!important;top:auto!important;left:auto!important;width:min(1240px,calc(100% - 112px))!important;margin:14px auto!important;z-index:20!important}
 .learning-detail:has(.programmes-view){
  width:100%!important;max-width:none!important;margin:0!important;padding:0!important;
 }
@@ -151,3 +151,7 @@ body:has(.programmes-view) a[href*="group="]:is(.back-button,.back-link,.program
  position:relative!important;
  z-index:5!important;
 }
+
+/* Ensure actual catalogue back button is visible on programmes landing and group pages */
+.learning-detail:has(.programmes-view) #backToCatalogue{display:inline-flex!important;visibility:visible!important;opacity:1!important;position:relative!important;z-index:21!important}
+@media(max-width:620px){.learning-detail:has(.programmes-view) .detail-toolbar{width:calc(100% - 32px)!important;margin:10px auto!important;top:auto!important;left:auto!important}}
