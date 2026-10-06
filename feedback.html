@@ -937,6 +937,24 @@ html,body{width:100%!important;max-width:none!important;overflow-x:hidden!import
 .feedback-form .attachment input[type="file"]::file-selector-button{margin-right:10px!important;padding:8px 12px!important;border:0!important;border-radius:6px!important;background:#080706!important;color:#efc45b!important;font-weight:800!important;cursor:pointer!important}
 @media(max-width:620px){.feedback-form .attachments{grid-template-columns:1fr!important}}
 </style>
+<style id="feedback-visibility-final-v2">
+/* Learner Voices: explicit high-contrast hierarchy */
+.learner-voices-v7 .reviews-title .eyebrow{color:#9a6500!important;font:900 11px/1.2 Arial,sans-serif!important;letter-spacing:2px!important}
+.learner-voices-v7 .reviews-head h2{color:#17110a!important;font:700 34px/1.1 Georgia,serif!important;text-shadow:none!important}
+.learner-voices-v7 .reviews-head p{color:#4b4032!important;font:500 13px/1.5 Arial,sans-serif!important;opacity:1!important;max-width:760px!important}
+.learner-voices-v7 .review-origin strong{color:#ffd66f!important;font:700 17px/1.2 Georgia,serif!important;text-shadow:0 1px 1px #000!important}
+.learner-voices-v7 .review-origin small{color:#f4e2b7!important;font:600 11px/1.35 Arial,sans-serif!important;opacity:1!important}
+.learner-voices-v7 .review-text{color:#fffdf5!important;font:700 16px/1.55 Georgia,serif!important;opacity:1!important}
+
+/* Make audio/video note upload controls impossible to disappear */
+.feedback-form .attachments{display:grid!important;visibility:visible!important;opacity:1!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px!important;margin:14px 0 0!important}
+.feedback-form .attachment{display:grid!important;visibility:visible!important;opacity:1!important;min-height:125px!important;padding:14px!important;background:#fffaf0!important;border:1.5px solid #bd8114!important;border-radius:12px!important}
+.feedback-form .attachment div{display:block!important;visibility:visible!important}
+.feedback-form .attachment b{display:block!important;color:#111!important;font-size:14px!important}
+.feedback-form .attachment small{display:block!important;color:#554936!important;font-size:10px!important;margin-top:3px!important}
+.feedback-form .attachment input[type=file]{display:block!important;visibility:visible!important;opacity:1!important;position:static!important;width:100%!important;height:38px!important;margin:10px 0 0!important;padding:5px!important;border:1px solid #c58b20!important;border-radius:7px!important;background:#fff!important;color:#111!important}
+@media(max-width:620px){.feedback-form .attachments{grid-template-columns:1fr!important}}
+</style>
 </head>
 <body>
 <header></header>
