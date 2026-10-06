@@ -955,6 +955,33 @@ html,body{width:100%!important;max-width:none!important;overflow-x:hidden!import
 .feedback-form .attachment input[type=file]{display:block!important;visibility:visible!important;opacity:1!important;position:static!important;width:100%!important;height:38px!important;margin:10px 0 0!important;padding:5px!important;border:1px solid #c58b20!important;border-radius:7px!important;background:#fff!important;color:#111!important}
 @media(max-width:620px){.feedback-form .attachments{grid-template-columns:1fr!important}}
 </style>
+<style id="feedback-retry-contrast-v3">
+/* Screenshot-specific correction: champagne header must use dark ink */
+.learner-voices-v7,
+.learner-voices-v7 .reviews-head,
+.learner-voices-v7 .reviews-title{color:#15110b!important}
+.learner-voices-v7 .reviews-title .eyebrow,
+.learner-voices-v7 .eyebrow{color:#a66b00!important;opacity:1!important}
+.learner-voices-v7 .reviews-head h2,
+.learner-voices-v7 h2{color:#17110a!important;opacity:1!important;text-shadow:none!important}
+.learner-voices-v7 .reviews-head p,
+.learner-voices-v7 .reviews-title p{color:#514535!important;opacity:1!important;text-shadow:none!important}
+
+/* Black review cards: every metadata/name/message element gets explicit contrast */
+.learner-voices-v7 .review-card{color:#fff8e8!important}
+.learner-voices-v7 .review-card .review-origin,
+.learner-voices-v7 .review-card .review-origin strong,
+.learner-voices-v7 .review-card .review-origin b{color:#ffd35f!important;opacity:1!important;text-shadow:none!important}
+.learner-voices-v7 .review-card .review-origin small,
+.learner-voices-v7 .review-card small{color:#e8c977!important;opacity:1!important}
+.learner-voices-v7 .review-card .review-text{color:#fff!important;opacity:1!important}
+.learner-voices-v7 .review-card .review-actions{color:#efbd43!important;opacity:1!important}
+
+/* Keep media-note upload controls present directly below written feedback */
+.feedback-form .attachments{display:grid!important;visibility:visible!important;opacity:1!important;max-height:none!important;overflow:visible!important}
+.feedback-form .attachment,.feedback-form .attachment *{visibility:visible!important;opacity:1!important}
+.feedback-form .attachment input[type=file]{display:block!important;visibility:visible!important;opacity:1!important}
+</style>
 </head>
 <body>
 <header></header>
