@@ -203,3 +203,30 @@
 .boards-premium .oxford-mark{width:100%!important}
 .boards-premium .oxford-mark strong{font-size:17px!important}
 .boards-premium .oxford-mark small{font-size:6px!important;letter-spacing:.02em!important}
+
+/* 2026-10-07 FINAL Boards cards presentation */
+.boards-premium #boards-list{padding:24px 34px 28px!important;background:#fbf4e7!important;border-top:1px solid #d7a630!important}
+.boards-premium #boards-list .boards-head{margin:0 auto 17px!important;text-align:center!important}
+.boards-premium #boards-list .boards-head .eyebrow{display:none!important}
+.boards-premium #boards-list .boards-head h2{margin:0!important;color:#071426!important;font:700 35px/1.04 Georgia,serif!important}
+.boards-premium #boards-list .boards-head h2 em{color:#bd7f18!important;font-weight:400!important}
+.boards-premium #boards-list .boards-head p{margin:5px 0 0!important;color:#5d6875!important;font:10px/1.35 Arial!important}
+.boards-premium .boards-premium-grid{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:8px!important;max-width:1220px!important;margin:0 auto!important}
+.boards-premium .boards-premium-grid article{display:grid!important;grid-template-rows:160px 1fr!important;min-height:310px!important;border:1px solid #d7aa4a!important;border-radius:5px!important;overflow:hidden!important;background:#fffdf9!important;box-shadow:0 4px 12px rgba(42,28,5,.08)!important}
+.boards-premium .board-photo{position:relative!important;height:160px!important;background:#111!important;overflow:hidden!important}
+.boards-premium .board-photo>img{width:100%!important;height:100%!important;object-fit:cover!important}
+.boards-premium .board-logo{position:absolute!important;left:7px!important;right:7px!important;top:7px!important;z-index:3!important;height:48px!important;min-height:48px!important;padding:5px 8px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:6px!important;background:rgba(255,255,255,.97)!important;border:0!important;border-radius:4px!important;color:#08101e!important;text-align:left!important;box-shadow:0 2px 7px rgba(0,0,0,.12)!important}
+.boards-premium .board-wordmark{display:flex!important;flex-direction:column!important;justify-content:center!important;min-width:0!important}
+.boards-premium .board-wordmark b{font:700 15px/1 Georgia,serif!important;white-space:nowrap!important;color:#071426!important}
+.boards-premium .board-wordmark small{margin-top:2px!important;font:700 6px/1 Arial!important;white-space:nowrap!important;color:#17263c!important}
+.boards-premium .pearson-symbol,.boards-premium .ib-symbol{display:grid!important;place-items:center!important;width:31px!important;height:31px!important;flex:0 0 31px!important;border-radius:50%!important;background:#1599c8!important;color:#fff!important;font:700 17px Georgia,serif!important}
+.boards-premium .ib-symbol{text-transform:lowercase!important}
+.boards-premium .global-symbol{display:grid!important;place-items:center!important;width:29px!important;height:29px!important;flex:0 0 29px!important;border:2px solid #1697cc!important;border-radius:50%!important;color:#1697cc!important;font:700 16px Arial!important}
+.boards-premium .oxford-wordmark b{font-size:16px!important}.boards-premium .oxford-wordmark small{font-size:5.5px!important;letter-spacing:.02em!important}
+.boards-premium .board-badge{left:7px!important;bottom:7px!important;min-width:43px!important;height:25px!important;padding:0 7px!important;border:1px solid #dfa515!important;border-radius:4px!important;background:#080808!important;color:#f1b51d!important;font:800 8px Arial!important}
+.boards-premium .board-card-copy{display:flex!important;flex-direction:column!important;align-items:center!important;padding:12px 8px 9px!important;text-align:center!important}
+.boards-premium .board-card-copy h3{display:flex!important;align-items:center!important;justify-content:center!important;min-height:34px!important;margin:0 0 6px!important;color:#071426!important;font:700 14px/1.02 Georgia,serif!important}
+.boards-premium .board-card-copy p{min-height:37px!important;margin:0!important;color:#53606e!important;font:8px/1.35 Arial!important}
+.boards-premium .board-card-copy a{display:grid!important;place-items:center!important;width:28px!important;height:28px!important;margin:auto auto 0!important;border-radius:50%!important;background:#e0a214!important;color:#fff!important;font:700 13px Arial!important;text-decoration:none!important}
+@media(max-width:1080px){.boards-premium .boards-premium-grid{grid-template-columns:repeat(3,1fr)!important}}
+@media(max-width:620px){.boards-premium .boards-premium-grid{grid-template-columns:1fr 1fr!important}.boards-premium #boards-list{padding:22px 12px 26px!important}}
