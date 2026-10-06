@@ -363,3 +363,36 @@
 .exam-view .exam-school-grid .card-body,.exam-view .exam-competition-grid .card-body{display:flex!important;flex-direction:column!important;flex:1!important}
 .exam-view .exam-school-grid .card-body>a,.exam-view .exam-competition-grid .card-body>a{margin-top:auto!important}
 @media(max-width:620px){.exam-view .exam-card{grid-template-rows:210px 1fr!important}.exam-view .exam-card-image{height:210px!important}}
+
+/* 2026-10-07 Exam hero final fit — full bleed, clear exam context */
+.exam-view .exam-hero{
+ width:100vw!important;
+ max-width:100vw!important;
+ min-height:520px!important;
+ margin:0!important;
+ margin-left:calc(50% - 50vw)!important;
+ padding:0!important;
+ border:0!important;
+ border-radius:0!important;
+ overflow:hidden!important;
+ display:flex!important;
+ align-items:center!important;
+ background:
+ linear-gradient(90deg,rgba(0,0,0,.98) 0%,rgba(0,0,0,.91) 31%,rgba(0,0,0,.53) 53%,rgba(0,0,0,.13) 78%),
+ url('https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=2200&q=92') center 48%/cover no-repeat!important;
+ box-sizing:border-box!important
+}
+.exam-view .exam-hero-copy{
+ width:min(90vw,1240px)!important;
+ max-width:1240px!important;
+ margin:0 auto!important;
+ padding:48px 0!important;
+ box-sizing:border-box!important
+}
+.exam-view .exam-hero h1{max-width:720px!important;font-size:52px!important}
+.exam-view .exam-hero-copy>p{max-width:670px!important;font-size:14px!important;line-height:1.6!important}
+@media(max-width:620px){
+ .exam-view .exam-hero{min-height:560px!important;background-position:62% center!important}
+ .exam-view .exam-hero-copy{width:calc(100% - 36px)!important;padding:34px 0!important}
+ .exam-view .exam-hero h1{font-size:39px!important}
+}
