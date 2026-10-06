@@ -105,3 +105,37 @@
  min-height:390px!important;
  border-radius:0!important;
 }
+
+/* 2026-10-06: programmes landing hero visual cleanup */
+body:has(.programmes-view) .programmes-hero{
+ height:330px!important;
+ min-height:330px!important;
+ background-position:center 42%!important;
+ background-size:cover!important;
+ overflow:hidden!important;
+}
+body:has(.programmes-view) .programmes-hero::before{
+ content:""!important;
+ position:absolute!important;
+ inset:0!important;
+ background:rgba(0,0,0,.48)!important;
+ z-index:0!important;
+}
+body:has(.programmes-view) .programmes-hero > *{
+ position:relative!important;
+ z-index:1!important;
+}
+body:has(.programmes-view) .programmes-hero h1{
+ max-width:900px!important;
+ margin-left:auto!important;
+ margin-right:auto!important;
+ font-size:clamp(42px,4.6vw,66px)!important;
+ line-height:1.02!important;
+ text-align:center!important;
+}
+body:has(.programmes-view) .programmes-hero p{
+ max-width:800px!important;
+ margin-left:auto!important;
+ margin-right:auto!important;
+ text-align:center!important;
+}
