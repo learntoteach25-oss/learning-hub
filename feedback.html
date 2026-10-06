@@ -982,6 +982,28 @@ html,body{width:100%!important;max-width:none!important;overflow-x:hidden!import
 .feedback-form .attachment,.feedback-form .attachment *{visibility:visible!important;opacity:1!important}
 .feedback-form .attachment input[type=file]{display:block!important;visibility:visible!important;opacity:1!important}
 </style>
+<style id="feedback-hard-fix-v4">
+.feedback-form{height:auto!important;max-height:none!important;overflow:visible!important}
+.feedback-form .fields{overflow:visible!important}
+.feedback-form .attachments.full{grid-column:1/-1!important;display:grid!important;grid-template-columns:1fr 1fr!important;gap:14px!important;height:auto!important;min-height:120px!important;max-height:none!important;overflow:visible!important}
+.feedback-form .attachment{display:grid!important;height:auto!important;min-height:118px!important;overflow:visible!important}
+.feedback-form .attachment input[type=file]{display:block!important;position:static!important;clip:auto!important;clip-path:none!important;width:100%!important;height:40px!important}
+
+/* Learner section heading on champagne */
+.learner-voices-v7 .reviews-head h2{color:#17110a!important;-webkit-text-fill-color:#17110a!important}
+.learner-voices-v7 .reviews-head p{color:#4b4032!important;-webkit-text-fill-color:#4b4032!important}
+.learner-voices-v7 .reviews-title .eyebrow{color:#8b5900!important;-webkit-text-fill-color:#8b5900!important}
+
+/* Names were inheriting dark rules: override every name/meta node on black cards */
+.learner-voices-v7 .review-card .review-origin,
+.learner-voices-v7 .review-card .review-origin *,
+.learner-voices-v7 .review-card .review-origin strong,
+.learner-voices-v7 .review-card .review-origin small{opacity:1!important;visibility:visible!important}
+.learner-voices-v7 .review-card .review-origin strong{color:#ffd45f!important;-webkit-text-fill-color:#ffd45f!important;font:800 17px/1.25 Georgia,serif!important}
+.learner-voices-v7 .review-card .review-origin small{color:#f4dfaa!important;-webkit-text-fill-color:#f4dfaa!important;font:700 11px/1.3 Arial,sans-serif!important}
+.learner-voices-v7 .review-card .review-text{color:#fff!important;-webkit-text-fill-color:#fff!important}
+@media(max-width:620px){.feedback-form .attachments.full{grid-template-columns:1fr!important}}
+</style>
 </head>
 <body>
 <header></header>
@@ -1019,10 +1041,10 @@ html,body{width:100%!important;max-width:none!important;overflow-x:hidden!import
       <label>Email<input name="email" type="email" required></label>
       <label class="full">Your Rating<select name="rating" required><option value="">Choose a rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Very good</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Needs improvement</option></select></label>
       <label class="full">Written Feedback<textarea name="message" placeholder="Tell us what worked well, what could be improved, or what you would like us to offer..."></textarea></label>
-    </div>
-    <div class="attachments">
-      <label class="attachment"><span>♫</span><div><b>Audio Feedback</b><small>Optional audio message</small></div><input name="feedback_audio" type="file" accept="audio/*"></label>
-      <label class="attachment"><span>▶</span><div><b>Video Feedback</b><small>Optional video message</small></div><input name="feedback_video" type="file" accept="video/*"></label>
+      <div class="attachments full">
+        <label class="attachment"><span>♫</span><div><b>Upload Audio Feedback</b><small>Choose an audio recording from your device</small></div><input name="feedback_audio" type="file" accept="audio/*"></label>
+        <label class="attachment"><span>▶</span><div><b>Upload Video Feedback</b><small>Choose a video recording from your device</small></div><input name="feedback_video" type="file" accept="video/*"></label>
+      </div>
     </div>
     <button class="submit" type="submit">Send Feedback →</button>
     <p id="feedbackStatus" class="status" role="status"></p><p class="privacy">Attachments: maximum 10 MB in total.</p>
