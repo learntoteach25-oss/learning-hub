@@ -108,3 +108,12 @@
 .boards-premium .board-card-copy a{display:grid!important;place-items:center!important;width:30px!important;height:30px!important;margin:auto auto 0!important;border-radius:50%!important;background:#d8a52d!important;color:#fff!important;text-decoration:none!important}
 @media(max-width:1050px){.boards-premium .boards-premium-grid{grid-template-columns:repeat(3,1fr)!important}}
 @media(max-width:620px){.boards-premium #boards-list{padding:32px 15px!important}.boards-premium .boards-premium-grid{grid-template-columns:repeat(2,1fr)!important;gap:10px!important}.boards-premium .boards-premium-grid article{min-height:330px!important}.boards-premium .board-card-copy h3{font-size:16px!important}}
+
+/* Boards: visible curriculum identity marks over card imagery */
+.boards-premium .board-logo{position:absolute!important;left:9px!important;right:9px!important;top:10px!important;z-index:3!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:7px!important;min-height:45px!important;padding:6px 8px!important;border:1px solid rgba(255,255,255,.8)!important;border-radius:6px!important;background:rgba(255,255,255,.94)!important;color:#111827!important;text-align:center!important;box-shadow:0 4px 12px rgba(0,0,0,.14)!important}
+.boards-premium .board-logo strong{font:900 14px/1 Georgia,serif!important;letter-spacing:.01em!important}
+.boards-premium .board-logo small{display:block!important;color:#27364a!important;font:700 9px/1.08 Arial!important}
+.boards-premium .board-logo .ib-mark{display:grid!important;place-items:center!important;width:31px!important;height:31px!important;border-radius:50%!important;background:#178fc1!important;color:#fff!important;font:900 15px Georgia,serif!important}
+.boards-premium .board-photo{position:relative!important}
+.boards-premium .board-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),transparent 55%,rgba(0,0,0,.2));pointer-events:none}
+.boards-premium .board-badge{z-index:4!important}
