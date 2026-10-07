@@ -654,3 +654,75 @@ body:has(.exam-view) .exam-hero{margin:0!important;padding-top:0!important;min-h
 .exam-view .exam-component-label,.exam-view .competition-card .exam-component-label{margin-top:auto!important}
 @media(max-width:900px){.exam-view .exam-test-grid>.exam-card,.exam-view .exam-admissions-grid>.exam-card,.exam-view .exam-competition-grid>.competition-card{flex:0 1 calc((100% - 22px)/2)!important;width:calc((100% - 22px)/2)!important;max-width:none!important}}
 @media(max-width:600px){.exam-view .exam-body{width:calc(100% - 28px)!important}.exam-view .exam-section-head h2{font-size:29px!important}.exam-view .exam-test-grid>.exam-card,.exam-view .exam-admissions-grid>.exam-card,.exam-view .exam-competition-grid>.competition-card{flex:1 1 100%!important;width:100%!important;max-width:none!important}}
+
+/* Exam headings final uniform presentation */
+.exam-view .exam-section-head{
+ max-width:760px!important;
+ min-height:150px!important;
+ margin:0 auto 32px!important;
+ padding:0 24px 22px!important;
+ box-sizing:border-box!important;
+ display:flex!important;
+ flex-direction:column!important;
+ align-items:center!important;
+ justify-content:center!important;
+ text-align:center!important;
+ position:relative!important
+}
+.exam-view .exam-section-head .eyebrow{
+ display:block!important;
+ width:100%!important;
+ margin:0 0 11px!important;
+ color:#c88b00!important;
+ font-family:Arial,sans-serif!important;
+ font-size:10px!important;
+ font-style:normal!important;
+ font-weight:900!important;
+ line-height:1.2!important;
+ letter-spacing:1.8px!important;
+ text-transform:uppercase!important
+}
+.exam-view .exam-section-head h2{
+ display:block!important;
+ width:100%!important;
+ margin:0 0 10px!important;
+ color:#06152a!important;
+ font-family:Georgia,'Times New Roman',serif!important;
+ font-size:34px!important;
+ font-style:normal!important;
+ font-weight:700!important;
+ line-height:1.08!important;
+ letter-spacing:-.45px!important;
+ text-align:center!important
+}
+.exam-view .exam-section-head h2 em{
+ color:#d79a0b!important;
+ font-style:italic!important;
+ font-weight:400!important
+}
+.exam-view .exam-section-head p{
+ display:block!important;
+ width:100%!important;
+ max-width:650px!important;
+ margin:0 auto!important;
+ color:#526073!important;
+ font-family:Arial,sans-serif!important;
+ font-size:12px!important;
+ font-weight:400!important;
+ line-height:1.55!important;
+ text-align:center!important
+}
+.exam-view .exam-section-head:after{
+ content:""!important;
+ position:absolute!important;
+ left:50%!important;
+ bottom:0!important;
+ width:48px!important;
+ height:2px!important;
+ transform:translateX(-50%)!important;
+ background:#dda018!important
+}
+@media(max-width:600px){
+ .exam-view .exam-section-head{min-height:135px!important;padding:0 8px 18px!important}
+ .exam-view .exam-section-head h2{font-size:28px!important}
+}
