@@ -865,3 +865,12 @@ body:has(.support-v5) .back-link,body:has(.support-v5) .back-btn,body:has(.suppo
 body:has(.support-v6) .back-link,body:has(.support-v6) .back-btn,body:has(.support-v6) a[href*="catalogue"]{background:#090909!important;color:#d6a326!important;border:1px solid #d6a326!important}
 @media(max-width:760px){.sv6-promise-grid{grid-template-columns:1fr}.sv6-promise-grid article{border-right:0;border-bottom:1px solid #d6b568}.sv6-path-grid{grid-template-columns:1fr}.sv6-card:last-child{grid-column:auto;width:100%}.sv6-card summary{grid-template-columns:145px 1fr}.sv6-result{height:auto;grid-template-columns:1fr}.sv6-result>img{height:300px;order:-1}}
 @media(max-width:520px){.sv6-hero{height:570px}.sv6-hero-content{width:calc(100% - 36px);padding-top:95px}.sv6-hero h1{font-size:40px}.sv6-promise,.sv6-result,.sv6-cta{width:calc(100% - 28px)}.sv6-promise h2,.sv6-path-title h2{font-size:31px}.sv6-pathways{padding:50px 14px}.sv6-card summary{grid-template-columns:1fr}.sv6-img{height:190px}.sv6-more ul{grid-template-columns:1fr}.sv6-result-copy{padding:32px 23px}}
+
+/* SUPPORT V6.1 — banner matched to site-page banner proportions */
+.sv6-hero{width:100%;height:auto!important;min-height:0!important;aspect-ratio:1920/455;max-height:455px;border-radius:0!important;border-left:0!important;border-right:0!important}
+.sv6-hero>img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.sv6-hero-content{width:min(1120px,calc(100% - 44px));height:100%;padding:0!important;display:flex;flex-direction:column;justify-content:center}
+.sv6-hero h1{max-width:720px;margin:10px 0 12px;font-size:clamp(38px,4.3vw,58px);line-height:.98}
+.sv6-hero p{max-width:590px;margin-bottom:18px;font-size:12.5px;line-height:1.6}
+.sv6-hero a{align-self:flex-start;padding:11px 16px}
+@media(max-width:780px){.sv6-hero{aspect-ratio:auto;max-height:none;height:430px!important}.sv6-hero-content{width:calc(100% - 30px)}.sv6-hero h1{font-size:38px}.sv6-hero>img{object-position:center}}
