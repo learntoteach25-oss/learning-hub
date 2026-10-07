@@ -81,35 +81,43 @@ function examsView(){return `<div class="exam-view">
 <section class="exam-section exam-admissions-section"><div class="exam-section-head"><span class="eyebrow">Core Academic &amp; Admissions Tests</span><h2>Prepare for <em>admissions tests</em></h2><p>Focused preparation for undergraduate, graduate and business-school admissions assessments.</p></div><div class="exam-admissions-grid">${admissionsTests.map(admissionsCard).join('')}</div></section>
 <section class="exam-section competitions-section"><div class="exam-section-head"><span class="eyebrow">Academic Competitions &amp; Olympiads</span><h2>Prepare for <em>academic challenges</em></h2><p>Build subject knowledge, reasoning, accuracy and confidence through focused competition practice.</p></div><div class="exam-competition-grid">${competitions.map(competitionCard).join('')}</div></section>
 </div></div>`}
-function supportView(){return `<div class="support-view support-premium">
-<section class="support-hero">
-  <div class="support-hero-shade"></div>
-  <div class="support-hero-copy">
-    <span class="eyebrow">Personalised Learning Support</span>
-    <h1>Every learner can move forward with the <em>right support.</em></h1>
-    <p>Thoughtful one-to-one guidance for learners who need stronger foundations, a different pace, help closing learning gaps, or a clearer way to study and revise.</p>
-    <div class="support-hero-actions"><a class="support-primary" href="billing.html">Book a Lesson →</a><a class="support-secondary" href="#support-pathways">Explore Support</a></div>
-    <div class="support-hero-trust"><span>✓ Individual learning goals</span><span>✓ Structured guidance</span><span>✓ Progress-focused practice</span></div>
+function supportView(){return `<div class="support-view support-premium support-v2">
+<section class="support-v2-hero">
+  <div class="support-v2-hero-media"><img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&w=1800&q=90" alt="Teacher supporting students in a bright classroom"></div>
+  <div class="support-v2-hero-panel">
+    <span class="eyebrow">Personalised learning support</span>
+    <h1>When learning feels difficult, <em>the right guidance changes the way forward.</em></h1>
+    <p>One-to-one support shaped around the learner’s level, pace and goals — from rebuilding foundations to homework, revision and more confident independent study.</p>
+    <div class="support-v2-actions"><a href="billing.html">Find the Right Support →</a><a href="#support-pathways">Explore Pathways</a></div>
+    <div class="support-v2-proof"><span><b>01</b> Understand the need</span><span><b>02</b> Build a focused plan</span><span><b>03</b> Practise with purpose</span></div>
   </div>
 </section>
-<section class="support-intro">
-  <div class="support-intro-copy"><span class="eyebrow">Support with purpose</span><h2>We start with the learner, <em>not a template.</em></h2><p>Learning support should make the next step clearer. We look at what the learner can already do, where confidence or understanding is breaking down, and what kind of explanation, practice and pacing will help them progress.</p></div>
-  <div class="support-promise-grid">
-    <article><b>01</b><h3>Understand</h3><p>Identify the learner’s goals, current level and immediate learning needs.</p></article>
-    <article><b>02</b><h3>Plan</h3><p>Choose an appropriate pace, teaching approach and focused learning pathway.</p></article>
-    <article><b>03</b><h3>Practise</h3><p>Use guided examples, active practice, feedback and purposeful repetition.</p></article>
-    <article><b>04</b><h3>Progress</h3><p>Review understanding and adjust support as the learner becomes more independent.</p></article>
+
+<section class="support-v2-intro">
+  <div class="support-v2-intro-head"><span class="eyebrow">A thoughtful starting point</span><h2>Not more work. <em>Better-directed learning.</em></h2></div>
+  <p class="support-v2-intro-text">We look beyond the immediate task. The aim is to identify what is getting in the learner’s way, make difficult ideas clearer, and provide enough guided practice for progress to become visible and sustainable.</p>
+  <div class="support-v2-process">
+    <article><span>01</span><h3>Discover</h3><p>Clarify goals, current level, strengths and the areas causing difficulty.</p></article>
+    <article><span>02</span><h3>Focus</h3><p>Prioritise the skills and concepts that will make the biggest difference first.</p></article>
+    <article><span>03</span><h3>Guide</h3><p>Teach with clear explanations, examples, modelling and active practice.</p></article>
+    <article><span>04</span><h3>Strengthen</h3><p>Review learning, address recurring gaps and build greater independence.</p></article>
   </div>
 </section>
-<section class="support-pathways" id="support-pathways">
-  <div class="support-section-head"><span class="eyebrow">Choose a pathway</span><h2>Support designed around <em>real learning needs.</em></h2><p>Open a card to see how each pathway works. Learners can begin with the closest match; support can then be adjusted around their actual needs.</p></div>
-  <div class="support-accordion-grid">${support.map(([n,d,methods,img],i)=>`<details class="support-expand-card" ${i===0?'open':''}><summary><div class="support-card-image"><img src="${img}" alt="${n} support" loading="lazy" decoding="async"></div><div class="support-card-title"><span>0${i+1}</span><div><h3>${n}</h3><p>${d}</p></div><b aria-hidden="true">+</b></div></summary><div class="support-card-expanded"><strong>How we support learning</strong><ul>${methods.map(m=>`<li><span>✓</span>${m}</li>`).join('')}</ul><a href="${book(n)}">Book ${n} →</a></div></details>`).join('')}</div>
+
+<section class="support-v2-pathways" id="support-pathways">
+ <div class="support-v2-heading"><span class="eyebrow">Choose a support pathway</span><h2>Different needs. <em>One clear next step.</em></h2><p>Select the closest match and open the card to see how we can support that learning need.</p></div>
+ <div class="support-v2-grid">${support.map(([n,d,methods,img],i)=>`<details class="support-v2-card">
+   <summary><div class="support-v2-photo"><img src="${img}" alt="${n}" loading="lazy" decoding="async"><span>0${i+1}</span></div><div class="support-v2-card-head"><div><h3>${n}</h3><p>${d}</p></div><b>+</b></div></summary>
+   <div class="support-v2-card-body"><strong>What support can include</strong><ul>${methods.map(m=>`<li>✓ ${m}</li>`).join('')}</ul><a href="${book(n)}">Explore ${n} →</a></div>
+ </details>`).join('')}</div>
 </section>
-<section class="support-confidence">
-  <div class="support-confidence-image"><img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1600&q=90" alt="Teacher guiding a learner in a supportive lesson" loading="lazy" decoding="async"></div>
-  <div class="support-confidence-copy"><span class="eyebrow">A clearer learning experience</span><h2>Support that builds <em>understanding and independence.</em></h2><p>Our role is not simply to complete today’s task. We aim to help learners understand what they are doing, practise it with guidance, recognise mistakes and gradually approach learning with greater confidence.</p><div class="support-checks"><span>Clear explanations</span><span>Flexible pacing</span><span>Guided practice</span><span>Constructive feedback</span><span>Study organisation</span><span>Regular review</span></div></div>
+
+<section class="support-v2-feature">
+  <div class="support-v2-feature-copy"><span class="eyebrow">From supported to self-directed</span><h2>We explain. We practise. <em>Then we help learners do more for themselves.</em></h2><p>Effective support should make learning feel more manageable without creating dependence. Lessons can combine explanation, guided practice, feedback, study organisation and review according to the learner’s needs.</p><div class="support-v2-tags"><span>Clear explanations</span><span>Flexible pacing</span><span>Guided practice</span><span>Useful feedback</span><span>Study strategies</span><span>Regular review</span></div></div>
+  <div class="support-v2-feature-photo"><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1400&q=90" alt="Students learning together with focused academic support" loading="lazy"></div>
 </section>
-<section class="support-cta"><div><span class="eyebrow">Not sure where to begin?</span><h2>Tell us what the learner is finding difficult.</h2><p>Choose the closest support pathway when booking and share the learner’s level, goals and concerns. We can use that information to plan a more focused starting point.</p></div><a href="billing.html">Start a Learning Enquiry →</a></section>
+
+<section class="support-v2-cta"><div><span class="eyebrow">Unsure which pathway fits?</span><h2>Start with the challenge. <em>We’ll help shape the learning plan.</em></h2><p>Share the learner’s level, goals and the area they are finding difficult when you enquire.</p></div><a href="billing.html">Start a Learning Enquiry →</a></section>
 </div>`}
 function resourcesView(){return `<div class="detail-content resources-view"><span class="eyebrow">Resources</span><h1>Learning Hub Resources</h1><p>Explore our learning library, premium educational materials, student feedback and teaching opportunities.</p><div class="detail-grid balanced-grid"><article class="detail-card"><div class="card-body"><h2>Free Learning Library</h2><p>Browse free worksheets, practice materials, stories and educational PDFs.</p><a href="free-resources.html">Open Free Learning Library →</a></div></article><article class="detail-card"><div class="card-body"><h2>Premium Digital Resources</h2><p>Explore premium Learning Hub digital resources and educational materials.</p><a href="premium-resources.html">Explore Premium Resources →</a></div></article><article class="detail-card"><div class="card-body"><h2>Feedback &amp; Reviews</h2><p>Read feedback and reviews from Learning Hub learners and families.</p><a href="feedback.html">View Feedback &amp; Reviews →</a></div></article><article class="detail-card"><div class="card-body"><h2>Teach with Us</h2><p>Interested in joining Learning Hub as an educator? Submit your teaching application.</p><a href="https://docs.google.com/forms/d/e/1FAIpQLSdZ-W5Yct8zPLFwICYdYWmg3iAPZr6J_LcWMRxdtIE5yPW8nA/viewform" target="_blank" rel="noopener">Apply to Teach →</a></div></article></div></div>`}
 function bindProgrammeUI(){output.querySelectorAll('[data-programme-group]').forEach(btn=>btn.addEventListener('click',()=>showProgrammeGroup(btn.dataset.programmeGroup)));output.querySelector('[data-programmes-home]')?.addEventListener('click',()=>show('programmes'));bindBoardSelectors()}
