@@ -462,3 +462,10 @@ body:has(.exam-view) .exam-hero{margin:0!important;padding-top:0!important;min-h
  margin:0!important
 }
 .learning-detail:has(.exam-view) .exam-hero{margin:0!important;padding-top:0!important}
+
+/* 2026-10-07 Core Academic & Admissions Tests */
+.exam-view .exam-admissions-section{margin-top:52px!important;padding-top:38px!important;border-top:1px solid #d6b15e!important}
+.exam-view .exam-admissions-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:16px!important;align-items:stretch!important}
+.exam-view .exam-admissions-grid .exam-card{height:100%!important}
+@media(max-width:1080px){.exam-view .exam-admissions-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:620px){.exam-view .exam-admissions-grid{grid-template-columns:1fr!important}}
