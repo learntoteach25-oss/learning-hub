@@ -634,3 +634,20 @@ body:has(.exam-view) .exam-hero{margin:0!important;padding-top:0!important;min-h
 @media(max-width:620px){
  .programme-group-view .inline-back{top:16px!important;left:18px!important;min-height:39px!important;padding:0 15px!important;font-size:12px!important}
 }
+
+/* Exam page balance v3 */
+.exam-view .exam-body{width:min(1180px,calc(100% - 56px))!important;margin:auto!important;padding:42px 0 72px!important}
+.exam-view .exam-section{padding:44px 0 54px!important}
+.exam-view .exam-section-head{max-width:760px!important;margin:0 auto 30px!important;text-align:center!important}
+.exam-view .exam-section-head .eyebrow{display:block!important;margin:0 0 10px!important;color:#c58a00!important;font-size:11px!important;font-weight:900!important;letter-spacing:2px!important;text-transform:uppercase!important}
+.exam-view .exam-section-head h2{margin:0 0 10px!important;font-size:34px!important;line-height:1.12!important;color:#071426!important}
+.exam-view .exam-section-head h2 em{color:#d89c0d!important;font-weight:500!important}
+.exam-view .exam-section-head p{max-width:650px!important;margin:auto!important;line-height:1.55!important;color:#566174!important}
+.exam-view .exam-test-grid,.exam-view .exam-competition-grid{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px!important;align-items:stretch!important}
+.exam-view .exam-admissions-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:22px!important;max-width:800px!important;margin:0 auto!important;align-items:stretch!important}
+.exam-view .exam-card,.exam-view .competition-card{height:100%!important;border-radius:12px!important;background:#fff!important;box-shadow:0 7px 20px rgba(0,0,0,.06)!important}
+.exam-view .exam-card-image,.exam-view .competition-card-image{height:180px!important;min-height:180px!important}
+.exam-view .exam-card .card-body,.exam-view .competition-card .card-body{padding:18px!important}
+.exam-view .exam-component-go,.exam-view .competition-book{width:100%!important;box-sizing:border-box!important}
+@media(max-width:900px){.exam-view .exam-test-grid,.exam-view .exam-admissions-grid,.exam-view .exam-competition-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;max-width:none!important}}
+@media(max-width:600px){.exam-view .exam-body{width:calc(100% - 28px)!important}.exam-view .exam-test-grid,.exam-view .exam-admissions-grid,.exam-view .exam-competition-grid{grid-template-columns:1fr!important}.exam-view .exam-section-head h2{font-size:28px!important}}
