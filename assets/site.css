@@ -469,3 +469,16 @@ body:has(.exam-view) .exam-hero{margin:0!important;padding-top:0!important;min-h
 .exam-view .exam-admissions-grid .exam-card{height:100%!important}
 @media(max-width:1080px){.exam-view .exam-admissions-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:620px){.exam-view .exam-admissions-grid{grid-template-columns:1fr!important}}
+
+/* 2026-10-07 Competition cards: main competition + subject dropdown */
+.exam-view .exam-competition-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.exam-view .competition-card{display:grid!important;grid-template-rows:175px 1fr!important;min-height:430px!important}
+.exam-view .competition-card-image{display:block!important;height:175px!important;overflow:hidden!important}
+.exam-view .competition-card-image img{width:100%!important;height:100%!important;object-fit:cover!important}
+.exam-view .competition-card .card-body{display:flex!important;flex-direction:column!important;padding:18px!important}
+.exam-view .competition-card .card-body h2{min-height:42px!important}
+.exam-view .competition-card .card-body>p{min-height:54px!important}
+.exam-view .competition-subject-select{width:100%!important;height:42px!important;margin-top:6px!important;padding:0 38px 0 12px!important;border:1px solid #d9a526!important;border-radius:7px!important;background:#fffaf0!important;color:#071426!important;font:700 11px Arial!important}
+.exam-view .competition-book{display:flex!important;align-items:center!important;justify-content:center!important;min-height:38px!important;margin-top:10px!important;border-radius:7px!important;background:#dfa51f!important;color:#080808!important;font:800 10px Arial!important;text-decoration:none!important}
+@media(max-width:980px){.exam-view .exam-competition-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:620px){.exam-view .exam-competition-grid{grid-template-columns:1fr!important}}
