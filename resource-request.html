@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Request a Learning Resource | Learning Hub</title>
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    .page{background:#f8f2e8}.wrap{width:min(900px,calc(100% - 34px));margin:auto;padding:30px 0 70px}.panel{background:#fff;border:1px solid #e0c98f;border-radius:22px;padding:30px}.panel h1{margin:0 0 8px;color:#082d58;font:700 38px Georgia}.sub{color:#665e53;font:13px/1.55 Arial}.grid{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:24px}.full{grid-column:1/-1}.field label{display:block;margin-bottom:6px;font:800 10px Arial}.field input,.field select,.field textarea{width:100%;box-sizing:border-box;padding:12px;border:1px solid #dbc79d;border-radius:10px;background:#fff;font:13px Arial}.send{margin-top:16px;border:0;border-radius:999px;padding:13px 18px;background:#e8b844;font:900 11px Arial;cursor:pointer}.status{font:12px Arial;color:#10493f;margin-top:10px}@media(max-width:650px){.grid{grid-template-columns:1fr}.full{grid-column:auto}}
+  </style>
+</head>
+<body class="page">
+<header></header>
+<main class="wrap">
+  <section class="panel">
+    <h1>Request a Learning Resource</h1>
+    <p class="sub">Tell us what you need. Your request will continue through the Learning Hub billing page.</p>
+    <div class="grid">
+      <div class="field"><label>RESOURCE TYPE</label><select id="type"><option>Custom Resource</option><option>Subject Worksheet</option><option>Revision Pack</option><option>Study Guide</option><option>International Curriculum Resource</option><option>English Resource</option><option>Other</option></select></div>
+      <div class="field"><label>SUBJECT</label><input id="subject" placeholder="e.g. English, Psychology, Mathematics"></div>
+      <div class="field"><label>CURRICULUM / BOARD</label><input id="board" placeholder="e.g. IB, Cambridge, Edexcel"></div>
+      <div class="field"><label>GRADE / LEVEL</label><input id="level" placeholder="e.g. Grade 6, IGCSE, IB SL"></div>
+      <div class="field full"><label>TOPIC / RESOURCE REQUIREMENTS</label><textarea id="requirements" rows="4" placeholder="Describe what the learner needs."></textarea></div>
+      <div class="field"><label>PREFERRED FORMAT</label><select id="format"><option>PDF</option><option>Printable Worksheet</option><option>Study Pack</option><option>Digital Activity</option><option>Not sure</option></select></div>
+      <div class="field"><label>DEADLINE (optional)</label><input id="deadline" type="date"></div>
+      <div class="field"><label>NAME</label><input id="name"></div>
+      <div class="field"><label>EMAIL</label><input id="email" type="email"></div>
+      <div class="field"><label>WHATSAPP / CONTACT</label><input id="phone" type="tel"></div>
+    </div>
+    <button id="send" class="send" type="button">Continue to Billing →</button>
+    <div id="status" class="status"></div>
+  </section>
+</main>
+<footer></footer>
+<script>
+const $=id=>document.getElementById(id);
+const query=new URLSearchParams(location.search);
+if(query.get('type')) $('type').value=query.get('type');
+
+$('send').onclick=()=>{
+  const name=$('name').value.trim();
+  const email=$('email').value.trim();
+  const requirements=$('requirements').value.trim();
+  if(!name||!email||!requirements){
+    $('status').textContent='Please enter your name, email and resource requirements.';
+    return;
+  }
+  const notes=[
+    'Premium resource request',
+    'Type: '+$('type').value,
+    'Subject: '+$('subject').value.trim(),
+    'Curriculum / Board: '+$('board').value.trim(),
+    'Grade / Level: '+$('level').value.trim(),
+    'Format: '+$('format').value,
+    'Deadline: '+($('deadline').value||'Not specified'),
+    'Requirements: '+requirements
+  ].join('\n');
+  const billing=new URLSearchParams({
+    course:'Premium Digital Resource',
+    name,
+    email,
+    phone:$('phone').value.trim(),
+    notes
+  });
+  location.href='/billing?'+billing.toString();
+};
+</script>
+<script src="https://code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js" async></script>
+<script src="assets/site-shell.js"></script>
+</body>
+</html>

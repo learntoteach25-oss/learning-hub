@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://learninghubtutoring.com/sitemap.xml
