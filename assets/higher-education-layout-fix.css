@@ -11,8 +11,8 @@
 }
 .learning-detail:has(.programmes-view) #backToCatalogue{
   display:inline-flex;align-items:center;justify-content:center;
-  margin:0;padding:10px 16px;background:#fff;border:1px solid #d4a73e;
-  border-radius:999px;color:#111;font-size:13px;font-weight:800;
+  margin:0;padding:10px 16px;background:#050505;border:1px solid #d4a73e;
+  border-radius:999px;color:#fff;font-size:13px/;font-weight:800;
 }
 .learning-detail:has(.programme-group-view) .detail-toolbar{display:none!important}
 
@@ -24,9 +24,9 @@
   display:flex;align-items:center;justify-content:center;overflow:hidden;
   border:0;border-bottom:1px solid #d4a73e;border-radius:0;
   background:
-    linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)),
+    linear-gradient(rgba(0,0,0,.34),rgba(0,0,0,.34)),
     url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=2200&q=92')
-    center 50%/cover no-repeat;
+    center 42%/cover no-repeat;
 }
 .programmes-hero-copy{
   position:relative;z-index:2;box-sizing:border-box;
