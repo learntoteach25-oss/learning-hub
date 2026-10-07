@@ -726,3 +726,27 @@ body:has(.exam-view) .exam-hero{margin:0!important;padding-top:0!important;min-h
  .exam-view .exam-section-head{min-height:135px!important;padding:0 8px 18px!important}
  .exam-view .exam-section-head h2{font-size:28px!important}
 }
+
+/* Exam heading redesign v3 */
+.exam-view .exam-section-head{
+ max-width:900px!important;min-height:0!important;margin:0 auto 34px!important;
+ padding:22px 28px 24px!important;border:1px solid rgba(213,170,77,.55)!important;
+ border-radius:16px!important;background:#fffaf0!important;
+ box-shadow:0 8px 22px rgba(35,25,8,.05)!important;text-align:left!important;
+ align-items:flex-start!important
+}
+.exam-view .exam-section-head:after{left:28px!important;bottom:0!important;width:72px!important;transform:none!important}
+.exam-view .exam-section-head .eyebrow{
+ width:auto!important;margin:0 0 9px!important;text-align:left!important;font-size:10px!important;letter-spacing:2px!important
+}
+.exam-view .exam-section-head h2{
+ width:auto!important;margin:0 0 9px!important;text-align:left!important;font-size:38px!important;line-height:1.06!important
+}
+.exam-view .exam-section-head p{
+ width:auto!important;max-width:690px!important;margin:0!important;text-align:left!important;font-size:12.5px!important;line-height:1.55!important
+}
+@media(max-width:600px){
+ .exam-view .exam-section-head{padding:19px 18px 21px!important;border-radius:12px!important}
+ .exam-view .exam-section-head:after{left:18px!important;width:56px!important}
+ .exam-view .exam-section-head h2{font-size:29px!important}
+}
