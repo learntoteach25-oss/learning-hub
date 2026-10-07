@@ -601,3 +601,36 @@ body:has(.exam-view) .exam-hero{margin:0!important;padding-top:0!important;min-h
  .exam-view .exam-test-grid,.exam-view .exam-admissions-grid,.exam-view .exam-competition-grid{grid-template-columns:1fr!important;gap:16px!important}
  .exam-view .exam-card-image,.exam-view .competition-card-image{height:185px!important;min-height:185px!important}
 }
+
+/* 2026-10-07 Programme section back buttons — unified black/gold pill */
+.programme-group-view .inline-back{
+ position:absolute!important;
+ top:22px!important;
+ left:max(3vw,38px)!important;
+ z-index:20!important;
+ display:inline-flex!important;
+ align-items:center!important;
+ justify-content:center!important;
+ min-height:42px!important;
+ margin:0!important;
+ padding:0 18px!important;
+ border:1.5px solid #e2aa1f!important;
+ border-radius:999px!important;
+ background:rgba(0,0,0,.76)!important;
+ color:#fff!important;
+ box-shadow:none!important;
+ font-size:13px!important;
+ font-weight:800!important;
+ line-height:1!important;
+ letter-spacing:0!important;
+ cursor:pointer!important;
+ backdrop-filter:blur(3px)!important
+}
+.programme-group-view .inline-back:hover{
+ background:#0b0b0b!important;
+ border-color:#f0b82f!important;
+ transform:translateY(-1px)!important
+}
+@media(max-width:620px){
+ .programme-group-view .inline-back{top:16px!important;left:18px!important;min-height:39px!important;padding:0 15px!important;font-size:12px!important}
+}
