@@ -208,3 +208,46 @@
 @media(max-width:620px){
  .group-higher .programme-items{grid-template-columns:1fr!important}
 }
+
+/* FINAL programme layout correction — full-bleed banners + balanced five-card higher grid */
+.programmes-view{width:100%!important;max-width:none!important;padding-left:0!important;padding-right:0!important}
+.programmes-view .programmes-hero{
+ width:100%!important;max-width:none!important;margin:0!important;
+ height:390px!important;min-height:390px!important;border-radius:0!important;
+ background-size:cover!important;background-position:center 42%!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+}
+.programmes-view .programmes-hero-copy{max-width:1050px!important;margin:auto!important;padding:40px 28px!important;text-align:center!important}
+.programmes-view .programmes-hero-copy h1{max-width:940px!important;margin:0 auto!important;font-size:clamp(44px,4.6vw,66px)!important;line-height:1.03!important}
+
+.programme-group-view{width:100%!important;max-width:none!important}
+.programme-group-view .programme-group-hero{
+ width:100%!important;max-width:none!important;margin:0!important;
+ height:390px!important;min-height:390px!important;border-radius:0!important;
+ background-size:cover!important;background-position:center!important;
+ display:flex!important;align-items:center!important;justify-content:center!important;
+}
+.programme-group-view .programme-hero-copy{width:min(1050px,calc(100% - 48px))!important;margin:auto!important;text-align:center!important}
+.programme-group-view .programme-hero-copy h1{font-size:clamp(44px,4.6vw,66px)!important;line-height:1.03!important;margin:0 auto!important}
+.group-core .programme-group-hero{background-position:center 55%!important}
+.group-higher .programme-group-hero{background-position:center 50%!important}
+
+.group-higher .programme-items{
+ width:min(1120px,calc(100% - 56px))!important;margin:0 auto!important;
+ display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;
+ gap:24px!important;justify-content:center!important;
+}
+.group-higher .programme-items>.detail-card:nth-child(1){grid-column:1 / span 2!important}
+.group-higher .programme-items>.detail-card:nth-child(2){grid-column:3 / span 2!important}
+.group-higher .programme-items>.detail-card:nth-child(3){grid-column:5 / span 2!important}
+.group-higher .programme-items>.detail-card:nth-child(4){grid-column:2 / span 2!important}
+.group-higher .programme-items>.detail-card:nth-child(5){grid-column:4 / span 2!important}
+.group-higher .programme-items>.detail-card{width:100%!important;max-width:none!important;margin:0!important}
+@media(max-width:900px){
+ .group-higher .programme-items{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .group-higher .programme-items>.detail-card:nth-child(n){grid-column:auto!important}
+}
+@media(max-width:620px){
+ .programmes-view .programmes-hero,.programme-group-view .programme-group-hero{height:320px!important;min-height:320px!important}
+ .group-higher .programme-items{grid-template-columns:1fr!important;width:calc(100% - 32px)!important}
+}
