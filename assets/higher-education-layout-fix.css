@@ -125,24 +125,23 @@
   .programme-group-view .card-body{min-height:0}
 }
 
-/* Higher Education: exact 3 + 2 aligned grid */
+/* Higher Education: balanced 3 + 2 centred grid */
 .group-higher .programme-items{
-  grid-template-columns:repeat(3,minmax(0,1fr))!important;
-  grid-auto-flow:row!important;
-  align-items:stretch!important;
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  gap:22px!important;align-items:stretch!important;
 }
 .group-higher .programme-items>.detail-card{
-  grid-column:auto!important;
-  width:100%!important;
-  min-width:0!important;
+  grid-column:span 2!important;width:100%!important;min-width:0!important;height:100%!important;
 }
-.group-higher .programme-items>.detail-card:nth-child(4){grid-column:1!important}
-.group-higher .programme-items>.detail-card:nth-child(5){grid-column:2!important}
-.group-higher .visual-card>img{height:190px!important;object-fit:cover!important}
-.group-higher .card-body{min-height:285px!important}
+.group-higher .programme-items>.detail-card:nth-child(4){grid-column:2 / span 2!important}
+.group-higher .programme-items>.detail-card:nth-child(5){grid-column:4 / span 2!important}
+.group-higher .visual-card>img{height:190px!important;object-fit:cover!important;object-position:center!important}
+.group-higher .card-body{min-height:285px!important;height:100%!important}
 @media(max-width:900px){
  .group-higher .programme-items{grid-template-columns:repeat(2,minmax(0,1fr))!important}
- .group-higher .programme-items>.detail-card{grid-column:auto!important}
+ .group-higher .programme-items>.detail-card,
+ .group-higher .programme-items>.detail-card:nth-child(4),
+ .group-higher .programme-items>.detail-card:nth-child(5){grid-column:auto!important}
 }
 @media(max-width:620px){
  .group-higher .programme-items{grid-template-columns:1fr!important}
