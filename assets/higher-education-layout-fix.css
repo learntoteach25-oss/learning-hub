@@ -146,3 +146,43 @@
 @media(max-width:620px){
  .group-higher .programme-items{grid-template-columns:1fr!important}
 }
+
+
+/* Programme hero: edge-to-edge banner; no blank cream gutters */
+.learning-detail:has(.programmes-view) .detail-toolbar{position:absolute!important;z-index:30!important;background:transparent!important;border:0!important;pointer-events:none}
+.learning-detail:has(.programmes-view) #backToCatalogue{pointer-events:auto}
+.programmes-hero{
+  width:100vw!important;max-width:none!important;height:420px!important;min-height:420px!important;
+  margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;
+  background-position:center 38%!important;background-size:cover!important;
+}
+.programmes-hero-copy{width:min(1080px,calc(100% - 48px))!important}
+.programmes-hero-copy h1{font-size:clamp(46px,4.7vw,68px)!important}
+
+/* Group pages: full-width hero, image covers complete banner */
+.programme-group-hero{
+  width:100vw!important;max-width:none!important;height:390px!important;min-height:390px!important;
+  margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;
+  background-size:cover!important;
+}
+.group-higher .programme-group-hero{background-position:center 44%!important}
+
+/* Higher Education: true centred 3 + 2 presentation */
+.group-higher .programme-group-body{padding:38px 0 64px!important}
+.group-higher .programme-items{
+  width:min(1140px,calc(100% - 48px))!important;
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  gap:24px!important;
+}
+.group-higher .programme-items>.detail-card{grid-column:span 2!important}
+.group-higher .programme-items>.detail-card:nth-child(4){grid-column:2 / span 2!important}
+.group-higher .programme-items>.detail-card:nth-child(5){grid-column:4 / span 2!important}
+@media(max-width:900px){
+ .programmes-hero{height:360px!important;min-height:360px!important}
+ .group-higher .programme-items{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .group-higher .programme-items>.detail-card,.group-higher .programme-items>.detail-card:nth-child(4),.group-higher .programme-items>.detail-card:nth-child(5){grid-column:auto!important}
+}
+@media(max-width:620px){
+ .programmes-hero,.programme-group-hero{height:310px!important;min-height:310px!important}
+ .group-higher .programme-items{grid-template-columns:1fr!important}
+}
