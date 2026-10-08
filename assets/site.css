@@ -888,3 +888,11 @@ body:has(.support-v6) .back-link,body:has(.support-v6) .back-btn,body:has(.suppo
 body:has(.support-v7) .back-link,body:has(.support-v7) .back-btn,body:has(.support-v7) a[href*="catalogue"]{background:#090806!important;color:#fff!important;border:1px solid #d4a23c!important;border-radius:7px!important}
 @media(max-width:760px){.sv7-banner{height:420px}.sv7-cover{padding:30px}.sv7-cover h1{font-size:39px}.sv7-shell{width:100%;padding:0 14px 35px}.sv7-method{grid-template-columns:1fr}.sv7-grid{grid-template-columns:1fr}.sv7-card:last-child{grid-column:auto;width:100%}.sv7-outcome{grid-template-columns:1fr}.sv7-outcome>img{height:260px}}
 @media(max-width:500px){.sv7-card summary{grid-template-columns:120px 1fr}.sv7-card summary>img{width:120px}.sv7-more ul{grid-template-columns:1fr}.sv7-path{padding:25px 12px}.sv7-cover{padding-left:20px}.sv7-cover h1{font-size:35px}}
+
+/* Support banner directly under global navigation — no intervening cream gap */
+body:has(.support-v7) .back-link,body:has(.support-v7) .back-btn{position:relative;z-index:4}
+body:has(.support-v7) .support-v7{position:relative}
+body:has(.support-v7) .sv7-banner{margin-top:-56px!important;padding-top:56px!important;height:446px!important}
+body:has(.support-v7) .sv7-banner>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+body:has(.support-v7) .sv7-cover{padding-top:56px}
+@media(max-width:760px){body:has(.support-v7) .sv7-banner{height:476px!important}}
