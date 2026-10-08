@@ -1016,3 +1016,28 @@ body:has(.support-v7) .sv7-outcome p{max-width:480px!important;margin:0 0 24px!i
 body:has(.support-v7) .sv7-tags{width:100%!important}
 @media(max-width:800px){body:has(.support-v7) .sv7-method{grid-template-columns:1fr!important;margin:0 18px 38px!important}body:has(.support-v7) .sv7-method article>img{height:220px!important}body:has(.support-v7) .sv7-path{padding:38px 18px!important}body:has(.support-v7) .sv7-card:last-child{width:100%!important}}
 @media(max-width:520px){body:has(.support-v7) .sv7-card summary{grid-template-columns:125px minmax(0,1fr)!important;min-height:170px!important}body:has(.support-v7) .sv7-card summary>img{width:125px!important;height:170px!important}body:has(.support-v7) .sv7-card h3{font-size:19px!important}body:has(.support-v7) .sv7-card-copy{padding:13px 40px 13px 14px!important}body:has(.support-v7) .sv7-intro h2{font-size:37px!important}}
+
+/* SUPPORT V12 - reset competing overrides and align all content */
+body:has(.support-v7) .detail-toolbar{position:absolute!important;top:24px!important;left:max(24px,calc((100% - 1240px)/2))!important;width:auto!important;padding:0!important;margin:0!important;background:transparent!important;border:0!important;z-index:12!important}
+body:has(.support-v7) #backToCatalogue{background:#080808!important;color:#fff!important;border:1px solid #d5a23a!important;border-radius:7px!important;font:700 13px Arial!important;padding:11px 18px!important}
+body:has(.support-v7) .sv7-cover{padding-top:75px!important}
+body:has(.support-v7) .sv7-cover>span{display:block!important;margin:0 0 9px!important;padding:0!important;line-height:1.3!important;max-width:600px!important}
+body:has(.support-v7) .sv7-cover h1{margin:0 0 18px!important;font-size:clamp(39px,4vw,56px)!important;max-width:640px!important;line-height:1.1!important}
+body:has(.support-v7) .sv7-hero-benefits{margin-top:0!important}
+body:has(.support-v7) .sv7-shell{padding-bottom:65px!important}
+body:has(.support-v7) .sv7-intro{padding:58px 20px 32px!important}
+body:has(.support-v7) .sv7-intro h2{font-size:clamp(35px,3.7vw,49px)!important;margin:14px auto 17px!important}
+body:has(.support-v7) .sv7-intro p{font-size:15px!important;line-height:1.65!important;max-width:740px!important}
+body:has(.support-v7) .sv7-method{max-width:1180px!important;margin:0 auto 55px!important;gap:22px!important}
+body:has(.support-v7) .sv7-method article{display:flex!important;flex-direction:column!important;gap:0!important;align-items:stretch!important;min-height:0!important;padding:0!important}
+body:has(.support-v7) .sv7-method article>img{flex:none!important;height:180px!important}
+body:has(.support-v7) .sv7-method-copy{display:block!important;flex:1!important;padding:25px 25px 29px!important}
+body:has(.support-v7) .sv7-method-copy>b{display:block!important;position:static!important;margin:0 0 12px!important;padding:0!important;width:auto!important;height:auto!important;line-height:1.4!important;border:0!important;background:transparent!important;border-radius:0!important;text-align:left!important;box-shadow:none!important}
+body:has(.support-v7) .sv7-method-copy h3{display:block!important;font-size:27px!important;margin:0 0 11px!important}
+body:has(.support-v7) .sv7-method-copy p{display:block!important;font-size:14px!important;line-height:1.65!important}
+body:has(.support-v7) .sv7-path{margin:0 auto!important}
+body:has(.support-v7) .sv7-card[open]{box-shadow:0 10px 24px rgba(30,18,0,.12)!important}
+body:has(.support-v7) .sv7-card:last-child{width:calc(50% - 11px)!important}
+body:has(.support-v7) .sv7-outcome>div{box-sizing:border-box!important}
+body:has(.support-v7) .sv7-outcome p{text-align:left!important;max-width:470px!important}
+@media(max-width:800px){body:has(.support-v7) .sv7-method{margin:0 18px 42px!important}body:has(.support-v7) .sv7-card:last-child{width:100%!important}body:has(.support-v7) .sv7-cover{padding-top:95px!important}}
