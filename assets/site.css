@@ -896,3 +896,43 @@ body:has(.support-v7) .sv7-banner{margin-top:-56px!important;padding-top:56px!im
 body:has(.support-v7) .sv7-banner>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 body:has(.support-v7) .sv7-cover{padding-top:56px}
 @media(max-width:760px){body:has(.support-v7) .sv7-banner{height:476px!important}}
+
+/* SUPPORT V8: clean full-width premium presentation, override legacy V1-V7 */
+body:has(.support-v7) .support-v7{background:#f8f0df!important;color:#111!important;overflow:visible!important}
+body:has(.support-v7) .sv7-banner{margin:0!important;padding:0!important;height:430px!important;max-height:none!important;width:100%!important;aspect-ratio:auto!important;position:relative!important;overflow:hidden!important}
+body:has(.support-v7) .sv7-banner>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center 43%!important}
+body:has(.support-v7) .sv7-cover{inset:0!important;padding:45px max(6%,calc((100% - 1180px)/2))!important;display:flex!important;align-items:flex-start!important;justify-content:center!important;background:linear-gradient(90deg,rgba(0,0,0,.93) 0%,rgba(0,0,0,.73) 43%,rgba(0,0,0,.04) 82%)!important}
+body:has(.support-v7) .sv7-cover h1{font-size:clamp(45px,4.7vw,65px)!important;line-height:1.04!important;margin:14px 0!important;max-width:680px!important}
+body:has(.support-v7) .sv7-cover p{font-size:15px!important;line-height:1.6!important;max-width:530px!important;margin:0 0 23px!important}
+body:has(.support-v7) .sv7-cover a,body:has(.support-v7) .sv7-more a,body:has(.support-v7) .sv7-cta a{background:#080808!important;color:#fff!important;border:1px solid #d6a326!important;font-size:13px!important;padding:13px 22px!important;border-radius:8px!important;text-decoration:none!important}
+body:has(.support-v7) .sv7-shell{width:100%!important;max-width:none!important;margin:0!important;padding:0 0 75px!important;background:#f8f0df!important}
+body:has(.support-v7) .sv7-intro{max-width:1180px!important;margin:0 auto!important;padding:68px 24px 35px!important;text-align:center!important}
+body:has(.support-v7) .sv7-intro h2,body:has(.support-v7) .sv7-path-head h2{font-size:clamp(32px,3.4vw,46px)!important;line-height:1.12!important;color:#111!important;margin:14px 0!important}
+body:has(.support-v7) .sv7-intro p{font-size:15px!important;line-height:1.7!important;color:#534733!important;max-width:800px!important}
+body:has(.support-v7) .sv7-method{max-width:1180px!important;margin:0 auto 70px!important;gap:20px!important}
+body:has(.support-v7) .sv7-method article{min-height:160px!important;padding:28px!important;background:#fff9ed!important;border:1px solid #d6a326!important;box-shadow:0 8px 22px rgba(35,24,0,.06)!important}
+body:has(.support-v7) .sv7-method h3{color:#111!important;font-size:23px!important}
+body:has(.support-v7) .sv7-method p{color:#554a39!important;font-size:13px!important;line-height:1.6!important}
+body:has(.support-v7) .sv7-path{max-width:1240px!important;margin:0 auto!important;padding:60px 34px!important;border:1px solid #d6a326!important;border-radius:18px!important;background:#efe0c3!important;box-shadow:none!important}
+body:has(.support-v7) .sv7-path-head{margin-bottom:34px!important}
+body:has(.support-v7) .sv7-grid{gap:22px!important}
+body:has(.support-v7) .sv7-card{background:#fffaf0!important;border-radius:13px!important}
+body:has(.support-v7) .sv7-card summary{grid-template-columns:200px minmax(0,1fr)!important;min-height:185px!important}
+body:has(.support-v7) .sv7-card summary>img{width:200px!important;height:185px!important;object-fit:cover!important}
+body:has(.support-v7) .sv7-card-copy{padding:27px 48px 22px 24px!important}
+body:has(.support-v7) .sv7-card h3{font-size:25px!important;line-height:1.13!important}
+body:has(.support-v7) .sv7-card p{font-size:13px!important;line-height:1.6!important}
+body:has(.support-v7) .sv7-more{padding:22px 25px!important}
+body:has(.support-v7) .sv7-more li{font-size:12px!important}
+body:has(.support-v7) .sv7-outcome{max-width:1180px!important;margin:70px auto!important;grid-template-columns:1fr 1fr!important;background:#090909!important}
+body:has(.support-v7) .sv7-outcome>img{height:430px!important}
+body:has(.support-v7) .sv7-outcome>div{padding:55px!important}
+body:has(.support-v7) .sv7-outcome h2{font-size:42px!important;line-height:1.1!important}
+body:has(.support-v7) .sv7-outcome p{font-size:14px!important;line-height:1.7!important}
+body:has(.support-v7) .sv7-tags b{font-size:12px!important;padding:12px!important}
+body:has(.support-v7) .sv7-cta{max-width:1050px!important;margin:0 auto!important;padding:55px 40px!important;background:#efe0c3!important}
+body:has(.support-v7) .sv7-cta h2{font-size:39px!important;line-height:1.15!important}
+body:has(.support-v7) .sv7-cta p{font-size:14px!important;margin-bottom:23px!important}
+body:has(.support-v7) .back-link,body:has(.support-v7) .back-btn{background:#090909!important;color:#fff!important;border:1px solid #d6a326!important}
+@media(max-width:800px){body:has(.support-v7) .sv7-method{grid-template-columns:1fr!important;margin:0 18px 40px!important}body:has(.support-v7) .sv7-path{margin:0 14px!important;padding:40px 18px!important}body:has(.support-v7) .sv7-grid{grid-template-columns:1fr!important}body:has(.support-v7) .sv7-card:last-child{grid-column:auto!important;width:100%!important}body:has(.support-v7) .sv7-outcome{grid-template-columns:1fr!important;margin:40px 14px!important}body:has(.support-v7) .sv7-cta{margin:0 14px!important}}
+@media(max-width:520px){body:has(.support-v7) .sv7-banner{height:480px!important}body:has(.support-v7) .sv7-cover{padding:25px!important}body:has(.support-v7) .sv7-cover h1{font-size:39px!important}body:has(.support-v7) .sv7-card summary{grid-template-columns:1fr!important}body:has(.support-v7) .sv7-card summary>img{width:100%!important;height:190px!important}body:has(.support-v7) .sv7-outcome>div{padding:30px!important}body:has(.support-v7) .sv7-outcome h2{font-size:34px!important}body:has(.support-v7) .sv7-cta h2{font-size:30px!important}}
