@@ -953,3 +953,25 @@ body:has(.support-v7) .sv7-hero-benefits span{background:rgba(255,255,255,.96);c
 body:has(.support-v7) .sv7-hero-benefits span:last-child{border-right:0}
 body:has(.support-v7) .sv7-intro{padding-top:55px!important}
 @media(max-width:760px){body:has(.support-v7) .sv7-banner{height:580px!important}body:has(.support-v7) .sv7-cover{padding:28px!important;background:linear-gradient(90deg,rgba(255,249,237,.96),rgba(255,249,237,.8) 66%,rgba(255,249,237,.25))!important}body:has(.support-v7) .sv7-cover h1{font-size:40px!important}body:has(.support-v7) .sv7-hero-benefits span{padding:10px!important;font-size:10px!important}}
+
+/* SUPPORT V10 — black, gold and champagne only; proper full-bleed hero */
+body:has(.support-v7) .detail-toolbar{position:absolute!important;top:110px!important;left:max(24px,calc((100% - 1240px)/2))!important;z-index:20!important;background:transparent!important;border:0!important;padding:0!important;margin:0!important;width:auto!important;height:auto!important;min-height:0!important}
+body:has(.support-v7) .detail-toolbar #backToCatalogue{background:#090909!important;color:#fff!important;border:1px solid #d4a23c!important;border-radius:8px!important;padding:12px 20px!important;box-shadow:0 5px 16px rgba(0,0,0,.22)!important;font-weight:700!important}
+body:has(.support-v7) .detail-toolbar #backToCatalogue:hover{background:#242017!important;color:#fff!important}
+body:has(.support-v7) .learning-detail{position:relative!important}
+body:has(.support-v7) .sv7-banner{height:510px!important;width:100%!important;margin:0!important;padding:0!important;background:#090806!important;overflow:hidden!important}
+body:has(.support-v7) .sv7-banner>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;object-fit:cover!important;object-position:center center!important}
+body:has(.support-v7) .sv7-cover{position:absolute!important;inset:0!important;padding:105px max(4%,calc((100% - 1240px)/2)) 35px!important;justify-content:center!important;align-items:flex-start!important;background:linear-gradient(90deg,#0a0907 0%,rgba(10,9,7,.94) 24%,rgba(10,9,7,.77) 43%,rgba(10,9,7,.26) 68%,rgba(10,9,7,.02) 100%)!important;color:#fff!important}
+body:has(.support-v7) .sv7-cover>span{color:#e1ae42!important;font-size:11px!important;letter-spacing:2.2px!important}
+body:has(.support-v7) .sv7-cover h1{font-family:Georgia,serif!important;font-size:clamp(40px,4vw,56px)!important;line-height:1.08!important;letter-spacing:-1.2px!important;max-width:660px!important;margin:14px 0 15px!important;color:#fff!important;font-weight:700!important}
+body:has(.support-v7) .sv7-cover h1 em{color:#e2b64e!important;font-style:italic!important}
+body:has(.support-v7) .sv7-cover p{color:#fff!important;font-size:15px!important;line-height:1.65!important;max-width:590px!important;margin-bottom:20px!important}
+body:has(.support-v7) .sv7-hero-actions{margin-bottom:20px!important;gap:12px!important}
+body:has(.support-v7) .sv7-hero-actions a{background:#090909!important;color:#fff!important;border:1px solid #d4a23c!important;border-radius:7px!important;padding:13px 20px!important}
+body:has(.support-v7) .sv7-hero-actions a:nth-child(2){background:#090909!important;color:#fff!important}
+body:has(.support-v7) .sv7-hero-benefits{max-width:700px!important;box-shadow:none!important;border:1px solid #c59a3a!important;border-radius:8px!important}
+body:has(.support-v7) .sv7-hero-benefits span{background:#f5e7c9!important;color:#17110a!important;border-color:#c59a3a!important;font-size:11px!important;padding:12px 13px!important}
+body:has(.support-v7) .sv7-shell{background:#f5eddd!important}
+body:has(.support-v7) .sv7-intro h2,body:has(.support-v7) .sv7-path-head h2{font-size:clamp(32px,3.1vw,42px)!important;letter-spacing:-.6px!important}
+body:has(.support-v7) .sv7-intro,body:has(.support-v7) .sv7-method,body:has(.support-v7) .sv7-path,body:has(.support-v7) .sv7-outcome,body:has(.support-v7) .sv7-cta{box-sizing:border-box!important}
+@media(max-width:760px){body:has(.support-v7) .detail-toolbar{top:12px!important;left:18px!important}body:has(.support-v7) .sv7-banner{height:630px!important}body:has(.support-v7) .sv7-cover{padding:95px 22px 24px!important;background:linear-gradient(90deg,rgba(9,8,6,.98),rgba(9,8,6,.76) 68%,rgba(9,8,6,.36))!important}body:has(.support-v7) .sv7-cover h1{font-size:40px!important}body:has(.support-v7) .sv7-hero-benefits{max-width:100%!important}}
