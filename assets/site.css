@@ -975,3 +975,44 @@ body:has(.support-v7) .sv7-shell{background:#f5eddd!important}
 body:has(.support-v7) .sv7-intro h2,body:has(.support-v7) .sv7-path-head h2{font-size:clamp(32px,3.1vw,42px)!important;letter-spacing:-.6px!important}
 body:has(.support-v7) .sv7-intro,body:has(.support-v7) .sv7-method,body:has(.support-v7) .sv7-path,body:has(.support-v7) .sv7-outcome,body:has(.support-v7) .sv7-cta{box-sizing:border-box!important}
 @media(max-width:760px){body:has(.support-v7) .detail-toolbar{top:12px!important;left:18px!important}body:has(.support-v7) .sv7-banner{height:630px!important}body:has(.support-v7) .sv7-cover{padding:95px 22px 24px!important;background:linear-gradient(90deg,rgba(9,8,6,.98),rgba(9,8,6,.76) 68%,rgba(9,8,6,.36))!important}body:has(.support-v7) .sv7-cover h1{font-size:40px!important}body:has(.support-v7) .sv7-hero-benefits{max-width:100%!important}}
+
+/* SUPPORT V11 — deliberate editorial typography, photo-led process, balanced cards */
+body:has(.support-v7) .sv7-intro{padding:72px 24px 38px!important;max-width:1080px!important}
+body:has(.support-v7) .sv7-intro>span,body:has(.support-v7) .sv7-path-head>span{display:block!important;font:800 12px Arial,sans-serif!important;letter-spacing:2.7px!important;color:#a77923!important;text-align:center!important}
+body:has(.support-v7) .sv7-intro h2{font:700 clamp(40px,4.1vw,57px)/1.09 Georgia,serif!important;letter-spacing:-1px!important;text-align:center!important;margin:18px auto 22px!important;max-width:900px!important;color:#100e0a!important}
+body:has(.support-v7) .sv7-intro h2 em{color:#b78320!important;font-style:italic!important}
+body:has(.support-v7) .sv7-intro p{font-size:16px!important;line-height:1.75!important;max-width:760px!important;margin:0 auto!important;text-align:center!important}
+body:has(.support-v7) .sv7-method{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:22px!important;max-width:1180px!important;margin:0 auto 62px!important;padding:0 12px!important}
+body:has(.support-v7) .sv7-method article{display:block!important;overflow:hidden!important;min-height:0!important;padding:0!important;background:#fff9ed!important;border:1px solid #c99b3e!important;border-radius:13px!important;box-shadow:0 9px 24px rgba(27,18,3,.08)!important}
+body:has(.support-v7) .sv7-method article>img{display:block!important;width:100%!important;height:175px!important;object-fit:cover!important}
+body:has(.support-v7) .sv7-method-copy{display:block!important;padding:23px 25px 28px!important}
+body:has(.support-v7) .sv7-method-copy>b{display:block!important;width:auto!important;height:auto!important;background:none!important;border:0!important;border-radius:0!important;color:#9e6c14!important;font:800 11px Arial!important;letter-spacing:1.5px!important;margin-bottom:12px!important}
+body:has(.support-v7) .sv7-method-copy h3{font:700 28px Georgia,serif!important;margin:0 0 12px!important;color:#17110a!important}
+body:has(.support-v7) .sv7-method-copy p{font-size:14px!important;line-height:1.7!important;color:#42392d!important;margin:0!important}
+body:has(.support-v7) .sv7-path{padding:52px 36px 48px!important;background:#eee0c4!important}
+body:has(.support-v7) .sv7-path-head{max-width:850px!important;margin:0 auto 36px!important;text-align:center!important}
+body:has(.support-v7) .sv7-path-head h2{font:700 clamp(36px,3.6vw,49px)/1.13 Georgia,serif!important;letter-spacing:-.7px!important;margin:14px auto!important;color:#111!important}
+body:has(.support-v7) .sv7-path-head h2 em{color:#aa751a!important;font-style:italic!important}
+body:has(.support-v7) .sv7-path-head p{font-size:15px!important;line-height:1.7!important;color:#51412c!important;max-width:720px!important;margin:14px auto 0!important}
+body:has(.support-v7) .sv7-grid{align-items:start!important;gap:20px!important}
+body:has(.support-v7) .sv7-card{align-self:start!important;overflow:hidden!important;background:#fffaf1!important;border:1px solid #c99b3e!important;border-radius:12px!important}
+body:has(.support-v7) .sv7-card summary{display:grid!important;grid-template-columns:180px minmax(0,1fr)!important;min-height:180px!important;align-items:stretch!important;cursor:pointer!important;list-style:none!important}
+body:has(.support-v7) .sv7-card summary::-webkit-details-marker{display:none!important}
+body:has(.support-v7) .sv7-card summary>img{width:180px!important;height:180px!important;object-fit:cover!important}
+body:has(.support-v7) .sv7-card-copy{position:relative!important;display:flex!important;flex-direction:column!important;align-items:flex-start!important;justify-content:center!important;padding:18px 48px 18px 23px!important}
+body:has(.support-v7) .sv7-card-number{display:block!important;font:800 11px Arial!important;letter-spacing:1.5px!important;color:#9d6a15!important;margin-bottom:9px!important}
+body:has(.support-v7) .sv7-card h3{font:700 24px/1.15 Georgia,serif!important;color:#17110a!important;margin:0 0 9px!important}
+body:has(.support-v7) .sv7-card-copy p{font-size:13px!important;line-height:1.6!important;color:#4e4130!important;margin:0!important}
+body:has(.support-v7) .sv7-card-copy>b{position:absolute!important;right:17px!important;top:calc(50% - 16px)!important;background:#0b0a08!important;color:#fff!important;border-radius:50%!important;width:32px!important;height:32px!important;display:grid!important;place-items:center!important;font-size:18px!important}
+body:has(.support-v7) .sv7-card[open] .sv7-card-copy>b{transform:rotate(45deg)!important}
+body:has(.support-v7) .sv7-more{display:block!important;padding:22px 28px 28px!important;background:#fff9ed!important;border-top:1px solid #dec28d!important}
+body:has(.support-v7) .sv7-more strong{display:block!important;color:#9c6b1b!important;letter-spacing:1.2px!important;margin-bottom:9px!important}
+body:has(.support-v7) .sv7-more p,body:has(.support-v7) .sv7-more li{font-size:13px!important;line-height:1.7!important;color:#3b3022!important}
+body:has(.support-v7) .sv7-more ul{margin:12px 0 20px!important;padding-left:20px!important}
+body:has(.support-v7) .sv7-outcome{margin:58px auto!important}
+body:has(.support-v7) .sv7-outcome>div{display:flex!important;flex-direction:column!important;justify-content:center!important;align-items:flex-start!important;padding:46px 48px!important}
+body:has(.support-v7) .sv7-outcome h2{font:700 clamp(34px,3.2vw,43px)/1.14 Georgia,serif!important;margin:12px 0 20px!important}
+body:has(.support-v7) .sv7-outcome p{max-width:480px!important;margin:0 0 24px!important;line-height:1.75!important;font-size:15px!important}
+body:has(.support-v7) .sv7-tags{width:100%!important}
+@media(max-width:800px){body:has(.support-v7) .sv7-method{grid-template-columns:1fr!important;margin:0 18px 38px!important}body:has(.support-v7) .sv7-method article>img{height:220px!important}body:has(.support-v7) .sv7-path{padding:38px 18px!important}body:has(.support-v7) .sv7-card:last-child{width:100%!important}}
+@media(max-width:520px){body:has(.support-v7) .sv7-card summary{grid-template-columns:125px minmax(0,1fr)!important;min-height:170px!important}body:has(.support-v7) .sv7-card summary>img{width:125px!important;height:170px!important}body:has(.support-v7) .sv7-card h3{font-size:19px!important}body:has(.support-v7) .sv7-card-copy{padding:13px 40px 13px 14px!important}body:has(.support-v7) .sv7-intro h2{font-size:37px!important}}
