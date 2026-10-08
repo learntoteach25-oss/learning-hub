@@ -1041,3 +1041,19 @@ body:has(.support-v7) .sv7-card:last-child{width:calc(50% - 11px)!important}
 body:has(.support-v7) .sv7-outcome>div{box-sizing:border-box!important}
 body:has(.support-v7) .sv7-outcome p{text-align:left!important;max-width:470px!important}
 @media(max-width:800px){body:has(.support-v7) .sv7-method{margin:0 18px 42px!important}body:has(.support-v7) .sv7-card:last-child{width:100%!important}body:has(.support-v7) .sv7-cover{padding-top:95px!important}}
+
+/* SUPPORT V13 — consistent editorial heading system throughout the page */
+body:has(.support-v7) .sv7-intro{max-width:1180px!important;padding:62px 22px 34px!important;text-align:center!important}
+body:has(.support-v7) .sv7-intro>span,body:has(.support-v7) .sv7-path-head>span,body:has(.support-v7) .sv7-outcome>div>span,body:has(.support-v7) .sv7-cta>span{display:block!important;color:#a7761d!important;font:800 11px/1.5 Arial,sans-serif!important;letter-spacing:2.4px!important;text-transform:uppercase!important;margin-bottom:14px!important}
+body:has(.support-v7) .sv7-intro h2,body:has(.support-v7) .sv7-path-head h2{font-family:Georgia,'Times New Roman',serif!important;font-size:clamp(37px,3.5vw,48px)!important;line-height:1.13!important;letter-spacing:-.8px!important;font-weight:700!important;color:#0c0b09!important;max-width:1000px!important;margin:0 auto 20px!important;text-align:center!important}
+body:has(.support-v7) .sv7-intro h2 em,body:has(.support-v7) .sv7-path-head h2 em{color:#ad781c!important;font-style:italic!important;white-space:normal!important}
+body:has(.support-v7) .sv7-intro p{max-width:740px!important;font:15px/1.7 Arial,sans-serif!important;color:#44392b!important;text-align:center!important;margin:0 auto!important}
+body:has(.support-v7) .sv7-path-head{padding:0!important;margin:0 auto 34px!important;max-width:1000px!important}
+body:has(.support-v7) .sv7-path-head p{max-width:700px!important;font:15px/1.7 Arial,sans-serif!important;margin:0 auto!important;color:#44392b!important}
+body:has(.support-v7) .sv7-outcome h2{font-family:Georgia,serif!important;font-size:clamp(35px,3.1vw,43px)!important;line-height:1.15!important;letter-spacing:-.6px!important;margin:0 0 20px!important;color:#fff!important}
+body:has(.support-v7) .sv7-outcome h2 em{color:#e2b64e!important;font-style:italic!important}
+body:has(.support-v7) .sv7-outcome>div>span{color:#e2b64e!important}
+body:has(.support-v7) .sv7-cta h2{font-family:Georgia,serif!important;font-size:clamp(33px,3.2vw,44px)!important;line-height:1.17!important;letter-spacing:-.6px!important;max-width:870px!important;margin:0 auto 17px!important;color:#0b0907!important}
+body:has(.support-v7) .sv7-method-copy h3{font:700 27px/1.2 Georgia,serif!important;color:#0c0b09!important}
+body:has(.support-v7) .sv7-card h3{font:700 23px/1.2 Georgia,serif!important;color:#0c0b09!important}
+@media(max-width:600px){body:has(.support-v7) .sv7-intro h2,body:has(.support-v7) .sv7-path-head h2{font-size:35px!important}body:has(.support-v7) .sv7-intro{padding:48px 18px 30px!important}}
