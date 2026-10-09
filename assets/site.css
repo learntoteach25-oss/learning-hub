@@ -1521,3 +1521,7 @@ body .whatsapp-contact.lh-wa-compact .lh-wa-label strong,body .whatsapp-contact.
 .learning-detail:has(.resources-view){padding-top:0!important;margin-top:0!important}
 .learning-detail:has(.resources-view)>#detailContent{margin-top:0!important;padding-top:0!important}
 .resources-view>.resources-hero{margin-top:0!important}
+
+.resources-view>.resources-return{width:min(1040px,calc(100% - 44px));margin:-8px auto 22px;text-align:left}
+.resources-view>.resources-return a{display:inline-flex;align-items:center;color:#8b641f;text-decoration:none;font:700 12px/1.5 Arial,sans-serif}
+.resources-view>.resources-return a:hover{text-decoration:underline}
