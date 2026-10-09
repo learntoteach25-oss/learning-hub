@@ -1525,3 +1525,8 @@ body .whatsapp-contact.lh-wa-compact .lh-wa-label strong,body .whatsapp-contact.
 .resources-view>.resources-return{width:min(1040px,calc(100% - 44px));margin:-8px auto 22px;text-align:left}
 .resources-view>.resources-return a{display:inline-flex;align-items:center;color:#8b641f;text-decoration:none;font:700 12px/1.5 Arial,sans-serif}
 .resources-view>.resources-return a:hover{text-decoration:underline}
+
+/* Homepage: breathing room between final category cards and footer */
+body:has(.catalogue:not([hidden])) .catalogue{padding-bottom:76px!important;min-height:0!important}
+body:has(.catalogue:not([hidden])) .site-footer{margin-top:0!important}
+@media(max-width:720px){body:has(.catalogue:not([hidden])) .catalogue{padding-bottom:48px!important}}
