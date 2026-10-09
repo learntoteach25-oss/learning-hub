@@ -1228,3 +1228,24 @@ body .whatsapp-contact.lh-wa-compact .lh-wa-label strong,body .whatsapp-contact.
 .exam-view .exam-body>.exam-section .exam-component-label{margin-top:auto!important;color:#745019!important;font-weight:700!important}
 @media(max-width:900px){.exam-view .exam-body>.exam-section>.exam-test-grid,.exam-view .exam-body>.exam-section>.exam-admissions-grid,.exam-view .exam-body>.exam-section>.exam-competition-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 @media(max-width:620px){.exam-view .exam-body>.exam-section{width:calc(100% - 28px)!important;padding:24px 0 30px!important}.exam-view .exam-body>.exam-section>.exam-section-head{padding:21px 19px!important;margin-bottom:18px!important}.exam-view .exam-body>.exam-section>.exam-section-head h2{font-size:28px!important}.exam-view .exam-body>.exam-section>.exam-test-grid,.exam-view .exam-body>.exam-section>.exam-admissions-grid,.exam-view .exam-body>.exam-section>.exam-competition-grid{grid-template-columns:1fr!important;gap:17px!important}.exam-view .exam-body>.exam-section .exam-card-image,.exam-view .exam-body>.exam-section .competition-card-image{height:190px!important;min-height:190px!important;max-height:190px!important}}
+
+/* Exams grid polish: center incomplete rows and align card content baselines */
+@media(min-width:901px){
+.exam-view .exam-body>.competitions-section>.exam-competition-grid{grid-template-columns:repeat(6,minmax(0,1fr))!important}
+.exam-view .exam-body>.competitions-section>.exam-competition-grid>.competition-card{grid-column:span 2!important}
+.exam-view .exam-body>.competitions-section>.exam-competition-grid>.competition-card:nth-last-child(2):nth-child(3n + 1){grid-column:2 / span 2!important}
+.exam-view .exam-body>.competitions-section>.exam-competition-grid>.competition-card:last-child:nth-child(3n + 2){grid-column:4 / span 2!important}
+.exam-view .exam-body>.competitions-section>.exam-competition-grid>.competition-card:last-child:nth-child(3n + 1){grid-column:3 / span 2!important}
+}
+.exam-view .exam-body>.exam-section .exam-card .card-body h2,
+.exam-view .exam-body>.exam-section .competition-card .card-body h2{min-height:56px!important;display:flex!important;align-items:flex-start!important;font-size:22px!important;line-height:1.22!important;letter-spacing:-.3px!important}
+.exam-view .exam-body>.exam-section .exam-card .card-body>p,
+.exam-view .exam-body>.exam-section .competition-card .card-body>p{min-height:66px!important;margin:0 0 15px!important;font-size:13px!important;line-height:1.6!important}
+.exam-view .exam-body>.exam-section .exam-component-label{min-height:17px!important;margin-top:auto!important;margin-bottom:7px!important;line-height:1.4!important}
+.exam-view .exam-body>.exam-section .exam-component-select,
+.exam-view .exam-body>.exam-section .competition-subject-select{width:100%!important;min-height:45px!important;margin:0 0 12px!important;border:1px solid #c99a3b!important;border-radius:7px!important;background:#fff!important;color:#18130a!important}
+.exam-view .exam-body>.exam-section .exam-component-go,
+.exam-view .exam-body>.exam-section .competition-book{display:flex!important;align-items:center!important;justify-content:center!important;min-height:44px!important;margin-top:auto!important;background:#c99a3b!important;color:#100d08!important;border-radius:7px!important;font-weight:800!important;text-align:center!important}
+@media(min-width:621px) and (max-width:900px){.exam-view .exam-body>.exam-section .exam-card .card-body h2,.exam-view .exam-body>.exam-section .competition-card .card-body h2{min-height:56px!important}}
+@media(max-width:900px){.exam-view .exam-body>.competitions-section>.exam-competition-grid>.competition-card{grid-column:auto!important}}
+@media(max-width:620px){.exam-view .exam-body>.exam-section .exam-card .card-body h2,.exam-view .exam-body>.exam-section .competition-card .card-body h2{min-height:0!important}.exam-view .exam-body>.exam-section .exam-card .card-body>p,.exam-view .exam-body>.exam-section .competition-card .card-body>p{min-height:0!important}}
