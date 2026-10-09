@@ -1633,3 +1633,8 @@ body.lh-footer-visible #tidio-chat iframe,body.lh-footer-visible #tidio-chat-ifr
 .site-header .site-logo .lh-logo-tagline{display:block!important;width:100%!important;margin:0!important;padding:0!important;text-align:center!important;color:#e6c77f!important;font:600 11px/1.2 Arial,sans-serif!important;white-space:nowrap!important}
 @media(max-width:1050px){.site-header .header-inner{height:92px!important;min-height:92px!important}.site-header .site-logo{height:92px!important;flex-basis:205px!important;width:205px!important}.site-header .site-logo img{width:175px!important;height:63px!important}.site-header .site-logo .lh-logo-tagline{font-size:10px!important}}
 @media(max-width:560px){.site-header .site-logo{flex-basis:182px!important;width:182px!important}.site-header .site-logo img{width:162px!important;height:61px!important}.site-header .site-logo .lh-logo-tagline{font-size:9px!important}}
+
+/* Correct header tagline visibility against dark global theme */
+.site-header .site-logo{position:relative!important;isolation:isolate!important;overflow:visible!important}
+.site-header .site-logo .lh-logo-tagline{position:relative!important;z-index:10!important;display:block!important;visibility:visible!important;opacity:1!important;filter:none!important;text-shadow:none!important;color:#f0cf82!important;background:transparent!important;font:700 11px/1.35 Arial,sans-serif!important;text-align:center!important;white-space:nowrap!important}
+.site-header .site-logo img{opacity:1!important;visibility:visible!important}
