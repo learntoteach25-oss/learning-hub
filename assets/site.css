@@ -1249,3 +1249,75 @@ body .whatsapp-contact.lh-wa-compact .lh-wa-label strong,body .whatsapp-contact.
 @media(min-width:621px) and (max-width:900px){.exam-view .exam-body>.exam-section .exam-card .card-body h2,.exam-view .exam-body>.exam-section .competition-card .card-body h2{min-height:56px!important}}
 @media(max-width:900px){.exam-view .exam-body>.competitions-section>.exam-competition-grid>.competition-card{grid-column:auto!important}}
 @media(max-width:620px){.exam-view .exam-body>.exam-section .exam-card .card-body h2,.exam-view .exam-body>.exam-section .competition-card .card-body h2{min-height:0!important}.exam-view .exam-body>.exam-section .exam-card .card-body>p,.exam-view .exam-body>.exam-section .competition-card .card-body>p{min-height:0!important}}
+
+/* Exam headings: premium editorial layout, not bordered form panels */
+.exam-view .exam-body>.exam-section{background:transparent!important}
+.exam-view .exam-body>.exam-section>.exam-section-head{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr)!important;
+  justify-items:start!important;
+  align-content:start!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  max-width:none!important;
+  min-height:0!important;
+  padding:6px 0 23px!important;
+  margin:0 0 24px!important;
+  border:0!important;
+  border-bottom:1px solid rgba(178,130,44,.42)!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  text-align:left!important;
+}
+.exam-view .exam-body>.exam-section>.exam-section-head .eyebrow{
+  display:block!important;
+  width:auto!important;
+  padding:0!important;
+  margin:0 0 12px!important;
+  color:#a77a27!important;
+  font:800 11px/1.4 Arial,sans-serif!important;
+  letter-spacing:2.3px!important;
+  text-transform:uppercase!important;
+  text-align:left!important;
+}
+.exam-view .exam-body>.exam-section>.exam-section-head h2{
+  display:block!important;
+  width:100%!important;
+  margin:0 0 10px!important;
+  padding:0!important;
+  color:#0a0a0a!important;
+  font:700 clamp(30px,3.25vw,44px)/1.12 Georgia,'Times New Roman',serif!important;
+  letter-spacing:-1px!important;
+  text-align:left!important;
+}
+.exam-view .exam-body>.exam-section>.exam-section-head h2 em{
+  color:#bc8c30!important;
+  font-style:normal!important;
+  font-weight:400!important;
+}
+.exam-view .exam-body>.exam-section>.exam-section-head p{
+  display:block!important;
+  width:100%!important;
+  max-width:720px!important;
+  padding:0!important;
+  margin:0!important;
+  color:#62594c!important;
+  font:400 14px/1.6 Arial,sans-serif!important;
+  text-align:left!important;
+}
+.exam-view .exam-body>.exam-section>.exam-section-head:before{
+  content:""!important;
+  display:block!important;
+  width:42px!important;
+  height:3px!important;
+  margin:0 0 18px!important;
+  background:#c49a48!important;
+  border-radius:2px!important;
+}
+.exam-view .exam-body>.exam-section>.exam-section-head:after{content:none!important;display:none!important}
+@media(max-width:620px){
+  .exam-view .exam-body>.exam-section>.exam-section-head{padding:4px 0 19px!important;margin-bottom:20px!important}
+  .exam-view .exam-body>.exam-section>.exam-section-head h2{font-size:30px!important;letter-spacing:-.5px!important}
+  .exam-view .exam-body>.exam-section>.exam-section-head p{font-size:13px!important}
+}
