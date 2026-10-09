@@ -1601,3 +1601,18 @@ body:has(.catalogue:not([hidden])) .site-footer{margin-top:0!important}
 @media(max-width:1050px){.site-footer.lh-footer-modern .footer-bottom{padding-left:155px!important;padding-right:155px!important}.site-footer.lh-footer-modern .footer-bottom strong,.site-footer.lh-footer-modern .footer-bottom span{white-space:normal!important}}
 @media(max-width:900px){.site-footer.lh-footer-modern .footer-inner{grid-template-columns:repeat(2,minmax(0,1fr))!important}.site-footer.lh-footer-modern .footer-bottom{flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:4px!important;text-align:center!important;padding:12px 135px 25px!important;min-height:76px!important}}
 @media(max-width:560px){.site-footer.lh-footer-modern .footer-inner{grid-template-columns:1fr!important;width:calc(100% - 44px)!important;gap:18px!important;padding:24px 0 15px!important}.site-footer.lh-footer-modern .footer-registration{padding:13px 14px!important}.site-footer.lh-footer-modern .footer-bottom{padding:12px 82px 66px!important;min-height:105px!important}.site-footer.lh-footer-modern .footer-bottom strong,.site-footer.lh-footer-modern .footer-bottom span{font-size:10px!important}.whatsapp-contact.lh-wa-compact{left:10px!important;bottom:12px!important}#tidio-chat iframe,#tidio-chat-iframe{right:10px!important;bottom:12px!important}}
+
+/* Header tagline and footer-aware contact controls */
+.site-header .header-inner{gap:14px!important}
+.site-header .site-logo{flex:0 0 185px!important;width:185px!important;height:86px!important}
+.site-header .site-logo img{width:180px!important;height:74px!important}
+.site-header .lh-header-tagline{display:block!important;flex:0 0 180px!important;max-width:180px!important;color:#e7c679!important;font:600 12px/1.45 Arial,sans-serif!important;letter-spacing:.015em!important}
+.site-header .desktop-nav{gap:clamp(12px,1.5vw,24px)!important}
+.site-footer.lh-footer-modern .footer-registration{padding:12px 22px!important}
+.site-footer.lh-footer-modern .footer-bottom{min-height:0!important;padding:13px 30px 16px!important;justify-content:center!important;gap:10px 45px!important;flex-wrap:wrap!important}
+.site-footer.lh-footer-modern .footer-bottom strong,.site-footer.lh-footer-modern .footer-bottom span{white-space:normal!important;font-size:11px!important}
+body.lh-footer-visible .whatsapp-contact.lh-wa-compact{bottom:76px!important}
+body.lh-footer-visible #tidio-chat iframe,body.lh-footer-visible #tidio-chat-iframe{bottom:76px!important}
+@media(max-width:1050px){.site-header .site-logo{flex-basis:175px!important;width:175px!important}.site-header .site-logo img{width:170px!important}.site-header .lh-header-tagline{flex-basis:145px!important;max-width:145px!important;font-size:11px!important}}
+@media(max-width:760px){.site-header .lh-header-tagline{flex:1 1 auto!important;max-width:180px!important;font-size:11px!important}.site-header .site-logo{flex:0 0 160px!important;width:160px!important}.site-header .site-logo img{width:155px!important}.site-footer.lh-footer-modern .footer-bottom{padding:12px 18px 20px!important;gap:5px!important;flex-direction:column!important}}
+@media(max-width:410px){.site-header .lh-header-tagline{max-width:120px!important;font-size:10px!important}}
