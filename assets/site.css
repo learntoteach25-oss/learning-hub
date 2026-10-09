@@ -1616,3 +1616,12 @@ body.lh-footer-visible #tidio-chat iframe,body.lh-footer-visible #tidio-chat-ifr
 @media(max-width:1050px){.site-header .site-logo{flex-basis:175px!important;width:175px!important}.site-header .site-logo img{width:170px!important}.site-header .lh-header-tagline{flex-basis:145px!important;max-width:145px!important;font-size:11px!important}}
 @media(max-width:760px){.site-header .lh-header-tagline{flex:1 1 auto!important;max-width:180px!important;font-size:11px!important}.site-header .site-logo{flex:0 0 160px!important;width:160px!important}.site-header .site-logo img{width:155px!important}.site-footer.lh-footer-modern .footer-bottom{padding:12px 18px 20px!important;gap:5px!important;flex-direction:column!important}}
 @media(max-width:410px){.site-header .lh-header-tagline{max-width:120px!important;font-size:10px!important}}
+
+/* Final header reset: one centered brand mark, no duplicated tagline */
+.site-header .header-inner{height:86px!important;min-height:86px!important;align-items:center!important;gap:22px!important}
+.site-header .site-logo{display:flex!important;align-items:center!important;justify-content:center!important;flex:0 0 220px!important;width:220px!important;height:86px!important;overflow:visible!important}
+.site-header .site-logo img{display:block!important;width:205px!important;height:79px!important;object-fit:contain!important;object-position:center!important}
+.site-header .lh-header-tagline{display:none!important}
+.site-header .desktop-nav{margin-left:auto!important}
+@media(max-width:1050px){.site-header .header-inner{height:78px!important;min-height:78px!important}.site-header .site-logo{flex-basis:200px!important;width:200px!important;height:78px!important}.site-header .site-logo img{width:188px!important;height:72px!important}}
+@media(max-width:560px){.site-header .site-logo{flex-basis:170px!important;width:170px!important}.site-header .site-logo img{width:164px!important;height:68px!important}}
