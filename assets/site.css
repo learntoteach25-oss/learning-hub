@@ -1071,3 +1071,20 @@ body:has(.support-v7) .sv7-outcome h2{display:block!important;visibility:visible
 body:has(.support-v7) .sv7-outcome h2 em{color:#e8b84c!important}
 body:has(.support-v7) .sv7-cta h2{display:block!important;visibility:visible!important;opacity:1!important;font:700 clamp(38px,3.8vw,54px)/1.12 Georgia,serif!important;letter-spacing:-1px!important;color:#0a0907!important;margin:12px auto 24px!important;text-wrap:balance!important}
 @media(max-width:600px){body:has(.support-v7) .sv7-intro h2,body:has(.support-v7) .sv7-path-head h2{font-size:39px!important;letter-spacing:-1px!important}body:has(.support-v7) .sv7-outcome h2,body:has(.support-v7) .sv7-cta h2{font-size:36px!important}}
+
+/* SUPPORT V15 — dark editorial heading panels instead of washed-out cream */
+body:has(.support-v7) .sv7-intro{width:min(1180px,calc(100% - 36px))!important;max-width:1180px!important;margin:42px auto 30px!important;padding:50px 45px 46px!important;background:#0d0c0a!important;border:1px solid #bd8c2d!important;border-radius:14px!important;box-shadow:0 16px 35px rgba(0,0,0,.14)!important}
+body:has(.support-v7) .sv7-intro>span{color:#e6b64e!important;letter-spacing:3px!important}
+body:has(.support-v7) .sv7-intro h2{color:#fffaf0!important;font-size:clamp(40px,4.2vw,56px)!important;line-height:1.09!important;letter-spacing:-1px!important;margin:14px auto 21px!important;text-shadow:none!important}
+body:has(.support-v7) .sv7-intro h2 em{color:#edbd54!important;font-weight:500!important}
+body:has(.support-v7) .sv7-intro h2::after{width:66px!important;height:2px!important;margin:23px auto 0!important;background:#d6a43e!important}
+body:has(.support-v7) .sv7-intro p{color:#eee6d8!important;font-size:15px!important;line-height:1.7!important;max-width:700px!important}
+body:has(.support-v7) .sv7-path{background:#f2e8d6!important}
+body:has(.support-v7) .sv7-path-head{width:min(100%,1080px)!important;max-width:1080px!important;padding:38px 30px 34px!important;margin:0 auto 32px!important;background:#0d0c0a!important;border:1px solid #bd8c2d!important;border-radius:12px!important}
+body:has(.support-v7) .sv7-path-head>span{color:#e6b64e!important}
+body:has(.support-v7) .sv7-path-head h2{color:#fffaf0!important;font-size:clamp(38px,3.9vw,52px)!important;line-height:1.12!important;margin:12px auto 20px!important}
+body:has(.support-v7) .sv7-path-head h2 em{color:#edbd54!important;font-weight:500!important}
+body:has(.support-v7) .sv7-path-head h2::after{width:66px!important;height:2px!important;margin:20px auto 0!important;background:#d6a43e!important}
+body:has(.support-v7) .sv7-path-head p{color:#eee6d8!important;font-size:15px!important;max-width:700px!important}
+body:has(.support-v7) .sv7-method{margin-top:0!important}
+@media(max-width:600px){body:has(.support-v7) .sv7-intro{width:calc(100% - 24px)!important;margin:25px auto!important;padding:38px 20px!important}body:has(.support-v7) .sv7-path-head{padding:34px 19px!important}body:has(.support-v7) .sv7-intro h2,body:has(.support-v7) .sv7-path-head h2{font-size:37px!important}}
