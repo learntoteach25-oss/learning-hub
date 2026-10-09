@@ -1515,3 +1515,9 @@ body .whatsapp-contact.lh-wa-compact .lh-wa-label strong,body .whatsapp-contact.
 .resources-view>.resources-hero.resources-hero-photo .resources-hero-image{height:230px!important}
 .resources-view>.resources-hero.resources-hero-photo h1{font-size:36px!important}
 }
+
+/* Resources: remove the cream navigation gap above the hero. */
+.learning-detail:has(.resources-view)>.detail-toolbar{display:none!important}
+.learning-detail:has(.resources-view){padding-top:0!important;margin-top:0!important}
+.learning-detail:has(.resources-view)>#detailContent{margin-top:0!important;padding-top:0!important}
+.resources-view>.resources-hero{margin-top:0!important}
