@@ -1645,3 +1645,15 @@ body.lh-footer-visible #tidio-chat iframe,body.lh-footer-visible #tidio-chat-ifr
 .programme-folders .programme-folder{box-sizing:border-box!important;min-width:0!important;width:100%!important;height:205px!important;min-height:205px!important;border-radius:16px!important;overflow:hidden!important}
 .programme-folders .folder-copy{left:20px!important;right:20px!important;bottom:16px!important}
 @media(max-width:700px){.programme-folders{width:calc(100% - 32px)!important;grid-template-columns:1fr!important;gap:14px!important;margin-top:20px!important;padding-bottom:34px!important}.programme-folders .programme-folder{height:205px!important;min-height:205px!important}}
+
+/* Learning Hub shared design baseline — 2026-10-10 */
+:root{--lh-content-width:1120px;--lh-radius:14px;--lh-body-size:15px;--lh-body-leading:1.6}
+body{line-height:var(--lh-body-leading)}
+.site-header .desktop-nav a,.site-footer a{line-height:1.5}
+.site-footer .footer-inner{box-sizing:border-box;width:min(var(--lh-content-width),calc(100% - 40px));max-width:var(--lh-content-width);margin-left:auto;margin-right:auto}
+.site-footer .footer-inner section{min-width:0}
+.site-footer .footer-inner section h2{letter-spacing:.12em}
+.site-footer .footer-inner section a{overflow-wrap:anywhere}
+.site-footer .footer-registration,.site-footer .footer-bottom{text-align:center}
+.site-footer .footer-registration strong,.site-footer .footer-registration-address{max-width:100%;overflow-wrap:break-word}
+@media(max-width:700px){.site-footer .footer-inner{width:calc(100% - 32px)}}
