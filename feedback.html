@@ -809,7 +809,7 @@ const endpoint='https://script.google.com/macros/s/AKfycbzZL4U3VtVgDvzKKZHjgbvtt
 form.addEventListener('submit',async e=>{e.preventDefault();const button=form.querySelector('button[type=submit]'),files=[...form.querySelectorAll('input[type=file]')].flatMap(i=>Array.from(i.files||[]));if(files.reduce((n,f)=>n+f.size,0)>maxBytes){status.textContent='Attachments must be 10 MB or less in total.';return}button.disabled=true;status.textContent='Sending your feedback…';try{const fields=Object.fromEntries([...new FormData(form).entries()].filter(([,v])=>typeof v==='string')),packed=[];for(const f of files)packed.push({name:f.name,type:f.type,size:f.size,data:await toBase64(f)});await fetch(endpoint,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:'feedback',fields,files:packed})});form.reset();status.textContent='Thank you. Your feedback was sent to Learning Hub.'}catch(err){status.textContent='We could not send your feedback. Please try again.'}finally{button.disabled=false}});
 </script>
 <script src="//code.tidio.co/7aoz1jeb789oh2rtkwr2llropicgqdar.js" async></script>
-<script src="assets/site-shell.js?v=20261009-chat-fix-v23"></script>
+<script src="assets/site-shell.js?v=20261011-header-containment-v1"></script>
 <script>
 (()=>{
  const track=document.getElementById('reviewTrack');
