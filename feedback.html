@@ -741,18 +741,20 @@
 </section>
 <div class="reference-layout">
 
-<section class="feedback-intro">
-  <span>YOUR EXPERIENCE MATTERS</span>
-  <h2>Help us make learning better.</h2>
-  <p>Share what worked, suggest what could improve, and help us create a stronger learning experience for every learner.</p>
+<section class="feedback-intro" aria-labelledby="feedback-intro-heading">
+  <div class="feedback-intro-heading">
+    <div><span class="intro-eyebrow">YOUR EXPERIENCE MATTERS</span><h2 id="feedback-intro-heading">Help us make <em>learning better.</em></h2><p>Every voice helps us create a better learning experience.</p></div>
+    <a class="intro-cta" href="#feedbackFormAnchor">Share your feedback <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="intro-features">
+    <div class="intro-feature"><span class="intro-feature-number">01</span><div><strong>Share your experience</strong><small>Tell us what worked for you</small></div><span class="intro-feature-arrow">↗</span></div>
+    <div class="intro-feature"><span class="intro-feature-number">02</span><div><strong>Suggest new ideas</strong><small>Inspire what comes next</small></div><span class="intro-feature-arrow">↗</span></div>
+    <div class="intro-feature"><span class="intro-feature-number">03</span><div><strong>Help us improve</strong><small>Shape teaching and resources</small></div><span class="intro-feature-arrow">↗</span></div>
+    <div class="intro-feature"><span class="intro-feature-number">04</span><div><strong>Support every learner</strong><small>Make learning more effective</small></div><span class="intro-feature-arrow">↗</span></div>
+  </div>
 </section>
 
-<section class="benefit-strip">
-  <div class="benefit"><span class="benefit-icon">☏</span><div class="benefit-copy"><b>Share Your Experience</b><small>Tell us what worked well</small></div></div>
-  <div class="benefit"><span class="benefit-icon">✦</span><div class="benefit-copy"><b>Suggest New Ideas</b><small>Tell us what you would value next</small></div></div>
-  <div class="benefit"><span class="benefit-icon">▥</span><div class="benefit-copy"><b>Help Us Improve</b><small>Strengthen teaching and resources</small></div></div>
-  <div class="benefit"><span class="benefit-icon">♟</span><div class="benefit-copy"><b>Support Learner Success</b><small>Help shape better learner support</small></div></div>
-</section>
+
 
 <section class="feedback-workspace">
   <div class="workspace-visual" aria-label="Why feedback matters">
@@ -924,4 +926,25 @@ form.addEventListener('submit',async e=>{e.preventDefault();const button=form.qu
 .feedback-page .reviews .review-dots{margin-top:15px!important}
 @media(max-width:900px){.feedback-page .benefit-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}.feedback-page .feedback-workspace{grid-template-columns:1fr!important}.feedback-page .reviews .review-track>.review-slide{flex:1 1 0!important;width:0!important}}
 @media(max-width:620px){.feedback-page .reference-layout{width:calc(100% - 20px)!important;padding:14px!important}.feedback-page .benefit-strip{grid-template-columns:1fr!important}.feedback-page .feedback-form{padding:18px!important}.feedback-page .feedback-form .attachments{grid-template-columns:1fr!important}.feedback-page .reviews.learner-voices-v7{padding:16px!important}.feedback-page .reviews .review-track>.review-slide{flex:1 1 0!important;width:0!important}}
-</style></body></html>
+<style id="feedback-intro-actual-redesign-v8">
+/* New editorial intro design. Original banner, header, footer, form panel untouched. */
+.feedback-page .feedback-intro{display:block!important;width:100%!important;margin:0 0 23px!important;padding:0!important;background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;text-align:left!important}
+.feedback-page .feedback-intro .feedback-intro-heading{display:flex!important;justify-content:space-between!important;align-items:center!important;gap:22px!important;margin:0 0 20px!important;padding:0!important}
+.feedback-page .feedback-intro .intro-eyebrow{display:block!important;margin:0 0 10px!important;color:#a47a30!important;font:800 11px/1.3 Arial,sans-serif!important;letter-spacing:.16em!important}
+.feedback-page .feedback-intro h2{margin:0 0 8px!important;color:#171612!important;font:700 clamp(28px,3.3vw,42px)/1.14 Georgia,serif!important;letter-spacing:-.025em!important}
+.feedback-page .feedback-intro h2 em{color:#ad812c!important;font-style:normal!important}
+.feedback-page .feedback-intro p{margin:0!important;color:#5f5a50!important;font:400 14px/1.5 Arial,sans-serif!important}
+.feedback-page .feedback-intro .intro-cta{display:inline-flex!important;align-items:center!important;justify-content:center!important;gap:18px!important;flex:0 0 auto!important;min-height:43px!important;padding:10px 16px!important;border-radius:8px!important;background:#171612!important;color:#f9e2aa!important;text-decoration:none!important;font:700 12px/1.2 Arial,sans-serif!important;white-space:nowrap!important}
+.feedback-page .feedback-intro .intro-cta span{color:#e7b64c!important;font-size:18px!important}
+.feedback-page .feedback-intro .intro-features{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:0!important;overflow:hidden!important;border:1px solid #e8e1d6!important;border-radius:13px!important;background:#fff!important}
+.feedback-page .feedback-intro .intro-feature{box-sizing:border-box!important;display:flex!important;align-items:center!important;gap:11px!important;min-height:85px!important;padding:15px 13px!important;background:#fff!important;border:0!important;border-right:1px solid #e8e1d6!important;text-align:left!important}
+.feedback-page .feedback-intro .intro-feature:last-child{border-right:0!important}
+.feedback-page .feedback-intro .intro-feature-number{align-self:flex-start!important;flex:0 0 auto!important;color:#b38b3d!important;font:800 14px/1.4 Georgia,serif!important}
+.feedback-page .feedback-intro .intro-feature>div{display:flex!important;flex-direction:column!important;gap:5px!important;min-width:0!important}
+.feedback-page .feedback-intro .intro-feature strong{display:block!important;color:#26221c!important;font:700 12px/1.3 Arial,sans-serif!important}
+.feedback-page .feedback-intro .intro-feature small{display:block!important;color:#6c665c!important;font:400 11px/1.4 Arial,sans-serif!important}
+.feedback-page .feedback-intro .intro-feature-arrow{margin-left:auto!important;align-self:flex-start!important;color:#ba9147!important;font:700 15px/1 Arial,sans-serif!important}
+.feedback-page .feedback-intro .intro-feature:hover{background:#faf5ea!important}
+@media(max-width:900px){.feedback-page .feedback-intro .intro-features{grid-template-columns:repeat(2,minmax(0,1fr))!important}.feedback-page .feedback-intro .intro-feature:nth-child(2){border-right:0!important}.feedback-page .feedback-intro .intro-feature:nth-child(-n+2){border-bottom:1px solid #e8e1d6!important}}
+@media(max-width:620px){.feedback-page .feedback-intro .feedback-intro-heading{align-items:flex-start!important;flex-direction:column!important}.feedback-page .feedback-intro .intro-features{grid-template-columns:1fr!important}.feedback-page .feedback-intro .intro-feature{border-right:0!important;border-bottom:1px solid #e8e1d6!important}.feedback-page .feedback-intro .intro-feature:last-child{border-bottom:0!important}}
+</style></style></body></html>
