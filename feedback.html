@@ -1121,7 +1121,7 @@ form.addEventListener('submit',async e=>{e.preventDefault();const button=form.qu
    start();
  }
  slides.forEach((slide,i)=>{
-   slide.querySelector('.review-card').addEventListener('click',()=>open(slide));
+   const card=slide.querySelector('.review-card'); card.addEventListener('click',()=>open(slide)); card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();open(slide)}});
    const d=document.createElement('button'); d.className='review-dot'+(i===0?' active':'');
    d.type='button'; d.setAttribute('aria-label','Show review '+(i+1)); d.addEventListener('click',()=>show(i,true)); dots.appendChild(d);
  });
@@ -1291,4 +1291,18 @@ html body .feedback-page .reviews.learner-voices-v7 .review-slide .review-card .
 html body .feedback-page .reviews.learner-voices-v7 .review-slide .review-card .stars{order:1!important}
 html body .feedback-page .reviews.learner-voices-v7 .review-slide .review-card .review-text{order:2!important}
 html body .feedback-page .reviews.learner-voices-v7 .review-slide .review-card .review-actions{order:3!important}
+</style><style id="lh-feedback-review-structural-fix">
+.feedback-page .reviews.learner-voices-v7 .review-window{overflow:hidden!important;max-width:100%!important}
+.feedback-page .reviews.learner-voices-v7 .review-track{gap:18px!important;display:flex!important;align-items:stretch!important}
+.feedback-page .reviews.learner-voices-v7 .review-track > .review-slide{flex:0 0 calc((100% - 36px)/3)!important;width:calc((100% - 36px)/3)!important;max-width:calc((100% - 36px)/3)!important;min-width:0!important;border:0!important;padding:0!important;margin:0!important;box-sizing:border-box!important}
+.feedback-page .reviews.learner-voices-v7 .review-track > .review-slide > .review-card{height:260px!important;min-height:260px!important;width:100%!important;padding:23px!important;display:flex!important;flex-direction:column!important;gap:0!important;background:#101010!important;overflow:hidden!important;box-shadow:0 8px 20px rgba(0,0,0,.12)!important}
+.feedback-page .reviews.learner-voices-v7 .review-card > .review-origin{display:block!important;position:relative!important;order:0!important;flex:none!important;margin:0 0 10px!important;opacity:1!important;filter:none!important}
+.feedback-page .reviews.learner-voices-v7 .review-card > .review-origin > span{display:block!important;opacity:1!important;color:#ffe09a!important;-webkit-text-fill-color:#ffe09a!important}
+.feedback-page .reviews.learner-voices-v7 .review-card > .review-origin > span > strong{display:block!important;position:static!important;color:#ffe09a!important;-webkit-text-fill-color:#ffe09a!important;font-size:19px!important;font-weight:800!important;line-height:1.4!important;opacity:1!important;filter:none!important;mix-blend-mode:normal!important;text-shadow:none!important}
+.feedback-page .reviews.learner-voices-v7 .review-card > .review-origin > span > small{display:block!important;color:#f7e8c9!important;-webkit-text-fill-color:#f7e8c9!important;font-size:13px!important;line-height:1.4!important}
+.feedback-page .reviews.learner-voices-v7 .review-card > .stars{order:1!important;flex:none!important;font-size:18px!important;margin:0 0 12px!important}
+.feedback-page .reviews.learner-voices-v7 .review-card > .review-text{order:2!important;flex:1!important;font-size:15px!important;line-height:1.55!important;color:#fff!important;-webkit-text-fill-color:#fff!important}
+.feedback-page .reviews.learner-voices-v7 .review-card > .review-actions{order:3!important;flex:none!important;margin-top:8px!important}
+@media(max-width:900px){.feedback-page .reviews.learner-voices-v7 .review-track > .review-slide{flex-basis:calc((100% - 18px)/2)!important;width:calc((100% - 18px)/2)!important;max-width:calc((100% - 18px)/2)!important}}
+@media(max-width:620px){.feedback-page .reviews.learner-voices-v7 .review-track > .review-slide{flex-basis:100%!important;width:100%!important;max-width:100%!important}}
 </style></body></html>
