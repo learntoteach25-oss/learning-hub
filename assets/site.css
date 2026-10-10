@@ -1657,3 +1657,22 @@ body{line-height:var(--lh-body-leading)}
 .site-footer .footer-registration,.site-footer .footer-bottom{text-align:center}
 .site-footer .footer-registration strong,.site-footer .footer-registration-address{max-width:100%;overflow-wrap:break-word}
 @media(max-width:700px){.site-footer .footer-inner{width:calc(100% - 32px)}}
+
+/* Learning Hub readability and visual rhythm — v83 */
+:root{--lh-readable-body:15px;--lh-readable-small:13px}
+body{font-size:var(--lh-readable-body);line-height:1.6;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+main p,main li{line-height:1.65}
+main button,main input,main select,main textarea{font-size:inherit}
+.site-header .desktop-nav>a,.site-header .lh-primary-menu summary{font-size:13px!important;line-height:1.5!important}
+.catalogue{min-height:0!important;height:auto!important;padding:34px 24px 24px!important}
+.catalogue-heading{max-width:860px!important;margin:0 auto 27px!important}
+.catalogue-heading h1{font-size:clamp(34px,3.5vw,49px)!important;line-height:1.12!important}
+.catalogue-heading p{font-size:15px!important;line-height:1.65!important;max-width:720px!important}
+.catalogue-grid{gap:18px!important}
+.catalogue .catalogue-card{height:220px!important;min-height:220px!important}
+.catalogue .catalogue-card .card-content{left:19px!important;right:18px!important;bottom:15px!important}
+.catalogue .catalogue-card .card-content strong{font-size:clamp(20px,1.65vw,23px)!important;line-height:1.2!important;margin-bottom:6px!important;letter-spacing:-.015em!important}
+.catalogue .catalogue-card .card-content small{font-size:13px!important;line-height:1.5!important;max-width:100%!important;min-height:0!important;color:#fff8ee!important;text-shadow:0 1px 4px rgba(0,0,0,.8)!important}
+.catalogue .catalogue-card .card-overlay{background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.32) 35%,rgba(0,0,0,.88) 100%)!important}
+.catalogue .catalogue-card .card-content b{width:33px!important;height:33px!important;margin-top:11px!important}
+@media(max-width:700px){.catalogue{padding:25px 16px 20px!important}.catalogue-heading p{font-size:14px!important}.catalogue .catalogue-card{height:220px!important;min-height:220px!important}.catalogue .catalogue-card .card-content small{font-size:12px!important}}
