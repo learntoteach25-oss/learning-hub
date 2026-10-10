@@ -825,8 +825,8 @@ form.addEventListener('submit',async e=>{e.preventDefault();const button=form.qu
  function show(i,restart=false){
    const max=Math.max(0,slides.length-count());
    index=i>max?0:i<0?max:i;
-   track.style.transform='none';
-   slides.forEach((slide,n)=>{slide.hidden=!(n>=index&&n<index+count());slide.style.display=slide.hidden?'none':'';});
+   track.style.setProperty('transform','none','important');
+   slides.forEach((slide,n)=>{const visible=n>=index&&n<index+count();slide.hidden=!visible;slide.style.setProperty('display',visible?'block':'none','important');slide.style.setProperty('flex',visible?'1 1 0':'0 0 0','important');slide.style.setProperty('width',visible?'0':'0','important');});
    [...dots.children].forEach((d,n)=>d.classList.toggle('active',n===index));
    if(restart)start();
  }
@@ -857,6 +857,7 @@ form.addEventListener('submit',async e=>{e.preventDefault();const button=form.qu
  document.getElementById('reviewPrev').addEventListener('click',()=>show(index-1,true));
  document.getElementById('reviewNext').addEventListener('click',()=>show(index+1,true));
  addEventListener('resize',()=>show(index));
+ show(0);
  start();
 })();
 </script>
@@ -908,6 +909,7 @@ form.addEventListener('submit',async e=>{e.preventDefault();const button=form.qu
 .feedback-page .reviews .review-window{width:100%!important;overflow:hidden!important;margin:0!important;padding:0!important}
 .feedback-page .reviews .review-track{display:flex!important;gap:14px!important;align-items:stretch!important;transform:none!important;transition:none!important}
 .feedback-page .reviews .review-track>.review-slide{box-sizing:border-box!important;flex:1 1 0!important;width:0!important;min-width:0!important;max-width:none!important;margin:0!important;padding:0!important}
+.feedback-page .reviews .review-track>.review-slide[hidden],.feedback-page .reviews .review-track>.review-slide[style*="display: none"]{display:none!important;flex:0 0 0!important;width:0!important;min-width:0!important;max-width:0!important;margin:0!important;padding:0!important;border:0!important;overflow:hidden!important}
 .feedback-page .reviews .review-track>.review-slide[hidden]{display:none!important}
 .feedback-page .reviews .review-track>.review-slide>.review-card{box-sizing:border-box!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:11px!important;width:100%!important;height:220px!important;min-height:220px!important;margin:0!important;padding:19px!important;background:#fff!important;border:1px solid #e1d9ca!important;border-radius:13px!important;box-shadow:0 5px 16px rgba(25,18,9,.04)!important;overflow:hidden!important;cursor:pointer!important}
 .feedback-page .reviews .review-card:before,.feedback-page .reviews .review-card:after{display:none!important}
