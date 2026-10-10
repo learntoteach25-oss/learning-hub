@@ -748,16 +748,16 @@
 </section>
 
 <section class="benefit-strip">
-  <div class="benefit"><span class="benefit-icon">☵</span><b>Share Your Experience</b><small>Tell us what worked well</small></div>
-  <div class="benefit"><span class="benefit-icon">♢</span><b>Suggest New Ideas</b><small>Tell us what you would value next</small></div>
-  <div class="benefit"><span class="benefit-icon">▥</span><b>Help Us Improve</b><small>Strengthen teaching and resources</small></div>
-  <div class="benefit"><span class="benefit-icon">♡</span><b>Support Learner Success</b><small>Help shape better learner support</small></div>
+  <div class="benefit"><span class="benefit-icon">☏</span><div class="benefit-copy"><b>Share Your Experience</b><small>Tell us what worked well</small></div></div>
+  <div class="benefit"><span class="benefit-icon">✦</span><div class="benefit-copy"><b>Suggest New Ideas</b><small>Tell us what you would value next</small></div></div>
+  <div class="benefit"><span class="benefit-icon">▥</span><div class="benefit-copy"><b>Help Us Improve</b><small>Strengthen teaching and resources</small></div></div>
+  <div class="benefit"><span class="benefit-icon">♟</span><div class="benefit-copy"><b>Support Learner Success</b><small>Help shape better learner support</small></div></div>
 </section>
 
 <section class="feedback-workspace">
   <div class="workspace-visual" aria-label="Why feedback matters">
-    <div class="visual-copy"><span>YOUR VOICE MATTERS</span><h3>Better learning starts with listening.</h3><p>Tell us what you loved, what could improve, and what would make your next learning experience even better.</p></div>
-    <div class="visual-points"><span>Thoughtful teaching</span><span>Useful resources</span><span>Personal support</span></div>
+    <div class="visual-copy"><span>YOUR VOICE MATTERS</span><h3>Better learning<br>starts with <em>listening.</em></h3><p>Tell us what you loved, what could improve, and what would make your next learning experience even better.</p></div>
+    
   </div>
   <form id="feedbackFormAnchor" class="feedback-form">
     <span class="form-kicker">SHARE YOUR FEEDBACK</span>
@@ -766,7 +766,7 @@
     <div class="fields">
       <label>Name<input name="name" type="text" required></label>
       <label>Email<input name="email" type="email" required></label>
-      <label class="full">Your Rating<select name="rating" required><option value="">Choose a rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Very good</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Needs improvement</option></select></label>
+      <label class="full rating-field">Your Rating<select name="rating" required><option value="">Choose a rating</option><option value="5">★★★★★ — Excellent</option><option value="4">★★★★☆ — Very good</option><option value="3">★★★☆☆ — Good</option><option value="2">★★☆☆☆ — Fair</option><option value="1">★☆☆☆☆ — Needs improvement</option></select></label>
       <label class="full">Written Feedback<textarea name="message" placeholder="Tell us what worked well, what could be improved, or what you would like us to offer..."></textarea></label>
       <div class="attachments full">
         <label class="attachment"><span>♫</span><div><b>Upload Audio Feedback</b><small>Choose an audio recording from your device</small></div><input name="feedback_audio" type="file" accept="audio/*"></label>
@@ -825,7 +825,7 @@ form.addEventListener('submit',async e=>{e.preventDefault();const button=form.qu
  function show(i,restart=false){
    const max=Math.max(0,slides.length-count());
    index=i>max?0:i<0?max:i;
-   const gap=parseFloat(getComputedStyle(track).gap)||16;
+   const gap=parseFloat(getComputedStyle(track).gap)||12;
    const w=slides[0]?.getBoundingClientRect().width||0;
    track.style.transform=`translateX(-${index*(w+gap)}px)`;
    [...dots.children].forEach((d,n)=>d.classList.toggle('active',n===index));
@@ -866,68 +866,61 @@ form.addEventListener('submit',async e=>{e.preventDefault();const button=form.qu
 
 
 
-<style id="feedback-black-gold-redesign-v3">
-/* All styling scoped to Feedback content. Header, footer and banner intentionally excluded. */
-.feedback-page{background:#f7f2e8!important;padding-bottom:40px!important}
-.feedback-page .reference-layout{margin-top:24px!important;width:min(1160px,calc(100% - 40px))!important;margin:0 auto!important;background:transparent!important;box-shadow:none!important}
-.feedback-page .feedback-intro{position:relative!important;padding:22px 26px 8px!important;background:#080808!important;text-align:left!important;border-radius:22px 22px 0 0!important;overflow:hidden!important}
-.feedback-page .feedback-intro:before,.feedback-page .feedback-intro:after{display:none!important}
-.feedback-page .feedback-intro>span{color:#e3b74c!important;font:800 11px/1.4 Arial,sans-serif!important;letter-spacing:.18em!important}
-.feedback-page .feedback-intro h2{margin:8px 0!important;text-align:left!important;color:#f7e7c5!important;font:700 clamp(26px,3vw,38px)/1.2 Georgia,serif!important}
-.feedback-page .feedback-intro p{margin:6px 0!important;max-width:800px!important;text-align:left!important;color:#ded3c1!important;font:400 14px/1.55 Arial,sans-serif!important}
-.feedback-page .benefit-strip{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;margin:0 0 24px!important;padding:12px 24px 18px!important;background:#080808!important;border-radius:0 0 22px 22px!important}
-.feedback-page .benefit{display:grid!important;grid-template-columns:44px minmax(0,1fr)!important;grid-template-rows:auto auto!important;gap:3px 11px!important;align-content:center!important;min-width:0!important;min-height:68px!important;margin:0!important;padding:10px!important;background:#181510!important;border:1px solid #665027!important;border-radius:14px!important;text-align:left!important;box-shadow:none!important}
-.feedback-page .benefit .benefit-icon{display:grid!important;place-items:center!important;grid-column:1!important;grid-row:1/3!important;align-self:center!important;width:42px!important;height:42px!important;margin:0!important;background:#e5bc63!important;color:#17120a!important;border-radius:12px!important}
-.feedback-page .benefit b{grid-column:2!important;grid-row:1!important;color:#fff3d6!important;font:800 12px/1.35 Arial,sans-serif!important}
-.feedback-page .benefit small{grid-column:2!important;grid-row:2!important;color:#d6c6a5!important;font:400 11px/1.35 Arial,sans-serif!important}
-.feedback-page .feedback-workspace{display:grid!important;grid-template-columns:minmax(0,.48fr) minmax(0,1.52fr)!important;align-items:stretch!important;gap:0!important;width:100%!important;max-width:none!important;margin:0 0 20px!important;padding:0!important;background:#fffaf0!important;border:1px solid #e2c991!important;border-radius:20px!important;overflow:hidden!important;box-shadow:0 8px 24px rgba(35,24,6,.08)!important}
-.feedback-page .workspace-visual{position:relative!important;display:flex!important;flex-direction:column!important;justify-content:flex-start!important;gap:14px!important;min-height:0!important;height:auto!important;margin:0!important;padding:24px 24px!important;background:#11100e!important;background-image:radial-gradient(circle at 95% 90%,rgba(215,169,65,.18),transparent 48%)!important;border:0!important;border-radius:0!important;box-sizing:border-box!important}
-.feedback-page .workspace-visual:before{content:""!important;position:absolute!important;inset:20px!important;border:1px solid rgba(220,178,78,.23)!important;border-radius:15px!important;pointer-events:none!important;background:none!important}
-.feedback-page .workspace-visual:after{display:none!important}
-.feedback-page .workspace-visual .visual-copy{position:relative!important;z-index:1!important;padding:0!important;margin:0!important;max-width:340px!important}
-.feedback-page .workspace-visual .visual-copy span{display:inline-block!important;margin:0!important;padding:8px 12px!important;border:1px solid #a88037!important;border-radius:50px!important;background:transparent!important;color:#edc46d!important;font:800 10px/1.2 Arial,sans-serif!important;letter-spacing:.12em!important}
-.feedback-page .workspace-visual .visual-copy h3{margin:16px 0 10px!important;color:#fff0cb!important;font:700 clamp(26px,2.9vw,38px)/1.2 Georgia,serif!important;text-shadow:none!important}
-.feedback-page .workspace-visual .visual-copy p{margin:0!important;color:#e4d6ba!important;font:400 13px/1.65 Arial,sans-serif!important}
-.feedback-page .workspace-visual .visual-points{position:relative!important;z-index:1!important;display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin:0!important;padding:0!important}
-.feedback-page .workspace-visual .visual-points span{margin:0!important;padding:8px 10px!important;background:#262014!important;color:#f4dca7!important;border:1px solid #6d542a!important;border-radius:8px!important;font:600 11px/1.3 Arial,sans-serif!important}
-.feedback-page .feedback-form{display:block!important;width:100%!important;max-width:none!important;min-height:0!important;height:auto!important;margin:0!important;padding:20px 26px!important;background:#fffaf0!important;border:0!important;box-shadow:none!important;box-sizing:border-box!important}
-.feedback-page .feedback-form .form-kicker{color:#996719!important;font:800 11px/1.4 Arial,sans-serif!important;letter-spacing:.15em!important}
-.feedback-page .feedback-form h2{margin:6px 0 8px!important;color:#19140b!important;font:700 clamp(24px,2.7vw,33px)/1.2 Georgia,serif!important}
-.feedback-page .feedback-form p{color:#635749!important;font:400 13px/1.5 Arial,sans-serif!important}
-.feedback-page .feedback-form label{color:#252017!important;font:700 12px/1.4 Arial,sans-serif!important}
-.feedback-page .feedback-form input,.feedback-page .feedback-form select,.feedback-page .feedback-form textarea{box-sizing:border-box!important;min-height:42px!important;background:#fff!important;border:1px solid #d8c5a4!important;border-radius:9px!important;box-shadow:none!important}
-.feedback-page .feedback-form textarea{min-height:82px!important}
-.feedback-page .reviews.learner-voices-v7{display:block!important;margin:0 0 20px!important;padding:22px!important;background:#fffaf0!important;border:1px solid #e2c991!important;border-radius:20px!important;box-shadow:0 8px 24px rgba(35,24,6,.06)!important;overflow:hidden!important}
-.feedback-page .reviews .reviews-head{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;margin:0 0 18px!important;padding:0 0 16px!important;border-bottom:1px solid #e6d7b9!important}
-.feedback-page .reviews .reviews-head h2{color:#1a140c!important;font:700 clamp(26px,2.9vw,36px)/1.2 Georgia,serif!important}
-.feedback-page .reviews .reviews-head p{color:#655747!important}
+<style id="feedback-approved-compact-design-v4">
+/* Approved mockup implementation: DO NOT style .feedback-hero, .feedback-banner, site header, or footer. */
+.feedback-page{background:#fbf5e8!important;padding-bottom:26px!important}
+.feedback-page .reference-layout{width:min(1140px,calc(100% - 42px))!important;margin:16px auto 0!important;padding:0!important;background:#fff9ee!important;border:1px solid #ebd4a5!important;border-radius:18px!important;box-sizing:border-box!important;overflow:visible!important}
+.feedback-page .feedback-intro{display:block!important;margin:0!important;padding:20px 28px 8px!important;background:transparent!important;border:0!important;border-radius:18px 18px 0 0!important;text-align:left!important}
+.feedback-page .feedback-intro::before,.feedback-page .feedback-intro::after{display:none!important}
+.feedback-page .feedback-intro>span{display:block!important;color:#af7b18!important;font:800 11px/1.4 Arial,sans-serif!important;letter-spacing:.13em!important}
+.feedback-page .feedback-intro h2{margin:4px 0 6px!important;color:#16120e!important;font:700 clamp(25px,2.7vw,34px)/1.2 Georgia,serif!important;text-align:left!important}
+.feedback-page .feedback-intro p{margin:0!important;color:#514b42!important;font:400 13px/1.5 Arial,sans-serif!important;max-width:900px!important;text-align:left!important}
+.feedback-page .benefit-strip{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;margin:0!important;padding:12px 18px 14px!important;background:transparent!important;border:0!important;border-radius:0!important}
+.feedback-page .benefit{display:flex!important;align-items:center!important;gap:12px!important;min-width:0!important;min-height:76px!important;margin:0!important;padding:11px 13px!important;background:#fffaf1!important;border:1px solid #e6c780!important;border-radius:12px!important;box-shadow:none!important;text-align:left!important;box-sizing:border-box!important}
+.feedback-page .benefit .benefit-icon{display:grid!important;place-items:center!important;flex:0 0 48px!important;width:48px!important;height:48px!important;margin:0!important;background:#111!important;color:#f0c25c!important;border:3px solid #d6a638!important;border-radius:50%!important;font:700 23px/1 Arial,sans-serif!important}
+.feedback-page .benefit .benefit-copy{display:flex!important;flex-direction:column!important;gap:3px!important;min-width:0!important}
+.feedback-page .benefit b{display:block!important;color:#1b1712!important;font:800 12px/1.3 Arial,sans-serif!important}
+.feedback-page .benefit small{display:block!important;color:#62594c!important;font:400 11px/1.35 Arial,sans-serif!important}
+.feedback-page .feedback-workspace{display:grid!important;grid-template-columns:minmax(0,.76fr) minmax(0,1.24fr)!important;align-items:stretch!important;gap:0!important;width:calc(100% - 36px)!important;max-width:none!important;margin:0 18px 14px!important;padding:0!important;background:#fffaf1!important;border:1px solid #e5bd6a!important;border-radius:16px!important;box-shadow:none!important;overflow:hidden!important;box-sizing:border-box!important}
+.feedback-page .workspace-visual{position:relative!important;display:flex!important;flex-direction:column!important;justify-content:center!important;min-height:0!important;height:auto!important;margin:0!important;padding:24px 24px!important;background:radial-gradient(ellipse at 100% 75%,rgba(192,129,27,.38),transparent 45%),linear-gradient(140deg,#080808 0%,#17110b 100%)!important;background-image:radial-gradient(ellipse at 100% 75%,rgba(192,129,27,.38),transparent 45%),linear-gradient(140deg,#080808,#17110b)!important;border:0!important;border-radius:0!important;box-sizing:border-box!important;overflow:hidden!important}
+.feedback-page .workspace-visual::before{content:""!important;position:absolute!important;right:-90px!important;bottom:-135px!important;inset:auto -90px -135px auto!important;width:340px!important;height:340px!important;border:2px solid rgba(217,165,57,.48)!important;border-radius:50%!important;background:transparent!important;pointer-events:none!important}
+.feedback-page .workspace-visual::after{content:""!important;position:absolute!important;right:-35px!important;bottom:-95px!important;width:235px!important;height:235px!important;border:1px solid rgba(217,165,57,.25)!important;border-radius:50%!important;pointer-events:none!important}
+.feedback-page .workspace-visual .visual-copy{position:relative!important;z-index:1!important;margin:0!important;padding:0!important;max-width:350px!important}
+.feedback-page .workspace-visual .visual-copy span{display:inline-block!important;margin:0!important;padding:7px 11px!important;color:#f5cb68!important;background:transparent!important;border:1px solid #b6892b!important;border-radius:40px!important;font:800 10px/1.3 Arial,sans-serif!important;letter-spacing:.1em!important}
+.feedback-page .workspace-visual .visual-copy h3{margin:16px 0 12px!important;color:#fff8eb!important;font:700 clamp(25px,2.7vw,35px)/1.14 Georgia,serif!important;text-shadow:none!important}
+.feedback-page .workspace-visual .visual-copy h3 em{font-style:normal!important;color:#e9bb55!important}
+.feedback-page .workspace-visual .visual-copy p{margin:0!important;color:#f0e4d0!important;font:400 13px/1.6 Arial,sans-serif!important;max-width:310px!important}
+.feedback-page .feedback-form{display:block!important;width:100%!important;max-width:none!important;min-height:0!important;height:auto!important;margin:0!important;padding:16px 24px 14px!important;background:#fffaf1!important;border:0!important;border-radius:0!important;box-shadow:none!important;box-sizing:border-box!important}
+.feedback-page .feedback-form .form-kicker{display:block!important;color:#b07a17!important;font:800 10px/1.3 Arial,sans-serif!important;letter-spacing:.13em!important}
+.feedback-page .feedback-form h2{margin:3px 0 4px!important;color:#16120e!important;font:700 clamp(23px,2.4vw,30px)/1.2 Georgia,serif!important}
+.feedback-page .feedback-form p{margin:0 0 8px!important;color:#665e51!important;font:400 12px/1.4 Arial,sans-serif!important}
+.feedback-page .feedback-form .fields{gap:9px 12px!important}
+.feedback-page .feedback-form label{color:#211a11!important;font:700 11px/1.3 Arial,sans-serif!important}
+.feedback-page .feedback-form input,.feedback-page .feedback-form select,.feedback-page .feedback-form textarea{box-sizing:border-box!important;width:100%!important;min-height:33px!important;padding:7px 11px!important;background:#fff!important;border:1px solid #d9d6cf!important;border-radius:7px!important;box-shadow:none!important;font-size:12px!important}
+.feedback-page .feedback-form textarea{min-height:54px!important;max-height:80px!important}
+.feedback-page .feedback-form .rating-field select{min-height:32px!important}
+.feedback-page .feedback-form .attachments{gap:10px!important;margin-top:0!important}
+.feedback-page .feedback-form .attachment{min-height:62px!important;padding:9px 10px!important;border:1px solid #e3b85f!important;border-radius:9px!important;background:#fffaf2!important;box-shadow:none!important}
+.feedback-page .feedback-form .attachment>span{width:34px!important;height:34px!important;min-width:34px!important;font-size:17px!important}
+.feedback-page .feedback-form .attachment b{font-size:12px!important}
+.feedback-page .feedback-form .attachment small{font-size:10px!important}
+.feedback-page .feedback-form .attachment input{min-height:25px!important;font-size:10px!important;padding:3px!important}
+.feedback-page .feedback-form button[type=submit]{min-height:38px!important;padding:9px 12px!important;margin-top:6px!important;border-radius:7px!important;background:linear-gradient(100deg,#251806,#090909 55%,#c08a1e)!important;color:#fff7e5!important}
+.feedback-page .reviews.learner-voices-v7{display:block!important;margin:0 18px 16px!important;padding:16px 18px!important;background:#fffaf1!important;border:1px solid #e5c88e!important;border-radius:15px!important;box-shadow:none!important;overflow:hidden!important}
+.feedback-page .reviews .reviews-head{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:14px!important;margin:0 0 12px!important;padding:0!important;border:0!important}
+.feedback-page .reviews .reviews-head h2{margin:3px 0!important;color:#18120d!important;font:700 clamp(23px,2.6vw,31px)/1.2 Georgia,serif!important}
+.feedback-page .reviews .reviews-head p{margin:0!important;color:#5b5042!important;font:400 12px/1.4 Arial,sans-serif!important}
 .feedback-page .reviews .review-window{width:100%!important;overflow:hidden!important;margin:0!important;padding:0!important}
-.feedback-page .reviews .review-track{display:flex!important;align-items:stretch!important;gap:16px!important;transition:transform .45s ease!important}
-.feedback-page .reviews .review-track>.review-slide{flex:0 0 calc((100% - 32px)/3)!important;width:calc((100% - 32px)/3)!important;min-width:0!important;max-width:none!important;margin:0!important;padding:0!important;box-sizing:border-box!important}
-.feedback-page .reviews .review-track>.review-slide>.review-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:11px!important;width:100%!important;height:205px!important;min-height:205px!important;margin:0!important;padding:17px!important;background:#14120f!important;border:1px solid #8c6a32!important;border-radius:14px!important;box-shadow:none!important;overflow:hidden!important;box-sizing:border-box!important;cursor:pointer!important}
-.feedback-page .reviews .review-card .review-identity{display:block!important;position:relative!important;z-index:3!important;flex:0 0 auto!important;margin:0!important;padding:0!important;opacity:1!important;visibility:visible!important;filter:none!important;mix-blend-mode:normal!important}
-.feedback-page .reviews .review-card .review-identity strong{display:block!important;margin:0!important;color:#f4d182!important;-webkit-text-fill-color:#f4d182!important;font:800 19px/1.3 Arial,sans-serif!important;opacity:1!important;visibility:visible!important;filter:none!important;text-shadow:none!important}
-.feedback-page .reviews .review-card .review-identity small{display:block!important;margin:2px 0 0!important;color:#e7d8b8!important;-webkit-text-fill-color:#e7d8b8!important;font:500 12px/1.4 Arial,sans-serif!important;opacity:1!important;visibility:visible!important}
-.feedback-page .reviews .review-card .stars{display:block!important;flex:0 0 auto!important;order:0!important;margin:0!important;color:#f0bc47!important;font-size:18px!important;line-height:1!important}
-.feedback-page .reviews .review-card .review-text{display:-webkit-box!important;flex:1 1 auto!important;order:0!important;overflow:hidden!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:3!important;margin:0!important;color:#f5eee0!important;font:400 14px/1.55 Arial,"Noto Sans",sans-serif!important}
-.feedback-page .reviews .review-card .review-actions{display:block!important;order:0!important;flex:0 0 auto!important;margin:0!important;color:#e9bd59!important;font:700 12px/1.4 Arial,sans-serif!important}
-.feedback-page .reviews .review-card:hover{border-color:#f0bc47!important;transform:translateY(-2px)!important}
-@media(max-width:900px){.feedback-page .benefit-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}.feedback-page .feedback-workspace{grid-template-columns:1fr!important}.feedback-page .workspace-visual{min-height:235px!important}.feedback-page .reviews .review-track>.review-slide{flex-basis:calc((100% - 16px)/2)!important;width:calc((100% - 16px)/2)!important}}
-@media(max-width:620px){.feedback-page .reference-layout{width:calc(100% - 20px)!important}.feedback-page .feedback-intro{padding:24px 18px 10px!important}.feedback-page .benefit-strip{grid-template-columns:1fr!important;padding:12px 18px 20px!important}.feedback-page .feedback-form{padding:22px 18px!important}.feedback-page .reviews.learner-voices-v7{padding:18px 14px!important}.feedback-page .reviews .review-track>.review-slide{flex-basis:100%!important;width:100%!important}}
-
-/* Visibility and balance refinements; keep header, footer and banner intact. */
-.feedback-page .feedback-intro{margin-top:0!important}
-.feedback-page .workspace-visual .visual-points{margin-top:14px!important;align-self:flex-start!important}
-.feedback-page .workspace-visual .visual-copy h3{font-size:clamp(23px,2.2vw,31px)!important}
-.feedback-page .workspace-visual .visual-copy p{font-size:12px!important;line-height:1.5!important}
-.feedback-page .reviews .review-card .review-identity strong{color:#ffe2a1!important;-webkit-text-fill-color:#ffe2a1!important;opacity:1!important;visibility:visible!important;font:800 20px/1.35 Arial,sans-serif!important}
-.feedback-page .reviews .review-card .review-identity small{color:#f5e4bf!important;-webkit-text-fill-color:#f5e4bf!important;font:600 12px/1.5 Arial,sans-serif!important}
-.feedback-page .reviews .review-card .review-text{color:#fff9ec!important;font:500 14px/1.55 Arial,"Noto Sans",sans-serif!important}
-.feedback-page .reviews .review-card .review-actions{color:#ffd577!important;font-size:12px!important}
-.feedback-page .reviews .review-card .stars{color:#ffc653!important}
-.feedback-page .reviews .review-card .review-identity{order:0!important}
-.feedback-page .reviews .review-card .stars{order:1!important}
-.feedback-page .reviews .review-card .review-text{order:2!important}
-.feedback-page .reviews .review-card .review-actions{order:3!important}
-@media(max-width:900px){.feedback-page .workspace-visual{min-height:180px!important}}
+.feedback-page .reviews .review-track{display:flex!important;align-items:stretch!important;gap:12px!important;transition:transform .5s ease!important}
+.feedback-page .reviews .review-track>.review-slide{flex:0 0 calc((100% - 24px)/3)!important;width:calc((100% - 24px)/3)!important;min-width:0!important;max-width:none!important;margin:0!important;padding:0!important;box-sizing:border-box!important}
+.feedback-page .reviews .review-track>.review-slide>.review-card{display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;gap:8px!important;width:100%!important;height:155px!important;min-height:155px!important;margin:0!important;padding:13px 15px!important;background:#0d0c0a!important;border:1px solid #c2953e!important;border-radius:10px!important;box-shadow:none!important;box-sizing:border-box!important;overflow:hidden!important;cursor:pointer!important}
+.feedback-page .reviews .review-card .review-identity{display:block!important;position:relative!important;z-index:2!important;flex:0 0 auto!important;order:0!important;margin:0!important;opacity:1!important;visibility:visible!important;filter:none!important;mix-blend-mode:normal!important}
+.feedback-page .reviews .review-card .review-identity strong{display:block!important;color:#ffdf8b!important;-webkit-text-fill-color:#ffdf8b!important;font:800 15px/1.25 Arial,sans-serif!important;opacity:1!important;visibility:visible!important;text-shadow:none!important}
+.feedback-page .reviews .review-card .review-identity small{display:block!important;color:#e8c87c!important;-webkit-text-fill-color:#e8c87c!important;font:500 10px/1.3 Arial,sans-serif!important;opacity:1!important}
+.feedback-page .reviews .review-card .stars{display:block!important;order:1!important;flex:0 0 auto!important;margin:0!important;color:#e9b43f!important;font-size:14px!important;line-height:1!important}
+.feedback-page .reviews .review-card .review-text{display:-webkit-box!important;order:2!important;flex:1 1 auto!important;overflow:hidden!important;-webkit-box-orient:vertical!important;-webkit-line-clamp:3!important;margin:0!important;color:#fff8ea!important;font:400 12px/1.45 Arial,"Noto Sans",sans-serif!important}
+.feedback-page .reviews .review-card .review-actions{display:block!important;order:3!important;flex:0 0 auto!important;margin:0!important;color:#f0c15d!important;font:700 10px/1.2 Arial,sans-serif!important}
+.feedback-page .reviews .review-card:hover{border-color:#f2c967!important;transform:translateY(-2px)!important}
+@media(max-width:900px){.feedback-page .benefit-strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}.feedback-page .feedback-workspace{grid-template-columns:1fr!important}.feedback-page .workspace-visual{min-height:165px!important}.feedback-page .reviews .review-track>.review-slide{flex-basis:calc((100% - 12px)/2)!important;width:calc((100% - 12px)/2)!important}}
+@media(max-width:620px){.feedback-page .reference-layout{width:calc(100% - 16px)!important}.feedback-page .feedback-intro{padding:18px 16px 6px!important}.feedback-page .benefit-strip{grid-template-columns:1fr!important;padding:12px 14px!important}.feedback-page .feedback-workspace{width:calc(100% - 24px)!important;margin:0 12px 12px!important}.feedback-page .feedback-form{padding:16px!important}.feedback-page .reviews.learner-voices-v7{margin:0 12px 14px!important;padding:14px!important}.feedback-page .reviews .review-track>.review-slide{flex-basis:100%!important;width:100%!important}}
 </style></body></html>
