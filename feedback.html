@@ -742,23 +742,14 @@
 <div class="reference-layout">
 
 <section class="feedback-intro feedback-intro-premium" aria-labelledby="feedback-intro-heading">
- <div class="premium-intro-top">
-  <div class="premium-intro-copy"><span class="premium-eyebrow"><span class="premium-dot"></span> YOUR EXPERIENCE MATTERS</span><h2 id="feedback-intro-heading">A better learning experience <em>begins with you.</em></h2><p>Your perspective inspires meaningful improvements in teaching, resources and learner support.</p><a class="premium-intro-link" href="#feedbackFormAnchor">Tell us your story <span aria-hidden="true">↗</span></a></div>
-  <div class="premium-intro-art" aria-hidden="true"><div class="premium-art-halo"></div><div class="premium-art-quote">“</div><div class="premium-art-line"></div><div class="premium-art-word">Every voice<br>makes a difference.</div><div class="premium-art-stars">★★★★★</div></div>
- </div>
- <div class="premium-intro-bottom">
-  <div class="premium-feature"><span class="premium-feature-icon">✦</span><div><strong>Share your experience</strong><small>What made a difference?</small></div></div>
-  <div class="premium-feature"><span class="premium-feature-icon">◇</span><div><strong>Suggest new ideas</strong><small>Help shape what comes next</small></div></div>
-  <div class="premium-feature"><span class="premium-feature-icon">↗</span><div><strong>Help us improve</strong><small>Better learning, together</small></div></div>
-  <div class="premium-feature"><span class="premium-feature-icon">♡</span><div><strong>Support every learner</strong><small>Your feedback has an impact</small></div></div>
- </div>
-</section>
+<div class="premium-intro-top"><div class="premium-intro-copy"><span class="premium-eyebrow">YOUR EXPERIENCE MATTERS</span><h2 id="feedback-intro-heading">A better learning experience <em>begins with you.</em></h2><p>Share what worked, suggest what could improve, and help us create a stronger learning experience for every learner.</p></div><div class="premium-intro-art" aria-hidden="true"><span class="intro-art-label">EVERY VOICE HELPS US GROW</span><span class="intro-art-stars">★★★★★</span></div></div>
+<div class="premium-intro-bottom"><a href="#feedbackFormAnchor" class="premium-feature"><span class="premium-feature-icon">✦</span><div><strong>Share Your Experience</strong><small>Tell us what worked well</small></div><span>→</span></a><a href="#feedbackFormAnchor" class="premium-feature"><span class="premium-feature-icon">✧</span><div><strong>Suggest New Ideas</strong><small>Share what you would value next</small></div><span>→</span></a><a href="#feedbackFormAnchor" class="premium-feature"><span class="premium-feature-icon">▥</span><div><strong>Help Us Improve</strong><small>Strengthen teaching and resources</small></div><span>→</span></a><a href="#feedbackFormAnchor" class="premium-feature"><span class="premium-feature-icon">♥</span><div><strong>Support Learner Success</strong><small>Help shape better learner support</small></div><span>→</span></a></div></section>
 
 
 
 <section class="feedback-workspace">
   <div class="workspace-visual" aria-label="Why feedback matters">
-    <div class="visual-copy"><span>YOUR VOICE MATTERS</span><h3>Better learning<br>starts with <em>listening.</em></h3><p>Tell us what you loved and what we can improve.</p><div class="visual-benefits"><span>✓ Thoughtful teaching</span><span>✓ Useful resources</span><span>✓ Personal support</span></div></div>
+    <div class="visual-copy"><span>YOUR VOICE MATTERS</span><h3>Better Learning<br><em>Together</em></h3><p>Tell us what you loved and what we can improve.</p><div class="visual-benefits"><span>✓ Thoughtful teaching</span><span>✓ Useful resources</span><span>✓ Personal support</span></div></div>
     
   </div>
   <form id="feedbackFormAnchor" class="feedback-form">
@@ -973,4 +964,59 @@ form.addEventListener('submit',async e=>{e.preventDefault();const button=form.qu
 .feedback-page .feedback-intro-premium .premium-feature small{display:block!important;color:#736758!important;font:400 11px/1.3 Arial,sans-serif!important}
 @media(max-width:850px){.feedback-page .feedback-intro-premium .premium-intro-top{grid-template-columns:1fr!important}.feedback-page .feedback-intro-premium .premium-intro-art{display:none!important}.feedback-page .feedback-intro-premium .premium-intro-bottom{grid-template-columns:repeat(2,minmax(0,1fr))!important}.feedback-page .feedback-intro-premium .premium-feature:nth-child(2){border-right:0!important}}
 @media(max-width:520px){.feedback-page .feedback-intro-premium .premium-intro-copy{padding:26px 22px!important}.feedback-page .feedback-intro-premium .premium-intro-bottom{grid-template-columns:1fr!important}.feedback-page .feedback-intro-premium .premium-feature{border-right:0!important;border-bottom:1px solid #e0d4c0!important}}
+</style><style id="approved-feedback-redesign">
+/* Scoped redesign. Site header, footer and original banner remain untouched. */
+.feedback-page{background:#fbf6ed!important}
+.reference-layout{width:min(1180px,calc(100% - 36px))!important;margin:24px auto 0!important;background:transparent!important;box-shadow:none!important}
+.feedback-intro-premium{margin:0 0 16px!important;padding:0!important;border:1px solid #e6c989!important;border-radius:20px!important;background:#fffaf1!important;overflow:hidden!important;text-align:left!important;box-shadow:0 10px 35px rgba(46,31,9,.08)!important}
+.feedback-intro-premium:before,.feedback-intro-premium:after,.premium-intro-art:before,.premium-intro-art:after{display:none!important}
+.premium-intro-top{display:grid!important;grid-template-columns:1.65fr 1fr!important;min-height:215px!important;background:linear-gradient(110deg,#0c0b09 0%,#17120a 66%,#322009 100%)!important}
+.premium-intro-copy{padding:32px 42px!important;max-width:none!important}
+.premium-eyebrow{display:block!important;color:#eac15e!important;font:800 12px/1.3 Arial,sans-serif!important;letter-spacing:2px!important}
+.premium-intro-copy h2{max-width:700px!important;margin:13px 0 12px!important;color:#fff9ec!important;font:700 clamp(29px,3.2vw,46px)/1.09 Georgia,serif!important;letter-spacing:-.7px!important}
+.premium-intro-copy h2 em{color:#edbd51!important;font-style:italic!important}
+.premium-intro-copy p{max-width:600px!important;margin:0!important;color:#f2e7d2!important;font:15px/1.6 Arial,sans-serif!important}
+.premium-intro-art{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:20px!important;background:radial-gradient(circle at 65% 50%,#49330f,#19150e 65%)!important;border-left:1px solid rgba(231,187,83,.3)!important;min-height:200px!important}
+.intro-art-label{max-width:200px!important;color:#fff1cc!important;text-align:center!important;font:italic 700 24px/1.35 Georgia,serif!important;letter-spacing:0!important}
+.intro-art-stars{color:#edbd51!important;letter-spacing:7px!important;font-size:19px!important}
+.premium-intro-bottom{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;padding:0!important;gap:0!important;background:#fff7e8!important;border-top:1px solid #e6c989!important}
+.premium-feature{display:flex!important;align-items:center!important;gap:12px!important;padding:18px 14px!important;min-width:0!important;text-decoration:none!important;border-right:1px solid #e7d7b7!important;background:transparent!important;color:#1d1a16!important}
+.premium-feature:last-child{border-right:0!important}
+.premium-feature-icon{display:grid!important;place-items:center!important;flex:0 0 39px!important;width:39px!important;height:39px!important;border-radius:50%!important;background:#f4d58e!important;color:#16130b!important;font:700 20px Arial!important}
+.premium-feature div{min-width:0!important;flex:1!important}
+.premium-feature strong{display:block!important;color:#191713!important;font:700 13px/1.3 Arial!important}
+.premium-feature small{display:block!important;color:#6d5b42!important;font:11px/1.45 Arial!important;margin-top:4px!important}
+.premium-feature>span:last-child{color:#b78119!important;font:700 18px Arial!important}
+.feedback-workspace{display:grid!important;grid-template-columns:38% 62%!important;margin:0 0 20px!important;border:1px solid #e4c58a!important;border-radius:20px!important;overflow:hidden!important;background:#fffaf3!important;box-shadow:0 12px 35px rgba(33,24,12,.07)!important}
+.workspace-visual{min-height:440px!important;background:linear-gradient(160deg,rgba(0,0,0,.84),rgba(0,0,0,.25)),url("https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1000") center/cover no-repeat!important}
+.workspace-visual:before{background:linear-gradient(180deg,rgba(0,0,0,.3),rgba(0,0,0,.68))!important}
+.visual-copy{top:34px!important;left:32px!important;right:28px!important}
+.visual-copy h3{font:700 clamp(29px,3vw,42px)/1.08 Georgia,serif!important;margin:16px 0!important}
+.visual-copy p{font:14px/1.55 Arial!important}
+.visual-benefits{display:flex!important;flex-wrap:wrap!important;gap:8px!important;margin-top:20px!important}
+.visual-benefits span{color:#fff1cb!important;font:700 11px Arial!important}
+.feedback-form{padding:24px 30px 19px!important;background:#fffaf3!important}
+.feedback-form h2{font:700 clamp(25px,2.6vw,33px)/1.12 Georgia,serif!important;color:#17130d!important}
+.feedback-form>p{font:13px/1.5 Arial!important;color:#655a49!important;margin:7px 0 13px!important}
+.fields{gap:11px 14px!important}
+.feedback-form label{font:700 12px/1.4 Arial!important;color:#201c16!important}
+.feedback-form input:not([type=file]),.feedback-form select,.feedback-form textarea{width:100%!important;min-height:42px!important;border:1px solid #dacbb2!important;border-radius:9px!important;background:#fff!important;color:#181818!important;padding:10px 12px!important;font:13px Arial!important}
+.feedback-form textarea{min-height:75px!important;resize:vertical!important}
+.attachments{display:grid!important;grid-template-columns:1fr 1fr!important;gap:12px!important}
+.attachment{padding:11px!important;border:1px solid #e4c58a!important;border-radius:11px!important;background:#fff!important;min-width:0!important}
+.attachment b{font:700 12px Arial!important;color:#16120a!important}.attachment small{font:11px Arial!important;color:#635847!important}
+.feedback-form .submit{min-height:43px!important;margin-top:13px!important;border-radius:9px!important;background:linear-gradient(90deg,#15110a,#c18a1b)!important;color:#fff!important;font:700 14px Arial!important}
+.reviews{margin:0 0 20px!important;padding:25px 28px!important;background:#fffaf3!important;border:1px solid #e4c58a!important;border-radius:20px!important}
+.review-window{overflow:hidden!important;width:100%!important}
+.review-track{display:flex!important;gap:16px!important;transition:transform .5s ease!important;align-items:stretch!important}
+.review-slide{flex:0 0 calc((100% - 32px)/3)!important;min-width:0!important;width:calc((100% - 32px)/3)!important}
+.review-card{min-height:220px!important;height:100%!important;padding:20px!important;border:1px solid #dfc58f!important;border-radius:15px!important;background:#17140f!important;color:#fff!important;box-shadow:none!important;overflow:hidden!important;display:flex!important;flex-direction:column!important;gap:12px!important}
+.review-identity{display:flex!important;flex-direction:column!important;gap:5px!important}
+.review-identity strong{display:block!important;color:#fff9ec!important;-webkit-text-fill-color:#fff9ec!important;opacity:1!important;font:700 18px/1.3 Arial!important}
+.review-identity small{display:block!important;color:#e9c77c!important;-webkit-text-fill-color:#e9c77c!important;font:12px/1.4 Arial!important}
+.review-card .stars{color:#f5bf42!important;font:20px Arial!important;letter-spacing:2px!important}
+.review-card .review-text{color:#f8f3ea!important;-webkit-text-fill-color:#f8f3ea!important;font:14px/1.6 Arial,sans-serif!important;overflow-wrap:anywhere!important;flex:1!important}
+.review-card .review-actions{color:#f2c461!important;font:700 12px Arial!important;margin-top:auto!important}
+@media(max-width:900px){.premium-intro-top{grid-template-columns:1fr!important}.premium-intro-art{display:none!important}.premium-intro-bottom{grid-template-columns:repeat(2,minmax(0,1fr))!important}.feedback-workspace{grid-template-columns:1fr!important}.workspace-visual{min-height:230px!important}.review-slide{flex-basis:calc((100% - 16px)/2)!important;width:calc((100% - 16px)/2)!important}}
+@media(max-width:620px){.reference-layout{width:calc(100% - 20px)!important}.premium-intro-copy{padding:24px!important}.premium-intro-bottom{grid-template-columns:1fr!important}.premium-feature{padding:12px 16px!important}.feedback-form{padding:20px!important}.fields,.attachments{grid-template-columns:1fr!important}.review-slide{flex-basis:100%!important;width:100%!important}.reviews{padding:20px 14px!important}}
 </style></body></html>
