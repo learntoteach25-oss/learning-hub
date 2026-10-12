@@ -1711,3 +1711,70 @@ main button,main input,main select,main textarea{font-size:inherit}
   cursor:not-allowed!important;
 }
 .exam-view .exam-card .exam-component-go{margin-top:0!important;}
+
+
+/* Academic programmes: consistent hero geometry for overview and subject groups. */
+.programmes-view .programmes-hero,
+.programme-group-view .programme-group-hero{
+  position:relative!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  height:300px!important;
+  min-height:300px!important;
+  max-height:300px!important;
+  padding:0!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background-size:cover!important;
+  background-repeat:no-repeat!important;
+  background-position:center 48%!important;
+  overflow:hidden!important;
+}
+.programmes-view .programmes-hero .programmes-hero-copy,
+.programme-group-view .programme-group-hero .programme-hero-copy{
+  box-sizing:border-box!important;
+  width:min(980px,calc(100% - 64px))!important;
+  margin:0 auto!important;
+  padding:0 0 0!important;
+  text-align:center!important;
+}
+.programmes-view .programmes-hero h1,
+.programme-group-view .programme-group-hero h1{
+  font-size:clamp(32px,4vw,52px)!important;
+  line-height:1.12!important;
+  margin:12px auto!important;
+  max-width:940px!important;
+}
+.programmes-view .programmes-hero p,
+.programme-group-view .programme-group-hero p{
+  margin:0 auto!important;
+  max-width:800px!important;
+}
+.programme-group-view .programme-group-hero .inline-back{
+  position:absolute!important;
+  top:18px!important;
+  left:28px!important;
+  z-index:2!important;
+}
+@media(max-width:700px){
+  .programmes-view .programmes-hero,
+  .programme-group-view .programme-group-hero{
+    height:300px!important;
+    min-height:300px!important;
+    max-height:300px!important;
+  }
+  .programmes-view .programmes-hero .programmes-hero-copy,
+  .programme-group-view .programme-group-hero .programme-hero-copy{
+    width:calc(100% - 32px)!important;
+    padding-top:36px!important;
+  }
+  .programmes-view .programmes-hero h1,
+  .programme-group-view .programme-group-hero h1{
+    font-size:clamp(27px,7vw,38px)!important;
+  }
+  .programme-group-view .programme-group-hero .inline-back{
+    top:12px!important;
+    left:12px!important;
+  }
+}
