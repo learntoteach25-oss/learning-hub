@@ -1676,3 +1676,38 @@ main button,main input,main select,main textarea{font-size:inherit}
 .catalogue .catalogue-card .card-overlay{background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.32) 35%,rgba(0,0,0,.88) 100%)!important}
 .catalogue .catalogue-card .card-content b{width:33px!important;height:33px!important;margin-top:11px!important}
 @media(max-width:700px){.catalogue{padding:25px 16px 20px!important}.catalogue-heading p{font-size:14px!important}.catalogue .catalogue-card{height:220px!important;min-height:220px!important}.catalogue .catalogue-card .card-content small{font-size:12px!important}}
+
+
+/* Exam pathway selectors: consistent premium field spacing and sizing. */
+.exam-view .exam-card .exam-track-select,
+.exam-view .exam-card .exam-component-select{
+  display:block!important;
+  box-sizing:border-box!important;
+  width:100%!important;
+  height:45px!important;
+  min-height:45px!important;
+  padding:0 38px 0 14px!important;
+  margin:0 0 14px!important;
+  border:1px solid #c99a3b!important;
+  border-radius:8px!important;
+  background:#fff!important;
+  color:#18130a!important;
+  font:600 13px Arial,sans-serif!important;
+  line-height:normal!important;
+  cursor:pointer!important;
+}
+.exam-view .exam-card .exam-component-label{
+  display:block!important;
+  width:100%!important;
+  min-height:0!important;
+  margin:0 0 8px!important;
+  color:#8b5d16!important;
+  font:700 11px/1.4 Arial,sans-serif!important;
+}
+.exam-view .exam-card .exam-track-select:disabled,
+.exam-view .exam-card .exam-component-select:disabled{
+  color:#716a60!important;
+  background:#f8f4ec!important;
+  cursor:not-allowed!important;
+}
+.exam-view .exam-card .exam-component-go{margin-top:0!important;}
