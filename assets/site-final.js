@@ -3,7 +3,7 @@
 function loadSharedShell(){
   if(document.querySelector('script[data-lh-shared-shell]'))return;
   const s=document.createElement('script');
-  s.src='assets/site-shell.js?v=20261104-clean-footer-v1';
+  s.src='assets/site-shell.js?v=20261104-header-help-menu-v1';
   s.dataset.lhSharedShell='1';
   document.head.appendChild(s);
 }
