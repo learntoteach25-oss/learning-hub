@@ -1780,18 +1780,38 @@ main button,main input,main select,main textarea{font-size:inherit}
 }
 
 
-/* Learning Hub shared footer — single clean implementation */
-.site-footer.lh-footer-clean{box-sizing:border-box!important;display:block!important;width:min(1160px,calc(100% - 40px))!important;max-width:1160px!important;min-height:0!important;height:auto!important;margin:0 auto!important;padding:12px 20px 13px!important;background:#080808!important;color:#eee7dc!important;border:0!important;box-shadow:none!important}
-.site-footer.lh-footer-clean .lhfc-inner{box-sizing:border-box!important;width:100%!important;max-width:1120px!important;margin:0 auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:6px!important;text-align:center!important}
-.site-footer.lh-footer-clean .lhfc-nav{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:6px 22px!important;width:100%!important;margin:0!important;padding:0!important}
-.site-footer.lh-footer-clean .lhfc-nav a{display:inline-block!important;margin:0!important;padding:0!important;color:#f0e8dc!important;font:600 12px/1.4 Arial,sans-serif!important;text-decoration:none!important;white-space:nowrap!important}
-.site-footer.lh-footer-clean .lhfc-nav a:hover{color:#e8be70!important}
-.site-footer.lh-footer-clean .lhfc-contact{display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:center!important;gap:5px 22px!important;width:100%!important;margin:0!important;padding:0!important;white-space:nowrap!important}
-.site-footer.lh-footer-clean .lhfc-contact span{display:inline-flex!important;flex-direction:row!important;align-items:center!important;gap:5px!important;color:#ded5c9!important;font:400 11px/1.4 Arial,sans-serif!important;white-space:nowrap!important}
-.site-footer.lh-footer-clean .lhfc-contact strong{color:#e9c779!important;font:600 11px/1.4 Arial,sans-serif!important}
-.site-footer.lh-footer-clean .lhfc-contact a{color:#ded5c9!important;text-decoration:none!important;font:400 11px/1.4 Arial,sans-serif!important;white-space:nowrap!important}
+/* Learning Hub shared footer — full-bleed, compact layout */
+.site-footer.lh-footer-clean{
+ box-sizing:border-box!important;display:block!important;
+ width:100%!important;max-width:none!important;min-width:0!important;
+ min-height:0!important;height:auto!important;margin:0!important;
+ padding:12px 24px 13px!important;background:#080808!important;
+ color:#eee7dc!important;border:0!important;border-top:1px solid rgba(201,161,81,.45)!important;
+ box-shadow:none!important;position:relative!important;left:auto!important;right:auto!important;
+}
+.site-footer.lh-footer-clean .lhfc-inner{
+ box-sizing:border-box!important;width:100%!important;max-width:1200px!important;
+ margin:0 auto!important;display:flex!important;flex-direction:column!important;
+ align-items:center!important;gap:6px!important;text-align:center!important;
+}
+.site-footer.lh-footer-clean .lhfc-contact{
+ display:flex!important;flex-direction:row!important;flex-wrap:nowrap!important;
+ align-items:center!important;justify-content:center!important;gap:5px 28px!important;
+ width:100%!important;margin:0!important;padding:0!important;white-space:nowrap!important;
+}
+.site-footer.lh-footer-clean .lhfc-contact span{
+ display:inline-flex!important;flex-direction:row!important;align-items:center!important;
+ gap:5px!important;color:#ded5c9!important;font:400 11px/1.45 Arial,sans-serif!important;white-space:nowrap!important;
+}
+.site-footer.lh-footer-clean .lhfc-contact strong{color:#e9c779!important;font:700 11px/1.45 Arial,sans-serif!important}
+.site-footer.lh-footer-clean .lhfc-contact a{color:#ded5c9!important;text-decoration:none!important;font:400 11px/1.45 Arial,sans-serif!important;white-space:nowrap!important}
 .site-footer.lh-footer-clean .lhfc-contact a:hover{color:#f0cf83!important;text-decoration:underline!important}
 .site-footer.lh-footer-clean .lhfc-company{color:#e9c779!important;font:600 14px/1.35 Georgia,serif!important;margin:0!important;padding:0!important}
 .site-footer.lh-footer-clean .lhfc-address{color:#cfc5b5!important;font:400 10px/1.4 Arial,sans-serif!important;margin:0!important;padding:0!important}
 .site-footer.lh-footer-clean .lhfc-address span{color:#8e826f!important;padding:0 5px!important}
-@media(max-width:760px){.site-footer.lh-footer-clean{width:100%!important;padding:12px 12px 14px!important}.site-footer.lh-footer-clean .lhfc-nav{flex-wrap:wrap!important;gap:7px 14px!important}.site-footer.lh-footer-clean .lhfc-contact{flex-wrap:wrap!important;gap:6px 14px!important;white-space:normal!important}.site-footer.lh-footer-clean .lhfc-company{font-size:13px!important}.site-footer.lh-footer-clean .lhfc-address{max-width:100%!important}}
+@media(max-width:760px){
+ .site-footer.lh-footer-clean{width:100%!important;padding:12px 14px 14px!important}
+ .site-footer.lh-footer-clean .lhfc-contact{flex-wrap:wrap!important;gap:7px 16px!important;white-space:normal!important}
+ .site-footer.lh-footer-clean .lhfc-company{font-size:13px!important}
+ .site-footer.lh-footer-clean .lhfc-address{max-width:100%!important}
+}
