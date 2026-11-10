@@ -1815,3 +1815,9 @@ main button,main input,main select,main textarea{font-size:inherit}
  .site-footer.lh-footer-clean .lhfc-company{font-size:13px!important}
  .site-footer.lh-footer-clean .lhfc-address{max-width:100%!important}
 }
+
+/* Compact, accessible policy links in the shared footer. */
+.site-footer.lh-footer-clean .lhfc-policies{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:center!important;gap:6px 22px!important;width:100%!important;margin:2px 0!important;padding:0!important}
+.site-footer.lh-footer-clean .lhfc-policies a{color:#e9c779!important;font:600 11px/1.5 Arial,sans-serif!important;text-decoration:none!important;white-space:nowrap!important}
+.site-footer.lh-footer-clean .lhfc-policies a:hover{color:#fff!important;text-decoration:underline!important}
+@media(max-width:760px){.site-footer.lh-footer-clean .lhfc-policies{gap:8px 14px!important}}
