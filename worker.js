@@ -60,7 +60,7 @@ export default {
 
         // Safepay's optional customer-prefill step. The returned customer token
         // is attached to both the payment tracker and hosted checkout URL.
-        const nameParts = customerName.trim().split(/\\s+/);
+        const nameParts = customerName.trim().split(/\s+/);
         const firstName = nameParts.shift() || customerName;
         const lastName = nameParts.join(" ") || firstName;
         const apiBase = "https://sandbox.api.getsafepay.com";
