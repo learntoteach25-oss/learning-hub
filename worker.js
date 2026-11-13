@@ -150,6 +150,46 @@ export default {
       }
     }
 
+    if (url.pathname === "/api/safepay/webhook" && request.method === "POST") {
+      const webhookSecret = env.SAFEPAY_WEBHOOK_SECRET;
+      if (!webhookSecret) return json({ error: "Webhook secret is not configured." }, 503);
+      try {
+        const rawBody = await request.text();
+        const supplied = request.headers.get("X-SFPY-SIGNATURE") || "";
+        const key = await crypto.subtle.importKey(
+          "raw",
+          new TextEncoder().encode(webhookSecret),
+          { name: "HMAC", hash: "SHA-512" },
+          false,
+          ["sign"]
+        );
+        const digest = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(rawBody));
+        const expected = Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, "0")).join("");
+        const received = supplied.replace(/^sha512=/i, "").trim().toLowerCase();
+        if (!received || received.length !== expected.length) return json({ error: "Invalid webhook signature." }, 401);
+        let mismatch = 0;
+        for (let i = 0; i < expected.length; i++) mismatch |= expected.charCodeAt(i) ^ received.charCodeAt(i);
+        if (mismatch !== 0) return json({ error: "Invalid webhook signature." }, 401);
+        const event = JSON.parse(rawBody);
+        const eventType = String(event?.type || "");
+        const tracker = String(event?.data?.tracker || "");
+        if (eventType === "payment.succeeded" || eventType === "payment.failed" || eventType === "payment.refunded") {
+          console.log("Safepay webhook received", JSON.stringify({
+            token: event?.token || null,
+            type: eventType,
+            tracker,
+            state: event?.data?.state || null,
+            order_id: event?.data?.metadata?.order_id || null
+          }));
+        } else {
+          console.log("Safepay webhook received", JSON.stringify({ token: event?.token || null, type: eventType }));
+        }
+        return json({ received: true });
+      } catch (error) {
+        return json({ error: "Invalid webhook payload." }, 400);
+      }
+    }
+
     if (url.pathname === "/api/safepay/status" && request.method === "GET") {
       const secret = env.SAFEPAY_SECRET_KEY;
       const tracker = String(url.searchParams.get("tracker") || "");
