@@ -105,7 +105,7 @@ export default {
             entry_mode: "raw",
             currency: "PKR",
             amount,
-            metadata: { order_id: orderId, description, customer_name: customerName, customer_email: email, customer_mobile: mobile },
+            metadata: { order_id: orderId },
             include_fees: false
           })
         });
