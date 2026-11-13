@@ -17,8 +17,8 @@ export default {
         const customerName = String(body.name || "").trim();
         const kind = String(body.kind || "lesson");
         if (!customerName || customerName.length > 120 ||
-            !/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email) || email.length > 254 ||
-            !/^[+0-9()\\s-]{7,24}$/.test(mobile)) {
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 254 ||
+            !/^[+0-9()\s-]{7,24}$/.test(mobile)) {
           return json({ error: "Please provide a valid customer name, email address and mobile number." }, 400);
         }
 
