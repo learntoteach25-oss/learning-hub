@@ -174,7 +174,8 @@ export default {
         const eventToken = String(event?.token || "");
         const eventType = String(event?.type || "");
         const tracker = String(event?.data?.tracker || "");
-        const supabaseUrl = String(env.SUPABASE_URL || "").replace(/\\/$/, "");
+        const supabaseUrlRaw = String(env.SUPABASE_URL || "");
+        const supabaseUrl = supabaseUrlRaw.endsWith("/") ? supabaseUrlRaw.slice(0, -1) : supabaseUrlRaw;
         const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY;
         if (!eventToken || !eventType) return json({ error: "Webhook event is missing its unique token or type." }, 400);
         if (!supabaseUrl || !supabaseKey) return json({ error: "Webhook database credentials are not configured." }, 503);
