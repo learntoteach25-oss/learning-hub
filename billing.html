@@ -30,7 +30,7 @@ async function startCheckout(kind){
  try{
   const response=await fetch('/api/safepay/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
   let result={};try{result=await response.json()}catch{}
-  if(!response.ok||!result.checkoutUrl)throw new Error(result.error||'Safepay could not create a checkout session.');
+  if(!response.ok||!result.checkoutUrl)throw new Error([result.error,result.details].filter(Boolean).join(' — ')||'Safepay could not create a checkout session.');
   const checkoutUrl=new URL(result.checkoutUrl,location.origin);
   if(checkoutUrl.protocol!=='https:')throw new Error('The gateway returned an invalid checkout address.');
   status.textContent='TEST checkout session created. Redirecting to Safepay secure checkout…';
