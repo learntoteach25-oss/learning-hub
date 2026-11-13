@@ -28,12 +28,12 @@ async function startCheckout(kind){
  const original=button.textContent;button.disabled=true;button.textContent='Connecting to secure checkout…';status.style.color='#65533a';status.textContent='Creating your secure TEST payment session. No charge is made unless the test gateway completes its test flow.';
  const payload=resource?{kind:'resource',name:$('resourceName').value.trim(),email:$('resourceEmail').value.trim(),mobile:$('resourcePhone').value.trim(),resourceType:$('resourceType').value,resourceLabel:$('resourceType').selectedOptions[0].textContent,storyTitle:$('storyTitle').value.trim(),subject:$('resourceSubject').value.trim(),curriculum:$('resourceBoard').value.trim(),level:$('resourceLevel').value.trim(),format:$('resourceFormat').value,amount}:{kind:'lesson',name:$('name').value.trim(),email:$('email').value.trim(),mobile:$('phone').value.trim(),course:$('sumCourse').textContent,duration:Number($('duration').value),plan:$('planSelect').value,lessonCount:$('planSelect').value==='demo'?1:$('planSelect').value==='monthly'?Number($('monthlyClassCount').value):Number($('classCount').value),amount};
  try{
-  const response=await fetch('/api/rapidpay/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+  const response=await fetch('/api/safepay/create-checkout',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
   let result={};try{result=await response.json()}catch{}
-  if(!response.ok||!result.checkoutUrl)throw new Error(result.error||'Rapid Gateway could not create a checkout session.');
+  if(!response.ok||!result.checkoutUrl)throw new Error(result.error||'Safepay could not create a checkout session.');
   const checkoutUrl=new URL(result.checkoutUrl,location.origin);
   if(checkoutUrl.protocol!=='https:')throw new Error('The gateway returned an invalid checkout address.');
-  status.textContent='TEST checkout session created. Redirecting to Rapid Gateway…';
+  status.textContent='TEST checkout session created. Redirecting to Safepay TEST checkout…';
   location.assign(checkoutUrl.href);
  }catch(error){status.style.color='#a32920';status.textContent=(error.message||'Unable to start checkout.')+' Please try again or contact support.';button.disabled=false;button.textContent=original}
 }
