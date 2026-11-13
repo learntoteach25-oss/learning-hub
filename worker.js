@@ -171,8 +171,33 @@ export default {
         for (let i = 0; i < expected.length; i++) mismatch |= expected.charCodeAt(i) ^ received.charCodeAt(i);
         if (mismatch !== 0) return json({ error: "Invalid webhook signature." }, 401);
         const event = JSON.parse(rawBody);
+        const eventToken = String(event?.token || "");
         const eventType = String(event?.type || "");
         const tracker = String(event?.data?.tracker || "");
+        const supabaseUrl = String(env.SUPABASE_URL || "").replace(/\\/$/, "");
+        const supabaseKey = env.SUPABASE_SERVICE_ROLE_KEY;
+        if (!eventToken || !eventType) return json({ error: "Webhook event is missing its unique token or type." }, 400);
+        if (!supabaseUrl || !supabaseKey) return json({ error: "Webhook database credentials are not configured." }, 503);
+        const storeResponse = await fetch(supabaseUrl + "/rest/v1/safepay_webhook_events", {
+          method: "POST",
+          headers: {
+            "apikey": supabaseKey,
+            "Authorization": "Bearer " + supabaseKey,
+            "Content-Type": "application/json",
+            "Prefer": "resolution=ignore-duplicates,return=minimal"
+          },
+          body: JSON.stringify({
+            event_token: eventToken,
+            event_type: eventType,
+            tracker: tracker || null,
+            order_id: event?.data?.metadata?.order_id || null,
+            payload: event
+          })
+        });
+        if (!storeResponse.ok) {
+          console.error("Safepay webhook storage failed", storeResponse.status);
+          return json({ error: "Could not store webhook event." }, 500);
+        }
         if (eventType === "payment.succeeded" || eventType === "payment.failed" || eventType === "payment.refunded") {
           console.log("Safepay webhook received", JSON.stringify({
             token: event?.token || null,
