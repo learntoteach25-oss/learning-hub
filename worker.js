@@ -58,20 +58,48 @@ export default {
           return json({ error: "Unsupported checkout type." }, 400);
         }
 
-        // Safepay expects the amount in the currency's lowest denomination (PKR paisa).
-        const amount = Math.round(amountPkr * 100);
-        const orderId = "LH-" + Date.now() + "-" + crypto.randomUUID().replace(/-/g, "").slice(0, 8);
+        // Safepay's optional customer-prefill step. The returned customer token
+        // is attached to both the payment tracker and hosted checkout URL.
+        const nameParts = customerName.trim().split(/\\s+/);
+        const firstName = nameParts.shift() || customerName;
+        const lastName = nameParts.join(" ") || firstName;
         const apiBase = "https://sandbox.api.getsafepay.com";
         const headers = {
           "X-SFPY-MERCHANT-SECRET": secret,
           "Content-Type": "application/json"
         };
+        const customerResponse = await fetch(apiBase + "/user/customers/v1/", {
+          method: "POST",
+          headers,
+          body: JSON.stringify({
+            first_name: firstName,
+            last_name: lastName,
+            email,
+            phone_number: mobile,
+            country: "PK",
+            is_guest: true
+          })
+        });
+        const customerText = await customerResponse.text();
+        let customerData;
+        try { customerData = JSON.parse(customerText); } catch {
+          return json({ error: "Safepay returned an unreadable customer response." }, 502);
+        }
+        const customerToken = customerData?.data?.token;
+        if (!customerResponse.ok || !customerToken || customerData?.status?.message !== "success") {
+          return json({ error: "Safepay could not create the customer profile.", details: customerData?.status?.errors || customerData?.message || "Request failed." }, 502);
+        }
+
+        // Safepay expects the amount in the currency's lowest denomination (PKR paisa).
+        const amount = Math.round(amountPkr * 100);
+        const orderId = "LH-" + Date.now() + "-" + crypto.randomUUID().replace(/-/g, "").slice(0, 8);
 
         const trackerResponse = await fetch(apiBase + "/order/payments/v3/", {
           method: "POST",
           headers,
           body: JSON.stringify({
             merchant_api_key: merchantApiKey,
+            user: customerToken,
             intent: "CYBERSOURCE",
             mode: "payment",
             entry_mode: "raw",
@@ -110,6 +138,7 @@ export default {
           tracker,
           tbt,
           source: "hosted",
+          user_id: customerToken,
           order_id: orderId,
           redirect_url: "https://learninghubtutoring.com/order/complete",
           cancel_url: "https://learninghubtutoring.com/order/cancel"
