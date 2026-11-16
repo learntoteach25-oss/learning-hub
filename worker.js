@@ -289,6 +289,51 @@ export default {
       }
     }
 
+    if (url.pathname === "/billing.html" && request.method === "GET") {
+      const assetResponse = await env.ASSETS.fetch(request);
+      const checkoutEnhancement = `<script>
+(() => {
+  const addAccountNotice = (buttonId, marker) => {
+    const button = document.getElementById(buttonId);
+    if (!button || document.querySelector('[data-lh-account-link="' + marker + '"]')) return;
+    const note = document.createElement("p");
+    note.className = "account-note";
+    note.dataset.lhAccountLink = marker;
+    note.style.cssText = "font-size:12px;line-height:1.5;color:#6a6052;margin:10px 0";
+    note.textContent = "Your email links this order to your Learning Hub student record. If you are new, a student profile is created for order management; you can set a password later using Forgot Password.";
+    button.before(note);
+  };
+  const enhance = () => {
+    addAccountNotice("sendInquiry", "lesson");
+    addAccountNotice("sendResource", "resource");
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", enhance);
+  else enhance();
+
+  const originalFetch = window.fetch.bind(window);
+  window.fetch = async (input, init) => {
+    const target = typeof input === "string" ? input : (input && input.url) || "";
+    if (target.includes("/api/safepay/create-checkout") && init && typeof init.body === "string") {
+      try {
+        const payload = JSON.parse(init.body);
+        if (payload.kind === "lesson") {
+          payload.guardian = document.getElementById("guardian")?.value?.trim() || "";
+          payload.notes = document.getElementById("notes")?.value?.trim() || "";
+        } else if (payload.kind === "resource") {
+          payload.notes = document.getElementById("resourceNotes")?.value?.trim() || "";
+        }
+        init = { ...init, body: JSON.stringify(payload) };
+      } catch (_) {}
+    }
+    return originalFetch(input, init);
+  };
+})();
+</script>`;
+      return new HTMLRewriter()
+        .on("body", { element(element) { element.append(checkoutEnhancement, { html: true }); } })
+        .transform(assetResponse);
+    }
+
     if (url.pathname === "/order/complete") {
       return new Response(`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Payment status | Learning Hub</title><style>body{font:16px Arial;background:#f7f1e7;color:#211b12;display:grid;place-items:center;min-height:100vh;margin:0}.card{background:#fffdfa;border:1px solid #e4d2ae;border-radius:18px;padding:32px;max-width:520px;margin:20px;text-align:center}h1{font:700 28px Georgia;color:#8b6726}p{line-height:1.6}</style><main class="card"><h1>Checking your payment</h1><p id="message">Please wait while we verify your Safepay payment securely.</p><p><a href="/billing.html">Return to Learning Hub</a></p></main><script>const tracker=new URLSearchParams(location.search).get("tracker");const msg=document.getElementById("message");if(!tracker){msg.textContent="Your return was received, but no payment reference was provided. Please contact Learning Hub support."; }else{fetch("/api/safepay/status?tracker="+encodeURIComponent(tracker)).then(r=>r.json()).then(d=>{msg.textContent=d.paid?"Payment completed successfully. Thank you for choosing Learning Hub.":"Payment status: "+(d.state||"Pending")+". If you completed payment, please allow time for confirmation or contact support.";}).catch(()=>msg.textContent="We could not verify the payment just now. Please contact Learning Hub support before retrying.");}</script></html>`, { headers: { "Content-Type": "text/html; charset=UTF-8", "Cache-Control": "no-store" } });
     }
