@@ -58,6 +58,8 @@ export default {
           return json({ error: "Unsupported checkout type." }, 400);
         }
 
+        const studentId = await ensureStudentProfile(env, email, customerName);
+
         // Safepay's optional customer-prefill step. The returned customer token
         // is attached to both the payment tracker and hosted checkout URL.
         const nameParts = customerName.trim().split(/\s+/);
@@ -140,11 +142,50 @@ export default {
           source: "hosted",
           user_id: customerToken,
           order_id: orderId,
-          redirect_url: "https://learninghubtutoring.com/order/complete",
-          cancel_url: "https://learninghubtutoring.com/order/cancel"
+          redirect_url: "https://learninghubtutoring.com/order/complete?tracker=" + tracker,
+          cancel_url: "https://learninghubtutoring.com/order/cancel?tracker=" + tracker
         });
+        const orderType = kind === "lesson" ? "class" : "resource";
+        const inquiry = kind === "lesson" ? {
+          subject: String(body.course || "").trim(),
+          curriculum: "",
+          requirement_summary: [
+            body.guardian ? "Parent/guardian: " + String(body.guardian).trim() : "",
+            body.notes ? "Learning requirements: " + String(body.notes).trim() : "",
+            "Booking plan: " + String(body.plan || ""),
+            "Lesson count: " + String(body.lessonCount || 1),
+            "Lesson duration: " + (Number(body.plan === "demo" ? 30 : body.duration === 1000 ? 25 : 50)) + " minutes",
+            "Rate/total payable: PKR " + amountPkr
+          ].filter(Boolean).join("\\n"),
+          preferred_days: "",
+          lesson_duration_minutes: body.plan === "demo" ? 30 : (Number(body.duration) === 1000 ? 25 : 50),
+          lessons_count: Number(body.lessonCount || 1),
+          package: String(body.plan || ""),
+          budget: "PKR " + amountPkr
+        } : null;
+        const studentRemark = kind === "resource"
+          ? [
+              "Resource type: " + String(body.resourceLabel || body.resourceType || "Digital resource"),
+              body.storyTitle ? "Story title: " + String(body.storyTitle) : "",
+              body.subject ? "Subject: " + String(body.subject) : "",
+              body.curriculum ? "Curriculum: " + String(body.curriculum) : "",
+              body.level ? "Level: " + String(body.level) : "",
+              body.format ? "Format: " + String(body.format) : "",
+              body.notes ? "Requirements: " + String(body.notes) : ""
+            ].filter(Boolean).join("\\n")
+          : null;
+        const records = await createCheckoutRecords(env, {
+          studentId, orderId, amount: amountPkr, description, orderType, inquiry, studentRemark
+        });
+        await saveSafepayTracker(env, records.payment_id, tracker);
+
         const checkoutUrl = "https://sandbox.api.getsafepay.com/embedded/?" + checkoutParams.toString();
-        return json({ success: true, checkoutUrl, orderId, tracker, amount: amountPkr, currency: "PKR", status: "pending", description });
+        return json({
+          success: true, checkoutUrl, orderId, tracker, amount: amountPkr, currency: "PKR",
+          status: "pending", description, inquiryId: records.inquiry_id,
+          paymentId: records.payment_id, invoiceId: records.invoice_id,
+          serviceOrderId: records.service_order_id
+        });
       } catch (error) {
         return json({ error: "Server error while creating Safepay checkout.", details: String(error?.message || error) }, 500);
       }
@@ -200,6 +241,14 @@ export default {
           return json({ error: "Could not store webhook event." }, 500);
         }
         if (eventType === "payment.succeeded" || eventType === "payment.failed" || eventType === "payment.refunded") {
+          if (tracker && eventType === "payment.succeeded") {
+            const verifiedPaid = await verifySafepayPaid(env, tracker);
+            if (verifiedPaid) await updatePaymentRecords(env, tracker, "paid");
+          } else if (tracker && eventType === "payment.failed") {
+            await updatePaymentRecords(env, tracker, "failed");
+          } else if (tracker && eventType === "payment.refunded") {
+            await updatePaymentRecords(env, tracker, "refunded");
+          }
           console.log("Safepay webhook received", JSON.stringify({
             token: event?.token || null,
             type: eventType,
@@ -228,7 +277,9 @@ export default {
         const data = await response.json();
         if (!response.ok) return json({ error: "Unable to retrieve Safepay payment status." }, 502);
         const state = data?.data?.tracker?.state || "UNKNOWN";
-        return json({ tracker, state, paid: state === "TRACKER_ENDED", status: data?.status?.message || "unknown" });
+        const paid = state === "TRACKER_ENDED";
+        if (paid) await updatePaymentRecords(env, tracker, "paid");
+        return json({ tracker, state, paid, status: data?.status?.message || "unknown" });
       } catch (error) {
         return json({ error: "Unable to verify the Safepay payment.", details: String(error?.message || error) }, 502);
       }
@@ -247,4 +298,167 @@ export default {
 };
 function json(data, status = 200) {
   return new Response(JSON.stringify(data), { status, headers: { "Content-Type": "application/json; charset=UTF-8", "Cache-Control": "no-store" } });
+}
+
+async function supabaseRequest(env, path, options = {}) {
+  const base = String(env.SUPABASE_URL || "").replace(/\\/$/, "");
+  const key = env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!base || !key) throw new Error("Supabase service credentials are not configured.");
+  return fetch(base + path, {
+    ...options,
+    headers: {
+      "apikey": key,
+      "Authorization": "Bearer " + key,
+      "Content-Type": "application/json",
+      ...(options.headers || {})
+    }
+  });
+}
+
+async function findAuthUserByEmail(env, email) {
+  const response = await supabaseRequest(env, "/auth/v1/admin/users?page=1&per_page=1000");
+  const data = await response.json();
+  if (!response.ok) throw new Error("Could not check the student account.");
+  const users = Array.isArray(data?.users) ? data.users : (Array.isArray(data?.data?.users) ? data.data.users : []);
+  return users.find(user => String(user.email || "").toLowerCase() === email.toLowerCase()) || null;
+}
+
+async function ensureStudentProfile(env, email, fullName) {
+  let user = await findAuthUserByEmail(env, email);
+  if (!user) {
+    const password = crypto.randomUUID() + crypto.randomUUID() + "Aa1!";
+    const createResponse = await supabaseRequest(env, "/auth/v1/admin/users", {
+      method: "POST",
+      body: JSON.stringify({
+        email,
+        password,
+        email_confirm: true,
+        user_metadata: {
+          full_name: fullName,
+          portal_role: "student",
+          guest_checkout: true,
+          account_source: "learning_hub_billing"
+        }
+      })
+    });
+    const created = await createResponse.json();
+    if (createResponse.ok) {
+      user = created?.user || created;
+    } else {
+      // A simultaneous checkout may have created the same email account.
+      user = await findAuthUserByEmail(env, email);
+      if (!user) throw new Error("Could not create or locate the student account.");
+    }
+  }
+  const userId = String(user?.id || "");
+  if (!userId) throw new Error("Student account ID is missing.");
+  const profileResponse = await supabaseRequest(
+    env,
+    "/rest/v1/profiles?id=eq." + encodeURIComponent(userId) + "&select=id,role,is_active"
+  );
+  const profiles = await profileResponse.json();
+  if (!profileResponse.ok || !Array.isArray(profiles) || profiles.length !== 1) {
+    throw new Error("The student profile could not be verified.");
+  }
+  if (profiles[0].role !== "student" || profiles[0].is_active !== true) {
+    throw new Error("This email belongs to an account that cannot be used for student checkout. Please use a student email.");
+  }
+  return userId;
+}
+
+async function createCheckoutRecords(env, input) {
+  const response = await supabaseRequest(env, "/rest/v1/rpc/create_safepay_checkout_records", {
+    method: "POST",
+    body: JSON.stringify({
+      p_student_id: input.studentId,
+      p_order_id: input.orderId,
+      p_amount: input.amount,
+      p_description: input.description,
+      p_order_type: input.orderType,
+      p_inquiry: input.inquiry,
+      p_student_remark: input.studentRemark
+    })
+  });
+  const result = await response.json();
+  if (!response.ok || !result?.payment_id || !result?.invoice_id || !result?.service_order_id) {
+    console.error("Learning Hub checkout record creation failed", response.status);
+    throw new Error("Learning Hub could not save the order records. Please contact support before retrying.");
+  }
+  return result;
+}
+
+async function saveSafepayTracker(env, paymentId, tracker) {
+  const response = await supabaseRequest(
+    env,
+    "/rest/v1/payments?id=eq." + encodeURIComponent(paymentId),
+    {
+      method: "PATCH",
+      headers: { "Prefer": "return=minimal" },
+      body: JSON.stringify({ provider_reference: tracker })
+    }
+  );
+  if (!response.ok) throw new Error("Learning Hub could not link the Safepay reference to the payment.");
+}
+
+async function verifySafepayPaid(env, tracker) {
+  const secret = env.SAFEPAY_SECRET_KEY;
+  if (!secret) return false;
+  const response = await fetch(
+    "https://sandbox.api.getsafepay.com/reporter/api/v1/payments/" + encodeURIComponent(tracker),
+    { headers: { "X-SFPY-MERCHANT-SECRET": secret } }
+  );
+  if (!response.ok) return false;
+  const data = await response.json();
+  return data?.data?.tracker?.state === "TRACKER_ENDED";
+}
+
+async function updatePaymentRecords(env, tracker, nextStatus) {
+  const lookup = await supabaseRequest(
+    env,
+    "/rest/v1/payments?provider_reference=eq." + encodeURIComponent(tracker) + "&select=id,status"
+  );
+  const payments = await lookup.json();
+  if (!lookup.ok || !Array.isArray(payments) || payments.length === 0) return false;
+  const payment = payments[0];
+  if (payment.status === "refunded") return true;
+  if (nextStatus === "failed" && payment.status !== "pending") return true;
+  if (nextStatus === "paid" && payment.status === "paid") return true;
+
+  const patch = { status: nextStatus, updated_at: new Date().toISOString() };
+  if (nextStatus === "paid") patch.paid_at = new Date().toISOString();
+  const paymentUpdate = await supabaseRequest(
+    env,
+    "/rest/v1/payments?id=eq." + encodeURIComponent(payment.id),
+    { method: "PATCH", headers: { "Prefer": "return=minimal" }, body: JSON.stringify(patch) }
+  );
+  if (!paymentUpdate.ok) throw new Error("Could not update the Learning Hub payment record.");
+
+  if (nextStatus === "paid") {
+    const orderUpdate = await supabaseRequest(
+      env,
+      "/rest/v1/service_orders?payment_id=eq." + encodeURIComponent(payment.id),
+      { method: "PATCH", headers: { "Prefer": "return=minimal" }, body: JSON.stringify({ status: "paid" }) }
+    );
+    if (!orderUpdate.ok) throw new Error("Could not update the Learning Hub service order.");
+  } else if (nextStatus === "refunded") {
+    const [invoiceUpdate, orderUpdate] = await Promise.all([
+      supabaseRequest(env, "/rest/v1/invoices?payment_id=eq." + encodeURIComponent(payment.id), {
+        method: "PATCH", headers: { "Prefer": "return=minimal" }, body: JSON.stringify({ status: "refunded" })
+      }),
+      supabaseRequest(env, "/rest/v1/service_orders?payment_id=eq." + encodeURIComponent(payment.id), {
+        method: "PATCH", headers: { "Prefer": "return=minimal" },
+        body: JSON.stringify({ status: "cancelled", admin_note: "Safepay payment refunded." })
+      })
+    ]);
+    if (!invoiceUpdate.ok || !orderUpdate.ok) throw new Error("Could not update the refunded order records.");
+  } else if (nextStatus === "failed") {
+    const orderUpdate = await supabaseRequest(
+      env,
+      "/rest/v1/service_orders?payment_id=eq." + encodeURIComponent(payment.id),
+      { method: "PATCH", headers: { "Prefer": "return=minimal" },
+        body: JSON.stringify({ admin_note: "Safepay reported a failed payment. Customer may retry checkout." }) }
+    );
+    if (!orderUpdate.ok) throw new Error("Could not update the failed order note.");
+  }
+  return true;
 }
