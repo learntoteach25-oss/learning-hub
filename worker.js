@@ -372,31 +372,19 @@ async function supabaseRequest(env, path, options = {}) {
 }
 
 async function createGuestCheckoutProfile(env, customerEmail, fullName) {
-  // A fresh internal identity is used only to satisfy the existing order schema.
-  // The customer's real email is stored with the order and sent to Safepay;
-  // it is never looked up as an application login or assigned a portal role.
-  const guestEmail = "checkout-" + crypto.randomUUID() + "@guest.learninghubtutoring.com";
-  const password = crypto.randomUUID() + crypto.randomUUID() + "Aa1!";
-  const createResponse = await supabaseRequest(env, "/auth/v1/admin/users", {
+  // Create an internal, non-login guest identity through a restricted
+  // service-role RPC. The customer's actual email is never used as an account.
+  const createResponse = await supabaseRequest(env, "/rest/v1/rpc/create_guest_checkout_identity", {
     method: "POST",
     body: JSON.stringify({
-      email: guestEmail,
-      password,
-      email_confirm: true,
-      user_metadata: {
-        full_name: fullName,
-        portal_role: "student",
-        guest_checkout: true,
-        customer_email: customerEmail,
-        account_source: "learning_hub_guest_checkout"
-      }
+      p_customer_email: customerEmail,
+      p_full_name: fullName
     })
   });
   const created = await createResponse.json();
-  const user = created?.user || created;
-  const userId = String(user?.id || "");
+  const userId = String(created?.user_id || "");
   if (!createResponse.ok || !userId) {
-    console.error("Learning Hub guest checkout identity creation failed", createResponse.status);
+    console.error("Learning Hub guest checkout identity RPC failed", createResponse.status, JSON.stringify(created).slice(0, 500));
     throw new Error("Could not prepare the guest order record. Please try again or contact support.");
   }
   const profileResponse = await supabaseRequest(
@@ -406,6 +394,7 @@ async function createGuestCheckoutProfile(env, customerEmail, fullName) {
   const profiles = await profileResponse.json();
   if (!profileResponse.ok || !Array.isArray(profiles) || profiles.length !== 1 ||
       profiles[0].role !== "student" || profiles[0].is_active !== true) {
+    console.error("Learning Hub guest checkout profile verification failed", profileResponse.status, JSON.stringify(profiles).slice(0, 500));
     throw new Error("Could not prepare the guest order record. Please contact support.");
   }
   return userId;
