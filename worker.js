@@ -469,18 +469,21 @@ async function updatePaymentRecords(env, tracker, nextStatus) {
   const payments = await lookup.json();
   if (!lookup.ok || !Array.isArray(payments) || payments.length === 0) return false;
   const payment = payments[0];
-  if (payment.status === "refunded") return true;
-  if (nextStatus === "failed" && payment.status !== "pending") return true;
-  if (nextStatus === "paid" && payment.status === "paid") return true;
+  if (payment.status === "refunded" && nextStatus !== "refunded") return true;
+  if (nextStatus === "failed" && (payment.status === "paid" || payment.status === "refunded")) return true;
 
-  const patch = { status: nextStatus, updated_at: new Date().toISOString() };
-  if (nextStatus === "paid") patch.paid_at = new Date().toISOString();
-  const paymentUpdate = await supabaseRequest(
-    env,
-    "/rest/v1/payments?id=eq." + encodeURIComponent(payment.id),
-    { method: "PATCH", headers: { "Prefer": "return=minimal" }, body: JSON.stringify(patch) }
-  );
-  if (!paymentUpdate.ok) throw new Error("Could not update the Learning Hub payment record.");
+  // Retry-safe: repair linked invoice/order state even when the payment row
+  // was already updated by an earlier webhook attempt.
+  if (payment.status !== nextStatus) {
+    const patch = { status: nextStatus, updated_at: new Date().toISOString() };
+    if (nextStatus === "paid") patch.paid_at = new Date().toISOString();
+    const paymentUpdate = await supabaseRequest(
+      env,
+      "/rest/v1/payments?id=eq." + encodeURIComponent(payment.id),
+      { method: "PATCH", headers: { "Prefer": "return=minimal" }, body: JSON.stringify(patch) }
+    );
+    if (!paymentUpdate.ok) throw new Error("Could not update the Learning Hub payment record.");
+  }
 
   if (nextStatus === "paid") {
     const orderUpdate = await supabaseRequest(
