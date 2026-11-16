@@ -471,12 +471,19 @@ async function updatePaymentRecords(env, tracker, nextStatus) {
   }
 
   if (nextStatus === "paid") {
-    const orderUpdate = await supabaseRequest(
-      env,
-      "/rest/v1/service_orders?payment_id=eq." + encodeURIComponent(payment.id),
-      { method: "PATCH", headers: { "Prefer": "return=minimal" }, body: JSON.stringify({ status: "paid" }) }
-    );
-    if (!orderUpdate.ok) throw new Error("Could not update the Learning Hub service order.");
+    const [invoiceUpdate, orderUpdate] = await Promise.all([
+      supabaseRequest(env, "/rest/v1/invoices?payment_id=eq." + encodeURIComponent(payment.id), {
+        method: "PATCH", headers: { "Prefer": "return=minimal" },
+        body: JSON.stringify({ status: "paid" })
+      }),
+      supabaseRequest(env, "/rest/v1/service_orders?payment_id=eq." + encodeURIComponent(payment.id), {
+        method: "PATCH", headers: { "Prefer": "return=minimal" },
+        body: JSON.stringify({ status: "paid" })
+      })
+    ]);
+    if (!invoiceUpdate.ok || !orderUpdate.ok) {
+      throw new Error("Could not update the Learning Hub invoice and service order.");
+    }
   } else if (nextStatus === "refunded") {
     const [invoiceUpdate, orderUpdate] = await Promise.all([
       supabaseRequest(env, "/rest/v1/invoices?payment_id=eq." + encodeURIComponent(payment.id), {
