@@ -301,7 +301,7 @@ function json(data, status = 200) {
 }
 
 async function supabaseRequest(env, path, options = {}) {
-  const base = String(env.SUPABASE_URL || "").replace(/\\/$/, "");
+  const base = String(env.SUPABASE_URL || "").replace(/\/$/, "");
   const key = env.SUPABASE_SERVICE_ROLE_KEY;
   if (!base || !key) throw new Error("Supabase service credentials are not configured.");
   return fetch(base + path, {
