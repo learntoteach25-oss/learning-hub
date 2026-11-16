@@ -151,6 +151,7 @@ export default {
           curriculum: "",
           requirement_summary: [
             body.guardian ? "Parent/guardian: " + String(body.guardian).trim() : "",
+            mobile ? "Contact number: " + mobile : "",
             body.notes ? "Learning requirements: " + String(body.notes).trim() : "",
             "Booking plan: " + String(body.plan || ""),
             "Lesson count: " + String(body.lessonCount || 1),
@@ -166,6 +167,7 @@ export default {
         const studentRemark = kind === "resource"
           ? [
               "Resource type: " + String(body.resourceLabel || body.resourceType || "Digital resource"),
+              mobile ? "Customer mobile: " + mobile : "",
               body.storyTitle ? "Story title: " + String(body.storyTitle) : "",
               body.subject ? "Subject: " + String(body.subject) : "",
               body.curriculum ? "Curriculum: " + String(body.curriculum) : "",
@@ -243,7 +245,8 @@ export default {
         if (eventType === "payment.succeeded" || eventType === "payment.failed" || eventType === "payment.refunded") {
           if (tracker && eventType === "payment.succeeded") {
             const verifiedPaid = await verifySafepayPaid(env, tracker);
-            if (verifiedPaid) await updatePaymentRecords(env, tracker, "paid");
+            if (!verifiedPaid) return json({ error: "Safepay has not yet confirmed this payment. Please retry the webhook." }, 503);
+            await updatePaymentRecords(env, tracker, "paid");
           } else if (tracker && eventType === "payment.failed") {
             await updatePaymentRecords(env, tracker, "failed");
           } else if (tracker && eventType === "payment.refunded") {
@@ -261,7 +264,8 @@ export default {
         }
         return json({ received: true });
       } catch (error) {
-        return json({ error: "Invalid webhook payload." }, 400);
+        console.error("Safepay webhook processing failed", String(error?.message || error));
+        return json({ error: "Webhook processing failed. Safepay may retry this event." }, 500);
       }
     }
 
