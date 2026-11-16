@@ -58,7 +58,10 @@ export default {
           return json({ error: "Unsupported checkout type." }, 400);
         }
 
-        const studentId = await ensureStudentProfile(env, email, customerName);
+        // Guest checkout is independent of existing Learning Hub accounts.
+        // Always create an internal guest identity so any customer email can be
+        // used, including addresses already registered as admin, teacher or student.
+        const studentId = await createGuestCheckoutProfile(env, email, customerName);
 
         // Safepay's optional customer-prefill step. The returned customer token
         // is attached to both the payment tracker and hosted checkout URL.
@@ -152,6 +155,8 @@ export default {
           requirement_summary: [
             body.guardian ? "Parent/guardian: " + String(body.guardian).trim() : "",
             mobile ? "Contact number: " + mobile : "",
+            "Customer: " + customerName,
+            "Customer email: " + email,
             body.notes ? "Learning requirements: " + String(body.notes).trim() : "",
             "Booking plan: " + String(body.plan || ""),
             "Lesson count: " + String(body.lessonCount || 1),
@@ -166,6 +171,8 @@ export default {
         } : null;
         const studentRemark = kind === "resource"
           ? [
+              "Customer: " + customerName,
+              "Customer email: " + email,
               "Resource type: " + String(body.resourceLabel || body.resourceType || "Digital resource"),
               mobile ? "Customer mobile: " + mobile : "",
               body.storyTitle ? "Story title: " + String(body.storyTitle) : "",
@@ -364,53 +371,42 @@ async function supabaseRequest(env, path, options = {}) {
   });
 }
 
-async function findAuthUserByEmail(env, email) {
-  const response = await supabaseRequest(env, "/auth/v1/admin/users?page=1&per_page=1000");
-  const data = await response.json();
-  if (!response.ok) throw new Error("Could not check the student account.");
-  const users = Array.isArray(data?.users) ? data.users : (Array.isArray(data?.data?.users) ? data.data.users : []);
-  return users.find(user => String(user.email || "").toLowerCase() === email.toLowerCase()) || null;
-}
-
-async function ensureStudentProfile(env, email, fullName) {
-  let user = await findAuthUserByEmail(env, email);
-  if (!user) {
-    const password = crypto.randomUUID() + crypto.randomUUID() + "Aa1!";
-    const createResponse = await supabaseRequest(env, "/auth/v1/admin/users", {
-      method: "POST",
-      body: JSON.stringify({
-        email,
-        password,
-        email_confirm: true,
-        user_metadata: {
-          full_name: fullName,
-          portal_role: "student",
-          guest_checkout: true,
-          account_source: "learning_hub_billing"
-        }
-      })
-    });
-    const created = await createResponse.json();
-    if (createResponse.ok) {
-      user = created?.user || created;
-    } else {
-      // A simultaneous checkout may have created the same email account.
-      user = await findAuthUserByEmail(env, email);
-      if (!user) throw new Error("Could not create or locate the student account.");
-    }
-  }
+async function createGuestCheckoutProfile(env, customerEmail, fullName) {
+  // A fresh internal identity is used only to satisfy the existing order schema.
+  // The customer's real email is stored with the order and sent to Safepay;
+  // it is never looked up as an application login or assigned a portal role.
+  const guestEmail = "checkout-" + crypto.randomUUID() + "@guest.learninghubtutoring.com";
+  const password = crypto.randomUUID() + crypto.randomUUID() + "Aa1!";
+  const createResponse = await supabaseRequest(env, "/auth/v1/admin/users", {
+    method: "POST",
+    body: JSON.stringify({
+      email: guestEmail,
+      password,
+      email_confirm: true,
+      user_metadata: {
+        full_name: fullName,
+        portal_role: "student",
+        guest_checkout: true,
+        customer_email: customerEmail,
+        account_source: "learning_hub_guest_checkout"
+      }
+    })
+  });
+  const created = await createResponse.json();
+  const user = created?.user || created;
   const userId = String(user?.id || "");
-  if (!userId) throw new Error("Student account ID is missing.");
+  if (!createResponse.ok || !userId) {
+    console.error("Learning Hub guest checkout identity creation failed", createResponse.status);
+    throw new Error("Could not prepare the guest order record. Please try again or contact support.");
+  }
   const profileResponse = await supabaseRequest(
     env,
     "/rest/v1/profiles?id=eq." + encodeURIComponent(userId) + "&select=id,role,is_active"
   );
   const profiles = await profileResponse.json();
-  if (!profileResponse.ok || !Array.isArray(profiles) || profiles.length !== 1) {
-    throw new Error("The student profile could not be verified.");
-  }
-  if (profiles[0].role !== "student" || profiles[0].is_active !== true) {
-    throw new Error("This email belongs to an account that cannot be used for student checkout. Please use a student email.");
+  if (!profileResponse.ok || !Array.isArray(profiles) || profiles.length !== 1 ||
+      profiles[0].role !== "student" || profiles[0].is_active !== true) {
+    throw new Error("Could not prepare the guest order record. Please contact support.");
   }
   return userId;
 }
