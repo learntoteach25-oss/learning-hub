@@ -5,12 +5,14 @@ export default {
     const safepayLive = safepayEnvironment === "production" || safepayEnvironment === "live";
     const safepay = safepayLive ? {
       apiBase: "https://api.getsafepay.com",
+      checkoutBase: "https://getsafepay.com",
       checkoutEnvironment: "production",
       secret: env.SAFEPAY_LIVE_SECRET_KEY,
       merchantApiKey: env.SAFEPAY_LIVE_MERCHANT_API_KEY,
       webhookSecret: env.SAFEPAY_LIVE_WEBHOOK_SECRET
     } : {
       apiBase: "https://sandbox.api.getsafepay.com",
+      checkoutBase: "https://sandbox.api.getsafepay.com",
       checkoutEnvironment: "sandbox",
       secret: env.SAFEPAY_SECRET_KEY,
       merchantApiKey: env.SAFEPAY_MERCHANT_API_KEY,
@@ -205,7 +207,7 @@ export default {
         });
         await saveSafepayTracker(env, records.payment_id, tracker);
 
-        const checkoutUrl = safepay.apiBase + "/embedded/?" + checkoutParams.toString();
+        const checkoutUrl = safepay.checkoutBase + "/embedded/?" + checkoutParams.toString();
         return json({
           success: true, checkoutUrl, orderId, tracker, amount: amountPkr, currency: "PKR",
           status: "pending", description, inquiryId: records.inquiry_id,
