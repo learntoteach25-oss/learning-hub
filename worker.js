@@ -1,16 +1,36 @@
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
+    const safepayEnvironment = String(env.SAFEPAY_ENVIRONMENT || (env.SAFEPAY_LIVE_SECRET_KEY && env.SAFEPAY_LIVE_MERCHANT_API_KEY ? "production" : "sandbox")).toLowerCase();
+    const safepayLive = safepayEnvironment === "production" || safepayEnvironment === "live";
+    const safepay = safepayLive ? {
+      apiBase: "https://api.getsafepay.com",
+      checkoutBase: "https://getsafepay.com",
+      checkoutEnvironment: "production",
+      secret: env.SAFEPAY_LIVE_SECRET_KEY,
+      merchantApiKey: env.SAFEPAY_LIVE_MERCHANT_API_KEY,
+      webhookSecret: env.SAFEPAY_LIVE_WEBHOOK_SECRET
+    } : {
+      apiBase: "https://sandbox.api.getsafepay.com",
+      checkoutBase: "https://sandbox.api.getsafepay.com",
+      checkoutEnvironment: "sandbox",
+      secret: env.SAFEPAY_SECRET_KEY,
+      merchantApiKey: env.SAFEPAY_MERCHANT_API_KEY,
+      webhookSecret: env.SAFEPAY_WEBHOOK_SECRET
+    };
+    if (safepayLive && (!safepay.secret || !safepay.merchantApiKey || !safepay.webhookSecret)) {
+      return json({ error: "Safepay Production credentials are incomplete." }, 503);
+    }
+    if (!safepayLive && (!safepay.secret || !safepay.merchantApiKey || !safepay.webhookSecret)) {
+      return json({ error: "Safepay Sandbox credentials are incomplete." }, 503);
+    }
     if (url.pathname === "/api/safepay/health") {
-      return json({ ok: true, service: "Learning Hub Safepay", environment: "sandbox" });
+      return json({ ok: true, service: "Learning Hub Safepay", environment: safepay.checkoutEnvironment });
     }
     if (url.pathname === "/api/safepay/create-checkout" && request.method === "POST") {
       try {
-        const secret = env.SAFEPAY_SECRET_KEY;
-        const merchantApiKey = env.SAFEPAY_MERCHANT_API_KEY;
-        if (!secret || !merchantApiKey) {
-          return json({ error: "Safepay sandbox credentials are not configured in Cloudflare. Add SAFEPAY_SECRET_KEY and SAFEPAY_MERCHANT_API_KEY." }, 503);
-        }
+        const secret = safepay.secret;
+        const merchantApiKey = safepay.merchantApiKey;
         const body = await request.json();
         const email = String(body.email || "").trim();
         const mobile = String(body.mobile || "").trim();
@@ -68,7 +88,7 @@ export default {
         const nameParts = customerName.trim().split(/\s+/);
         const firstName = nameParts.shift() || customerName;
         const lastName = nameParts.join(" ") || firstName;
-        const apiBase = "https://sandbox.api.getsafepay.com";
+        const apiBase = safepay.apiBase;
         const headers = {
           "X-SFPY-MERCHANT-SECRET": secret,
           "Content-Type": "application/json"
@@ -138,7 +158,7 @@ export default {
         }
 
         const checkoutParams = new URLSearchParams({
-          environment: "sandbox",
+          environment: safepay.checkoutEnvironment,
           tracker,
           tbt,
           source: "hosted",
@@ -187,7 +207,7 @@ export default {
         });
         await saveSafepayTracker(env, records.payment_id, tracker);
 
-        const checkoutUrl = "https://sandbox.api.getsafepay.com/embedded/?" + checkoutParams.toString();
+        const checkoutUrl = safepay.checkoutBase + "/embedded/?" + checkoutParams.toString();
         return json({
           success: true, checkoutUrl, orderId, tracker, amount: amountPkr, currency: "PKR",
           status: "pending", description, inquiryId: records.inquiry_id,
@@ -200,7 +220,7 @@ export default {
     }
 
     if (url.pathname === "/api/safepay/webhook" && request.method === "POST") {
-      const webhookSecret = env.SAFEPAY_WEBHOOK_SECRET;
+      const webhookSecret = safepay.webhookSecret;
       if (!webhookSecret) return json({ error: "Webhook secret is not configured." }, 503);
       try {
         const rawBody = await request.text();
@@ -250,7 +270,7 @@ export default {
         }
         if (eventType === "payment.succeeded" || eventType === "payment.failed" || eventType === "payment.refunded") {
           if (tracker && eventType === "payment.succeeded") {
-            const verifiedPaid = await verifySafepayPaid(env, tracker);
+            const verifiedPaid = await verifySafepayPaid(env, tracker, safepay);
             if (!verifiedPaid) return json({ error: "Safepay has not yet confirmed this payment. Please retry the webhook." }, 503);
             await updatePaymentRecords(env, tracker, "paid");
           } else if (tracker && eventType === "payment.failed") {
@@ -276,12 +296,12 @@ export default {
     }
 
     if (url.pathname === "/api/safepay/status" && request.method === "GET") {
-      const secret = env.SAFEPAY_SECRET_KEY;
+      const secret = safepay.secret;
       const tracker = String(url.searchParams.get("tracker") || "");
       if (!secret) return json({ error: "Safepay secret is not configured." }, 503);
       if (!/^track_[A-Za-z0-9-]{10,100}$/.test(tracker)) return json({ error: "Invalid tracker." }, 400);
       try {
-        const response = await fetch("https://sandbox.api.getsafepay.com/reporter/api/v1/payments/" + encodeURIComponent(tracker), {
+        const response = await fetch(safepay.apiBase + "/reporter/api/v1/payments/" + encodeURIComponent(tracker), {
           headers: { "X-SFPY-MERCHANT-SECRET": secret }
         });
         const data = await response.json();
@@ -433,11 +453,11 @@ async function saveSafepayTracker(env, paymentId, tracker) {
   if (!response.ok) throw new Error("Learning Hub could not link the Safepay reference to the payment.");
 }
 
-async function verifySafepayPaid(env, tracker) {
-  const secret = env.SAFEPAY_SECRET_KEY;
+async function verifySafepayPaid(env, tracker, safepay) {
+  const secret = safepay.secret;
   if (!secret) return false;
   const response = await fetch(
-    "https://sandbox.api.getsafepay.com/reporter/api/v1/payments/" + encodeURIComponent(tracker),
+    safepay.apiBase + "/reporter/api/v1/payments/" + encodeURIComponent(tracker),
     { headers: { "X-SFPY-MERCHANT-SECRET": secret } }
   );
   if (!response.ok) return false;
