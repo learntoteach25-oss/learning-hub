@@ -104,7 +104,6 @@ export default {
           headers,
           body: JSON.stringify({
             merchant_api_key: merchantApiKey,
-            user: customerToken,
             intent: "CYBERSOURCE",
             mode: "payment",
             entry_mode: "raw",
