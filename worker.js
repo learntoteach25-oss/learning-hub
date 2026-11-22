@@ -50,14 +50,11 @@ export default {
           const count = Number(body.lessonCount);
           const course = String(body.course || "").trim();
           if (!course || course.length > 180 || ![1000, 1500].includes(duration) ||
-              !["demo", "gateway_trial", "daily", "twice", "weekly", "monthly"].includes(plan) ||
+              !["demo", "daily", "twice", "weekly", "monthly"].includes(plan) ||
               !Number.isInteger(count) || count < 1 || count > 31) {
             return json({ error: "The selected lesson or programme details are invalid." }, 400);
           }
-          if (plan === "gateway_trial") {
-            if (count !== 1) return json({ error: "Gateway trial bookings must contain exactly one session." }, 400);
-            amountPkr = 150;
-          } else if (plan === "demo") {
+          if (plan === "demo") {
             if (count !== 1) return json({ error: "Demo bookings must contain one session." }, 400);
             amountPkr = 550;
           } else {
