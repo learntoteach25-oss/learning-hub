@@ -59,7 +59,7 @@ export default {
             amountPkr = 550;
           } else if (plan === "raast_test") {
             if (count !== 1) return json({ error: "Raast payment tests must contain exactly one test transaction." }, 400);
-            amountPkr = 150;
+            amountPkr = 100;
           } else {
             if (plan === "monthly" && ![16, 20, 25].includes(count)) {
               return json({ error: "Please choose a valid monthly lesson package." }, 400);
