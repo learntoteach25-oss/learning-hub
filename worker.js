@@ -50,13 +50,16 @@ export default {
           const count = Number(body.lessonCount);
           const course = String(body.course || "").trim();
           if (!course || course.length > 180 || ![1000, 1500].includes(duration) ||
-              !["demo", "daily", "twice", "weekly", "monthly"].includes(plan) ||
+              !["demo", "raast_test", "daily", "twice", "weekly", "monthly"].includes(plan) ||
               !Number.isInteger(count) || count < 1 || count > 31) {
             return json({ error: "The selected lesson or programme details are invalid." }, 400);
           }
           if (plan === "demo") {
             if (count !== 1) return json({ error: "Demo bookings must contain one session." }, 400);
             amountPkr = 550;
+          } else if (plan === "raast_test") {
+            if (count !== 1) return json({ error: "Raast payment tests must contain exactly one test transaction." }, 400);
+            amountPkr = 150;
           } else {
             if (plan === "monthly" && ![16, 20, 25].includes(count)) {
               return json({ error: "Please choose a valid monthly lesson package." }, 400);
