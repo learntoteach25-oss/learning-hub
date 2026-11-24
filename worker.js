@@ -77,6 +77,8 @@ export default {
             const courseRate = courseRates[course][duration === 25 ? 0 : 1];
             amountPkr = count * courseRate;
             if (plan === "monthly") amountPkr = Math.round(amountPkr * 0.9);
+            // Apply 5% tax after any monthly package discount.
+            amountPkr = Math.round(amountPkr * 1.05);
           }
           description = `Learning Hub - ${course} - ${plan} - ${count} lesson(s)`;
         } else if (kind === "resource") {
