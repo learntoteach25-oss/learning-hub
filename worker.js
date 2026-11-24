@@ -439,6 +439,19 @@ export default {
       return Response.redirect("https://learninghubtutoring.com/billing.html?payment=cancelled", 302);
     }
 
+    if (url.pathname === "/assets/site-shell.js" && request.method === "GET") {
+      const shellResponse = await env.ASSETS.fetch(request);
+      const shellSource = await shellResponse.text();
+      const cleanedShell = shellSource.replace(/<a\\s+href=["']pricing\\.html["'][^>]*>\\s*Courses\\s*&amp;\\s*Fees\\s*<\\/a>/gi, "");
+      const headers = new Headers(shellResponse.headers);
+      headers.set("Cache-Control", "no-store");
+      return new Response(cleanedShell, {
+        status: shellResponse.status,
+        statusText: shellResponse.statusText,
+        headers
+      });
+    }
+
     const assetResponse = await env.ASSETS.fetch(request);
     return assetResponse;
   }
