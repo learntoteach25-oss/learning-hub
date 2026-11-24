@@ -465,7 +465,7 @@ export default {
     const assetResponse = await env.ASSETS.fetch(request);
     const contentType = assetResponse.headers.get("content-type") || "";
     if (request.method === "GET" && contentType.includes("text/html")) {
-      const navEnhancement = '<script>(()=>{const add=()=>{document.querySelectorAll(".desktop-nav,.mobile-nav").forEach(nav=>{if(nav.querySelector("[data-fee-link]"))return;const a=document.createElement("a");a.href="/pricing.html";a.dataset.feeLink="1";a.textContent="Courses & Fees";const book=nav.querySelector(".book-button");nav.insertBefore(a,book||null);});};add();new MutationObserver(add).observe(document.body,{childList:true,subtree:true});})();<\\/script>';
+      const navEnhancement = '<script>(()=>{const add=()=>{document.querySelectorAll(".desktop-nav,.mobile-nav").forEach(nav=>{if(nav.querySelector("[data-fee-link]"))return;const a=document.createElement("a");a.href="/pricing.html";a.dataset.feeLink="1";a.textContent="Courses & Fees";const book=nav.querySelector(".book-button");nav.insertBefore(a,book||null);});};add();new MutationObserver(add).observe(document.body,{childList:true,subtree:true});})();<\/script>';
       return new HTMLRewriter().on("body", { element(element) { element.append(navEnhancement, { html: true }); } }).transform(assetResponse);
     }
     return assetResponse;
