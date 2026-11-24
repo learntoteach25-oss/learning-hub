@@ -443,6 +443,7 @@ export default {
       return Response.redirect("https://learninghubtutoring.com/billing.html?payment=cancelled", 302);
     }
 
+    const assetResponse = await env.ASSETS.fetch(request);
     return assetResponse;
   }
 };
