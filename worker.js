@@ -349,6 +349,18 @@ export default {
     const course = document.getElementById("course");
     const duration = document.getElementById("duration");
     if (!course || !duration) return;
+    const courseField = course.closest(".field");
+    let rateHint = document.getElementById("courseRateHint");
+    if (!rateHint && courseField) {
+      rateHint = document.createElement("p");
+      rateHint.id = "courseRateHint";
+      rateHint.className = "account-note";
+      rateHint.style.cssText = "font-size:12px;line-height:1.6;color:#6a6052;margin:8px 0 14px";
+      rateHint.setAttribute("aria-live", "polite");
+      courseField.after(rateHint);
+    }
+    const intro = document.querySelector("#lessonMode .panel > .sub");
+    if (intro) intro.textContent = "Choose your course once. Session fees update automatically when you select a course and lesson duration. Your booking and payment summary stay linked to this selection.";
     const ratesByCourse = {
       "Academic Tutoring":[1000,1500],"English Development":[1000,1500],"Study Skills":[1000,1500],"Specialist Learning Support":[1500,2000],
       "MBA Support":[1800,2500],"BBA Support":[1200,1800],"B.Ed Support":[1500,2000],"M.Ed Support":[1800,2500],
@@ -367,6 +379,7 @@ export default {
     const usesMinuteValues = duration.options[0]?.value === "25" && duration.options[1]?.value === "50";
     const syncRates = () => {
       const rates = ratesByCourse[course.value] || [1000,1500];
+      if (rateHint) rateHint.textContent = "Session fees for " + course.value + ": 25 minutes — PKR " + rates[0].toLocaleString("en-PK") + " · 50 minutes — PKR " + rates[1].toLocaleString("en-PK") + ". Your total updates automatically as you choose a plan.";
       const minutes = duration.selectedOptions[0]?.dataset.minutes || (duration.selectedIndex === 0 ? "25" : "50");
       duration.options[0].dataset.minutes = "25"; duration.options[1].dataset.minutes = "50";
       if (usesMinuteValues) {
