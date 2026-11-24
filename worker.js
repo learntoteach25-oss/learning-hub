@@ -349,8 +349,6 @@ export default {
     const course = document.getElementById("course");
     const duration = document.getElementById("duration");
     if (!course || !duration) return;
-    const intro = document.querySelector("#lessonMode .panel > .sub");
-    if (intro) intro.textContent = "Choose your course to see its 25-minute and 50-minute rates in PKR and approximate USD. Your selected rate and total also update automatically in the booking summary.";
     const ratesByCourse = {
       "Academic Tutoring":[1000,1500],"English Development":[1000,1500],"Study Skills":[1000,1500],"Specialist Learning Support":[1500,2000],
       "MBA Support":[1800,2500],"BBA Support":[1200,1800],"B.Ed Support":[1500,2000],"M.Ed Support":[1800,2500],
