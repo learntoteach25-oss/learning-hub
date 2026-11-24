@@ -24,11 +24,13 @@ const $=id=>document.getElementById(id),params=new URLSearchParams(location.sear
 const USD_REFERENCE_PKR=277.5;
 function updateCourseOptionPrices(){
   [...$('course').options].forEach(option=>{
-    const rates=courseRates[option.value];
+    const courseName=option.value;
+    const rates=courseRates[courseName];
     if(!rates)return;
+    option.value=courseName;
     const usd25=(rates[0]/USD_REFERENCE_PKR).toFixed(2);
     const usd50=(rates[1]/USD_REFERENCE_PKR).toFixed(2);
-    option.textContent=option.value+' — 25 min: PKR '+rates[0].toLocaleString()+' / USD '+usd25+' · 50 min: PKR '+rates[1].toLocaleString()+' / USD '+usd50;
+    option.textContent=courseName+' — 25 min: PKR '+rates[0].toLocaleString()+' / USD '+usd25+' · 50 min: PKR '+rates[1].toLocaleString()+' / USD '+usd50;
   });
 }
 function refreshCourseRates(){const rates=courseRates[$('course').value]||[1000,1500],duration=$('duration');duration.options[0].value='25';duration.options[0].textContent='25 minutes';duration.options[1].value='50';duration.options[1].textContent='50 minutes';if(!['25','50'].includes(duration.value))duration.value='50';}
