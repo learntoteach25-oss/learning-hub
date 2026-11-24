@@ -58,7 +58,7 @@ export default {
             "English Language":[1000,1500],"IB Psychology":[1500,2200],"English Language":[1000,1500],"IB Psychology":[1500,2200],"English – Beginner":[800,1400],"English – Intermediate":[1000,1500],"English – Advanced":[1200,1800],"Spoken English":[1000,1500],"Conversational English":[1000,1500],"Business English":[1200,1800],"English Grammar & Writing":[1000,1500],"French":[1200,1800],"German":[1200,1800],"Spanish":[1200,1800],"Arabic":[1000,1500],"Chinese (Mandarin)":[1500,2200],"Urdu for Foreigners":[1000,1500],
             "Cambridge International (CIE)":[1200,1800],"Pearson Edexcel":[1200,1800],"OxfordAQA":[1200,1800],"International Baccalaureate (IB)":[1500,2200],"IGCSE":[1200,1800],"GCSE":[1200,1800],"AS & A Level":[1500,2200],"Primary / Lower Secondary":[800,1200],
             "IELTS Academic":[1500,2200],"IELTS General Training":[1500,2200],"PTE Academic":[1500,2200],"PTE Core":[1500,2200],"TOEFL iBT":[1500,2200],"Cambridge English":[1200,1800],"Duolingo English Test":[1500,2200],"OET":[1800,2500],
-            "SAT":[1800,2500],"ACT":[1800,2500],"GRE General":[2000,3000],"GMAT":[2000,3000],
+            "SAT":[1800,2500],"ACT":[1800,2500],"GRE General":[2000,2775],"GMAT":[2000,2775],
             "International Olympiads":[1500,2200],"Kangaroo Competitions":[1200,1800],"Spelling & Word Competitions":[1000,1500],"Debate & Public Speaking":[1200,1800],"Quiz & Knowledge Competitions":[1000,1500],"Quran & Islamic Studies":[800,1200]
           };
           if (!course || course.length > 180 || ![25, 50].includes(duration) ||
@@ -357,7 +357,7 @@ export default {
       "English Language":[1000,1500],"IB Psychology":[1500,2200],"English – Beginner":[800,1400],"English – Intermediate":[1000,1500],"English – Advanced":[1200,1800],"Spoken English":[1000,1500],"Conversational English":[1000,1500],"Business English":[1200,1800],"English Grammar & Writing":[1000,1500],"French":[1200,1800],"German":[1200,1800],"Spanish":[1200,1800],"Arabic":[1000,1500],"Chinese (Mandarin)":[1500,2200],"Urdu for Foreigners":[1000,1500],
       "Cambridge International (CIE)":[1200,1800],"Pearson Edexcel":[1200,1800],"OxfordAQA":[1200,1800],"International Baccalaureate (IB)":[1500,2200],"IGCSE":[1200,1800],"GCSE":[1200,1800],"AS & A Level":[1500,2200],"Primary / Lower Secondary":[800,1200],
       "IELTS Academic":[1500,2200],"IELTS General Training":[1500,2200],"PTE Academic":[1500,2200],"PTE Core":[1500,2200],"TOEFL iBT":[1500,2200],"Cambridge English":[1200,1800],"Duolingo English Test":[1500,2200],"OET":[1800,2500],
-      "SAT":[1800,2500],"ACT":[1800,2500],"GRE General":[2000,3000],"GMAT":[2000,3000],
+      "SAT":[1800,2500],"ACT":[1800,2500],"GRE General":[2000,2775],"GMAT":[2000,2775],
       "International Olympiads":[1500,2200],"Kangaroo Competitions":[1200,1800],"Spelling & Word Competitions":[1000,1500],"Debate & Public Speaking":[1200,1800],"Quiz & Knowledge Competitions":[1000,1500],"Quran & Islamic Studies":[800,1200]
     };
     const usdReferencePkr = 277.5;
@@ -422,7 +422,7 @@ export default {
             "English Language":[1000,1500],"IB Psychology":[1500,2200],"English – Beginner":[800,1400],"English – Intermediate":[1000,1500],"English – Advanced":[1200,1800],"Spoken English":[1000,1500],"Conversational English":[1000,1500],"Business English":[1200,1800],"English Grammar & Writing":[1000,1500],"French":[1200,1800],"German":[1200,1800],"Spanish":[1200,1800],"Arabic":[1000,1500],"Chinese (Mandarin)":[1500,2200],"Urdu for Foreigners":[1000,1500],
             "Cambridge International (CIE)":[1200,1800],"Pearson Edexcel":[1200,1800],"OxfordAQA":[1200,1800],"International Baccalaureate (IB)":[1500,2200],"IGCSE":[1200,1800],"GCSE":[1200,1800],"AS & A Level":[1500,2200],"Primary / Lower Secondary":[800,1200],
             "IELTS Academic":[1500,2200],"IELTS General Training":[1500,2200],"PTE Academic":[1500,2200],"PTE Core":[1500,2200],"TOEFL iBT":[1500,2200],"Cambridge English":[1200,1800],"Duolingo English Test":[1500,2200],"OET":[1800,2500],
-            "SAT":[1800,2500],"ACT":[1800,2500],"GRE General":[2000,3000],"GMAT":[2000,3000],
+            "SAT":[1800,2500],"ACT":[1800,2500],"GRE General":[2000,2775],"GMAT":[2000,2775],
             "International Olympiads":[1500,2200],"Kangaroo Competitions":[1200,1800],"Spelling & Word Competitions":[1000,1500],"Debate & Public Speaking":[1200,1800],"Quiz & Knowledge Competitions":[1000,1500],"Quran & Islamic Studies":[800,1200]
           };
           const rates = rateMap[selectedCourse] || [1000,1500];
