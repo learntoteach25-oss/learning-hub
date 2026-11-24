@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Courses &amp; Fees | Learning Hub</title>
+<meta name="description" content="Explore Learning Hub course fees for language learning, international curricula, exam preparation and academic support.">
+<link rel="icon" href="assets/Learning_Hub_Trademark_Logo.jpg">
+<link rel="stylesheet" href="assets/site.css?v=20261013-academic-hero-uniform-v1">
+<style>
+:root{--gold:#d5aa4d;--ink:#17130d;--muted:#71695d;--paper:#fffdfa;--line:#eadfc9}
+body{background:#faf8f3;color:var(--ink)}.fees-wrap{width:min(1120px,calc(100% - 36px));margin:0 auto;padding:42px 0 64px}
+.fees-hero{text-align:center;padding:44px 22px 36px;background:#090909;color:#fff;border-radius:22px;margin-bottom:28px}
+.fees-hero .eyebrow{font:700 11px Arial;letter-spacing:.18em;color:#e8c879}.fees-hero h1{font:700 clamp(32px,5vw,48px)/1.1 Georgia,serif;margin:12px 0;color:#fff}.fees-hero p{max-width:700px;margin:0 auto;color:#e4ddd0;font:14px/1.65 Arial}
+.fees-controls{display:flex;justify-content:center;gap:10px;margin:24px 0 28px;flex-wrap:wrap}.fees-controls button{border:1px solid #d9c79f;background:#fffaf0;border-radius:999px;padding:12px 22px;font-weight:700;cursor:pointer}.fees-controls button.active{background:#090909;color:#f0cf79;border-color:#090909}
+.fees-group{background:var(--paper);border:1px solid var(--line);border-radius:16px;margin:16px 0;overflow:hidden;box-shadow:0 8px 22px #3d2e1110}.fees-group h2{font:700 21px Georgia,serif;margin:0;padding:19px 22px;background:#f5efe3;border-bottom:1px solid var(--line)}
+.fees-table{width:100%;border-collapse:collapse}.fees-table th,.fees-table td{padding:13px 20px;border-bottom:1px solid #eee7db;text-align:left;font:13px/1.4 Arial}.fees-table th{font-size:10px;letter-spacing:.08em;color:#756b5d;background:#fffdf8}.fees-table td:nth-child(n+2),.fees-table th:nth-child(n+2){text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.fees-table tr:last-child td{border-bottom:0}
+.fees-note{font:12px/1.6 Arial;color:var(--muted);margin:20px 4px}.fees-cta{display:flex;justify-content:center;margin:28px 0}.fees-cta a{display:inline-block;background:#080808;color:#f1d080;text-decoration:none;padding:14px 28px;border-radius:999px;font-weight:700}
+@media(max-width:620px){.fees-wrap{width:calc(100% - 24px);padding:24px 0 42px}.fees-hero{padding:34px 17px}.fees-table th,.fees-table td{padding:11px 10px;font-size:12px}.fees-group h2{font-size:18px;padding:16px}.fees-table td:first-child{max-width:52%;overflow-wrap:anywhere}.fees-controls button{padding:10px 16px}}
+</style>
+</head>
+<body><header></header><main class="fees-wrap">
+<section class="fees-hero"><span class="eyebrow">LEARNING HUB · COURSE CATALOGUE</span><h1>Courses &amp; Fees</h1><p>Explore personalised online learning across languages, international curricula, exam preparation and academic support. Choose a lesson duration and view the applicable session fee.</p></section>
+<div class="fees-controls" role="group" aria-label="Select fee currency"><button type="button" class="active" data-currency="PKR">Pakistan · PKR</button><button type="button" data-currency="USD">International · USD</button></div>
+<div id="feeTables"></div>
+<p class="fees-note" id="feeNote">All PKR prices are per individual online session. Monthly packages receive a 10% discount on eligible lesson fees. The 30-minute introductory demo is shown separately during booking. Specialised or customised requirements may receive an individually agreed quote.</p>
+<div class="fees-cta"><a href="billing.html">Book a Lesson →</a></div>
+</main><footer></footer>
+<script>
+const feeData=[
+{title:'Language Courses',items:[['English – Beginner',800,1400,6,10],['English – Intermediate',1000,1500,8,12],['English – Advanced',1200,1800,8,12],['Spoken English',1000,1500,8,12],['Conversational English',1000,1500,8,12],['Business English',1200,1800,8,12],['English Grammar & Writing',1000,1500,8,12],['French',1200,1800,9,14],['German',1200,1800,9,14],['Spanish',1200,1800,9,14],['Arabic',1000,1500,9,14],['Chinese (Mandarin)',1500,2200,9,14],['Urdu for Foreigners',1000,1500,9,14]]},
+{title:'English Proficiency & Test Preparation',items:[['IELTS Academic',1500,2200,12,18],['IELTS General Training',1500,2200,12,18],['PTE Academic',1500,2200,12,18],['PTE Core',1500,2200,12,18],['TOEFL iBT',1500,2200,12,18],['Cambridge English',1200,1800,10,15],['Duolingo English Test',1500,2200,12,18],['OET',1800,2500,12,18]]},
+{title:'Academic Tutoring & Learning Support',items:[['Academic Tutoring',1000,1500,10,15],['English Development',1000,1500,8,12],['Study Skills',1000,1500,10,15],['Specialist Learning Support',1500,2000,12,18],['Primary / Lower Secondary',800,1200,8,12]]},
+{title:'International Curricula & Boards',items:[['Cambridge International (CIE)',1200,1800,10,15],['Pearson Edexcel',1200,1800,10,15],['OxfordAQA',1200,1800,10,15],['International Baccalaureate (IB)',1500,2200,14,20],['IGCSE',1200,1800,10,15],['GCSE',1200,1800,10,15],['AS & A Level',1500,2200,12,18]]},
+{title:'University & Professional Education',items:[['MBA Support',1800,2500,15,22],['BBA Support',1200,1800,12,18],['B.Ed Support',1500,2000,12,18],['M.Ed Support',1800,2500,15,22]]},
+{title:'Standardised Tests & Competitions',items:[['SAT',1800,2500,15,22],['ACT',1800,2500,15,22],['GRE General',2000,3000,18,25],['GMAT',2000,3000,18,25],['International Olympiads',1500,2200,12,18],['Kangaroo Competitions',1200,1800,10,15],['Spelling & Word Competitions',1000,1500,8,12],['Debate & Public Speaking',1200,1800,10,15],['Quiz & Knowledge Competitions',1000,1500,8,12]]},
+{title:'Quran & Islamic Studies',items:[['Quran & Islamic Studies',800,1200,7,10]]}
+];
+let currency='PKR';
+const money=(n,c)=>c==='PKR'?'PKR '+Number(n).toLocaleString('en-PK'):'$'+n;
+function renderFees(){document.getElementById('feeTables').innerHTML=feeData.map(group=>'<section class="fees-group"><h2>'+group.title+'</h2><table class="fees-table"><thead><tr><th>Course / Service</th><th>25 Minutes</th><th>50 Minutes</th></tr></thead><tbody>'+group.items.map(x=>'<tr><td>'+x[0]+'</td><td>'+money(currency==='PKR'?x[1]:x[3],currency)+'</td><td>'+money(currency==='PKR'?x[2]:x[4],currency)+'</td></tr>').join('')+'</tbody></table></section>').join('');document.getElementById('feeNote').textContent=currency==='PKR'?'All PKR prices are per individual online session. Monthly packages receive a 10% discount on eligible lesson fees. The 30-minute introductory demo is shown separately during booking. Specialised or customised requirements may receive an individually agreed quote.':'USD prices are indicative international session rates. Monthly packages receive a 10% discount on eligible lesson fees. Specialised or customised requirements may receive an individually agreed quote.';}
+document.querySelectorAll('[data-currency]').forEach(button=>button.addEventListener('click',()=>{currency=button.dataset.currency;document.querySelectorAll('[data-currency]').forEach(b=>b.classList.toggle('active',b===button));renderFees()}));renderFees();
+</script>
+<script src="assets/site-shell.js?v=20261104-footer-fullbleed-v2"></script>
+</body></html>
