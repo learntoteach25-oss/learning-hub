@@ -350,7 +350,7 @@ export default {
     const duration = document.getElementById("duration");
     if (!course || !duration) return;
     const intro = document.querySelector("#lessonMode .panel > .sub");
-    if (intro) intro.textContent = "Choose your course and lesson duration. The correct subject fee is calculated automatically and shown only in your booking summary.";
+    if (intro) intro.textContent = "Choose your course to see its 25-minute and 50-minute rates in PKR and approximate USD. Your selected rate and total also update automatically in the booking summary.";
     const ratesByCourse = {
       "Academic Tutoring":[1000,1500],"English Development":[1000,1500],"Study Skills":[1000,1500],"Specialist Learning Support":[1500,2000],
       "MBA Support":[1800,2500],"BBA Support":[1200,1800],"B.Ed Support":[1500,2000],"M.Ed Support":[1800,2500],
@@ -360,6 +360,24 @@ export default {
       "SAT":[1800,2500],"ACT":[1800,2500],"GRE General":[2000,3000],"GMAT":[2000,3000],
       "International Olympiads":[1500,2200],"Kangaroo Competitions":[1200,1800],"Spelling & Word Competitions":[1000,1500],"Debate & Public Speaking":[1200,1800],"Quiz & Knowledge Competitions":[1000,1500],"Quran & Islamic Studies":[800,1200]
     };
+    const usdReferencePkr = 277.5;
+    [...course.options].forEach(option => {
+      const courseName = option.value;
+      const rates = ratesByCourse[courseName];
+      if (!rates) return;
+      option.value = courseName;
+      const usd25 = (rates[0] / usdReferencePkr).toFixed(2);
+      const usd50 = (rates[1] / usdReferencePkr).toFixed(2);
+      option.textContent = courseName + " — 25 min: PKR " + rates[0].toLocaleString() + " / USD " + usd25 + " · 50 min: PKR " + rates[1].toLocaleString() + " / USD " + usd50;
+    });
+    let priceNote = document.getElementById("lh-course-price-note");
+    if (!priceNote) {
+      priceNote = document.createElement("small");
+      priceNote.id = "lh-course-price-note";
+      priceNote.style.cssText = "display:block;margin-top:8px;color:#6a6052;font-size:11px;line-height:1.5";
+      priceNote.textContent = "USD prices are estimates at PKR 277.50 per USD. Safepay checkout is charged in PKR.";
+      course.parentElement.appendChild(priceNote);
+    }
     const languages = ["English – Beginner","English – Intermediate","English – Advanced","Spoken English","Conversational English","Business English","English Grammar & Writing","French","German","Spanish","Arabic","Chinese (Mandarin)","Urdu for Foreigners"];
     if (!languages.some(name => [...course.options].some(option => option.value === name))) {
       const group = document.createElement("optgroup"); group.label = "Language Courses";
