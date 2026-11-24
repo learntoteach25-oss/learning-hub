@@ -55,7 +55,7 @@ export default {
           const courseRates = {
             "Academic Tutoring":[1000,1500],"English Development":[1000,1500],"Study Skills":[1000,1500],"Specialist Learning Support":[1500,2000],
             "MBA Support":[1800,2500],"BBA Support":[1200,1800],"B.Ed Support":[1500,2000],"M.Ed Support":[1800,2500],
-            "English – Beginner":[800,1400],"English – Intermediate":[1000,1500],"English – Advanced":[1200,1800],"Spoken English":[1000,1500],"Conversational English":[1000,1500],"Business English":[1200,1800],"English Grammar & Writing":[1000,1500],"French":[1200,1800],"German":[1200,1800],"Spanish":[1200,1800],"Arabic":[1000,1500],"Chinese (Mandarin)":[1500,2200],"Urdu for Foreigners":[1000,1500],
+            "English Language":[1000,1500],"IB Psychology":[1500,2200],"English – Beginner":[800,1400],"English – Intermediate":[1000,1500],"English – Advanced":[1200,1800],"Spoken English":[1000,1500],"Conversational English":[1000,1500],"Business English":[1200,1800],"English Grammar & Writing":[1000,1500],"French":[1200,1800],"German":[1200,1800],"Spanish":[1200,1800],"Arabic":[1000,1500],"Chinese (Mandarin)":[1500,2200],"Urdu for Foreigners":[1000,1500],
             "Cambridge International (CIE)":[1200,1800],"Pearson Edexcel":[1200,1800],"OxfordAQA":[1200,1800],"International Baccalaureate (IB)":[1500,2200],"IGCSE":[1200,1800],"GCSE":[1200,1800],"AS & A Level":[1500,2200],"Primary / Lower Secondary":[800,1200],
             "IELTS Academic":[1500,2200],"IELTS General Training":[1500,2200],"PTE Academic":[1500,2200],"PTE Core":[1500,2200],"TOEFL iBT":[1500,2200],"Cambridge English":[1200,1800],"Duolingo English Test":[1500,2200],"OET":[1800,2500],
             "SAT":[1800,2500],"ACT":[1800,2500],"GRE General":[2000,3000],"GMAT":[2000,3000],
@@ -349,18 +349,8 @@ export default {
     const course = document.getElementById("course");
     const duration = document.getElementById("duration");
     if (!course || !duration) return;
-    const courseField = course.closest(".field");
-    let rateHint = document.getElementById("courseRateHint");
-    if (!rateHint && courseField) {
-      rateHint = document.createElement("p");
-      rateHint.id = "courseRateHint";
-      rateHint.className = "account-note";
-      rateHint.style.cssText = "font-size:12px;line-height:1.6;color:#6a6052;margin:8px 0 14px";
-      rateHint.setAttribute("aria-live", "polite");
-      courseField.after(rateHint);
-    }
     const intro = document.querySelector("#lessonMode .panel > .sub");
-    if (intro) intro.textContent = "Choose your course once. Session fees update automatically when you select a course and lesson duration. Your booking and payment summary stay linked to this selection.";
+    if (intro) intro.textContent = "Choose your course and lesson duration. The correct subject fee is calculated automatically and shown only in your booking summary.";
     const ratesByCourse = {
       "Academic Tutoring":[1000,1500],"English Development":[1000,1500],"Study Skills":[1000,1500],"Specialist Learning Support":[1500,2000],
       "MBA Support":[1800,2500],"BBA Support":[1200,1800],"B.Ed Support":[1500,2000],"M.Ed Support":[1800,2500],
@@ -376,18 +366,17 @@ export default {
       languages.forEach(name => { const option = document.createElement("option"); option.value = name; option.textContent = name; group.appendChild(option); });
       course.insertBefore(group, course.firstChild);
     }
-    const usesMinuteValues = duration.options[0]?.value === "25" && duration.options[1]?.value === "50";
+    const usesMinuteValues = true;
     const syncRates = () => {
       const rates = ratesByCourse[course.value] || [1000,1500];
-      if (rateHint) rateHint.textContent = "Session fees for " + course.value + ": 25 minutes — PKR " + rates[0].toLocaleString("en-PK") + " · 50 minutes — PKR " + rates[1].toLocaleString("en-PK") + ". Your total updates automatically as you choose a plan.";
       const minutes = duration.selectedOptions[0]?.dataset.minutes || (duration.selectedIndex === 0 ? "25" : "50");
       duration.options[0].dataset.minutes = "25"; duration.options[1].dataset.minutes = "50";
       if (usesMinuteValues) {
-        duration.options[0].value = "25"; duration.options[0].textContent = "25 minutes — PKR " + rates[0].toLocaleString("en-PK") + " per session";
-        duration.options[1].value = "50"; duration.options[1].textContent = "50 minutes — PKR " + rates[1].toLocaleString("en-PK") + " per session";
+        duration.options[0].value = "25"; duration.options[0].textContent = "25 minutes";
+        duration.options[1].value = "50"; duration.options[1].textContent = "50 minutes";
       } else {
-        duration.options[0].value = String(rates[0]); duration.options[0].textContent = "25 minutes — PKR " + rates[0].toLocaleString("en-PK") + " per session";
-        duration.options[1].value = String(rates[1]); duration.options[1].textContent = "50 minutes — PKR " + rates[1].toLocaleString("en-PK") + " per session";
+        duration.options[0].value = String(rates[0]); duration.options[0].textContent = "25 minutes";
+        duration.options[1].value = String(rates[1]); duration.options[1].textContent = "50 minutes";
       }
       duration.selectedIndex = minutes === "25" ? 0 : 1;
       if (typeof window.updateLesson === "function") window.updateLesson();
