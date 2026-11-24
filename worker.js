@@ -50,16 +50,13 @@ export default {
           const count = Number(body.lessonCount);
           const course = String(body.course || "").trim();
           if (!course || course.length > 180 || ![100, 1000, 1500].includes(duration) ||
-              !["demo", "raast_test", "daily", "twice", "weekly", "monthly"].includes(plan) ||
+              !["demo", "daily", "twice", "weekly", "monthly"].includes(plan) ||
               !Number.isInteger(count) || count < 1 || count > 31) {
             return json({ error: "The selected lesson or programme details are invalid." }, 400);
           }
           if (plan === "demo") {
             if (count !== 1) return json({ error: "Demo bookings must contain one session." }, 400);
             amountPkr = 550;
-          } else if (plan === "raast_test") {
-            if (count !== 1) return json({ error: "Raast payment tests must contain exactly one test transaction." }, 400);
-            amountPkr = 100;
           } else {
             if (plan === "monthly" && ![16, 20, 25].includes(count)) {
               return json({ error: "Please choose a valid monthly lesson package." }, 400);
@@ -182,11 +179,11 @@ export default {
             body.notes ? "Learning requirements: " + String(body.notes).trim() : "",
             "Booking plan: " + String(body.plan || ""),
             "Lesson count: " + String(body.lessonCount || 1),
-            "Lesson duration: " + (Number(body.plan === "demo" ? 30 : body.duration === 100 ? 15 : body.duration === 1000 ? 25 : 50)) + " minutes",
+            "Lesson duration: " + (Number(body.plan === "demo" ? 30 : body.duration === 100 ? 10 : body.duration === 1000 ? 25 : 50)) + " minutes",
             "Rate/total payable: PKR " + amountPkr
           ].filter(Boolean).join("\\n"),
           preferred_days: "",
-          lesson_duration_minutes: body.plan === "demo" ? 30 : (Number(body.duration) === 100 ? 15 : body.duration === 1000 ? 25 : 50),
+          lesson_duration_minutes: body.plan === "demo" ? 30 : (Number(body.duration) === 100 ? 10 : body.duration === 1000 ? 25 : 50),
           lessons_count: Number(body.lessonCount || 1),
           package: String(body.plan || ""),
           budget: "PKR " + amountPkr
