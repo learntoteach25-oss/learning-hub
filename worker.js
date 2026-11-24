@@ -406,6 +406,16 @@ export default {
   };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", enhance);
   else enhance();
+  const addFeeNav = () => {
+    document.querySelectorAll(".desktop-nav,.mobile-nav").forEach(nav => {
+      if (nav.querySelector("[data-fee-link]")) return;
+      const link = document.createElement("a");
+      link.href = "/pricing.html"; link.dataset.feeLink = "1"; link.textContent = "Courses & Fees";
+      const book = nav.querySelector(".book-button"); nav.insertBefore(link, book || null);
+    });
+  };
+  addFeeNav();
+  new MutationObserver(addFeeNav).observe(document.body, {childList:true,subtree:true});
 
   const originalFetch = window.fetch.bind(window);
   window.fetch = async (input, init) => {
