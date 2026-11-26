@@ -442,7 +442,7 @@ export default {
     if (url.pathname === "/assets/site-shell.js" && request.method === "GET") {
       const shellResponse = await env.ASSETS.fetch(request);
       const shellSource = await shellResponse.text();
-      const cleanedShell = shellSource.replaceAll('<a href="pricing.html">Courses &amp; Fees</a>', "");
+      const cleanedShell = shellSource.replaceAll('<a href="pricing.html">Courses &amp; Fees</a>', "").replaceAll("Shop No. 3, Islamic Apartment, Block 2, Gulshan-e-Iqbal, Karachi – 75300", "Office No. 3, Islamic Apartment, Block 2, Gulshan-e-Iqbal, Karachi – 75300");
       const headers = new Headers(shellResponse.headers);
       headers.set("Cache-Control", "no-store");
       return new Response(cleanedShell, {
